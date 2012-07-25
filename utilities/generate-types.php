@@ -5,7 +5,27 @@
  * When updating the library to a newer version, change the path to the .wsdl files below and also in the corresponding Request.php for each service (for example, library/RateService/Request.php)
  */
 
-require_once '../tests/bootstrap.php';
+set_include_path(implode(PATH_SEPARATOR, array(
+    realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'src'),
+    get_include_path(),
+)));
+
+function autoload($className)
+{
+    $className = ltrim($className, '\\');
+    $fileName  = '';
+    $namespace = '';
+    if ($lastNsPos = strripos($className, '\\')) {
+        $namespace = substr($className, 0, $lastNsPos);
+        $className = substr($className, $lastNsPos + 1);
+        $fileName  = str_replace('\\', DIRECTORY_SEPARATOR, $namespace) . DIRECTORY_SEPARATOR;
+    }
+    $fileName .= str_replace('_', DIRECTORY_SEPARATOR, $className) . '.php';
+
+    require $fileName;
+}
+
+spl_autoload_register('autoload');
 
 use FedEx\Utility;
 

@@ -5,7 +5,7 @@
  */
 
 //remember to update /tests/credentials.php
-require_once '../tests/bootstrap.php';
+require_once 'bootstrap.php';
 
 
 use     FedEx\RateService,
