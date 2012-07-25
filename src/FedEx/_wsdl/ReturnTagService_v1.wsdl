@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://fedex.com/ws/returntag/v1" xmlns:s1="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://fedex.com/ws/returntag/v1" name="ReturnTagServiceDefinitions">
+	<types>
+		<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://fedex.com/ws/returntag/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			<xs:element name="ExpressTagAvailabilityRequest" type="ns:ExpressTagAvailabilityRequest"/>
+			<xs:element name="ExpressTagAvailabilityReply" type="ns:ExpressTagAvailabilityReply"/>
+			<xs:complexType name="WebAuthenticationDetail">
+				<xs:annotation>
+					<xs:documentation>Used in authentication of the sender's identity.</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="UserCredential" type="ns:WebAuthenticationCredential" minOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Credential used to authenticate a specific software application. This value is provided by FedEx after registration.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="WebAuthenticationCredential">
+				<xs:annotation>
+					<xs:documentation>Two part authentication string used for the sender's identity.</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="Key" type="xs:string" minOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Identifying part of the authentication key. This value is provided by FedEx after registration.</xs:documentation>
+							<xs:appinfo>
+								<xs:MaxLength>16</xs:MaxLength>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Password" type="xs:string" minOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Secret part of authentication key used for authentication. This value is provided by FedEx after registration.</xs:documentation>
+							<xs:appinfo>
+								<xs:MaxLength>25</xs:MaxLength>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="ClientDetail">
+				<xs:annotation>
+					<xs:documentation>The descriptive data identifying the client submitting the transaction.</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="AccountNumber" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>Identifies the FedEx account number assigned to the customer.</xs:documentation>
+							<xs:appinfo>
+								<xs:MaxLength>12</xs:MaxLength>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="MeterNumber" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>Identifies the unique client device submitting the request. </xs:documentation>
+							<xs:appinfo>
+								<xs:MaxLength>10</xs:MaxLength>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Localization" type="ns:Localization" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Governs any future language/translations used for human-readable Notification.localizedMessages in responses to the request containing this ClientDetail object. Different requests from the same client may contain different Localization data. (Contrast with TransactionDetail.localization, which governs data payload language/translation.)</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="TransactionDetail">
+				<xs:annotation>
+					<xs:documentation>The descriptive data that governs data payload language/translations.</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="CustomerTransactionId" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Identifies a customer-supplied unique identifier for this transaction. It is returned in the reply message to aid in matching requests to replies.</xs:documentation>
+							<xs:appinfo>
+								<xs:MaxLength>40</xs:MaxLength>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Localization" type="ns:Localization" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Governs any future language/translations applied to the data payload (contrasted with ClientDetail.localization, which governs Notification.localizedMessage language selection).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="Localization">
+				<xs:annotation>
+					<xs:documentation>The descriptive data for the local language and locale (i.e. country).</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="LanguageCode" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>Identifies the language to use for human-readable messages.</xs:documentation>
+							<xs:appinfo>
+								<xs:MaxLength>2</xs:MaxLength>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="LocaleCode" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Identifies the locale (i.e.  country code).</xs:documentation>
+							<xs:appinfo>
+								<xs:MaxLength>2</xs:MaxLength>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="VersionId">
+				<xs:annotation>
+					<xs:documentation>The descriptive data regarding the version/level of a service operation performed by the callee (in each reply).</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="ServiceId" type="xs:string" minOccurs="1" fixed="wsi">
+						<xs:annotation>
+							<xs:documentation>Identifies a system or sub-system which performs an operation.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Major" type="xs:int" minOccurs="1" fixed="1">
+						<xs:annotation>
+							<xs:documentation>Identifies the service business level.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Intermediate" type="xs:int" minOccurs="1" fixed="1">
+						<xs:annotation>
+							<xs:documentation>Identifies the service interface level.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Minor" type="xs:int" minOccurs="1" fixed="0">
+						<xs:annotation>
+							<xs:documentation>Identifies the service code level.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:simpleType name="ServiceType">
+				<xs:annotation>
+					<xs:documentation>Identifies the FedEx service to use in shipping the package. See ServiceType for list of valid enumerated values.</xs:documentation>
+				</xs:annotation>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="EUROPE_FIRST_INTERNATIONAL_PRIORITY"/>
+					<xs:enumeration value="FEDEX_1_DAY_FREIGHT"/>
+					<xs:enumeration value="FEDEX_2_DAY"/>
+					<xs:enumeration value="FEDEX_2_DAY_FREIGHT"/>
+					<xs:enumeration value="FEDEX_3_DAY_FREIGHT"/>
+					<xs:enumeration value="FEDEX_EXPRESS_SAVER"/>
+					<xs:enumeration value="FEDEX_GROUND"/>
+					<xs:enumeration value="FIRST_OVERNIGHT"/>
+					<xs:enumeration value="GROUND_HOME_DELIVERY"/>
+					<xs:enumeration value="INTERNATIONAL_DISTRIBUTION_FREIGHT"/>
+					<xs:enumeration value="INTERNATIONAL_ECONOMY"/>
+					<xs:enumeration value="INTERNATIONAL_ECONOMY_DISTRIBUTION"/>
+					<xs:enumeration value="INTERNATIONAL_ECONOMY_FREIGHT"/>
+					<xs:enumeration value="INTERNATIONAL_FIRST"/>
+					<xs:enumeration value="INTERNATIONAL_PRIORITY"/>
+					<xs:enumeration value="INTERNATIONAL_PRIORITY_DISTRIBUTION"/>
+					<xs:enumeration value="INTERNATIONAL_PRIORITY_FREIGHT"/>
+					<xs:enumeration value="INTERNATIONAL_PRIORITY_PLUS"/>
+					<xs:enumeration value="PRIORITY_OVERNIGHT"/>
+					<xs:enumeration value="STANDARD_OVERNIGHT"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType name="PackagingType">
+				<xs:annotation>
+					<xs:documentation>Identifies the packaging used by the requestor for the package. See PackagingType for list of valid enumerated values.</xs:documentation>
+				</xs:annotation>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="FEDEX_10KG_BOX"/>
+					<xs:enumeration value="FEDEX_25KG_BOX"/>
+					<xs:enumeration value="FEDEX_BOX"/>
+					<xs:enumeration value="FEDEX_ENVELOPE"/>
+					<xs:enumeration value="FEDEX_PAK"/>
+					<xs:enumeration value="FEDEX_TUBE"/>
+					<xs:enumeration value="YOUR_PACKAGING"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:complexType name="Address">
+				<xs:annotation>
+					<xs:documentation>The descriptive data for a physical location. </xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="StreetLines" type="xs:string" maxOccurs="2">
+						<xs:annotation>
+							<xs:documentation>Combination of number, street name, etc. At least one line is required for a valid physical address; empty lines should not be included.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="City" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>Name of city, town, etc. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="StateOrProvinceCode" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>Identifying abbreviation for US state, Canada province, etc. Format and presence of this field will vary, depending on country.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="PostalCode" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>Identification of a region (usually small) for mail/package delivery. Format and presence of this field will vary, depending on country. First five characters will be accepted. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="UrbanizationCode" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Relevant only to addresses in Puerto Rico. In Puerto Rico, multiple addresses within the same ZIP code can have the same house number and street name. When this is the case, the urbanization code is needed to distinguish them.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="CountryCode" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>Identification of a country.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Residential" type="xs:boolean" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Indicates whether this address is residential (as opposed to commercial).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="Notification">
+				<xs:annotation>
+					<xs:documentation>The descriptive data regarding the results of the submitted transaction.</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="Severity" type="ns:NotificationSeverityType">
+						<xs:annotation>
+							<xs:documentation>Identifies the severity of the Notification item. See NotificationSeverityType for list of returned values.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Source" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>Identifies the source - what FedEx system, sub-system, or component generated the Notification item.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Code" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Identifies the error code generated by the FedEx system, sub-system or component.</xs:documentation>
+							<xs:appinfo>
+								<xs:MaxLength>8</xs:MaxLength>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Message" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Identifies the error message text.</xs:documentation>
+							<xs:appinfo>
+								<xs:MaxLength>255</xs:MaxLength>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="LocalizedMessage" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Identifies the error message text in the localization requested. Currently not supported.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="MessageParameters" type="ns:NotificationParameter" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Used internally by FedEx systems for message translation.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="NotificationParameter">
+				<xs:sequence>
+					<xs:element name="Id" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Name identifiying the type of the data in the element 'Value'</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Value" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The value that was used as the replacement parameter.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:simpleType name="NotificationSeverityType">
+				<xs:annotation>
+					<xs:documentation>Identifies the set of severity values for a Notification.</xs:documentation>
+				</xs:annotation>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="ERROR"/>
+					<xs:enumeration value="FAILURE"/>
+					<xs:enumeration value="NOTE"/>
+					<xs:enumeration value="SUCCESS"/>
+					<xs:enumeration value="WARNING"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:complexType name="ExpressTagAvailabilityRequest">
+				<xs:annotation>
+					<xs:documentation>FedEx Express Tag Availability request.</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="WebAuthenticationDetail" type="ns:WebAuthenticationDetail" minOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ClientDetail" type="ns:ClientDetail">
+						<xs:annotation>
+							<xs:documentation>The descriptive data identifying the client submitting the transaction.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="TransactionDetail" type="ns:TransactionDetail" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Version" type="ns:VersionId" minOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ReadyDateTime" type="xs:dateTime">
+						<xs:annotation>
+							<xs:documentation>Package ready date and time.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="OriginAddress" type="ns:Address">
+						<xs:annotation>
+							<xs:documentation>Sender postal code and country.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Service" type="ns:ServiceType">
+						<xs:annotation>
+							<xs:documentation>FedEx Service type.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Packaging" type="ns:PackagingType">
+						<xs:annotation>
+							<xs:documentation>FedEx Packaging type.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="ExpressTagAvailabilityReply">
+				<xs:annotation>
+					<xs:documentation>FedEx Express Tag Availability reply.</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="HighestSeverity" type="ns:NotificationSeverityType">
+						<xs:annotation>
+							<xs:documentation>Identifies the highest severity encountered when executing the request; in order from high to low: FAILURE, ERROR, WARNING, NOTE, SUCCESS.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Notifications" type="ns:Notification" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>The descriptive data detailing the status of a sumbitted transaction.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="TransactionDetail" type="ns:TransactionDetail" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Descriptive data that governs data payload language/translations.  The TransactionDetail from the request is echoed back to the caller in the corresponding reply.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Version" type="ns:VersionId" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="AccessTime" type="xs:time" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>This is the minimum time window that must be allocated for the FedEx courier to make the pickup. This is a length of time. The difference between the Business close time, (or the local Cutoff time if it is earlier than  the Business Close time), and the Ready Time must be equal to or exceed the access time.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ReadyTime" type="xs:time" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Latest time a FedEx courier will be available to pick up the package from the Sender.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Availability" type="ns:ExpressTagAvailabilityType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Indicates the Express Tag Service availability at the sender postal code indicated in the request.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:simpleType name="ExpressTagAvailabilityType">
+				<xs:annotation>
+					<xs:documentation>Identifies the Express Tag Service availability.</xs:documentation>
+				</xs:annotation>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="NEXT_DAY_AVAILABLE"/>
+					<xs:enumeration value="SAME_DAY_AND_NEXT_DAY_AVAILABLE"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:schema>
+	</types>
+	<message name="ExpressTagAvailabilityRequest">
+		<part name="ExpressTagAvailabilityRequest" element="ns:ExpressTagAvailabilityRequest"/>
+	</message>
+	<message name="ExpressTagAvailabilityReply">
+		<part name="ExpressTagAvailabilityReply" element="ns:ExpressTagAvailabilityReply"/>
+	</message>
+	<portType name="ReturnTagPortType">
+		<operation name="getExpressTagAvailability" parameterOrder="ExpressTagAvailabilityRequest">
+			<input message="ns:ExpressTagAvailabilityRequest"/>
+			<output message="ns:ExpressTagAvailabilityReply"/>
+		</operation>
+	</portType>
+	<binding name="ReturnTagServiceSoapBinding" type="ns:ReturnTagPortType">
+		<s1:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getExpressTagAvailability">
+			<s1:operation soapAction="getExpressTagAvailability" style="document"/>
+			<input>
+				<s1:body use="literal"/>
+			</input>
+			<output>
+				<s1:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="ReturnTagService">
+		<port name="ReturnTagServicePort" binding="ns:ReturnTagServiceSoapBinding">
+			<s1:address location="https://gatewaybeta.fedex.com:443/web-services"/>
+		</port>
+	</service>
+</definitions>

@@ -1,0 +1,833 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://fedex.com/ws/close/v2" xmlns:s1="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://fedex.com/ws/close/v2" name="CloseServiceDefinitions">
+	<types>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://fedex.com/ws/close/v2">
+			<xs:element name="SmartPostCloseRequest" type="ns:SmartPostCloseRequest"/>
+			<xs:element name="SmartPostCloseReply" type="ns:SmartPostCloseReply"/>
+			<xs:element name="GroundCloseRequest" type="ns:GroundCloseRequest"/>
+			<xs:element name="GroundCloseReply" type="ns:GroundCloseReply"/>
+			<xs:element name="GroundCloseReportsReprintRequest" type="ns:GroundCloseReportsReprintRequest"/>
+			<xs:element name="GroundCloseReportsReprintReply" type="ns:GroundCloseReportsReprintReply"/>
+			<xs:element name="GroundCloseWithDocumentsRequest" type="ns:GroundCloseWithDocumentsRequest"/>
+			<xs:element name="ReprintGroundCloseDocumentsRequest" type="ns:ReprintGroundCloseDocumentsRequest"/>
+			<xs:element name="GroundCloseDocumentsReply" type="ns:GroundCloseDocumentsReply"/>
+			<xs:simpleType name="CarrierCodeType">
+				<xs:annotation>
+					<xs:documentation>Identification of a FedEx operating company (transportation).</xs:documentation>
+				</xs:annotation>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="FDXC"/>
+					<xs:enumeration value="FDXE"/>
+					<xs:enumeration value="FDXG"/>
+					<xs:enumeration value="FXCC"/>
+					<xs:enumeration value="FXFR"/>
+					<xs:enumeration value="FXSP"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:complexType name="ClientDetail">
+				<xs:annotation>
+					<xs:documentation>Descriptive data for the client submitting a transaction.</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="AccountNumber" type="xs:string" minOccurs="0"/>
+					<xs:element name="MeterNumber" type="xs:string" minOccurs="0"/>
+					<xs:element name="IntegratorId" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Only used in transactions which require identification of the Fed Ex Office integrator.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Localization" type="ns:Localization" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The language to be used for human-readable Notification.localizedMessages in responses to the request containing this ClientDetail object. Different requests from the same client may contain different Localization data. (Contrast with TransactionDetail.localization, which governs data payload language/translation.)</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="CloseDocument">
+				<xs:sequence>
+					<xs:element name="Type" minOccurs="0" type="ns:CloseDocumentType"/>
+					<xs:element name="ShippingCycle" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The client's shipping cycle to which this shipment belongs.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ShippingDocumentDisposition" minOccurs="0" type="ns:ShippingDocumentDispositionType"/>
+					<xs:element name="AccessReference" minOccurs="0" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>The name under which a STORED or DEFERRED document is written.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Resolution" minOccurs="0" type="xs:nonNegativeInteger">
+						<xs:annotation>
+							<xs:documentation>Specifies the image resolution in DPI (dots per inch).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="CopiesToPrint" minOccurs="0" type="xs:positiveInteger">
+						<xs:annotation>
+							<xs:documentation>Number of copies to print.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Parts" minOccurs="0" maxOccurs="unbounded" type="ns:ShippingDocumentPart">
+						<xs:annotation>
+							<xs:documentation>One or more document parts which make up a single logical document, such as multiple pages of a single form.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="CloseDocumentFormat">
+				<xs:annotation>
+					<xs:documentation>Specifies characteristics of a shipping document to be produced.</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="Dispositions" minOccurs="0" maxOccurs="unbounded" type="ns:ShippingDocumentDispositionDetail">
+						<xs:annotation>
+							<xs:documentation>Specifies how to create, organize, and return the document.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="TopOfPageOffset" minOccurs="0" type="ns:LinearMeasure">
+						<xs:annotation>
+							<xs:documentation>Specifies how far down the page to move the beginning of the image; allows for printing on letterhead and other pre-printed stock.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ImageType" minOccurs="0" type="ns:ShippingDocumentImageType">
+						<xs:annotation>
+							<xs:documentation>The type of image or printer commands the image is to be formatted in.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="StockType" minOccurs="0" type="ns:ShippingDocumentStockType"/>
+					<xs:element name="ProvideInstructions" minOccurs="0" type="xs:boolean">
+						<xs:annotation>
+							<xs:documentation>For those shipping document types which have both a "form" and "instructions" component (e.g. NAFTA Certificate of Origin and General Agency Agreement), this field indicates whether to provide the instructions.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Localization" minOccurs="0" type="ns:Localization">
+						<xs:annotation>
+							<xs:documentation>Governs the language to be used for this individual document, independently from other content returned for the same shipment.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="CloseDocumentSpecification">
+				<xs:annotation>
+					<xs:documentation>Contains all data required for close-time documents to be produced in conjunction with a specific set of shipments. For January 2010, there are no applicable options for the COD report, the Manifest, or the Multiweight Report (they will only be available in TEXT format). Detail specifications will be added for those report types when customer-selectable options are implemented.</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="CloseDocumentTypes" minOccurs="0" maxOccurs="unbounded" type="ns:CloseDocumentType">
+						<xs:annotation>
+							<xs:documentation>Indicates the types of close documents requested by the caller.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Op950Detail" minOccurs="0" type="ns:Op950Detail">
+						<xs:annotation>
+							<xs:documentation>Specifies the production of the OP-950 document for hazardous materials.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:simpleType name="CloseDocumentType">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="COD_REPORT"/>
+					<xs:enumeration value="MANIFEST"/>
+					<xs:enumeration value="MULTIWEIGHT_REPORT"/>
+					<xs:enumeration value="OP_950"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType name="CloseReportType">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="ALL"/>
+					<xs:enumeration value="COD"/>
+					<xs:enumeration value="HAZMAT"/>
+					<xs:enumeration value="MANIFEST"/>
+					<xs:enumeration value="MULTIWEIGHT"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:complexType name="CustomerImageUsage">
+				<xs:sequence>
+					<xs:element name="Type" minOccurs="0" type="ns:CustomerImageUsageType"/>
+					<xs:element name="Id" minOccurs="0" type="ns:ImageId"/>
+					<xs:element name="InternalId" minOccurs="0" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>Internal Id used by INET to identify customer provided images during documents generation. Ex COO etc ...</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="InternalImageType" minOccurs="0" type="ns:InternalImageType">
+						<xs:annotation>
+							<xs:documentation>Internal image type used by INET to identify customer provided images during documents generation. Ex COO etc ..</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:simpleType name="CustomerImageUsageType">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="LETTER_HEAD"/>
+					<xs:enumeration value="SIGNATURE"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType name="EMailNotificationRecipientType">
+				<xs:annotation>
+					<xs:documentation>Identifies the set of valid email notification recipient types. For SHIPPER, RECIPIENT and BROKER the email address asssociated with their definitions will be used, any email address sent with the email notification for these three email notification recipient types will be ignored.</xs:documentation>
+				</xs:annotation>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="BROKER"/>
+					<xs:enumeration value="OTHER"/>
+					<xs:enumeration value="RECIPIENT"/>
+					<xs:enumeration value="SHIPPER"/>
+					<xs:enumeration value="THIRD_PARTY"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:complexType name="GroundCloseDocumentsReply">
+				<xs:sequence>
+					<xs:element name="HighestSeverity" minOccurs="1" type="ns:NotificationSeverityType">
+						<xs:annotation>
+							<xs:documentation>This indicates the highest level of severity of all the notifications returned in this reply.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Notifications" minOccurs="1" maxOccurs="unbounded" type="ns:Notification">
+						<xs:annotation>
+							<xs:documentation>The descriptive data regarding the results of the submitted transaction.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="TransactionDetail" minOccurs="0" type="ns:TransactionDetail">
+						<xs:annotation>
+							<xs:documentation>Descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Version" minOccurs="1" type="ns:VersionId">
+						<xs:annotation>
+							<xs:documentation>Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="CloseDocuments" minOccurs="0" maxOccurs="unbounded" type="ns:CloseDocument">
+						<xs:annotation>
+							<xs:documentation>The actual document contents for all provided reports.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="GroundCloseReply">
+				<xs:sequence>
+					<xs:element name="HighestSeverity" type="ns:NotificationSeverityType" minOccurs="1"/>
+					<xs:element name="Notifications" type="ns:Notification" minOccurs="1" maxOccurs="unbounded"/>
+					<xs:element name="TransactionDetail" type="ns:TransactionDetail" minOccurs="0"/>
+					<xs:element name="Version" type="ns:VersionId" minOccurs="1"/>
+					<xs:element name="CodReport" type="xs:base64Binary" minOccurs="0"/>
+					<xs:element name="HazMatCertificate" type="xs:base64Binary" minOccurs="0"/>
+					<xs:element name="Manifest" type="ns:ManifestFile" minOccurs="0"/>
+					<xs:element name="MultiweightReport" type="xs:base64Binary" minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="GroundCloseReportsReprintReply">
+				<xs:sequence>
+					<xs:element name="HighestSeverity" type="ns:NotificationSeverityType" minOccurs="1"/>
+					<xs:element name="Notifications" type="ns:Notification" minOccurs="1" maxOccurs="unbounded"/>
+					<xs:element name="TransactionDetail" type="ns:TransactionDetail" minOccurs="0"/>
+					<xs:element name="Version" type="ns:VersionId" minOccurs="1"/>
+					<xs:element name="CodReport" type="xs:base64Binary" minOccurs="0"/>
+					<xs:element name="HazMatCertificate" type="xs:base64Binary" minOccurs="0"/>
+					<xs:element name="Manifests" type="ns:ManifestFile" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="GroundCloseReportsReprintRequest">
+				<xs:sequence>
+					<xs:element name="WebAuthenticationDetail" type="ns:WebAuthenticationDetail">
+						<xs:annotation>
+							<xs:documentation>The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ClientDetail" type="ns:ClientDetail"/>
+					<xs:element name="TransactionDetail" type="ns:TransactionDetail" minOccurs="0"/>
+					<xs:element name="Version" type="ns:VersionId" minOccurs="1"/>
+					<xs:element name="ReportDate" type="xs:date" minOccurs="0"/>
+					<xs:element name="TrackingNumber" type="xs:string" minOccurs="0"/>
+					<xs:element name="CloseReportType" type="ns:CloseReportType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="GroundCloseRequest">
+				<xs:sequence>
+					<xs:element name="WebAuthenticationDetail" type="ns:WebAuthenticationDetail">
+						<xs:annotation>
+							<xs:documentation>The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ClientDetail" type="ns:ClientDetail"/>
+					<xs:element name="TransactionDetail" type="ns:TransactionDetail" minOccurs="0"/>
+					<xs:element name="Version" type="ns:VersionId" minOccurs="1"/>
+					<xs:element name="TimeUpToWhichShipmentsAreToBeClosed" type="xs:dateTime" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Identifies the date and time up to which unclosed shipments are to be closed. Both the date and time portions of the string are expected to be used. The time is the local time based on the shipper's time zone. The date component must be in the format: YYYY-MM-DD (e.g. 2009-04-26). The time component must be in the format: HH:MM:SS using a 24 hour clock (e.g. 11:00 a.m. is 11:00:00, whereas 5:00 p.m. is 17:00:00). The date and time parts are separated by a T (e.g. 2009-04-26T17:00:00).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="GroundCloseWithDocumentsRequest">
+				<xs:sequence>
+					<xs:element name="WebAuthenticationDetail" type="ns:WebAuthenticationDetail">
+						<xs:annotation>
+							<xs:documentation>The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ClientDetail" type="ns:ClientDetail">
+						<xs:annotation>
+							<xs:documentation>Descriptive data identifying the client submitting the transaction.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="TransactionDetail" minOccurs="0" type="ns:TransactionDetail">
+						<xs:annotation>
+							<xs:documentation>Descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Version" minOccurs="1" type="ns:VersionId">
+						<xs:annotation>
+							<xs:documentation>Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).</xs:documentation>
+						</xs:annotation>
+					</xs:element>					
+					<xs:element name="CloseDate" minOccurs="0" type="xs:date">
+						<xs:annotation>
+							<xs:documentation>Date on which shipments were closed.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="CloseDocumentSpecification" minOccurs="0" type="ns:CloseDocumentSpecification">
+						<xs:annotation>
+							<xs:documentation>Specifies characteristics of document(s) to be returned for this request.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:simpleType name="ImageId">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="IMAGE_1"/>
+					<xs:enumeration value="IMAGE_2"/>
+					<xs:enumeration value="IMAGE_3"/>
+					<xs:enumeration value="IMAGE_4"/>
+					<xs:enumeration value="IMAGE_5"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType name="InternalImageType">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="LETTER_HEAD"/>
+					<xs:enumeration value="SIGNATURE"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:complexType name="LinearMeasure">
+				<xs:annotation>
+					<xs:documentation>Represents a one-dimensional measurement in small units (e.g. suitable for measuring a package or document), contrasted with Distance, which represents a large one-dimensional measurement (e.g. distance between cities).</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="Value" minOccurs="0" type="xs:decimal">
+						<xs:annotation>
+							<xs:documentation>The numerical quantity of this measurement.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Units" minOccurs="0" type="ns:LinearUnits">
+						<xs:annotation>
+							<xs:documentation>The units for this measurement.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:simpleType name="LinearUnits">
+				<xs:annotation>
+					<xs:documentation>CM = centimeters, IN = inches</xs:documentation>
+				</xs:annotation>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="CM"/>
+					<xs:enumeration value="IN"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:complexType name="Localization">
+				<xs:sequence>
+					<xs:element name="LanguageCode" type="xs:string" minOccurs="0"/>
+					<xs:element name="LocaleCode" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="ManifestFile">
+				<xs:sequence>
+					<xs:element name="FileName" type="xs:string" minOccurs="0"/>
+					<xs:element name="File" type="xs:base64Binary" minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="Notification">
+				<xs:sequence>
+					<xs:element name="Severity" type="ns:NotificationSeverityType" minOccurs="0"/>
+					<xs:element name="Source" type="xs:string" minOccurs="0"/>
+					<xs:element name="Code" type="xs:string" minOccurs="0"/>
+					<xs:element name="Message" type="xs:string" minOccurs="0"/>
+					<xs:element name="LocalizedMessage" type="xs:string" minOccurs="0"/>
+					<xs:element name="MessageParameters" type="ns:NotificationParameter" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A collection of name/value pairs that provide specific data to help the client determine the nature of an error (or warning, etc.) witout having to parse the message string.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="NotificationParameter">
+				<xs:sequence>
+					<xs:element name="Id" type="xs:string" minOccurs="0"/>
+					<xs:element name="Value" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:simpleType name="NotificationSeverityType">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="ERROR"/>
+					<xs:enumeration value="FAILURE"/>
+					<xs:enumeration value="NOTE"/>
+					<xs:enumeration value="SUCCESS"/>
+					<xs:enumeration value="WARNING"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:complexType name="Op950Detail">
+				<xs:annotation>
+					<xs:documentation>The instructions indicating how to print the OP-950 form for hazardous materials.</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="Format" minOccurs="0" type="ns:CloseDocumentFormat">
+						<xs:annotation>
+							<xs:documentation>Specifies characteristics of a shipping document to be produced.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="CustomerImageUsages" minOccurs="0" maxOccurs="unbounded" type="ns:CustomerImageUsage">
+						<xs:annotation>
+							<xs:documentation>Specifies the usage and identification of a customer supplied image to be used on this document.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="SignatureName" minOccurs="0" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>Data field to be used when a name is to be printed in the document instead of (or in addition to) a signature image.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:simpleType name="ReprintGroundCloseDocumentsOptionType">
+				<xs:annotation>
+					<xs:documentation>Identifies the requested options to reprinting Ground Close Documents</xs:documentation>
+				</xs:annotation>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="BY_SHIP_DATE"/>
+					<xs:enumeration value="BY_TRACKING_NUMBER"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:complexType name="ReprintGroundCloseDocumentsRequest">
+				<xs:sequence>
+					<xs:element name="WebAuthenticationDetail" type="ns:WebAuthenticationDetail">
+						<xs:annotation>
+							<xs:documentation>The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ClientDetail" type="ns:ClientDetail">
+						<xs:annotation>
+							<xs:documentation>Descriptive data identifying the client submitting the transaction.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="TransactionDetail" minOccurs="0" type="ns:TransactionDetail">
+						<xs:annotation>
+							<xs:documentation>Descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Version" minOccurs="1" type="ns:VersionId">
+						<xs:annotation>
+							<xs:documentation>Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).</xs:documentation>
+						</xs:annotation>
+					</xs:element>					
+					<xs:element name="ReprintOption" minOccurs="0" type="ns:ReprintGroundCloseDocumentsOptionType"/>
+					<xs:element name="CloseDate" minOccurs="0" type="xs:date">
+						<xs:annotation>
+							<xs:documentation>Date on which shipments were closed.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="TrackingNumber" minOccurs="0" type="xs:string"/>
+					<xs:element name="CloseDocumentSpecification" minOccurs="0" type="ns:CloseDocumentSpecification">
+						<xs:annotation>
+							<xs:documentation>Specifies characteristics of document(s) to be returned for this request.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="ShippingDocumentDispositionDetail">
+				<xs:annotation>
+					<xs:documentation>Each occurrence of this class specifies a particular way in which a kind of shipping document is to be produced and provided.</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="DispositionType" minOccurs="0" type="ns:ShippingDocumentDispositionType">
+						<xs:annotation>
+							<xs:documentation>Values in this field specify how to create and return the document.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Grouping" minOccurs="0" type="ns:ShippingDocumentGroupingType">
+						<xs:annotation>
+							<xs:documentation>Specifies how to organize all documents of this type.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="StorageDetail" minOccurs="0" type="ns:ShippingDocumentStorageDetail">
+						<xs:annotation>
+							<xs:documentation>Specifies how to store document images.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="EMailDetail" minOccurs="0" type="ns:ShippingDocumentEMailDetail">
+						<xs:annotation>
+							<xs:documentation>Specifies how to e-mail document images.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="PrintDetail" minOccurs="0" type="ns:ShippingDocumentPrintDetail">
+						<xs:annotation>
+							<xs:documentation>Specifies how a queued document is to be printed.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:simpleType name="ShippingDocumentDispositionType">
+				<xs:annotation>
+					<xs:documentation>Specifies how to return a shipping document to the caller.</xs:documentation>
+				</xs:annotation>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="CONFIRMED"/>
+					<xs:enumeration value="DEFERRED"/>
+					<xs:enumeration value="EMAILED"/>
+					<xs:enumeration value="QUEUED"/>
+					<xs:enumeration value="RETURNED"/>
+					<xs:enumeration value="STORED"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:complexType name="ShippingDocumentEMailDetail">
+				<xs:annotation>
+					<xs:documentation>Specifies how to e-mail shipping documents.</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="EMailRecipients" minOccurs="0" maxOccurs="unbounded" type="ns:ShippingDocumentEMailRecipient">
+						<xs:annotation>
+							<xs:documentation>Provides the roles and email addresses for e-mail recipients.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Grouping" minOccurs="0" type="ns:ShippingDocumentEMailGroupingType">
+						<xs:annotation>
+							<xs:documentation>Identifies the convention by which documents are to be grouped as e-mail attachments.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:simpleType name="ShippingDocumentEMailGroupingType">
+				<xs:annotation>
+					<xs:documentation>Identifies the convention by which documents are to be grouped as e-mail attachments.</xs:documentation>
+				</xs:annotation>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="BY_RECIPIENT"/>
+					<xs:enumeration value="NONE"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:complexType name="ShippingDocumentEMailRecipient">
+				<xs:annotation>
+					<xs:documentation>Specifies an individual recipient of e-mailed shipping document(s).</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="RecipientType" minOccurs="0" type="ns:EMailNotificationRecipientType">
+						<xs:annotation>
+							<xs:documentation>Identifies the relationship of this recipient in the shipment.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Address" minOccurs="0" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>Address to which the document is to be sent.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:simpleType name="ShippingDocumentGroupingType">
+				<xs:annotation>
+					<xs:documentation>Specifies how to organize all shipping documents of the same type.</xs:documentation>
+				</xs:annotation>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="CONSOLIDATED_BY_DOCUMENT_TYPE"/>
+					<xs:enumeration value="INDIVIDUAL"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType name="ShippingDocumentImageType">
+				<xs:annotation>
+					<xs:documentation>Specifies the image format used for a shipping document.</xs:documentation>
+				</xs:annotation>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="DIB"/>
+					<xs:enumeration value="DOC"/>
+					<xs:enumeration value="DPL"/>
+					<xs:enumeration value="EPL2"/>
+					<xs:enumeration value="GIF"/>
+					<xs:enumeration value="PDF"/>
+					<xs:enumeration value="PNG"/>
+					<xs:enumeration value="RTF"/>
+					<xs:enumeration value="TEXT"/>
+					<xs:enumeration value="ZPLII"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType name="ShippingDocumentNamingType">
+				<xs:annotation>
+					<xs:documentation>Identifies the convention by which file names are constructed for STORED or DEFERRED documents.</xs:documentation>
+				</xs:annotation>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="FAST"/>
+					<xs:enumeration value="LEGACY_FXRS"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:complexType name="ShippingDocumentPart">
+				<xs:annotation>
+					<xs:documentation>A single part of a shipping document, such as one page of a multiple-page document whose format requires a separate image per page.</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="DocumentPartSequenceNumber" minOccurs="0" type="xs:positiveInteger">
+						<xs:annotation>
+							<xs:documentation>The one-origin position of this part within a document.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Image" minOccurs="0" type="xs:base64Binary">
+						<xs:annotation>
+							<xs:documentation>Graphic or printer commands for this image within a document.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="ShippingDocumentPrintDetail">
+				<xs:annotation>
+					<xs:documentation>Specifies printing options for a shipping document.</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="PrinterId" minOccurs="0" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>Provides environment-specific printer identification.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:simpleType name="ShippingDocumentStockType">
+				<xs:annotation>
+					<xs:documentation>Specifies the type of paper (stock) on which a document will be printed.</xs:documentation>
+				</xs:annotation>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="OP_900_LG"/>
+					<xs:enumeration value="OP_900_LL"/>
+					<xs:enumeration value="OP_950"/>
+					<xs:enumeration value="PAPER_4X6"/>
+					<xs:enumeration value="PAPER_LETTER"/>
+					<xs:enumeration value="STOCK_4X6"/>
+					<xs:enumeration value="STOCK_4X6.75_LEADING_DOC_TAB"/>
+					<xs:enumeration value="STOCK_4X6.75_TRAILING_DOC_TAB"/>
+					<xs:enumeration value="STOCK_4X8"/>
+					<xs:enumeration value="STOCK_4X9_LEADING_DOC_TAB"/>
+					<xs:enumeration value="STOCK_4X9_TRAILING_DOC_TAB"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:complexType name="ShippingDocumentStorageDetail">
+				<xs:annotation>
+					<xs:documentation>Specifies how to store shipping documents.</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="FilePath" minOccurs="0" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>Provides the path to be used for STORED or DEFERRED documents.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="FileNaming" minOccurs="0" type="ns:ShippingDocumentNamingType">
+						<xs:annotation>
+							<xs:documentation>Identifies the convention by which file names are constructed for STORED or DEFERRED documents.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="FileSuffix" minOccurs="0" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>Suffix to be placed at the end of the file name; required on some platforms to determine file type.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="SmartPostCloseReply">
+				<xs:sequence>
+					<xs:element name="HighestSeverity" type="ns:NotificationSeverityType" minOccurs="1"/>
+					<xs:element name="Notifications" type="ns:Notification" minOccurs="1" maxOccurs="unbounded"/>
+					<xs:element name="TransactionDetail" type="ns:TransactionDetail" minOccurs="0"/>
+					<xs:element name="Version" type="ns:VersionId" minOccurs="1"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="SmartPostCloseRequest">
+				<xs:sequence>
+					<xs:element name="WebAuthenticationDetail" type="ns:WebAuthenticationDetail">
+						<xs:annotation>
+							<xs:documentation>The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ClientDetail" type="ns:ClientDetail"/>
+					<xs:element name="TransactionDetail" type="ns:TransactionDetail" minOccurs="0"/>
+					<xs:element name="Version" type="ns:VersionId" minOccurs="1"/>
+					<xs:element name="HubId" type="xs:string" minOccurs="0"/>
+					<xs:element name="CustomerManifestId" type="xs:string" minOccurs="0"/>
+					<xs:element name="DestinationCountryCode" type="xs:string" minOccurs="0"/>
+					<xs:element name="PickUpCarrier" type="ns:CarrierCodeType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="TransactionDetail">
+				<xs:sequence>
+					<xs:element name="CustomerTransactionId" type="xs:string" minOccurs="0"/>
+					<xs:element name="Localization" type="ns:Localization" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Governs data payload language/translations (contrasted with ClientDetail.localization, which governs Notification.localizedMessage language selection).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="VersionId">
+				<xs:annotation>
+					<xs:documentation>Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="ServiceId" type="xs:string" minOccurs="1" fixed="clos"/>
+					<xs:element name="Major" type="xs:int" minOccurs="1" fixed="2">
+						<xs:annotation>
+							<xs:documentation>Service business level.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Intermediate" type="xs:int" minOccurs="1" fixed="1">
+						<xs:annotation>
+							<xs:documentation>Service interface level.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Minor" type="xs:int" minOccurs="1" fixed="0">
+						<xs:annotation>
+							<xs:documentation>Service code level.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="WebAuthenticationDetail">
+				<xs:annotation>
+					<xs:documentation>The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="UserCredential" type="ns:WebAuthenticationCredential" minOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Credential used to authenticate a specific software application. This value is provided by FedEx after registration.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="WebAuthenticationCredential">
+				<xs:annotation>
+					<xs:documentation>Two part authentication string used for the sender's identity.</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="Key" type="xs:string" minOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Publicly known part of authentication key used for authentication. This value is provided by FedEx after registration.</xs:documentation>
+							<xs:appinfo>
+								<xs:MaxLength>16</xs:MaxLength>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Password" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Secret part of authentication key used for authentication. This value is provided by FedEx after registration.</xs:documentation>
+							<xs:appinfo>
+								<xs:MaxLength>25</xs:MaxLength>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</types>
+	<message name="SmartPostCloseRequest">
+		<part name="SmartPostCloseRequest" element="ns:SmartPostCloseRequest"/>
+	</message>
+	<message name="SmartPostCloseReply">
+		<part name="SmartPostCloseReply" element="ns:SmartPostCloseReply"/>
+	</message>
+	<message name="GroundCloseRequest">
+		<part name="GroundCloseRequest" element="ns:GroundCloseRequest"/>
+	</message>
+	<message name="GroundCloseReply">
+		<part name="GroundCloseReply" element="ns:GroundCloseReply"/>
+	</message>
+	<message name="GroundCloseReportsReprintRequest">
+		<part name="GroundCloseReportsReprintRequest" element="ns:GroundCloseReportsReprintRequest"/>
+	</message>
+	<message name="GroundCloseReportsReprintReply">
+		<part name="GroundCloseReportsReprintReply" element="ns:GroundCloseReportsReprintReply"/>
+	</message>
+	<message name="GroundCloseWithDocumentsRequest">
+		<part name="GroundCloseWithDocumentsRequest" element="ns:GroundCloseWithDocumentsRequest"/>
+	</message>
+	<message name="ReprintGroundCloseDocumentsRequest">
+		<part name="ReprintGroundCloseDocumentsRequest" element="ns:ReprintGroundCloseDocumentsRequest"/>
+	</message>
+	<message name="GroundCloseDocumentsReply">
+		<part name="GroundCloseDocumentsReply" element="ns:GroundCloseDocumentsReply"/>
+	</message>
+	<portType name="ClosePortType">
+		<operation name="smartPostClose" parameterOrder="SmartPostCloseRequest">
+			<input message="ns:SmartPostCloseRequest"/>
+			<output message="ns:SmartPostCloseReply"/>
+		</operation>
+		<operation name="groundClose" parameterOrder="GroundCloseRequest">
+			<input message="ns:GroundCloseRequest"/>
+			<output message="ns:GroundCloseReply"/>
+		</operation>
+		<operation name="groundCloseReportsReprint" parameterOrder="GroundCloseReportsReprintRequest">
+			<input message="ns:GroundCloseReportsReprintRequest"/>
+			<output message="ns:GroundCloseReportsReprintReply"/>
+		</operation>
+		<operation name="groundCloseWithDocuments" parameterOrder="GroundCloseWithDocumentsRequest">
+			<input message="ns:GroundCloseWithDocumentsRequest"/>
+			<output message="ns:GroundCloseDocumentsReply"/>
+		</operation>
+		<operation name="reprintGroundCloseDocuments" parameterOrder="ReprintGroundCloseDocumentsRequest">
+			<input message="ns:ReprintGroundCloseDocumentsRequest"/>
+			<output message="ns:GroundCloseDocumentsReply"/>
+		</operation>
+	</portType>
+	<binding name="CloseServiceSoapBinding" type="ns:ClosePortType">
+		<s1:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="smartPostClose">
+			<s1:operation soapAction="smartPostClose" style="document"/>
+			<input>
+				<s1:body use="literal"/>
+			</input>
+			<output>
+				<s1:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="groundClose">
+			<s1:operation soapAction="groundClose" style="document"/>
+			<input>
+				<s1:body use="literal"/>
+			</input>
+			<output>
+				<s1:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="groundCloseReportsReprint">
+			<s1:operation soapAction="groundCloseReportsReprint" style="document"/>
+			<input>
+				<s1:body use="literal"/>
+			</input>
+			<output>
+				<s1:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="groundCloseWithDocuments">
+			<s1:operation soapAction="groundCloseWithDocuments" style="document"/>
+			<input>
+				<s1:body use="literal"/>
+			</input>
+			<output>
+				<s1:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="reprintGroundCloseDocuments">
+			<s1:operation soapAction="reprintGroundCloseDocuments" style="document"/>
+			<input>
+				<s1:body use="literal"/>
+			</input>
+			<output>
+				<s1:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="CloseService">
+		<port name="CloseServicePort" binding="ns:CloseServiceSoapBinding">
+			<s1:address location="https://gatewaybeta.fedex.com:443/web-services/close"/>
+		</port>
+	</service>
+</definitions>

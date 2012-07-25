@@ -1,0 +1,38 @@
+<?php
+namespace FedEx\TrackService\SimpleType;
+
+/**
+ * The type of track to be performed.
+ *
+ * @version     $Revision: 4 $
+ * @author      Jeremy Dunn (www.jsdunn.info)
+ * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @package     PHP FedEx API wrapper
+ * @subpackage  Track Service
+ */
+class TrackIdentifierType
+    extends AbstractSimpleType
+{
+    const _BILL_OF_LADING = 'BILL_OF_LADING';
+    const _COD_RETURN_TRACKING_NUMBER = 'COD_RETURN_TRACKING_NUMBER';
+    const _CUSTOMER_AUTHORIZATION_NUMBER = 'CUSTOMER_AUTHORIZATION_NUMBER';
+    const _CUSTOMER_REFERENCE = 'CUSTOMER_REFERENCE';
+    const _DEPARTMENT = 'DEPARTMENT';
+    const _FREE_FORM_REFERENCE = 'FREE_FORM_REFERENCE';
+    const _GROUND_INTERNATIONAL = 'GROUND_INTERNATIONAL';
+    const _GROUND_SHIPMENT_ID = 'GROUND_SHIPMENT_ID';
+    const _GROUP_MPS = 'GROUP_MPS';
+    const _INVOICE = 'INVOICE';
+    const _JOB_GLOBAL_TRACKING_NUMBER = 'JOB_GLOBAL_TRACKING_NUMBER';
+    const _ORDER_GLOBAL_TRACKING_NUMBER = 'ORDER_GLOBAL_TRACKING_NUMBER';
+    const _ORDER_TO_PAY_NUMBER = 'ORDER_TO_PAY_NUMBER';
+    const _PARTNER_CARRIER_NUMBER = 'PARTNER_CARRIER_NUMBER';
+    const _PART_NUMBER = 'PART_NUMBER';
+    const _PURCHASE_ORDER = 'PURCHASE_ORDER';
+    const _RETURNED_TO_SHIPPER_TRACKING_NUMBER = 'RETURNED_TO_SHIPPER_TRACKING_NUMBER';
+    const _RETURN_MATERIALS_AUTHORIZATION = 'RETURN_MATERIALS_AUTHORIZATION';
+    const _SHIPPER_REFERENCE = 'SHIPPER_REFERENCE';
+    const _STANDARD_MPS = 'STANDARD_MPS';
+    const _TRACKING_NUMBER_OR_DOORTAG = 'TRACKING_NUMBER_OR_DOORTAG';
+    const _TRANSPORTATION_CONTROL_NUMBER = 'TRANSPORTATION_CONTROL_NUMBER';
+}

@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://fedex.com/ws/addressvalidation/v2" xmlns:s1="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://fedex.com/ws/addressvalidation/v2" name="AddressValidationServiceDefinitions">
+	<types>
+		<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://fedex.com/ws/addressvalidation/v2" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			<xs:element name="AddressValidationRequest" type="ns:AddressValidationRequest"/>
+			<xs:element name="AddressValidationReply" type="ns:AddressValidationReply"/>
+			<xs:complexType name="AddressValidationRequest">
+				<xs:sequence>
+					<xs:element name="WebAuthenticationDetail" type="ns:WebAuthenticationDetail" minOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ClientDetail" type="ns:ClientDetail">
+						<xs:annotation>
+							<xs:documentation>Descriptive data identifying the client submitting the transaction.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="TransactionDetail" type="ns:TransactionDetail" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Version" type="ns:VersionId">
+						<xs:annotation>
+							<xs:documentation>Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="RequestTimestamp" type="xs:dateTime"/>
+					<xs:element name="Options" type="ns:AddressValidationOptions"/>
+					<xs:element name="AddressesToValidate" type="ns:AddressToValidate" maxOccurs="100"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="AddressValidationReply">
+				<xs:sequence>
+					<xs:element name="HighestSeverity" type="ns:NotificationSeverityType"/>
+					<xs:element name="Notifications" type="ns:Notification" maxOccurs="unbounded"/>
+					<xs:element name="TransactionDetail" type="ns:TransactionDetail" minOccurs="0"/>
+					<xs:element name="Version" type="ns:VersionId" minOccurs="0"/>
+					<xs:element name="ReplyTimestamp" type="xs:dateTime"/>
+					<xs:element name="AddressResults" type="ns:AddressValidationResult" maxOccurs="100"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="AddressValidationOptions">
+				<xs:sequence>
+					<xs:element name="VerifyAddresses" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="CheckResidentialStatus" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="MaximumNumberOfMatches" minOccurs="0">
+						<xs:simpleType>
+							<xs:restriction base="xs:positiveInteger">
+								<xs:maxInclusive value="10"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element name="StreetAccuracy" type="ns:AddressValidationAccuracyType" minOccurs="0"/>
+					<xs:element name="DirectionalAccuracy" type="ns:AddressValidationAccuracyType" minOccurs="0"/>
+					<xs:element name="CompanyNameAccuracy" type="ns:AddressValidationAccuracyType" minOccurs="0"/>
+					<xs:element name="ConvertToUpperCase" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="RecognizeAlternateCityNames" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="ReturnParsedElements" type="xs:boolean" minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="AddressToValidate">
+				<xs:sequence>
+					<xs:element name="AddressId" type="xs:string" minOccurs="0"/>
+					<xs:element name="CompanyName" type="xs:string" minOccurs="0"/>
+					<xs:element name="Address" type="ns:Address"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="AddressValidationResult">
+				<xs:sequence>
+					<xs:element name="AddressId" type="xs:string" minOccurs="0"/>
+					<xs:element name="ProposedAddressDetails" type="ns:ProposedAddressDetail" minOccurs="0" maxOccurs="10"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="WebAuthenticationDetail">
+				<xs:annotation>
+					<xs:documentation>Used in authentication of the sender's identity.</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="UserCredential" type="ns:WebAuthenticationCredential" minOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Credential used to authenticate a specific software application. This value is provided by FedEx after registration.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="WebAuthenticationCredential">
+				<xs:annotation>
+					<xs:documentation>Two part authentication string used for the sender's identity.</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="Key" type="xs:string" minOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Identifying part of the authentication key. This value is provided by FedEx after registration.</xs:documentation>
+							<xs:appinfo>
+								<xs:MaxLength>16</xs:MaxLength>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Password" type="xs:string" minOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Secret part of authentication key used for authentication. This value is provided by FedEx after registration.</xs:documentation>
+							<xs:appinfo>
+								<xs:MaxLength>25</xs:MaxLength>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="ProposedAddressDetail">
+				<xs:sequence>
+					<xs:element name="Score" type="xs:integer" minOccurs="0"/>
+					<xs:element name="Changes" type="ns:AddressValidationChangeType" minOccurs="1" maxOccurs="unbounded"/>
+					<xs:element name="ResidentialStatus" type="ns:ResidentialStatusType" minOccurs="0"/>
+					<xs:element name="DeliveryPointValidation" type="ns:DeliveryPointValidationType" minOccurs="0"/>
+					<xs:element name="CompanyName" type="xs:string" minOccurs="0"/>
+					<xs:element name="Address" type="ns:Address"/>
+					<xs:element name="ParsedCompanyName" type="ns:ParsedAddressPart" minOccurs="0"/>
+					<xs:element name="ParsedAddress" type="ns:ParsedAddress" minOccurs="0"/>
+					<xs:element name="RemovedNonAddressData" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="ParsedAddress">
+				<xs:sequence>
+					<xs:element name="ParsedUrbanizationCode" type="ns:ParsedAddressPart" minOccurs="0"/>
+					<xs:element name="ParsedStreetLine" type="ns:ParsedAddressPart" minOccurs="0" maxOccurs="4"/>
+					<xs:element name="ParsedCity" type="ns:ParsedAddressPart" minOccurs="0"/>
+					<xs:element name="ParsedStateOrProvinceCode" type="ns:ParsedAddressPart" minOccurs="0"/>
+					<xs:element name="ParsedPostalCode" type="ns:ParsedAddressPart" minOccurs="0"/>
+					<xs:element name="ParsedCountryCode" type="ns:ParsedAddressPart" minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="ParsedAddressPart">
+				<xs:sequence>
+					<xs:element name="Elements" type="ns:ParsedElement" minOccurs="1" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="ParsedElement">
+				<xs:sequence>
+					<xs:element name="Name" type="xs:string"/>
+					<xs:element name="Value" type="xs:string"/>
+					<xs:element name="Changes" type="ns:AddressValidationChangeType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:simpleType name="ResidentialStatusType">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="UNDETERMINED"/>
+					<xs:enumeration value="BUSINESS"/>
+					<xs:enumeration value="RESIDENTIAL"/>
+					<xs:enumeration value="INSUFFICIENT_DATA"/>
+					<xs:enumeration value="UNAVAILABLE"/>
+					<xs:enumeration value="NOT_APPLICABLE_TO_COUNTRY"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType name="DeliveryPointValidationType">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="CONFIRMED"/>
+					<xs:enumeration value="UNCONFIRMED"/>
+					<xs:enumeration value="UNAVAILABLE"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType name="AddressValidationAccuracyType">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="EXACT"/>
+					<xs:enumeration value="TIGHT"/>
+					<xs:enumeration value="MEDIUM"/>
+					<xs:enumeration value="LOOSE"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType name="AddressValidationChangeType">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="APARTMENT_NUMBER_NOT_FOUND">
+						<xs:annotation>
+							<xs:documentation>
+								(EAS 100) Apartment number not found for this address.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="APARTMENT_NUMBER_REQUIRED">
+						<xs:annotation>
+							<xs:documentation>
+								(EAS 101) Address requires apartment number.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="NORMALIZED">
+						<xs:annotation>
+							<xs:documentation>
+								(EAS 102) Address normalized - abbreviations applied.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="REMOVED_DATA">
+						<xs:annotation>
+							<xs:documentation>
+								(EAS 103) Dropped data.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="BOX_NUMBER_REQUIRED">
+						<xs:annotation>
+							<xs:documentation>
+								(EAS 104) Address requires box number.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="NO_CHANGES">
+						<xs:annotation>
+							<xs:documentation>
+								(EAS 200) Match - no changes applied to input address.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="MODIFIED_TO_ACHIEVE_MATCH">
+						<xs:annotation>
+							<xs:documentation>
+								(EAS 201) Address modified to achieve match.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="STREET_RANGE_MATCH">
+						<xs:annotation>
+							<xs:documentation>
+								(EAS 202) Match to street range.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="BOX_NUMBER_MATCH">
+						<xs:annotation>
+							<xs:documentation>
+								(EAS 203) Match to box number.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="RR_OR_HC_MATCH">
+						<xs:annotation>
+							<xs:documentation>
+								(EAS 204) Match to Rural Route (RR) / Highway Contract (HC) address.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="CITY_MATCH">
+						<xs:annotation>
+							<xs:documentation>
+								(EAS 205) Match to city (non-US, non-Canada).
+							</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="POSTAL_CODE_MATCH">
+						<xs:annotation>
+							<xs:documentation>
+								(EAS 206) Match to postal code only (non-street)
+							</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="RR_OR_HC_BOX_NUMBER_NEEDED">
+						<xs:annotation>
+							<xs:documentation>
+								(EAS 207) Need box number for Rural Route / Highway Contract (HC) match.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="FORMATTED_FOR_COUNTRY">
+						<xs:annotation>
+							<xs:documentation>
+								(EAS 208) Formatting performed for country (non-US, non-Canada).
+							</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="APO_OR_FPO_MATCH">
+						<xs:annotation>
+							<xs:documentation>
+								(EAS 209) Match to military address (e.g. APO/FPO).
+							</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="GENERAL_DELIVERY_MATCH">
+						<xs:annotation>
+							<xs:documentation>
+								(EAS 210) Match to general delivery.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="FIELD_TRUNCATED">
+						<xs:annotation>
+							<xs:documentation>
+								(EAS 211) Address exceeded 35 character plug-in limit.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="UNABLE_TO_APPEND_NON_ADDRESS_DATA">
+						<xs:annotation>
+							<xs:documentation>
+								(EAS 212) Unable to append non-address; data 35 character limit imposed.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="INSUFFICIENT_DATA">
+						<xs:annotation>
+							<xs:documentation>
+								(EAS 300) Insufficient data for address verification.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="HOUSE_OR_BOX_NUMBER_NOT_FOUND">
+						<xs:annotation>
+							<xs:documentation>
+								(EAS 301) Address (house or box number) not found.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="POSTAL_CODE_NOT_FOUND">
+						<xs:annotation>
+							<xs:documentation>
+								(EAS 303) Postal code not found.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="INVALID_COUNTRY">
+						<xs:annotation>
+							<xs:documentation>
+								(EAS 305) Invalid country.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="SERVICE_UNAVAILABLE_FOR_ADDRESS">
+						<xs:annotation>
+							<xs:documentation>
+								(EAS 400) Service unavailable for request address.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:complexType name="ClientDetail">
+				<xs:annotation>
+					<xs:documentation>The descriptive data identifying the client submitting the transaction.</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="AccountNumber" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>The FedEx account number assigned to the customer initiating the request.</xs:documentation>
+							<xs:appinfo>
+								<xs:MaxLength>12</xs:MaxLength>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="MeterNumber" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>Identifies the unique client device submitting the request. This number is assigned by FedEx and identifies the unique device from which the request is originating.</xs:documentation>
+							<xs:appinfo>
+								<xs:MaxLength>10</xs:MaxLength>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Localization" type="ns:Localization" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Governs any future language/translations used for human-readable Notification.localizedMessages in responses to the request containing this ClientDetail object. Different requests from the same client may contain different Localization data. (Contrast with TransactionDetail.localization, which governs data payload language/translation.)</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="Localization">
+				<xs:annotation>
+					<xs:documentation>Governs any future language/translations used for human-readable text.</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="LanguageCode" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>Identifies the language to use for human-readable messages.</xs:documentation>
+							<xs:appinfo>
+								<xs:MaxLength>2</xs:MaxLength>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="LocaleCode" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Identifies the locale (i.e.  country code) associated with the language.</xs:documentation>
+							<xs:appinfo>
+								<xs:MaxLength>2</xs:MaxLength>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="TransactionDetail">
+				<xs:annotation>
+					<xs:documentation>Descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="CustomerTransactionId" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Identifies a customer-supplied unique identifier for this transaction. It is returned in the reply message to aid in matching requests to replies.</xs:documentation>
+							<xs:appinfo>
+								<xs:MaxLength>40</xs:MaxLength>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Localization" type="ns:Localization" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Governs any future language/translations applied to the data payload(contrasted with ClientDetail.localization, which governs Notification.localizedMessage language selection).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="VersionId">
+				<xs:annotation>
+					<xs:documentation>Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="ServiceId" type="xs:string" fixed="aval" minOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Identifies a system or sub-system which performs an operation.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Major" type="xs:int" fixed="2" minOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Identifies the service business level. For the initial FedEx Web Service release this value should be set to 1.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Intermediate" type="xs:int" fixed="0" minOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Identifies the service interface level. For the initial FedEx Web Service release this value should be set to 0.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Minor" type="xs:int" fixed="0" minOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Identifies the service code level. For the initial FedEx Web Service release this value should be set to 0.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:simpleType name="NotificationSeverityType">
+				<xs:annotation>
+					<xs:documentation>Identifies the set of severity values for a Notification.</xs:documentation>
+				</xs:annotation>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="ERROR"/>
+					<xs:enumeration value="FAILURE"/>
+					<xs:enumeration value="NOTE"/>
+					<xs:enumeration value="SUCCESS"/>
+					<xs:enumeration value="WARNING"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:complexType name="Notification">
+				<xs:annotation>
+					<xs:documentation>The descriptive data regarding the results of the submitted transaction.</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="Severity" type="ns:NotificationSeverityType">
+						<xs:annotation>
+							<xs:documentation>The severity of this notification. this can indicate success or failure or some other information about the request such as errors or notes.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Source" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>Indicates the source of the notification. Combined with Code, it uniqely identifies this message.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Code" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>A code that represents this notification. Combined with Source, it uniqely identifies this message.</xs:documentation>
+							<xs:appinfo>
+								<xs:MaxLength>8</xs:MaxLength>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Message" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Text that explains this notification.</xs:documentation>
+							<xs:appinfo>
+								<xs:MaxLength>255</xs:MaxLength>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="LocalizedMessage" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>A translated message. The translation is based on the Localization element of the ClientDetail element of the request.</xs:documentation>
+							<xs:appinfo>
+								<xs:MaxLength>TBD</xs:MaxLength>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="MessageParameters" type="ns:NotificationParameter" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>If the message used parameter replacement to be specific as to the meaning of the message, this is the list of parameters that were used.</xs:documentation>
+							<xs:appinfo>
+								<xs:MaxLength>TBD</xs:MaxLength>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="NotificationParameter">
+				<xs:sequence>
+					<xs:element name="Id" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Name identifiying the type of the data in the element 'Value'</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Value" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The value that was used as the replacement parameter.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="Address">
+				<xs:annotation>
+					<xs:documentation>The descriptive data for a physical location.</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="StreetLines" type="xs:string" minOccurs="0" maxOccurs="4">
+						<xs:annotation>
+							<xs:documentation>Combination of number, street name, etc. At least one line is required for a valid physical address; empty lines should not be included.</xs:documentation>
+							<xs:appinfo>
+								<xs:MaxLength>35</xs:MaxLength>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="City" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Name of city, town, etc.</xs:documentation>
+							<xs:appinfo>
+								<xs:MaxLength>
+									<ns:Express>35</ns:Express>
+									<ns:Ground>20</ns:Ground>
+								</xs:MaxLength>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="StateOrProvinceCode" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Identifying abbreviation for US state, Canada province, etc. Format and presence of this field will vary, depending on country.</xs:documentation>
+							<xs:appinfo>
+								<xs:MaxLength>14</xs:MaxLength>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="PostalCode" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Identification of a region (usually small) for mail/package delivery. Format and presence of this field will vary, depending on country. This element is required if both the City and StateOrProvinceCode are not present.</xs:documentation>
+							<xs:appinfo>
+								<xs:MaxLength>16</xs:MaxLength>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="UrbanizationCode" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Relevant only to addresses in Puerto Rico. In Puerto Rico, multiple addresses within the same ZIP code can have the same house number and street name. When this is the case, the urbanization code is needed to distinguish them.</xs:documentation>
+							<xs:appinfo>
+								<xs:MaxLength>100</xs:MaxLength>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="CountryCode" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Identification of a country.</xs:documentation>
+							<xs:appinfo>
+								<xs:MaxLength>2</xs:MaxLength>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Residential" type="xs:boolean" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Indicates whether this address is residential (as opposed to commercial).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</types>
+	<message name="AddressValidationRequest">
+		<part name="AddressValidationRequest" element="ns:AddressValidationRequest"/>
+	</message>
+	<message name="AddressValidationReply">
+		<part name="AddressValidationReply" element="ns:AddressValidationReply"/>
+	</message>
+	<portType name="AddressValidationPortType">
+		<operation name="addressValidation" parameterOrder="AddressValidationRequest">
+			<input message="ns:AddressValidationRequest"/>
+			<output message="ns:AddressValidationReply"/>
+		</operation>
+	</portType>
+	<binding name="AddressValidationServiceSoapBinding" type="ns:AddressValidationPortType">
+		<s1:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="addressValidation">
+			<s1:operation soapAction="addressValidation" style="document"/>
+			<input>
+				<s1:body use="literal"/>
+			</input>
+			<output>
+				<s1:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="AddressValidationService">
+		<port name="AddressValidationServicePort" binding="ns:AddressValidationServiceSoapBinding">
+			<s1:address location="https://gatewaybeta.fedex.com:443/web-services"/>
+		</port>
+	</service>
+</definitions>
