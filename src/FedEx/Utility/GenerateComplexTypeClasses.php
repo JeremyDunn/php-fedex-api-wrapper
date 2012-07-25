@@ -1,7 +1,12 @@
 <?php
 namespace FedEx\Utility;
 
-class GenerateComplexTypeClasses
+use Fedex\Utility\AbstractGenerate;
+
+/**
+ * Converts complex types in fedex .wsdl file to PHP Classes
+ */
+class GenerateComplexTypeClasses extends AbstractGenerate
 {
     /**
      * @var string
@@ -12,11 +17,6 @@ class GenerateComplexTypeClasses
      * @var string
      */
     protected $_exportPath;
-
-    /**
-     * @var SimpleXMLElement
-     */
-    protected $_xml;
 
     /**
      * @var string
@@ -55,13 +55,6 @@ class GenerateComplexTypeClasses
         $this->_subPackageName = $subPackageName;
 
         $this->_loadXML();
-    }
-
-    protected function _loadXML()
-    {
-        $fileContents = file_get_contents($this->_wsdlPath);
-        $fileContents = str_replace('xs:', '', $fileContents);
-        $this->_xml = new \SimpleXMLElement($fileContents);
     }
 
     public function run()
@@ -140,9 +133,7 @@ namespace {$this->_baseNamespace}\ComplexType;
 /**
  * $classDoc
  *
- * @version     \$Revision\$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  {$this->_subPackageName}
  */

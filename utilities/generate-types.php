@@ -29,22 +29,34 @@ spl_autoload_register('autoload');
 
 use FedEx\Utility;
 
+$request = new FedEx\RateService\RequestTest();
+
 //RateRequest
-$exportPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx' . DIRECTORY_SEPARATOR . 'RateService' . DIRECTORY_SEPARATOR . 'SimpleType');
-$wsdlPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx'  . DIRECTORY_SEPARATOR . '_wsdl' . DIRECTORY_SEPARATOR . 'RateService_v10.wsdl');
+$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../src/FedEx/RateService/') . '/RequestTest.php';
+$exportPath = realpath(dirname(__FILE__) . '/../src/FedEx/RateService/SimpleType');
+$wsdlPath = realpath(dirname(__FILE__) . '/../src/FedEx/_wsdl/RateService_v10.wsdl');
+
 $namespace = 'FedEx\RateService\SimpleType';
-$subpackageName = 'Package Movement Information';
+$subpackageName = 'Rate Service';
+
+
+$generateRequestClassFile = new Utility\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, 'FedEx\RateService', $subPackageName);
+$generateRequestClassFile->run();
+
+exit();
 
 $generateSimpleTypes = new Utility\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $namespace, $subpackageName);
 $generateSimpleTypes->run();
 
-$exportPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx' . DIRECTORY_SEPARATOR . 'RateService' . DIRECTORY_SEPARATOR . 'ComplexType');
+exit();
+
+
+$exportPath = realpath(dirname(__FILE__) . '/../src/FedEx/RateService/ComplexType');
 $namespace = 'FedEx\RateService';
-$subpackageName = 'Package Movement Information';
+$subpackageName = 'Rate Service';
 
 $generateComplexTypes = new Utility\GenerateComplexTypeClasses($exportPath, $wsdlPath, $namespace, $subpackageName);
 $generateComplexTypes->run();
-
 
 //PackageMovementInformationService
 $exportPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx' . DIRECTORY_SEPARATOR . 'PackageMovementInformationService' . DIRECTORY_SEPARATOR . 'SimpleType');

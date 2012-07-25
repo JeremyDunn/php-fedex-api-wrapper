@@ -1,10 +1,12 @@
 <?php
 namespace FedEx\Utility;
 
+use Fedex\Utility\AbstractGenerate;
+
 /**
  * Converts simple types in fedex .wsdl file to PHP Classes
  */
-class GenerateSimpleTypeClasses
+class GenerateSimpleTypeClasses extends AbstractGenerate
 {
     /**
      * @var string
@@ -15,11 +17,6 @@ class GenerateSimpleTypeClasses
      * @var string
      */
     protected $_exportPath;
-
-    /**
-     * @var SimpleXMLElement
-     */
-    protected $_xml;
 
     /**
      *
@@ -68,13 +65,6 @@ public function __construct($exportPath, $wsdlPath, $namespace, $subPackageName)
         $this->_loadXML();
     }
 
-    protected function _loadXML()
-    {
-        $fileContents = file_get_contents($this->_wsdlPath);
-        $fileContents = str_replace('xs:', '', $fileContents);
-        $this->_xml = new \SimpleXMLElement($fileContents);
-    }
-
     public function run()
     {
         foreach ($this->_xml->types->schema->children() as $schema) {
@@ -118,9 +108,7 @@ namespace {$this->_namespace};
 /**
  * $documentation
  *
- * @version     \$Revision\$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  {$this->_subPackageName}
  */
