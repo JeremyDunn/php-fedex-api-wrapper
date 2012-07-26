@@ -29,10 +29,9 @@ spl_autoload_register('autoload');
 
 use FedEx\Utility;
 
-$request = new FedEx\RateService\RequestTest();
 
 //RateRequest
-$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../src/FedEx/RateService/') . '/RequestTest.php';
+$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../src/FedEx/RateService/') . '/Request.php';
 $exportPath = realpath(dirname(__FILE__) . '/../src/FedEx/RateService/SimpleType');
 $wsdlPath = realpath(dirname(__FILE__) . '/../src/FedEx/_wsdl/RateService_v10.wsdl');
 
@@ -40,16 +39,11 @@ $namespace = 'FedEx\RateService\SimpleType';
 $subpackageName = 'Rate Service';
 
 
-$generateRequestClassFile = new Utility\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, 'FedEx\RateService', $subPackageName);
+$generateRequestClassFile = new Utility\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, 'FedEx\RateService', $subpackageName);
 $generateRequestClassFile->run();
-
-exit();
 
 $generateSimpleTypes = new Utility\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $namespace, $subpackageName);
 $generateSimpleTypes->run();
-
-exit();
-
 
 $exportPath = realpath(dirname(__FILE__) . '/../src/FedEx/RateService/ComplexType');
 $namespace = 'FedEx\RateService';
@@ -57,6 +51,10 @@ $subpackageName = 'Rate Service';
 
 $generateComplexTypes = new Utility\GenerateComplexTypeClasses($exportPath, $wsdlPath, $namespace, $subpackageName);
 $generateComplexTypes->run();
+
+
+exit();
+
 
 //PackageMovementInformationService
 $exportPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx' . DIRECTORY_SEPARATOR . 'PackageMovementInformationService' . DIRECTORY_SEPARATOR . 'SimpleType');

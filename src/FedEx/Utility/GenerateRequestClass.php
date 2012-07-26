@@ -106,10 +106,10 @@ class GenerateRequestClass extends AbstractGenerate
     /**
      * Sends the {$functionDefinition['requestObjectName']} and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest
+     * @param ComplexType\RateRequest \$rateRequest
      * @return stdClass
      */
-    {$functionDefinition[functionDefinition]}
+    {$functionDefinition['functionDefinition']}
     {
         return \$this->_soapClient->{$functionDefinition['soapFunction']}({$functionDefinition['arg1VariableName']}->toArray());
     }
