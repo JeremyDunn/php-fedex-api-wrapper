@@ -31,188 +31,243 @@ use FedEx\Utility;
 
 
 //RateRequest
-$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../src/FedEx/RateService/') . '/Request.php';
-$exportPath = realpath(dirname(__FILE__) . '/../src/FedEx/RateService/SimpleType');
 $wsdlPath = realpath(dirname(__FILE__) . '/../src/FedEx/_wsdl/RateService_v10.wsdl');
 
-$namespace = 'FedEx\RateService\SimpleType';
+$baseNamespace = 'FedEx\RateService';
 $subpackageName = 'Rate Service';
 
-
+//generate Request class
+$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../src/FedEx/RateService/') . '/Request.php';
 $generateRequestClassFile = new Utility\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, 'FedEx\RateService', $subpackageName);
 $generateRequestClassFile->run();
 
-$generateSimpleTypes = new Utility\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $namespace, $subpackageName);
+//generate SimpleType classes
+$exportPath = realpath(dirname(__FILE__) . '/../src/FedEx/RateService/SimpleType');
+$generateSimpleTypes = new Utility\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subpackageName);
 $generateSimpleTypes->run();
 
+//generate ComplexType classes
 $exportPath = realpath(dirname(__FILE__) . '/../src/FedEx/RateService/ComplexType');
-$namespace = 'FedEx\RateService';
-$subpackageName = 'Rate Service';
-
-$generateComplexTypes = new Utility\GenerateComplexTypeClasses($exportPath, $wsdlPath, $namespace, $subpackageName);
+$generateComplexTypes = new Utility\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subpackageName);
 $generateComplexTypes->run();
-
-
-exit();
-
 
 //PackageMovementInformationService
-$exportPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx' . DIRECTORY_SEPARATOR . 'PackageMovementInformationService' . DIRECTORY_SEPARATOR . 'SimpleType');
-$wsdlPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx'  . DIRECTORY_SEPARATOR . '_wsdl' . DIRECTORY_SEPARATOR . 'PackageMovementInformationService_v5.wsdl');
-$namespace = 'FedEx\PackageMovementInformationService\SimpleType';
+$wsdlPath = realpath(dirname(__FILE__) . '/../src/FedEx/_wsdl/PackageMovementInformationService_v5.wsdl');
+
+$baseNamespace = 'FedEx\PackageMovementInformationService';
 $subpackageName = 'Package Movement Information Service';
 
-$generateSimpleTypes = new Utility\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $namespace, $subpackageName);
+//generate Request class
+$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../src/FedEx/PackageMovementInformationService/') . '/Request.php';
+$generateRequestClassFile = new Utility\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, 'FedEx\PackageMovementInformationService', $subpackageName);
+$generateRequestClassFile->run();
+
+//generate SimpleType classes
+$exportPath = realpath(dirname(__FILE__) . '/../src/FedEx/PackageMovementInformationService/SimpleType');
+$generateSimpleTypes = new Utility\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subpackageName);
 $generateSimpleTypes->run();
 
-$exportPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx' . DIRECTORY_SEPARATOR . 'PackageMovementInformationService' . DIRECTORY_SEPARATOR . 'ComplexType');
-$namespace = 'FedEx\PackageMovementInformationService';
-$subpackageName = 'Package Movement Information Service';
-
-$generateComplexTypes = new Utility\GenerateComplexTypeClasses($exportPath, $wsdlPath, $namespace, $subpackageName);
+//generate ComplexType classes
+$exportPath = realpath(dirname(__FILE__) . '/../src/FedEx/PackageMovementInformationService/ComplexType');
+$generateComplexTypes = new Utility\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subpackageName);
 $generateComplexTypes->run();
+
 
 //TrackService
-$exportPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx' . DIRECTORY_SEPARATOR . 'TrackService' . DIRECTORY_SEPARATOR . 'SimpleType');
-$wsdlPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx'  . DIRECTORY_SEPARATOR . '_wsdl' . DIRECTORY_SEPARATOR . 'TrackService_v5.wsdl');
-$namespace = 'FedEx\TrackService\SimpleType';
+$wsdlPath = realpath(dirname(__FILE__) . '/../src/FedEx/_wsdl/TrackService_v5.wsdl');
+
+$baseNamespace = 'FedEx\TrackService';
 $subpackageName = 'Track Service';
 
-$generateSimpleTypes = new Utility\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $namespace, $subpackageName);
+//generate Request class
+$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../src/FedEx/TrackService/Request.php');
+$generateRequestClassFile = new Utility\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, $baseNamespace, $subPackageName);
+$generateRequestClassFile->run();
+
+//generate SimpleType classes
+$exportPath = realpath(dirname(__FILE__) . '/../src/FedEx/TrackService/SimpleType');
+$generateSimpleTypes = new Utility\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subpackageName);
 $generateSimpleTypes->run();
 
-$exportPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx' . DIRECTORY_SEPARATOR . 'TrackService' . DIRECTORY_SEPARATOR . 'ComplexType');
-$namespace = 'FedEx\TrackService';
-$subpackageName = 'Track Service';
-
-$generateComplexTypes = new Utility\GenerateComplexTypeClasses($exportPath, $wsdlPath, $namespace, $subpackageName);
+//generate CompleType classes
+$exportPath = realpath(dirname(__FILE__) . '/../src/FedEx/TrackService/ComplexType');
+$generateComplexTypes = new Utility\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subpackageName);
 $generateComplexTypes->run();
+
 
 //AddressValidationService
-$exportPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx' . DIRECTORY_SEPARATOR . 'AddressValidationService' . DIRECTORY_SEPARATOR . 'SimpleType');
-$wsdlPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx'  . DIRECTORY_SEPARATOR . '_wsdl' . DIRECTORY_SEPARATOR . 'AddressValidationService_v2.wsdl');
-$namespace = 'FedEx\AddressValidationService\SimpleType';
-$subpackageName = 'Address Validation Service';
+$wsdlPath = realpath(dirname(__FILE__) . '/../src/Fedex/_wsdl/AddressValidationService_v2.wsdl');
 
-$generateSimpleTypes = new Utility\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $namespace, $subpackageName);
+$baseNamespace = 'FedEx\AddressValidationService';
+$subPackageName = 'Address Validation Service';
+
+//generate Request class
+$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../src/FedEx/AddressValidationService/Request.php');
+$generateRequestClassFile = new Utility\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, $baseNamespace, $subPackageName);
+$generateRequestClassFile->run();
+
+//generate SimpleType classes
+$exportPath = realpath(dirname(__FILE__) . '/../src/FedEx/AddressValidationService/SimpleType');
+$generateSimpleTypes = new Utility\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
 $generateSimpleTypes->run();
 
-$exportPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx' . DIRECTORY_SEPARATOR . 'AddressValidationService' . DIRECTORY_SEPARATOR . 'ComplexType');
-$namespace = 'FedEx\AddressValidationService';
-$subpackageName = 'Address Validation Service';
-
-$generateComplexTypes = new Utility\GenerateComplexTypeClasses($exportPath, $wsdlPath, $namespace, $subpackageName);
+//generate CompleType classes
+$exportPath = realpath(dirname(__FILE__) . '/../src/FedEx/AddressValidationService/ComplexType');
+$generateComplexTypes = new Utility\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
 $generateComplexTypes->run();
+
 
 //LocatorService
-$exportPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx' . DIRECTORY_SEPARATOR . 'LocatorService' . DIRECTORY_SEPARATOR . 'SimpleType');
-$wsdlPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx'  . DIRECTORY_SEPARATOR . '_wsdl' . DIRECTORY_SEPARATOR . 'LocatorService_v2.wsdl');
-$namespace = 'FedEx\LocatorService\SimpleType';
-$subpackageName = 'Locator Service';
+$wsdlPath = realpath(dirname(__FILE__) . '/../src/FedEx/_wsdl/LocatorService_v2.wsdl');
 
-$generateSimpleTypes = new Utility\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $namespace, $subpackageName);
+$baseNamespace = 'FedEx\LocatorService';
+$subPackageName = 'Locator Service';
+
+//generate Request class
+$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../src/FedEx/LocatorService/Request.php');
+$generateRequestClassFile = new Utility\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, $baseNamespace, $subPackageName);
+$generateRequestClassFile->run();
+
+//generate SimpleType classes
+$exportPath = realpath(dirname(__FILE__) . '/../src/FedEx/LocatorService/SimpleType');
+$generateSimpleTypes = new Utility\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
 $generateSimpleTypes->run();
 
-$exportPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx' . DIRECTORY_SEPARATOR . 'LocatorService' . DIRECTORY_SEPARATOR . 'ComplexType');
-$namespace = 'FedEx\LocatorService';
-$subpackageName = 'Locator Service';
-
-$generateComplexTypes = new Utility\GenerateComplexTypeClasses($exportPath, $wsdlPath, $namespace, $subpackageName);
+//generate ComplexType classes
+$exportPath = realpath(dirname(__FILE__) . '/../src/FedEx/LocatorService/ComplexType');
+$generateComplexTypes = new Utility\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
 $generateComplexTypes->run();
+
+
 
 //ShipService
-$exportPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx' . DIRECTORY_SEPARATOR . 'ShipService' . DIRECTORY_SEPARATOR . 'SimpleType');
-$wsdlPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx'  . DIRECTORY_SEPARATOR . '_wsdl' . DIRECTORY_SEPARATOR . 'ShipService_v10.wsdl');
+$wsdlPath = realpath(dirname(__FILE__) . '/../src/FedEx/_wsdl/ShipService_v10.wsdl');
 
-$namespace = 'FedEx\ShipService\SimpleType';
-$subpackageName = 'Ship Service';
+$baseNamespace = 'FedEx\ShipService';
+$subPackageName = 'Ship Service';
 
-$generateSimpleTypes = new Utility\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $namespace, $subpackageName);
+//generate Request class
+$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../src/FedEx/ShipService/Request.php');
+$generateRequestClassFile = new Utility\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, $baseNamespace, $subPackageName);
+$generateRequestClassFile->run();
+
+//generate SimpleType classes
+$exportPath = realpath(dirname(__FILE__) . '/../src/FedEx/ShipService/SimpleType');
+$generateSimpleTypes = new Utility\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
 $generateSimpleTypes->run();
 
-$exportPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx' . DIRECTORY_SEPARATOR . 'ShipService' . DIRECTORY_SEPARATOR . 'ComplexType');
-$namespace = 'FedEx\ShipService';
-$subpackageName = 'Ship Service';
-
-$generateComplexTypes = new Utility\GenerateComplexTypeClasses($exportPath, $wsdlPath, $namespace, $subpackageName);
+//generate ComplexType classes
+$exportPath = realpath(dirname(__FILE__) . '/../src/FedEx/ShipService/ComplexType');
+$generateComplexTypes = new Utility\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
 $generateComplexTypes->run();
+
 
 //CourierDispatchService
-$exportPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx' . DIRECTORY_SEPARATOR . 'CourierDispatchService' . DIRECTORY_SEPARATOR . 'SimpleType');
-$wsdlPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx'  . DIRECTORY_SEPARATOR . '_wsdl' . DIRECTORY_SEPARATOR . 'CourierDispatchService_v3.wsdl');
-$namespace = 'FedEx\CourierDispatchService\SimpleType';
-$subpackageName = 'Courier Dispatch Service';
+$wsdlPath = realpath(dirname(__FILE__) . '/../src/FedEx/_wsdl/CourierDispatchService_v3.wsdl');
 
-$generateSimpleTypes = new Utility\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $namespace, $subpackageName);
+$baseNamespace = 'FedEx\CourierDispatchService';
+$subPackageName = 'Courier Dispatch Service';
+
+//export Request class
+$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../src/FedEx/CourierDispatchService/Request.php');
+$generateRequestClassFile = new Utility\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, $baseNamespace, $subPackageName);
+$generateRequestClassFile->run();
+
+//generate SimpleType classes
+$exportPath = realpath(dirname(__FILE__) . '/../src/FedEx/CourierDispatchService/SimpleType');
+$generateSimpleTypes = new Utility\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
 $generateSimpleTypes->run();
 
-$exportPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx' . DIRECTORY_SEPARATOR . 'CourierDispatchService' . DIRECTORY_SEPARATOR . 'ComplexType');
-$namespace = 'FedEx\CourierDispatchService';
-$subpackageName = 'Courier Dispatch Service';
-
-$generateComplexTypes = new Utility\GenerateComplexTypeClasses($exportPath, $wsdlPath, $namespace, $subpackageName);
+//generate ComplexType classes
+$exportPath = realpath(dirname(__FILE__) . '/../src/FedEx/CourierDispatchService/ComplexType');
+$generateComplexTypes = new Utility\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
 $generateComplexTypes->run();
 
-//CloseService
-$exportPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx' . DIRECTORY_SEPARATOR . 'CloseService' . DIRECTORY_SEPARATOR . 'SimpleType');
-$wsdlPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx'  . DIRECTORY_SEPARATOR . '_wsdl' . DIRECTORY_SEPARATOR . 'CloseService_v2.wsdl');
-$namespace = 'FedEx\CloseService\SimpleType';
-$subpackageName = 'Close Service';
 
-$generateSimpleTypes = new Utility\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $namespace, $subpackageName);
+//CloseService
+$wsdlPath = realpath(dirname(__FILE__) . '/../src/FedEx/_wsdl/CloseService_v2.wsdl');
+
+$baseNamespace = 'FedEx\CloseService';
+$subPackageName = 'Close Service';
+
+//generate Request class
+$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../src/FedEx/CloseService/Request.php');
+$generateRequestClassFile = new Utility\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, $baseNamespace, $subPackageName);
+$generateRequestClassFile->run();
+
+//generate SimpleType classes
+$exportPath = realpath(dirname(__FILE__) . '/../src/FedEx/CloseService/SimpleType');
+$generateSimpleTypes = new Utility\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
 $generateSimpleTypes->run();
 
-$exportPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx' . DIRECTORY_SEPARATOR . 'CloseService' . DIRECTORY_SEPARATOR . 'ComplexType');
-$namespace = 'FedEx\CloseService';
-$subpackageName = 'Close Service';
-
-$generateComplexTypes = new Utility\GenerateComplexTypeClasses($exportPath, $wsdlPath, $namespace, $subpackageName);
+$exportPath = realpath(dirname(__FILE__) . '/../src/FedEx/CloseService/ComplexType');
+$generateComplexTypes = new Utility\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
 $generateComplexTypes->run();
 
 //ReturnTagService
-$exportPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx' . DIRECTORY_SEPARATOR . 'ReturnTagService' . DIRECTORY_SEPARATOR . 'SimpleType');
-$wsdlPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx'  . DIRECTORY_SEPARATOR . '_wsdl' . DIRECTORY_SEPARATOR . 'ReturnTagService_v1.wsdl');
-$namespace = 'FedEx\ReturnTagService\SimpleType';
-$subpackageName = 'Return Tag Service';
+$wsdlPath = realpath(dirname(__FILE__) . '/../src/FedEx/_wsdl/ReturnTagService_v1.wsdl');
 
-$generateSimpleTypes = new Utility\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $namespace, $subpackageName);
+$baseNamespace = 'FedEx\ReturnTagService';
+$subPackageName = 'Return Tag Service';
+
+//generate Request class
+$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../src/FedEx/ReturnTagService/Request.php');
+$generateRequestClassFile = new Utility\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, $baseNamespace, $subPackageName);
+$generateRequestClassFile->run();
+
+//generate SimpleType classes
+$exportPath = realpath(dirname(__FILE__) . '/../src/FedEx/ReturnTagService/SimpleType');
+$generateSimpleTypes = new Utility\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
 $generateSimpleTypes->run();
 
-$exportPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx' . DIRECTORY_SEPARATOR . 'ReturnTagService' . DIRECTORY_SEPARATOR . 'ComplexType');
-$namespace = 'FedEx\ReturnTagService';
-$subpackageName = 'Return Tag Service';
+//generate ComplexType classes
+$exportPath = realpath(dirname(__FILE__) . '/../src/FedEx/ReturnTagService/ComplexType');
+$baseNamespace = 'FedEx\ReturnTagService';
+$subPackageName = 'Return Tag Service';
 
-$generateComplexTypes = new Utility\GenerateComplexTypeClasses($exportPath, $wsdlPath, $namespace, $subpackageName);
+$generateComplexTypes = new Utility\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
 $generateComplexTypes->run();
 
-//UploadDocumentService
-$exportPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx' . DIRECTORY_SEPARATOR . 'UploadDocumentService' . DIRECTORY_SEPARATOR . 'SimpleType');
-$wsdlPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx'  . DIRECTORY_SEPARATOR . '_wsdl' . DIRECTORY_SEPARATOR . 'UploadDocumentService_v1.wsdl');
-$namespace = 'FedEx\UploadDocumentService\SimpleType';
-$subpackageName = 'Upload Document Service';
 
-$generateSimpleTypes = new Utility\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $namespace, $subpackageName);
+//UploadDocumentService
+$wsdlPath = realpath(dirname(__FILE__) . '/../src/FedEx/_wsdl/UploadDocumentService_v1.wsdl');
+
+$baseNamespace = 'FedEx\UploadDocumentService';
+$subPackageName = 'Upload Document Service';
+
+//generate Request class
+$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../src/FedEx/UploadDocumentService/Request.php');
+$generateRequestClassFile = new Utility\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, $baseNamespace, $subPackageName);
+$generateRequestClassFile->run();
+
+//generate SimpleType classes
+$exportPath = realpath(dirname(__FILE__) . '/../src/FedEx/UploadDocumentService/SimpleType');
+$generateSimpleTypes = new Utility\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
 $generateSimpleTypes->run();
 
-$exportPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx' . DIRECTORY_SEPARATOR . 'UploadDocumentService' . DIRECTORY_SEPARATOR . 'ComplexType');
-$namespace = 'FedEx\UploadDocumentService';
-$subpackageName = 'Upload Document Service';
-
-$generateComplexTypes = new Utility\GenerateComplexTypeClasses($exportPath, $wsdlPath, $namespace, $subpackageName);
+//generate ComplexType classes
+$exportPath = realpath(dirname(__FILE__) . '/../src/FedEx/UploadDocumentService/ComplexType');
+$generateComplexTypes = new Utility\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
 $generateComplexTypes->run();
 
 //PickupService
-$exportPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx' . DIRECTORY_SEPARATOR . 'PickupService' . DIRECTORY_SEPARATOR . 'SimpleType');
-$wsdlPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx'  . DIRECTORY_SEPARATOR . '_wsdl' . DIRECTORY_SEPARATOR . 'PickupService_v3.wsdl');
-$namespace = 'FedEx\Pickup\SimpleType';
-$subpackageName = 'Pickup Service';
+$wsdlPath = realpath(dirname(__FILE__) . '/../src/FedEx/_wsdl/PickupService_v3.wsdl');
 
-$generateSimpleTypes = new Utility\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $namespace, $subpackageName);
+$baseNamespace = 'FedEx\Pickup';
+$subPackageName = 'Pickup Service';
+
+//generate Request class
+$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../src/FedEx/PickupService/Request.php');
+$generateRequestClassFile = new Utility\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, $baseNamespace, $subPackageName);
+$generateRequestClassFile->run();
+
+
+//generate SimpleType classes
+$exportPath = realpath(dirname(__FILE__) . '/../src/FedEx/PickupService/SimpleType');
+$generateSimpleTypes = new Utility\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
 $generateSimpleTypes->run();
 
-$exportPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'FedEx' . DIRECTORY_SEPARATOR . 'PickupService' . DIRECTORY_SEPARATOR . 'ComplexType');
-$namespace = 'FedEx\PickupService';
-$subpackageName = 'Pickup Service';
-
-$generateComplexTypes = new Utility\GenerateComplexTypeClasses($exportPath, $wsdlPath, $namespace, $subpackageName);
+//generate ComplexType classes
+$exportPath = realpath(dirname(__FILE__) . '/../src/FedEx/PickupService/ComplexType');
+$generateComplexTypes = new Utility\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
 $generateComplexTypes->run();
