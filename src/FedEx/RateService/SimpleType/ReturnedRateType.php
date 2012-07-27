@@ -1,14 +1,14 @@
 <?php
 namespace FedEx\RateService\SimpleType;
 
+use FedEx\AbstractSimpleType;
+
 /**
  * The "PAYOR..." rates are expressed in the currency identified in the payor's rate table(s). The "RATED..." rates are expressed in the currency of the origin country. Former "...COUNTER..." values have become "...RETAIL..." values, except for PAYOR_COUNTER and RATED_COUNTER, which have been removed.
  *
- * @version     $Revision: 4 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
- * @subpackage  Package Movement Information
+ * @subpackage  Rate Service
  */
 class ReturnedRateType
     extends AbstractSimpleType

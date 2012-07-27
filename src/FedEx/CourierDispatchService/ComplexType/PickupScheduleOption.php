@@ -1,15 +1,15 @@
 <?php
 namespace FedEx\CourierDispatchService\ComplexType;
 
+use FedEx\AbstractComplexType;
+
 /**
  * The constraints on the scheduling of a dispatch, where that dispatch would be made by the Carrier, occur on the PickupDate,
 						and would be scheduled (created by means of a CourierDispatchRequest) on a date related to the PickupDate as described
 						by the "ScheduleDay" (SAME_DAY meaning that the creation would occur on the PickupDate, and FUTURE_DAY meaning that the creation
 						would occur on a date prior to the PickupDate).
  *
- * @version     $Revision: 2 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Courier Dispatch Service
  */

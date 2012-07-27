@@ -1,12 +1,12 @@
 <?php
 namespace FedEx\UploadDocumentService\SimpleType;
 
+use FedEx\AbstractSimpleType;
+
 /**
  * Each of these values identifies a specific reason why a document or reference could not be uploaded or associated with a shipment.
  *
- * @version     $Revision: 2 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */

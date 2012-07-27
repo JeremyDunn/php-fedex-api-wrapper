@@ -1,12 +1,12 @@
 <?php
 namespace FedEx\ShipService\ComplexType;
 
+use FedEx\AbstractComplexType;
+
 /**
  * Documents the kind and quantity of an individual hazardous commodity in a package.
  *
- * @version     $Revision: 2 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */

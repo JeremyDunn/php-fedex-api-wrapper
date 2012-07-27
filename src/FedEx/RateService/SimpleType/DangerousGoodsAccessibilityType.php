@@ -1,14 +1,14 @@
 <?php
 namespace FedEx\RateService\SimpleType;
 
+use FedEx\AbstractSimpleType;
+
 /**
  * Identifies whether or not the products being shipped are required to be accessible during delivery.
  *
- * @version     $Revision: 2 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
- * @subpackage  Package Movement Information
+ * @subpackage  Rate Service
  */
 class DangerousGoodsAccessibilityType
     extends AbstractSimpleType

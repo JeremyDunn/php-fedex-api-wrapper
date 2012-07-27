@@ -1,12 +1,12 @@
 <?php
 namespace FedEx\ShipService\SimpleType;
 
+use FedEx\AbstractSimpleType;
+
 /**
  * Specifies the way in which base charges for a Freight shipment or shipment leg are calculated.
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */

@@ -1,12 +1,12 @@
 <?php
 namespace FedEx\TrackService\ComplexType;
 
+use FedEx\AbstractComplexType;
+
 /**
  * The descriptive data for the heaviness of an object.
  *
- * @version     $Revision: 4 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Track Service
  */

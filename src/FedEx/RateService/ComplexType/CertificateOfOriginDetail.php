@@ -1,14 +1,14 @@
 <?php
 namespace FedEx\RateService\ComplexType;
 
+use FedEx\AbstractComplexType;
+
 /**
  * The instructions indicating how to print the Certificate of Origin ( e.g. whether or not to include the instructions, image type, etc ...)
  *
- * @version     $Revision: 4 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
- * @subpackage  Package Movement Information
+ * @subpackage  Rate Service
  */
 class CertificateOfOriginDetail
     extends AbstractComplexType

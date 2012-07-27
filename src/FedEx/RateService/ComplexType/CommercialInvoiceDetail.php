@@ -1,14 +1,14 @@
 <?php
 namespace FedEx\RateService\ComplexType;
 
+use FedEx\AbstractComplexType;
+
 /**
  * The instructions indicating how to print the Commercial Invoice( e.g. image type) Specifies characteristics of a shipping document to be produced.
  *
- * @version     $Revision: 2 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
- * @subpackage  Package Movement Information
+ * @subpackage  Rate Service
  */
 class CommercialInvoiceDetail
     extends AbstractComplexType

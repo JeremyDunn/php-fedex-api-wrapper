@@ -1,12 +1,12 @@
 <?php
 namespace FedEx\ShipService\ComplexType;
 
+use FedEx\AbstractComplexType;
+
 /**
  * This information describes how and when a pending shipment may be accessed for completion.
  *
- * @version     $Revision: 4 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */

@@ -1,12 +1,12 @@
 <?php
 namespace FedEx\ReturnTagService\ComplexType;
 
+use FedEx\AbstractComplexType;
+
 /**
  * FedEx Express Tag Availability request.
  *
- * @version     $Revision: 2 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Return Tag Service
  */

@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * Two part authentication string used for the sender's identity
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */

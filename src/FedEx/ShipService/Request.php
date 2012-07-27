@@ -1,12 +1,10 @@
 <?php
 namespace FedEx\ShipService;
-
+    
 /**
  * Request sends the SOAP call to the FedEx servers and returns the response
  *
- * @version     $Revision: 4 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
@@ -36,7 +34,7 @@ class Request
         if (null != $wsdlPath) {
             $this->_wsdlPath = $wsdlPath;
         } else {
-            $this->_wsdlPath = realpath(dirname(dirname(__FILE__)) . \DIRECTORY_SEPARATOR . '_wsdl' . \DIRECTORY_SEPARATOR . 'ShipService_v10.wsdl');
+            $this->_wsdlPath = realpath(dirname(__FILE__) . '/../_wsdl/ShipService_v10.wsdl');
         }
 
         $this->_soapClient = new \SoapClient($this->_wsdlPath, array('trace' => true));
@@ -45,7 +43,7 @@ class Request
     /**
      * Returns the SoapClient instance
      *
-     * @return SoapClient
+     * @return \SoapClient
      */
     public function getSoapClient()
     {
@@ -53,79 +51,77 @@ class Request
     }
 
     /**
-     * Sends request and returns Process Shipment Reply
+     * Sends the ProcessTagRequest and returns the response
      *
-     * @param ProcessShipmentRequest $processShipmentRequest
-     * @return stdClass
-     */
-    public function getProcessShipmentReply(ComplexType\ProcessShipmentRequest $processShipmentRequest)
-    {
-        return $this->_soapClient->processShipment($processShipmentRequest->toArray());
-    }
-
-    /**
-     * Sends request and returns Delete Shipment Reply
-     *
-     * @param DeleteShipmentRequest $deleteShipmentRequest
-     * @return stdClass
-     */
-    public function getDeleteShipmentReply(ComplexType\DeleteShipmentRequest $deleteShipmentRequest)
-    {
-        return $this->_soapClient->deleteShipment($deleteShipmentRequest->toArray());
-    }
-
-    /**
-     * Sends request and returns Validate Shipment Reply
-     *
-     * @param ValidateShipmentRequest $validateShipmentRequest
-     * @return stdClass
-     */
-    public function getValidateShipmentReply(ComplexType\ValidateShipmentRequest $validateShipmentRequest)
-    {
-        return $this->_soapClient->validateShipment($validateShipmentRequest->toArray());
-    }
-
-    /**
-     * Sends request and returns Create Pending Shipment Reply
-     *
-     * @param CreatePendingShipmentRequest $createPendingShipmentRequest
-     * @return stdClass
-     */
-    public function getCreatePendingShipmentReply(ComplexType\CreatePendingShipmentRequest $createPendingShipmentRequest)
-    {
-        return $this->_soapClient->createPendingShipment($createPendingShipmentRequest->toArray());
-    }
-
-    /**
-     * Sends request and returns Cancel Pending Shipment Reply
-     *
-     * @param CancelPendingShipmentRequest $cancelPendingShipmentRequest
-     * @return stdClass
-     */
-    public function getCancelPendingShipmentReply(ComplexType\CancelPendingShipmentRequest $cancelPendingShipmentRequest)
-    {
-        return $this->_soapClient->cancelPendingShipment($cancelPendingShipmentRequest->toArray());
-    }
-
-    /**
-     * Sends request and returns Process Tag Reply
-     *
-     * @param ProcessTagRequest $processTagRequest
+     * @param ComplexType\RateRequest $rateRequest
      * @return stdClass
      */
     public function getProcessTagReply(ComplexType\ProcessTagRequest $processTagRequest)
     {
         return $this->_soapClient->processTag($processTagRequest->toArray());
     }
-
-    /**
-     * Sends request and returns Delete Tag Shipment Reply
+       /**
+     * Sends the CreatePendingShipmentRequest and returns the response
      *
-     * @param DeleteTagRequest $deleteTagRequet
+     * @param ComplexType\RateRequest $rateRequest
      * @return stdClass
      */
-    public function getDeleteTagShipmentReply(ComplexType\DeleteTagRequest $deleteTagRequet)
+    public function getCreatePendingShipmentReply(ComplexType\CreatePendingShipmentRequest $createPendingShipmentRequest)
     {
-        return $this->_soapClient->deleteTag($deleteTagRequet->toArray());
+        return $this->_soapClient->createPendingShipment($createPendingShipmentRequest->toArray());
     }
+       /**
+     * Sends the CancelPendingShipmentRequest and returns the response
+     *
+     * @param ComplexType\RateRequest $rateRequest
+     * @return stdClass
+     */
+    public function getCancelPendingShipmentReply(ComplexType\CancelPendingShipmentRequest $cancelPendingShipmentRequest)
+    {
+        return $this->_soapClient->cancelPendingShipment($cancelPendingShipmentRequest->toArray());
+    }
+       /**
+     * Sends the ProcessShipmentRequest and returns the response
+     *
+     * @param ComplexType\RateRequest $rateRequest
+     * @return stdClass
+     */
+    public function getProcessShipmentReply(ComplexType\ProcessShipmentRequest $processShipmentRequest)
+    {
+        return $this->_soapClient->processShipment($processShipmentRequest->toArray());
+    }
+       /**
+     * Sends the DeleteTagRequest and returns the response
+     *
+     * @param ComplexType\RateRequest $rateRequest
+     * @return stdClass
+     */
+    public function getShipmentReply(ComplexType\DeleteTagRequest $deleteTagRequest)
+    {
+        return $this->_soapClient->deleteTag($deleteTagRequest->toArray());
+    }
+       /**
+     * Sends the ValidateShipmentRequest and returns the response
+     *
+     * @param ComplexType\RateRequest $rateRequest
+     * @return stdClass
+     */
+    public function getShipmentReply(ComplexType\ValidateShipmentRequest $validateShipmentRequest)
+    {
+        return $this->_soapClient->validateShipment($validateShipmentRequest->toArray());
+    }
+       /**
+     * Sends the DeleteShipmentRequest and returns the response
+     *
+     * @param ComplexType\RateRequest $rateRequest
+     * @return stdClass
+     */
+    public function getShipmentReply(ComplexType\DeleteShipmentRequest $deleteShipmentRequest)
+    {
+        return $this->_soapClient->deleteShipment($deleteShipmentRequest->toArray());
+    }
+   
+
 }
+
+   

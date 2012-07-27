@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * Specifies a single type of weighing performed on a shipment
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -21,7 +21,7 @@ class WeighingDetail
      * @param WeighingScaleType $Type
      * return WeighingDetail
      */
-    public function setType(\FedEx\PickupService\SimpleType\WeighingScaleType $type)
+    public function setType(\FedEx\Pickup\SimpleType\WeighingScaleType $type)
     {
         $this->Type = $type;
         return $this;

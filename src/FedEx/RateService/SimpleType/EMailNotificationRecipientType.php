@@ -1,14 +1,14 @@
 <?php
 namespace FedEx\RateService\SimpleType;
 
+use FedEx\AbstractSimpleType;
+
 /**
  * Identifies the set of valid email notification recipient types. For SHIPPER, RECIPIENT and BROKER the email address asssociated with their definitions will be used, any email address sent with the email notification for these three email notification recipient types will be ignored.
  *
- * @version     $Revision: 2 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
- * @subpackage  Package Movement Information
+ * @subpackage  Rate Service
  */
 class EMailNotificationRecipientType
     extends AbstractSimpleType

@@ -1,12 +1,12 @@
 <?php
 namespace FedEx\ShipService\ComplexType;
 
+use FedEx\AbstractComplexType;
+
 /**
  * Reply to the Close Request transaction. The Close Reply bring back the ASCII data buffer which will be used to print the Close Manifest. The Manifest is essential at the time of pickup.
  *
- * @version     $Revision: 2 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */

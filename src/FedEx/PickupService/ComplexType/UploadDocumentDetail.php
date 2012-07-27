@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * 
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -45,7 +45,7 @@ class UploadDocumentDetail
      * @param UploadDocumentProducerType $DocumentProducer
      * return UploadDocumentDetail
      */
-    public function setDocumentProducer(\FedEx\PickupService\SimpleType\UploadDocumentProducerType $documentProducer)
+    public function setDocumentProducer(\FedEx\Pickup\SimpleType\UploadDocumentProducerType $documentProducer)
     {
         $this->DocumentProducer = $documentProducer;
         return $this;
@@ -57,7 +57,7 @@ class UploadDocumentDetail
      * @param UploadDocumentType $DocumentType
      * return UploadDocumentDetail
      */
-    public function setDocumentType(\FedEx\PickupService\SimpleType\UploadDocumentType $documentType)
+    public function setDocumentType(\FedEx\Pickup\SimpleType\UploadDocumentType $documentType)
     {
         $this->DocumentType = $documentType;
         return $this;

@@ -1,14 +1,14 @@
 <?php
 namespace FedEx\RateService\ComplexType;
 
+use FedEx\AbstractComplexType;
+
 /**
  * Constructed string, based on format and zero or more data fields, printed in specified barcode symbology.
  *
- * @version     $Revision: 2 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
- * @subpackage  Package Movement Information
+ * @subpackage  Rate Service
  */
 class CustomLabelBarcodeEntry
     extends AbstractComplexType

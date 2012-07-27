@@ -1,12 +1,12 @@
 <?php
 namespace FedEx\Pickup\SimpleType;
 
+use FedEx\AbstractSimpleType;
+
 /**
  * Identifies the type of payment to be tendered for the pickup.
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */

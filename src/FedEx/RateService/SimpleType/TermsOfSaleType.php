@@ -1,6 +1,8 @@
 <?php
 namespace FedEx\RateService\SimpleType;
 
+use FedEx\AbstractSimpleType;
+
 /**
  * 
             Required for dutiable international express or ground shipment. This field is not applicable to an international PIB (document) or a non-document which does not require a commercial invoice express shipment.
@@ -12,11 +14,9 @@ namespace FedEx\RateService\SimpleType;
             FOB_OR_FCA (Free On Board/Free Carrier)
           
  *
- * @version     $Revision: 2 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
- * @subpackage  Package Movement Information
+ * @subpackage  Rate Service
  */
 class TermsOfSaleType
     extends AbstractSimpleType

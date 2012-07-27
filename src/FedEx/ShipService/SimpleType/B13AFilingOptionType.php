@@ -1,15 +1,15 @@
 <?php
 namespace FedEx\ShipService\SimpleType;
 
+use FedEx\AbstractSimpleType;
+
 /**
  * 
             Specifies which filing option is being exercised by the customer.
             Required for non-document shipments originating in Canada destined for any country other than Canada, the United States, Puerto Rico or the U.S. Virgin Islands.
           
  *
- * @version     $Revision: 2 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */

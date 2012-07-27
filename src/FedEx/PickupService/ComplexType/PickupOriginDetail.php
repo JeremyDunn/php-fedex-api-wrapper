@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * Descriptive data about the origin of the shipment being picked up by FedEx.
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -57,7 +57,7 @@ class PickupOriginDetail
      * @param PickupBuildingLocationType $PackageLocation
      * return PickupOriginDetail
      */
-    public function setPackageLocation(\FedEx\PickupService\SimpleType\PickupBuildingLocationType $packageLocation)
+    public function setPackageLocation(\FedEx\Pickup\SimpleType\PickupBuildingLocationType $packageLocation)
     {
         $this->PackageLocation = $packageLocation;
         return $this;
@@ -69,7 +69,7 @@ class PickupOriginDetail
      * @param BuildingPartCode $BuildingPart
      * return PickupOriginDetail
      */
-    public function setBuildingPart(\FedEx\PickupService\SimpleType\BuildingPartCode $buildingPart)
+    public function setBuildingPart(\FedEx\Pickup\SimpleType\BuildingPartCode $buildingPart)
     {
         $this->BuildingPart = $buildingPart;
         return $this;
@@ -129,7 +129,7 @@ class PickupOriginDetail
      * @param PickupRequestType $PickupDateType
      * return PickupOriginDetail
      */
-    public function setPickupDateType(\FedEx\PickupService\SimpleType\PickupRequestType $pickupDateType)
+    public function setPickupDateType(\FedEx\Pickup\SimpleType\PickupRequestType $pickupDateType)
     {
         $this->PickupDateType = $pickupDateType;
         return $this;

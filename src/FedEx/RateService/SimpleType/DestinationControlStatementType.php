@@ -1,14 +1,14 @@
 <?php
 namespace FedEx\RateService\SimpleType;
 
+use FedEx\AbstractSimpleType;
+
 /**
  * Used to indicate whether the Destination Control Statement is of type Department of Commerce, Department of State or both.
  *
- * @version     $Revision: 2 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
- * @subpackage  Package Movement Information
+ * @subpackage  Rate Service
  */
 class DestinationControlStatementType
     extends AbstractSimpleType

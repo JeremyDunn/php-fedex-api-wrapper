@@ -1,12 +1,12 @@
 <?php
 namespace FedEx\ShipService\SimpleType;
 
+use FedEx\AbstractSimpleType;
+
 /**
  * Identifies the type(s) of rates to be returned in the reply.
  *
- * @version     $Revision: 4 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */

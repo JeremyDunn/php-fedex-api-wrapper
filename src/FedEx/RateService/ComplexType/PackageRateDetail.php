@@ -1,14 +1,14 @@
 <?php
 namespace FedEx\RateService\ComplexType;
 
+use FedEx\AbstractComplexType;
+
 /**
  * Data for a package's rates, as calculated per a specific rate type.
  *
- * @version     $Revision: 4 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
- * @subpackage  Package Movement Information
+ * @subpackage  Rate Service
  */
 class PackageRateDetail
     extends AbstractComplexType

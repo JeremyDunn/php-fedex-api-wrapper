@@ -1,12 +1,12 @@
 <?php
 namespace FedEx\CourierDispatchService\SimpleType;
 
+use FedEx\AbstractSimpleType;
+
 /**
  * Identifies the collection of available FedEx transportation service options.
  *
- * @version     $Revision: 2 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Courier Dispatch Service
  */

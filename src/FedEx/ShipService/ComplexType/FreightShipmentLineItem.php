@@ -1,12 +1,12 @@
 <?php
 namespace FedEx\ShipService\ComplexType;
 
+use FedEx\AbstractComplexType;
+
 /**
  * Description of an individual commodity or class of content in a shipment.
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */

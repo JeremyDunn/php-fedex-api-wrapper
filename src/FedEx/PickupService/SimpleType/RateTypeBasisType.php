@@ -1,12 +1,12 @@
 <?php
 namespace FedEx\Pickup\SimpleType;
 
+use FedEx\AbstractSimpleType;
+
 /**
  * Select the type of rate from which the element is to be selected.
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */

@@ -1,12 +1,12 @@
 <?php
 namespace FedEx\TrackService\ComplexType;
 
+use FedEx\AbstractComplexType;
+
 /**
  * FedEx Signature Proof Of Delivery Letter reply.
  *
- * @version     $Revision: 4 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Track Service
  */

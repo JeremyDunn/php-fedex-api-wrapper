@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * Descriptive data regarding a FedEx freight service pickup request.
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -33,7 +33,7 @@ class FreightPickupDetail
      * @param FreightAccountPaymentType $Payment
      * return FreightPickupDetail
      */
-    public function setPayment(\FedEx\PickupService\SimpleType\FreightAccountPaymentType $payment)
+    public function setPayment(\FedEx\Pickup\SimpleType\FreightAccountPaymentType $payment)
     {
         $this->Payment = $payment;
         return $this;
@@ -45,7 +45,7 @@ class FreightPickupDetail
      * @param FreightShipmentRoleType $Role
      * return FreightPickupDetail
      */
-    public function setRole(\FedEx\PickupService\SimpleType\FreightShipmentRoleType $role)
+    public function setRole(\FedEx\Pickup\SimpleType\FreightShipmentRoleType $role)
     {
         $this->Role = $role;
         return $this;

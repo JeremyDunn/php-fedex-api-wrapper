@@ -124,6 +124,8 @@ class GenerateComplexTypeClasses extends AbstractGenerate
 <?php
 namespace {$this->_baseNamespace}\ComplexType;
 
+use FedEx\AbstractComplexType;
+
 /**
  * $classDoc
  *

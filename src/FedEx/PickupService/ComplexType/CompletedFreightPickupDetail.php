@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * Data resulting from the processing of an LTL Freight pickup request.
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -81,7 +81,7 @@ class CompletedFreightPickupDetail
      * @param PickupEventType $Status
      * return CompletedFreightPickupDetail
      */
-    public function setStatus(\FedEx\PickupService\SimpleType\PickupEventType $status)
+    public function setStatus(\FedEx\Pickup\SimpleType\PickupEventType $status)
     {
         $this->Status = $status;
         return $this;

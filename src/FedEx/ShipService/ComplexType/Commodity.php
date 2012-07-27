@@ -1,15 +1,15 @@
 <?php
 namespace FedEx\ShipService\ComplexType;
 
+use FedEx\AbstractComplexType;
+
 /**
  * 
             For international multiple piece shipments, commodity information must be passed in the Master and on each child transaction.
             If this shipment cotains more than four commodities line items, the four highest valued should be included in the first 4 occurances for this request.
           
  *
- * @version     $Revision: 2 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */

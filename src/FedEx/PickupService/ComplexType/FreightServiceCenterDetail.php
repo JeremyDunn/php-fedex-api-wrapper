@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * This class describes the relationship between a customer-specified address and the FedEx Freight / FedEx National Freight Service Center that supports that address.
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -57,7 +57,7 @@ class FreightServiceCenterDetail
      * @param ServiceType $LocalService
      * return FreightServiceCenterDetail
      */
-    public function setLocalService(\FedEx\PickupService\SimpleType\ServiceType $localService)
+    public function setLocalService(\FedEx\Pickup\SimpleType\ServiceType $localService)
     {
         $this->LocalService = $localService;
         return $this;
@@ -93,7 +93,7 @@ class FreightServiceCenterDetail
      * @param FreightServiceSchedulingType $LocalServiceScheduling
      * return FreightServiceCenterDetail
      */
-    public function setLocalServiceScheduling(\FedEx\PickupService\SimpleType\FreightServiceSchedulingType $localServiceScheduling)
+    public function setLocalServiceScheduling(\FedEx\Pickup\SimpleType\FreightServiceSchedulingType $localServiceScheduling)
     {
         $this->LocalServiceScheduling = $localServiceScheduling;
         return $this;

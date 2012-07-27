@@ -1,5 +1,7 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * The constraints on the scheduling of a dispatch, where that dispatch would be made by the Carrier, occur on the PickupDate,
@@ -7,9 +9,7 @@ namespace FedEx\PickupService\ComplexType;
 						by the "ScheduleDay" (SAME_DAY meaning that the creation would occur on the PickupDate, and FUTURE_DAY meaning that the creation
 						would occur on a date prior to the PickupDate).
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -24,7 +24,7 @@ class PickupScheduleOption
      * @param CarrierCodeType $Carrier
      * return PickupScheduleOption
      */
-    public function setCarrier(\FedEx\PickupService\SimpleType\CarrierCodeType $carrier)
+    public function setCarrier(\FedEx\Pickup\SimpleType\CarrierCodeType $carrier)
     {
         $this->Carrier = $carrier;
         return $this;
@@ -48,7 +48,7 @@ class PickupScheduleOption
      * @param PickupRequestType $ScheduleDay
      * return PickupScheduleOption
      */
-    public function setScheduleDay(\FedEx\PickupService\SimpleType\PickupRequestType $scheduleDay)
+    public function setScheduleDay(\FedEx\Pickup\SimpleType\PickupRequestType $scheduleDay)
     {
         $this->ScheduleDay = $scheduleDay;
         return $this;
@@ -120,7 +120,7 @@ class PickupScheduleOption
      * @param CountryRelationshipType $CountryRelationship
      * return PickupScheduleOption
      */
-    public function setCountryRelationship(\FedEx\PickupService\SimpleType\CountryRelationshipType $countryRelationship)
+    public function setCountryRelationship(\FedEx\Pickup\SimpleType\CountryRelationshipType $countryRelationship)
     {
         $this->CountryRelationship = $countryRelationship;
         return $this;

@@ -1,6 +1,8 @@
 <?php
 namespace FedEx\ShipService\SimpleType;
 
+use FedEx\AbstractSimpleType;
+
 /**
  * 
             Specifies the client-requested response in the event of errors within shipment.
@@ -8,9 +10,7 @@ namespace FedEx\ShipService\SimpleType;
             STANDARD             : Return error Notifications only.
           
  *
- * @version     $Revision: 2 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */

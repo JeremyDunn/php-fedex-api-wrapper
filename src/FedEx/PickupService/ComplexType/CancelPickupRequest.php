@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * The descriptive data to cancel a shipment pickup request.
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -69,7 +69,7 @@ class CancelPickupRequest
      * @param CarrierCodeType $CarrierCode
      * return CancelPickupRequest
      */
-    public function setCarrierCode(\FedEx\PickupService\SimpleType\CarrierCodeType $carrierCode)
+    public function setCarrierCode(\FedEx\Pickup\SimpleType\CarrierCodeType $carrierCode)
     {
         $this->CarrierCode = $carrierCode;
         return $this;

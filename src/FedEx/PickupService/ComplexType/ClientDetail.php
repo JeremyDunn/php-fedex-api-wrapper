@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * Descriptive data for the client submitting a transaction.
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -69,7 +69,7 @@ class ClientDetail
      * @param ExpressRegionCode $Region
      * return ClientDetail
      */
-    public function setRegion(\FedEx\PickupService\SimpleType\ExpressRegionCode $region)
+    public function setRegion(\FedEx\Pickup\SimpleType\ExpressRegionCode $region)
     {
         $this->Region = $region;
         return $this;

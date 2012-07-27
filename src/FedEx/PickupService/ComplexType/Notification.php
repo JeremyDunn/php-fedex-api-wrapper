@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * The descriptive data regarding the result of the submitted transaction.
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -21,7 +21,7 @@ class Notification
      * @param NotificationSeverityType $Severity
      * return Notification
      */
-    public function setSeverity(\FedEx\PickupService\SimpleType\NotificationSeverityType $severity)
+    public function setSeverity(\FedEx\Pickup\SimpleType\NotificationSeverityType $severity)
     {
         $this->Severity = $severity;
         return $this;

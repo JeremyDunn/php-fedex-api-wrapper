@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * 
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -21,7 +21,7 @@ class CustomDeliveryWindowDetail
      * @param CustomDeliveryWindowType $Type
      * return CustomDeliveryWindowDetail
      */
-    public function setType(\FedEx\PickupService\SimpleType\CustomDeliveryWindowType $type)
+    public function setType(\FedEx\Pickup\SimpleType\CustomDeliveryWindowType $type)
     {
         $this->Type = $type;
         return $this;

@@ -1,12 +1,10 @@
 <?php
 namespace FedEx\UploadDocumentService;
-
+    
 /**
  * Request sends the SOAP call to the FedEx servers and returns the response
  *
- * @version     $Revision: 2 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */
@@ -36,7 +34,7 @@ class Request
         if (null != $wsdlPath) {
             $this->_wsdlPath = $wsdlPath;
         } else {
-            $this->_wsdlPath = realpath(dirname(dirname(__FILE__)) . \DIRECTORY_SEPARATOR . '_wsdl' . \DIRECTORY_SEPARATOR . 'UploadDocumentService_v1.wsdl');
+            $this->_wsdlPath = realpath(dirname(__FILE__) . '/../_wsdl/UploadDocumentService_v1.wsdl');
         }
 
         $this->_soapClient = new \SoapClient($this->_wsdlPath, array('trace' => true));
@@ -45,7 +43,7 @@ class Request
     /**
      * Returns the SoapClient instance
      *
-     * @return SoapClient
+     * @return \SoapClient
      */
     public function getSoapClient()
     {
@@ -53,25 +51,27 @@ class Request
     }
 
     /**
-     * Sends request and returns Upload Documents Reply
+     * Sends the UploadDocumentsRequest and returns the response
      *
-     * @param UploadDocumentsRequest $uploadDocumentsRequest
+     * @param ComplexType\RateRequest $rateRequest
      * @return stdClass
      */
     public function getUploadDocumentsReply(ComplexType\UploadDocumentsRequest $uploadDocumentsRequest)
     {
         return $this->_soapClient->uploadDocuments($uploadDocumentsRequest->toArray());
     }
-
-    /**
-     * Sends request and returns Upload Images Reply
+       /**
+     * Sends the UploadImagesRequest and returns the response
      *
-     * @param UploadImagesRequest $uploadImagesRequest
+     * @param ComplexType\RateRequest $rateRequest
      * @return stdClass
      */
     public function getUploadImagesReply(ComplexType\UploadImagesRequest $uploadImagesRequest)
     {
         return $this->_soapClient->uploadImages($uploadImagesRequest->toArray());
     }
+   
 
 }
+
+   

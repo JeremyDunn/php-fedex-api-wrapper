@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * Descriptive data regarding an express freight service pickup request.
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -21,7 +21,7 @@ class ExpressFreightPickupDetail
      * @param ServiceType $Service
      * return ExpressFreightPickupDetail
      */
-    public function setService(\FedEx\PickupService\SimpleType\ServiceType $service)
+    public function setService(\FedEx\Pickup\SimpleType\ServiceType $service)
     {
         $this->Service = $service;
         return $this;
@@ -57,7 +57,7 @@ class ExpressFreightPickupDetail
      * @param TruckType $TruckType
      * return ExpressFreightPickupDetail
      */
-    public function setTruckType(\FedEx\PickupService\SimpleType\TruckType $truckType)
+    public function setTruckType(\FedEx\Pickup\SimpleType\TruckType $truckType)
     {
         $this->TruckType = $truckType;
         return $this;
@@ -69,7 +69,7 @@ class ExpressFreightPickupDetail
      * @param TrailerSizeType $TrailerSize
      * return ExpressFreightPickupDetail
      */
-    public function setTrailerSize(\FedEx\PickupService\SimpleType\TrailerSizeType $trailerSize)
+    public function setTrailerSize(\FedEx\Pickup\SimpleType\TrailerSizeType $trailerSize)
     {
         $this->TrailerSize = $trailerSize;
         return $this;

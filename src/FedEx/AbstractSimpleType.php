@@ -1,14 +1,11 @@
 <?php
-namespace FedEx\RateService\SimpleType;
+namespace FedEx;
 
 /**
- * Abstract class for all simple data types
+ * Abstract class for SimpleTypes
  *
- * @version     $Revision: 2 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
- * @subpackage  Package Movement Information
  */
 abstract class AbstractSimpleType
 {
@@ -30,7 +27,7 @@ abstract class AbstractSimpleType
 
     /**
      * __toString() implementation
-     * 
+     *
      * @return string
      */
     public function __toString()

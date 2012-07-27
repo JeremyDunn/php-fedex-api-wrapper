@@ -1,12 +1,12 @@
 <?php
 namespace FedEx\TrackService\ComplexType;
 
+use FedEx\AbstractComplexType;
+
 /**
  * Used when a cargo shipment is split across vehicles. This is used to give the status of each part of the shipment.
  *
- * @version     $Revision: 4 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Track Service
  */

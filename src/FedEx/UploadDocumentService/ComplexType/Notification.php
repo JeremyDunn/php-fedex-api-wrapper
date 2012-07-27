@@ -1,12 +1,12 @@
 <?php
 namespace FedEx\UploadDocumentService\ComplexType;
 
+use FedEx\AbstractComplexType;
+
 /**
  * The descriptive data regarding the results of the submitted transaction.
  *
- * @version     $Revision: 2 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */

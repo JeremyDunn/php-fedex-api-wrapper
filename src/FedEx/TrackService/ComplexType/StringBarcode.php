@@ -1,12 +1,12 @@
 <?php
 namespace FedEx\TrackService\ComplexType;
 
+use FedEx\AbstractComplexType;
+
 /**
  * Each instance of this data type represents a barcode whose content must be represented as ASCII text (i.e. not binary data).
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Track Service
  */

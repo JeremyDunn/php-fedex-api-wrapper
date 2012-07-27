@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * The descriptive data to schedule a FedEx package pickup request.
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -141,7 +141,7 @@ class CreatePickupRequest
      * @param CarrierCodeType $CarrierCode
      * return CreatePickupRequest
      */
-    public function setCarrierCode(\FedEx\PickupService\SimpleType\CarrierCodeType $carrierCode)
+    public function setCarrierCode(\FedEx\Pickup\SimpleType\CarrierCodeType $carrierCode)
     {
         $this->CarrierCode = $carrierCode;
         return $this;
@@ -189,7 +189,7 @@ class CreatePickupRequest
      * @param CountryRelationshipType $CountryRelationship
      * return CreatePickupRequest
      */
-    public function setCountryRelationship(\FedEx\PickupService\SimpleType\CountryRelationshipType $countryRelationship)
+    public function setCountryRelationship(\FedEx\Pickup\SimpleType\CountryRelationshipType $countryRelationship)
     {
         $this->CountryRelationship = $countryRelationship;
         return $this;

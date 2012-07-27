@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * 
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -21,7 +21,7 @@ class AssociatedAccount
      * @param AssociatedAccountNumberType $Type
      * return AssociatedAccount
      */
-    public function setType(\FedEx\PickupService\SimpleType\AssociatedAccountNumberType $type)
+    public function setType(\FedEx\Pickup\SimpleType\AssociatedAccountNumberType $type)
     {
         $this->Type = $type;
         return $this;

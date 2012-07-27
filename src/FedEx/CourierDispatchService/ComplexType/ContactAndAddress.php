@@ -1,12 +1,12 @@
 <?php
 namespace FedEx\CourierDispatchService\ComplexType;
 
+use FedEx\AbstractComplexType;
+
 /**
  * The descriptive data for a person or company entitiy doing business with FedEx.
  *
- * @version     $Revision: 2 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Courier Dispatch Service
  */

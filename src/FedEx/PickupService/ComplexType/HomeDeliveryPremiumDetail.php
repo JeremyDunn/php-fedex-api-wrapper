@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * The descriptive data required by FedEx for home delivery services.
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -21,7 +21,7 @@ class HomeDeliveryPremiumDetail
      * @param HomeDeliveryPremiumType $HomeDeliveryPremiumType
      * return HomeDeliveryPremiumDetail
      */
-    public function setHomeDeliveryPremiumType(\FedEx\PickupService\SimpleType\HomeDeliveryPremiumType $homeDeliveryPremiumType)
+    public function setHomeDeliveryPremiumType(\FedEx\Pickup\SimpleType\HomeDeliveryPremiumType $homeDeliveryPremiumType)
     {
         $this->HomeDeliveryPremiumType = $homeDeliveryPremiumType;
         return $this;

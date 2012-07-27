@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * The descriptive data for a FedEx email notification recipient.
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -21,7 +21,7 @@ class EMailNotificationRecipient
      * @param EMailNotificationRecipientType $EMailNotificationRecipientType
      * return EMailNotificationRecipient
      */
-    public function setEMailNotificationRecipientType(\FedEx\PickupService\SimpleType\EMailNotificationRecipientType $eMailNotificationRecipientType)
+    public function setEMailNotificationRecipientType(\FedEx\Pickup\SimpleType\EMailNotificationRecipientType $eMailNotificationRecipientType)
     {
         $this->EMailNotificationRecipientType = $eMailNotificationRecipientType;
         return $this;
@@ -57,7 +57,7 @@ class EMailNotificationRecipient
      * @param EMailNotificationFormatType $Format
      * return EMailNotificationRecipient
      */
-    public function setFormat(\FedEx\PickupService\SimpleType\EMailNotificationFormatType $format)
+    public function setFormat(\FedEx\Pickup\SimpleType\EMailNotificationFormatType $format)
     {
         $this->Format = $format;
         return $this;

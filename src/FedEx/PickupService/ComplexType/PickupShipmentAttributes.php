@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * Descriptive information about the shipment.
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -21,7 +21,7 @@ class PickupShipmentAttributes
      * @param ServiceType $ServiceType
      * return PickupShipmentAttributes
      */
-    public function setServiceType(\FedEx\PickupService\SimpleType\ServiceType $serviceType)
+    public function setServiceType(\FedEx\Pickup\SimpleType\ServiceType $serviceType)
     {
         $this->ServiceType = $serviceType;
         return $this;
@@ -33,7 +33,7 @@ class PickupShipmentAttributes
      * @param PackagingType $PackagingType
      * return PickupShipmentAttributes
      */
-    public function setPackagingType(\FedEx\PickupService\SimpleType\PackagingType $packagingType)
+    public function setPackagingType(\FedEx\Pickup\SimpleType\PackagingType $packagingType)
     {
         $this->PackagingType = $packagingType;
         return $this;

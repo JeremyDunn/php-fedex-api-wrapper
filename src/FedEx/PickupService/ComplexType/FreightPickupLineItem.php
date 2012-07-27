@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * Identifies details about the contents of the shipment to be picked up.
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -21,7 +21,7 @@ class FreightPickupLineItem
      * @param ServiceType $Service
      * return FreightPickupLineItem
      */
-    public function setService(\FedEx\PickupService\SimpleType\ServiceType $service)
+    public function setService(\FedEx\Pickup\SimpleType\ServiceType $service)
     {
         $this->Service = $service;
         return $this;
@@ -57,7 +57,7 @@ class FreightPickupLineItem
      * @param PhysicalPackagingType $Packaging
      * return FreightPickupLineItem
      */
-    public function setPackaging(\FedEx\PickupService\SimpleType\PhysicalPackagingType $packaging)
+    public function setPackaging(\FedEx\Pickup\SimpleType\PhysicalPackagingType $packaging)
     {
         $this->Packaging = $packaging;
         return $this;

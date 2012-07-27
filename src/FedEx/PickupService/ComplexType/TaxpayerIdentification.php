@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * The descriptive data for taxpayer identification information.
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -21,7 +21,7 @@ class TaxpayerIdentification
      * @param TinType $TinType
      * return TaxpayerIdentification
      */
-    public function setTinType(\FedEx\PickupService\SimpleType\TinType $tinType)
+    public function setTinType(\FedEx\Pickup\SimpleType\TinType $tinType)
     {
         $this->TinType = $tinType;
         return $this;

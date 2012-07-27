@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * Specifies the usage of a single type of special equipment while loading/unloading a shipment
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -21,7 +21,7 @@ class SpecialEquipmentLineItem
      * @param SpecialEquipmentType $Type
      * return SpecialEquipmentLineItem
      */
-    public function setType(\FedEx\PickupService\SimpleType\SpecialEquipmentType $type)
+    public function setType(\FedEx\Pickup\SimpleType\SpecialEquipmentType $type)
     {
         $this->Type = $type;
         return $this;

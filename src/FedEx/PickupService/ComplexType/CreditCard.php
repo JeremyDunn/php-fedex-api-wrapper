@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * 
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -33,7 +33,7 @@ class CreditCard
      * @param CreditCardType $CreditCardType
      * return CreditCard
      */
-    public function setCreditCardType(\FedEx\PickupService\SimpleType\CreditCardType $creditCardType)
+    public function setCreditCardType(\FedEx\Pickup\SimpleType\CreditCardType $creditCardType)
     {
         $this->CreditCardType = $creditCardType;
         return $this;

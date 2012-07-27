@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * Descriptive data required for a FedEx shipment that is to be held at the destination FedEx location for pickup by the recipient.
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -45,7 +45,7 @@ class HoldAtLocationDetail
      * @param FedExLocationType $LocationType
      * return HoldAtLocationDetail
      */
-    public function setLocationType(\FedEx\PickupService\SimpleType\FedExLocationType $locationType)
+    public function setLocationType(\FedEx\Pickup\SimpleType\FedExLocationType $locationType)
     {
         $this->LocationType = $locationType;
         return $this;

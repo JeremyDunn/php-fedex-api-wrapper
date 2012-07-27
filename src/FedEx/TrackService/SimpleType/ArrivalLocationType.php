@@ -1,12 +1,12 @@
 <?php
 namespace FedEx\TrackService\SimpleType;
 
+use FedEx\AbstractSimpleType;
+
 /**
  * Identifies where a tracking event occurs.
  *
- * @version     $Revision: 4 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Track Service
  */

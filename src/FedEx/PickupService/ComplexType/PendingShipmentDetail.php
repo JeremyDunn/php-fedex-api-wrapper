@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * This information describes the kind of pending shipment being requested.
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -21,7 +21,7 @@ class PendingShipmentDetail
      * @param PendingShipmentType $Type
      * return PendingShipmentDetail
      */
-    public function setType(\FedEx\PickupService\SimpleType\PendingShipmentType $type)
+    public function setType(\FedEx\Pickup\SimpleType\PendingShipmentType $type)
     {
         $this->Type = $type;
         return $this;

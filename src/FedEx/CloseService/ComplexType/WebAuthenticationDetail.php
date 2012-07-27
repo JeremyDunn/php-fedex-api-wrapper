@@ -1,12 +1,12 @@
 <?php
 namespace FedEx\CloseService\ComplexType;
 
+use FedEx\AbstractComplexType;
+
 /**
  * The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
  *
- * @version     $Revision: 2 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Close Service
  */

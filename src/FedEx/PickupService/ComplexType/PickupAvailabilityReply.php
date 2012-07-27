@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * The descriptive data returned to a client in response to a cancel dispatch request.
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -21,7 +21,7 @@ class PickupAvailabilityReply
      * @param NotificationSeverityType $HighestSeverity
      * return PickupAvailabilityReply
      */
-    public function setHighestSeverity(\FedEx\PickupService\SimpleType\NotificationSeverityType $highestSeverity)
+    public function setHighestSeverity(\FedEx\Pickup\SimpleType\NotificationSeverityType $highestSeverity)
     {
         $this->HighestSeverity = $highestSeverity;
         return $this;
@@ -93,7 +93,7 @@ class PickupAvailabilityReply
      * @param CloseTimeType $CloseTimeType
      * return PickupAvailabilityReply
      */
-    public function setCloseTimeType(\FedEx\PickupService\SimpleType\CloseTimeType $closeTimeType)
+    public function setCloseTimeType(\FedEx\Pickup\SimpleType\CloseTimeType $closeTimeType)
     {
         $this->CloseTimeType = $closeTimeType;
         return $this;

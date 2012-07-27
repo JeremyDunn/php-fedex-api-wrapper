@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * Descriptive data required for a FedEx COD (Collect-On-Delivery) shipment.
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -45,7 +45,7 @@ class CodDetail
      * @param CodCollectionType $CollectionType
      * return CodDetail
      */
-    public function setCollectionType(\FedEx\PickupService\SimpleType\CodCollectionType $collectionType)
+    public function setCollectionType(\FedEx\Pickup\SimpleType\CodCollectionType $collectionType)
     {
         $this->CollectionType = $collectionType;
         return $this;
@@ -69,7 +69,7 @@ class CodDetail
      * @param CodReturnReferenceIndicatorType $ReferenceIndicator
      * return CodDetail
      */
-    public function setReferenceIndicator(\FedEx\PickupService\SimpleType\CodReturnReferenceIndicatorType $referenceIndicator)
+    public function setReferenceIndicator(\FedEx\Pickup\SimpleType\CodReturnReferenceIndicatorType $referenceIndicator)
     {
         $this->ReferenceIndicator = $referenceIndicator;
         return $this;

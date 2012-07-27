@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * Descriptive data regarding a FedEx freight service pickup request.
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -21,7 +21,7 @@ class FreightGuaranteeDetail
      * @param FreightGuaranteeType $Type
      * return FreightGuaranteeDetail
      */
-    public function setType(\FedEx\PickupService\SimpleType\FreightGuaranteeType $type)
+    public function setType(\FedEx\Pickup\SimpleType\FreightGuaranteeType $type)
     {
         $this->Type = $type;
         return $this;

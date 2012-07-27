@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * Electronic Trade document references used with the ETD special service.
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -21,7 +21,7 @@ class EtdDetail
      * @param EtdConfirmationType $Confirmation
      * return EtdDetail
      */
-    public function setConfirmation(\FedEx\PickupService\SimpleType\EtdConfirmationType $confirmation)
+    public function setConfirmation(\FedEx\Pickup\SimpleType\EtdConfirmationType $confirmation)
     {
         $this->Confirmation = $confirmation;
         return $this;

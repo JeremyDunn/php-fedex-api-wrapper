@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * The descriptive data for the monetary compensation given to FedEx for services rendered to the customer.
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -21,7 +21,7 @@ class Payment
      * @param PaymentType $PaymentType
      * return Payment
      */
-    public function setPaymentType(\FedEx\PickupService\SimpleType\PaymentType $paymentType)
+    public function setPaymentType(\FedEx\Pickup\SimpleType\PaymentType $paymentType)
     {
         $this->PaymentType = $paymentType;
         return $this;

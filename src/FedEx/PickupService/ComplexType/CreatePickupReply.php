@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * The descriptive data returned to a client in response to a shipment pickup request.
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -21,7 +21,7 @@ class CreatePickupReply
      * @param NotificationSeverityType $HighestSeverity
      * return CreatePickupReply
      */
-    public function setHighestSeverity(\FedEx\PickupService\SimpleType\NotificationSeverityType $highestSeverity)
+    public function setHighestSeverity(\FedEx\Pickup\SimpleType\NotificationSeverityType $highestSeverity)
     {
         $this->HighestSeverity = $highestSeverity;
         return $this;

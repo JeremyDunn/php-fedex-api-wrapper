@@ -1,12 +1,12 @@
 <?php
 namespace FedEx\CloseService\ComplexType;
 
+use FedEx\AbstractComplexType;
+
 /**
  * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
  *
- * @version     $Revision: 2 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Close Service
  */

@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * Descriptive data detailing the length, width, and height of a package.
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -57,7 +57,7 @@ class Dimensions
      * @param LinearUnits $Units
      * return Dimensions
      */
-    public function setUnits(\FedEx\PickupService\SimpleType\LinearUnits $units)
+    public function setUnits(\FedEx\Pickup\SimpleType\LinearUnits $units)
     {
         $this->Units = $units;
         return $this;

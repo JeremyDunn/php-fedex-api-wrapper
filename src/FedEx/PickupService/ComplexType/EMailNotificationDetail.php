@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * Information describing email notifications that will be sent in relation to events that occur during package movement
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -21,7 +21,7 @@ class EMailNotificationDetail
      * @param EMailNotificationAggregationType $AggregationType
      * return EMailNotificationDetail
      */
-    public function setAggregationType(\FedEx\PickupService\SimpleType\EMailNotificationAggregationType $aggregationType)
+    public function setAggregationType(\FedEx\Pickup\SimpleType\EMailNotificationAggregationType $aggregationType)
     {
         $this->AggregationType = $aggregationType;
         return $this;

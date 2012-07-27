@@ -1,12 +1,12 @@
 <?php
 namespace FedEx\ReturnTagService\SimpleType;
 
+use FedEx\AbstractSimpleType;
+
 /**
  * Identifies the FedEx service to use in shipping the package. See ServiceType for list of valid enumerated values.
  *
- * @version     $Revision: 2 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Return Tag Service
  */

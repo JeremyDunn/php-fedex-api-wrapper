@@ -1,14 +1,12 @@
 <?php
 namespace FedEx\RateService;
-
+    
 /**
  * Request sends the SOAP call to the FedEx servers and returns the response
  *
- * @version     $Revision: 4 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
- * @subpackage  Package Movement Information
+ * @subpackage  Rate Service
  */
 class Request
 {
@@ -36,7 +34,7 @@ class Request
         if (null != $wsdlPath) {
             $this->_wsdlPath = $wsdlPath;
         } else {
-            $this->_wsdlPath = realpath(dirname(dirname(__FILE__)) . \DIRECTORY_SEPARATOR . '_wsdl' . \DIRECTORY_SEPARATOR . 'RateService_v10.wsdl');
+            $this->_wsdlPath = realpath(dirname(__FILE__) . '/../_wsdl/RateService_v10.wsdl');
         }
 
         $this->_soapClient = new \SoapClient($this->_wsdlPath, array('trace' => true));
@@ -45,7 +43,7 @@ class Request
     /**
      * Returns the SoapClient instance
      *
-     * @return SoapClient
+     * @return \SoapClient
      */
     public function getSoapClient()
     {
@@ -58,9 +56,12 @@ class Request
      * @param ComplexType\RateRequest $rateRequest
      * @return stdClass
      */
-    public function getRateReply(ComplexType\RateRequest $rateRequeset)
+    public function getRateReply(ComplexType\RateRequest $rateRequest)
     {
-        return $this->_soapClient->getRates($rateRequeset->toArray());
+        return $this->_soapClient->getRates($rateRequest->toArray());
     }
-    
+   
+
 }
+
+   

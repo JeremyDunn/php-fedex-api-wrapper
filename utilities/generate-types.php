@@ -2,7 +2,6 @@
 
 /**
  * This script will generate the ComplexType and SimpleType classes based off the WSDL files provided by FedEx.  
- * When updating the library to a newer version, change the path to the .wsdl files below and also in the corresponding Request.php for each service (for example, library/RateService/Request.php)
  */
 
 set_include_path(implode(PATH_SEPARATOR, array(
@@ -37,9 +36,10 @@ $baseNamespace = 'FedEx\RateService';
 $subpackageName = 'Rate Service';
 
 //generate Request class
-$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../src/FedEx/RateService/') . '/Request.php';
+$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../') . '/src/FedEx/RateService/Request.php';
 $generateRequestClassFile = new Utility\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, 'FedEx\RateService', $subpackageName);
 $generateRequestClassFile->run();
+
 
 //generate SimpleType classes
 $exportPath = realpath(dirname(__FILE__) . '/../src/FedEx/RateService/SimpleType');
@@ -58,7 +58,7 @@ $baseNamespace = 'FedEx\PackageMovementInformationService';
 $subpackageName = 'Package Movement Information Service';
 
 //generate Request class
-$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../src/FedEx/PackageMovementInformationService/') . '/Request.php';
+$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../') . '/src/FedEx/PackageMovementInformationService/Request.php';
 $generateRequestClassFile = new Utility\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, 'FedEx\PackageMovementInformationService', $subpackageName);
 $generateRequestClassFile->run();
 
@@ -80,7 +80,7 @@ $baseNamespace = 'FedEx\TrackService';
 $subpackageName = 'Track Service';
 
 //generate Request class
-$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../src/FedEx/TrackService/Request.php');
+$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../') . '/src/FedEx/TrackService/Request.php';
 $generateRequestClassFile = new Utility\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, $baseNamespace, $subPackageName);
 $generateRequestClassFile->run();
 
@@ -102,7 +102,7 @@ $baseNamespace = 'FedEx\AddressValidationService';
 $subPackageName = 'Address Validation Service';
 
 //generate Request class
-$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../src/FedEx/AddressValidationService/Request.php');
+$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../') . '/src/FedEx/AddressValidationService/Request.php';
 $generateRequestClassFile = new Utility\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, $baseNamespace, $subPackageName);
 $generateRequestClassFile->run();
 
@@ -124,7 +124,7 @@ $baseNamespace = 'FedEx\LocatorService';
 $subPackageName = 'Locator Service';
 
 //generate Request class
-$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../src/FedEx/LocatorService/Request.php');
+$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../') . '/src/FedEx/LocatorService/Request.php';
 $generateRequestClassFile = new Utility\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, $baseNamespace, $subPackageName);
 $generateRequestClassFile->run();
 
@@ -147,7 +147,7 @@ $baseNamespace = 'FedEx\ShipService';
 $subPackageName = 'Ship Service';
 
 //generate Request class
-$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../src/FedEx/ShipService/Request.php');
+$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../') . '/src/FedEx/ShipService/Request.php';
 $generateRequestClassFile = new Utility\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, $baseNamespace, $subPackageName);
 $generateRequestClassFile->run();
 
@@ -169,7 +169,7 @@ $baseNamespace = 'FedEx\CourierDispatchService';
 $subPackageName = 'Courier Dispatch Service';
 
 //export Request class
-$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../src/FedEx/CourierDispatchService/Request.php');
+$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../') . '/src/FedEx/CourierDispatchService/Request.php';
 $generateRequestClassFile = new Utility\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, $baseNamespace, $subPackageName);
 $generateRequestClassFile->run();
 
@@ -191,7 +191,7 @@ $baseNamespace = 'FedEx\CloseService';
 $subPackageName = 'Close Service';
 
 //generate Request class
-$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../src/FedEx/CloseService/Request.php');
+$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../') . '/src/FedEx/CloseService/Request.php';
 $generateRequestClassFile = new Utility\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, $baseNamespace, $subPackageName);
 $generateRequestClassFile->run();
 
@@ -211,7 +211,7 @@ $baseNamespace = 'FedEx\ReturnTagService';
 $subPackageName = 'Return Tag Service';
 
 //generate Request class
-$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../src/FedEx/ReturnTagService/Request.php');
+$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../') . '/src/FedEx/ReturnTagService/Request.php';
 $generateRequestClassFile = new Utility\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, $baseNamespace, $subPackageName);
 $generateRequestClassFile->run();
 
@@ -236,7 +236,7 @@ $baseNamespace = 'FedEx\UploadDocumentService';
 $subPackageName = 'Upload Document Service';
 
 //generate Request class
-$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../src/FedEx/UploadDocumentService/Request.php');
+$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../') . '/src/FedEx/UploadDocumentService/Request.php';
 $generateRequestClassFile = new Utility\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, $baseNamespace, $subPackageName);
 $generateRequestClassFile->run();
 
@@ -257,7 +257,7 @@ $baseNamespace = 'FedEx\Pickup';
 $subPackageName = 'Pickup Service';
 
 //generate Request class
-$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../src/FedEx/PickupService/Request.php');
+$pathToRequestClassFile = realpath(dirname(__FILE__) . '/../') . '/src/FedEx/PickupService/Request.php';
 $generateRequestClassFile = new Utility\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, $baseNamespace, $subPackageName);
 $generateRequestClassFile->run();
 

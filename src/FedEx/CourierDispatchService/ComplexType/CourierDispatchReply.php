@@ -1,12 +1,12 @@
 <?php
 namespace FedEx\CourierDispatchService\ComplexType;
 
+use FedEx\AbstractComplexType;
+
 /**
  * The descriptive data returned to a client in response to a courier dispatch (i.e. package pickup) request.
  *
- * @version     $Revision: 2 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Courier Dispatch Service
  */

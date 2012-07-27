@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * 
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -21,7 +21,7 @@ class CodAddTransportationChargesDetail
      * @param RateTypeBasisType $RateTypeBasis
      * return CodAddTransportationChargesDetail
      */
-    public function setRateTypeBasis(\FedEx\PickupService\SimpleType\RateTypeBasisType $rateTypeBasis)
+    public function setRateTypeBasis(\FedEx\Pickup\SimpleType\RateTypeBasisType $rateTypeBasis)
     {
         $this->RateTypeBasis = $rateTypeBasis;
         return $this;
@@ -33,7 +33,7 @@ class CodAddTransportationChargesDetail
      * @param CodAddTransportationChargeBasisType $ChargeBasis
      * return CodAddTransportationChargesDetail
      */
-    public function setChargeBasis(\FedEx\PickupService\SimpleType\CodAddTransportationChargeBasisType $chargeBasis)
+    public function setChargeBasis(\FedEx\Pickup\SimpleType\CodAddTransportationChargeBasisType $chargeBasis)
     {
         $this->ChargeBasis = $chargeBasis;
         return $this;
@@ -45,7 +45,7 @@ class CodAddTransportationChargesDetail
      * @param ChargeBasisLevelType $ChargeBasisLevel
      * return CodAddTransportationChargesDetail
      */
-    public function setChargeBasisLevel(\FedEx\PickupService\SimpleType\ChargeBasisLevelType $chargeBasisLevel)
+    public function setChargeBasisLevel(\FedEx\Pickup\SimpleType\ChargeBasisLevelType $chargeBasisLevel)
     {
         $this->ChargeBasisLevel = $chargeBasisLevel;
         return $this;

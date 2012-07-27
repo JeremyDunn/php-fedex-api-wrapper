@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * The descriptive data for the heaviness of an object.
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -21,7 +21,7 @@ class Weight
      * @param WeightUnits $Units
      * return Weight
      */
-    public function setUnits(\FedEx\PickupService\SimpleType\WeightUnits $units)
+    public function setUnits(\FedEx\Pickup\SimpleType\WeightUnits $units)
     {
         $this->Units = $units;
         return $this;

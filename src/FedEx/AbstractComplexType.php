@@ -1,28 +1,25 @@
 <?php
-namespace FedEx\ReturnTagService\ComplexType;
-use Fedex\ReturnTagService\SimpleType;
+namespace FedEx;
 
 /**
- * Abstract class for all complex data types
+ * Abstract class for SimpleTypes
  *
- * @version     $Revision: 2 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
- * @subpackage  Return Tag Service
  */
-abstract class AbstractComplexType {
+abstract class AbstractComplexType
+{
 
     /**
      * Holds the data as a key => value array
-     * 
+     *
      * @var array
      */
     protected $_values = array();
 
     /**
      * The name of the extended class/data type
-     * 
+     *
      * @var string
      */
     protected $_name;
@@ -51,7 +48,7 @@ abstract class AbstractComplexType {
     }
 
     /**
-     * Recursive algorthim to convert complex types to and array
+     * Recursive algorthim to convert complex types to an array
      *
      * @param array $arrayValues
      * @return array
@@ -79,7 +76,7 @@ abstract class AbstractComplexType {
 
     /**
      * Returns the complex type as an array
-     * 
+     *
      * @param boolean $renderTopKey
      * @return array
      */

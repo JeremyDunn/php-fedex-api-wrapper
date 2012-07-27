@@ -1,12 +1,10 @@
 <?php
 namespace FedEx\CloseService;
-
+    
 /**
  * Request sends the SOAP call to the FedEx servers and returns the response
  *
- * @version     $Revision: 2 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Close Service
  */
@@ -36,7 +34,7 @@ class Request
         if (null != $wsdlPath) {
             $this->_wsdlPath = $wsdlPath;
         } else {
-            $this->_wsdlPath = realpath(dirname(dirname(__FILE__)) . \DIRECTORY_SEPARATOR . '_wsdl' . \DIRECTORY_SEPARATOR . 'CloseService_v2.wsdl');
+            $this->_wsdlPath = realpath(dirname(__FILE__) . '/../_wsdl/CloseService_v2.wsdl');
         }
 
         $this->_soapClient = new \SoapClient($this->_wsdlPath, array('trace' => true));
@@ -45,7 +43,7 @@ class Request
     /**
      * Returns the SoapClient instance
      *
-     * @return SoapClient
+     * @return \SoapClient
      */
     public function getSoapClient()
     {
@@ -53,59 +51,57 @@ class Request
     }
 
     /**
-     * Sends request and returns Smart Post Close Reply
-     * 
-     * @param SmartPostCloseRequest $smartPostCloseRequest
+     * Sends the SmartPostCloseRequest and returns the response
+     *
+     * @param ComplexType\RateRequest $rateRequest
      * @return stdClass
      */
     public function getSmartPostCloseReply(ComplexType\SmartPostCloseRequest $smartPostCloseRequest)
     {
-        return $this->getSoapClient()->smartPostClose($smartPostCloseRequest->toArray());
+        return $this->_soapClient->smartPostClose($smartPostCloseRequest->toArray());
     }
-
-    /**
-     * Sends request and returns Ground Close Reply
+       /**
+     * Sends the GroundCloseRequest and returns the response
      *
-     * @param GroundCloseRequest $groundCloseRequest
+     * @param ComplexType\RateRequest $rateRequest
      * @return stdClass
      */
     public function getGroundCloseReply(ComplexType\GroundCloseRequest $groundCloseRequest)
     {
-        return $this->getSoapClient()->groundClose($groundCloseRequest->toArray());
+        return $this->_soapClient->groundClose($groundCloseRequest->toArray());
     }
-
-    /**
-     * Sends request and returns Ground Close Reports Reprint Reply
+       /**
+     * Sends the GroundCloseReportsReprintRequest and returns the response
      *
-     * @param GroundCloseReportsReprintRequest $groundCloseReportsReprintRequest
+     * @param ComplexType\RateRequest $rateRequest
      * @return stdClass
      */
     public function getGroundCloseReportsReprintReply(ComplexType\GroundCloseReportsReprintRequest $groundCloseReportsReprintRequest)
     {
-        return $this->getSoapClient()->groundCloseReportsReprint($groundCloseReportsReprintRequest->toArray());
+        return $this->_soapClient->groundCloseReportsReprint($groundCloseReportsReprintRequest->toArray());
     }
-
-    /**
-     * Sends request and returns Ground Close Documents Reply
-     * 
-     * @param GroundCloseWithDocumentsRequest $groundCloseWithDocumentsRequest
+       /**
+     * Sends the GroundCloseWithDocumentsRequest and returns the response
+     *
+     * @param ComplexType\RateRequest $rateRequest
      * @return stdClass
      */
     public function getGroundCloseDocumentsReply(ComplexType\GroundCloseWithDocumentsRequest $groundCloseWithDocumentsRequest)
     {
-        return $this->getSoapClient()->groundCloseWithDocuments($groundCloseWithDocumentsRequest->toArray());
+        return $this->_soapClient->groundCloseWithDocuments($groundCloseWithDocumentsRequest->toArray());
     }
-
-    /**
-     * Sends request and returns Reprint Ground Close Documents Reply
+       /**
+     * Sends the ReprintGroundCloseDocumentsRequest and returns the response
      *
-     * @param ReprintGroundCloseDocumentsRequest $reprintGroundCloseDocumentsRequest
+     * @param ComplexType\RateRequest $rateRequest
      * @return stdClass
      */
-    public function getReprintGroundCloseDocumentsReply(ComplexType\ReprintGroundCloseDocumentsRequest $reprintGroundCloseDocumentsRequest)
+    public function getGroundCloseDocumentsReply(ComplexType\ReprintGroundCloseDocumentsRequest $reprintGroundCloseDocumentsRequest)
     {
-        return $this->getSoapClient()->reprintGroundCloseDocuments($reprintGroundCloseDocumentsRequest->toArray());
+        return $this->_soapClient->reprintGroundCloseDocuments($reprintGroundCloseDocumentsRequest->toArray());
     }
+   
 
-    
 }
+
+   

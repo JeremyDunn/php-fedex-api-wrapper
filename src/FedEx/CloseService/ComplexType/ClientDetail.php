@@ -1,12 +1,12 @@
 <?php
 namespace FedEx\CloseService\ComplexType;
 
+use FedEx\AbstractComplexType;
+
 /**
  * Descriptive data for the client submitting a transaction.
  *
- * @version     $Revision: 2 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Close Service
  */

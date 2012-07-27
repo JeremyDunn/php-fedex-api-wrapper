@@ -104,7 +104,9 @@ public function __construct($exportPath, $wsdlPath, $namespace, $subPackageName)
     {
         $fileBody = <<<TEXT
 <?php
-namespace {$this->_namespace};
+namespace {$this->_namespace}\SimpleType;
+
+use FedEx\AbstractSimpleType;
 
 /**
  * $documentation

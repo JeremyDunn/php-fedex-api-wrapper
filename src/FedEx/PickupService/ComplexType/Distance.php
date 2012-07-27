@@ -1,12 +1,12 @@
 <?php
-namespace FedEx\PickupService\ComplexType;
+namespace FedEx\Pickup\ComplexType;
+
+use FedEx\AbstractComplexType;
 
 /**
  * Driving or other transportation distances, distinct from dimension measurements.
  *
- * @version     $Revision$
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
@@ -33,7 +33,7 @@ class Distance
      * @param DistanceUnits $Units
      * return Distance
      */
-    public function setUnits(\FedEx\PickupService\SimpleType\DistanceUnits $units)
+    public function setUnits(\FedEx\Pickup\SimpleType\DistanceUnits $units)
     {
         $this->Units = $units;
         return $this;

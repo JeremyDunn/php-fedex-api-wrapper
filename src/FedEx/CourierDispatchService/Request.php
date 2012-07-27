@@ -1,12 +1,10 @@
 <?php
 namespace FedEx\CourierDispatchService;
-
+    
 /**
  * Request sends the SOAP call to the FedEx servers and returns the response
  *
- * @version     $Revision: 2 $
- * @author      Jeremy Dunn (www.jsdunn.info)
- * @link        http://code.google.com/p/php-fedex-api-wrapper/
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Courier Dispatch Service
  */
@@ -36,7 +34,7 @@ class Request
         if (null != $wsdlPath) {
             $this->_wsdlPath = $wsdlPath;
         } else {
-            $this->_wsdlPath = realpath(dirname(dirname(__FILE__)) . \DIRECTORY_SEPARATOR . '_wsdl' . \DIRECTORY_SEPARATOR . 'CourierDispatchService_v3.wsdl');
+            $this->_wsdlPath = realpath(dirname(__FILE__) . '/../_wsdl/CourierDispatchService_v3.wsdl');
         }
 
         $this->_soapClient = new \SoapClient($this->_wsdlPath, array('trace' => true));
@@ -45,7 +43,7 @@ class Request
     /**
      * Returns the SoapClient instance
      *
-     * @return SoapClient
+     * @return \SoapClient
      */
     public function getSoapClient()
     {
@@ -53,36 +51,37 @@ class Request
     }
 
     /**
-     * Sends request and returns Courier Dispatch Reply
+     * Sends the CourierDispatchRequest and returns the response
      *
-     * @param CourierDispatchRequest $courierDispatchRequest
+     * @param ComplexType\RateRequest $rateRequest
      * @return stdClass
      */
     public function getCourierDispatchReply(ComplexType\CourierDispatchRequest $courierDispatchRequest)
     {
-        return $this->getSoapClient()->createCourierDispatch($courierDispatchRequest->toArray());
+        return $this->_soapClient->createCourierDispatch($courierDispatchRequest->toArray());
     }
-
-    /**
-     * Sends request and returns Cancel Courier Dispatch Request
+       /**
+     * Sends the CancelCourierDispatchRequest and returns the response
      *
-     * @param CancelCourierDispatchRequest $cancelCourierDispatchRequest
+     * @param ComplexType\RateRequest $rateRequest
      * @return stdClass
      */
     public function getCancelCourierDispatchReply(ComplexType\CancelCourierDispatchRequest $cancelCourierDispatchRequest)
     {
-        return $this->getSoapClient()->cancelCourierDispatch($cancelCourierDispatchRequest->toArray());
+        return $this->_soapClient->cancelCourierDispatch($cancelCourierDispatchRequest->toArray());
     }
-
-    /**
-     * Sends request and returns Pickup Availability Request
+       /**
+     * Sends the PickupAvailabilityRequest and returns the response
      *
-     * @param PickupAvailabilityRequest $pickupAvailabilityRequest
+     * @param ComplexType\RateRequest $rateRequest
      * @return stdClass
      */
     public function getPickupAvailabilityReply(ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest)
     {
-        return $this->getSoapClient()->getPickupAvailability($pickupAvaiabilityRequest->toArray());
+        return $this->_soapClient->getPickupAvailability($pickupAvailabilityRequest->toArray());
     }
-    
+   
+
 }
+
+   
