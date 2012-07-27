@@ -1,10 +1,12 @@
 <?php
 namespace FedEx\Utility;
 
-use Fedex\Utility\AbstractGenerate;
-
 /**
- * Converts complex types in fedex .wsdl file to PHP Classes
+ * Converts complex types in .wsdl file to PHP class files
+ *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
+ * @package     PHP FedEx API wrapper
+ * @subpackage  Utilities
  */
 class GenerateComplexTypeClasses extends AbstractGenerate
 {
@@ -67,11 +69,8 @@ class GenerateComplexTypeClasses extends AbstractGenerate
                 $className = $attributes['name'];
                 //class documentation
                 $classDoc = $schema->annotation->documentation;
-                echo $className . "<br />";
-                echo $classDoc . "<br />";
-
+                
                 $properties = array();
-                //var_dump($schema->sequence->element);
 
                 foreach ($schema->sequence->element as $element) {
                     $property = array();
@@ -93,14 +92,11 @@ class GenerateComplexTypeClasses extends AbstractGenerate
 
                     $properties[] = $property;
 
-                    echo "&nbsp;{$property['name']} --- {$property['type']}<br />";
-                    echo $property['doc'];
-
-                    var_dump($element);
-
                 }
 
                 $classFilePath = $this->_exportPath . \DIRECTORY_SEPARATOR . $className . '.php';
+                
+                echo "Writing File: {$classFilePath}\n";
 
                 $fh = fopen($classFilePath, 'w');
 
@@ -124,8 +120,6 @@ class GenerateComplexTypeClasses extends AbstractGenerate
             $methodString .= $this->_getGeneratedSetMethod($className, $property) . "\n";
         }
         
-        echo $propertiesString;
-
         $fileBody = <<<TEXT
 <?php
 namespace {$this->_baseNamespace}\ComplexType;
@@ -155,9 +149,6 @@ TEXT;
         $invalidTypes = array('string', 'int', 'dateTime', 'boolean', 'nonNegativeInteger', 'positiveInteger', 'date', 'weight', 'decimal', 'double', 'base64Binary');
 
         $simpleTypeNamespace = "\\{$this->_baseNamespace}\\SimpleType\\";
-
-        echo "PROPERTIES!!!";
-        var_dump($property);
 
         $varName = lcfirst($property['name']);
 
@@ -204,7 +195,6 @@ TEXT;
 
         $classPath = $simpleTypeDir . \DIRECTORY_SEPARATOR .  $propertyType . '.php';
 
-        echo $classPath;
         return file_exists($classPath);
     }
       

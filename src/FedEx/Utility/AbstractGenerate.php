@@ -1,6 +1,13 @@
 <?php
-namespace Fedex\Utility;
+namespace FedEx\Utility;
 
+/**
+ * Abstract class for code generation utilities
+ *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
+ * @package     PHP FedEx API wrapper
+ * @subpackage  Utilities
+ */
 abstract class AbstractGenerate
 {
     /**

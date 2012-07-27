@@ -1,10 +1,12 @@
 <?php
 namespace FedEx\Utility;
 
-use Fedex\Utility\AbstractGenerate;
-
 /**
- * Converts simple types in fedex .wsdl file to PHP Classes
+ * Converts simple types in .wsdl file to PHP class files
+ *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
+ * @package     PHP FedEx API wrapper
+ * @subpackage  Utilities
  */
 class GenerateSimpleTypeClasses extends AbstractGenerate
 {
@@ -69,16 +71,13 @@ public function __construct($exportPath, $wsdlPath, $namespace, $subPackageName)
     {
         foreach ($this->_xml->types->schema->children() as $schema) {
             if ('simpleType' == $schema->getName()) {
-                var_dump($schema);
 
                 $documentation = $schema->annotation->documentation;
 
                 $attributes = $schema->attributes();
                 $className = $attributes['name'];
-                echo "name: $className<br />";
                 $consts = '';
-
-                echo count($schema->restriction->enumeration);
+                
                 foreach($schema->restriction->enumeration as $enum) {
                     $attributes = $enum->attributes();
                     $constantName = str_replace($this->_strReplace['invalid'], $this->_strReplace['valid'], $attributes->value->__toString());
@@ -87,6 +86,8 @@ public function __construct($exportPath, $wsdlPath, $namespace, $subPackageName)
 
                 $classFilePath = $this->_exportPath . DIRECTORY_SEPARATOR . $className . '.php';
 
+                echo "Writing File: {$classFilePath}\n";
+                
                 $fh = fopen($classFilePath, 'w');
 
                 $fileBody = $this->_getGeneratedFileBody($documentation, $className, $consts);

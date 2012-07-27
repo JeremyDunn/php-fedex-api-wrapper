@@ -1,7 +1,5 @@
 <?php
-namespace Fedex\Utility;
-
-use Fedex\Utility\AbstractGenerate;
+namespace FedEx\Utility;
 
 class GenerateRequestClass extends AbstractGenerate
 {
@@ -63,7 +61,7 @@ class GenerateRequestClass extends AbstractGenerate
             $functionDefinition = '';
             
             $parts = explode(' ', $soapFunctionDescription);
-            print_r($parts);
+            
             $functionDefinition = 'public function get' . $parts[0];
             
             $thisDefinition['soapFunction'] = substr($parts[1], 0, stripos($parts[1], '('));
@@ -83,7 +81,8 @@ class GenerateRequestClass extends AbstractGenerate
             $requestFunctionDefinitions[] = $thisDefinition;
         }
         
-        print_r($requestFunctionDefinitions);
+       
+        echo "Writing file: {$this->_pathToRequestClassFile}\n";
         
         $fh = fopen($this->_pathToRequestClassFile, 'w');
         
