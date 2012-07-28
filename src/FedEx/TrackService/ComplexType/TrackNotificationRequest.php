@@ -8,7 +8,7 @@ use FedEx\AbstractComplexType;
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
- * @subpackage  Track Service
+ * @subpackage  Package Movement Information Service
  */
 class TrackNotificationRequest
     extends AbstractComplexType
