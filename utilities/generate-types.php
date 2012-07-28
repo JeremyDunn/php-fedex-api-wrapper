@@ -77,7 +77,7 @@ $generateComplexTypes->run();
 $wsdlPath = realpath(dirname(__FILE__) . '/../src/FedEx/_wsdl/TrackService_v5.wsdl');
 
 $baseNamespace = 'FedEx\TrackService';
-$subpackageName = 'Track Service';
+$subPackageName = 'Track Service';
 
 //generate Request class
 $pathToRequestClassFile = realpath(dirname(__FILE__) . '/../') . '/src/FedEx/TrackService/Request.php';
