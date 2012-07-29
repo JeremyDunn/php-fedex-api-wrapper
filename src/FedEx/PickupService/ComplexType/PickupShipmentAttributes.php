@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class PickupShipmentAttributes
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'PickupShipmentAttributes';
 
     /**
-     * 
+     * Set ServiceType
      *
-     * @param ServiceType $ServiceType
+     * @param \FedEx\Pickup\SimpleType\ServiceType  $serviceType
      * return PickupShipmentAttributes
      */
     public function setServiceType(\FedEx\Pickup\SimpleType\ServiceType $serviceType)
@@ -28,9 +34,9 @@ class PickupShipmentAttributes
     }
     
     /**
-     * 
+     * Set PackagingType
      *
-     * @param PackagingType $PackagingType
+     * @param \FedEx\Pickup\SimpleType\PackagingType  $packagingType
      * return PickupShipmentAttributes
      */
     public function setPackagingType(\FedEx\Pickup\SimpleType\PackagingType $packagingType)
@@ -42,7 +48,7 @@ class PickupShipmentAttributes
     /**
      * Descriptive information about the dimensions of the package.
      *
-     * @param Dimensions $Dimensions
+     * @param Dimensions $dimensions
      * return PickupShipmentAttributes
      */
     public function setDimensions(Dimensions $dimensions)
@@ -54,7 +60,7 @@ class PickupShipmentAttributes
     /**
      * Descriptive information about the weight of the package.
      *
-     * @param Weight $Weight
+     * @param Weight $weight
      * return PickupShipmentAttributes
      */
     public function setWeight(Weight $weight)

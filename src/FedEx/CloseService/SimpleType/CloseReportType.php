@@ -4,7 +4,7 @@ namespace FedEx\CloseService\SimpleType;
 use FedEx\AbstractSimpleType;
 
 /**
- * 
+ * CloseReportType
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper

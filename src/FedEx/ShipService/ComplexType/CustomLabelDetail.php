@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * CustomLabelDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CustomLabelDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CustomLabelDetail';
 
     /**
-     * 
+     * Set CoordinateUnits
      *
-     * @param CustomLabelCoordinateUnits $CoordinateUnits
+     * @param \FedEx\ShipService\SimpleType\CustomLabelCoordinateUnits  $coordinateUnits
      * return CustomLabelDetail
      */
     public function setCoordinateUnits(\FedEx\ShipService\SimpleType\CustomLabelCoordinateUnits $coordinateUnits)
@@ -28,9 +34,9 @@ class CustomLabelDetail
     }
     
     /**
-     * 
+     * Set TextEntries
      *
-     * @param array[CustomLabelTextEntry] $TextEntries
+     * @param CustomLabelTextEntry[] $textEntries
      * return CustomLabelDetail
      */
     public function setTextEntries(array $textEntries)
@@ -40,9 +46,9 @@ class CustomLabelDetail
     }
     
     /**
-     * 
+     * Set GraphicEntries
      *
-     * @param array[CustomLabelGraphicEntry] $GraphicEntries
+     * @param CustomLabelGraphicEntry[] $graphicEntries
      * return CustomLabelDetail
      */
     public function setGraphicEntries(array $graphicEntries)
@@ -52,9 +58,9 @@ class CustomLabelDetail
     }
     
     /**
-     * 
+     * Set BoxEntries
      *
-     * @param array[CustomLabelBoxEntry] $BoxEntries
+     * @param CustomLabelBoxEntry[] $boxEntries
      * return CustomLabelDetail
      */
     public function setBoxEntries(array $boxEntries)
@@ -64,9 +70,9 @@ class CustomLabelDetail
     }
     
     /**
-     * 
+     * Set BarcodeEntries
      *
-     * @param array[CustomLabelBarcodeEntry] $BarcodeEntries
+     * @param CustomLabelBarcodeEntry[] $barcodeEntries
      * return CustomLabelDetail
      */
     public function setBarcodeEntries(array $barcodeEntries)

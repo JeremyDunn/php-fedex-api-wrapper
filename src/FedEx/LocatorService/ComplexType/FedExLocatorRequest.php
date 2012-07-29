@@ -4,7 +4,7 @@ namespace FedEx\LocatorService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * FedExLocatorRequest
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class FedExLocatorRequest
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'FedExLocatorRequest';
 
     /**
      * The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
-     * @param WebAuthenticationDetail $WebAuthenticationDetail
+     * @param WebAuthenticationDetail $webAuthenticationDetail
      * return FedExLocatorRequest
      */
     public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
@@ -30,7 +36,7 @@ class FedExLocatorRequest
     /**
      * The descriptive data identifying the client submitting the transaction.
      *
-     * @param ClientDetail $ClientDetail
+     * @param ClientDetail $clientDetail
      * return FedExLocatorRequest
      */
     public function setClientDetail(ClientDetail $clientDetail)
@@ -42,7 +48,7 @@ class FedExLocatorRequest
     /**
      * The descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return FedExLocatorRequest
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class FedExLocatorRequest
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return FedExLocatorRequest
      */
     public function setVersion(VersionId $version)
@@ -66,7 +72,7 @@ class FedExLocatorRequest
     /**
      * The index of first location to be returned from among all matching locations. Defauls to 1.
      *
-     * @param int $BeginningRecordIndex
+     * @param int $beginningRecordIndex
      * return FedExLocatorRequest
      */
     public function setBeginningRecordIndex($beginningRecordIndex)
@@ -78,7 +84,7 @@ class FedExLocatorRequest
     /**
      * The maximum number of locations to be returned. Maximum count allowed is 25. Defaults to 10.
      *
-     * @param  $MaximumMatchCount
+     * @param  $maximumMatchCount
      * return FedExLocatorRequest
      */
     public function setMaximumMatchCount( $maximumMatchCount)
@@ -90,7 +96,7 @@ class FedExLocatorRequest
     /**
      * Units in which Distance to location is to be expressed. See DistanceUnits for list of returned values.
      *
-     * @param DistanceUnits $DistanceUnits
+     * @param \FedEx\LocatorService\SimpleType\DistanceUnits  $distanceUnits
      * return FedExLocatorRequest
      */
     public function setDistanceUnits(\FedEx\LocatorService\SimpleType\DistanceUnits $distanceUnits)
@@ -102,7 +108,7 @@ class FedExLocatorRequest
     /**
      * Phone number for which nearby FedEx locations are to be found. This element is required if NearToAddress is not present.
      *
-     * @param string $NearToPhoneNumber
+     * @param string $nearToPhoneNumber
      * return FedExLocatorRequest
      */
     public function setNearToPhoneNumber($nearToPhoneNumber)
@@ -114,7 +120,7 @@ class FedExLocatorRequest
     /**
      * The descriptive data of a physical location for which nearby FedEx locations are to be found. This element is required if NearToPhoneNumber is not present. Both City and StateOrProvinceCode child elements are required if	PostalCode is not present.
      *
-     * @param Address $NearToAddress
+     * @param Address $nearToAddress
      * return FedExLocatorRequest
      */
     public function setNearToAddress(Address $nearToAddress)
@@ -126,7 +132,7 @@ class FedExLocatorRequest
     /**
      * The descriptive data about the various drop off services that must be available at the locations returned.
      *
-     * @param DropoffServicesDesired $DropoffServicesDesired
+     * @param DropoffServicesDesired $dropoffServicesDesired
      * return FedExLocatorRequest
      */
     public function setDropoffServicesDesired(DropoffServicesDesired $dropoffServicesDesired)

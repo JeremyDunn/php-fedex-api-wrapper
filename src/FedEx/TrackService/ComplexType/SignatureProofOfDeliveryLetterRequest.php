@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class SignatureProofOfDeliveryLetterRequest
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'SignatureProofOfDeliveryLetterRequest';
 
     /**
      * Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
-     * @param WebAuthenticationDetail $WebAuthenticationDetail
+     * @param WebAuthenticationDetail $webAuthenticationDetail
      * return SignatureProofOfDeliveryLetterRequest
      */
     public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
@@ -30,7 +36,7 @@ class SignatureProofOfDeliveryLetterRequest
     /**
      * Descriptive data identifying the client submitting the transaction.
      *
-     * @param ClientDetail $ClientDetail
+     * @param ClientDetail $clientDetail
      * return SignatureProofOfDeliveryLetterRequest
      */
     public function setClientDetail(ClientDetail $clientDetail)
@@ -42,7 +48,7 @@ class SignatureProofOfDeliveryLetterRequest
     /**
      * Contains a free form field that is echoed back in the reply to match requests with replies and data that governs the data payload language/translations.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return SignatureProofOfDeliveryLetterRequest
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class SignatureProofOfDeliveryLetterRequest
     /**
      * The version of the request being used.
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return SignatureProofOfDeliveryLetterRequest
      */
     public function setVersion(VersionId $version)
@@ -66,7 +72,7 @@ class SignatureProofOfDeliveryLetterRequest
     /**
      * Tracking number and additional shipment data used to identify a unique shipment for proof of delivery.
      *
-     * @param QualifiedTrackingNumber $QualifiedTrackingNumber
+     * @param QualifiedTrackingNumber $qualifiedTrackingNumber
      * return SignatureProofOfDeliveryLetterRequest
      */
     public function setQualifiedTrackingNumber(QualifiedTrackingNumber $qualifiedTrackingNumber)
@@ -78,7 +84,7 @@ class SignatureProofOfDeliveryLetterRequest
     /**
      * Additional customer-supplied text to be added to the body of the letter.
      *
-     * @param string $AdditionalComments
+     * @param string $additionalComments
      * return SignatureProofOfDeliveryLetterRequest
      */
     public function setAdditionalComments($additionalComments)
@@ -90,7 +96,7 @@ class SignatureProofOfDeliveryLetterRequest
     /**
      * Identifies the set of SPOD image types.
      *
-     * @param SignatureProofOfDeliveryImageType $LetterFormat
+     * @param \FedEx\TrackService\SimpleType\SignatureProofOfDeliveryImageType  $letterFormat
      * return SignatureProofOfDeliveryLetterRequest
      */
     public function setLetterFormat(\FedEx\TrackService\SimpleType\SignatureProofOfDeliveryImageType $letterFormat)
@@ -102,7 +108,7 @@ class SignatureProofOfDeliveryLetterRequest
     /**
      * If provided this information will be print on the letter.
      *
-     * @param ContactAndAddress $Consignee
+     * @param ContactAndAddress $consignee
      * return SignatureProofOfDeliveryLetterRequest
      */
     public function setConsignee(ContactAndAddress $consignee)

@@ -53,7 +53,7 @@ class Request
     /**
      * Sends the TrackNotificationRequest and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest
+     * @param ComplexType\TrackNotificationRequest $trackNotificationRequest 
      * @return stdClass
      */
     public function getTrackNotificationReply(ComplexType\TrackNotificationRequest $trackNotificationRequest)
@@ -63,7 +63,7 @@ class Request
        /**
      * Sends the SignatureProofOfDeliveryLetterRequest and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest
+     * @param ComplexType\SignatureProofOfDeliveryLetterRequest $signatureProofOfDeliveryLetterRequest 
      * @return stdClass
      */
     public function getSignatureProofOfDeliveryLetterReply(ComplexType\SignatureProofOfDeliveryLetterRequest $signatureProofOfDeliveryLetterRequest)
@@ -73,7 +73,7 @@ class Request
        /**
      * Sends the TrackRequest and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest
+     * @param ComplexType\TrackRequest $trackRequest 
      * @return stdClass
      */
     public function getTrackReply(ComplexType\TrackRequest $trackRequest)
@@ -83,7 +83,7 @@ class Request
        /**
      * Sends the SignatureProofOfDeliveryFaxRequest and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest
+     * @param ComplexType\SignatureProofOfDeliveryFaxRequest $signatureProofOfDeliveryFaxRequest 
      * @return stdClass
      */
     public function getSignatureProofOfDeliveryFaxReply(ComplexType\SignatureProofOfDeliveryFaxRequest $signatureProofOfDeliveryFaxRequest)

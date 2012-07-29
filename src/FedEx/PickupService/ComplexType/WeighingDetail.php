@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class WeighingDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'WeighingDetail';
 
     /**
      * Type of scale used
      *
-     * @param WeighingScaleType $Type
+     * @param \FedEx\Pickup\SimpleType\WeighingScaleType  $type
      * return WeighingDetail
      */
     public function setType(\FedEx\Pickup\SimpleType\WeighingScaleType $type)

@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ShippingDocumentStorageDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ShippingDocumentStorageDetail';
 
     /**
      * Provides the path to be used for STORED or DEFERRED documents.
      *
-     * @param string $FilePath
+     * @param string $filePath
      * return ShippingDocumentStorageDetail
      */
     public function setFilePath($filePath)
@@ -30,7 +36,7 @@ class ShippingDocumentStorageDetail
     /**
      * Identifies the convention by which file names are constructed for STORED or DEFERRED documents.
      *
-     * @param ShippingDocumentNamingType $FileNaming
+     * @param \FedEx\CloseService\SimpleType\ShippingDocumentNamingType  $fileNaming
      * return ShippingDocumentStorageDetail
      */
     public function setFileNaming(\FedEx\CloseService\SimpleType\ShippingDocumentNamingType $fileNaming)
@@ -42,7 +48,7 @@ class ShippingDocumentStorageDetail
     /**
      * Suffix to be placed at the end of the file name; required on some platforms to determine file type.
      *
-     * @param string $FileSuffix
+     * @param string $fileSuffix
      * return ShippingDocumentStorageDetail
      */
     public function setFileSuffix($fileSuffix)

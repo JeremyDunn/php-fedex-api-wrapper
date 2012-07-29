@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class PickupAvailabilityRequest
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'PickupAvailabilityRequest';
 
     /**
      * The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
-     * @param WebAuthenticationDetail $WebAuthenticationDetail
+     * @param WebAuthenticationDetail $webAuthenticationDetail
      * return PickupAvailabilityRequest
      */
     public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
@@ -30,7 +36,7 @@ class PickupAvailabilityRequest
     /**
      * The descriptive data identifying the client submitting the transaction.
      *
-     * @param ClientDetail $ClientDetail
+     * @param ClientDetail $clientDetail
      * return PickupAvailabilityRequest
      */
     public function setClientDetail(ClientDetail $clientDetail)
@@ -42,7 +48,7 @@ class PickupAvailabilityRequest
     /**
      * The descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return PickupAvailabilityRequest
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class PickupAvailabilityRequest
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return PickupAvailabilityRequest
      */
     public function setVersion(VersionId $version)
@@ -66,7 +72,7 @@ class PickupAvailabilityRequest
     /**
      * Descriptive data providing information about address to pickup from.
      *
-     * @param Address $PickupAddress
+     * @param Address $pickupAddress
      * return PickupAvailabilityRequest
      */
     public function setPickupAddress(Address $pickupAddress)
@@ -79,7 +85,7 @@ class PickupAvailabilityRequest
      * An array of PickupRequestType. If SAME_DAY is included, Options with ScheduleDay of SAME_DAY will be included in the reply.
 								If FUTURE_DAY is included, Options with ScheduleDay of FUTURE_DAY will be included in the reply.
      *
-     * @param array[PickupRequestType] $PickupRequestType
+     * @param PickupRequestType[] $pickupRequestType
      * return PickupAvailabilityRequest
      */
     public function setPickupRequestType(array $pickupRequestType)
@@ -91,7 +97,7 @@ class PickupAvailabilityRequest
     /**
      * The dispatch date (in the local time zone) for the pickup whose availability is being requested.
      *
-     * @param date $DispatchDate
+     * @param date $dispatchDate
      * return PickupAvailabilityRequest
      */
     public function setDispatchDate($dispatchDate)
@@ -103,7 +109,7 @@ class PickupAvailabilityRequest
     /**
      * The time when the package will be ready to be picked up. The time is local to the pickup postal code, in 24-hour form (e.g. 13:00:00). It should not contain a TZD. If a TZD is included, it will be ignored
      *
-     * @param time $PackageReadyTime
+     * @param time $packageReadyTime
      * return PickupAvailabilityRequest
      */
     public function setPackageReadyTime(time $packageReadyTime)
@@ -115,7 +121,7 @@ class PickupAvailabilityRequest
     /**
      * The lastest time at which the courier will be able to gain access to pick up the package(s). The time is local to the pickup postal code, in 24-hour form (e.g. 17:00:00). It should not contain a TZD. If a TZD is included, it will be ignored
      *
-     * @param time $CustomerCloseTime
+     * @param time $customerCloseTime
      * return PickupAvailabilityRequest
      */
     public function setCustomerCloseTime(time $customerCloseTime)
@@ -127,7 +133,7 @@ class PickupAvailabilityRequest
     /**
      * The FedEx carrier(s) for which availability is requested.
      *
-     * @param array[CarrierCodeType] $Carriers
+     * @param CarrierCodeType[] $carriers
      * return PickupAvailabilityRequest
      */
     public function setCarriers(array $carriers)
@@ -139,7 +145,7 @@ class PickupAvailabilityRequest
     /**
      * Descriptive information about the shipment.
      *
-     * @param PickupShipmentAttributes $ShipmentAttributes
+     * @param PickupShipmentAttributes $shipmentAttributes
      * return PickupAvailabilityRequest
      */
     public function setShipmentAttributes(PickupShipmentAttributes $shipmentAttributes)

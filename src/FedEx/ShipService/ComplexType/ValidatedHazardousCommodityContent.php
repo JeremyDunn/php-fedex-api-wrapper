@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ValidatedHazardousCommodityContent
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ValidatedHazardousCommodityContent';
 
     /**
      * Identifies and describes an individual hazardous commodity.
      *
-     * @param ValidatedHazardousCommodityDescription $Description
+     * @param ValidatedHazardousCommodityDescription $description
      * return ValidatedHazardousCommodityContent
      */
     public function setDescription(ValidatedHazardousCommodityDescription $description)
@@ -30,7 +36,7 @@ class ValidatedHazardousCommodityContent
     /**
      * Specifies the amount of the commodity in alternate units.
      *
-     * @param HazardousCommodityQuantityDetail $Quantity
+     * @param HazardousCommodityQuantityDetail $quantity
      * return ValidatedHazardousCommodityContent
      */
     public function setQuantity(HazardousCommodityQuantityDetail $quantity)
@@ -42,7 +48,7 @@ class ValidatedHazardousCommodityContent
     /**
      * Customer-provided specifications for handling individual commodities.
      *
-     * @param HazardousCommodityOptionDetail $Options
+     * @param HazardousCommodityOptionDetail $options
      * return ValidatedHazardousCommodityContent
      */
     public function setOptions(HazardousCommodityOptionDetail $options)

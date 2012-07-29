@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CustomLabelGraphicEntry
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CustomLabelGraphicEntry';
 
     /**
-     * 
+     * Set Position
      *
-     * @param CustomLabelPosition $Position
+     * @param CustomLabelPosition $position
      * return CustomLabelGraphicEntry
      */
     public function setPosition(CustomLabelPosition $position)
@@ -30,7 +36,7 @@ class CustomLabelGraphicEntry
     /**
      * Printer-specific index of graphic image to be printed.
      *
-     * @param string $PrinterGraphicId
+     * @param string $printerGraphicId
      * return CustomLabelGraphicEntry
      */
     public function setPrinterGraphicId($printerGraphicId)
@@ -42,7 +48,7 @@ class CustomLabelGraphicEntry
     /**
      * Fully-qualified path and file name for graphic image to be printed.
      *
-     * @param string $FileGraphicFullName
+     * @param string $fileGraphicFullName
      * return CustomLabelGraphicEntry
      */
     public function setFileGraphicFullName($fileGraphicFullName)

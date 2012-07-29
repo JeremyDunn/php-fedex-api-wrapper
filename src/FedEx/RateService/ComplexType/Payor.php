@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class Payor
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'Payor';
 
     /**
      * Identifies the FedEx account number assigned to the payor.
      *
-     * @param string $AccountNumber
+     * @param string $accountNumber
      * return Payor
      */
     public function setAccountNumber($accountNumber)
@@ -30,7 +36,7 @@ class Payor
     /**
      * Identifies the country of the payor.
      *
-     * @param string $CountryCode
+     * @param string $countryCode
      * return Payor
      */
     public function setCountryCode($countryCode)

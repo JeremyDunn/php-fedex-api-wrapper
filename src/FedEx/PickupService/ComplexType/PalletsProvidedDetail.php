@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class PalletsProvidedDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'PalletsProvidedDetail';
 
     /**
      * Number of pallets to be provided.
      *
-     * @param positiveInteger $PalletCount
+     * @param positiveInteger $palletCount
      * return PalletsProvidedDetail
      */
     public function setPalletCount($palletCount)

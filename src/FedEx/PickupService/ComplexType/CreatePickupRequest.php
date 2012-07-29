@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CreatePickupRequest
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CreatePickupRequest';
 
     /**
      * Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
-     * @param WebAuthenticationDetail $WebAuthenticationDetail
+     * @param WebAuthenticationDetail $webAuthenticationDetail
      * return CreatePickupRequest
      */
     public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
@@ -30,7 +36,7 @@ class CreatePickupRequest
     /**
      * The descriptive data identifying the client submitting the transaction.
      *
-     * @param ClientDetail $ClientDetail
+     * @param ClientDetail $clientDetail
      * return CreatePickupRequest
      */
     public function setClientDetail(ClientDetail $clientDetail)
@@ -42,7 +48,7 @@ class CreatePickupRequest
     /**
      * The descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return CreatePickupRequest
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class CreatePickupRequest
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return CreatePickupRequest
      */
     public function setVersion(VersionId $version)
@@ -64,9 +70,9 @@ class CreatePickupRequest
     }
     
     /**
-     * 
+     * Set AssociatedAccountNumber
      *
-     * @param AssociatedAccount $AssociatedAccountNumber
+     * @param AssociatedAccount $associatedAccountNumber
      * return CreatePickupRequest
      */
     public function setAssociatedAccountNumber(AssociatedAccount $associatedAccountNumber)
@@ -78,7 +84,7 @@ class CreatePickupRequest
     /**
      * Descriptive data about the origin of the shipment being picked up by FedEx.
      *
-     * @param PickupOriginDetail $OriginDetail
+     * @param PickupOriginDetail $originDetail
      * return CreatePickupRequest
      */
     public function setOriginDetail(PickupOriginDetail $originDetail)
@@ -90,7 +96,7 @@ class CreatePickupRequest
     /**
      * Descriptive data for a freight shipment being picked up by FedEx. This is element is only required when requesting a freight service pickup and should not be used for other types of pickups including express freight pickups.
      *
-     * @param FreightPickupDetail $FreightPickupDetail
+     * @param FreightPickupDetail $freightPickupDetail
      * return CreatePickupRequest
      */
     public function setFreightPickupDetail(FreightPickupDetail $freightPickupDetail)
@@ -102,7 +108,7 @@ class CreatePickupRequest
     /**
      * Descriptive data for an express freight shipment being picked up by FedEx. This is element is only required when requesting a express freight service pickup and should not be used for other types of pickups.
      *
-     * @param ExpressFreightPickupDetail $ExpressFreightDetail
+     * @param ExpressFreightPickupDetail $expressFreightDetail
      * return CreatePickupRequest
      */
     public function setExpressFreightDetail(ExpressFreightPickupDetail $expressFreightDetail)
@@ -114,7 +120,7 @@ class CreatePickupRequest
     /**
      * Identifies the number of packages that are being tendered to FedEx for this pickup request.
      *
-     * @param positiveInteger $PackageCount
+     * @param positiveInteger $packageCount
      * return CreatePickupRequest
      */
     public function setPackageCount($packageCount)
@@ -126,7 +132,7 @@ class CreatePickupRequest
     /**
      * Identifies the total weight of the package or packages being tendered to FedEx for this pickup request.
      *
-     * @param Weight $TotalWeight
+     * @param Weight $totalWeight
      * return CreatePickupRequest
      */
     public function setTotalWeight(Weight $totalWeight)
@@ -138,7 +144,7 @@ class CreatePickupRequest
     /**
      * Identifies the FedEx operating company (transportation) that is being sent the package pickup request.
      *
-     * @param CarrierCodeType $CarrierCode
+     * @param \FedEx\Pickup\SimpleType\CarrierCodeType  $carrierCode
      * return CreatePickupRequest
      */
     public function setCarrierCode(\FedEx\Pickup\SimpleType\CarrierCodeType $carrierCode)
@@ -150,7 +156,7 @@ class CreatePickupRequest
     /**
      * Identifies the number of oversize packages that are being tendered to FedEx for this pickup request. Please refer to the FedEx Service Guide for package size limits to determine if a package is oversized for the service being shipped.
      *
-     * @param positiveInteger $OversizePackageCount
+     * @param positiveInteger $oversizePackageCount
      * return CreatePickupRequest
      */
     public function setOversizePackageCount($oversizePackageCount)
@@ -162,7 +168,7 @@ class CreatePickupRequest
     /**
      * Identifies any remarks or comments to be passed to the FedEx courier picking up the shipment.
      *
-     * @param string $Remarks
+     * @param string $remarks
      * return CreatePickupRequest
      */
     public function setRemarks($remarks)
@@ -174,7 +180,7 @@ class CreatePickupRequest
     /**
      * Identifies the type of commodity being shipped. This element is required for an international shipment.
      *
-     * @param string $CommodityDescription
+     * @param string $commodityDescription
      * return CreatePickupRequest
      */
     public function setCommodityDescription($commodityDescription)
@@ -186,7 +192,7 @@ class CreatePickupRequest
     /**
      * Describes the country relationship (domestic and/or international) among the shipments being picked up.
      *
-     * @param CountryRelationshipType $CountryRelationship
+     * @param \FedEx\Pickup\SimpleType\CountryRelationshipType  $countryRelationship
      * return CreatePickupRequest
      */
     public function setCountryRelationship(\FedEx\Pickup\SimpleType\CountryRelationshipType $countryRelationship)

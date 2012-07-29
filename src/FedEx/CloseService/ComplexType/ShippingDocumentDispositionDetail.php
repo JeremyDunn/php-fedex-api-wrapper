@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ShippingDocumentDispositionDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ShippingDocumentDispositionDetail';
 
     /**
      * Values in this field specify how to create and return the document.
      *
-     * @param ShippingDocumentDispositionType $DispositionType
+     * @param \FedEx\CloseService\SimpleType\ShippingDocumentDispositionType  $dispositionType
      * return ShippingDocumentDispositionDetail
      */
     public function setDispositionType(\FedEx\CloseService\SimpleType\ShippingDocumentDispositionType $dispositionType)
@@ -30,7 +36,7 @@ class ShippingDocumentDispositionDetail
     /**
      * Specifies how to organize all documents of this type.
      *
-     * @param ShippingDocumentGroupingType $Grouping
+     * @param \FedEx\CloseService\SimpleType\ShippingDocumentGroupingType  $grouping
      * return ShippingDocumentDispositionDetail
      */
     public function setGrouping(\FedEx\CloseService\SimpleType\ShippingDocumentGroupingType $grouping)
@@ -42,7 +48,7 @@ class ShippingDocumentDispositionDetail
     /**
      * Specifies how to store document images.
      *
-     * @param ShippingDocumentStorageDetail $StorageDetail
+     * @param ShippingDocumentStorageDetail $storageDetail
      * return ShippingDocumentDispositionDetail
      */
     public function setStorageDetail(ShippingDocumentStorageDetail $storageDetail)
@@ -54,7 +60,7 @@ class ShippingDocumentDispositionDetail
     /**
      * Specifies how to e-mail document images.
      *
-     * @param ShippingDocumentEMailDetail $EMailDetail
+     * @param ShippingDocumentEMailDetail $eMailDetail
      * return ShippingDocumentDispositionDetail
      */
     public function setEMailDetail(ShippingDocumentEMailDetail $eMailDetail)
@@ -66,7 +72,7 @@ class ShippingDocumentDispositionDetail
     /**
      * Specifies how a queued document is to be printed.
      *
-     * @param ShippingDocumentPrintDetail $PrintDetail
+     * @param ShippingDocumentPrintDetail $printDetail
      * return ShippingDocumentDispositionDetail
      */
     public function setPrintDetail(ShippingDocumentPrintDetail $printDetail)

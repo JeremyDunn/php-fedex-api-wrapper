@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CustomerReference
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CustomerReference';
 
     /**
      * The reference type to be associated with this reference data.
      *
-     * @param CustomerReferenceType $CustomerReferenceType
+     * @param \FedEx\ShipService\SimpleType\CustomerReferenceType  $customerReferenceType
      * return CustomerReference
      */
     public function setCustomerReferenceType(\FedEx\ShipService\SimpleType\CustomerReferenceType $customerReferenceType)
@@ -28,9 +34,9 @@ class CustomerReference
     }
     
     /**
-     * 
+     * Set Value
      *
-     * @param string $Value
+     * @param string $value
      * return CustomerReference
      */
     public function setValue($value)

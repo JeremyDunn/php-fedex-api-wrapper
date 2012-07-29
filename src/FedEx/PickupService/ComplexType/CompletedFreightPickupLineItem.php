@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CompletedFreightPickupLineItem
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CompletedFreightPickupLineItem';
 
     /**
      * Identifies the line item, to match reply line with request line.
      *
-     * @param int $SequenceNumber
+     * @param int $sequenceNumber
      * return CompletedFreightPickupLineItem
      */
     public function setSequenceNumber($sequenceNumber)
@@ -30,7 +36,7 @@ class CompletedFreightPickupLineItem
     /**
      * Describes the destination service center handling the delivery of this line item.
      *
-     * @param FreightServiceCenterDetail $Destination
+     * @param FreightServiceCenterDetail $destination
      * return CompletedFreightPickupLineItem
      */
     public function setDestination(FreightServiceCenterDetail $destination)
@@ -42,7 +48,7 @@ class CompletedFreightPickupLineItem
     /**
      * Total travel time for this line item.
      *
-     * @param duration $TotalTravelTime
+     * @param duration $totalTravelTime
      * return CompletedFreightPickupLineItem
      */
     public function setTotalTravelTime(duration $totalTravelTime)
@@ -54,7 +60,7 @@ class CompletedFreightPickupLineItem
     /**
      * Identifies estimated delivery date and time for each line item.
      *
-     * @param dateTime $EtaDeliveryTimestamp
+     * @param dateTime $etaDeliveryTimestamp
      * return CompletedFreightPickupLineItem
      */
     public function setEtaDeliveryTimestamp($etaDeliveryTimestamp)

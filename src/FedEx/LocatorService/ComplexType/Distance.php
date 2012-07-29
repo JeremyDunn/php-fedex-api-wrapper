@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class Distance
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'Distance';
 
     /**
      * Identifies the value of distance from the point indicated by the search location (e.g. "12.5").
      *
-     * @param decimal $Value
+     * @param decimal $value
      * return Distance
      */
     public function setValue($value)
@@ -30,7 +36,7 @@ class Distance
     /**
      * Identifies the unit of distance from the point indicated by the search location (e.g. "MI"). See DistanceUnits for list of returned values.
      *
-     * @param DistanceUnits $Units
+     * @param \FedEx\LocatorService\SimpleType\DistanceUnits  $units
      * return Distance
      */
     public function setUnits(\FedEx\LocatorService\SimpleType\DistanceUnits $units)

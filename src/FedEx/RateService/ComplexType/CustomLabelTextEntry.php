@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CustomLabelTextEntry
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CustomLabelTextEntry';
 
     /**
-     * 
+     * Set Position
      *
-     * @param CustomLabelPosition $Position
+     * @param CustomLabelPosition $position
      * return CustomLabelTextEntry
      */
     public function setPosition(CustomLabelPosition $position)
@@ -28,9 +34,9 @@ class CustomLabelTextEntry
     }
     
     /**
-     * 
+     * Set Format
      *
-     * @param string $Format
+     * @param string $format
      * return CustomLabelTextEntry
      */
     public function setFormat($format)
@@ -40,9 +46,9 @@ class CustomLabelTextEntry
     }
     
     /**
-     * 
+     * Set DataFields
      *
-     * @param array[string] $DataFields
+     * @param string[] $dataFields
      * return CustomLabelTextEntry
      */
     public function setDataFields(array $dataFields)
@@ -54,7 +60,7 @@ class CustomLabelTextEntry
     /**
      * Printer-specific font name for use with thermal printer labels.
      *
-     * @param string $ThermalFontId
+     * @param string $thermalFontId
      * return CustomLabelTextEntry
      */
     public function setThermalFontId($thermalFontId)
@@ -66,7 +72,7 @@ class CustomLabelTextEntry
     /**
      * Generic font name for use with plain paper labels.
      *
-     * @param string $FontName
+     * @param string $fontName
      * return CustomLabelTextEntry
      */
     public function setFontName($fontName)
@@ -78,7 +84,7 @@ class CustomLabelTextEntry
     /**
      * Generic font size for use with plain paper labels.
      *
-     * @param positiveInteger $FontSize
+     * @param positiveInteger $fontSize
      * return CustomLabelTextEntry
      */
     public function setFontSize($fontSize)

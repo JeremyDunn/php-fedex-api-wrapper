@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class Volume
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'Volume';
 
     /**
-     * 
+     * Set Units
      *
-     * @param VolumeUnits $Units
+     * @param \FedEx\ShipService\SimpleType\VolumeUnits  $units
      * return Volume
      */
     public function setUnits(\FedEx\ShipService\SimpleType\VolumeUnits $units)
@@ -28,9 +34,9 @@ class Volume
     }
     
     /**
-     * 
+     * Set Value
      *
-     * @param decimal $Value
+     * @param decimal $value
      * return Volume
      */
     public function setValue($value)

@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class HazardousCommodityPackagingDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'HazardousCommodityPackagingDetail';
 
     /**
      * Number of units of the type below.
      *
-     * @param nonNegativeInteger $Count
+     * @param nonNegativeInteger $count
      * return HazardousCommodityPackagingDetail
      */
     public function setCount($count)
@@ -30,7 +36,7 @@ class HazardousCommodityPackagingDetail
     /**
      * Units in which the hazardous commodity is packaged.
      *
-     * @param string $Units
+     * @param string $units
      * return HazardousCommodityPackagingDetail
      */
     public function setUnits($units)

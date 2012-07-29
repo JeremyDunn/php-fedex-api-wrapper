@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ShipmentAssemblyDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ShipmentAssemblyDetail';
 
     /**
      * Number of pieces or packages to be assembled
      *
-     * @param nonNegativeInteger $PieceCount
+     * @param nonNegativeInteger $pieceCount
      * return ShipmentAssemblyDetail
      */
     public function setPieceCount($pieceCount)
@@ -30,7 +36,7 @@ class ShipmentAssemblyDetail
     /**
      * Total weight of pieces or packages to be assembled
      *
-     * @param Weight $Weight
+     * @param Weight $weight
      * return ShipmentAssemblyDetail
      */
     public function setWeight(Weight $weight)

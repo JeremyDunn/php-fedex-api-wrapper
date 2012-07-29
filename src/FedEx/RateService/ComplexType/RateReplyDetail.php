@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * RateReplyDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class RateReplyDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'RateReplyDetail';
 
     /**
      * Identifies the FedEx service to use in shipping the package. See ServiceType for list of valid enumerated values.
      *
-     * @param ServiceType $ServiceType
+     * @param \FedEx\RateService\SimpleType\ServiceType  $serviceType
      * return RateReplyDetail
      */
     public function setServiceType(\FedEx\RateService\SimpleType\ServiceType $serviceType)
@@ -30,7 +36,7 @@ class RateReplyDetail
     /**
      * Identifies the packaging used by the requestor for the package. See PackagingType for list of valid enumerated values.
      *
-     * @param PackagingType $PackagingType
+     * @param \FedEx\RateService\SimpleType\PackagingType  $packagingType
      * return RateReplyDetail
      */
     public function setPackagingType(\FedEx\RateService\SimpleType\PackagingType $packagingType)
@@ -42,7 +48,7 @@ class RateReplyDetail
     /**
      * Shows the specific combination of service options combined with the service type that produced this committment in the set returned to the caller.
      *
-     * @param array[ServiceOptionType] $AppliedOptions
+     * @param ServiceOptionType[] $appliedOptions
      * return RateReplyDetail
      */
     public function setAppliedOptions(array $appliedOptions)
@@ -54,7 +60,7 @@ class RateReplyDetail
     /**
      * Supporting detail for applied options identified in preceding field.
      *
-     * @param ServiceSubOptionDetail $AppliedSubOptions
+     * @param ServiceSubOptionDetail $appliedSubOptions
      * return RateReplyDetail
      */
     public function setAppliedSubOptions(ServiceSubOptionDetail $appliedSubOptions)
@@ -64,9 +70,9 @@ class RateReplyDetail
     }
     
     /**
-     * 
+     * Set DeliveryStation
      *
-     * @param string $DeliveryStation
+     * @param string $deliveryStation
      * return RateReplyDetail
      */
     public function setDeliveryStation($deliveryStation)
@@ -76,9 +82,9 @@ class RateReplyDetail
     }
     
     /**
-     * 
+     * Set DeliveryDayOfWeek
      *
-     * @param DayOfWeekType $DeliveryDayOfWeek
+     * @param \FedEx\RateService\SimpleType\DayOfWeekType  $deliveryDayOfWeek
      * return RateReplyDetail
      */
     public function setDeliveryDayOfWeek(\FedEx\RateService\SimpleType\DayOfWeekType $deliveryDayOfWeek)
@@ -88,9 +94,9 @@ class RateReplyDetail
     }
     
     /**
-     * 
+     * Set DeliveryTimestamp
      *
-     * @param dateTime $DeliveryTimestamp
+     * @param dateTime $deliveryTimestamp
      * return RateReplyDetail
      */
     public function setDeliveryTimestamp($deliveryTimestamp)
@@ -100,9 +106,9 @@ class RateReplyDetail
     }
     
     /**
-     * 
+     * Set CommitDetails
      *
-     * @param array[CommitDetail] $CommitDetails
+     * @param CommitDetail[] $commitDetails
      * return RateReplyDetail
      */
     public function setCommitDetails(array $commitDetails)
@@ -114,7 +120,7 @@ class RateReplyDetail
     /**
      * Identification of an airport, using standard three-letter abbreviations.
      *
-     * @param string $DestinationAirportId
+     * @param string $destinationAirportId
      * return RateReplyDetail
      */
     public function setDestinationAirportId($destinationAirportId)
@@ -126,7 +132,7 @@ class RateReplyDetail
     /**
      * Indicates whether or not this shipment is eligible for a money back guarantee.
      *
-     * @param boolean $IneligibleForMoneyBackGuarantee
+     * @param boolean $ineligibleForMoneyBackGuarantee
      * return RateReplyDetail
      */
     public function setIneligibleForMoneyBackGuarantee($ineligibleForMoneyBackGuarantee)
@@ -138,7 +144,7 @@ class RateReplyDetail
     /**
      * Commitment code for the origin.
      *
-     * @param string $OriginServiceArea
+     * @param string $originServiceArea
      * return RateReplyDetail
      */
     public function setOriginServiceArea($originServiceArea)
@@ -150,7 +156,7 @@ class RateReplyDetail
     /**
      * Commitment code for the destination.
      *
-     * @param string $DestinationServiceArea
+     * @param string $destinationServiceArea
      * return RateReplyDetail
      */
     public function setDestinationServiceArea($destinationServiceArea)
@@ -162,7 +168,7 @@ class RateReplyDetail
     /**
      * Time in transit from pickup to delivery.
      *
-     * @param TransitTimeType $TransitTime
+     * @param \FedEx\RateService\SimpleType\TransitTimeType  $transitTime
      * return RateReplyDetail
      */
     public function setTransitTime(\FedEx\RateService\SimpleType\TransitTimeType $transitTime)
@@ -174,7 +180,7 @@ class RateReplyDetail
     /**
      * Maximum expected transit time
      *
-     * @param TransitTimeType $MaximumTransitTime
+     * @param \FedEx\RateService\SimpleType\TransitTimeType  $maximumTransitTime
      * return RateReplyDetail
      */
     public function setMaximumTransitTime(\FedEx\RateService\SimpleType\TransitTimeType $maximumTransitTime)
@@ -186,7 +192,7 @@ class RateReplyDetail
     /**
      * The signature option for this package.
      *
-     * @param SignatureOptionType $SignatureOption
+     * @param \FedEx\RateService\SimpleType\SignatureOptionType  $signatureOption
      * return RateReplyDetail
      */
     public function setSignatureOption(\FedEx\RateService\SimpleType\SignatureOptionType $signatureOption)
@@ -198,7 +204,7 @@ class RateReplyDetail
     /**
      * The actual rate type of the charges for this package.
      *
-     * @param ReturnedRateType $ActualRateType
+     * @param \FedEx\RateService\SimpleType\ReturnedRateType  $actualRateType
      * return RateReplyDetail
      */
     public function setActualRateType(\FedEx\RateService\SimpleType\ReturnedRateType $actualRateType)
@@ -210,7 +216,7 @@ class RateReplyDetail
     /**
      * Each element contains all rate data for a single rate type.
      *
-     * @param array[RatedShipmentDetail] $RatedShipmentDetails
+     * @param RatedShipmentDetail[] $ratedShipmentDetails
      * return RateReplyDetail
      */
     public function setRatedShipmentDetails(array $ratedShipmentDetails)

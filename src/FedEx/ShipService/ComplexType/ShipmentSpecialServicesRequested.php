@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ShipmentSpecialServicesRequested
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ShipmentSpecialServicesRequested';
 
     /**
      * The types of all special services requested for the enclosing shipment (or other shipment-level transaction).
      *
-     * @param array[ShipmentSpecialServiceType] $SpecialServiceTypes
+     * @param ShipmentSpecialServiceType[] $specialServiceTypes
      * return ShipmentSpecialServicesRequested
      */
     public function setSpecialServiceTypes(array $specialServiceTypes)
@@ -30,7 +36,7 @@ class ShipmentSpecialServicesRequested
     /**
      * Descriptive data required for a FedEx COD (Collect-On-Delivery) shipment. This element is required when SpecialServiceType.COD is present in the SpecialServiceTypes collection.
      *
-     * @param CodDetail $CodDetail
+     * @param CodDetail $codDetail
      * return ShipmentSpecialServicesRequested
      */
     public function setCodDetail(CodDetail $codDetail)
@@ -42,7 +48,7 @@ class ShipmentSpecialServicesRequested
     /**
      * Descriptive data required for a FedEx shipment that is to be held at the destination FedEx location for pickup by the recipient. This element is required when SpecialServiceType.HOLD_AT_LOCATION is present in the SpecialServiceTypes collection.
      *
-     * @param HoldAtLocationDetail $HoldAtLocationDetail
+     * @param HoldAtLocationDetail $holdAtLocationDetail
      * return ShipmentSpecialServicesRequested
      */
     public function setHoldAtLocationDetail(HoldAtLocationDetail $holdAtLocationDetail)
@@ -54,7 +60,7 @@ class ShipmentSpecialServicesRequested
     /**
      * Descriptive data required for FedEx to provide email notification to the customer regarding the shipment. This element is required when SpecialServiceType.EMAIL_NOTIFICATION is present in the SpecialServiceTypes collection.
      *
-     * @param EMailNotificationDetail $EMailNotificationDetail
+     * @param EMailNotificationDetail $eMailNotificationDetail
      * return ShipmentSpecialServicesRequested
      */
     public function setEMailNotificationDetail(EMailNotificationDetail $eMailNotificationDetail)
@@ -66,7 +72,7 @@ class ShipmentSpecialServicesRequested
     /**
      * The descriptive data required for FedEx Printed Return Label. This element is required when SpecialServiceType.PRINTED_RETURN_LABEL is present in the SpecialServiceTypes collection
      *
-     * @param ReturnShipmentDetail $ReturnShipmentDetail
+     * @param ReturnShipmentDetail $returnShipmentDetail
      * return ShipmentSpecialServicesRequested
      */
     public function setReturnShipmentDetail(ReturnShipmentDetail $returnShipmentDetail)
@@ -78,7 +84,7 @@ class ShipmentSpecialServicesRequested
     /**
      * This field should be populated for pending shipments (e.g. e-mail label) It is required by a PENDING_SHIPMENT special service type.
      *
-     * @param PendingShipmentDetail $PendingShipmentDetail
+     * @param PendingShipmentDetail $pendingShipmentDetail
      * return ShipmentSpecialServicesRequested
      */
     public function setPendingShipmentDetail(PendingShipmentDetail $pendingShipmentDetail)
@@ -90,7 +96,7 @@ class ShipmentSpecialServicesRequested
     /**
      * Number of packages in this shipment which contain dry ice and the total weight of the dry ice for this shipment.
      *
-     * @param ShipmentDryIceDetail $ShipmentDryIceDetail
+     * @param ShipmentDryIceDetail $shipmentDryIceDetail
      * return ShipmentSpecialServicesRequested
      */
     public function setShipmentDryIceDetail(ShipmentDryIceDetail $shipmentDryIceDetail)
@@ -102,7 +108,7 @@ class ShipmentSpecialServicesRequested
     /**
      * The descriptive data required for FedEx Home Delivery options. This element is required when SpecialServiceType.HOME_DELIVERY_PREMIUM is present in the SpecialServiceTypes collection
      *
-     * @param HomeDeliveryPremiumDetail $HomeDeliveryPremiumDetail
+     * @param HomeDeliveryPremiumDetail $homeDeliveryPremiumDetail
      * return ShipmentSpecialServicesRequested
      */
     public function setHomeDeliveryPremiumDetail(HomeDeliveryPremiumDetail $homeDeliveryPremiumDetail)
@@ -112,9 +118,9 @@ class ShipmentSpecialServicesRequested
     }
     
     /**
-     * 
+     * Set FreightGuaranteeDetail
      *
-     * @param FreightGuaranteeDetail $FreightGuaranteeDetail
+     * @param FreightGuaranteeDetail $freightGuaranteeDetail
      * return ShipmentSpecialServicesRequested
      */
     public function setFreightGuaranteeDetail(FreightGuaranteeDetail $freightGuaranteeDetail)
@@ -126,7 +132,7 @@ class ShipmentSpecialServicesRequested
     /**
      * Electronic Trade document references.
      *
-     * @param EtdDetail $EtdDetail
+     * @param EtdDetail $etdDetail
      * return ShipmentSpecialServicesRequested
      */
     public function setEtdDetail(EtdDetail $etdDetail)
@@ -138,7 +144,7 @@ class ShipmentSpecialServicesRequested
     /**
      * Specification for date or range of dates on which delivery is to be attempted.
      *
-     * @param CustomDeliveryWindowDetail $CustomDeliveryWindowDetail
+     * @param CustomDeliveryWindowDetail $customDeliveryWindowDetail
      * return ShipmentSpecialServicesRequested
      */
     public function setCustomDeliveryWindowDetail(CustomDeliveryWindowDetail $customDeliveryWindowDetail)

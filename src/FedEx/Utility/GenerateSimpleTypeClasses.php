@@ -11,26 +11,38 @@ namespace FedEx\Utility;
 class GenerateSimpleTypeClasses extends AbstractGenerate
 {
     /**
+     * Path to WSDL file
+     * 
      * @var string
      */
     protected $_wsdlPath;
 
     /**
+     * Export path
+     * 
      * @var string
      */
     protected $_exportPath;
 
     /**
-     *
+     * Namespace name
+     * 
      * @var string
      */
     protected $_namespace;
 
     /**
+     * Subpackage name
+     * 
      * @var string
      */
     protected $_subPackageName;
 
+    /**
+     * String replacement values
+     * 
+     * @var array
+     */
     protected $_strReplace = array(
         'invalid' => array(
             '.'
@@ -42,11 +54,14 @@ class GenerateSimpleTypeClasses extends AbstractGenerate
 
     /**
      * Constructor
-     *
-     * @param string $exportPath
-     * @param string $wsdlPath
+     *  
+     * @param string $exportPath Path to export ComplexType classes
+     * @param string $wsdlPath Path to .wsdl file
+     * @param string $namespace base Namespace name (eg: FedEx\RateService).
+     * @param string $subPackageName Sub package the generated class belongs to (used in DocBlock)
+     * @throws Exception
      */
-public function __construct($exportPath, $wsdlPath, $namespace, $subPackageName)
+    public function __construct($exportPath, $wsdlPath, $namespace, $subPackageName)
     {
         if (file_exists($wsdlPath)) {
             $this->_wsdlPath = $wsdlPath;
@@ -67,6 +82,9 @@ public function __construct($exportPath, $wsdlPath, $namespace, $subPackageName)
         $this->_loadXML();
     }
 
+    /**
+     * Run generator
+     */
     public function run()
     {
         foreach ($this->_xml->types->schema->children() as $schema) {
@@ -100,8 +118,21 @@ public function __construct($exportPath, $wsdlPath, $namespace, $subPackageName)
         }
     }
 
+    /**
+     * Generates the body of the class file
+     * 
+     * @param string $documentation Documentation string
+     * @param string $className Class Name
+     * @param string $constants string of constants for class
+     * @return string
+     */
     protected function _getGeneratedFileBody($documentation, $className, $constants)
     {
+        
+        if (empty($documentation)) {
+            $documentation = $className;
+        }
+        
         $fileBody = <<<TEXT
 <?php
 namespace {$this->_namespace}\SimpleType;

@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class Localization
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'Localization';
 
     /**
      * Two-letter code for language (e.g. EN, FR, etc.)
      *
-     * @param string $LanguageCode
+     * @param string $languageCode
      * return Localization
      */
     public function setLanguageCode($languageCode)
@@ -30,7 +36,7 @@ class Localization
     /**
      * Two-letter code for the region (e.g. us, ca, etc..).
      *
-     * @param string $LocaleCode
+     * @param string $localeCode
      * return Localization
      */
     public function setLocaleCode($localeCode)

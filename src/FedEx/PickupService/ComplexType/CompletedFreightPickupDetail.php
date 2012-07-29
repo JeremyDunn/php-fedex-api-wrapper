@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CompletedFreightPickupDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CompletedFreightPickupDetail';
 
     /**
      * Describes the origin service center handling the pickup.
      *
-     * @param FreightServiceCenterDetail $Origin
+     * @param FreightServiceCenterDetail $origin
      * return CompletedFreightPickupDetail
      */
     public function setOrigin(FreightServiceCenterDetail $origin)
@@ -30,7 +36,7 @@ class CompletedFreightPickupDetail
     /**
      * Describes the results for each line item in the original request.
      *
-     * @param array[CompletedFreightPickupLineItem] $LineItems
+     * @param CompletedFreightPickupLineItem[] $lineItems
      * return CompletedFreightPickupDetail
      */
     public function setLineItems(array $lineItems)
@@ -42,7 +48,7 @@ class CompletedFreightPickupDetail
     /**
      * Total number of pieces from all line items from request.
      *
-     * @param nonNegativeInteger $TotalPieces
+     * @param nonNegativeInteger $totalPieces
      * return CompletedFreightPickupDetail
      */
     public function setTotalPieces($totalPieces)
@@ -54,7 +60,7 @@ class CompletedFreightPickupDetail
     /**
      * Total weight from all line items from request.
      *
-     * @param Weight $TotalWeight
+     * @param Weight $totalWeight
      * return CompletedFreightPickupDetail
      */
     public function setTotalWeight(Weight $totalWeight)
@@ -66,7 +72,7 @@ class CompletedFreightPickupDetail
     /**
      * Total handling units from all line items from request.
      *
-     * @param nonNegativeInteger $TotalHandlingUnits
+     * @param nonNegativeInteger $totalHandlingUnits
      * return CompletedFreightPickupDetail
      */
     public function setTotalHandlingUnits($totalHandlingUnits)
@@ -78,7 +84,7 @@ class CompletedFreightPickupDetail
     /**
      * Resulting status of pickup.
      *
-     * @param PickupEventType $Status
+     * @param \FedEx\Pickup\SimpleType\PickupEventType  $status
      * return CompletedFreightPickupDetail
      */
     public function setStatus(\FedEx\Pickup\SimpleType\PickupEventType $status)

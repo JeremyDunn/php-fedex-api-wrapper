@@ -11,10 +11,16 @@ namespace FedEx\Utility;
 abstract class AbstractGenerate
 {
     /**
+     * SimpleXMLElement
+     * 
      * @var SimpleXMLElement
      */
     protected $_xml;
     
+    /**
+     * Parses the xml file as a SimpleXMLElement
+     * 
+     */
     protected function _loadXML()
     {
         $fileContents = file_get_contents($this->_wsdlPath);
@@ -22,8 +28,18 @@ abstract class AbstractGenerate
         $this->_xml = new \SimpleXMLElement($fileContents);
     }
     
+    /**
+     * Run Generator
+     */
     abstract public function run();
     
+    /**
+     * Returns the relative path between 2 directories
+     * 
+     * @param string $from From directory path
+     * @param string $to To directory path
+     * @return string Relative directory path
+     */
     public function getRelativePath($from, $to)
     {
         $from = explode('/', $from);

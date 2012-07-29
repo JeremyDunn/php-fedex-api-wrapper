@@ -4,7 +4,7 @@ namespace FedEx\CloseService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * SmartPostCloseReply
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class SmartPostCloseReply
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'SmartPostCloseReply';
 
     /**
-     * 
+     * Set HighestSeverity
      *
-     * @param NotificationSeverityType $HighestSeverity
+     * @param \FedEx\CloseService\SimpleType\NotificationSeverityType  $highestSeverity
      * return SmartPostCloseReply
      */
     public function setHighestSeverity(\FedEx\CloseService\SimpleType\NotificationSeverityType $highestSeverity)
@@ -28,9 +34,9 @@ class SmartPostCloseReply
     }
     
     /**
-     * 
+     * Set Notifications
      *
-     * @param array[Notification] $Notifications
+     * @param Notification[] $notifications
      * return SmartPostCloseReply
      */
     public function setNotifications(array $notifications)
@@ -40,9 +46,9 @@ class SmartPostCloseReply
     }
     
     /**
-     * 
+     * Set TransactionDetail
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return SmartPostCloseReply
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -52,9 +58,9 @@ class SmartPostCloseReply
     }
     
     /**
-     * 
+     * Set Version
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return SmartPostCloseReply
      */
     public function setVersion(VersionId $version)

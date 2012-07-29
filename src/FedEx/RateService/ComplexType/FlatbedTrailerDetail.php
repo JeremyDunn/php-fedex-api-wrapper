@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class FlatbedTrailerDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'FlatbedTrailerDetail';
 
     /**
-     * 
+     * Set Options
      *
-     * @param array[FlatbedTrailerOption] $Options
+     * @param FlatbedTrailerOption[] $options
      * return FlatbedTrailerDetail
      */
     public function setOptions(array $options)

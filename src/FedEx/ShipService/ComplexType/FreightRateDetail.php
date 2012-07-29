@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class FreightRateDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'FreightRateDetail';
 
     /**
      * A unique identifier for a specific rate quotation.
      *
-     * @param string $QuoteNumber
+     * @param string $quoteNumber
      * return FreightRateDetail
      */
     public function setQuoteNumber($quoteNumber)
@@ -30,7 +36,7 @@ class FreightRateDetail
     /**
      * Specifies how total base charge is determined.
      *
-     * @param FreightBaseChargeCalculationType $BaseChargeCalculation
+     * @param \FedEx\ShipService\SimpleType\FreightBaseChargeCalculationType  $baseChargeCalculation
      * return FreightRateDetail
      */
     public function setBaseChargeCalculation(\FedEx\ShipService\SimpleType\FreightBaseChargeCalculationType $baseChargeCalculation)
@@ -42,7 +48,7 @@ class FreightRateDetail
     /**
      * Freight charges which accumulate to the total base charge for the shipment.
      *
-     * @param array[FreightBaseCharge] $BaseCharges
+     * @param FreightBaseCharge[] $baseCharges
      * return FreightRateDetail
      */
     public function setBaseCharges(array $baseCharges)
@@ -54,7 +60,7 @@ class FreightRateDetail
     /**
      * Human-readable descriptions of additional information on this shipment rating.
      *
-     * @param array[FreightRateNotation] $Notations
+     * @param FreightRateNotation[] $notations
      * return FreightRateDetail
      */
     public function setNotations(array $notations)

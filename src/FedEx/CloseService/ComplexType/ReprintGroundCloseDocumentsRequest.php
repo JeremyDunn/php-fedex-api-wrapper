@@ -4,7 +4,7 @@ namespace FedEx\CloseService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * ReprintGroundCloseDocumentsRequest
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ReprintGroundCloseDocumentsRequest
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ReprintGroundCloseDocumentsRequest';
 
     /**
      * The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
-     * @param WebAuthenticationDetail $WebAuthenticationDetail
+     * @param WebAuthenticationDetail $webAuthenticationDetail
      * return ReprintGroundCloseDocumentsRequest
      */
     public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
@@ -30,7 +36,7 @@ class ReprintGroundCloseDocumentsRequest
     /**
      * Descriptive data identifying the client submitting the transaction.
      *
-     * @param ClientDetail $ClientDetail
+     * @param ClientDetail $clientDetail
      * return ReprintGroundCloseDocumentsRequest
      */
     public function setClientDetail(ClientDetail $clientDetail)
@@ -42,7 +48,7 @@ class ReprintGroundCloseDocumentsRequest
     /**
      * Descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return ReprintGroundCloseDocumentsRequest
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class ReprintGroundCloseDocumentsRequest
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return ReprintGroundCloseDocumentsRequest
      */
     public function setVersion(VersionId $version)
@@ -64,9 +70,9 @@ class ReprintGroundCloseDocumentsRequest
     }
     
     /**
-     * 
+     * Set ReprintOption
      *
-     * @param ReprintGroundCloseDocumentsOptionType $ReprintOption
+     * @param \FedEx\CloseService\SimpleType\ReprintGroundCloseDocumentsOptionType  $reprintOption
      * return ReprintGroundCloseDocumentsRequest
      */
     public function setReprintOption(\FedEx\CloseService\SimpleType\ReprintGroundCloseDocumentsOptionType $reprintOption)
@@ -78,7 +84,7 @@ class ReprintGroundCloseDocumentsRequest
     /**
      * Date on which shipments were closed.
      *
-     * @param date $CloseDate
+     * @param date $closeDate
      * return ReprintGroundCloseDocumentsRequest
      */
     public function setCloseDate($closeDate)
@@ -88,9 +94,9 @@ class ReprintGroundCloseDocumentsRequest
     }
     
     /**
-     * 
+     * Set TrackingNumber
      *
-     * @param string $TrackingNumber
+     * @param string $trackingNumber
      * return ReprintGroundCloseDocumentsRequest
      */
     public function setTrackingNumber($trackingNumber)
@@ -102,7 +108,7 @@ class ReprintGroundCloseDocumentsRequest
     /**
      * Specifies characteristics of document(s) to be returned for this request.
      *
-     * @param CloseDocumentSpecification $CloseDocumentSpecification
+     * @param CloseDocumentSpecification $closeDocumentSpecification
      * return ReprintGroundCloseDocumentsRequest
      */
     public function setCloseDocumentSpecification(CloseDocumentSpecification $closeDocumentSpecification)

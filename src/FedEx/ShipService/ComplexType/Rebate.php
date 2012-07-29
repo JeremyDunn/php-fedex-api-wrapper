@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * Rebate
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class Rebate
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'Rebate';
 
     /**
-     * 
+     * Set RebateType
      *
-     * @param RebateType $RebateType
+     * @param \FedEx\ShipService\SimpleType\RebateType  $rebateType
      * return Rebate
      */
     public function setRebateType(\FedEx\ShipService\SimpleType\RebateType $rebateType)
@@ -28,9 +34,9 @@ class Rebate
     }
     
     /**
-     * 
+     * Set Description
      *
-     * @param string $Description
+     * @param string $description
      * return Rebate
      */
     public function setDescription($description)
@@ -40,9 +46,9 @@ class Rebate
     }
     
     /**
-     * 
+     * Set Amount
      *
-     * @param Money $Amount
+     * @param Money $amount
      * return Rebate
      */
     public function setAmount(Money $amount)
@@ -52,9 +58,9 @@ class Rebate
     }
     
     /**
-     * 
+     * Set Percent
      *
-     * @param decimal $Percent
+     * @param decimal $percent
      * return Rebate
      */
     public function setPercent($percent)

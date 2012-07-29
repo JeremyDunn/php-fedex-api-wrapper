@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ClientDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ClientDetail';
 
     /**
      * The FedEx account number assigned to the customer initiating the request.
      *
-     * @param string $AccountNumber
+     * @param string $accountNumber
      * return ClientDetail
      */
     public function setAccountNumber($accountNumber)
@@ -30,7 +36,7 @@ class ClientDetail
     /**
      * Identifies the unique client device submitting the request. This number is assigned by FedEx and identifies the unique device from which the request is originating.
      *
-     * @param string $MeterNumber
+     * @param string $meterNumber
      * return ClientDetail
      */
     public function setMeterNumber($meterNumber)
@@ -42,7 +48,7 @@ class ClientDetail
     /**
      * Governs any future language/translations used for human-readable Notification.localizedMessages in responses to the request containing this ClientDetail object. Different requests from the same client may contain different Localization data. (Contrast with TransactionDetail.localization, which governs data payload language/translation.)
      *
-     * @param Localization $Localization
+     * @param Localization $localization
      * return ClientDetail
      */
     public function setLocalization(Localization $localization)

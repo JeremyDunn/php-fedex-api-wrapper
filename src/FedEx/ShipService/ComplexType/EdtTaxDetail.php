@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * EdtTaxDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class EdtTaxDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'EdtTaxDetail';
 
     /**
-     * 
+     * Set TaxType
      *
-     * @param EdtTaxType $TaxType
+     * @param \FedEx\ShipService\SimpleType\EdtTaxType  $taxType
      * return EdtTaxDetail
      */
     public function setTaxType(\FedEx\ShipService\SimpleType\EdtTaxType $taxType)
@@ -28,9 +34,9 @@ class EdtTaxDetail
     }
     
     /**
-     * 
+     * Set EffectiveDate
      *
-     * @param date $EffectiveDate
+     * @param date $effectiveDate
      * return EdtTaxDetail
      */
     public function setEffectiveDate($effectiveDate)
@@ -40,9 +46,9 @@ class EdtTaxDetail
     }
     
     /**
-     * 
+     * Set Name
      *
-     * @param string $Name
+     * @param string $name
      * return EdtTaxDetail
      */
     public function setName($name)
@@ -52,9 +58,9 @@ class EdtTaxDetail
     }
     
     /**
-     * 
+     * Set TaxableValue
      *
-     * @param Money $TaxableValue
+     * @param Money $taxableValue
      * return EdtTaxDetail
      */
     public function setTaxableValue(Money $taxableValue)
@@ -64,9 +70,9 @@ class EdtTaxDetail
     }
     
     /**
-     * 
+     * Set Description
      *
-     * @param string $Description
+     * @param string $description
      * return EdtTaxDetail
      */
     public function setDescription($description)
@@ -76,9 +82,9 @@ class EdtTaxDetail
     }
     
     /**
-     * 
+     * Set Formula
      *
-     * @param string $Formula
+     * @param string $formula
      * return EdtTaxDetail
      */
     public function setFormula($formula)
@@ -88,9 +94,9 @@ class EdtTaxDetail
     }
     
     /**
-     * 
+     * Set Amount
      *
-     * @param Money $Amount
+     * @param Money $amount
      * return EdtTaxDetail
      */
     public function setAmount(Money $amount)

@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * DocTabContentBarcoded
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class DocTabContentBarcoded
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'DocTabContentBarcoded';
 
     /**
-     * 
+     * Set Symbology
      *
-     * @param BarcodeSymbologyType $Symbology
+     * @param \FedEx\RateService\SimpleType\BarcodeSymbologyType  $symbology
      * return DocTabContentBarcoded
      */
     public function setSymbology(\FedEx\RateService\SimpleType\BarcodeSymbologyType $symbology)
@@ -28,9 +34,9 @@ class DocTabContentBarcoded
     }
     
     /**
-     * 
+     * Set Specification
      *
-     * @param DocTabZoneSpecification $Specification
+     * @param DocTabZoneSpecification $specification
      * return DocTabContentBarcoded
      */
     public function setSpecification(DocTabZoneSpecification $specification)

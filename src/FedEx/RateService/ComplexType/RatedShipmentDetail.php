@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class RatedShipmentDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'RatedShipmentDetail';
 
     /**
      * The difference between "list" and "account" total net charge.
      *
-     * @param Money $EffectiveNetDiscount
+     * @param Money $effectiveNetDiscount
      * return RatedShipmentDetail
      */
     public function setEffectiveNetDiscount(Money $effectiveNetDiscount)
@@ -30,7 +36,7 @@ class RatedShipmentDetail
     /**
      * Express COD is shipment level.
      *
-     * @param Money $AdjustedCodCollectionAmount
+     * @param Money $adjustedCodCollectionAmount
      * return RatedShipmentDetail
      */
     public function setAdjustedCodCollectionAmount(Money $adjustedCodCollectionAmount)
@@ -42,7 +48,7 @@ class RatedShipmentDetail
     /**
      * The shipment-level totals for this rate type.
      *
-     * @param ShipmentRateDetail $ShipmentRateDetail
+     * @param ShipmentRateDetail $shipmentRateDetail
      * return RatedShipmentDetail
      */
     public function setShipmentRateDetail(ShipmentRateDetail $shipmentRateDetail)
@@ -54,7 +60,7 @@ class RatedShipmentDetail
     /**
      * The package-level data for this rate type.
      *
-     * @param array[RatedPackageDetail] $RatedPackages
+     * @param RatedPackageDetail[] $ratedPackages
      * return RatedShipmentDetail
      */
     public function setRatedPackages(array $ratedPackages)

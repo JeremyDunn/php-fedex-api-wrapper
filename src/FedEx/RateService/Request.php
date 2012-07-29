@@ -53,7 +53,7 @@ class Request
     /**
      * Sends the RateRequest and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest
+     * @param ComplexType\RateRequest $rateRequest 
      * @return stdClass
      */
     public function getRateReply(ComplexType\RateRequest $rateRequest)

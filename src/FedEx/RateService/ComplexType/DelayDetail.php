@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class DelayDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'DelayDetail';
 
     /**
      * The date of the delay
      *
-     * @param date $Date
+     * @param date $date
      * return DelayDetail
      */
     public function setDate($date)
@@ -28,9 +34,9 @@ class DelayDetail
     }
     
     /**
-     * 
+     * Set DayOfWeek
      *
-     * @param DayOfWeekType $DayOfWeek
+     * @param \FedEx\RateService\SimpleType\DayOfWeekType  $dayOfWeek
      * return DelayDetail
      */
     public function setDayOfWeek(\FedEx\RateService\SimpleType\DayOfWeekType $dayOfWeek)
@@ -42,7 +48,7 @@ class DelayDetail
     /**
      * The attribute of the shipment that caused the delay(e.g. Country, City, LocationId, Zip, service area, special handling )
      *
-     * @param DelayLevelType $Level
+     * @param \FedEx\RateService\SimpleType\DelayLevelType  $level
      * return DelayDetail
      */
     public function setLevel(\FedEx\RateService\SimpleType\DelayLevelType $level)
@@ -54,7 +60,7 @@ class DelayDetail
     /**
      * The point where the delay is occurring (e.g. Origin, Destination, Broker location)
      *
-     * @param DelayPointType $Point
+     * @param \FedEx\RateService\SimpleType\DelayPointType  $point
      * return DelayDetail
      */
     public function setPoint(\FedEx\RateService\SimpleType\DelayPointType $point)
@@ -66,7 +72,7 @@ class DelayDetail
     /**
      * The reason for the delay (e.g. holiday, weekend, etc.).
      *
-     * @param CommitmentDelayType $Type
+     * @param \FedEx\RateService\SimpleType\CommitmentDelayType  $type
      * return DelayDetail
      */
     public function setType(\FedEx\RateService\SimpleType\CommitmentDelayType $type)
@@ -78,7 +84,7 @@ class DelayDetail
     /**
      * The name of the holiday in that country that is causing the delay.
      *
-     * @param string $Description
+     * @param string $description
      * return DelayDetail
      */
     public function setDescription($description)

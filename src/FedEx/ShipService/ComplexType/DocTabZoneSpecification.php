@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * DocTabZoneSpecification
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class DocTabZoneSpecification
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'DocTabZoneSpecification';
 
     /**
      * Zone number can be between 1 and 12.
      *
-     * @param positiveInteger $ZoneNumber
+     * @param positiveInteger $zoneNumber
      * return DocTabZoneSpecification
      */
     public function setZoneNumber($zoneNumber)
@@ -30,7 +36,7 @@ class DocTabZoneSpecification
     /**
      * Header value on this zone.
      *
-     * @param string $Header
+     * @param string $header
      * return DocTabZoneSpecification
      */
     public function setHeader($header)
@@ -42,7 +48,7 @@ class DocTabZoneSpecification
     /**
      * Reference path to the element in the request/reply whose value should be printed on this zone.
      *
-     * @param string $DataField
+     * @param string $dataField
      * return DocTabZoneSpecification
      */
     public function setDataField($dataField)
@@ -54,7 +60,7 @@ class DocTabZoneSpecification
     /**
      * Free form-text to be printed in this zone.
      *
-     * @param string $LiteralValue
+     * @param string $literalValue
      * return DocTabZoneSpecification
      */
     public function setLiteralValue($literalValue)
@@ -66,7 +72,7 @@ class DocTabZoneSpecification
     /**
      * Justification for the text printed on this zone.
      *
-     * @param DocTabZoneJustificationType $Justification
+     * @param \FedEx\ShipService\SimpleType\DocTabZoneJustificationType  $justification
      * return DocTabZoneSpecification
      */
     public function setJustification(\FedEx\ShipService\SimpleType\DocTabZoneJustificationType $justification)

@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class PackageRating
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'PackageRating';
 
     /**
      * This rate type identifies which entry in the following array is considered as presenting the "actual" rates for the package.
      *
-     * @param ReturnedRateType $ActualRateType
+     * @param \FedEx\ShipService\SimpleType\ReturnedRateType  $actualRateType
      * return PackageRating
      */
     public function setActualRateType(\FedEx\ShipService\SimpleType\ReturnedRateType $actualRateType)
@@ -30,7 +36,7 @@ class PackageRating
     /**
      * The "list" net charge minus "actual" net charge.
      *
-     * @param Money $EffectiveNetDiscount
+     * @param Money $effectiveNetDiscount
      * return PackageRating
      */
     public function setEffectiveNetDiscount(Money $effectiveNetDiscount)
@@ -42,7 +48,7 @@ class PackageRating
     /**
      * Each element of this field provides package-level rate data for a specific rate type.
      *
-     * @param array[PackageRateDetail] $PackageRateDetails
+     * @param PackageRateDetail[] $packageRateDetails
      * return PackageRating
      */
     public function setPackageRateDetails(array $packageRateDetails)

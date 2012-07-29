@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class Weight
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'Weight';
 
     /**
      * Identifies the unit of measure associated with a weight value.
      *
-     * @param WeightUnits $Units
+     * @param \FedEx\ShipService\SimpleType\WeightUnits  $units
      * return Weight
      */
     public function setUnits(\FedEx\ShipService\SimpleType\WeightUnits $units)
@@ -30,7 +36,7 @@ class Weight
     /**
      * Identifies the weight value of a package/shipment.
      *
-     * @param decimal $Value
+     * @param decimal $value
      * return Weight
      */
     public function setValue($value)

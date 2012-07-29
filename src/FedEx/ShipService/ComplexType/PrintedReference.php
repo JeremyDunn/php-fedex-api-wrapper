@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class PrintedReference
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'PrintedReference';
 
     /**
-     * 
+     * Set Type
      *
-     * @param PrintedReferenceType $Type
+     * @param \FedEx\ShipService\SimpleType\PrintedReferenceType  $type
      * return PrintedReference
      */
     public function setType(\FedEx\ShipService\SimpleType\PrintedReferenceType $type)
@@ -28,9 +34,9 @@ class PrintedReference
     }
     
     /**
-     * 
+     * Set Value
      *
-     * @param string $Value
+     * @param string $value
      * return PrintedReference
      */
     public function setValue($value)

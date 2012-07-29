@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class PackageOperationalDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'PackageOperationalDetail';
 
     /**
      * Human-readable text for pre-January 2011 clients.
      *
-     * @param string $AstraHandlingText
+     * @param string $astraHandlingText
      * return PackageOperationalDetail
      */
     public function setAstraHandlingText($astraHandlingText)
@@ -30,7 +36,7 @@ class PackageOperationalDetail
     /**
      * Human-readable content for use on a label.
      *
-     * @param array[OperationalInstruction] $OperationalInstructions
+     * @param OperationalInstruction[] $operationalInstructions
      * return PackageOperationalDetail
      */
     public function setOperationalInstructions(array $operationalInstructions)
@@ -42,7 +48,7 @@ class PackageOperationalDetail
     /**
      * The operational barcodes pertaining to the current package.
      *
-     * @param PackageBarcodes $Barcodes
+     * @param PackageBarcodes $barcodes
      * return PackageOperationalDetail
      */
     public function setBarcodes(PackageBarcodes $barcodes)
@@ -54,7 +60,7 @@ class PackageOperationalDetail
     /**
      * The FedEx internal code that represents the service and/or features of service for the current package moving under a FedEx Ground service.
      *
-     * @param string $GroundServiceCode
+     * @param string $groundServiceCode
      * return PackageOperationalDetail
      */
     public function setGroundServiceCode($groundServiceCode)

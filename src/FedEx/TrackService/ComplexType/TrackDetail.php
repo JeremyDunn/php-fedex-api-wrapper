@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class TrackDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'TrackDetail';
 
     /**
      * To report soft error on an individual track detail.
      *
-     * @param Notification $Notification
+     * @param Notification $notification
      * return TrackDetail
      */
     public function setNotification(Notification $notification)
@@ -30,7 +36,7 @@ class TrackDetail
     /**
      * The FedEx package identifier.
      *
-     * @param string $TrackingNumber
+     * @param string $trackingNumber
      * return TrackDetail
      */
     public function setTrackingNumber($trackingNumber)
@@ -40,9 +46,9 @@ class TrackDetail
     }
     
     /**
-     * 
+     * Set Barcode
      *
-     * @param StringBarcode $Barcode
+     * @param StringBarcode $barcode
      * return TrackDetail
      */
     public function setBarcode(StringBarcode $barcode)
@@ -54,7 +60,7 @@ class TrackDetail
     /**
      * When duplicate tracking numbers exist this data is returned with summary information for each of the duplicates. The summary information is used to determine which of the duplicates the intended tracking number is. This identifier is used on a subsequent track request to retrieve the tracking data for the desired tracking number.
      *
-     * @param string $TrackingNumberUniqueIdentifier
+     * @param string $trackingNumberUniqueIdentifier
      * return TrackDetail
      */
     public function setTrackingNumberUniqueIdentifier($trackingNumberUniqueIdentifier)
@@ -66,7 +72,7 @@ class TrackDetail
     /**
      * A code that identifies this type of status. This is the most recent status.
      *
-     * @param string $StatusCode
+     * @param string $statusCode
      * return TrackDetail
      */
     public function setStatusCode($statusCode)
@@ -78,7 +84,7 @@ class TrackDetail
     /**
      * A human-readable description of this status.
      *
-     * @param string $StatusDescription
+     * @param string $statusDescription
      * return TrackDetail
      */
     public function setStatusDescription($statusDescription)
@@ -90,7 +96,7 @@ class TrackDetail
     /**
      * Used to report the status of a piece of a multiple piece shipment which is no longer traveling with the rest of the packages in the shipment or has not been accounted for.
      *
-     * @param TrackReconciliation $Reconciliation
+     * @param TrackReconciliation $reconciliation
      * return TrackDetail
      */
     public function setReconciliation(TrackReconciliation $reconciliation)
@@ -102,7 +108,7 @@ class TrackDetail
     /**
      * Used to convey information such as. 1. FedEx has received information about a package but has not yet taken possession of it. 2. FedEx has handed the package off to a third party for final delivery. 3. The package delivery has been cancelled
      *
-     * @param string $ServiceCommitMessage
+     * @param string $serviceCommitMessage
      * return TrackDetail
      */
     public function setServiceCommitMessage($serviceCommitMessage)
@@ -114,7 +120,7 @@ class TrackDetail
     /**
      * Identifies a FedEx operating company (transportation).
      *
-     * @param CarrierCodeType $CarrierCode
+     * @param \FedEx\TrackService\SimpleType\CarrierCodeType  $carrierCode
      * return TrackDetail
      */
     public function setCarrierCode(\FedEx\TrackService\SimpleType\CarrierCodeType $carrierCode)
@@ -126,7 +132,7 @@ class TrackDetail
     /**
      * Identifies operating transportation company that is the specific to the carrier code.
      *
-     * @param OperatingCompanyType $OperatingCompany
+     * @param \FedEx\TrackService\SimpleType\OperatingCompanyType  $operatingCompany
      * return TrackDetail
      */
     public function setOperatingCompany(\FedEx\TrackService\SimpleType\OperatingCompanyType $operatingCompany)
@@ -138,7 +144,7 @@ class TrackDetail
     /**
      * Specifies the FXO production centre contact and address.
      *
-     * @param ContactAndAddress $ProductionLocationContactAndAddress
+     * @param ContactAndAddress $productionLocationContactAndAddress
      * return TrackDetail
      */
     public function setProductionLocationContactAndAddress(ContactAndAddress $productionLocationContactAndAddress)
@@ -150,7 +156,7 @@ class TrackDetail
     /**
      * Other related identifiers for this package such as reference numbers.
      *
-     * @param array[TrackPackageIdentifier] $OtherIdentifiers
+     * @param TrackPackageIdentifier[] $otherIdentifiers
      * return TrackDetail
      */
     public function setOtherIdentifiers(array $otherIdentifiers)
@@ -162,7 +168,7 @@ class TrackDetail
     /**
      * Retained for legacy compatibility only. User/screen friendly description of the Service type (e.g. Priority Overnight).
      *
-     * @param string $ServiceInfo
+     * @param string $serviceInfo
      * return TrackDetail
      */
     public function setServiceInfo($serviceInfo)
@@ -174,7 +180,7 @@ class TrackDetail
     /**
      * Strict representation of the Service type (e.g. PRIORITY_OVERNIGHT).
      *
-     * @param ServiceType $ServiceType
+     * @param \FedEx\TrackService\SimpleType\ServiceType  $serviceType
      * return TrackDetail
      */
     public function setServiceType(\FedEx\TrackService\SimpleType\ServiceType $serviceType)
@@ -186,7 +192,7 @@ class TrackDetail
     /**
      * The weight of this package.
      *
-     * @param Weight $PackageWeight
+     * @param Weight $packageWeight
      * return TrackDetail
      */
     public function setPackageWeight(Weight $packageWeight)
@@ -198,7 +204,7 @@ class TrackDetail
     /**
      * Physical dimensions of the package.
      *
-     * @param Dimensions $PackageDimensions
+     * @param Dimensions $packageDimensions
      * return TrackDetail
      */
     public function setPackageDimensions(Dimensions $packageDimensions)
@@ -210,7 +216,7 @@ class TrackDetail
     /**
      * The dimensional weight of the package.
      *
-     * @param Weight $PackageDimensionalWeight
+     * @param Weight $packageDimensionalWeight
      * return TrackDetail
      */
     public function setPackageDimensionalWeight(Weight $packageDimensionalWeight)
@@ -222,7 +228,7 @@ class TrackDetail
     /**
      * The weight of the entire shipment.
      *
-     * @param Weight $ShipmentWeight
+     * @param Weight $shipmentWeight
      * return TrackDetail
      */
     public function setShipmentWeight(Weight $shipmentWeight)
@@ -234,7 +240,7 @@ class TrackDetail
     /**
      * Retained for legacy compatibility only.
      *
-     * @param string $Packaging
+     * @param string $packaging
      * return TrackDetail
      */
     public function setPackaging($packaging)
@@ -246,7 +252,7 @@ class TrackDetail
     /**
      * Strict representation of the Packaging type (e.g. FEDEX_BOX, YOUR_PACKAGING).
      *
-     * @param PackagingType $PackagingType
+     * @param \FedEx\TrackService\SimpleType\PackagingType  $packagingType
      * return TrackDetail
      */
     public function setPackagingType(\FedEx\TrackService\SimpleType\PackagingType $packagingType)
@@ -258,7 +264,7 @@ class TrackDetail
     /**
      * The sequence number of this package in a shipment. This would be 2 if it was package number 2 of 4.
      *
-     * @param nonNegativeInteger $PackageSequenceNumber
+     * @param nonNegativeInteger $packageSequenceNumber
      * return TrackDetail
      */
     public function setPackageSequenceNumber($packageSequenceNumber)
@@ -270,7 +276,7 @@ class TrackDetail
     /**
      * The number of packages in this shipment.
      *
-     * @param nonNegativeInteger $PackageCount
+     * @param nonNegativeInteger $packageCount
      * return TrackDetail
      */
     public function setPackageCount($packageCount)
@@ -280,9 +286,9 @@ class TrackDetail
     }
     
     /**
-     * 
+     * Set TrackReturnLabelType
      *
-     * @param TrackReturnLabelType $TrackReturnLabelType
+     * @param \FedEx\TrackService\SimpleType\TrackReturnLabelType  $trackReturnLabelType
      * return TrackDetail
      */
     public function setTrackReturnLabelType(\FedEx\TrackService\SimpleType\TrackReturnLabelType $trackReturnLabelType)
@@ -292,9 +298,9 @@ class TrackDetail
     }
     
     /**
-     * 
+     * Set TrackReturnDescription
      *
-     * @param string $TrackReturnDescription
+     * @param string $trackReturnDescription
      * return TrackDetail
      */
     public function setTrackReturnDescription($trackReturnDescription)
@@ -306,7 +312,7 @@ class TrackDetail
     /**
      * The address information for the shipper.
      *
-     * @param Address $ShipperAddress
+     * @param Address $shipperAddress
      * return TrackDetail
      */
     public function setShipperAddress(Address $shipperAddress)
@@ -318,7 +324,7 @@ class TrackDetail
     /**
      * The address of the FedEx pickup location/facility.
      *
-     * @param Address $OriginLocationAddress
+     * @param Address $originLocationAddress
      * return TrackDetail
      */
     public function setOriginLocationAddress(Address $originLocationAddress)
@@ -330,7 +336,7 @@ class TrackDetail
     /**
      * Estimated package pickup time for shipments that haven't been picked up.
      *
-     * @param dateTime $EstimatedPickupTimestamp
+     * @param dateTime $estimatedPickupTimestamp
      * return TrackDetail
      */
     public function setEstimatedPickupTimestamp($estimatedPickupTimestamp)
@@ -342,7 +348,7 @@ class TrackDetail
     /**
      * Time package was shipped/tendered over to FedEx. Time portion will be populated if available, otherwise will be set to midnight.
      *
-     * @param dateTime $ShipTimestamp
+     * @param dateTime $shipTimestamp
      * return TrackDetail
      */
     public function setShipTimestamp($shipTimestamp)
@@ -354,7 +360,7 @@ class TrackDetail
     /**
      * The distance from the origin to the destination. Returned for Custom Critical shipments.
      *
-     * @param Distance $TotalTransitDistance
+     * @param Distance $totalTransitDistance
      * return TrackDetail
      */
     public function setTotalTransitDistance(Distance $totalTransitDistance)
@@ -366,7 +372,7 @@ class TrackDetail
     /**
      * Total distance package still has to travel. Returned for Custom Critical shipments.
      *
-     * @param Distance $DistanceToDestination
+     * @param Distance $distanceToDestination
      * return TrackDetail
      */
     public function setDistanceToDestination(Distance $distanceToDestination)
@@ -378,7 +384,7 @@ class TrackDetail
     /**
      * The address this package is to be (or has been) delivered.
      *
-     * @param Address $DestinationAddress
+     * @param Address $destinationAddress
      * return TrackDetail
      */
     public function setDestinationAddress(Address $destinationAddress)
@@ -390,7 +396,7 @@ class TrackDetail
     /**
      * The address of the FedEx delivery location/facility.
      *
-     * @param Address $DestinationLocationAddress
+     * @param Address $destinationLocationAddress
      * return TrackDetail
      */
     public function setDestinationLocationAddress(Address $destinationLocationAddress)
@@ -402,7 +408,7 @@ class TrackDetail
     /**
      * Projected package delivery time based on ship time stamp, service and destination. Not populated if delivery has already occurred.
      *
-     * @param dateTime $EstimatedDeliveryTimestamp
+     * @param dateTime $estimatedDeliveryTimestamp
      * return TrackDetail
      */
     public function setEstimatedDeliveryTimestamp($estimatedDeliveryTimestamp)
@@ -414,7 +420,7 @@ class TrackDetail
     /**
      * The time the package was actually delivered.
      *
-     * @param dateTime $ActualDeliveryTimestamp
+     * @param dateTime $actualDeliveryTimestamp
      * return TrackDetail
      */
     public function setActualDeliveryTimestamp($actualDeliveryTimestamp)
@@ -426,7 +432,7 @@ class TrackDetail
     /**
      * Actual address where package was delivered. Differs from destinationAddress, which indicates where the package was to be delivered; This field tells where delivery actually occurred (next door, at station, etc.)
      *
-     * @param Address $ActualDeliveryAddress
+     * @param Address $actualDeliveryAddress
      * return TrackDetail
      */
     public function setActualDeliveryAddress(Address $actualDeliveryAddress)
@@ -438,7 +444,7 @@ class TrackDetail
     /**
      * Identifies the method of office order delivery.
      *
-     * @param OfficeOrderDeliveryMethodType $OfficeOrderDeliveryMethod
+     * @param \FedEx\TrackService\SimpleType\OfficeOrderDeliveryMethodType  $officeOrderDeliveryMethod
      * return TrackDetail
      */
     public function setOfficeOrderDeliveryMethod(\FedEx\TrackService\SimpleType\OfficeOrderDeliveryMethodType $officeOrderDeliveryMethod)
@@ -450,7 +456,7 @@ class TrackDetail
     /**
      * Strict text indicating the delivery location at the delivered to address.
      *
-     * @param TrackDeliveryLocationType $DeliveryLocationType
+     * @param \FedEx\TrackService\SimpleType\TrackDeliveryLocationType  $deliveryLocationType
      * return TrackDetail
      */
     public function setDeliveryLocationType(\FedEx\TrackService\SimpleType\TrackDeliveryLocationType $deliveryLocationType)
@@ -462,7 +468,7 @@ class TrackDetail
     /**
      * User/screen friendly representation of the DeliveryLocationType (delivery location at the delivered to address). Can be returned in localized text.
      *
-     * @param string $DeliveryLocationDescription
+     * @param string $deliveryLocationDescription
      * return TrackDetail
      */
     public function setDeliveryLocationDescription($deliveryLocationDescription)
@@ -474,7 +480,7 @@ class TrackDetail
     /**
      * This is either the name of the person that signed for the package or "Signature not requested" or "Signature on file".
      *
-     * @param string $DeliverySignatureName
+     * @param string $deliverySignatureName
      * return TrackDetail
      */
     public function setDeliverySignatureName($deliverySignatureName)
@@ -486,7 +492,7 @@ class TrackDetail
     /**
      * True if signed for by signature image is available.
      *
-     * @param boolean $SignatureProofOfDeliveryAvailable
+     * @param boolean $signatureProofOfDeliveryAvailable
      * return TrackDetail
      */
     public function setSignatureProofOfDeliveryAvailable($signatureProofOfDeliveryAvailable)
@@ -498,7 +504,7 @@ class TrackDetail
     /**
      * The types of email notifications that are available for the package.
      *
-     * @param array[EMailNotificationEventType] $NotificationEventsAvailable
+     * @param EMailNotificationEventType[] $notificationEventsAvailable
      * return TrackDetail
      */
     public function setNotificationEventsAvailable(array $notificationEventsAvailable)
@@ -510,7 +516,7 @@ class TrackDetail
     /**
      * Returned for cargo shipments only when they are currently split across vehicles.
      *
-     * @param array[TrackSplitShipmentPart] $SplitShipmentParts
+     * @param TrackSplitShipmentPart[] $splitShipmentParts
      * return TrackDetail
      */
     public function setSplitShipmentParts(array $splitShipmentParts)
@@ -522,7 +528,7 @@ class TrackDetail
     /**
      * Indicates redirection eligibility as determined by tracking service, subject to refinement/override by redirect-to-hold service.
      *
-     * @param RedirectToHoldEligibilityType $RedirectToHoldEligibility
+     * @param \FedEx\TrackService\SimpleType\RedirectToHoldEligibilityType  $redirectToHoldEligibility
      * return TrackDetail
      */
     public function setRedirectToHoldEligibility(\FedEx\TrackService\SimpleType\RedirectToHoldEligibilityType $redirectToHoldEligibility)
@@ -534,7 +540,7 @@ class TrackDetail
     /**
      * Event information for a tracking number.
      *
-     * @param array[TrackEvent] $Events
+     * @param TrackEvent[] $events
      * return TrackDetail
      */
     public function setEvents(array $events)

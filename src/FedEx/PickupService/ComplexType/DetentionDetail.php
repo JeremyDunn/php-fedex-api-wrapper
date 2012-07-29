@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class DetentionDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'DetentionDetail';
 
     /**
      * Amount of time involved in the detention.
      *
-     * @param duration $Duration
+     * @param duration $duration
      * return DetentionDetail
      */
     public function setDuration(duration $duration)

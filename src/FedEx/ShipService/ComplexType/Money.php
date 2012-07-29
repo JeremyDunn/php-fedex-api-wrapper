@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class Money
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'Money';
 
     /**
      * Identifies the currency of the monetary amount.
      *
-     * @param string $Currency
+     * @param string $currency
      * return Money
      */
     public function setCurrency($currency)
@@ -30,7 +36,7 @@ class Money
     /**
      * Identifies the monetary amount.
      *
-     * @param decimal $Amount
+     * @param decimal $amount
      * return Money
      */
     public function setAmount($amount)

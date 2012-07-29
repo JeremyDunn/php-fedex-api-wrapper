@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * ProcessShipmentReply
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ProcessShipmentReply
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ProcessShipmentReply';
 
     /**
      * This indicates the highest level of severity of all the notifications returned in this reply
      *
-     * @param NotificationSeverityType $HighestSeverity
+     * @param \FedEx\ShipService\SimpleType\NotificationSeverityType  $highestSeverity
      * return ProcessShipmentReply
      */
     public function setHighestSeverity(\FedEx\ShipService\SimpleType\NotificationSeverityType $highestSeverity)
@@ -30,7 +36,7 @@ class ProcessShipmentReply
     /**
      * The descriptive data regarding the results of the submitted transaction.
      *
-     * @param array[Notification] $Notifications
+     * @param Notification[] $notifications
      * return ProcessShipmentReply
      */
     public function setNotifications(array $notifications)
@@ -42,7 +48,7 @@ class ProcessShipmentReply
     /**
      * Descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return ProcessShipmentReply
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class ProcessShipmentReply
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return ProcessShipmentReply
      */
     public function setVersion(VersionId $version)
@@ -66,7 +72,7 @@ class ProcessShipmentReply
     /**
      * The reply payload. All of the returned information about this shipment/package.
      *
-     * @param CompletedShipmentDetail $CompletedShipmentDetail
+     * @param CompletedShipmentDetail $completedShipmentDetail
      * return ProcessShipmentReply
      */
     public function setCompletedShipmentDetail(CompletedShipmentDetail $completedShipmentDetail)
@@ -78,7 +84,7 @@ class ProcessShipmentReply
     /**
      * Empty unless error label behavior is PACKAGE_ERROR_LABELS and one or more errors occured during transaction processing.
      *
-     * @param array[ShippingDocument] $ErrorLabels
+     * @param ShippingDocument[] $errorLabels
      * return ProcessShipmentReply
      */
     public function setErrorLabels(array $errorLabels)

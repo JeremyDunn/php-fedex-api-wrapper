@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class FreightRateNotation
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'FreightRateNotation';
 
     /**
      * Unique identifier for notation.
      *
-     * @param string $Code
+     * @param string $code
      * return FreightRateNotation
      */
     public function setCode($code)
@@ -30,7 +36,7 @@ class FreightRateNotation
     /**
      * Human-readable explanation of notation.
      *
-     * @param string $Description
+     * @param string $description
      * return FreightRateNotation
      */
     public function setDescription($description)

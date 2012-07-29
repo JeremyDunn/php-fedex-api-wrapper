@@ -4,7 +4,7 @@ namespace FedEx\TrackService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * TrackNotificationPackage
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class TrackNotificationPackage
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'TrackNotificationPackage';
 
     /**
      * FedEx assigned identifier for a package/shipment.
      *
-     * @param string $TrackingNumber
+     * @param string $trackingNumber
      * return TrackNotificationPackage
      */
     public function setTrackingNumber($trackingNumber)
@@ -30,7 +36,7 @@ class TrackNotificationPackage
     /**
      * When duplicate tracking numbers exist this data is returned with summary information for each of the duplicates. The summary information is used to determine which of the duplicates the intended tracking number is. This identifier is used on a subsequent track request to retrieve the tracking data for the desired tracking number.
      *
-     * @param string $TrackingNumberUniqueIdentifiers
+     * @param string $trackingNumberUniqueIdentifiers
      * return TrackNotificationPackage
      */
     public function setTrackingNumberUniqueIdentifiers($trackingNumberUniqueIdentifiers)
@@ -42,7 +48,7 @@ class TrackNotificationPackage
     /**
      * Identification of a FedEx operating company (transportation).
      *
-     * @param CarrierCodeType $CarrierCode
+     * @param \FedEx\TrackService\SimpleType\CarrierCodeType  $carrierCode
      * return TrackNotificationPackage
      */
     public function setCarrierCode(\FedEx\TrackService\SimpleType\CarrierCodeType $carrierCode)
@@ -54,7 +60,7 @@ class TrackNotificationPackage
     /**
      * The date the package was shipped (tendered to FedEx).
      *
-     * @param date $ShipDate
+     * @param date $shipDate
      * return TrackNotificationPackage
      */
     public function setShipDate($shipDate)
@@ -66,7 +72,7 @@ class TrackNotificationPackage
     /**
      * The destination address of this package. Only city, state/province, and country are returned.
      *
-     * @param Address $Destination
+     * @param Address $destination
      * return TrackNotificationPackage
      */
     public function setDestination(Address $destination)
@@ -78,7 +84,7 @@ class TrackNotificationPackage
     /**
      * Options available for a tracking notification recipient.
      *
-     * @param array[TrackNotificationRecipientDetail] $RecipientDetails
+     * @param TrackNotificationRecipientDetail[] $recipientDetails
      * return TrackNotificationPackage
      */
     public function setRecipientDetails(array $recipientDetails)

@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CreatePendingShipmentReply
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CreatePendingShipmentReply';
 
     /**
      * Identifies the highest severity encountered when executing the request; in order from high to low: FAILURE, ERROR, WARNING, NOTE, SUCCESS.
      *
-     * @param NotificationSeverityType $HighestSeverity
+     * @param \FedEx\ShipService\SimpleType\NotificationSeverityType  $highestSeverity
      * return CreatePendingShipmentReply
      */
     public function setHighestSeverity(\FedEx\ShipService\SimpleType\NotificationSeverityType $highestSeverity)
@@ -30,7 +36,7 @@ class CreatePendingShipmentReply
     /**
      * The descriptive data detailing the status of a sumbitted transaction.
      *
-     * @param array[Notification] $Notifications
+     * @param Notification[] $notifications
      * return CreatePendingShipmentReply
      */
     public function setNotifications(array $notifications)
@@ -42,7 +48,7 @@ class CreatePendingShipmentReply
     /**
      * Descriptive data that governs data payload language/translations. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return CreatePendingShipmentReply
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class CreatePendingShipmentReply
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return CreatePendingShipmentReply
      */
     public function setVersion(VersionId $version)
@@ -66,7 +72,7 @@ class CreatePendingShipmentReply
     /**
      * The reply payload. All of the returned information about this shipment/package.
      *
-     * @param CompletedShipmentDetail $CompletedShipmentDetail
+     * @param CompletedShipmentDetail $completedShipmentDetail
      * return CreatePendingShipmentReply
      */
     public function setCompletedShipmentDetail(CompletedShipmentDetail $completedShipmentDetail)

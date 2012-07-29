@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CancelCourierDispatchReply
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CancelCourierDispatchReply';
 
     /**
      * Identifies the highest severity encountered when executing the request; in order from high to low: FAILURE, ERROR, WARNING, NOTE, SUCCESS.
      *
-     * @param NotificationSeverityType $HighestSeverity
+     * @param \FedEx\CourierDispatchService\SimpleType\NotificationSeverityType  $highestSeverity
      * return CancelCourierDispatchReply
      */
     public function setHighestSeverity(\FedEx\CourierDispatchService\SimpleType\NotificationSeverityType $highestSeverity)
@@ -30,7 +36,7 @@ class CancelCourierDispatchReply
     /**
      * The descriptive data detailing the status of a sumbitted transaction.
      *
-     * @param array[Notification] $Notifications
+     * @param Notification[] $notifications
      * return CancelCourierDispatchReply
      */
     public function setNotifications(array $notifications)
@@ -42,7 +48,7 @@ class CancelCourierDispatchReply
     /**
      * Descriptive data that governs data payload language/translations. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return CancelCourierDispatchReply
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class CancelCourierDispatchReply
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return CancelCourierDispatchReply
      */
     public function setVersion(VersionId $version)
@@ -66,7 +72,7 @@ class CancelCourierDispatchReply
     /**
      * Identifies a text message indicating the outcome of the cancel dispatch request.
      *
-     * @param string $Message
+     * @param string $message
      * return CancelCourierDispatchReply
      */
     public function setMessage($message)

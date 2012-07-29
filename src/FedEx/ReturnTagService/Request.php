@@ -53,7 +53,7 @@ class Request
     /**
      * Sends the ExpressTagAvailabilityRequest and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest
+     * @param ComplexType\ExpressTagAvailabilityRequest $expressTagAvailabilityRequest 
      * @return stdClass
      */
     public function getExpressTagAvailabilityReply(ComplexType\ExpressTagAvailabilityRequest $expressTagAvailabilityRequest)

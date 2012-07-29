@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ShippingDocumentEMailDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ShippingDocumentEMailDetail';
 
     /**
      * Provides the roles and email addresses for e-mail recipients.
      *
-     * @param array[ShippingDocumentEMailRecipient] $EMailRecipients
+     * @param ShippingDocumentEMailRecipient[] $eMailRecipients
      * return ShippingDocumentEMailDetail
      */
     public function setEMailRecipients(array $eMailRecipients)
@@ -30,7 +36,7 @@ class ShippingDocumentEMailDetail
     /**
      * Identifies the convention by which documents are to be grouped as e-mail attachments.
      *
-     * @param ShippingDocumentEMailGroupingType $Grouping
+     * @param \FedEx\RateService\SimpleType\ShippingDocumentEMailGroupingType  $grouping
      * return ShippingDocumentEMailDetail
      */
     public function setGrouping(\FedEx\RateService\SimpleType\ShippingDocumentEMailGroupingType $grouping)

@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ExpressTagAvailabilityReply
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ExpressTagAvailabilityReply';
 
     /**
      * Identifies the highest severity encountered when executing the request; in order from high to low: FAILURE, ERROR, WARNING, NOTE, SUCCESS.
      *
-     * @param NotificationSeverityType $HighestSeverity
+     * @param \FedEx\ReturnTagService\SimpleType\NotificationSeverityType  $highestSeverity
      * return ExpressTagAvailabilityReply
      */
     public function setHighestSeverity(\FedEx\ReturnTagService\SimpleType\NotificationSeverityType $highestSeverity)
@@ -30,7 +36,7 @@ class ExpressTagAvailabilityReply
     /**
      * The descriptive data detailing the status of a sumbitted transaction.
      *
-     * @param array[Notification] $Notifications
+     * @param Notification[] $notifications
      * return ExpressTagAvailabilityReply
      */
     public function setNotifications(array $notifications)
@@ -42,7 +48,7 @@ class ExpressTagAvailabilityReply
     /**
      * Descriptive data that governs data payload language/translations.  The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return ExpressTagAvailabilityReply
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class ExpressTagAvailabilityReply
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return ExpressTagAvailabilityReply
      */
     public function setVersion(VersionId $version)
@@ -66,7 +72,7 @@ class ExpressTagAvailabilityReply
     /**
      * This is the minimum time window that must be allocated for the FedEx courier to make the pickup. This is a length of time. The difference between the Business close time, (or the local Cutoff time if it is earlier than  the Business Close time), and the Ready Time must be equal to or exceed the access time.
      *
-     * @param time $AccessTime
+     * @param time $accessTime
      * return ExpressTagAvailabilityReply
      */
     public function setAccessTime(time $accessTime)
@@ -78,7 +84,7 @@ class ExpressTagAvailabilityReply
     /**
      * Latest time a FedEx courier will be available to pick up the package from the Sender.
      *
-     * @param time $ReadyTime
+     * @param time $readyTime
      * return ExpressTagAvailabilityReply
      */
     public function setReadyTime(time $readyTime)
@@ -90,7 +96,7 @@ class ExpressTagAvailabilityReply
     /**
      * Indicates the Express Tag Service availability at the sender postal code indicated in the request.
      *
-     * @param ExpressTagAvailabilityType $Availability
+     * @param \FedEx\ReturnTagService\SimpleType\ExpressTagAvailabilityType  $availability
      * return ExpressTagAvailabilityReply
      */
     public function setAvailability(\FedEx\ReturnTagService\SimpleType\ExpressTagAvailabilityType $availability)

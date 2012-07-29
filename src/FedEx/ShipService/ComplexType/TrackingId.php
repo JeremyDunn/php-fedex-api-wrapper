@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * TrackingId
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class TrackingId
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'TrackingId';
 
     /**
-     * 
+     * Set TrackingIdType
      *
-     * @param TrackingIdType $TrackingIdType
+     * @param \FedEx\ShipService\SimpleType\TrackingIdType  $trackingIdType
      * return TrackingId
      */
     public function setTrackingIdType(\FedEx\ShipService\SimpleType\TrackingIdType $trackingIdType)
@@ -28,9 +34,9 @@ class TrackingId
     }
     
     /**
-     * 
+     * Set FormId
      *
-     * @param string $FormId
+     * @param string $formId
      * return TrackingId
      */
     public function setFormId($formId)
@@ -42,7 +48,7 @@ class TrackingId
     /**
      * For use with SmartPost tracking IDs only
      *
-     * @param string $UspsApplicationId
+     * @param string $uspsApplicationId
      * return TrackingId
      */
     public function setUspsApplicationId($uspsApplicationId)
@@ -52,9 +58,9 @@ class TrackingId
     }
     
     /**
-     * 
+     * Set TrackingNumber
      *
-     * @param string $TrackingNumber
+     * @param string $trackingNumber
      * return TrackingId
      */
     public function setTrackingNumber($trackingNumber)

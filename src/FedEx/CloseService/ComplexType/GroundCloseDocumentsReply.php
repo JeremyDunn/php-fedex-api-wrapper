@@ -4,7 +4,7 @@ namespace FedEx\CloseService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * GroundCloseDocumentsReply
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class GroundCloseDocumentsReply
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'GroundCloseDocumentsReply';
 
     /**
      * This indicates the highest level of severity of all the notifications returned in this reply.
      *
-     * @param NotificationSeverityType $HighestSeverity
+     * @param \FedEx\CloseService\SimpleType\NotificationSeverityType  $highestSeverity
      * return GroundCloseDocumentsReply
      */
     public function setHighestSeverity(\FedEx\CloseService\SimpleType\NotificationSeverityType $highestSeverity)
@@ -30,7 +36,7 @@ class GroundCloseDocumentsReply
     /**
      * The descriptive data regarding the results of the submitted transaction.
      *
-     * @param array[Notification] $Notifications
+     * @param Notification[] $notifications
      * return GroundCloseDocumentsReply
      */
     public function setNotifications(array $notifications)
@@ -42,7 +48,7 @@ class GroundCloseDocumentsReply
     /**
      * Descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return GroundCloseDocumentsReply
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class GroundCloseDocumentsReply
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return GroundCloseDocumentsReply
      */
     public function setVersion(VersionId $version)
@@ -66,7 +72,7 @@ class GroundCloseDocumentsReply
     /**
      * The actual document contents for all provided reports.
      *
-     * @param array[CloseDocument] $CloseDocuments
+     * @param CloseDocument[] $closeDocuments
      * return GroundCloseDocumentsReply
      */
     public function setCloseDocuments(array $closeDocuments)

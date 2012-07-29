@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class Distance
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'Distance';
 
     /**
      * Identifies the distance quantity.
      *
-     * @param decimal $Value
+     * @param decimal $value
      * return Distance
      */
     public function setValue($value)
@@ -30,7 +36,7 @@ class Distance
     /**
      * Identifies the unit of measure for the distance value.
      *
-     * @param DistanceUnits $Units
+     * @param \FedEx\Pickup\SimpleType\DistanceUnits  $units
      * return Distance
      */
     public function setUnits(\FedEx\Pickup\SimpleType\DistanceUnits $units)

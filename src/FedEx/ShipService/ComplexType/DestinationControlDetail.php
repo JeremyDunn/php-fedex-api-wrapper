@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class DestinationControlDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'DestinationControlDetail';
 
     /**
      * List of applicable Statment types.
      *
-     * @param array[DestinationControlStatementType] $StatementTypes
+     * @param DestinationControlStatementType[] $statementTypes
      * return DestinationControlDetail
      */
     public function setStatementTypes(array $statementTypes)
@@ -30,7 +36,7 @@ class DestinationControlDetail
     /**
      * Comma-separated list of up to four country codes, required for DEPARTMENT_OF_STATE statement.
      *
-     * @param string $DestinationCountries
+     * @param string $destinationCountries
      * return DestinationControlDetail
      */
     public function setDestinationCountries($destinationCountries)
@@ -42,7 +48,7 @@ class DestinationControlDetail
     /**
      * Name of end user, required for DEPARTMENT_OF_STATE statement.
      *
-     * @param string $EndUser
+     * @param string $endUser
      * return DestinationControlDetail
      */
     public function setEndUser($endUser)

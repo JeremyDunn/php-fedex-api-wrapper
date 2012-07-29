@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class FreightShipmentLineItem
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'FreightShipmentLineItem';
 
     /**
      * Freight class for this line item.
      *
-     * @param FreightClassType $FreightClass
+     * @param \FedEx\ShipService\SimpleType\FreightClassType  $freightClass
      * return FreightShipmentLineItem
      */
     public function setFreightClass(\FedEx\ShipService\SimpleType\FreightClassType $freightClass)
@@ -30,7 +36,7 @@ class FreightShipmentLineItem
     /**
      * FEDEX INTERNAL USE ONLY: for FedEx system that estimate freight class from customer-provided dimensions and weight.
      *
-     * @param boolean $ClassProvidedByCustomer
+     * @param boolean $classProvidedByCustomer
      * return FreightShipmentLineItem
      */
     public function setClassProvidedByCustomer($classProvidedByCustomer)
@@ -42,7 +48,7 @@ class FreightShipmentLineItem
     /**
      * Number of individual handling units to which this line applies. (NOTE: Total of line-item-level handling units may not balance to shipment-level total handling units.)
      *
-     * @param nonNegativeInteger $HandlingUnits
+     * @param nonNegativeInteger $handlingUnits
      * return FreightShipmentLineItem
      */
     public function setHandlingUnits($handlingUnits)
@@ -54,7 +60,7 @@ class FreightShipmentLineItem
     /**
      * Specification of handling-unit packaging for this commodity or class line.
      *
-     * @param PhysicalPackagingType $Packaging
+     * @param \FedEx\ShipService\SimpleType\PhysicalPackagingType  $packaging
      * return FreightShipmentLineItem
      */
     public function setPackaging(\FedEx\ShipService\SimpleType\PhysicalPackagingType $packaging)
@@ -66,7 +72,7 @@ class FreightShipmentLineItem
     /**
      * Number of pieces for this commodity or class line.
      *
-     * @param nonNegativeInteger $Pieces
+     * @param nonNegativeInteger $pieces
      * return FreightShipmentLineItem
      */
     public function setPieces($pieces)
@@ -78,7 +84,7 @@ class FreightShipmentLineItem
     /**
      * NMFC Code for commodity.
      *
-     * @param string $NmfcCode
+     * @param string $nmfcCode
      * return FreightShipmentLineItem
      */
     public function setNmfcCode($nmfcCode)
@@ -90,7 +96,7 @@ class FreightShipmentLineItem
     /**
      * Indicates the kind of hazardous material content in this line item.
      *
-     * @param HazardousCommodityOptionType $HazardousMaterials
+     * @param \FedEx\ShipService\SimpleType\HazardousCommodityOptionType  $hazardousMaterials
      * return FreightShipmentLineItem
      */
     public function setHazardousMaterials(\FedEx\ShipService\SimpleType\HazardousCommodityOptionType $hazardousMaterials)
@@ -102,7 +108,7 @@ class FreightShipmentLineItem
     /**
      * For printed reference per line item.
      *
-     * @param string $BillOfLadingNumber
+     * @param string $billOfLadingNumber
      * return FreightShipmentLineItem
      */
     public function setBillOfLadingNumber($billOfLadingNumber)
@@ -114,7 +120,7 @@ class FreightShipmentLineItem
     /**
      * For printed reference per line item.
      *
-     * @param string $PurchaseOrderNumber
+     * @param string $purchaseOrderNumber
      * return FreightShipmentLineItem
      */
     public function setPurchaseOrderNumber($purchaseOrderNumber)
@@ -126,7 +132,7 @@ class FreightShipmentLineItem
     /**
      * Customer-provided description for this commodity or class line.
      *
-     * @param string $Description
+     * @param string $description
      * return FreightShipmentLineItem
      */
     public function setDescription($description)
@@ -138,7 +144,7 @@ class FreightShipmentLineItem
     /**
      * Weight for this commodity or class line.
      *
-     * @param Weight $Weight
+     * @param Weight $weight
      * return FreightShipmentLineItem
      */
     public function setWeight(Weight $weight)
@@ -150,7 +156,7 @@ class FreightShipmentLineItem
     /**
      * FED EX INTERNAL USE ONLY - Individual line item dimensions.
      *
-     * @param Dimensions $Dimensions
+     * @param Dimensions $dimensions
      * return FreightShipmentLineItem
      */
     public function setDimensions(Dimensions $dimensions)
@@ -162,7 +168,7 @@ class FreightShipmentLineItem
     /**
      * Volume (cubic measure) for this commodity or class line.
      *
-     * @param Volume $Volume
+     * @param Volume $volume
      * return FreightShipmentLineItem
      */
     public function setVolume(Volume $volume)

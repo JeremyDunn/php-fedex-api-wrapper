@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class Contact
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'Contact';
 
     /**
      * Identifies the contact person's name.
      *
-     * @param string $PersonName
+     * @param string $personName
      * return Contact
      */
     public function setPersonName($personName)
@@ -30,7 +36,7 @@ class Contact
     /**
      * Identifies the contact person's title.
      *
-     * @param string $Title
+     * @param string $title
      * return Contact
      */
     public function setTitle($title)
@@ -42,7 +48,7 @@ class Contact
     /**
      * Identifies the contact person's company name.
      *
-     * @param string $CompanyName
+     * @param string $companyName
      * return Contact
      */
     public function setCompanyName($companyName)
@@ -54,7 +60,7 @@ class Contact
     /**
      * Identifies the contact person's phone number.
      *
-     * @param string $PhoneNumber
+     * @param string $phoneNumber
      * return Contact
      */
     public function setPhoneNumber($phoneNumber)
@@ -66,7 +72,7 @@ class Contact
     /**
      * Identifies the contact person's phone number extension.
      *
-     * @param string $PhoneExtension
+     * @param string $phoneExtension
      * return Contact
      */
     public function setPhoneExtension($phoneExtension)
@@ -78,7 +84,7 @@ class Contact
     /**
      * Identifies the contact person's pager number.
      *
-     * @param string $PagerNumber
+     * @param string $pagerNumber
      * return Contact
      */
     public function setPagerNumber($pagerNumber)
@@ -90,7 +96,7 @@ class Contact
     /**
      * Identifies the contact person's fax machine phone number.
      *
-     * @param string $FaxNumber
+     * @param string $faxNumber
      * return Contact
      */
     public function setFaxNumber($faxNumber)
@@ -102,7 +108,7 @@ class Contact
     /**
      * Identifies the contact person's email address.
      *
-     * @param string $EMailAddress
+     * @param string $eMailAddress
      * return Contact
      */
     public function setEMailAddress($eMailAddress)

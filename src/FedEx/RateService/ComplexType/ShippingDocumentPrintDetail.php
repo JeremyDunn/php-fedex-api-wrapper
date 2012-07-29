@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ShippingDocumentPrintDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ShippingDocumentPrintDetail';
 
     /**
      * Provides environment-specific printer identification.
      *
-     * @param string $PrinterId
+     * @param string $printerId
      * return ShippingDocumentPrintDetail
      */
     public function setPrinterId($printerId)

@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class RatedPackageDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'RatedPackageDetail';
 
     /**
      * Echoed from the corresponding package in the rate request (if provided).
      *
-     * @param array[TrackingId] $TrackingIds
+     * @param TrackingId[] $trackingIds
      * return RatedPackageDetail
      */
     public function setTrackingIds(array $trackingIds)
@@ -30,7 +36,7 @@ class RatedPackageDetail
     /**
      * Used with request containing PACKAGE_GROUPS, to identify which group of identical packages was used to produce a reply item.
      *
-     * @param nonNegativeInteger $GroupNumber
+     * @param nonNegativeInteger $groupNumber
      * return RatedPackageDetail
      */
     public function setGroupNumber($groupNumber)
@@ -42,7 +48,7 @@ class RatedPackageDetail
     /**
      * The difference between "list" and "account" net charge.
      *
-     * @param Money $EffectiveNetDiscount
+     * @param Money $effectiveNetDiscount
      * return RatedPackageDetail
      */
     public function setEffectiveNetDiscount(Money $effectiveNetDiscount)
@@ -54,7 +60,7 @@ class RatedPackageDetail
     /**
      * Ground COD is shipment level.
      *
-     * @param Money $AdjustedCodCollectionAmount
+     * @param Money $adjustedCodCollectionAmount
      * return RatedPackageDetail
      */
     public function setAdjustedCodCollectionAmount(Money $adjustedCodCollectionAmount)
@@ -64,9 +70,9 @@ class RatedPackageDetail
     }
     
     /**
-     * 
+     * Set OversizeClass
      *
-     * @param OversizeClassType $OversizeClass
+     * @param \FedEx\RateService\SimpleType\OversizeClassType  $oversizeClass
      * return RatedPackageDetail
      */
     public function setOversizeClass(\FedEx\RateService\SimpleType\OversizeClassType $oversizeClass)
@@ -78,7 +84,7 @@ class RatedPackageDetail
     /**
      * Rate data that are tied to a specific package and rate type combination.
      *
-     * @param PackageRateDetail $PackageRateDetail
+     * @param PackageRateDetail $packageRateDetail
      * return RatedPackageDetail
      */
     public function setPackageRateDetail(PackageRateDetail $packageRateDetail)

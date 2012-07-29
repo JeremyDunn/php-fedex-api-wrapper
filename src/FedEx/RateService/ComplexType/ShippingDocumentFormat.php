@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ShippingDocumentFormat
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ShippingDocumentFormat';
 
     /**
      * Specifies how to create, organize, and return the document.
      *
-     * @param array[ShippingDocumentDispositionDetail] $Dispositions
+     * @param ShippingDocumentDispositionDetail[] $dispositions
      * return ShippingDocumentFormat
      */
     public function setDispositions(array $dispositions)
@@ -30,7 +36,7 @@ class ShippingDocumentFormat
     /**
      * Specifies how far down the page to move the beginning of the image; allows for printing on letterhead and other pre-printed stock.
      *
-     * @param LinearMeasure $TopOfPageOffset
+     * @param LinearMeasure $topOfPageOffset
      * return ShippingDocumentFormat
      */
     public function setTopOfPageOffset(LinearMeasure $topOfPageOffset)
@@ -40,9 +46,9 @@ class ShippingDocumentFormat
     }
     
     /**
-     * 
+     * Set ImageType
      *
-     * @param ShippingDocumentImageType $ImageType
+     * @param \FedEx\RateService\SimpleType\ShippingDocumentImageType  $imageType
      * return ShippingDocumentFormat
      */
     public function setImageType(\FedEx\RateService\SimpleType\ShippingDocumentImageType $imageType)
@@ -52,9 +58,9 @@ class ShippingDocumentFormat
     }
     
     /**
-     * 
+     * Set StockType
      *
-     * @param ShippingDocumentStockType $StockType
+     * @param \FedEx\RateService\SimpleType\ShippingDocumentStockType  $stockType
      * return ShippingDocumentFormat
      */
     public function setStockType(\FedEx\RateService\SimpleType\ShippingDocumentStockType $stockType)
@@ -66,7 +72,7 @@ class ShippingDocumentFormat
     /**
      * For those shipping document types which have both a "form" and "instructions" component (e.g. NAFTA Certificate of Origin and General Agency Agreement), this field indicates whether to provide the instructions.
      *
-     * @param boolean $ProvideInstructions
+     * @param boolean $provideInstructions
      * return ShippingDocumentFormat
      */
     public function setProvideInstructions($provideInstructions)
@@ -78,7 +84,7 @@ class ShippingDocumentFormat
     /**
      * Governs the language to be used for this individual document, independently from other content returned for the same shipment.
      *
-     * @param Localization $Localization
+     * @param Localization $localization
      * return ShippingDocumentFormat
      */
     public function setLocalization(Localization $localization)

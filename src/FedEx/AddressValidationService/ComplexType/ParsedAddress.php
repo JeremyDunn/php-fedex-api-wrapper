@@ -4,7 +4,7 @@ namespace FedEx\AddressValidationService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * ParsedAddress
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ParsedAddress
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ParsedAddress';
 
     /**
-     * 
+     * Set ParsedUrbanizationCode
      *
-     * @param ParsedAddressPart $ParsedUrbanizationCode
+     * @param ParsedAddressPart $parsedUrbanizationCode
      * return ParsedAddress
      */
     public function setParsedUrbanizationCode(ParsedAddressPart $parsedUrbanizationCode)
@@ -28,9 +34,9 @@ class ParsedAddress
     }
     
     /**
-     * 
+     * Set ParsedStreetLine
      *
-     * @param array[ParsedAddressPart] $ParsedStreetLine
+     * @param ParsedAddressPart[] $parsedStreetLine
      * return ParsedAddress
      */
     public function setParsedStreetLine(array $parsedStreetLine)
@@ -40,9 +46,9 @@ class ParsedAddress
     }
     
     /**
-     * 
+     * Set ParsedCity
      *
-     * @param ParsedAddressPart $ParsedCity
+     * @param ParsedAddressPart $parsedCity
      * return ParsedAddress
      */
     public function setParsedCity(ParsedAddressPart $parsedCity)
@@ -52,9 +58,9 @@ class ParsedAddress
     }
     
     /**
-     * 
+     * Set ParsedStateOrProvinceCode
      *
-     * @param ParsedAddressPart $ParsedStateOrProvinceCode
+     * @param ParsedAddressPart $parsedStateOrProvinceCode
      * return ParsedAddress
      */
     public function setParsedStateOrProvinceCode(ParsedAddressPart $parsedStateOrProvinceCode)
@@ -64,9 +70,9 @@ class ParsedAddress
     }
     
     /**
-     * 
+     * Set ParsedPostalCode
      *
-     * @param ParsedAddressPart $ParsedPostalCode
+     * @param ParsedAddressPart $parsedPostalCode
      * return ParsedAddress
      */
     public function setParsedPostalCode(ParsedAddressPart $parsedPostalCode)
@@ -76,9 +82,9 @@ class ParsedAddress
     }
     
     /**
-     * 
+     * Set ParsedCountryCode
      *
-     * @param ParsedAddressPart $ParsedCountryCode
+     * @param ParsedAddressPart $parsedCountryCode
      * return ParsedAddress
      */
     public function setParsedCountryCode(ParsedAddressPart $parsedCountryCode)

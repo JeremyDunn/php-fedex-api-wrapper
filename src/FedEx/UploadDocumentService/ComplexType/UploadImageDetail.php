@@ -4,7 +4,7 @@ namespace FedEx\UploadDocumentService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * UploadImageDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class UploadImageDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'UploadImageDetail';
 
     /**
-     * 
+     * Set Id
      *
-     * @param ImageId $Id
+     * @param \FedEx\UploadDocumentService\SimpleType\ImageId  $id
      * return UploadImageDetail
      */
     public function setId(\FedEx\UploadDocumentService\SimpleType\ImageId $id)
@@ -28,9 +34,9 @@ class UploadImageDetail
     }
     
     /**
-     * 
+     * Set Image
      *
-     * @param base64Binary $Image
+     * @param base64Binary $image
      * return UploadImageDetail
      */
     public function setImage($image)

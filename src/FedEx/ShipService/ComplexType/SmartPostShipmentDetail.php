@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class SmartPostShipmentDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'SmartPostShipmentDetail';
 
     /**
-     * 
+     * Set Indicia
      *
-     * @param SmartPostIndiciaType $Indicia
+     * @param \FedEx\ShipService\SimpleType\SmartPostIndiciaType  $indicia
      * return SmartPostShipmentDetail
      */
     public function setIndicia(\FedEx\ShipService\SimpleType\SmartPostIndiciaType $indicia)
@@ -28,9 +34,9 @@ class SmartPostShipmentDetail
     }
     
     /**
-     * 
+     * Set AncillaryEndorsement
      *
-     * @param SmartPostAncillaryEndorsementType $AncillaryEndorsement
+     * @param \FedEx\ShipService\SimpleType\SmartPostAncillaryEndorsementType  $ancillaryEndorsement
      * return SmartPostShipmentDetail
      */
     public function setAncillaryEndorsement(\FedEx\ShipService\SimpleType\SmartPostAncillaryEndorsementType $ancillaryEndorsement)
@@ -40,9 +46,9 @@ class SmartPostShipmentDetail
     }
     
     /**
-     * 
+     * Set HubId
      *
-     * @param string $HubId
+     * @param string $hubId
      * return SmartPostShipmentDetail
      */
     public function setHubId($hubId)
@@ -59,7 +65,7 @@ class SmartPostShipmentDetail
                 the 3 manifest ids would be 041001, 041002, 041003 (in this case we used leading zeros on the trailer numbers).
               
      *
-     * @param string $CustomerManifestId
+     * @param string $customerManifestId
      * return SmartPostShipmentDetail
      */
     public function setCustomerManifestId($customerManifestId)

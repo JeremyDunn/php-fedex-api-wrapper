@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class Surcharge
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'Surcharge';
 
     /**
      * The type of surcharge applied to the shipment.
      *
-     * @param SurchargeType $SurchargeType
+     * @param \FedEx\RateService\SimpleType\SurchargeType  $surchargeType
      * return Surcharge
      */
     public function setSurchargeType(\FedEx\RateService\SimpleType\SurchargeType $surchargeType)
@@ -28,9 +34,9 @@ class Surcharge
     }
     
     /**
-     * 
+     * Set Level
      *
-     * @param SurchargeLevelType $Level
+     * @param \FedEx\RateService\SimpleType\SurchargeLevelType  $level
      * return Surcharge
      */
     public function setLevel(\FedEx\RateService\SimpleType\SurchargeLevelType $level)
@@ -40,9 +46,9 @@ class Surcharge
     }
     
     /**
-     * 
+     * Set Description
      *
-     * @param string $Description
+     * @param string $description
      * return Surcharge
      */
     public function setDescription($description)
@@ -54,7 +60,7 @@ class Surcharge
     /**
      * The amount of the surcharge applied to the shipment.
      *
-     * @param Money $Amount
+     * @param Money $amount
      * return Surcharge
      */
     public function setAmount(Money $amount)

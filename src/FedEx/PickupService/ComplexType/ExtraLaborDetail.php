@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ExtraLaborDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ExtraLaborDetail';
 
     /**
      * Total labor time.
      *
-     * @param duration $Duration
+     * @param duration $duration
      * return ExtraLaborDetail
      */
     public function setDuration(duration $duration)

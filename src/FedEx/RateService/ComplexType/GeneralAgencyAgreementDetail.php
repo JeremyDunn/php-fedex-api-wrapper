@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class GeneralAgencyAgreementDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'GeneralAgencyAgreementDetail';
 
     /**
-     * 
+     * Set Format
      *
-     * @param ShippingDocumentFormat $Format
+     * @param ShippingDocumentFormat $format
      * return GeneralAgencyAgreementDetail
      */
     public function setFormat(ShippingDocumentFormat $format)

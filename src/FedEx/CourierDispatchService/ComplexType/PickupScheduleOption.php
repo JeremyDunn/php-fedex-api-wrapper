@@ -16,12 +16,18 @@ use FedEx\AbstractComplexType;
 class PickupScheduleOption
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'PickupScheduleOption';
 
     /**
      * the carrier to which this PickupScheduleOption applies
      *
-     * @param CarrierCodeType $Carrier
+     * @param \FedEx\CourierDispatchService\SimpleType\CarrierCodeType  $carrier
      * return PickupScheduleOption
      */
     public function setCarrier(\FedEx\CourierDispatchService\SimpleType\CarrierCodeType $carrier)
@@ -33,7 +39,7 @@ class PickupScheduleOption
     /**
      * Descriptive information about the shipment.
      *
-     * @param string $Description
+     * @param string $description
      * return PickupScheduleOption
      */
     public function setDescription($description)
@@ -45,7 +51,7 @@ class PickupScheduleOption
     /**
      * Tells whether this option describes a dispatch created on the dispatch date (SAME_DAY), or on a prior date (FUTURE_DAY)
      *
-     * @param PickupRequestType $ScheduleDay
+     * @param \FedEx\CourierDispatchService\SimpleType\PickupRequestType  $scheduleDay
      * return PickupScheduleOption
      */
     public function setScheduleDay(\FedEx\CourierDispatchService\SimpleType\PickupRequestType $scheduleDay)
@@ -57,7 +63,7 @@ class PickupScheduleOption
     /**
      * True if this pickup option is available.
      *
-     * @param boolean $Available
+     * @param boolean $available
      * return PickupScheduleOption
      */
     public function setAvailable($available)
@@ -69,7 +75,7 @@ class PickupScheduleOption
     /**
      * Identifies the date (in the postal code's time zone) to which this PickupScheduleOption refers.
      *
-     * @param date $PickupDate
+     * @param date $pickupDate
      * return PickupScheduleOption
      */
     public function setPickupDate($pickupDate)
@@ -81,7 +87,7 @@ class PickupScheduleOption
     /**
      * Identifies the latest allowed ready time (in the postal code's time zone) for a postal code. As a local time, it will not include a Time Zone Designator
      *
-     * @param time $CutOffTime
+     * @param time $cutOffTime
      * return PickupScheduleOption
      */
     public function setCutOffTime(time $cutOffTime)
@@ -93,7 +99,7 @@ class PickupScheduleOption
     /**
      * Identifies the minimum required length of the window of time between the ReadyTime and the CustomerCloseTime.
      *
-     * @param duration $AccessTime
+     * @param duration $accessTime
      * return PickupScheduleOption
      */
     public function setAccessTime(duration $accessTime)
@@ -105,7 +111,7 @@ class PickupScheduleOption
     /**
      * Identifies availability of residential pickup.
      *
-     * @param boolean $ResidentialAvailable
+     * @param boolean $residentialAvailable
      * return PickupScheduleOption
      */
     public function setResidentialAvailable($residentialAvailable)

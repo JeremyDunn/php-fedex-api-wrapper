@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * CompletedShipmentDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CompletedShipmentDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CompletedShipmentDetail';
 
     /**
      * Indicates whether or not this is a US Domestic shipment.
      *
-     * @param boolean $UsDomestic
+     * @param boolean $usDomestic
      * return CompletedShipmentDetail
      */
     public function setUsDomestic($usDomestic)
@@ -30,7 +36,7 @@ class CompletedShipmentDetail
     /**
      * Indicates the carrier that will be used to deliver this shipment.
      *
-     * @param CarrierCodeType $CarrierCode
+     * @param \FedEx\ShipService\SimpleType\CarrierCodeType  $carrierCode
      * return CompletedShipmentDetail
      */
     public function setCarrierCode(\FedEx\ShipService\SimpleType\CarrierCodeType $carrierCode)
@@ -42,7 +48,7 @@ class CompletedShipmentDetail
     /**
      * The master tracking number and form id of this multiple piece shipment. This information is to be provided for each subsequent of a multiple piece shipment.
      *
-     * @param TrackingId $MasterTrackingId
+     * @param TrackingId $masterTrackingId
      * return CompletedShipmentDetail
      */
     public function setMasterTrackingId(TrackingId $masterTrackingId)
@@ -54,7 +60,7 @@ class CompletedShipmentDetail
     /**
      * Description of the FedEx service used for this shipment. Currently not supported.
      *
-     * @param string $ServiceTypeDescription
+     * @param string $serviceTypeDescription
      * return CompletedShipmentDetail
      */
     public function setServiceTypeDescription($serviceTypeDescription)
@@ -66,7 +72,7 @@ class CompletedShipmentDetail
     /**
      * Description of the packaging used for this shipment. Currently not supported.
      *
-     * @param string $PackagingDescription
+     * @param string $packagingDescription
      * return CompletedShipmentDetail
      */
     public function setPackagingDescription($packagingDescription)
@@ -76,9 +82,9 @@ class CompletedShipmentDetail
     }
     
     /**
-     * 
+     * Set OperationalDetail
      *
-     * @param ShipmentOperationalDetail $OperationalDetail
+     * @param ShipmentOperationalDetail $operationalDetail
      * return CompletedShipmentDetail
      */
     public function setOperationalDetail(ShipmentOperationalDetail $operationalDetail)
@@ -90,7 +96,7 @@ class CompletedShipmentDetail
     /**
      * Only used with pending shipments.
      *
-     * @param PendingShipmentAccessDetail $AccessDetail
+     * @param PendingShipmentAccessDetail $accessDetail
      * return CompletedShipmentDetail
      */
     public function setAccessDetail(PendingShipmentAccessDetail $accessDetail)
@@ -102,7 +108,7 @@ class CompletedShipmentDetail
     /**
      * Only used in the reply to tag requests.
      *
-     * @param CompletedTagDetail $TagDetail
+     * @param CompletedTagDetail $tagDetail
      * return CompletedShipmentDetail
      */
     public function setTagDetail(CompletedTagDetail $tagDetail)
@@ -114,7 +120,7 @@ class CompletedShipmentDetail
     /**
      * Provides reply information specific to SmartPost shipments.
      *
-     * @param CompletedSmartPostDetail $SmartPostDetail
+     * @param CompletedSmartPostDetail $smartPostDetail
      * return CompletedShipmentDetail
      */
     public function setSmartPostDetail(CompletedSmartPostDetail $smartPostDetail)
@@ -126,7 +132,7 @@ class CompletedShipmentDetail
     /**
      * All shipment-level rating data for this shipment, which may include data for multiple rate types.
      *
-     * @param ShipmentRating $ShipmentRating
+     * @param ShipmentRating $shipmentRating
      * return CompletedShipmentDetail
      */
     public function setShipmentRating(ShipmentRating $shipmentRating)
@@ -138,7 +144,7 @@ class CompletedShipmentDetail
     /**
      * Information about the COD return shipment.
      *
-     * @param CodReturnShipmentDetail $CodReturnDetail
+     * @param CodReturnShipmentDetail $codReturnDetail
      * return CompletedShipmentDetail
      */
     public function setCodReturnDetail(CodReturnShipmentDetail $codReturnDetail)
@@ -150,7 +156,7 @@ class CompletedShipmentDetail
     /**
      * Returns the default holding location information when HOLD_AT_LOCATION special service is requested and the client does not specify the hold location address.
      *
-     * @param CompletedHoldAtLocationDetail $CompletedHoldAtLocationDetail
+     * @param CompletedHoldAtLocationDetail $completedHoldAtLocationDetail
      * return CompletedShipmentDetail
      */
     public function setCompletedHoldAtLocationDetail(CompletedHoldAtLocationDetail $completedHoldAtLocationDetail)
@@ -162,7 +168,7 @@ class CompletedShipmentDetail
     /**
      * Indicates whether or not this shipment is eligible for a money back guarantee.
      *
-     * @param boolean $IneligibleForMoneyBackGuarantee
+     * @param boolean $ineligibleForMoneyBackGuarantee
      * return CompletedShipmentDetail
      */
     public function setIneligibleForMoneyBackGuarantee($ineligibleForMoneyBackGuarantee)
@@ -174,7 +180,7 @@ class CompletedShipmentDetail
     /**
      * Returns any defaults or updates applied to RequestedShipment.exportDetail.exportComplianceStatement.
      *
-     * @param string $ExportComplianceStatement
+     * @param string $exportComplianceStatement
      * return CompletedShipmentDetail
      */
     public function setExportComplianceStatement($exportComplianceStatement)
@@ -184,9 +190,9 @@ class CompletedShipmentDetail
     }
     
     /**
-     * 
+     * Set CompletedEtdDetail
      *
-     * @param CompletedEtdDetail $CompletedEtdDetail
+     * @param CompletedEtdDetail $completedEtdDetail
      * return CompletedShipmentDetail
      */
     public function setCompletedEtdDetail(CompletedEtdDetail $completedEtdDetail)
@@ -198,7 +204,7 @@ class CompletedShipmentDetail
     /**
      * All shipment-level shipping documents (other than labels and barcodes).
      *
-     * @param array[ShippingDocument] $ShipmentDocuments
+     * @param ShippingDocument[] $shipmentDocuments
      * return CompletedShipmentDetail
      */
     public function setShipmentDocuments(array $shipmentDocuments)
@@ -210,7 +216,7 @@ class CompletedShipmentDetail
     /**
      * Package level details about this package.
      *
-     * @param array[CompletedPackageDetail] $CompletedPackageDetails
+     * @param CompletedPackageDetail[] $completedPackageDetails
      * return CompletedShipmentDetail
      */
     public function setCompletedPackageDetails(array $completedPackageDetails)

@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class Op950Detail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'Op950Detail';
 
     /**
      * Specifies characteristics of a shipping document to be produced.
      *
-     * @param CloseDocumentFormat $Format
+     * @param CloseDocumentFormat $format
      * return Op950Detail
      */
     public function setFormat(CloseDocumentFormat $format)
@@ -30,7 +36,7 @@ class Op950Detail
     /**
      * Specifies the usage and identification of a customer supplied image to be used on this document.
      *
-     * @param array[CustomerImageUsage] $CustomerImageUsages
+     * @param CustomerImageUsage[] $customerImageUsages
      * return Op950Detail
      */
     public function setCustomerImageUsages(array $customerImageUsages)
@@ -42,7 +48,7 @@ class Op950Detail
     /**
      * Data field to be used when a name is to be printed in the document instead of (or in addition to) a signature image.
      *
-     * @param string $SignatureName
+     * @param string $signatureName
      * return Op950Detail
      */
     public function setSignatureName($signatureName)

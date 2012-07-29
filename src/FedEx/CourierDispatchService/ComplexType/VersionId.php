@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class VersionId
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'VersionId';
 
     /**
      * Identifies a system or sub-system which performs an operation. Customers using the FedEx Web Services interface should set this element to "wsi".
      *
-     * @param string $ServiceId
+     * @param string $serviceId
      * return VersionId
      */
     public function setServiceId($serviceId)
@@ -30,7 +36,7 @@ class VersionId
     /**
      * Identifies the service business level.
      *
-     * @param int $Major
+     * @param int $major
      * return VersionId
      */
     public function setMajor($major)
@@ -42,7 +48,7 @@ class VersionId
     /**
      * Identifies the service interface level.
      *
-     * @param int $Intermediate
+     * @param int $intermediate
      * return VersionId
      */
     public function setIntermediate($intermediate)
@@ -54,7 +60,7 @@ class VersionId
     /**
      * Identifies the service code level.
      *
-     * @param int $Minor
+     * @param int $minor
      * return VersionId
      */
     public function setMinor($minor)

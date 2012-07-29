@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class PickupAvailabilityReply
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'PickupAvailabilityReply';
 
     /**
      * Identifies the highest severity encountered when executing the request; in order from high to low: FAILURE, ERROR, WARNING, NOTE, SUCCESS.
      *
-     * @param NotificationSeverityType $HighestSeverity
+     * @param \FedEx\Pickup\SimpleType\NotificationSeverityType  $highestSeverity
      * return PickupAvailabilityReply
      */
     public function setHighestSeverity(\FedEx\Pickup\SimpleType\NotificationSeverityType $highestSeverity)
@@ -30,7 +36,7 @@ class PickupAvailabilityReply
     /**
      * The descriptive data detailing the status of a sumbitted transaction.
      *
-     * @param array[Notification] $Notifications
+     * @param Notification[] $notifications
      * return PickupAvailabilityReply
      */
     public function setNotifications(array $notifications)
@@ -42,7 +48,7 @@ class PickupAvailabilityReply
     /**
      * Descriptive data that governs data payload language/translations. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return PickupAvailabilityReply
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class PickupAvailabilityReply
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return PickupAvailabilityReply
      */
     public function setVersion(VersionId $version)
@@ -66,7 +72,7 @@ class PickupAvailabilityReply
     /**
      * the point in time when the request was processed
      *
-     * @param dateTime $RequestTimestamp
+     * @param dateTime $requestTimestamp
      * return PickupAvailabilityReply
      */
     public function setRequestTimestamp($requestTimestamp)
@@ -78,7 +84,7 @@ class PickupAvailabilityReply
     /**
      * Identifies the options for picking up the shipment.
      *
-     * @param array[PickupScheduleOption] $Options
+     * @param PickupScheduleOption[] $options
      * return PickupAvailabilityReply
      */
     public function setOptions(array $options)
@@ -90,7 +96,7 @@ class PickupAvailabilityReply
     /**
      * Identifies whether the close time is specified by the customer or is the default time.
      *
-     * @param CloseTimeType $CloseTimeType
+     * @param \FedEx\Pickup\SimpleType\CloseTimeType  $closeTimeType
      * return PickupAvailabilityReply
      */
     public function setCloseTimeType(\FedEx\Pickup\SimpleType\CloseTimeType $closeTimeType)
@@ -102,7 +108,7 @@ class PickupAvailabilityReply
     /**
      * Close time corresponding to the above specified type
      *
-     * @param time $CloseTime
+     * @param time $closeTime
      * return PickupAvailabilityReply
      */
     public function setCloseTime(time $closeTime)
@@ -114,7 +120,7 @@ class PickupAvailabilityReply
     /**
      * Local time of the service center that will service the pickup
      *
-     * @param time $LocalTime
+     * @param time $localTime
      * return PickupAvailabilityReply
      */
     public function setLocalTime(time $localTime)

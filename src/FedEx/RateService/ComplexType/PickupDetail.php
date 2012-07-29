@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class PickupDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'PickupDetail';
 
     /**
-     * 
+     * Set ReadyDateTime
      *
-     * @param dateTime $ReadyDateTime
+     * @param dateTime $readyDateTime
      * return PickupDetail
      */
     public function setReadyDateTime($readyDateTime)
@@ -28,9 +34,9 @@ class PickupDetail
     }
     
     /**
-     * 
+     * Set LatestPickupDateTime
      *
-     * @param dateTime $LatestPickupDateTime
+     * @param dateTime $latestPickupDateTime
      * return PickupDetail
      */
     public function setLatestPickupDateTime($latestPickupDateTime)
@@ -40,9 +46,9 @@ class PickupDetail
     }
     
     /**
-     * 
+     * Set CourierInstructions
      *
-     * @param string $CourierInstructions
+     * @param string $courierInstructions
      * return PickupDetail
      */
     public function setCourierInstructions($courierInstructions)
@@ -52,9 +58,9 @@ class PickupDetail
     }
     
     /**
-     * 
+     * Set RequestType
      *
-     * @param PickupRequestType $RequestType
+     * @param \FedEx\RateService\SimpleType\PickupRequestType  $requestType
      * return PickupDetail
      */
     public function setRequestType(\FedEx\RateService\SimpleType\PickupRequestType $requestType)
@@ -64,9 +70,9 @@ class PickupDetail
     }
     
     /**
-     * 
+     * Set RequestSource
      *
-     * @param PickupRequestSourceType $RequestSource
+     * @param \FedEx\RateService\SimpleType\PickupRequestSourceType  $requestSource
      * return PickupDetail
      */
     public function setRequestSource(\FedEx\RateService\SimpleType\PickupRequestSourceType $requestSource)

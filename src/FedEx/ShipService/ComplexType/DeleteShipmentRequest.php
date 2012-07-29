@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class DeleteShipmentRequest
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'DeleteShipmentRequest';
 
     /**
      * Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
-     * @param WebAuthenticationDetail $WebAuthenticationDetail
+     * @param WebAuthenticationDetail $webAuthenticationDetail
      * return DeleteShipmentRequest
      */
     public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
@@ -30,7 +36,7 @@ class DeleteShipmentRequest
     /**
      * Descriptive data identifying the client submitting the transaction.
      *
-     * @param ClientDetail $ClientDetail
+     * @param ClientDetail $clientDetail
      * return DeleteShipmentRequest
      */
     public function setClientDetail(ClientDetail $clientDetail)
@@ -42,7 +48,7 @@ class DeleteShipmentRequest
     /**
      * Descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return DeleteShipmentRequest
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class DeleteShipmentRequest
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return DeleteShipmentRequest
      */
     public function setVersion(VersionId $version)
@@ -66,7 +72,7 @@ class DeleteShipmentRequest
     /**
      * The timestamp of the shipment request.
      *
-     * @param dateTime $ShipTimestamp
+     * @param dateTime $shipTimestamp
      * return DeleteShipmentRequest
      */
     public function setShipTimestamp($shipTimestamp)
@@ -78,7 +84,7 @@ class DeleteShipmentRequest
     /**
      * Identifies the FedEx tracking number of the package being cancelled.
      *
-     * @param TrackingId $TrackingId
+     * @param TrackingId $trackingId
      * return DeleteShipmentRequest
      */
     public function setTrackingId(TrackingId $trackingId)
@@ -90,7 +96,7 @@ class DeleteShipmentRequest
     /**
      * Determines the type of deletion to be performed in relation to package level vs shipment level.
      *
-     * @param DeletionControlType $DeletionControl
+     * @param \FedEx\ShipService\SimpleType\DeletionControlType  $deletionControl
      * return DeleteShipmentRequest
      */
     public function setDeletionControl(\FedEx\ShipService\SimpleType\DeletionControlType $deletionControl)

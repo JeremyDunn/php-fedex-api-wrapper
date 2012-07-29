@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class StorageDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'StorageDetail';
 
     /**
      * Total time shipment is held by carrier.
      *
-     * @param duration $Duration
+     * @param duration $duration
      * return StorageDetail
      */
     public function setDuration(duration $duration)

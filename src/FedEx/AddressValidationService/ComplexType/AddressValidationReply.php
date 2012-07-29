@@ -4,7 +4,7 @@ namespace FedEx\AddressValidationService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * AddressValidationReply
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class AddressValidationReply
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'AddressValidationReply';
 
     /**
-     * 
+     * Set HighestSeverity
      *
-     * @param NotificationSeverityType $HighestSeverity
+     * @param \FedEx\AddressValidationService\SimpleType\NotificationSeverityType  $highestSeverity
      * return AddressValidationReply
      */
     public function setHighestSeverity(\FedEx\AddressValidationService\SimpleType\NotificationSeverityType $highestSeverity)
@@ -28,9 +34,9 @@ class AddressValidationReply
     }
     
     /**
-     * 
+     * Set Notifications
      *
-     * @param array[Notification] $Notifications
+     * @param Notification[] $notifications
      * return AddressValidationReply
      */
     public function setNotifications(array $notifications)
@@ -40,9 +46,9 @@ class AddressValidationReply
     }
     
     /**
-     * 
+     * Set TransactionDetail
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return AddressValidationReply
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -52,9 +58,9 @@ class AddressValidationReply
     }
     
     /**
-     * 
+     * Set Version
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return AddressValidationReply
      */
     public function setVersion(VersionId $version)
@@ -64,9 +70,9 @@ class AddressValidationReply
     }
     
     /**
-     * 
+     * Set ReplyTimestamp
      *
-     * @param dateTime $ReplyTimestamp
+     * @param dateTime $replyTimestamp
      * return AddressValidationReply
      */
     public function setReplyTimestamp($replyTimestamp)
@@ -76,9 +82,9 @@ class AddressValidationReply
     }
     
     /**
-     * 
+     * Set AddressResults
      *
-     * @param array[AddressValidationResult] $AddressResults
+     * @param AddressValidationResult[] $addressResults
      * return AddressValidationReply
      */
     public function setAddressResults(array $addressResults)

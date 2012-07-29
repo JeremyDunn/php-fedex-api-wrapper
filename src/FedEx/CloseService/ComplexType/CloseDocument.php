@@ -4,7 +4,7 @@ namespace FedEx\CloseService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * CloseDocument
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CloseDocument
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CloseDocument';
 
     /**
-     * 
+     * Set Type
      *
-     * @param CloseDocumentType $Type
+     * @param \FedEx\CloseService\SimpleType\CloseDocumentType  $type
      * return CloseDocument
      */
     public function setType(\FedEx\CloseService\SimpleType\CloseDocumentType $type)
@@ -30,7 +36,7 @@ class CloseDocument
     /**
      * The client's shipping cycle to which this shipment belongs.
      *
-     * @param string $ShippingCycle
+     * @param string $shippingCycle
      * return CloseDocument
      */
     public function setShippingCycle($shippingCycle)
@@ -40,9 +46,9 @@ class CloseDocument
     }
     
     /**
-     * 
+     * Set ShippingDocumentDisposition
      *
-     * @param ShippingDocumentDispositionType $ShippingDocumentDisposition
+     * @param \FedEx\CloseService\SimpleType\ShippingDocumentDispositionType  $shippingDocumentDisposition
      * return CloseDocument
      */
     public function setShippingDocumentDisposition(\FedEx\CloseService\SimpleType\ShippingDocumentDispositionType $shippingDocumentDisposition)
@@ -54,7 +60,7 @@ class CloseDocument
     /**
      * The name under which a STORED or DEFERRED document is written.
      *
-     * @param string $AccessReference
+     * @param string $accessReference
      * return CloseDocument
      */
     public function setAccessReference($accessReference)
@@ -66,7 +72,7 @@ class CloseDocument
     /**
      * Specifies the image resolution in DPI (dots per inch).
      *
-     * @param nonNegativeInteger $Resolution
+     * @param nonNegativeInteger $resolution
      * return CloseDocument
      */
     public function setResolution($resolution)
@@ -78,7 +84,7 @@ class CloseDocument
     /**
      * Number of copies to print.
      *
-     * @param positiveInteger $CopiesToPrint
+     * @param positiveInteger $copiesToPrint
      * return CloseDocument
      */
     public function setCopiesToPrint($copiesToPrint)
@@ -90,7 +96,7 @@ class CloseDocument
     /**
      * One or more document parts which make up a single logical document, such as multiple pages of a single form.
      *
-     * @param array[ShippingDocumentPart] $Parts
+     * @param ShippingDocumentPart[] $parts
      * return CloseDocument
      */
     public function setParts(array $parts)

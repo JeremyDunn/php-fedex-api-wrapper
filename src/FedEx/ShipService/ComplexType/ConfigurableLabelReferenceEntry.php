@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ConfigurableLabelReferenceEntry
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ConfigurableLabelReferenceEntry';
 
     /**
      * 1 of 12 possible zones to position data.
      *
-     * @param positiveInteger $ZoneNumber
+     * @param positiveInteger $zoneNumber
      * return ConfigurableLabelReferenceEntry
      */
     public function setZoneNumber($zoneNumber)
@@ -30,7 +36,7 @@ class ConfigurableLabelReferenceEntry
     /**
      * The identifiying text for the data in this zone.
      *
-     * @param string $Header
+     * @param string $header
      * return ConfigurableLabelReferenceEntry
      */
     public function setHeader($header)
@@ -42,7 +48,7 @@ class ConfigurableLabelReferenceEntry
     /**
      * A reference to a field in either the request or reply to print in this zone following the header.
      *
-     * @param string $DataField
+     * @param string $dataField
      * return ConfigurableLabelReferenceEntry
      */
     public function setDataField($dataField)
@@ -54,7 +60,7 @@ class ConfigurableLabelReferenceEntry
     /**
      * A literal value to print after the header in this zone.
      *
-     * @param string $LiteralValue
+     * @param string $literalValue
      * return ConfigurableLabelReferenceEntry
      */
     public function setLiteralValue($literalValue)

@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class AdditionalLabelsDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'AdditionalLabelsDetail';
 
     /**
      * The type of additional labels to return.
      *
-     * @param AdditionalLabelsType $Type
+     * @param \FedEx\ShipService\SimpleType\AdditionalLabelsType  $type
      * return AdditionalLabelsDetail
      */
     public function setType(\FedEx\ShipService\SimpleType\AdditionalLabelsType $type)
@@ -30,7 +36,7 @@ class AdditionalLabelsDetail
     /**
      * The number of this type label to return
      *
-     * @param nonNegativeInteger $Count
+     * @param nonNegativeInteger $count
      * return AdditionalLabelsDetail
      */
     public function setCount($count)

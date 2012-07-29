@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class FreightServiceCenterDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'FreightServiceCenterDetail';
 
     /**
      * Freight Industry standard non-FedEx carrier identification
      *
-     * @param string $InterlineCarrierCode
+     * @param string $interlineCarrierCode
      * return FreightServiceCenterDetail
      */
     public function setInterlineCarrierCode($interlineCarrierCode)
@@ -30,7 +36,7 @@ class FreightServiceCenterDetail
     /**
      * The name of the Interline carrier.
      *
-     * @param string $InterlineCarrierName
+     * @param string $interlineCarrierName
      * return FreightServiceCenterDetail
      */
     public function setInterlineCarrierName($interlineCarrierName)
@@ -42,7 +48,7 @@ class FreightServiceCenterDetail
     /**
      * Additional time it might take at the origin or destination to pickup or deliver the freight. This is usually due to the remoteness of the location. This time is included in the total transit time.
      *
-     * @param int $AdditionalDays
+     * @param int $additionalDays
      * return FreightServiceCenterDetail
      */
     public function setAdditionalDays($additionalDays)
@@ -54,7 +60,7 @@ class FreightServiceCenterDetail
     /**
      * Service branding which may be used for local pickup or delivery, distinct from service used for line-haul of customer's shipment.
      *
-     * @param ServiceType $LocalService
+     * @param \FedEx\RateService\SimpleType\ServiceType  $localService
      * return FreightServiceCenterDetail
      */
     public function setLocalService(\FedEx\RateService\SimpleType\ServiceType $localService)
@@ -66,7 +72,7 @@ class FreightServiceCenterDetail
     /**
      * Distance between customer address (pickup or delivery) and the supporting Freight / National Freight service center.
      *
-     * @param Distance $LocalDistance
+     * @param Distance $localDistance
      * return FreightServiceCenterDetail
      */
     public function setLocalDistance(Distance $localDistance)
@@ -78,7 +84,7 @@ class FreightServiceCenterDetail
     /**
      * Time to travel between customer address (pickup or delivery) and the supporting Freight / National Freight service center.
      *
-     * @param duration $LocalDuration
+     * @param duration $localDuration
      * return FreightServiceCenterDetail
      */
     public function setLocalDuration(duration $localDuration)
@@ -90,7 +96,7 @@ class FreightServiceCenterDetail
     /**
      * Specifies when/how the customer can arrange for pickup or delivery.
      *
-     * @param FreightServiceSchedulingType $LocalServiceScheduling
+     * @param \FedEx\RateService\SimpleType\FreightServiceSchedulingType  $localServiceScheduling
      * return FreightServiceCenterDetail
      */
     public function setLocalServiceScheduling(\FedEx\RateService\SimpleType\FreightServiceSchedulingType $localServiceScheduling)
@@ -102,7 +108,7 @@ class FreightServiceCenterDetail
     /**
      * Specifies days of operation if localServiceScheduling is LIMITED.
      *
-     * @param array[DayOfWeekType] $LimitedServiceDays
+     * @param DayOfWeekType[] $limitedServiceDays
      * return FreightServiceCenterDetail
      */
     public function setLimitedServiceDays(array $limitedServiceDays)
@@ -114,7 +120,7 @@ class FreightServiceCenterDetail
     /**
      * Freight service center that is a gateway on the border of Canada or Mexico.
      *
-     * @param string $GatewayLocationId
+     * @param string $gatewayLocationId
      * return FreightServiceCenterDetail
      */
     public function setGatewayLocationId($gatewayLocationId)
@@ -126,7 +132,7 @@ class FreightServiceCenterDetail
     /**
      * Alphabetical code identifying a Freight Service Center
      *
-     * @param string $Location
+     * @param string $location
      * return FreightServiceCenterDetail
      */
     public function setLocation($location)
@@ -138,7 +144,7 @@ class FreightServiceCenterDetail
     /**
      * Freight service center Contact and Address
      *
-     * @param ContactAndAddress $ContactAndAddress
+     * @param ContactAndAddress $contactAndAddress
      * return FreightServiceCenterDetail
      */
     public function setContactAndAddress(ContactAndAddress $contactAndAddress)

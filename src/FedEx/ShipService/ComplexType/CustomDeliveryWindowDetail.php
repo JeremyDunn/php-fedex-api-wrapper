@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * CustomDeliveryWindowDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CustomDeliveryWindowDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CustomDeliveryWindowDetail';
 
     /**
      * Indicates the type of custom delivery being requested.
      *
-     * @param CustomDeliveryWindowType $Type
+     * @param \FedEx\ShipService\SimpleType\CustomDeliveryWindowType  $type
      * return CustomDeliveryWindowDetail
      */
     public function setType(\FedEx\ShipService\SimpleType\CustomDeliveryWindowType $type)
@@ -30,7 +36,7 @@ class CustomDeliveryWindowDetail
     /**
      * Time by which delivery is requested.
      *
-     * @param time $RequestTime
+     * @param time $requestTime
      * return CustomDeliveryWindowDetail
      */
     public function setRequestTime(time $requestTime)
@@ -42,7 +48,7 @@ class CustomDeliveryWindowDetail
     /**
      * Range of dates for custom delivery request; only used if type is BETWEEN.
      *
-     * @param DateRange $RequestRange
+     * @param DateRange $requestRange
      * return CustomDeliveryWindowDetail
      */
     public function setRequestRange(DateRange $requestRange)
@@ -54,7 +60,7 @@ class CustomDeliveryWindowDetail
     /**
      * Date for custom delivery request; only used for types of ON, BETWEEN, or AFTER.
      *
-     * @param date $RequestDate
+     * @param date $requestDate
      * return CustomDeliveryWindowDetail
      */
     public function setRequestDate($requestDate)

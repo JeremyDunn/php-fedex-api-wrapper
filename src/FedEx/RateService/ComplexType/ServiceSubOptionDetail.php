@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ServiceSubOptionDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ServiceSubOptionDetail';
 
     /**
      * Identifies the type of Freight Guarantee applied, if FREIGHT_GUARANTEE is applied to the rate quote.
      *
-     * @param FreightGuaranteeType $FreightGuarantee
+     * @param \FedEx\RateService\SimpleType\FreightGuaranteeType  $freightGuarantee
      * return ServiceSubOptionDetail
      */
     public function setFreightGuarantee(\FedEx\RateService\SimpleType\FreightGuaranteeType $freightGuarantee)
@@ -30,7 +36,7 @@ class ServiceSubOptionDetail
     /**
      * Identifies the smartPostHubId used during rate quote, if SMART_POST_HUB_ID is a variable option on the rate request.
      *
-     * @param string $SmartPostHubId
+     * @param string $smartPostHubId
      * return ServiceSubOptionDetail
      */
     public function setSmartPostHubId($smartPostHubId)
@@ -42,7 +48,7 @@ class ServiceSubOptionDetail
     /**
      * Identifies the indicia used during rate quote, if SMART_POST_ALLOWED_INDICIA is a variable option on the rate request.
      *
-     * @param SmartPostIndiciaType $SmartPostIndicia
+     * @param \FedEx\RateService\SimpleType\SmartPostIndiciaType  $smartPostIndicia
      * return ServiceSubOptionDetail
      */
     public function setSmartPostIndicia(\FedEx\RateService\SimpleType\SmartPostIndiciaType $smartPostIndicia)

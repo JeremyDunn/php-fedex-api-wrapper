@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * CustomerImageUsage
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CustomerImageUsage
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CustomerImageUsage';
 
     /**
-     * 
+     * Set Type
      *
-     * @param CustomerImageUsageType $Type
+     * @param \FedEx\ShipService\SimpleType\CustomerImageUsageType  $type
      * return CustomerImageUsage
      */
     public function setType(\FedEx\ShipService\SimpleType\CustomerImageUsageType $type)
@@ -28,9 +34,9 @@ class CustomerImageUsage
     }
     
     /**
-     * 
+     * Set Id
      *
-     * @param ImageId $Id
+     * @param \FedEx\ShipService\SimpleType\ImageId  $id
      * return CustomerImageUsage
      */
     public function setId(\FedEx\ShipService\SimpleType\ImageId $id)

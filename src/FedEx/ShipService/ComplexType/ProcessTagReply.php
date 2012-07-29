@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * ProcessTagReply
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ProcessTagReply
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ProcessTagReply';
 
     /**
-     * 
+     * Set HighestSeverity
      *
-     * @param NotificationSeverityType $HighestSeverity
+     * @param \FedEx\ShipService\SimpleType\NotificationSeverityType  $highestSeverity
      * return ProcessTagReply
      */
     public function setHighestSeverity(\FedEx\ShipService\SimpleType\NotificationSeverityType $highestSeverity)
@@ -28,9 +34,9 @@ class ProcessTagReply
     }
     
     /**
-     * 
+     * Set Notifications
      *
-     * @param array[Notification] $Notifications
+     * @param Notification[] $notifications
      * return ProcessTagReply
      */
     public function setNotifications(array $notifications)
@@ -40,9 +46,9 @@ class ProcessTagReply
     }
     
     /**
-     * 
+     * Set TransactionDetail
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return ProcessTagReply
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -52,9 +58,9 @@ class ProcessTagReply
     }
     
     /**
-     * 
+     * Set Version
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return ProcessTagReply
      */
     public function setVersion(VersionId $version)
@@ -64,9 +70,9 @@ class ProcessTagReply
     }
     
     /**
-     * 
+     * Set CompletedShipmentDetail
      *
-     * @param CompletedShipmentDetail $CompletedShipmentDetail
+     * @param CompletedShipmentDetail $completedShipmentDetail
      * return ProcessTagReply
      */
     public function setCompletedShipmentDetail(CompletedShipmentDetail $completedShipmentDetail)

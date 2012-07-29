@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * Money
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class Money
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'Money';
 
     /**
-     * 
+     * Set Currency
      *
-     * @param string $Currency
+     * @param string $currency
      * return Money
      */
     public function setCurrency($currency)
@@ -28,9 +34,9 @@ class Money
     }
     
     /**
-     * 
+     * Set Amount
      *
-     * @param decimal $Amount
+     * @param decimal $amount
      * return Money
      */
     public function setAmount($amount)

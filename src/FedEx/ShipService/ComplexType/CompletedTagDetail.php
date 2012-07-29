@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CompletedTagDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CompletedTagDetail';
 
     /**
      * .
      *
-     * @param string $ConfirmationNumber
+     * @param string $confirmationNumber
      * return CompletedTagDetail
      */
     public function setConfirmationNumber($confirmationNumber)
@@ -30,7 +36,7 @@ class CompletedTagDetail
     /**
      * As of June 2007, returned only for FedEx Express services.
      *
-     * @param duration $AccessTime
+     * @param duration $accessTime
      * return CompletedTagDetail
      */
     public function setAccessTime(duration $accessTime)
@@ -42,7 +48,7 @@ class CompletedTagDetail
     /**
      * As of June 2007, returned only for FedEx Express services.
      *
-     * @param time $CutoffTime
+     * @param time $cutoffTime
      * return CompletedTagDetail
      */
     public function setCutoffTime(time $cutoffTime)
@@ -54,7 +60,7 @@ class CompletedTagDetail
     /**
      * As of June 2007, returned only for FedEx Express services.
      *
-     * @param string $Location
+     * @param string $location
      * return CompletedTagDetail
      */
     public function setLocation($location)
@@ -66,7 +72,7 @@ class CompletedTagDetail
     /**
      * As of June 2007, returned only for FedEx Express services.
      *
-     * @param dateTime $DeliveryCommitment
+     * @param dateTime $deliveryCommitment
      * return CompletedTagDetail
      */
     public function setDeliveryCommitment($deliveryCommitment)
@@ -78,7 +84,7 @@ class CompletedTagDetail
     /**
      * FEDEX INTERNAL USE ONLY: for use by INET.
      *
-     * @param date $DispatchDate
+     * @param date $dispatchDate
      * return CompletedTagDetail
      */
     public function setDispatchDate($dispatchDate)

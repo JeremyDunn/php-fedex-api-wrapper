@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class BinaryBarcode
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'BinaryBarcode';
 
     /**
      * The kind of barcode data in this instance.
      *
-     * @param BinaryBarcodeType $Type
+     * @param \FedEx\ShipService\SimpleType\BinaryBarcodeType  $type
      * return BinaryBarcode
      */
     public function setType(\FedEx\ShipService\SimpleType\BinaryBarcodeType $type)
@@ -30,7 +36,7 @@ class BinaryBarcode
     /**
      * The data content of this instance.
      *
-     * @param base64Binary $Value
+     * @param base64Binary $value
      * return BinaryBarcode
      */
     public function setValue($value)

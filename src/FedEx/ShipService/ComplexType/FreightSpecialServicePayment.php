@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class FreightSpecialServicePayment
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'FreightSpecialServicePayment';
 
     /**
      * Identifies the special service.
      *
-     * @param ShipmentSpecialServiceType $SpecialService
+     * @param \FedEx\ShipService\SimpleType\ShipmentSpecialServiceType  $specialService
      * return FreightSpecialServicePayment
      */
     public function setSpecialService(\FedEx\ShipService\SimpleType\ShipmentSpecialServiceType $specialService)
@@ -30,7 +36,7 @@ class FreightSpecialServicePayment
     /**
      * Indicates who will pay for the special service.
      *
-     * @param FreightAccountPaymentType $PaymentType
+     * @param \FedEx\ShipService\SimpleType\FreightAccountPaymentType  $paymentType
      * return FreightSpecialServicePayment
      */
     public function setPaymentType(\FedEx\ShipService\SimpleType\FreightAccountPaymentType $paymentType)

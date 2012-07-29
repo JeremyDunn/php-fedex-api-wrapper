@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class PostalCodeServiceAreaDescription
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'PostalCodeServiceAreaDescription';
 
     /**
      * Location ID
      *
-     * @param string $LocationId
+     * @param string $locationId
      * return PostalCodeServiceAreaDescription
      */
     public function setLocationId($locationId)
@@ -30,7 +36,7 @@ class PostalCodeServiceAreaDescription
     /**
      * State or Province code
      *
-     * @param string $StateOrProvinceCode
+     * @param string $stateOrProvinceCode
      * return PostalCodeServiceAreaDescription
      */
     public function setStateOrProvinceCode($stateOrProvinceCode)
@@ -42,7 +48,7 @@ class PostalCodeServiceAreaDescription
     /**
      * Postal Code
      *
-     * @param string $PostalCode
+     * @param string $postalCode
      * return PostalCodeServiceAreaDescription
      */
     public function setPostalCode($postalCode)
@@ -54,7 +60,7 @@ class PostalCodeServiceAreaDescription
     /**
      * Service area code
      *
-     * @param string $ServiceArea
+     * @param string $serviceArea
      * return PostalCodeServiceAreaDescription
      */
     public function setServiceArea($serviceArea)

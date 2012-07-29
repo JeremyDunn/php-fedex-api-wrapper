@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CloseDocumentFormat
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CloseDocumentFormat';
 
     /**
      * Specifies how to create, organize, and return the document.
      *
-     * @param array[ShippingDocumentDispositionDetail] $Dispositions
+     * @param ShippingDocumentDispositionDetail[] $dispositions
      * return CloseDocumentFormat
      */
     public function setDispositions(array $dispositions)
@@ -30,7 +36,7 @@ class CloseDocumentFormat
     /**
      * Specifies how far down the page to move the beginning of the image; allows for printing on letterhead and other pre-printed stock.
      *
-     * @param LinearMeasure $TopOfPageOffset
+     * @param LinearMeasure $topOfPageOffset
      * return CloseDocumentFormat
      */
     public function setTopOfPageOffset(LinearMeasure $topOfPageOffset)
@@ -42,7 +48,7 @@ class CloseDocumentFormat
     /**
      * The type of image or printer commands the image is to be formatted in.
      *
-     * @param ShippingDocumentImageType $ImageType
+     * @param \FedEx\CloseService\SimpleType\ShippingDocumentImageType  $imageType
      * return CloseDocumentFormat
      */
     public function setImageType(\FedEx\CloseService\SimpleType\ShippingDocumentImageType $imageType)
@@ -52,9 +58,9 @@ class CloseDocumentFormat
     }
     
     /**
-     * 
+     * Set StockType
      *
-     * @param ShippingDocumentStockType $StockType
+     * @param \FedEx\CloseService\SimpleType\ShippingDocumentStockType  $stockType
      * return CloseDocumentFormat
      */
     public function setStockType(\FedEx\CloseService\SimpleType\ShippingDocumentStockType $stockType)
@@ -66,7 +72,7 @@ class CloseDocumentFormat
     /**
      * For those shipping document types which have both a "form" and "instructions" component (e.g. NAFTA Certificate of Origin and General Agency Agreement), this field indicates whether to provide the instructions.
      *
-     * @param boolean $ProvideInstructions
+     * @param boolean $provideInstructions
      * return CloseDocumentFormat
      */
     public function setProvideInstructions($provideInstructions)
@@ -78,7 +84,7 @@ class CloseDocumentFormat
     /**
      * Governs the language to be used for this individual document, independently from other content returned for the same shipment.
      *
-     * @param Localization $Localization
+     * @param Localization $localization
      * return CloseDocumentFormat
      */
     public function setLocalization(Localization $localization)

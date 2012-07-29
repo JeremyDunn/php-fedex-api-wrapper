@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class EtdDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'EtdDetail';
 
     /**
      * Indicates the types of shipping documents produced for the shipper by FedEx (see ShippingDocumentSpecification) which should be copied back to the shipper in the shipment result data.
      *
-     * @param array[RequestedShippingDocumentType] $RequestedDocumentCopies
+     * @param RequestedShippingDocumentType[] $requestedDocumentCopies
      * return EtdDetail
      */
     public function setRequestedDocumentCopies(array $requestedDocumentCopies)
@@ -28,9 +34,9 @@ class EtdDetail
     }
     
     /**
-     * 
+     * Set DocumentReferences
      *
-     * @param array[UploadDocumentReferenceDetail] $DocumentReferences
+     * @param UploadDocumentReferenceDetail[] $documentReferences
      * return EtdDetail
      */
     public function setDocumentReferences(array $documentReferences)

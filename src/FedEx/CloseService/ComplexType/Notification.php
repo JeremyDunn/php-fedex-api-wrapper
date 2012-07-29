@@ -4,7 +4,7 @@ namespace FedEx\CloseService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * Notification
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class Notification
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'Notification';
 
     /**
-     * 
+     * Set Severity
      *
-     * @param NotificationSeverityType $Severity
+     * @param \FedEx\CloseService\SimpleType\NotificationSeverityType  $severity
      * return Notification
      */
     public function setSeverity(\FedEx\CloseService\SimpleType\NotificationSeverityType $severity)
@@ -28,9 +34,9 @@ class Notification
     }
     
     /**
-     * 
+     * Set Source
      *
-     * @param string $Source
+     * @param string $source
      * return Notification
      */
     public function setSource($source)
@@ -40,9 +46,9 @@ class Notification
     }
     
     /**
-     * 
+     * Set Code
      *
-     * @param string $Code
+     * @param string $code
      * return Notification
      */
     public function setCode($code)
@@ -52,9 +58,9 @@ class Notification
     }
     
     /**
-     * 
+     * Set Message
      *
-     * @param string $Message
+     * @param string $message
      * return Notification
      */
     public function setMessage($message)
@@ -64,9 +70,9 @@ class Notification
     }
     
     /**
-     * 
+     * Set LocalizedMessage
      *
-     * @param string $LocalizedMessage
+     * @param string $localizedMessage
      * return Notification
      */
     public function setLocalizedMessage($localizedMessage)
@@ -78,7 +84,7 @@ class Notification
     /**
      * A collection of name/value pairs that provide specific data to help the client determine the nature of an error (or warning, etc.) witout having to parse the message string.
      *
-     * @param array[NotificationParameter] $MessageParameters
+     * @param NotificationParameter[] $messageParameters
      * return Notification
      */
     public function setMessageParameters(array $messageParameters)

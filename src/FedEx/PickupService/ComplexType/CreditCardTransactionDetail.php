@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CreditCardTransactionDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CreditCardTransactionDetail';
 
     /**
-     * 
+     * Set AuthorizationId
      *
-     * @param string $AuthorizationId
+     * @param string $authorizationId
      * return CreditCardTransactionDetail
      */
     public function setAuthorizationId($authorizationId)
@@ -28,9 +34,9 @@ class CreditCardTransactionDetail
     }
     
     /**
-     * 
+     * Set AuthorizationType
      *
-     * @param CreditCardAuthorizationType $AuthorizationType
+     * @param \FedEx\Pickup\SimpleType\CreditCardAuthorizationType  $authorizationType
      * return CreditCardTransactionDetail
      */
     public function setAuthorizationType(\FedEx\Pickup\SimpleType\CreditCardAuthorizationType $authorizationType)
@@ -40,9 +46,9 @@ class CreditCardTransactionDetail
     }
     
     /**
-     * 
+     * Set FraudDetectionDetail
      *
-     * @param CreditFraudDetectionDetail $FraudDetectionDetail
+     * @param CreditFraudDetectionDetail $fraudDetectionDetail
      * return CreditCardTransactionDetail
      */
     public function setFraudDetectionDetail(CreditFraudDetectionDetail $fraudDetectionDetail)

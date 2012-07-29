@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * CodReturnPackageDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CodReturnPackageDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CodReturnPackageDetail';
 
     /**
      * The COD amount (after any accumulations) that must be collected upon delivery of a package shipped using the COD special service.
      *
-     * @param Money $CollectionAmount
+     * @param Money $collectionAmount
      * return CodReturnPackageDetail
      */
     public function setCollectionAmount(Money $collectionAmount)
@@ -28,9 +34,9 @@ class CodReturnPackageDetail
     }
     
     /**
-     * 
+     * Set Electronic
      *
-     * @param boolean $Electronic
+     * @param boolean $electronic
      * return CodReturnPackageDetail
      */
     public function setElectronic($electronic)
@@ -42,7 +48,7 @@ class CodReturnPackageDetail
     /**
      * Contains the data which form the Astra and 2DCommon barcodes that print on the COD return label.
      *
-     * @param PackageBarcodes $Barcodes
+     * @param PackageBarcodes $barcodes
      * return CodReturnPackageDetail
      */
     public function setBarcodes(PackageBarcodes $barcodes)
@@ -54,7 +60,7 @@ class CodReturnPackageDetail
     /**
      * The label image or printer commands to print the label.
      *
-     * @param ShippingDocument $Label
+     * @param ShippingDocument $label
      * return CodReturnPackageDetail
      */
     public function setLabel(ShippingDocument $label)

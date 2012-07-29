@@ -4,7 +4,7 @@ namespace FedEx\Pickup\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * UploadDocumentDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class UploadDocumentDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'UploadDocumentDetail';
 
     /**
-     * 
+     * Set LineNumber
      *
-     * @param nonNegativeInteger $LineNumber
+     * @param nonNegativeInteger $lineNumber
      * return UploadDocumentDetail
      */
     public function setLineNumber($lineNumber)
@@ -28,9 +34,9 @@ class UploadDocumentDetail
     }
     
     /**
-     * 
+     * Set CustomerReference
      *
-     * @param string $CustomerReference
+     * @param string $customerReference
      * return UploadDocumentDetail
      */
     public function setCustomerReference($customerReference)
@@ -40,9 +46,9 @@ class UploadDocumentDetail
     }
     
     /**
-     * 
+     * Set DocumentProducer
      *
-     * @param UploadDocumentProducerType $DocumentProducer
+     * @param \FedEx\Pickup\SimpleType\UploadDocumentProducerType  $documentProducer
      * return UploadDocumentDetail
      */
     public function setDocumentProducer(\FedEx\Pickup\SimpleType\UploadDocumentProducerType $documentProducer)
@@ -52,9 +58,9 @@ class UploadDocumentDetail
     }
     
     /**
-     * 
+     * Set DocumentType
      *
-     * @param UploadDocumentType $DocumentType
+     * @param \FedEx\Pickup\SimpleType\UploadDocumentType  $documentType
      * return UploadDocumentDetail
      */
     public function setDocumentType(\FedEx\Pickup\SimpleType\UploadDocumentType $documentType)
@@ -64,9 +70,9 @@ class UploadDocumentDetail
     }
     
     /**
-     * 
+     * Set FileName
      *
-     * @param string $FileName
+     * @param string $fileName
      * return UploadDocumentDetail
      */
     public function setFileName($fileName)
@@ -76,9 +82,9 @@ class UploadDocumentDetail
     }
     
     /**
-     * 
+     * Set DocumentContent
      *
-     * @param base64Binary $DocumentContent
+     * @param base64Binary $documentContent
      * return UploadDocumentDetail
      */
     public function setDocumentContent($documentContent)

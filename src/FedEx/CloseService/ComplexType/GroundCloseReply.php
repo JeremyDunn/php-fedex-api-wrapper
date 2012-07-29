@@ -4,7 +4,7 @@ namespace FedEx\CloseService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * GroundCloseReply
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class GroundCloseReply
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'GroundCloseReply';
 
     /**
-     * 
+     * Set HighestSeverity
      *
-     * @param NotificationSeverityType $HighestSeverity
+     * @param \FedEx\CloseService\SimpleType\NotificationSeverityType  $highestSeverity
      * return GroundCloseReply
      */
     public function setHighestSeverity(\FedEx\CloseService\SimpleType\NotificationSeverityType $highestSeverity)
@@ -28,9 +34,9 @@ class GroundCloseReply
     }
     
     /**
-     * 
+     * Set Notifications
      *
-     * @param array[Notification] $Notifications
+     * @param Notification[] $notifications
      * return GroundCloseReply
      */
     public function setNotifications(array $notifications)
@@ -40,9 +46,9 @@ class GroundCloseReply
     }
     
     /**
-     * 
+     * Set TransactionDetail
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return GroundCloseReply
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -52,9 +58,9 @@ class GroundCloseReply
     }
     
     /**
-     * 
+     * Set Version
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return GroundCloseReply
      */
     public function setVersion(VersionId $version)
@@ -64,9 +70,9 @@ class GroundCloseReply
     }
     
     /**
-     * 
+     * Set CodReport
      *
-     * @param base64Binary $CodReport
+     * @param base64Binary $codReport
      * return GroundCloseReply
      */
     public function setCodReport($codReport)
@@ -76,9 +82,9 @@ class GroundCloseReply
     }
     
     /**
-     * 
+     * Set HazMatCertificate
      *
-     * @param base64Binary $HazMatCertificate
+     * @param base64Binary $hazMatCertificate
      * return GroundCloseReply
      */
     public function setHazMatCertificate($hazMatCertificate)
@@ -88,9 +94,9 @@ class GroundCloseReply
     }
     
     /**
-     * 
+     * Set Manifest
      *
-     * @param ManifestFile $Manifest
+     * @param ManifestFile $manifest
      * return GroundCloseReply
      */
     public function setManifest(ManifestFile $manifest)
@@ -100,9 +106,9 @@ class GroundCloseReply
     }
     
     /**
-     * 
+     * Set MultiweightReport
      *
-     * @param base64Binary $MultiweightReport
+     * @param base64Binary $multiweightReport
      * return GroundCloseReply
      */
     public function setMultiweightReport($multiweightReport)

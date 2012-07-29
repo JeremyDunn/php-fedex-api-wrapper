@@ -4,7 +4,7 @@ namespace FedEx\AddressValidationService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * ProposedAddressDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ProposedAddressDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ProposedAddressDetail';
 
     /**
-     * 
+     * Set Score
      *
-     * @param integer $Score
+     * @param integer $score
      * return ProposedAddressDetail
      */
     public function setScore(integer $score)
@@ -28,9 +34,9 @@ class ProposedAddressDetail
     }
     
     /**
-     * 
+     * Set Changes
      *
-     * @param array[AddressValidationChangeType] $Changes
+     * @param AddressValidationChangeType[] $changes
      * return ProposedAddressDetail
      */
     public function setChanges(array $changes)
@@ -40,9 +46,9 @@ class ProposedAddressDetail
     }
     
     /**
-     * 
+     * Set ResidentialStatus
      *
-     * @param ResidentialStatusType $ResidentialStatus
+     * @param \FedEx\AddressValidationService\SimpleType\ResidentialStatusType  $residentialStatus
      * return ProposedAddressDetail
      */
     public function setResidentialStatus(\FedEx\AddressValidationService\SimpleType\ResidentialStatusType $residentialStatus)
@@ -52,9 +58,9 @@ class ProposedAddressDetail
     }
     
     /**
-     * 
+     * Set DeliveryPointValidation
      *
-     * @param DeliveryPointValidationType $DeliveryPointValidation
+     * @param \FedEx\AddressValidationService\SimpleType\DeliveryPointValidationType  $deliveryPointValidation
      * return ProposedAddressDetail
      */
     public function setDeliveryPointValidation(\FedEx\AddressValidationService\SimpleType\DeliveryPointValidationType $deliveryPointValidation)
@@ -64,9 +70,9 @@ class ProposedAddressDetail
     }
     
     /**
-     * 
+     * Set CompanyName
      *
-     * @param string $CompanyName
+     * @param string $companyName
      * return ProposedAddressDetail
      */
     public function setCompanyName($companyName)
@@ -76,9 +82,9 @@ class ProposedAddressDetail
     }
     
     /**
-     * 
+     * Set Address
      *
-     * @param Address $Address
+     * @param Address $address
      * return ProposedAddressDetail
      */
     public function setAddress(Address $address)
@@ -88,9 +94,9 @@ class ProposedAddressDetail
     }
     
     /**
-     * 
+     * Set ParsedCompanyName
      *
-     * @param ParsedAddressPart $ParsedCompanyName
+     * @param ParsedAddressPart $parsedCompanyName
      * return ProposedAddressDetail
      */
     public function setParsedCompanyName(ParsedAddressPart $parsedCompanyName)
@@ -100,9 +106,9 @@ class ProposedAddressDetail
     }
     
     /**
-     * 
+     * Set ParsedAddress
      *
-     * @param ParsedAddress $ParsedAddress
+     * @param ParsedAddress $parsedAddress
      * return ProposedAddressDetail
      */
     public function setParsedAddress(ParsedAddress $parsedAddress)
@@ -112,9 +118,9 @@ class ProposedAddressDetail
     }
     
     /**
-     * 
+     * Set RemovedNonAddressData
      *
-     * @param string $RemovedNonAddressData
+     * @param string $removedNonAddressData
      * return ProposedAddressDetail
      */
     public function setRemovedNonAddressData($removedNonAddressData)

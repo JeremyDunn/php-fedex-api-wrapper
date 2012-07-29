@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class TrackReconciliation
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'TrackReconciliation';
 
     /**
      * An identifier for this type of status.
      *
-     * @param string $Status
+     * @param string $status
      * return TrackReconciliation
      */
     public function setStatus($status)
@@ -30,7 +36,7 @@ class TrackReconciliation
     /**
      * A human-readable description of this status.
      *
-     * @param string $Description
+     * @param string $description
      * return TrackReconciliation
      */
     public function setDescription($description)

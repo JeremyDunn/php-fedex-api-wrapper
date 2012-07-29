@@ -53,7 +53,7 @@ class Request
     /**
      * Sends the PostalCodeInquiryRequest and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest
+     * @param ComplexType\PostalCodeInquiryRequest $postalCodeInquiryRequest 
      * @return stdClass
      */
     public function getPostalCodeInquiryReply(ComplexType\PostalCodeInquiryRequest $postalCodeInquiryRequest)
@@ -63,7 +63,7 @@ class Request
        /**
      * Sends the ServiceAvailabilityRequest and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest
+     * @param ComplexType\ServiceAvailabilityRequest $serviceAvailabilityRequest 
      * @return stdClass
      */
     public function getServiceAvailabilityReply(ComplexType\ServiceAvailabilityRequest $serviceAvailabilityRequest)

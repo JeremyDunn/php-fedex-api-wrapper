@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * CompletedPackageDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CompletedPackageDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CompletedPackageDetail';
 
     /**
      * The package sequence number of this package in a multiple piece shipment.
      *
-     * @param positiveInteger $SequenceNumber
+     * @param positiveInteger $sequenceNumber
      * return CompletedPackageDetail
      */
     public function setSequenceNumber($sequenceNumber)
@@ -30,7 +36,7 @@ class CompletedPackageDetail
     /**
      * The Tracking number and form id for this package.
      *
-     * @param array[TrackingId] $TrackingIds
+     * @param TrackingId[] $trackingIds
      * return CompletedPackageDetail
      */
     public function setTrackingIds(array $trackingIds)
@@ -42,7 +48,7 @@ class CompletedPackageDetail
     /**
      * Used with request containing PACKAGE_GROUPS, to identify which group of identical packages was used to produce a reply item.
      *
-     * @param nonNegativeInteger $GroupNumber
+     * @param nonNegativeInteger $groupNumber
      * return CompletedPackageDetail
      */
     public function setGroupNumber($groupNumber)
@@ -54,7 +60,7 @@ class CompletedPackageDetail
     /**
      * Oversize class for this package.
      *
-     * @param OversizeClassType $OversizeClass
+     * @param \FedEx\ShipService\SimpleType\OversizeClassType  $oversizeClass
      * return CompletedPackageDetail
      */
     public function setOversizeClass(\FedEx\ShipService\SimpleType\OversizeClassType $oversizeClass)
@@ -66,7 +72,7 @@ class CompletedPackageDetail
     /**
      * All package-level rating data for this package, which may include data for multiple rate types.
      *
-     * @param PackageRating $PackageRating
+     * @param PackageRating $packageRating
      * return CompletedPackageDetail
      */
     public function setPackageRating(PackageRating $packageRating)
@@ -76,9 +82,9 @@ class CompletedPackageDetail
     }
     
     /**
-     * 
+     * Set OperationalDetail
      *
-     * @param PackageOperationalDetail $OperationalDetail
+     * @param PackageOperationalDetail $operationalDetail
      * return CompletedPackageDetail
      */
     public function setOperationalDetail(PackageOperationalDetail $operationalDetail)
@@ -90,7 +96,7 @@ class CompletedPackageDetail
     /**
      * The label image or printer commands to print the label.
      *
-     * @param ShippingDocument $Label
+     * @param ShippingDocument $label
      * return CompletedPackageDetail
      */
     public function setLabel(ShippingDocument $label)
@@ -102,7 +108,7 @@ class CompletedPackageDetail
     /**
      * All package-level shipping documents (other than labels and barcodes). For use in loads after January, 2008.
      *
-     * @param array[ShippingDocument] $PackageDocuments
+     * @param ShippingDocument[] $packageDocuments
      * return CompletedPackageDetail
      */
     public function setPackageDocuments(array $packageDocuments)
@@ -114,7 +120,7 @@ class CompletedPackageDetail
     /**
      * Information about the COD return shipment.
      *
-     * @param CodReturnPackageDetail $CodReturnDetail
+     * @param CodReturnPackageDetail $codReturnDetail
      * return CompletedPackageDetail
      */
     public function setCodReturnDetail(CodReturnPackageDetail $codReturnDetail)
@@ -126,7 +132,7 @@ class CompletedPackageDetail
     /**
      * Actual signature option applied, to allow for cases in which the original value conflicted with other service features in the shipment.
      *
-     * @param SignatureOptionType $SignatureOption
+     * @param \FedEx\ShipService\SimpleType\SignatureOptionType  $signatureOption
      * return CompletedPackageDetail
      */
     public function setSignatureOption(\FedEx\ShipService\SimpleType\SignatureOptionType $signatureOption)
@@ -138,7 +144,7 @@ class CompletedPackageDetail
     /**
      * Documents the kinds and quantities of all hazardous commodities in the current package, using updated hazardous commodity description data.
      *
-     * @param array[ValidatedHazardousCommodityContent] $HazardousCommodities
+     * @param ValidatedHazardousCommodityContent[] $hazardousCommodities
      * return CompletedPackageDetail
      */
     public function setHazardousCommodities(array $hazardousCommodities)

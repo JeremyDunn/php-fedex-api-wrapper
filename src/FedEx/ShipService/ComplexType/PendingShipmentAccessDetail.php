@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class PendingShipmentAccessDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'PendingShipmentAccessDetail';
 
     /**
      * Only for pending shipment type of "EMAIL"
      *
-     * @param string $EmailLabelUrl
+     * @param string $emailLabelUrl
      * return PendingShipmentAccessDetail
      */
     public function setEmailLabelUrl($emailLabelUrl)
@@ -30,7 +36,7 @@ class PendingShipmentAccessDetail
     /**
      * Only for pending shipment type of "EMAIL"
      *
-     * @param string $UserId
+     * @param string $userId
      * return PendingShipmentAccessDetail
      */
     public function setUserId($userId)
@@ -42,7 +48,7 @@ class PendingShipmentAccessDetail
     /**
      * Only for pending shipment type of "EMAIL"
      *
-     * @param string $Password
+     * @param string $password
      * return PendingShipmentAccessDetail
      */
     public function setPassword($password)
@@ -54,7 +60,7 @@ class PendingShipmentAccessDetail
     /**
      * This element is currently not supported and is for the future use.
      *
-     * @param dateTime $ExpirationTimestamp
+     * @param dateTime $expirationTimestamp
      * return PendingShipmentAccessDetail
      */
     public function setExpirationTimestamp($expirationTimestamp)

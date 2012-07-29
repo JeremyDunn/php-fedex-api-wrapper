@@ -16,12 +16,18 @@ use FedEx\AbstractComplexType;
 class Commodity
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'Commodity';
 
     /**
      * total number of pieces of this commodity
      *
-     * @param string $Name
+     * @param string $name
      * return Commodity
      */
     public function setName($name)
@@ -33,7 +39,7 @@ class Commodity
     /**
      * total number of pieces of this commodity
      *
-     * @param nonNegativeInteger $NumberOfPieces
+     * @param nonNegativeInteger $numberOfPieces
      * return Commodity
      */
     public function setNumberOfPieces($numberOfPieces)
@@ -45,7 +51,7 @@ class Commodity
     /**
      * Complete and accurate description of this commodity.
      *
-     * @param string $Description
+     * @param string $description
      * return Commodity
      */
     public function setDescription($description)
@@ -57,7 +63,7 @@ class Commodity
     /**
      * Country code where commodity contents were produced or manufactured in their final form.
      *
-     * @param string $CountryOfManufacture
+     * @param string $countryOfManufacture
      * return Commodity
      */
     public function setCountryOfManufacture($countryOfManufacture)
@@ -72,7 +78,7 @@ class Commodity
                 At least one occurrence is required for US Export shipments if the Customs Value is greater than $2500 or if a valid US Export license is required.
               
      *
-     * @param string $HarmonizedCode
+     * @param string $harmonizedCode
      * return Commodity
      */
     public function setHarmonizedCode($harmonizedCode)
@@ -84,7 +90,7 @@ class Commodity
     /**
      * Total weight of this commodity. 1 explicit decimal position. Max length 11 including decimal.
      *
-     * @param Weight $Weight
+     * @param Weight $weight
      * return Commodity
      */
     public function setWeight(Weight $weight)
@@ -96,7 +102,7 @@ class Commodity
     /**
      * Number of units of a commodity in total number of pieces for this line item. Max length is 9
      *
-     * @param nonNegativeInteger $Quantity
+     * @param nonNegativeInteger $quantity
      * return Commodity
      */
     public function setQuantity($quantity)
@@ -108,7 +114,7 @@ class Commodity
     /**
      * Unit of measure used to express the quantity of this commodity line item.
      *
-     * @param string $QuantityUnits
+     * @param string $quantityUnits
      * return Commodity
      */
     public function setQuantityUnits($quantityUnits)
@@ -120,7 +126,7 @@ class Commodity
     /**
      * Contains only additional quantitative information other than weight and quantity to calculate duties and taxes.
      *
-     * @param array[Measure] $AdditionalMeasures
+     * @param Measure[] $additionalMeasures
      * return Commodity
      */
     public function setAdditionalMeasures(array $additionalMeasures)
@@ -132,7 +138,7 @@ class Commodity
     /**
      * Value of each unit in Quantity. Six explicit decimal positions, Max length 18 including decimal.
      *
-     * @param Money $UnitPrice
+     * @param Money $unitPrice
      * return Commodity
      */
     public function setUnitPrice(Money $unitPrice)
@@ -148,7 +154,7 @@ class Commodity
                 Six explicit decimal positions, max length 18 including decimal.
               
      *
-     * @param Money $CustomsValue
+     * @param Money $customsValue
      * return Commodity
      */
     public function setCustomsValue(Money $customsValue)
@@ -160,7 +166,7 @@ class Commodity
     /**
      * Defines additional characteristic of commodity used to calculate duties and taxes
      *
-     * @param array[EdtExciseCondition] $ExciseConditions
+     * @param EdtExciseCondition[] $exciseConditions
      * return Commodity
      */
     public function setExciseConditions(array $exciseConditions)
@@ -172,7 +178,7 @@ class Commodity
     /**
      * Applicable to US export shipping only.
      *
-     * @param string $ExportLicenseNumber
+     * @param string $exportLicenseNumber
      * return Commodity
      */
     public function setExportLicenseNumber($exportLicenseNumber)
@@ -182,9 +188,9 @@ class Commodity
     }
     
     /**
-     * 
+     * Set ExportLicenseExpirationDate
      *
-     * @param date $ExportLicenseExpirationDate
+     * @param date $exportLicenseExpirationDate
      * return Commodity
      */
     public function setExportLicenseExpirationDate($exportLicenseExpirationDate)
@@ -198,7 +204,7 @@ class Commodity
                 An identifying mark or number used on the packaging of a shipment to help customers identify a particular shipment.
               
      *
-     * @param string $CIMarksAndNumbers
+     * @param string $cIMarksAndNumbers
      * return Commodity
      */
     public function setCIMarksAndNumbers($cIMarksAndNumbers)
@@ -210,7 +216,7 @@ class Commodity
     /**
      * All data required for this commodity in NAFTA Certificate of Origin.
      *
-     * @param NaftaCommodityDetail $NaftaDetail
+     * @param NaftaCommodityDetail $naftaDetail
      * return Commodity
      */
     public function setNaftaDetail(NaftaCommodityDetail $naftaDetail)

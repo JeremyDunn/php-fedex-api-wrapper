@@ -4,7 +4,7 @@ namespace FedEx\Pickup\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * InternationalControlledExportDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class InternationalControlledExportDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'InternationalControlledExportDetail';
 
     /**
-     * 
+     * Set Type
      *
-     * @param InternationalControlledExportType $Type
+     * @param \FedEx\Pickup\SimpleType\InternationalControlledExportType  $type
      * return InternationalControlledExportDetail
      */
     public function setType(\FedEx\Pickup\SimpleType\InternationalControlledExportType $type)
@@ -28,9 +34,9 @@ class InternationalControlledExportDetail
     }
     
     /**
-     * 
+     * Set ForeignTradeZoneCode
      *
-     * @param string $ForeignTradeZoneCode
+     * @param string $foreignTradeZoneCode
      * return InternationalControlledExportDetail
      */
     public function setForeignTradeZoneCode($foreignTradeZoneCode)
@@ -40,9 +46,9 @@ class InternationalControlledExportDetail
     }
     
     /**
-     * 
+     * Set EntryNumber
      *
-     * @param string $EntryNumber
+     * @param string $entryNumber
      * return InternationalControlledExportDetail
      */
     public function setEntryNumber($entryNumber)
@@ -52,9 +58,9 @@ class InternationalControlledExportDetail
     }
     
     /**
-     * 
+     * Set LicenseOrPermitNumber
      *
-     * @param string $LicenseOrPermitNumber
+     * @param string $licenseOrPermitNumber
      * return InternationalControlledExportDetail
      */
     public function setLicenseOrPermitNumber($licenseOrPermitNumber)
@@ -64,9 +70,9 @@ class InternationalControlledExportDetail
     }
     
     /**
-     * 
+     * Set LicenseOrPermitExpirationDate
      *
-     * @param date $LicenseOrPermitExpirationDate
+     * @param date $licenseOrPermitExpirationDate
      * return InternationalControlledExportDetail
      */
     public function setLicenseOrPermitExpirationDate($licenseOrPermitExpirationDate)

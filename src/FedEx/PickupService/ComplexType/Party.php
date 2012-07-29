@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class Party
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'Party';
 
     /**
      * Identifies the FedEx account number assigned to the customer.
      *
-     * @param string $AccountNumber
+     * @param string $accountNumber
      * return Party
      */
     public function setAccountNumber($accountNumber)
@@ -28,9 +34,9 @@ class Party
     }
     
     /**
-     * 
+     * Set Tins
      *
-     * @param array[TaxpayerIdentification] $Tins
+     * @param TaxpayerIdentification[] $tins
      * return Party
      */
     public function setTins(array $tins)
@@ -42,7 +48,7 @@ class Party
     /**
      * Descriptive data identifying the point-of-contact person.
      *
-     * @param Contact $Contact
+     * @param Contact $contact
      * return Party
      */
     public function setContact(Contact $contact)
@@ -54,7 +60,7 @@ class Party
     /**
      * The descriptive data for a physical location.
      *
-     * @param Address $Address
+     * @param Address $address
      * return Party
      */
     public function setAddress(Address $address)

@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class FreightCommitDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'FreightCommitDetail';
 
     /**
      * Information about the origin Freight Service Center.
      *
-     * @param FreightServiceCenterDetail $OriginDetail
+     * @param FreightServiceCenterDetail $originDetail
      * return FreightCommitDetail
      */
     public function setOriginDetail(FreightServiceCenterDetail $originDetail)
@@ -30,7 +36,7 @@ class FreightCommitDetail
     /**
      * Information about the destination Freight Service Center.
      *
-     * @param FreightServiceCenterDetail $DestinationDetail
+     * @param FreightServiceCenterDetail $destinationDetail
      * return FreightCommitDetail
      */
     public function setDestinationDetail(FreightServiceCenterDetail $destinationDetail)
@@ -42,7 +48,7 @@ class FreightCommitDetail
     /**
      * The distance between the origin and destination FreightService Centers
      *
-     * @param Distance $TotalDistance
+     * @param Distance $totalDistance
      * return FreightCommitDetail
      */
     public function setTotalDistance(Distance $totalDistance)

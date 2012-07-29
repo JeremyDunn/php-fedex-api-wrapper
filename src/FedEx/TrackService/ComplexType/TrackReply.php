@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class TrackReply
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'TrackReply';
 
     /**
      * This contains the severity type of the most severe Notification in the Notifications array.
      *
-     * @param NotificationSeverityType $HighestSeverity
+     * @param \FedEx\TrackService\SimpleType\NotificationSeverityType  $highestSeverity
      * return TrackReply
      */
     public function setHighestSeverity(\FedEx\TrackService\SimpleType\NotificationSeverityType $highestSeverity)
@@ -30,7 +36,7 @@ class TrackReply
     /**
      * Information about the request/reply such was the transaction successful or not, and any additional information relevant to the request and/or reply. There may be multiple Notifications in a reply.
      *
-     * @param array[Notification] $Notifications
+     * @param Notification[] $notifications
      * return TrackReply
      */
     public function setNotifications(array $notifications)
@@ -42,7 +48,7 @@ class TrackReply
     /**
      * Contains the CustomerTransactionDetail that is echoed back to the caller for matching requests and replies and a Localization element for defining the language/translation used in the reply data.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return TrackReply
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class TrackReply
     /**
      * Contains the version of the reply being used.
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return TrackReply
      */
     public function setVersion(VersionId $version)
@@ -66,7 +72,7 @@ class TrackReply
     /**
      * True if duplicate packages (more than one package with the same tracking number) have been found, and only limited data will be provided for each one.
      *
-     * @param boolean $DuplicateWaybill
+     * @param boolean $duplicateWaybill
      * return TrackReply
      */
     public function setDuplicateWaybill($duplicateWaybill)
@@ -78,7 +84,7 @@ class TrackReply
     /**
      * True if additional packages remain to be retrieved.
      *
-     * @param boolean $MoreData
+     * @param boolean $moreData
      * return TrackReply
      */
     public function setMoreData($moreData)
@@ -90,7 +96,7 @@ class TrackReply
     /**
      * Value that must be passed in a TrackNotification request to retrieve the next set of packages (when MoreDataAvailable = true).
      *
-     * @param string $PagingToken
+     * @param string $pagingToken
      * return TrackReply
      */
     public function setPagingToken($pagingToken)
@@ -102,7 +108,7 @@ class TrackReply
     /**
      * Contains detailed tracking information for the requested packages(s).
      *
-     * @param array[TrackDetail] $TrackDetails
+     * @param TrackDetail[] $trackDetails
      * return TrackReply
      */
     public function setTrackDetails(array $trackDetails)

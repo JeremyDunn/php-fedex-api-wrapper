@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ValidatedHazardousCommodityDescription
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ValidatedHazardousCommodityDescription';
 
     /**
      * Regulatory identifier for a commodity (e.g. "UN ID" value).
      *
-     * @param string $Id
+     * @param string $id
      * return ValidatedHazardousCommodityDescription
      */
     public function setId($id)
@@ -28,9 +34,9 @@ class ValidatedHazardousCommodityDescription
     }
     
     /**
-     * 
+     * Set PackingGroup
      *
-     * @param HazardousCommodityPackingGroupType $PackingGroup
+     * @param \FedEx\ShipService\SimpleType\HazardousCommodityPackingGroupType  $packingGroup
      * return ValidatedHazardousCommodityDescription
      */
     public function setPackingGroup(\FedEx\ShipService\SimpleType\HazardousCommodityPackingGroupType $packingGroup)
@@ -40,9 +46,9 @@ class ValidatedHazardousCommodityDescription
     }
     
     /**
-     * 
+     * Set ProperShippingName
      *
-     * @param string $ProperShippingName
+     * @param string $properShippingName
      * return ValidatedHazardousCommodityDescription
      */
     public function setProperShippingName($properShippingName)
@@ -54,7 +60,7 @@ class ValidatedHazardousCommodityDescription
     /**
      * Fully-expanded descriptive text for a hazardous commodity.
      *
-     * @param string $ProperShippingNameAndDescription
+     * @param string $properShippingNameAndDescription
      * return ValidatedHazardousCommodityDescription
      */
     public function setProperShippingNameAndDescription($properShippingNameAndDescription)
@@ -64,9 +70,9 @@ class ValidatedHazardousCommodityDescription
     }
     
     /**
-     * 
+     * Set TechnicalName
      *
-     * @param string $TechnicalName
+     * @param string $technicalName
      * return ValidatedHazardousCommodityDescription
      */
     public function setTechnicalName($technicalName)
@@ -76,9 +82,9 @@ class ValidatedHazardousCommodityDescription
     }
     
     /**
-     * 
+     * Set HazardClass
      *
-     * @param string $HazardClass
+     * @param string $hazardClass
      * return ValidatedHazardousCommodityDescription
      */
     public function setHazardClass($hazardClass)
@@ -88,9 +94,9 @@ class ValidatedHazardousCommodityDescription
     }
     
     /**
-     * 
+     * Set SubsidiaryClasses
      *
-     * @param array[string] $SubsidiaryClasses
+     * @param string[] $subsidiaryClasses
      * return ValidatedHazardousCommodityDescription
      */
     public function setSubsidiaryClasses(array $subsidiaryClasses)
@@ -102,7 +108,7 @@ class ValidatedHazardousCommodityDescription
     /**
      * Coded indications for special requirements or constraints.
      *
-     * @param string $Symbols
+     * @param string $symbols
      * return ValidatedHazardousCommodityDescription
      */
     public function setSymbols($symbols)
@@ -112,9 +118,9 @@ class ValidatedHazardousCommodityDescription
     }
     
     /**
-     * 
+     * Set LabelText
      *
-     * @param string $LabelText
+     * @param string $labelText
      * return ValidatedHazardousCommodityDescription
      */
     public function setLabelText($labelText)

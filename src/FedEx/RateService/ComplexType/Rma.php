@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class Rma
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'Rma';
 
     /**
      * Return Merchant Authorization Number
      *
-     * @param string $Number
+     * @param string $number
      * return Rma
      */
     public function setNumber($number)
@@ -30,7 +36,7 @@ class Rma
     /**
      * The reason for the return.
      *
-     * @param string $Reason
+     * @param string $reason
      * return Rma
      */
     public function setReason($reason)

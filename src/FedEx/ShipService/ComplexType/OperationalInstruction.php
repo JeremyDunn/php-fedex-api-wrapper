@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * OperationalInstruction
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class OperationalInstruction
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'OperationalInstruction';
 
     /**
      * Position of operational instruction element.
      *
-     * @param int $Number
+     * @param int $number
      * return OperationalInstruction
      */
     public function setNumber($number)
@@ -30,7 +36,7 @@ class OperationalInstruction
     /**
      * Content corresponding to the operational instruction.
      *
-     * @param string $Content
+     * @param string $content
      * return OperationalInstruction
      */
     public function setContent($content)

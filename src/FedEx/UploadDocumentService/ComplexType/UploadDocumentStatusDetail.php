@@ -4,7 +4,7 @@ namespace FedEx\UploadDocumentService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * UploadDocumentStatusDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class UploadDocumentStatusDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'UploadDocumentStatusDetail';
 
     /**
-     * 
+     * Set LineNumber
      *
-     * @param nonNegativeInteger $LineNumber
+     * @param nonNegativeInteger $lineNumber
      * return UploadDocumentStatusDetail
      */
     public function setLineNumber($lineNumber)
@@ -28,9 +34,9 @@ class UploadDocumentStatusDetail
     }
     
     /**
-     * 
+     * Set CustomerReference
      *
-     * @param string $CustomerReference
+     * @param string $customerReference
      * return UploadDocumentStatusDetail
      */
     public function setCustomerReference($customerReference)
@@ -40,9 +46,9 @@ class UploadDocumentStatusDetail
     }
     
     /**
-     * 
+     * Set DocumentProducer
      *
-     * @param UploadDocumentProducerType $DocumentProducer
+     * @param \FedEx\UploadDocumentService\SimpleType\UploadDocumentProducerType  $documentProducer
      * return UploadDocumentStatusDetail
      */
     public function setDocumentProducer(\FedEx\UploadDocumentService\SimpleType\UploadDocumentProducerType $documentProducer)
@@ -52,9 +58,9 @@ class UploadDocumentStatusDetail
     }
     
     /**
-     * 
+     * Set DocumentType
      *
-     * @param UploadDocumentType $DocumentType
+     * @param \FedEx\UploadDocumentService\SimpleType\UploadDocumentType  $documentType
      * return UploadDocumentStatusDetail
      */
     public function setDocumentType(\FedEx\UploadDocumentService\SimpleType\UploadDocumentType $documentType)
@@ -64,9 +70,9 @@ class UploadDocumentStatusDetail
     }
     
     /**
-     * 
+     * Set FileName
      *
-     * @param string $FileName
+     * @param string $fileName
      * return UploadDocumentStatusDetail
      */
     public function setFileName($fileName)
@@ -76,9 +82,9 @@ class UploadDocumentStatusDetail
     }
     
     /**
-     * 
+     * Set Status
      *
-     * @param UploadDocumentStatusType $Status
+     * @param \FedEx\UploadDocumentService\SimpleType\UploadDocumentStatusType  $status
      * return UploadDocumentStatusDetail
      */
     public function setStatus(\FedEx\UploadDocumentService\SimpleType\UploadDocumentStatusType $status)
@@ -90,7 +96,7 @@ class UploadDocumentStatusDetail
     /**
      * Distinct value for reason status was assigned.
      *
-     * @param UploadDocumentStatusInfoType $StatusInfo
+     * @param \FedEx\UploadDocumentService\SimpleType\UploadDocumentStatusInfoType  $statusInfo
      * return UploadDocumentStatusDetail
      */
     public function setStatusInfo(\FedEx\UploadDocumentService\SimpleType\UploadDocumentStatusInfoType $statusInfo)
@@ -102,7 +108,7 @@ class UploadDocumentStatusDetail
     /**
      * Human-readable explanation of document status.
      *
-     * @param string $Message
+     * @param string $message
      * return UploadDocumentStatusDetail
      */
     public function setMessage($message)
@@ -112,9 +118,9 @@ class UploadDocumentStatusDetail
     }
     
     /**
-     * 
+     * Set DocumentId
      *
-     * @param string $DocumentId
+     * @param string $documentId
      * return UploadDocumentStatusDetail
      */
     public function setDocumentId($documentId)
@@ -124,9 +130,9 @@ class UploadDocumentStatusDetail
     }
     
     /**
-     * 
+     * Set DocumentIdProducer
      *
-     * @param UploadDocumentIdProducer $DocumentIdProducer
+     * @param \FedEx\UploadDocumentService\SimpleType\UploadDocumentIdProducer  $documentIdProducer
      * return UploadDocumentStatusDetail
      */
     public function setDocumentIdProducer(\FedEx\UploadDocumentService\SimpleType\UploadDocumentIdProducer $documentIdProducer)

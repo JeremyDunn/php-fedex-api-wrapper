@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * ContentRecord
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ContentRecord
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ContentRecord';
 
     /**
-     * 
+     * Set PartNumber
      *
-     * @param string $PartNumber
+     * @param string $partNumber
      * return ContentRecord
      */
     public function setPartNumber($partNumber)
@@ -28,9 +34,9 @@ class ContentRecord
     }
     
     /**
-     * 
+     * Set ItemNumber
      *
-     * @param string $ItemNumber
+     * @param string $itemNumber
      * return ContentRecord
      */
     public function setItemNumber($itemNumber)
@@ -40,9 +46,9 @@ class ContentRecord
     }
     
     /**
-     * 
+     * Set ReceivedQuantity
      *
-     * @param nonNegativeInteger $ReceivedQuantity
+     * @param nonNegativeInteger $receivedQuantity
      * return ContentRecord
      */
     public function setReceivedQuantity($receivedQuantity)
@@ -52,9 +58,9 @@ class ContentRecord
     }
     
     /**
-     * 
+     * Set Description
      *
-     * @param string $Description
+     * @param string $description
      * return ContentRecord
      */
     public function setDescription($description)

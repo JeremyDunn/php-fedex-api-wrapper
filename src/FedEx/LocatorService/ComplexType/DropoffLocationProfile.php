@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class DropoffLocationProfile
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'DropoffLocationProfile';
 
     /**
      * Identifies if this location offers FedEx Express services.
      *
-     * @param boolean $ExpressService
+     * @param boolean $expressService
      * return DropoffLocationProfile
      */
     public function setExpressService($expressService)
@@ -30,7 +36,7 @@ class DropoffLocationProfile
     /**
      * Identifies if this location offers FedEx Ground service.
      *
-     * @param boolean $GroundService
+     * @param boolean $groundService
      * return DropoffLocationProfile
      */
     public function setGroundService($groundService)
@@ -42,7 +48,7 @@ class DropoffLocationProfile
     /**
      * This location's weekday (Monday-Friday) hours of operation.
      *
-     * @param string $HoursWeekdays
+     * @param string $hoursWeekdays
      * return DropoffLocationProfile
      */
     public function setHoursWeekdays($hoursWeekdays)
@@ -54,7 +60,7 @@ class DropoffLocationProfile
     /**
      * This location's Saturday hours of operation.
      *
-     * @param string $HoursSaturdays
+     * @param string $hoursSaturdays
      * return DropoffLocationProfile
      */
     public function setHoursSaturdays($hoursSaturdays)
@@ -66,7 +72,7 @@ class DropoffLocationProfile
     /**
      * The time of day on weekdays by which FedEx Express packages must be dropped off for shipment that day.
      *
-     * @param string $LastExpressDropoffTimeWeekdays
+     * @param string $lastExpressDropoffTimeWeekdays
      * return DropoffLocationProfile
      */
     public function setLastExpressDropoffTimeWeekdays($lastExpressDropoffTimeWeekdays)
@@ -78,7 +84,7 @@ class DropoffLocationProfile
     /**
      * The time of day on Saturdays by which FedEx Express packages must be dropped off for shipment that day.
      *
-     * @param string $LastExpressDropoffTimeSaturdays
+     * @param string $lastExpressDropoffTimeSaturdays
      * return DropoffLocationProfile
      */
     public function setLastExpressDropoffTimeSaturdays($lastExpressDropoffTimeSaturdays)
@@ -90,7 +96,7 @@ class DropoffLocationProfile
     /**
      * The time of day on weekdays by which FedEx Ground packages must be dropped off for shipment that day.
      *
-     * @param string $LastGroundDropoffTimeWeekdays
+     * @param string $lastGroundDropoffTimeWeekdays
      * return DropoffLocationProfile
      */
     public function setLastGroundDropoffTimeWeekdays($lastGroundDropoffTimeWeekdays)
@@ -102,7 +108,7 @@ class DropoffLocationProfile
     /**
      * The time of day on Saturdays by which FedEx Ground packages must be dropped off for shipment that day.
      *
-     * @param string $LastGroundDropoffTimeSaturdays
+     * @param string $lastGroundDropoffTimeSaturdays
      * return DropoffLocationProfile
      */
     public function setLastGroundDropoffTimeSaturdays($lastGroundDropoffTimeSaturdays)
@@ -114,7 +120,7 @@ class DropoffLocationProfile
     /**
      * Identifies if this location offers Express HAL (Hold at Location) service.
      *
-     * @param boolean $HoldAtLocation
+     * @param boolean $holdAtLocation
      * return DropoffLocationProfile
      */
     public function setHoldAtLocation($holdAtLocation)
@@ -126,7 +132,7 @@ class DropoffLocationProfile
     /**
      * Identifies if this location offers Ground HAL (Hold at Location) service.
      *
-     * @param boolean $GroundHoldAtLocation
+     * @param boolean $groundHoldAtLocation
      * return DropoffLocationProfile
      */
     public function setGroundHoldAtLocation($groundHoldAtLocation)
@@ -138,7 +144,7 @@ class DropoffLocationProfile
     /**
      * Identifies if this location accepts Hazardous materials.
      *
-     * @param boolean $DangerousGoods
+     * @param boolean $dangerousGoods
      * return DropoffLocationProfile
      */
     public function setDangerousGoods($dangerousGoods)
@@ -150,7 +156,7 @@ class DropoffLocationProfile
     /**
      * Identifies if this location makes packaging supplies available.
      *
-     * @param boolean $PackagingSupplies
+     * @param boolean $packagingSupplies
      * return DropoffLocationProfile
      */
     public function setPackagingSupplies($packagingSupplies)
@@ -162,7 +168,7 @@ class DropoffLocationProfile
     /**
      * Identifies if this location provides Pack and Ship services.
      *
-     * @param boolean $PackagingServices
+     * @param boolean $packagingServices
      * return DropoffLocationProfile
      */
     public function setPackagingServices($packagingServices)
@@ -174,7 +180,7 @@ class DropoffLocationProfile
     /**
      * Identifies if this location supports FedEx Return System.
      *
-     * @param boolean $ReturnSystem
+     * @param boolean $returnSystem
      * return DropoffLocationProfile
      */
     public function setReturnSystem($returnSystem)

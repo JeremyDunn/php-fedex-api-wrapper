@@ -4,7 +4,7 @@ namespace FedEx\Pickup\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * UploadDocumentReferenceDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class UploadDocumentReferenceDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'UploadDocumentReferenceDetail';
 
     /**
-     * 
+     * Set LineNumber
      *
-     * @param nonNegativeInteger $LineNumber
+     * @param nonNegativeInteger $lineNumber
      * return UploadDocumentReferenceDetail
      */
     public function setLineNumber($lineNumber)
@@ -28,9 +34,9 @@ class UploadDocumentReferenceDetail
     }
     
     /**
-     * 
+     * Set CustomerReference
      *
-     * @param string $CustomerReference
+     * @param string $customerReference
      * return UploadDocumentReferenceDetail
      */
     public function setCustomerReference($customerReference)
@@ -40,9 +46,9 @@ class UploadDocumentReferenceDetail
     }
     
     /**
-     * 
+     * Set DocumentProducer
      *
-     * @param UploadDocumentProducerType $DocumentProducer
+     * @param \FedEx\Pickup\SimpleType\UploadDocumentProducerType  $documentProducer
      * return UploadDocumentReferenceDetail
      */
     public function setDocumentProducer(\FedEx\Pickup\SimpleType\UploadDocumentProducerType $documentProducer)
@@ -52,9 +58,9 @@ class UploadDocumentReferenceDetail
     }
     
     /**
-     * 
+     * Set DocumentType
      *
-     * @param UploadDocumentType $DocumentType
+     * @param \FedEx\Pickup\SimpleType\UploadDocumentType  $documentType
      * return UploadDocumentReferenceDetail
      */
     public function setDocumentType(\FedEx\Pickup\SimpleType\UploadDocumentType $documentType)
@@ -64,9 +70,9 @@ class UploadDocumentReferenceDetail
     }
     
     /**
-     * 
+     * Set DocumentId
      *
-     * @param string $DocumentId
+     * @param string $documentId
      * return UploadDocumentReferenceDetail
      */
     public function setDocumentId($documentId)
@@ -76,9 +82,9 @@ class UploadDocumentReferenceDetail
     }
     
     /**
-     * 
+     * Set DocumentIdProducer
      *
-     * @param UploadDocumentIdProducer $DocumentIdProducer
+     * @param \FedEx\Pickup\SimpleType\UploadDocumentIdProducer  $documentIdProducer
      * return UploadDocumentReferenceDetail
      */
     public function setDocumentIdProducer(\FedEx\Pickup\SimpleType\UploadDocumentIdProducer $documentIdProducer)

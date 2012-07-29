@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CertificateOfOriginDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CertificateOfOriginDetail';
 
     /**
      * Specifies characteristics of a shipping document to be produced.
      *
-     * @param ShippingDocumentFormat $DocumentFormat
+     * @param ShippingDocumentFormat $documentFormat
      * return CertificateOfOriginDetail
      */
     public function setDocumentFormat(ShippingDocumentFormat $documentFormat)
@@ -30,7 +36,7 @@ class CertificateOfOriginDetail
     /**
      * Specifies the usage and identification of customer supplied images to be used on this document.
      *
-     * @param array[CustomerImageUsage] $CustomerImageUsages
+     * @param CustomerImageUsage[] $customerImageUsages
      * return CertificateOfOriginDetail
      */
     public function setCustomerImageUsages(array $customerImageUsages)

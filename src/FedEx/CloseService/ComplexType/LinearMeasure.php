@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class LinearMeasure
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'LinearMeasure';
 
     /**
      * The numerical quantity of this measurement.
      *
-     * @param decimal $Value
+     * @param decimal $value
      * return LinearMeasure
      */
     public function setValue($value)
@@ -30,7 +36,7 @@ class LinearMeasure
     /**
      * The units for this measurement.
      *
-     * @param LinearUnits $Units
+     * @param \FedEx\CloseService\SimpleType\LinearUnits  $units
      * return LinearMeasure
      */
     public function setUnits(\FedEx\CloseService\SimpleType\LinearUnits $units)

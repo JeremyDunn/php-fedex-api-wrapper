@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * EdtExciseCondition
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class EdtExciseCondition
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'EdtExciseCondition';
 
     /**
-     * 
+     * Set Category
      *
-     * @param string $Category
+     * @param string $category
      * return EdtExciseCondition
      */
     public function setCategory($category)
@@ -30,7 +36,7 @@ class EdtExciseCondition
     /**
      * Customer-declared value, with data type and legal values depending on excise condition, used in defining the taxable value of the item.
      *
-     * @param string $Value
+     * @param string $value
      * return EdtExciseCondition
      */
     public function setValue($value)

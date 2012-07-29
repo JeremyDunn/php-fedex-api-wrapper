@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CustomerSpecifiedLabelDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CustomerSpecifiedLabelDetail';
 
     /**
      * If omitted, no doc tab will be produced (i.e. default = former NONE type).
      *
-     * @param DocTabContent $DocTabContent
+     * @param DocTabContent $docTabContent
      * return CustomerSpecifiedLabelDetail
      */
     public function setDocTabContent(DocTabContent $docTabContent)
@@ -30,7 +36,7 @@ class CustomerSpecifiedLabelDetail
     /**
      * Defines any custom content to print on the label.
      *
-     * @param CustomLabelDetail $CustomContent
+     * @param CustomLabelDetail $customContent
      * return CustomerSpecifiedLabelDetail
      */
     public function setCustomContent(CustomLabelDetail $customContent)
@@ -42,7 +48,7 @@ class CustomerSpecifiedLabelDetail
     /**
      * Defines additional data to print in the Configurable portion of the label, this allows you to print the same type information on the label that can also be printed on the doc tab.
      *
-     * @param array[ConfigurableLabelReferenceEntry] $ConfigurableReferenceEntries
+     * @param ConfigurableLabelReferenceEntry[] $configurableReferenceEntries
      * return CustomerSpecifiedLabelDetail
      */
     public function setConfigurableReferenceEntries(array $configurableReferenceEntries)
@@ -54,7 +60,7 @@ class CustomerSpecifiedLabelDetail
     /**
      * Controls which data/sections will be suppressed.
      *
-     * @param array[LabelMaskableDataType] $MaskedData
+     * @param LabelMaskableDataType[] $maskedData
      * return CustomerSpecifiedLabelDetail
      */
     public function setMaskedData(array $maskedData)
@@ -66,7 +72,7 @@ class CustomerSpecifiedLabelDetail
     /**
      * For customers producing their own Ground labels, this field specifies which secondary barcode will be printed on the label; so that the primary barcode produced by FedEx has the corect SCNC.
      *
-     * @param SecondaryBarcodeType $SecondaryBarcode
+     * @param \FedEx\ShipService\SimpleType\SecondaryBarcodeType  $secondaryBarcode
      * return CustomerSpecifiedLabelDetail
      */
     public function setSecondaryBarcode(\FedEx\ShipService\SimpleType\SecondaryBarcodeType $secondaryBarcode)
@@ -76,9 +82,9 @@ class CustomerSpecifiedLabelDetail
     }
     
     /**
-     * 
+     * Set TermsAndConditionsLocalization
      *
-     * @param Localization $TermsAndConditionsLocalization
+     * @param Localization $termsAndConditionsLocalization
      * return CustomerSpecifiedLabelDetail
      */
     public function setTermsAndConditionsLocalization(Localization $termsAndConditionsLocalization)
@@ -90,7 +96,7 @@ class CustomerSpecifiedLabelDetail
     /**
      * Controls the number of additional copies of supplemental labels.
      *
-     * @param array[AdditionalLabelsDetail] $AdditionalLabels
+     * @param AdditionalLabelsDetail[] $additionalLabels
      * return CustomerSpecifiedLabelDetail
      */
     public function setAdditionalLabels(array $additionalLabels)
@@ -102,7 +108,7 @@ class CustomerSpecifiedLabelDetail
     /**
      * This value reduces the default quantity of destination/consignee air waybill labels. A value of zero indicates no change to default. A minimum of one copy will always be produced.
      *
-     * @param nonNegativeInteger $AirWaybillSuppressionCount
+     * @param nonNegativeInteger $airWaybillSuppressionCount
      * return CustomerSpecifiedLabelDetail
      */
     public function setAirWaybillSuppressionCount($airWaybillSuppressionCount)

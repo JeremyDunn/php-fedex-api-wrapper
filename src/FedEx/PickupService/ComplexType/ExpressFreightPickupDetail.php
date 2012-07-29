@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ExpressFreightPickupDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ExpressFreightPickupDetail';
 
     /**
      * Identifies the collection of available FedEx transportation service options. Must be a valid FedEx freight service identifier.
      *
-     * @param ServiceType $Service
+     * @param \FedEx\Pickup\SimpleType\ServiceType  $service
      * return ExpressFreightPickupDetail
      */
     public function setService(\FedEx\Pickup\SimpleType\ServiceType $service)
@@ -30,7 +36,7 @@ class ExpressFreightPickupDetail
     /**
      * Identifies the FedEx freight booking number. This element should contain numeric values only.
      *
-     * @param string $BookingNumber
+     * @param string $bookingNumber
      * return ExpressFreightPickupDetail
      */
     public function setBookingNumber($bookingNumber)
@@ -42,7 +48,7 @@ class ExpressFreightPickupDetail
     /**
      * Descriptive data detailing the length, width, and height of the freight package or shipment being picked up by FedEx.
      *
-     * @param Dimensions $Dimensions
+     * @param Dimensions $dimensions
      * return ExpressFreightPickupDetail
      */
     public function setDimensions(Dimensions $dimensions)
@@ -54,7 +60,7 @@ class ExpressFreightPickupDetail
     /**
      * Identifies the type of truck that is needed for FedEx to pick up the freight shipment. See TruckType for valid values.
      *
-     * @param TruckType $TruckType
+     * @param \FedEx\Pickup\SimpleType\TruckType  $truckType
      * return ExpressFreightPickupDetail
      */
     public function setTruckType(\FedEx\Pickup\SimpleType\TruckType $truckType)
@@ -66,7 +72,7 @@ class ExpressFreightPickupDetail
     /**
      * Identifies the tailer size needed for FedEx to pick up a freight shipment. See TrailerSizeType for valid values.
      *
-     * @param TrailerSizeType $TrailerSize
+     * @param \FedEx\Pickup\SimpleType\TrailerSizeType  $trailerSize
      * return ExpressFreightPickupDetail
      */
     public function setTrailerSize(\FedEx\Pickup\SimpleType\TrailerSizeType $trailerSize)

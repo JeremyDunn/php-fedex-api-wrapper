@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * NaftaProducer
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class NaftaProducer
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'NaftaProducer';
 
     /**
-     * 
+     * Set Id
      *
-     * @param string $Id
+     * @param string $id
      * return NaftaProducer
      */
     public function setId($id)
@@ -28,9 +34,9 @@ class NaftaProducer
     }
     
     /**
-     * 
+     * Set Producer
      *
-     * @param Party $Producer
+     * @param Party $producer
      * return NaftaProducer
      */
     public function setProducer(Party $producer)

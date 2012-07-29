@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ServiceAvailabilityReply
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ServiceAvailabilityReply';
 
     /**
      * Identifies the highest severity encountered when executing the request; in order from high to low: FAILURE, ERROR, WARNING, NOTE, SUCCESS.
      *
-     * @param NotificationSeverityType $HighestSeverity
+     * @param \FedEx\PackageMovementInformationService\SimpleType\NotificationSeverityType  $highestSeverity
      * return ServiceAvailabilityReply
      */
     public function setHighestSeverity(\FedEx\PackageMovementInformationService\SimpleType\NotificationSeverityType $highestSeverity)
@@ -30,7 +36,7 @@ class ServiceAvailabilityReply
     /**
      * The descriptive data detailing the status of a sumbitted transaction.
      *
-     * @param array[Notification] $Notifications
+     * @param Notification[] $notifications
      * return ServiceAvailabilityReply
      */
     public function setNotifications(array $notifications)
@@ -42,7 +48,7 @@ class ServiceAvailabilityReply
     /**
      * Descriptive data that governs data payload language/translations.  The TransactionDetail from the request is echoed back to the caller in the corresponding reply. 
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return ServiceAvailabilityReply
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class ServiceAvailabilityReply
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return ServiceAvailabilityReply
      */
     public function setVersion(VersionId $version)
@@ -66,7 +72,7 @@ class ServiceAvailabilityReply
     /**
      * The descriptive data for the collection of available FedEx Services returned for the request.
      *
-     * @param array[ServiceAvailabilityOption] $Options
+     * @param ServiceAvailabilityOption[] $options
      * return ServiceAvailabilityReply
      */
     public function setOptions(array $options)

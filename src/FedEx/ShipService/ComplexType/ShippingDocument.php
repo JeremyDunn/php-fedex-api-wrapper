@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ShippingDocument
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ShippingDocument';
 
     /**
      * Shipping Document Type
      *
-     * @param ReturnedShippingDocumentType $Type
+     * @param \FedEx\ShipService\SimpleType\ReturnedShippingDocumentType  $type
      * return ShippingDocument
      */
     public function setType(\FedEx\ShipService\SimpleType\ReturnedShippingDocumentType $type)
@@ -30,7 +36,7 @@ class ShippingDocument
     /**
      * Specifies how this document image/file is organized.
      *
-     * @param ShippingDocumentGroupingType $Grouping
+     * @param \FedEx\ShipService\SimpleType\ShippingDocumentGroupingType  $grouping
      * return ShippingDocument
      */
     public function setGrouping(\FedEx\ShipService\SimpleType\ShippingDocumentGroupingType $grouping)
@@ -40,9 +46,9 @@ class ShippingDocument
     }
     
     /**
-     * 
+     * Set ShippingDocumentDisposition
      *
-     * @param ShippingDocumentDispositionType $ShippingDocumentDisposition
+     * @param \FedEx\ShipService\SimpleType\ShippingDocumentDispositionType  $shippingDocumentDisposition
      * return ShippingDocument
      */
     public function setShippingDocumentDisposition(\FedEx\ShipService\SimpleType\ShippingDocumentDispositionType $shippingDocumentDisposition)
@@ -54,7 +60,7 @@ class ShippingDocument
     /**
      * The name under which a STORED or DEFERRED document is written.
      *
-     * @param string $AccessReference
+     * @param string $accessReference
      * return ShippingDocument
      */
     public function setAccessReference($accessReference)
@@ -66,7 +72,7 @@ class ShippingDocument
     /**
      * Specifies the image resolution in DPI (dots per inch).
      *
-     * @param nonNegativeInteger $Resolution
+     * @param nonNegativeInteger $resolution
      * return ShippingDocument
      */
     public function setResolution($resolution)
@@ -78,7 +84,7 @@ class ShippingDocument
     /**
      * Can be zero for documents whose disposition implies that no content is included.
      *
-     * @param nonNegativeInteger $CopiesToPrint
+     * @param nonNegativeInteger $copiesToPrint
      * return ShippingDocument
      */
     public function setCopiesToPrint($copiesToPrint)
@@ -90,7 +96,7 @@ class ShippingDocument
     /**
      * One or more document parts which make up a single logical document, such as multiple pages of a single form.
      *
-     * @param array[ShippingDocumentPart] $Parts
+     * @param ShippingDocumentPart[] $parts
      * return ShippingDocument
      */
     public function setParts(array $parts)

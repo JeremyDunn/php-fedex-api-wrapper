@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class NaftaCertificateOfOriginDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'NaftaCertificateOfOriginDetail';
 
     /**
-     * 
+     * Set Format
      *
-     * @param ShippingDocumentFormat $Format
+     * @param ShippingDocumentFormat $format
      * return NaftaCertificateOfOriginDetail
      */
     public function setFormat(ShippingDocumentFormat $format)
@@ -28,9 +34,9 @@ class NaftaCertificateOfOriginDetail
     }
     
     /**
-     * 
+     * Set BlanketPeriod
      *
-     * @param DateRange $BlanketPeriod
+     * @param DateRange $blanketPeriod
      * return NaftaCertificateOfOriginDetail
      */
     public function setBlanketPeriod(DateRange $blanketPeriod)
@@ -42,7 +48,7 @@ class NaftaCertificateOfOriginDetail
     /**
      * Indicates which Party (if any) from the shipment is to be used as the source of importer data on the NAFTA COO form.
      *
-     * @param NaftaImporterSpecificationType $ImporterSpecification
+     * @param \FedEx\ShipService\SimpleType\NaftaImporterSpecificationType  $importerSpecification
      * return NaftaCertificateOfOriginDetail
      */
     public function setImporterSpecification(\FedEx\ShipService\SimpleType\NaftaImporterSpecificationType $importerSpecification)
@@ -54,7 +60,7 @@ class NaftaCertificateOfOriginDetail
     /**
      * Contact information for "Authorized Signature" area of form.
      *
-     * @param Contact $SignatureContact
+     * @param Contact $signatureContact
      * return NaftaCertificateOfOriginDetail
      */
     public function setSignatureContact(Contact $signatureContact)
@@ -64,9 +70,9 @@ class NaftaCertificateOfOriginDetail
     }
     
     /**
-     * 
+     * Set ProducerSpecification
      *
-     * @param NaftaProducerSpecificationType $ProducerSpecification
+     * @param \FedEx\ShipService\SimpleType\NaftaProducerSpecificationType  $producerSpecification
      * return NaftaCertificateOfOriginDetail
      */
     public function setProducerSpecification(\FedEx\ShipService\SimpleType\NaftaProducerSpecificationType $producerSpecification)
@@ -76,9 +82,9 @@ class NaftaCertificateOfOriginDetail
     }
     
     /**
-     * 
+     * Set Producers
      *
-     * @param array[NaftaProducer] $Producers
+     * @param NaftaProducer[] $producers
      * return NaftaCertificateOfOriginDetail
      */
     public function setProducers(array $producers)
@@ -88,9 +94,9 @@ class NaftaCertificateOfOriginDetail
     }
     
     /**
-     * 
+     * Set CustomerImageUsages
      *
-     * @param array[CustomerImageUsage] $CustomerImageUsages
+     * @param CustomerImageUsage[] $customerImageUsages
      * return NaftaCertificateOfOriginDetail
      */
     public function setCustomerImageUsages(array $customerImageUsages)

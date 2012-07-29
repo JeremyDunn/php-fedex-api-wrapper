@@ -4,7 +4,7 @@ namespace FedEx\UploadDocumentService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * UploadDocumentsReply
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class UploadDocumentsReply
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'UploadDocumentsReply';
 
     /**
      * This indicates the highest level of severity of all the notifications returned in this reply
      *
-     * @param NotificationSeverityType $HighestSeverity
+     * @param \FedEx\UploadDocumentService\SimpleType\NotificationSeverityType  $highestSeverity
      * return UploadDocumentsReply
      */
     public function setHighestSeverity(\FedEx\UploadDocumentService\SimpleType\NotificationSeverityType $highestSeverity)
@@ -30,7 +36,7 @@ class UploadDocumentsReply
     /**
      * The descriptive data regarding the results of the submitted transaction.
      *
-     * @param array[Notification] $Notifications
+     * @param Notification[] $notifications
      * return UploadDocumentsReply
      */
     public function setNotifications(array $notifications)
@@ -42,7 +48,7 @@ class UploadDocumentsReply
     /**
      * Descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return UploadDocumentsReply
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class UploadDocumentsReply
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return UploadDocumentsReply
      */
     public function setVersion(VersionId $version)
@@ -64,9 +70,9 @@ class UploadDocumentsReply
     }
     
     /**
-     * 
+     * Set DocumentStatuses
      *
-     * @param array[UploadDocumentStatusDetail] $DocumentStatuses
+     * @param UploadDocumentStatusDetail[] $documentStatuses
      * return UploadDocumentsReply
      */
     public function setDocumentStatuses(array $documentStatuses)

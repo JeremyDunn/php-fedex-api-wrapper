@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CustomLabelBarcodeEntry
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CustomLabelBarcodeEntry';
 
     /**
-     * 
+     * Set Position
      *
-     * @param CustomLabelPosition $Position
+     * @param CustomLabelPosition $position
      * return CustomLabelBarcodeEntry
      */
     public function setPosition(CustomLabelPosition $position)
@@ -28,9 +34,9 @@ class CustomLabelBarcodeEntry
     }
     
     /**
-     * 
+     * Set Format
      *
-     * @param string $Format
+     * @param string $format
      * return CustomLabelBarcodeEntry
      */
     public function setFormat($format)
@@ -40,9 +46,9 @@ class CustomLabelBarcodeEntry
     }
     
     /**
-     * 
+     * Set DataFields
      *
-     * @param array[string] $DataFields
+     * @param string[] $dataFields
      * return CustomLabelBarcodeEntry
      */
     public function setDataFields(array $dataFields)
@@ -52,9 +58,9 @@ class CustomLabelBarcodeEntry
     }
     
     /**
-     * 
+     * Set BarHeight
      *
-     * @param int $BarHeight
+     * @param int $barHeight
      * return CustomLabelBarcodeEntry
      */
     public function setBarHeight($barHeight)
@@ -66,7 +72,7 @@ class CustomLabelBarcodeEntry
     /**
      * Width of thinnest bar/space element in the barcode.
      *
-     * @param int $ThinBarWidth
+     * @param int $thinBarWidth
      * return CustomLabelBarcodeEntry
      */
     public function setThinBarWidth($thinBarWidth)
@@ -76,9 +82,9 @@ class CustomLabelBarcodeEntry
     }
     
     /**
-     * 
+     * Set BarcodeSymbology
      *
-     * @param BarcodeSymbologyType $BarcodeSymbology
+     * @param \FedEx\RateService\SimpleType\BarcodeSymbologyType  $barcodeSymbology
      * return CustomLabelBarcodeEntry
      */
     public function setBarcodeSymbology(\FedEx\RateService\SimpleType\BarcodeSymbologyType $barcodeSymbology)

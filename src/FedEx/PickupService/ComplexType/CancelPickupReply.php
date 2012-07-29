@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CancelPickupReply
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CancelPickupReply';
 
     /**
      * Identifies the highest severity encountered when executing the request; in order from high to low: FAILURE, ERROR, WARNING, NOTE, SUCCESS.
      *
-     * @param NotificationSeverityType $HighestSeverity
+     * @param \FedEx\Pickup\SimpleType\NotificationSeverityType  $highestSeverity
      * return CancelPickupReply
      */
     public function setHighestSeverity(\FedEx\Pickup\SimpleType\NotificationSeverityType $highestSeverity)
@@ -30,7 +36,7 @@ class CancelPickupReply
     /**
      * The descriptive data detailing the status of a sumbitted transaction.
      *
-     * @param array[Notification] $Notifications
+     * @param Notification[] $notifications
      * return CancelPickupReply
      */
     public function setNotifications(array $notifications)
@@ -42,7 +48,7 @@ class CancelPickupReply
     /**
      * Descriptive data that governs data payload language/translations. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return CancelPickupReply
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class CancelPickupReply
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return CancelPickupReply
      */
     public function setVersion(VersionId $version)
@@ -66,7 +72,7 @@ class CancelPickupReply
     /**
      * Human readable message from dispatch system.
      *
-     * @param string $Message
+     * @param string $message
      * return CancelPickupReply
      */
     public function setMessage($message)

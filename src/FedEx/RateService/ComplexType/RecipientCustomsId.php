@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class RecipientCustomsId
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'RecipientCustomsId';
 
     /**
      * Specifies the kind of identification being used.
      *
-     * @param RecipientCustomsIdType $Type
+     * @param \FedEx\RateService\SimpleType\RecipientCustomsIdType  $type
      * return RecipientCustomsId
      */
     public function setType(\FedEx\RateService\SimpleType\RecipientCustomsIdType $type)
@@ -30,7 +36,7 @@ class RecipientCustomsId
     /**
      * Contains the actual ID value, of the type specified above.
      *
-     * @param string $Value
+     * @param string $value
      * return RecipientCustomsId
      */
     public function setValue($value)

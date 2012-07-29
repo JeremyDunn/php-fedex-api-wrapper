@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class EMailNotificationRecipient
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'EMailNotificationRecipient';
 
     /**
      * Identifies the relationship this email recipient has to the shipment.
      *
-     * @param EMailNotificationRecipientType $EMailNotificationRecipientType
+     * @param \FedEx\ShipService\SimpleType\EMailNotificationRecipientType  $eMailNotificationRecipientType
      * return EMailNotificationRecipient
      */
     public function setEMailNotificationRecipientType(\FedEx\ShipService\SimpleType\EMailNotificationRecipientType $eMailNotificationRecipientType)
@@ -30,7 +36,7 @@ class EMailNotificationRecipient
     /**
      * The email address to send the notification to
      *
-     * @param string $EMailAddress
+     * @param string $eMailAddress
      * return EMailNotificationRecipient
      */
     public function setEMailAddress($eMailAddress)
@@ -42,7 +48,7 @@ class EMailNotificationRecipient
     /**
      * The types of email notifications being requested for this recipient.
      *
-     * @param array[EMailNotificationEventType] $NotificationEventsRequested
+     * @param EMailNotificationEventType[] $notificationEventsRequested
      * return EMailNotificationRecipient
      */
     public function setNotificationEventsRequested(array $notificationEventsRequested)
@@ -54,7 +60,7 @@ class EMailNotificationRecipient
     /**
      * The format of the email notification.
      *
-     * @param EMailNotificationFormatType $Format
+     * @param \FedEx\ShipService\SimpleType\EMailNotificationFormatType  $format
      * return EMailNotificationRecipient
      */
     public function setFormat(\FedEx\ShipService\SimpleType\EMailNotificationFormatType $format)
@@ -66,7 +72,7 @@ class EMailNotificationRecipient
     /**
      * The language/locale to be used in this email notification.
      *
-     * @param Localization $Localization
+     * @param Localization $localization
      * return EMailNotificationRecipient
      */
     public function setLocalization(Localization $localization)

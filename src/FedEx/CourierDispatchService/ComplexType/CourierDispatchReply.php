@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CourierDispatchReply
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CourierDispatchReply';
 
     /**
      * Identifies the highest severity encountered when executing the request; in order from high to low: FAILURE, ERROR, WARNING, NOTE, SUCCESS.
      *
-     * @param NotificationSeverityType $HighestSeverity
+     * @param \FedEx\CourierDispatchService\SimpleType\NotificationSeverityType  $highestSeverity
      * return CourierDispatchReply
      */
     public function setHighestSeverity(\FedEx\CourierDispatchService\SimpleType\NotificationSeverityType $highestSeverity)
@@ -30,7 +36,7 @@ class CourierDispatchReply
     /**
      * The descriptive data detailing the status of a sumbitted transaction.
      *
-     * @param array[Notification] $Notifications
+     * @param Notification[] $notifications
      * return CourierDispatchReply
      */
     public function setNotifications(array $notifications)
@@ -42,7 +48,7 @@ class CourierDispatchReply
     /**
      * Descriptive data that governs data payload language/translations. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return CourierDispatchReply
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class CourierDispatchReply
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return CourierDispatchReply
      */
     public function setVersion(VersionId $version)
@@ -66,7 +72,7 @@ class CourierDispatchReply
     /**
      * Identifies the confirmation number assigned by FedEx for the request.
      *
-     * @param string $DispatchConfirmationNumber
+     * @param string $dispatchConfirmationNumber
      * return CourierDispatchReply
      */
     public function setDispatchConfirmationNumber($dispatchConfirmationNumber)
@@ -78,7 +84,7 @@ class CourierDispatchReply
     /**
      * Identifies the FedEx Location identifier responsible for dispatching the courier to pickup the package.
      *
-     * @param string $Location
+     * @param string $location
      * return CourierDispatchReply
      */
     public function setLocation($location)
@@ -90,7 +96,7 @@ class CourierDispatchReply
     /**
      * Identifies the FedEx system code associated with the message text in the reply.
      *
-     * @param string $MessageCode
+     * @param string $messageCode
      * return CourierDispatchReply
      */
     public function setMessageCode($messageCode)
@@ -102,7 +108,7 @@ class CourierDispatchReply
     /**
      * Identifies the message text from the FedEx system regarding whether or not the pickup request was successfully scheduled or not.
      *
-     * @param string $Message
+     * @param string $message
      * return CourierDispatchReply
      */
     public function setMessage($message)
@@ -114,7 +120,7 @@ class CourierDispatchReply
     /**
      * Identifies the Package Return Program control number.
      *
-     * @param string $PRPControlNumber
+     * @param string $pRPControlNumber
      * return CourierDispatchReply
      */
     public function setPRPControlNumber($pRPControlNumber)

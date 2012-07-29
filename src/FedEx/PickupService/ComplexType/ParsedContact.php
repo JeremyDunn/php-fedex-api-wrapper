@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ParsedContact
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ParsedContact';
 
     /**
      * The name of the person.
      *
-     * @param ParsedPersonName $PersonName
+     * @param ParsedPersonName $personName
      * return ParsedContact
      */
     public function setPersonName(ParsedPersonName $personName)
@@ -30,7 +36,7 @@ class ParsedContact
     /**
      * The title of the person.
      *
-     * @param string $Title
+     * @param string $title
      * return ParsedContact
      */
     public function setTitle($title)
@@ -42,7 +48,7 @@ class ParsedContact
     /**
      * The name of the company, this person is working for.
      *
-     * @param string $CompanyName
+     * @param string $companyName
      * return ParsedContact
      */
     public function setCompanyName($companyName)
@@ -54,7 +60,7 @@ class ParsedContact
     /**
      * Phone number of the person.
      *
-     * @param string $PhoneNumber
+     * @param string $phoneNumber
      * return ParsedContact
      */
     public function setPhoneNumber($phoneNumber)
@@ -66,7 +72,7 @@ class ParsedContact
     /**
      * Pager number of the person.
      *
-     * @param string $PagerNumber
+     * @param string $pagerNumber
      * return ParsedContact
      */
     public function setPagerNumber($pagerNumber)
@@ -78,7 +84,7 @@ class ParsedContact
     /**
      * Fax number of the person.
      *
-     * @param string $FaxNumber
+     * @param string $faxNumber
      * return ParsedContact
      */
     public function setFaxNumber($faxNumber)
@@ -90,7 +96,7 @@ class ParsedContact
     /**
      * Email address information.
      *
-     * @param string $EMailAddress
+     * @param string $eMailAddress
      * return ParsedContact
      */
     public function setEMailAddress($eMailAddress)

@@ -4,7 +4,7 @@ namespace FedEx\TrackService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * ContactAndAddress
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ContactAndAddress
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ContactAndAddress';
 
     /**
-     * 
+     * Set Contact
      *
-     * @param Contact $Contact
+     * @param Contact $contact
      * return ContactAndAddress
      */
     public function setContact(Contact $contact)
@@ -28,9 +34,9 @@ class ContactAndAddress
     }
     
     /**
-     * 
+     * Set Address
      *
-     * @param Address $Address
+     * @param Address $address
      * return ContactAndAddress
      */
     public function setAddress(Address $address)

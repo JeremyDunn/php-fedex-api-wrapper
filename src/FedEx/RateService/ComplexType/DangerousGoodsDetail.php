@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class DangerousGoodsDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'DangerousGoodsDetail';
 
     /**
      * Identifies whether or not the products being shipped are required to be accessible during delivery.
      *
-     * @param DangerousGoodsAccessibilityType $Accessibility
+     * @param \FedEx\RateService\SimpleType\DangerousGoodsAccessibilityType  $accessibility
      * return DangerousGoodsDetail
      */
     public function setAccessibility(\FedEx\RateService\SimpleType\DangerousGoodsAccessibilityType $accessibility)
@@ -30,7 +36,7 @@ class DangerousGoodsDetail
     /**
      * Shipment is packaged/documented for movement ONLY on cargo aircraft.
      *
-     * @param boolean $CargoAircraftOnly
+     * @param boolean $cargoAircraftOnly
      * return DangerousGoodsDetail
      */
     public function setCargoAircraftOnly($cargoAircraftOnly)
@@ -42,7 +48,7 @@ class DangerousGoodsDetail
     /**
      * Indicates which kinds of hazardous content are in the current package.
      *
-     * @param array[HazardousCommodityOptionType] $Options
+     * @param HazardousCommodityOptionType[] $options
      * return DangerousGoodsDetail
      */
     public function setOptions(array $options)
@@ -54,7 +60,7 @@ class DangerousGoodsDetail
     /**
      * Documents the kinds and quantities of all hazardous commodities in the current package.
      *
-     * @param array[HazardousCommodityContent] $HazardousCommodities
+     * @param HazardousCommodityContent[] $hazardousCommodities
      * return DangerousGoodsDetail
      */
     public function setHazardousCommodities(array $hazardousCommodities)
@@ -66,7 +72,7 @@ class DangerousGoodsDetail
     /**
      * Description of the packaging of this commodity, suitable for use on OP-900 and OP-950 forms.
      *
-     * @param HazardousCommodityPackagingDetail $Packaging
+     * @param HazardousCommodityPackagingDetail $packaging
      * return DangerousGoodsDetail
      */
     public function setPackaging(HazardousCommodityPackagingDetail $packaging)
@@ -78,7 +84,7 @@ class DangerousGoodsDetail
     /**
      * Telephone number to use for contact in the event of an emergency.
      *
-     * @param string $EmergencyContactNumber
+     * @param string $emergencyContactNumber
      * return DangerousGoodsDetail
      */
     public function setEmergencyContactNumber($emergencyContactNumber)
@@ -90,7 +96,7 @@ class DangerousGoodsDetail
     /**
      * Offeror's name or contract number, per DOT regulation.
      *
-     * @param string $Offeror
+     * @param string $offeror
      * return DangerousGoodsDetail
      */
     public function setOfferor($offeror)

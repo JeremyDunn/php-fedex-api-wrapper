@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class Op900Detail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'Op900Detail';
 
     /**
      * Specifies characteristics of a shipping document to be produced.
      *
-     * @param ShippingDocumentFormat $Format
+     * @param ShippingDocumentFormat $format
      * return Op900Detail
      */
     public function setFormat(ShippingDocumentFormat $format)
@@ -30,7 +36,7 @@ class Op900Detail
     /**
      * Identifies which reference type (from the package's customer references) is to be used as the source for the reference on this OP-900.
      *
-     * @param CustomerReferenceType $Reference
+     * @param \FedEx\RateService\SimpleType\CustomerReferenceType  $reference
      * return Op900Detail
      */
     public function setReference(\FedEx\RateService\SimpleType\CustomerReferenceType $reference)
@@ -42,7 +48,7 @@ class Op900Detail
     /**
      * Specifies the usage and identification of customer supplied images to be used on this document.
      *
-     * @param array[CustomerImageUsage] $CustomerImageUsages
+     * @param CustomerImageUsage[] $customerImageUsages
      * return Op900Detail
      */
     public function setCustomerImageUsages(array $customerImageUsages)
@@ -54,7 +60,7 @@ class Op900Detail
     /**
      * Data field to be used when a name is to be printed in the document instead of (or in addition to) a signature image.
      *
-     * @param string $SignatureName
+     * @param string $signatureName
      * return Op900Detail
      */
     public function setSignatureName($signatureName)

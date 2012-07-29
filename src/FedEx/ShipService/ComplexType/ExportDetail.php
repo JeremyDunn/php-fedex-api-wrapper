@@ -13,6 +13,12 @@ use FedEx\AbstractComplexType;
 class ExportDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ExportDetail';
 
     /**
@@ -21,7 +27,7 @@ class ExportDetail
                 Required for non-document shipments originating in Canada destined for any country other than Canada, the United States, Puerto Rico or the U.S. Virgin Islands.
               
      *
-     * @param B13AFilingOptionType $B13AFilingOption
+     * @param \FedEx\ShipService\SimpleType\B13AFilingOptionType  $b13AFilingOption
      * return ExportDetail
      */
     public function setB13AFilingOption(\FedEx\ShipService\SimpleType\B13AFilingOptionType $b13AFilingOption)
@@ -33,7 +39,7 @@ class ExportDetail
     /**
      * General field for exporting-country-specific export data (e.g. B13A for CA, FTSR Exemption or AES Citation for US).
      *
-     * @param string $ExportComplianceStatement
+     * @param string $exportComplianceStatement
      * return ExportDetail
      */
     public function setExportComplianceStatement($exportComplianceStatement)
@@ -45,7 +51,7 @@ class ExportDetail
     /**
      * This field is applicable only to Canada export non-document shipments of any value to any destination. No special characters allowed. 
      *
-     * @param string $PermitNumber
+     * @param string $permitNumber
      * return ExportDetail
      */
     public function setPermitNumber($permitNumber)
@@ -57,7 +63,7 @@ class ExportDetail
     /**
      * Department of Commerce/Department of State information about this shipment.
      *
-     * @param DestinationControlDetail $DestinationControlDetail
+     * @param DestinationControlDetail $destinationControlDetail
      * return ExportDetail
      */
     public function setDestinationControlDetail(DestinationControlDetail $destinationControlDetail)

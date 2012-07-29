@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class PickupOriginDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'PickupOriginDetail';
 
     /**
      * Flag identifies if customer wants to use Account address or send and alternate address for pickup.
      *
-     * @param boolean $UseAccountAddress
+     * @param boolean $useAccountAddress
      * return PickupOriginDetail
      */
     public function setUseAccountAddress($useAccountAddress)
@@ -30,7 +36,7 @@ class PickupOriginDetail
     /**
      * FedEx USE ONLY (with IVR client)
      *
-     * @param string $AddressId
+     * @param string $addressId
      * return PickupOriginDetail
      */
     public function setAddressId($addressId)
@@ -42,7 +48,7 @@ class PickupOriginDetail
     /**
      * Descriptive data about the physical location of the package being picked up by FedEx.
      *
-     * @param ContactAndAddress $PickupLocation
+     * @param ContactAndAddress $pickupLocation
      * return PickupOriginDetail
      */
     public function setPickupLocation(ContactAndAddress $pickupLocation)
@@ -54,7 +60,7 @@ class PickupOriginDetail
     /**
      * Identifies the physical location where the courier should pick up the shipment. See CourierDispatchBuildingLocationType for valid values.
      *
-     * @param PickupBuildingLocationType $PackageLocation
+     * @param \FedEx\Pickup\SimpleType\PickupBuildingLocationType  $packageLocation
      * return PickupOriginDetail
      */
     public function setPackageLocation(\FedEx\Pickup\SimpleType\PickupBuildingLocationType $packageLocation)
@@ -64,9 +70,9 @@ class PickupOriginDetail
     }
     
     /**
-     * 
+     * Set BuildingPart
      *
-     * @param BuildingPartCode $BuildingPart
+     * @param \FedEx\Pickup\SimpleType\BuildingPartCode  $buildingPart
      * return PickupOriginDetail
      */
     public function setBuildingPart(\FedEx\Pickup\SimpleType\BuildingPartCode $buildingPart)
@@ -78,7 +84,7 @@ class PickupOriginDetail
     /**
      * Identifies additional descriptive information associated with the BuildingPartCode to assist the FedEx courier in finding the pickup location.
      *
-     * @param string $BuildingPartDescription
+     * @param string $buildingPartDescription
      * return PickupOriginDetail
      */
     public function setBuildingPartDescription($buildingPartDescription)
@@ -90,7 +96,7 @@ class PickupOriginDetail
     /**
      * Identifies the date and time the package will be ready for pickup by FedEx. Both the date and time portions of the string are expected to be used. The date should not be a past date or a date more than 10 days in the future. The time is the local time of the pickup based on the shipper's time zone. The date component must be in the format: YYYY-MM-DD (e.g. 2006-06-26). The time component must be in the format: HH:MM:SS in 24-hour form. The date and time parts are separated by the letter T (e.g. 2006-06-26T17:00:00). Because this is a local time, no TZD should be included. If a TZD is included, it will be ignored, and the time treated as local to the pickup postal code.
      *
-     * @param dateTime $ReadyTimestamp
+     * @param dateTime $readyTimestamp
      * return PickupOriginDetail
      */
     public function setReadyTimestamp($readyTimestamp)
@@ -102,7 +108,7 @@ class PickupOriginDetail
     /**
      * Identifies the close time of the company requesting the pickup. The time is the local time of the pickup based on the shipper's time zone. The time component must be in the format: HH:MM:SS in 24-hour form (e.g. 17:00:00). Because this is a local time, no TZD should be included. If a TZD is included, it will be ignored, and the time treated as local to the pickup postal code.
      *
-     * @param time $CompanyCloseTime
+     * @param time $companyCloseTime
      * return PickupOriginDetail
      */
     public function setCompanyCloseTime(time $companyCloseTime)
@@ -114,7 +120,7 @@ class PickupOriginDetail
     /**
      * FedEx IVR Only. Customer is willing to stay late for pickup.
      *
-     * @param boolean $StayLate
+     * @param boolean $stayLate
      * return PickupOriginDetail
      */
     public function setStayLate($stayLate)
@@ -126,7 +132,7 @@ class PickupOriginDetail
     /**
      * FedEx USE ONLY (with IVR client)
      *
-     * @param PickupRequestType $PickupDateType
+     * @param \FedEx\Pickup\SimpleType\PickupRequestType  $pickupDateType
      * return PickupOriginDetail
      */
     public function setPickupDateType(\FedEx\Pickup\SimpleType\PickupRequestType $pickupDateType)
@@ -138,7 +144,7 @@ class PickupOriginDetail
     /**
      * FedEx IVR Only
      *
-     * @param time $LastAccessTime
+     * @param time $lastAccessTime
      * return PickupOriginDetail
      */
     public function setLastAccessTime(time $lastAccessTime)
@@ -150,7 +156,7 @@ class PickupOriginDetail
     /**
      * Alternate postal code tied to pickup location (European pickups)
      *
-     * @param string $GeographicalPostalCode
+     * @param string $geographicalPostalCode
      * return PickupOriginDetail
      */
     public function setGeographicalPostalCode($geographicalPostalCode)
@@ -162,7 +168,7 @@ class PickupOriginDetail
     /**
      * FedEx USE ONLY
      *
-     * @param string $Location
+     * @param string $location
      * return PickupOriginDetail
      */
     public function setLocation($location)
@@ -174,7 +180,7 @@ class PickupOriginDetail
     /**
      * FedEx USE ONLY (with IVR client)
      *
-     * @param boolean $DeleteLastUsed
+     * @param boolean $deleteLastUsed
      * return PickupOriginDetail
      */
     public function setDeleteLastUsed($deleteLastUsed)
@@ -184,9 +190,9 @@ class PickupOriginDetail
     }
     
     /**
-     * 
+     * Set SuppliesRequested
      *
-     * @param string $SuppliesRequested
+     * @param string $suppliesRequested
      * return PickupOriginDetail
      */
     public function setSuppliesRequested($suppliesRequested)
@@ -198,7 +204,7 @@ class PickupOriginDetail
     /**
      * Applies only to Europe
      *
-     * @param boolean $EarlyPickup
+     * @param boolean $earlyPickup
      * return PickupOriginDetail
      */
     public function setEarlyPickup($earlyPickup)

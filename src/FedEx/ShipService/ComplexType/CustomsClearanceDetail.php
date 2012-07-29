@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * CustomsClearanceDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CustomsClearanceDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CustomsClearanceDetail';
 
     /**
-     * 
+     * Set Broker
      *
-     * @param Party $Broker
+     * @param Party $broker
      * return CustomsClearanceDetail
      */
     public function setBroker(Party $broker)
@@ -30,7 +36,7 @@ class CustomsClearanceDetail
     /**
      * Interacts both with properties of the shipment and contractual relationship with the shipper.
      *
-     * @param ClearanceBrokerageType $ClearanceBrokerage
+     * @param \FedEx\ShipService\SimpleType\ClearanceBrokerageType  $clearanceBrokerage
      * return CustomsClearanceDetail
      */
     public function setClearanceBrokerage(\FedEx\ShipService\SimpleType\ClearanceBrokerageType $clearanceBrokerage)
@@ -40,9 +46,9 @@ class CustomsClearanceDetail
     }
     
     /**
-     * 
+     * Set ImporterOfRecord
      *
-     * @param Party $ImporterOfRecord
+     * @param Party $importerOfRecord
      * return CustomsClearanceDetail
      */
     public function setImporterOfRecord(Party $importerOfRecord)
@@ -54,7 +60,7 @@ class CustomsClearanceDetail
     /**
      * Specifies how the recipient is identified for customs purposes; the requirements on this information vary with destination country.
      *
-     * @param RecipientCustomsId $RecipientCustomsId
+     * @param RecipientCustomsId $recipientCustomsId
      * return CustomsClearanceDetail
      */
     public function setRecipientCustomsId(RecipientCustomsId $recipientCustomsId)
@@ -64,9 +70,9 @@ class CustomsClearanceDetail
     }
     
     /**
-     * 
+     * Set DutiesPayment
      *
-     * @param Payment $DutiesPayment
+     * @param Payment $dutiesPayment
      * return CustomsClearanceDetail
      */
     public function setDutiesPayment(Payment $dutiesPayment)
@@ -76,9 +82,9 @@ class CustomsClearanceDetail
     }
     
     /**
-     * 
+     * Set DocumentContent
      *
-     * @param InternationalDocumentContentType $DocumentContent
+     * @param \FedEx\ShipService\SimpleType\InternationalDocumentContentType  $documentContent
      * return CustomsClearanceDetail
      */
     public function setDocumentContent(\FedEx\ShipService\SimpleType\InternationalDocumentContentType $documentContent)
@@ -88,9 +94,9 @@ class CustomsClearanceDetail
     }
     
     /**
-     * 
+     * Set CustomsValue
      *
-     * @param Money $CustomsValue
+     * @param Money $customsValue
      * return CustomsClearanceDetail
      */
     public function setCustomsValue(Money $customsValue)
@@ -102,7 +108,7 @@ class CustomsClearanceDetail
     /**
      * Identifies responsibilities with respect to loss, damage, etc.
      *
-     * @param FreightOnValueType $FreightOnValue
+     * @param \FedEx\ShipService\SimpleType\FreightOnValueType  $freightOnValue
      * return CustomsClearanceDetail
      */
     public function setFreightOnValue(\FedEx\ShipService\SimpleType\FreightOnValueType $freightOnValue)
@@ -114,7 +120,7 @@ class CustomsClearanceDetail
     /**
      * Documents amount paid to third party for coverage of shipment content.
      *
-     * @param Money $InsuranceCharges
+     * @param Money $insuranceCharges
      * return CustomsClearanceDetail
      */
     public function setInsuranceCharges(Money $insuranceCharges)
@@ -124,9 +130,9 @@ class CustomsClearanceDetail
     }
     
     /**
-     * 
+     * Set PartiesToTransactionAreRelated
      *
-     * @param boolean $PartiesToTransactionAreRelated
+     * @param boolean $partiesToTransactionAreRelated
      * return CustomsClearanceDetail
      */
     public function setPartiesToTransactionAreRelated($partiesToTransactionAreRelated)
@@ -136,9 +142,9 @@ class CustomsClearanceDetail
     }
     
     /**
-     * 
+     * Set CommercialInvoice
      *
-     * @param CommercialInvoice $CommercialInvoice
+     * @param CommercialInvoice $commercialInvoice
      * return CustomsClearanceDetail
      */
     public function setCommercialInvoice(CommercialInvoice $commercialInvoice)
@@ -148,9 +154,9 @@ class CustomsClearanceDetail
     }
     
     /**
-     * 
+     * Set Commodities
      *
-     * @param array[Commodity] $Commodities
+     * @param Commodity[] $commodities
      * return CustomsClearanceDetail
      */
     public function setCommodities(array $commodities)
@@ -160,9 +166,9 @@ class CustomsClearanceDetail
     }
     
     /**
-     * 
+     * Set ExportDetail
      *
-     * @param ExportDetail $ExportDetail
+     * @param ExportDetail $exportDetail
      * return CustomsClearanceDetail
      */
     public function setExportDetail(ExportDetail $exportDetail)
@@ -172,9 +178,9 @@ class CustomsClearanceDetail
     }
     
     /**
-     * 
+     * Set RegulatoryControls
      *
-     * @param array[RegulatoryControlType] $RegulatoryControls
+     * @param RegulatoryControlType[] $regulatoryControls
      * return CustomsClearanceDetail
      */
     public function setRegulatoryControls(array $regulatoryControls)

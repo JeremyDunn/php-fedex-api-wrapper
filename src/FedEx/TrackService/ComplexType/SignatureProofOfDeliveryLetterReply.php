@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class SignatureProofOfDeliveryLetterReply
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'SignatureProofOfDeliveryLetterReply';
 
     /**
      * This contains the severity type of the most severe Notification in the Notifications array.
      *
-     * @param NotificationSeverityType $HighestSeverity
+     * @param \FedEx\TrackService\SimpleType\NotificationSeverityType  $highestSeverity
      * return SignatureProofOfDeliveryLetterReply
      */
     public function setHighestSeverity(\FedEx\TrackService\SimpleType\NotificationSeverityType $highestSeverity)
@@ -30,7 +36,7 @@ class SignatureProofOfDeliveryLetterReply
     /**
      * Information about the request/reply such was the transaction successful or not, and any additional information relevant to the request and/or reply. There may be multiple Notifications in a reply.
      *
-     * @param array[Notification] $Notifications
+     * @param Notification[] $notifications
      * return SignatureProofOfDeliveryLetterReply
      */
     public function setNotifications(array $notifications)
@@ -42,7 +48,7 @@ class SignatureProofOfDeliveryLetterReply
     /**
      * Contains the CustomerTransactionDetail that is echoed back to the caller for matching requests and replies and a Localization element for defining the language/translation used in the reply data.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return SignatureProofOfDeliveryLetterReply
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class SignatureProofOfDeliveryLetterReply
     /**
      * Image of letter encoded in Base64 format.
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return SignatureProofOfDeliveryLetterReply
      */
     public function setVersion(VersionId $version)
@@ -66,7 +72,7 @@ class SignatureProofOfDeliveryLetterReply
     /**
      * Image of letter encoded in Base64 format.
      *
-     * @param base64Binary $Letter
+     * @param base64Binary $letter
      * return SignatureProofOfDeliveryLetterReply
      */
     public function setLetter($letter)

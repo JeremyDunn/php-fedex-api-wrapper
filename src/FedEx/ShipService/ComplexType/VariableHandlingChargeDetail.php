@@ -13,6 +13,12 @@ use FedEx\AbstractComplexType;
 class VariableHandlingChargeDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'VariableHandlingChargeDetail';
 
     /**
@@ -22,7 +28,7 @@ class VariableHandlingChargeDetail
                 Contains 2 explicit decimal positions with a total max length of 10 including the decimal.
               
      *
-     * @param Money $FixedValue
+     * @param Money $fixedValue
      * return VariableHandlingChargeDetail
      */
     public function setFixedValue(Money $fixedValue)
@@ -34,7 +40,7 @@ class VariableHandlingChargeDetail
     /**
      * Actual percentage (10 means 10%, which is a mutiplier of 0.1)
      *
-     * @param decimal $PercentValue
+     * @param decimal $percentValue
      * return VariableHandlingChargeDetail
      */
     public function setPercentValue($percentValue)
@@ -46,7 +52,7 @@ class VariableHandlingChargeDetail
     /**
      * Select the value from a set of rate data to which the percentage is applied.
      *
-     * @param RateElementBasisType $RateElementBasis
+     * @param \FedEx\ShipService\SimpleType\RateElementBasisType  $rateElementBasis
      * return VariableHandlingChargeDetail
      */
     public function setRateElementBasis(\FedEx\ShipService\SimpleType\RateElementBasisType $rateElementBasis)
@@ -58,7 +64,7 @@ class VariableHandlingChargeDetail
     /**
      * Select the type of rate from which the element is to be selected.
      *
-     * @param RateTypeBasisType $RateTypeBasis
+     * @param \FedEx\ShipService\SimpleType\RateTypeBasisType  $rateTypeBasis
      * return VariableHandlingChargeDetail
      */
     public function setRateTypeBasis(\FedEx\ShipService\SimpleType\RateTypeBasisType $rateTypeBasis)

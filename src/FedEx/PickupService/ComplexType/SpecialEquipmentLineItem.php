@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class SpecialEquipmentLineItem
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'SpecialEquipmentLineItem';
 
     /**
      * Type of equipment used
      *
-     * @param SpecialEquipmentType $Type
+     * @param \FedEx\Pickup\SimpleType\SpecialEquipmentType  $type
      * return SpecialEquipmentLineItem
      */
     public function setType(\FedEx\Pickup\SimpleType\SpecialEquipmentType $type)
@@ -30,7 +36,7 @@ class SpecialEquipmentLineItem
     /**
      * Total amount of time the equipment was used
      *
-     * @param duration $Duration
+     * @param duration $duration
      * return SpecialEquipmentLineItem
      */
     public function setDuration(duration $duration)

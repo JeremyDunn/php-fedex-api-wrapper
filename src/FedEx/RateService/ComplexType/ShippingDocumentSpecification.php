@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ShippingDocumentSpecification
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ShippingDocumentSpecification';
 
     /**
      * Indicates the types of shipping documents requested by the shipper.
      *
-     * @param array[RequestedShippingDocumentType] $ShippingDocumentTypes
+     * @param RequestedShippingDocumentType[] $shippingDocumentTypes
      * return ShippingDocumentSpecification
      */
     public function setShippingDocumentTypes(array $shippingDocumentTypes)
@@ -28,9 +34,9 @@ class ShippingDocumentSpecification
     }
     
     /**
-     * 
+     * Set CertificateOfOrigin
      *
-     * @param CertificateOfOriginDetail $CertificateOfOrigin
+     * @param CertificateOfOriginDetail $certificateOfOrigin
      * return ShippingDocumentSpecification
      */
     public function setCertificateOfOrigin(CertificateOfOriginDetail $certificateOfOrigin)
@@ -40,9 +46,9 @@ class ShippingDocumentSpecification
     }
     
     /**
-     * 
+     * Set CommercialInvoiceDetail
      *
-     * @param CommercialInvoiceDetail $CommercialInvoiceDetail
+     * @param CommercialInvoiceDetail $commercialInvoiceDetail
      * return ShippingDocumentSpecification
      */
     public function setCommercialInvoiceDetail(CommercialInvoiceDetail $commercialInvoiceDetail)
@@ -54,7 +60,7 @@ class ShippingDocumentSpecification
     /**
      * Specifies the production of each package-level custom document (the same specification is used for all packages).
      *
-     * @param array[CustomDocumentDetail] $CustomPackageDocumentDetail
+     * @param CustomDocumentDetail[] $customPackageDocumentDetail
      * return ShippingDocumentSpecification
      */
     public function setCustomPackageDocumentDetail(array $customPackageDocumentDetail)
@@ -66,7 +72,7 @@ class ShippingDocumentSpecification
     /**
      * Specifies the production of a shipment-level custom document.
      *
-     * @param array[CustomDocumentDetail] $CustomShipmentDocumentDetail
+     * @param CustomDocumentDetail[] $customShipmentDocumentDetail
      * return ShippingDocumentSpecification
      */
     public function setCustomShipmentDocumentDetail(array $customShipmentDocumentDetail)
@@ -78,7 +84,7 @@ class ShippingDocumentSpecification
     /**
      * Details pertaining to the GAA.
      *
-     * @param GeneralAgencyAgreementDetail $GeneralAgencyAgreementDetail
+     * @param GeneralAgencyAgreementDetail $generalAgencyAgreementDetail
      * return ShippingDocumentSpecification
      */
     public function setGeneralAgencyAgreementDetail(GeneralAgencyAgreementDetail $generalAgencyAgreementDetail)
@@ -90,7 +96,7 @@ class ShippingDocumentSpecification
     /**
      * Details pertaining to NAFTA COO.
      *
-     * @param NaftaCertificateOfOriginDetail $NaftaCertificateOfOriginDetail
+     * @param NaftaCertificateOfOriginDetail $naftaCertificateOfOriginDetail
      * return ShippingDocumentSpecification
      */
     public function setNaftaCertificateOfOriginDetail(NaftaCertificateOfOriginDetail $naftaCertificateOfOriginDetail)
@@ -102,7 +108,7 @@ class ShippingDocumentSpecification
     /**
      * Specifies the production of the OP-900 document for hazardous materials packages.
      *
-     * @param Op900Detail $Op900Detail
+     * @param Op900Detail $op900Detail
      * return ShippingDocumentSpecification
      */
     public function setOp900Detail(Op900Detail $op900Detail)

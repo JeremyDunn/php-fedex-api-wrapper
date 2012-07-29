@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class TrackNotificationRecipientDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'TrackNotificationRecipientDetail';
 
     /**
      * The types of email notifications available for this recipient.
      *
-     * @param array[EMailNotificationEventType] $NotificationEventsAvailable
+     * @param EMailNotificationEventType[] $notificationEventsAvailable
      * return TrackNotificationRecipientDetail
      */
     public function setNotificationEventsAvailable(array $notificationEventsAvailable)

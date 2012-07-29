@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ParsedPersonName
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ParsedPersonName';
 
     /**
      * The First name of the person.
      *
-     * @param string $FirstName
+     * @param string $firstName
      * return ParsedPersonName
      */
     public function setFirstName($firstName)
@@ -30,7 +36,7 @@ class ParsedPersonName
     /**
      * The middle name of the person.
      *
-     * @param string $MiddleName
+     * @param string $middleName
      * return ParsedPersonName
      */
     public function setMiddleName($middleName)
@@ -42,7 +48,7 @@ class ParsedPersonName
     /**
      * The last name of the person.
      *
-     * @param string $LastName
+     * @param string $lastName
      * return ParsedPersonName
      */
     public function setLastName($lastName)

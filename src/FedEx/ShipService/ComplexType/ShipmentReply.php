@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * ShipmentReply
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ShipmentReply
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ShipmentReply';
 
     /**
      * This indicates the highest level of severity of all the notifications returned in this reply
      *
-     * @param NotificationSeverityType $HighestSeverity
+     * @param \FedEx\ShipService\SimpleType\NotificationSeverityType  $highestSeverity
      * return ShipmentReply
      */
     public function setHighestSeverity(\FedEx\ShipService\SimpleType\NotificationSeverityType $highestSeverity)
@@ -30,7 +36,7 @@ class ShipmentReply
     /**
      * The descriptive data regarding the results of the submitted transaction.
      *
-     * @param array[Notification] $Notifications
+     * @param Notification[] $notifications
      * return ShipmentReply
      */
     public function setNotifications(array $notifications)
@@ -42,7 +48,7 @@ class ShipmentReply
     /**
      * Descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return ShipmentReply
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class ShipmentReply
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return ShipmentReply
      */
     public function setVersion(VersionId $version)

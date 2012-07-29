@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class FreightBaseCharge
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'FreightBaseCharge';
 
     /**
      * Freight class for this line item.
      *
-     * @param FreightClassType $FreightClass
+     * @param \FedEx\ShipService\SimpleType\FreightClassType  $freightClass
      * return FreightBaseCharge
      */
     public function setFreightClass(\FedEx\ShipService\SimpleType\FreightClassType $freightClass)
@@ -30,7 +36,7 @@ class FreightBaseCharge
     /**
      * Effective freight class used for rating this line item.
      *
-     * @param FreightClassType $RatedAsClass
+     * @param \FedEx\ShipService\SimpleType\FreightClassType  $ratedAsClass
      * return FreightBaseCharge
      */
     public function setRatedAsClass(\FedEx\ShipService\SimpleType\FreightClassType $ratedAsClass)
@@ -42,7 +48,7 @@ class FreightBaseCharge
     /**
      * NMFC Code for commodity.
      *
-     * @param string $NmfcCode
+     * @param string $nmfcCode
      * return FreightBaseCharge
      */
     public function setNmfcCode($nmfcCode)
@@ -54,7 +60,7 @@ class FreightBaseCharge
     /**
      * Customer-provided description for this commodity or class line.
      *
-     * @param string $Description
+     * @param string $description
      * return FreightBaseCharge
      */
     public function setDescription($description)
@@ -66,7 +72,7 @@ class FreightBaseCharge
     /**
      * Weight for this commodity or class line.
      *
-     * @param Weight $Weight
+     * @param Weight $weight
      * return FreightBaseCharge
      */
     public function setWeight(Weight $weight)
@@ -78,7 +84,7 @@ class FreightBaseCharge
     /**
      * Rate or factor applied to this line item.
      *
-     * @param Money $ChargeRate
+     * @param Money $chargeRate
      * return FreightBaseCharge
      */
     public function setChargeRate(Money $chargeRate)
@@ -90,7 +96,7 @@ class FreightBaseCharge
     /**
      * Identifies the manner in which the chargeRate for this line item was applied.
      *
-     * @param FreightChargeBasisType $ChargeBasis
+     * @param \FedEx\ShipService\SimpleType\FreightChargeBasisType  $chargeBasis
      * return FreightBaseCharge
      */
     public function setChargeBasis(\FedEx\ShipService\SimpleType\FreightChargeBasisType $chargeBasis)
@@ -102,7 +108,7 @@ class FreightBaseCharge
     /**
      * The net or extended charge for this line item.
      *
-     * @param Money $ExtendedAmount
+     * @param Money $extendedAmount
      * return FreightBaseCharge
      */
     public function setExtendedAmount(Money $extendedAmount)

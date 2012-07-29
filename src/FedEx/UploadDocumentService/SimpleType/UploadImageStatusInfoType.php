@@ -4,7 +4,7 @@ namespace FedEx\UploadDocumentService\SimpleType;
 use FedEx\AbstractSimpleType;
 
 /**
- * 
+ * UploadImageStatusInfoType
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper

@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * DocTabContent
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class DocTabContent
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'DocTabContent';
 
     /**
      * The DocTabContentType options available.
      *
-     * @param DocTabContentType $DocTabContentType
+     * @param \FedEx\ShipService\SimpleType\DocTabContentType  $docTabContentType
      * return DocTabContent
      */
     public function setDocTabContentType(\FedEx\ShipService\SimpleType\DocTabContentType $docTabContentType)
@@ -30,7 +36,7 @@ class DocTabContent
     /**
      * The DocTabContentType should be set to ZONE001 to specify additional Zone details.
      *
-     * @param DocTabContentZone001 $Zone001
+     * @param DocTabContentZone001 $zone001
      * return DocTabContent
      */
     public function setZone001(DocTabContentZone001 $zone001)
@@ -42,7 +48,7 @@ class DocTabContent
     /**
      * The DocTabContentType should be set to BARCODED to specify additional BarCoded details.
      *
-     * @param DocTabContentBarcoded $Barcoded
+     * @param DocTabContentBarcoded $barcoded
      * return DocTabContent
      */
     public function setBarcoded(DocTabContentBarcoded $barcoded)

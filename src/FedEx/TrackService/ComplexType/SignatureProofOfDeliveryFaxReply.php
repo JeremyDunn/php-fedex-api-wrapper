@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class SignatureProofOfDeliveryFaxReply
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'SignatureProofOfDeliveryFaxReply';
 
     /**
      * This contains the severity type of the most severe Notification in the Notifications array.
      *
-     * @param NotificationSeverityType $HighestSeverity
+     * @param \FedEx\TrackService\SimpleType\NotificationSeverityType  $highestSeverity
      * return SignatureProofOfDeliveryFaxReply
      */
     public function setHighestSeverity(\FedEx\TrackService\SimpleType\NotificationSeverityType $highestSeverity)
@@ -30,7 +36,7 @@ class SignatureProofOfDeliveryFaxReply
     /**
      * Information about the request/reply such was the transaction successful or not, and any additional information relevant to the request and/or reply. There may be multiple Notifications in a reply.
      *
-     * @param array[Notification] $Notifications
+     * @param Notification[] $notifications
      * return SignatureProofOfDeliveryFaxReply
      */
     public function setNotifications(array $notifications)
@@ -42,7 +48,7 @@ class SignatureProofOfDeliveryFaxReply
     /**
      * Contains the CustomerTransactionDetail that is echoed back to the caller for matching requests and replies and a Localization element for defining the language/translation used in the reply data.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return SignatureProofOfDeliveryFaxReply
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class SignatureProofOfDeliveryFaxReply
     /**
      * Contains the version of the reply being used.
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return SignatureProofOfDeliveryFaxReply
      */
     public function setVersion(VersionId $version)
@@ -66,7 +72,7 @@ class SignatureProofOfDeliveryFaxReply
     /**
      * Confirmation of fax transmission.
      *
-     * @param string $FaxConfirmationNumber
+     * @param string $faxConfirmationNumber
      * return SignatureProofOfDeliveryFaxReply
      */
     public function setFaxConfirmationNumber($faxConfirmationNumber)

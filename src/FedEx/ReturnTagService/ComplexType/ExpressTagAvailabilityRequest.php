@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ExpressTagAvailabilityRequest
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ExpressTagAvailabilityRequest';
 
     /**
      * The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
-     * @param WebAuthenticationDetail $WebAuthenticationDetail
+     * @param WebAuthenticationDetail $webAuthenticationDetail
      * return ExpressTagAvailabilityRequest
      */
     public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
@@ -30,7 +36,7 @@ class ExpressTagAvailabilityRequest
     /**
      * The descriptive data identifying the client submitting the transaction.
      *
-     * @param ClientDetail $ClientDetail
+     * @param ClientDetail $clientDetail
      * return ExpressTagAvailabilityRequest
      */
     public function setClientDetail(ClientDetail $clientDetail)
@@ -42,7 +48,7 @@ class ExpressTagAvailabilityRequest
     /**
      * The descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return ExpressTagAvailabilityRequest
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class ExpressTagAvailabilityRequest
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return ExpressTagAvailabilityRequest
      */
     public function setVersion(VersionId $version)
@@ -66,7 +72,7 @@ class ExpressTagAvailabilityRequest
     /**
      * Package ready date and time.
      *
-     * @param dateTime $ReadyDateTime
+     * @param dateTime $readyDateTime
      * return ExpressTagAvailabilityRequest
      */
     public function setReadyDateTime($readyDateTime)
@@ -78,7 +84,7 @@ class ExpressTagAvailabilityRequest
     /**
      * Sender postal code and country.
      *
-     * @param Address $OriginAddress
+     * @param Address $originAddress
      * return ExpressTagAvailabilityRequest
      */
     public function setOriginAddress(Address $originAddress)
@@ -90,7 +96,7 @@ class ExpressTagAvailabilityRequest
     /**
      * FedEx Service type.
      *
-     * @param ServiceType $Service
+     * @param \FedEx\ReturnTagService\SimpleType\ServiceType  $service
      * return ExpressTagAvailabilityRequest
      */
     public function setService(\FedEx\ReturnTagService\SimpleType\ServiceType $service)
@@ -102,7 +108,7 @@ class ExpressTagAvailabilityRequest
     /**
      * FedEx Packaging type.
      *
-     * @param PackagingType $Packaging
+     * @param \FedEx\ReturnTagService\SimpleType\PackagingType  $packaging
      * return ExpressTagAvailabilityRequest
      */
     public function setPackaging(\FedEx\ReturnTagService\SimpleType\PackagingType $packaging)

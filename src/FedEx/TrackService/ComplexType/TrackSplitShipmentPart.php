@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class TrackSplitShipmentPart
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'TrackSplitShipmentPart';
 
     /**
      * The number of pieces in this part.
      *
-     * @param positiveInteger $PieceCount
+     * @param positiveInteger $pieceCount
      * return TrackSplitShipmentPart
      */
     public function setPieceCount($pieceCount)
@@ -30,7 +36,7 @@ class TrackSplitShipmentPart
     /**
      * The date and time this status began.
      *
-     * @param dateTime $Timestamp
+     * @param dateTime $timestamp
      * return TrackSplitShipmentPart
      */
     public function setTimestamp($timestamp)
@@ -42,7 +48,7 @@ class TrackSplitShipmentPart
     /**
      * A code that identifies this type of status.
      *
-     * @param string $StatusCode
+     * @param string $statusCode
      * return TrackSplitShipmentPart
      */
     public function setStatusCode($statusCode)
@@ -54,7 +60,7 @@ class TrackSplitShipmentPart
     /**
      * A human-readable description of this status.
      *
-     * @param string $StatusDescription
+     * @param string $statusDescription
      * return TrackSplitShipmentPart
      */
     public function setStatusDescription($statusDescription)

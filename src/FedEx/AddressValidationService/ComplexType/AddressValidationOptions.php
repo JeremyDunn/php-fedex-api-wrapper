@@ -4,7 +4,7 @@ namespace FedEx\AddressValidationService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * AddressValidationOptions
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class AddressValidationOptions
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'AddressValidationOptions';
 
     /**
-     * 
+     * Set VerifyAddresses
      *
-     * @param boolean $VerifyAddresses
+     * @param boolean $verifyAddresses
      * return AddressValidationOptions
      */
     public function setVerifyAddresses($verifyAddresses)
@@ -28,9 +34,9 @@ class AddressValidationOptions
     }
     
     /**
-     * 
+     * Set CheckResidentialStatus
      *
-     * @param boolean $CheckResidentialStatus
+     * @param boolean $checkResidentialStatus
      * return AddressValidationOptions
      */
     public function setCheckResidentialStatus($checkResidentialStatus)
@@ -40,9 +46,9 @@ class AddressValidationOptions
     }
     
     /**
-     * 
+     * Set MaximumNumberOfMatches
      *
-     * @param  $MaximumNumberOfMatches
+     * @param  $maximumNumberOfMatches
      * return AddressValidationOptions
      */
     public function setMaximumNumberOfMatches( $maximumNumberOfMatches)
@@ -52,9 +58,9 @@ class AddressValidationOptions
     }
     
     /**
-     * 
+     * Set StreetAccuracy
      *
-     * @param AddressValidationAccuracyType $StreetAccuracy
+     * @param \FedEx\AddressValidationService\SimpleType\AddressValidationAccuracyType  $streetAccuracy
      * return AddressValidationOptions
      */
     public function setStreetAccuracy(\FedEx\AddressValidationService\SimpleType\AddressValidationAccuracyType $streetAccuracy)
@@ -64,9 +70,9 @@ class AddressValidationOptions
     }
     
     /**
-     * 
+     * Set DirectionalAccuracy
      *
-     * @param AddressValidationAccuracyType $DirectionalAccuracy
+     * @param \FedEx\AddressValidationService\SimpleType\AddressValidationAccuracyType  $directionalAccuracy
      * return AddressValidationOptions
      */
     public function setDirectionalAccuracy(\FedEx\AddressValidationService\SimpleType\AddressValidationAccuracyType $directionalAccuracy)
@@ -76,9 +82,9 @@ class AddressValidationOptions
     }
     
     /**
-     * 
+     * Set CompanyNameAccuracy
      *
-     * @param AddressValidationAccuracyType $CompanyNameAccuracy
+     * @param \FedEx\AddressValidationService\SimpleType\AddressValidationAccuracyType  $companyNameAccuracy
      * return AddressValidationOptions
      */
     public function setCompanyNameAccuracy(\FedEx\AddressValidationService\SimpleType\AddressValidationAccuracyType $companyNameAccuracy)
@@ -88,9 +94,9 @@ class AddressValidationOptions
     }
     
     /**
-     * 
+     * Set ConvertToUpperCase
      *
-     * @param boolean $ConvertToUpperCase
+     * @param boolean $convertToUpperCase
      * return AddressValidationOptions
      */
     public function setConvertToUpperCase($convertToUpperCase)
@@ -100,9 +106,9 @@ class AddressValidationOptions
     }
     
     /**
-     * 
+     * Set RecognizeAlternateCityNames
      *
-     * @param boolean $RecognizeAlternateCityNames
+     * @param boolean $recognizeAlternateCityNames
      * return AddressValidationOptions
      */
     public function setRecognizeAlternateCityNames($recognizeAlternateCityNames)
@@ -112,9 +118,9 @@ class AddressValidationOptions
     }
     
     /**
-     * 
+     * Set ReturnParsedElements
      *
-     * @param boolean $ReturnParsedElements
+     * @param boolean $returnParsedElements
      * return AddressValidationOptions
      */
     public function setReturnParsedElements($returnParsedElements)

@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ShippingDocumentPart
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ShippingDocumentPart';
 
     /**
      * The one-origin position of this part within a document.
      *
-     * @param positiveInteger $DocumentPartSequenceNumber
+     * @param positiveInteger $documentPartSequenceNumber
      * return ShippingDocumentPart
      */
     public function setDocumentPartSequenceNumber($documentPartSequenceNumber)
@@ -30,7 +36,7 @@ class ShippingDocumentPart
     /**
      * Graphic or printer commands for this image within a document.
      *
-     * @param base64Binary $Image
+     * @param base64Binary $image
      * return ShippingDocumentPart
      */
     public function setImage($image)

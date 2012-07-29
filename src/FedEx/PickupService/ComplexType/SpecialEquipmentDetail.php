@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class SpecialEquipmentDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'SpecialEquipmentDetail';
 
     /**
      * Contains an entry for each type of special equipment used with shipment
      *
-     * @param array[SpecialEquipmentLineItem] $LineItems
+     * @param SpecialEquipmentLineItem[] $lineItems
      * return SpecialEquipmentDetail
      */
     public function setLineItems(array $lineItems)

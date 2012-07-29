@@ -4,7 +4,7 @@ namespace FedEx\AddressValidationService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * AddressValidationRequest
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class AddressValidationRequest
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'AddressValidationRequest';
 
     /**
      * The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
-     * @param WebAuthenticationDetail $WebAuthenticationDetail
+     * @param WebAuthenticationDetail $webAuthenticationDetail
      * return AddressValidationRequest
      */
     public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
@@ -30,7 +36,7 @@ class AddressValidationRequest
     /**
      * Descriptive data identifying the client submitting the transaction.
      *
-     * @param ClientDetail $ClientDetail
+     * @param ClientDetail $clientDetail
      * return AddressValidationRequest
      */
     public function setClientDetail(ClientDetail $clientDetail)
@@ -42,7 +48,7 @@ class AddressValidationRequest
     /**
      * Descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return AddressValidationRequest
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class AddressValidationRequest
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return AddressValidationRequest
      */
     public function setVersion(VersionId $version)
@@ -64,9 +70,9 @@ class AddressValidationRequest
     }
     
     /**
-     * 
+     * Set RequestTimestamp
      *
-     * @param dateTime $RequestTimestamp
+     * @param dateTime $requestTimestamp
      * return AddressValidationRequest
      */
     public function setRequestTimestamp($requestTimestamp)
@@ -76,9 +82,9 @@ class AddressValidationRequest
     }
     
     /**
-     * 
+     * Set Options
      *
-     * @param AddressValidationOptions $Options
+     * @param AddressValidationOptions $options
      * return AddressValidationRequest
      */
     public function setOptions(AddressValidationOptions $options)
@@ -88,9 +94,9 @@ class AddressValidationRequest
     }
     
     /**
-     * 
+     * Set AddressesToValidate
      *
-     * @param array[AddressToValidate] $AddressesToValidate
+     * @param AddressToValidate[] $addressesToValidate
      * return AddressValidationRequest
      */
     public function setAddressesToValidate(array $addressesToValidate)

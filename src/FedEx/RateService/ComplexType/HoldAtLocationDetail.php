@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class HoldAtLocationDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'HoldAtLocationDetail';
 
     /**
      * Contact phone number for recipient of shipment.
      *
-     * @param string $PhoneNumber
+     * @param string $phoneNumber
      * return HoldAtLocationDetail
      */
     public function setPhoneNumber($phoneNumber)
@@ -30,7 +36,7 @@ class HoldAtLocationDetail
     /**
      * Contact and address of FedEx facility at which shipment is to be held.
      *
-     * @param ContactAndAddress $LocationContactAndAddress
+     * @param ContactAndAddress $locationContactAndAddress
      * return HoldAtLocationDetail
      */
     public function setLocationContactAndAddress(ContactAndAddress $locationContactAndAddress)
@@ -42,7 +48,7 @@ class HoldAtLocationDetail
     /**
      * Type of facility at which package/shipment is to be held.
      *
-     * @param FedExLocationType $LocationType
+     * @param \FedEx\RateService\SimpleType\FedExLocationType  $locationType
      * return HoldAtLocationDetail
      */
     public function setLocationType(\FedEx\RateService\SimpleType\FedExLocationType $locationType)
@@ -54,7 +60,7 @@ class HoldAtLocationDetail
     /**
      * Location identification (for facilities identified by an alphanumeric location code).
      *
-     * @param string $LocationId
+     * @param string $locationId
      * return HoldAtLocationDetail
      */
     public function setLocationId($locationId)
@@ -66,7 +72,7 @@ class HoldAtLocationDetail
     /**
      * Location identification (for facilities identified by an numeric location code).
      *
-     * @param int $LocationNumber
+     * @param int $locationNumber
      * return HoldAtLocationDetail
      */
     public function setLocationNumber($locationNumber)

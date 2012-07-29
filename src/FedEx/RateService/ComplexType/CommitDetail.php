@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CommitDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CommitDetail';
 
     /**
      * The Commodity applicable to this commitment.
      *
-     * @param string $CommodityName
+     * @param string $commodityName
      * return CommitDetail
      */
     public function setCommodityName($commodityName)
@@ -30,7 +36,7 @@ class CommitDetail
     /**
      * The FedEx service type applicable to this commitment.
      *
-     * @param ServiceType $ServiceType
+     * @param \FedEx\RateService\SimpleType\ServiceType  $serviceType
      * return CommitDetail
      */
     public function setServiceType(\FedEx\RateService\SimpleType\ServiceType $serviceType)
@@ -42,7 +48,7 @@ class CommitDetail
     /**
      * Shows the specific combination of service options combined with the service type that produced this committment in the set returned to the caller.
      *
-     * @param array[ServiceOptionType] $AppliedOptions
+     * @param ServiceOptionType[] $appliedOptions
      * return CommitDetail
      */
     public function setAppliedOptions(array $appliedOptions)
@@ -54,7 +60,7 @@ class CommitDetail
     /**
      * Supporting detail for applied options identified in preceding field.
      *
-     * @param ServiceSubOptionDetail $AppliedSubOptions
+     * @param ServiceSubOptionDetail $appliedSubOptions
      * return CommitDetail
      */
     public function setAppliedSubOptions(ServiceSubOptionDetail $appliedSubOptions)
@@ -66,7 +72,7 @@ class CommitDetail
     /**
      * THe delivery commitment date/time. Express Only.
      *
-     * @param dateTime $CommitTimestamp
+     * @param dateTime $commitTimestamp
      * return CommitDetail
      */
     public function setCommitTimestamp($commitTimestamp)
@@ -78,7 +84,7 @@ class CommitDetail
     /**
      * The delivery commitment day of the week.
      *
-     * @param DayOfWeekType $DayOfWeek
+     * @param \FedEx\RateService\SimpleType\DayOfWeekType  $dayOfWeek
      * return CommitDetail
      */
     public function setDayOfWeek(\FedEx\RateService\SimpleType\DayOfWeekType $dayOfWeek)
@@ -90,7 +96,7 @@ class CommitDetail
     /**
      * The number of transit days; applies to Ground and LTL Freight; indicates minimum transit time for SmartPost.
      *
-     * @param TransitTimeType $TransitTime
+     * @param \FedEx\RateService\SimpleType\TransitTimeType  $transitTime
      * return CommitDetail
      */
     public function setTransitTime(\FedEx\RateService\SimpleType\TransitTimeType $transitTime)
@@ -102,7 +108,7 @@ class CommitDetail
     /**
      * Maximum number of transit days, for SmartPost shipments.
      *
-     * @param TransitTimeType $MaximumTransitTime
+     * @param \FedEx\RateService\SimpleType\TransitTimeType  $maximumTransitTime
      * return CommitDetail
      */
     public function setMaximumTransitTime(\FedEx\RateService\SimpleType\TransitTimeType $maximumTransitTime)
@@ -114,7 +120,7 @@ class CommitDetail
     /**
      * The service area code for the destination of this shipment. Express only.
      *
-     * @param string $DestinationServiceArea
+     * @param string $destinationServiceArea
      * return CommitDetail
      */
     public function setDestinationServiceArea($destinationServiceArea)
@@ -126,7 +132,7 @@ class CommitDetail
     /**
      * The address of the broker to be used for this shipment.
      *
-     * @param Address $BrokerAddress
+     * @param Address $brokerAddress
      * return CommitDetail
      */
     public function setBrokerAddress(Address $brokerAddress)
@@ -138,7 +144,7 @@ class CommitDetail
     /**
      * The FedEx location identifier for the broker.
      *
-     * @param string $BrokerLocationId
+     * @param string $brokerLocationId
      * return CommitDetail
      */
     public function setBrokerLocationId($brokerLocationId)
@@ -150,7 +156,7 @@ class CommitDetail
     /**
      * The delivery commitment date/time the shipment will arrive at the border.
      *
-     * @param dateTime $BrokerCommitTimestamp
+     * @param dateTime $brokerCommitTimestamp
      * return CommitDetail
      */
     public function setBrokerCommitTimestamp($brokerCommitTimestamp)
@@ -162,7 +168,7 @@ class CommitDetail
     /**
      * The delivery commitment day of the week the shipment will arrive at the border.
      *
-     * @param DayOfWeekType $BrokerCommitDayOfWeek
+     * @param \FedEx\RateService\SimpleType\DayOfWeekType  $brokerCommitDayOfWeek
      * return CommitDetail
      */
     public function setBrokerCommitDayOfWeek(\FedEx\RateService\SimpleType\DayOfWeekType $brokerCommitDayOfWeek)
@@ -174,7 +180,7 @@ class CommitDetail
     /**
      * The number of days it will take for the shipment to make it from broker to destination
      *
-     * @param nonNegativeInteger $BrokerToDestinationDays
+     * @param nonNegativeInteger $brokerToDestinationDays
      * return CommitDetail
      */
     public function setBrokerToDestinationDays($brokerToDestinationDays)
@@ -186,7 +192,7 @@ class CommitDetail
     /**
      * The delivery commitment date for shipment served by GSP (Global Service Provider)
      *
-     * @param date $ProofOfDeliveryDate
+     * @param date $proofOfDeliveryDate
      * return CommitDetail
      */
     public function setProofOfDeliveryDate($proofOfDeliveryDate)
@@ -198,7 +204,7 @@ class CommitDetail
     /**
      * The delivery commitment day of the week for the shipment served by GSP (Global Service Provider)
      *
-     * @param DayOfWeekType $ProofOfDeliveryDayOfWeek
+     * @param \FedEx\RateService\SimpleType\DayOfWeekType  $proofOfDeliveryDayOfWeek
      * return CommitDetail
      */
     public function setProofOfDeliveryDayOfWeek(\FedEx\RateService\SimpleType\DayOfWeekType $proofOfDeliveryDayOfWeek)
@@ -210,7 +216,7 @@ class CommitDetail
     /**
      * Messages concerning the ability to provide an accurate delivery commitment on an International commit quote. These could be messages providing information about why a commitment could not be returned or a successful message such as "REQUEST COMPLETED"
      *
-     * @param array[Notification] $CommitMessages
+     * @param Notification[] $commitMessages
      * return CommitDetail
      */
     public function setCommitMessages(array $commitMessages)
@@ -222,7 +228,7 @@ class CommitDetail
     /**
      * Messages concerning the delivery commitment on an International commit quote such as "0:00 A.M. IF NO CUSTOMS DELAY"
      *
-     * @param array[string] $DeliveryMessages
+     * @param string[] $deliveryMessages
      * return CommitDetail
      */
     public function setDeliveryMessages(array $deliveryMessages)
@@ -234,7 +240,7 @@ class CommitDetail
     /**
      * Information about why a shipment delivery is delayed and at what level (country/service etc.).
      *
-     * @param array[DelayDetail] $DelayDetails
+     * @param DelayDetail[] $delayDetails
      * return CommitDetail
      */
     public function setDelayDetails(array $delayDetails)
@@ -244,9 +250,9 @@ class CommitDetail
     }
     
     /**
-     * 
+     * Set DocumentContent
      *
-     * @param InternationalDocumentContentType $DocumentContent
+     * @param \FedEx\RateService\SimpleType\InternationalDocumentContentType  $documentContent
      * return CommitDetail
      */
     public function setDocumentContent(\FedEx\RateService\SimpleType\InternationalDocumentContentType $documentContent)
@@ -258,7 +264,7 @@ class CommitDetail
     /**
      * Required documentation for this shipment.
      *
-     * @param array[RequiredShippingDocumentType] $RequiredDocuments
+     * @param RequiredShippingDocumentType[] $requiredDocuments
      * return CommitDetail
      */
     public function setRequiredDocuments(array $requiredDocuments)
@@ -270,7 +276,7 @@ class CommitDetail
     /**
      * Freight origin and destination city center information and total distance between origin and destination city centers.
      *
-     * @param FreightCommitDetail $FreightCommitDetail
+     * @param FreightCommitDetail $freightCommitDetail
      * return CommitDetail
      */
     public function setFreightCommitDetail(FreightCommitDetail $freightCommitDetail)

@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ExpressFreightDetailContact
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ExpressFreightDetailContact';
 
     /**
-     * 
+     * Set Name
      *
-     * @param string $Name
+     * @param string $name
      * return ExpressFreightDetailContact
      */
     public function setName($name)
@@ -28,9 +34,9 @@ class ExpressFreightDetailContact
     }
     
     /**
-     * 
+     * Set Phone
      *
-     * @param string $Phone
+     * @param string $phone
      * return ExpressFreightDetailContact
      */
     public function setPhone($phone)

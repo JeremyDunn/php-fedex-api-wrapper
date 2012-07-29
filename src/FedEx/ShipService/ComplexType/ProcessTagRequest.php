@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ProcessTagRequest
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ProcessTagRequest';
 
     /**
      * Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
-     * @param WebAuthenticationDetail $WebAuthenticationDetail
+     * @param WebAuthenticationDetail $webAuthenticationDetail
      * return ProcessTagRequest
      */
     public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
@@ -30,7 +36,7 @@ class ProcessTagRequest
     /**
      * Descriptive data identifying the client submitting the transaction.
      *
-     * @param ClientDetail $ClientDetail
+     * @param ClientDetail $clientDetail
      * return ProcessTagRequest
      */
     public function setClientDetail(ClientDetail $clientDetail)
@@ -42,7 +48,7 @@ class ProcessTagRequest
     /**
      * Descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return ProcessTagRequest
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class ProcessTagRequest
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return ProcessTagRequest
      */
     public function setVersion(VersionId $version)
@@ -66,7 +72,7 @@ class ProcessTagRequest
     /**
      * Descriptive data about the shipment being sent by the requestor.
      *
-     * @param RequestedShipment $RequestedShipment
+     * @param RequestedShipment $requestedShipment
      * return ProcessTagRequest
      */
     public function setRequestedShipment(RequestedShipment $requestedShipment)

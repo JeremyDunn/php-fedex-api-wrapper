@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class LabelSpecification
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'LabelSpecification';
 
     /**
      * Specify type of label to be returned
      *
-     * @param LabelFormatType $LabelFormatType
+     * @param \FedEx\RateService\SimpleType\LabelFormatType  $labelFormatType
      * return LabelSpecification
      */
     public function setLabelFormatType(\FedEx\RateService\SimpleType\LabelFormatType $labelFormatType)
@@ -37,7 +43,7 @@ class LabelSpecification
                 ZPLII = Zebra thermal printer language
               
      *
-     * @param ShippingDocumentImageType $ImageType
+     * @param \FedEx\RateService\SimpleType\ShippingDocumentImageType  $imageType
      * return LabelSpecification
      */
     public function setImageType(\FedEx\RateService\SimpleType\ShippingDocumentImageType $imageType)
@@ -49,7 +55,7 @@ class LabelSpecification
     /**
      * For thermal printer lables this indicates the size of the label and the location of the doc tab if present.
      *
-     * @param LabelStockType $LabelStockType
+     * @param \FedEx\RateService\SimpleType\LabelStockType  $labelStockType
      * return LabelSpecification
      */
     public function setLabelStockType(\FedEx\RateService\SimpleType\LabelStockType $labelStockType)
@@ -61,7 +67,7 @@ class LabelSpecification
     /**
      * This indicates if the top or bottom of the label comes out of the printer first.
      *
-     * @param LabelPrintingOrientationType $LabelPrintingOrientation
+     * @param \FedEx\RateService\SimpleType\LabelPrintingOrientationType  $labelPrintingOrientation
      * return LabelSpecification
      */
     public function setLabelPrintingOrientation(\FedEx\RateService\SimpleType\LabelPrintingOrientationType $labelPrintingOrientation)
@@ -73,7 +79,7 @@ class LabelSpecification
     /**
      * Relative to normal orientation for the printer. RIGHT=90 degrees clockwise, UPSIDE_DOWN=180 degrees, LEFT=90 degrees counterclockwise.
      *
-     * @param LabelRotationType $LabelRotation
+     * @param \FedEx\RateService\SimpleType\LabelRotationType  $labelRotation
      * return LabelSpecification
      */
     public function setLabelRotation(\FedEx\RateService\SimpleType\LabelRotationType $labelRotation)
@@ -85,7 +91,7 @@ class LabelSpecification
     /**
      * If present, this contact and address information will replace the return address information on the label.
      *
-     * @param ContactAndAddress $PrintedLabelOrigin
+     * @param ContactAndAddress $printedLabelOrigin
      * return LabelSpecification
      */
     public function setPrintedLabelOrigin(ContactAndAddress $printedLabelOrigin)
@@ -97,7 +103,7 @@ class LabelSpecification
     /**
      * Allows customer-specified control of label content.
      *
-     * @param CustomerSpecifiedLabelDetail $CustomerSpecifiedDetail
+     * @param CustomerSpecifiedLabelDetail $customerSpecifiedDetail
      * return LabelSpecification
      */
     public function setCustomerSpecifiedDetail(CustomerSpecifiedLabelDetail $customerSpecifiedDetail)

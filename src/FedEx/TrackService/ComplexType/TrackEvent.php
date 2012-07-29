@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class TrackEvent
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'TrackEvent';
 
     /**
      * The time this event occurred.
      *
-     * @param dateTime $Timestamp
+     * @param dateTime $timestamp
      * return TrackEvent
      */
     public function setTimestamp($timestamp)
@@ -30,7 +36,7 @@ class TrackEvent
     /**
      * Carrier's scan code. Pairs with EventDescription.
      *
-     * @param string $EventType
+     * @param string $eventType
      * return TrackEvent
      */
     public function setEventType($eventType)
@@ -42,7 +48,7 @@ class TrackEvent
     /**
      * Literal description that pairs with the EventType.
      *
-     * @param string $EventDescription
+     * @param string $eventDescription
      * return TrackEvent
      */
     public function setEventDescription($eventDescription)
@@ -54,7 +60,7 @@ class TrackEvent
     /**
      * Further defines the Scan Type code's specific type (e.g., DEX08 business closed). Pairs with StatusExceptionDescription.
      *
-     * @param string $StatusExceptionCode
+     * @param string $statusExceptionCode
      * return TrackEvent
      */
     public function setStatusExceptionCode($statusExceptionCode)
@@ -66,7 +72,7 @@ class TrackEvent
     /**
      * Literal description that pairs with the StatusExceptionCode.
      *
-     * @param string $StatusExceptionDescription
+     * @param string $statusExceptionDescription
      * return TrackEvent
      */
     public function setStatusExceptionDescription($statusExceptionDescription)
@@ -78,7 +84,7 @@ class TrackEvent
     /**
      * Address information of the station that is responsible for the scan.
      *
-     * @param Address $Address
+     * @param Address $address
      * return TrackEvent
      */
     public function setAddress(Address $address)
@@ -90,7 +96,7 @@ class TrackEvent
     /**
      * Indicates where the arrival actually occurred.
      *
-     * @param ArrivalLocationType $ArrivalLocation
+     * @param \FedEx\TrackService\SimpleType\ArrivalLocationType  $arrivalLocation
      * return TrackEvent
      */
     public function setArrivalLocation(\FedEx\TrackService\SimpleType\ArrivalLocationType $arrivalLocation)

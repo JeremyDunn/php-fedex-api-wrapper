@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class Tax
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'Tax';
 
     /**
      * The type of tax applied to the shipment.
      *
-     * @param TaxType $TaxType
+     * @param \FedEx\ShipService\SimpleType\TaxType  $taxType
      * return Tax
      */
     public function setTaxType(\FedEx\ShipService\SimpleType\TaxType $taxType)
@@ -28,9 +34,9 @@ class Tax
     }
     
     /**
-     * 
+     * Set Description
      *
-     * @param string $Description
+     * @param string $description
      * return Tax
      */
     public function setDescription($description)
@@ -42,7 +48,7 @@ class Tax
     /**
      * The amount of the tax applied to the shipment.
      *
-     * @param Money $Amount
+     * @param Money $amount
      * return Tax
      */
     public function setAmount(Money $amount)

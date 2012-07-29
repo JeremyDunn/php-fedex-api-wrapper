@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ExpressFreightDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ExpressFreightDetail';
 
     /**
      * Indicates whether or nor a packing list is enclosed.
      *
-     * @param boolean $PackingListEnclosed
+     * @param boolean $packingListEnclosed
      * return ExpressFreightDetail
      */
     public function setPackingListEnclosed($packingListEnclosed)
@@ -35,7 +41,7 @@ class ExpressFreightDetail
                 Values must be in the range of 1 - 99999
               
      *
-     * @param positiveInteger $ShippersLoadAndCount
+     * @param positiveInteger $shippersLoadAndCount
      * return ExpressFreightDetail
      */
     public function setShippersLoadAndCount($shippersLoadAndCount)
@@ -47,7 +53,7 @@ class ExpressFreightDetail
     /**
      * Required for International Freight shipping. Values must be 8- 12 characters in length.
      *
-     * @param string $BookingConfirmationNumber
+     * @param string $bookingConfirmationNumber
      * return ExpressFreightDetail
      */
     public function setBookingConfirmationNumber($bookingConfirmationNumber)
@@ -59,7 +65,7 @@ class ExpressFreightDetail
     /**
      * Currently not supported.
      *
-     * @param boolean $ReferenceLabelRequested
+     * @param boolean $referenceLabelRequested
      * return ExpressFreightDetail
      */
     public function setReferenceLabelRequested($referenceLabelRequested)
@@ -71,7 +77,7 @@ class ExpressFreightDetail
     /**
      * Currently not supported.
      *
-     * @param ExpressFreightDetailContact $BeforeDeliveryContact
+     * @param ExpressFreightDetailContact $beforeDeliveryContact
      * return ExpressFreightDetail
      */
     public function setBeforeDeliveryContact(ExpressFreightDetailContact $beforeDeliveryContact)
@@ -83,7 +89,7 @@ class ExpressFreightDetail
     /**
      * Currently not supported.
      *
-     * @param ExpressFreightDetailContact $UndeliverableContact
+     * @param ExpressFreightDetailContact $undeliverableContact
      * return ExpressFreightDetail
      */
     public function setUndeliverableContact(ExpressFreightDetailContact $undeliverableContact)

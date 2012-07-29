@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class Address
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'Address';
 
     /**
      * Identification of a region (usually small) for mail/package delivery. Format and presence of this field will vary, depending on country.
      *
-     * @param string $PostalCode
+     * @param string $postalCode
      * return Address
      */
     public function setPostalCode($postalCode)
@@ -30,7 +36,7 @@ class Address
     /**
      * The two-letter code used to identify a country.
      *
-     * @param string $CountryCode
+     * @param string $countryCode
      * return Address
      */
     public function setCountryCode($countryCode)

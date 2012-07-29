@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class NaftaCommodityDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'NaftaCommodityDetail';
 
     /**
      * Defined by NAFTA regulations.
      *
-     * @param NaftaPreferenceCriterionCode $PreferenceCriterion
+     * @param \FedEx\ShipService\SimpleType\NaftaPreferenceCriterionCode  $preferenceCriterion
      * return NaftaCommodityDetail
      */
     public function setPreferenceCriterion(\FedEx\ShipService\SimpleType\NaftaPreferenceCriterionCode $preferenceCriterion)
@@ -30,7 +36,7 @@ class NaftaCommodityDetail
     /**
      * Defined by NAFTA regulations.
      *
-     * @param NaftaProducerDeterminationCode $ProducerDetermination
+     * @param \FedEx\ShipService\SimpleType\NaftaProducerDeterminationCode  $producerDetermination
      * return NaftaCommodityDetail
      */
     public function setProducerDetermination(\FedEx\ShipService\SimpleType\NaftaProducerDeterminationCode $producerDetermination)
@@ -42,7 +48,7 @@ class NaftaCommodityDetail
     /**
      * Identification of which producer is associated with this commodity (if multiple producers are used in a single shipment).
      *
-     * @param string $ProducerId
+     * @param string $producerId
      * return NaftaCommodityDetail
      */
     public function setProducerId($producerId)
@@ -52,9 +58,9 @@ class NaftaCommodityDetail
     }
     
     /**
-     * 
+     * Set NetCostMethod
      *
-     * @param NaftaNetCostMethodCode $NetCostMethod
+     * @param \FedEx\ShipService\SimpleType\NaftaNetCostMethodCode  $netCostMethod
      * return NaftaCommodityDetail
      */
     public function setNetCostMethod(\FedEx\ShipService\SimpleType\NaftaNetCostMethodCode $netCostMethod)
@@ -66,7 +72,7 @@ class NaftaCommodityDetail
     /**
      * Date range over which RVC net cost was calculated.
      *
-     * @param DateRange $NetCostDateRange
+     * @param DateRange $netCostDateRange
      * return NaftaCommodityDetail
      */
     public function setNetCostDateRange(DateRange $netCostDateRange)

@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ShippingDocumentEMailRecipient
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ShippingDocumentEMailRecipient';
 
     /**
      * Identifies the relationship of this recipient in the shipment.
      *
-     * @param EMailNotificationRecipientType $RecipientType
+     * @param \FedEx\ShipService\SimpleType\EMailNotificationRecipientType  $recipientType
      * return ShippingDocumentEMailRecipient
      */
     public function setRecipientType(\FedEx\ShipService\SimpleType\EMailNotificationRecipientType $recipientType)
@@ -30,7 +36,7 @@ class ShippingDocumentEMailRecipient
     /**
      * Address to which the document is to be sent.
      *
-     * @param string $Address
+     * @param string $address
      * return ShippingDocumentEMailRecipient
      */
     public function setAddress($address)

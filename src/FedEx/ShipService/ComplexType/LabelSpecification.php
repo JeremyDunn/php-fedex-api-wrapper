@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class LabelSpecification
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'LabelSpecification';
 
     /**
      * Specifies how to create, organize, and return the document.
      *
-     * @param array[ShippingDocumentDispositionDetail] $Dispositions
+     * @param ShippingDocumentDispositionDetail[] $dispositions
      * return LabelSpecification
      */
     public function setDispositions(array $dispositions)
@@ -30,7 +36,7 @@ class LabelSpecification
     /**
      * Specify type of label to be returned
      *
-     * @param LabelFormatType $LabelFormatType
+     * @param \FedEx\ShipService\SimpleType\LabelFormatType  $labelFormatType
      * return LabelSpecification
      */
     public function setLabelFormatType(\FedEx\ShipService\SimpleType\LabelFormatType $labelFormatType)
@@ -42,7 +48,7 @@ class LabelSpecification
     /**
      * Specifies the image format used for a shipping document.
      *
-     * @param ShippingDocumentImageType $ImageType
+     * @param \FedEx\ShipService\SimpleType\ShippingDocumentImageType  $imageType
      * return LabelSpecification
      */
     public function setImageType(\FedEx\ShipService\SimpleType\ShippingDocumentImageType $imageType)
@@ -54,7 +60,7 @@ class LabelSpecification
     /**
      * For thermal printer lables this indicates the size of the label and the location of the doc tab if present.
      *
-     * @param LabelStockType $LabelStockType
+     * @param \FedEx\ShipService\SimpleType\LabelStockType  $labelStockType
      * return LabelSpecification
      */
     public function setLabelStockType(\FedEx\ShipService\SimpleType\LabelStockType $labelStockType)
@@ -66,7 +72,7 @@ class LabelSpecification
     /**
      * This indicates if the top or bottom of the label comes out of the printer first.
      *
-     * @param LabelPrintingOrientationType $LabelPrintingOrientation
+     * @param \FedEx\ShipService\SimpleType\LabelPrintingOrientationType  $labelPrintingOrientation
      * return LabelSpecification
      */
     public function setLabelPrintingOrientation(\FedEx\ShipService\SimpleType\LabelPrintingOrientationType $labelPrintingOrientation)
@@ -78,7 +84,7 @@ class LabelSpecification
     /**
      * If present, this contact and address information will replace the return address information on the label.
      *
-     * @param ContactAndAddress $PrintedLabelOrigin
+     * @param ContactAndAddress $printedLabelOrigin
      * return LabelSpecification
      */
     public function setPrintedLabelOrigin(ContactAndAddress $printedLabelOrigin)
@@ -90,7 +96,7 @@ class LabelSpecification
     /**
      * Allows customer-specified control of label content.
      *
-     * @param CustomerSpecifiedLabelDetail $CustomerSpecifiedDetail
+     * @param CustomerSpecifiedLabelDetail $customerSpecifiedDetail
      * return LabelSpecification
      */
     public function setCustomerSpecifiedDetail(CustomerSpecifiedLabelDetail $customerSpecifiedDetail)

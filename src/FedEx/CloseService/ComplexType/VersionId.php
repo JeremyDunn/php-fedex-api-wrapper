@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class VersionId
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'VersionId';
 
     /**
-     * 
+     * Set ServiceId
      *
-     * @param string $ServiceId
+     * @param string $serviceId
      * return VersionId
      */
     public function setServiceId($serviceId)
@@ -30,7 +36,7 @@ class VersionId
     /**
      * Service business level.
      *
-     * @param int $Major
+     * @param int $major
      * return VersionId
      */
     public function setMajor($major)
@@ -42,7 +48,7 @@ class VersionId
     /**
      * Service interface level.
      *
-     * @param int $Intermediate
+     * @param int $intermediate
      * return VersionId
      */
     public function setIntermediate($intermediate)
@@ -54,7 +60,7 @@ class VersionId
     /**
      * Service code level.
      *
-     * @param int $Minor
+     * @param int $minor
      * return VersionId
      */
     public function setMinor($minor)

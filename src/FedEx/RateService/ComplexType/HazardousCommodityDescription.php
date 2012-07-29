@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class HazardousCommodityDescription
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'HazardousCommodityDescription';
 
     /**
      * Regulatory identifier for a commodity (e.g. "UN ID" value).
      *
-     * @param string $Id
+     * @param string $id
      * return HazardousCommodityDescription
      */
     public function setId($id)
@@ -28,9 +34,9 @@ class HazardousCommodityDescription
     }
     
     /**
-     * 
+     * Set PackingGroup
      *
-     * @param HazardousCommodityPackingGroupType $PackingGroup
+     * @param \FedEx\RateService\SimpleType\HazardousCommodityPackingGroupType  $packingGroup
      * return HazardousCommodityDescription
      */
     public function setPackingGroup(\FedEx\RateService\SimpleType\HazardousCommodityPackingGroupType $packingGroup)
@@ -40,9 +46,9 @@ class HazardousCommodityDescription
     }
     
     /**
-     * 
+     * Set ProperShippingName
      *
-     * @param string $ProperShippingName
+     * @param string $properShippingName
      * return HazardousCommodityDescription
      */
     public function setProperShippingName($properShippingName)
@@ -52,9 +58,9 @@ class HazardousCommodityDescription
     }
     
     /**
-     * 
+     * Set TechnicalName
      *
-     * @param string $TechnicalName
+     * @param string $technicalName
      * return HazardousCommodityDescription
      */
     public function setTechnicalName($technicalName)
@@ -64,9 +70,9 @@ class HazardousCommodityDescription
     }
     
     /**
-     * 
+     * Set HazardClass
      *
-     * @param string $HazardClass
+     * @param string $hazardClass
      * return HazardousCommodityDescription
      */
     public function setHazardClass($hazardClass)
@@ -76,9 +82,9 @@ class HazardousCommodityDescription
     }
     
     /**
-     * 
+     * Set SubsidiaryClasses
      *
-     * @param array[string] $SubsidiaryClasses
+     * @param string[] $subsidiaryClasses
      * return HazardousCommodityDescription
      */
     public function setSubsidiaryClasses(array $subsidiaryClasses)
@@ -88,9 +94,9 @@ class HazardousCommodityDescription
     }
     
     /**
-     * 
+     * Set LabelText
      *
-     * @param string $LabelText
+     * @param string $labelText
      * return HazardousCommodityDescription
      */
     public function setLabelText($labelText)

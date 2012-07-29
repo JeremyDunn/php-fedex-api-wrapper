@@ -53,7 +53,7 @@ class Request
     /**
      * Sends the AddressValidationRequest and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest
+     * @param ComplexType\AddressValidationRequest $addressValidationRequest 
      * @return stdClass
      */
     public function getAddressValidationReply(ComplexType\AddressValidationRequest $addressValidationRequest)

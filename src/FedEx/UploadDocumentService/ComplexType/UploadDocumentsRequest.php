@@ -4,7 +4,7 @@ namespace FedEx\UploadDocumentService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * UploadDocumentsRequest
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class UploadDocumentsRequest
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'UploadDocumentsRequest';
 
     /**
      * The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
-     * @param WebAuthenticationDetail $WebAuthenticationDetail
+     * @param WebAuthenticationDetail $webAuthenticationDetail
      * return UploadDocumentsRequest
      */
     public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
@@ -30,7 +36,7 @@ class UploadDocumentsRequest
     /**
      * Descriptive data identifying the client submitting the transaction.
      *
-     * @param ClientDetail $ClientDetail
+     * @param ClientDetail $clientDetail
      * return UploadDocumentsRequest
      */
     public function setClientDetail(ClientDetail $clientDetail)
@@ -42,7 +48,7 @@ class UploadDocumentsRequest
     /**
      * Descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return UploadDocumentsRequest
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class UploadDocumentsRequest
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return UploadDocumentsRequest
      */
     public function setVersion(VersionId $version)
@@ -64,9 +70,9 @@ class UploadDocumentsRequest
     }
     
     /**
-     * 
+     * Set OriginCountryCode
      *
-     * @param string $OriginCountryCode
+     * @param string $originCountryCode
      * return UploadDocumentsRequest
      */
     public function setOriginCountryCode($originCountryCode)
@@ -76,9 +82,9 @@ class UploadDocumentsRequest
     }
     
     /**
-     * 
+     * Set DestinationCountryCode
      *
-     * @param string $DestinationCountryCode
+     * @param string $destinationCountryCode
      * return UploadDocumentsRequest
      */
     public function setDestinationCountryCode($destinationCountryCode)
@@ -88,9 +94,9 @@ class UploadDocumentsRequest
     }
     
     /**
-     * 
+     * Set Documents
      *
-     * @param array[UploadDocumentDetail] $Documents
+     * @param UploadDocumentDetail[] $documents
      * return UploadDocumentsRequest
      */
     public function setDocuments(array $documents)

@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ReturnShipmentDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ReturnShipmentDetail';
 
     /**
      * The type of return shipment that is being requested. At present the only type of retrun shipment that is supported is PRINT_RETURN_LABEL. With this option you can print a return label to insert into the box of an outbound shipment. This option can not be used to print an outbound label.
      *
-     * @param ReturnType $ReturnType
+     * @param \FedEx\RateService\SimpleType\ReturnType  $returnType
      * return ReturnShipmentDetail
      */
     public function setReturnType(\FedEx\RateService\SimpleType\ReturnType $returnType)
@@ -30,7 +36,7 @@ class ReturnShipmentDetail
     /**
      * Return Merchant Authorization
      *
-     * @param Rma $Rma
+     * @param Rma $rma
      * return ReturnShipmentDetail
      */
     public function setRma(Rma $rma)
@@ -42,7 +48,7 @@ class ReturnShipmentDetail
     /**
      * Specific information about the delivery of the email and options for the shipment.
      *
-     * @param ReturnEMailDetail $ReturnEMailDetail
+     * @param ReturnEMailDetail $returnEMailDetail
      * return ReturnShipmentDetail
      */
     public function setReturnEMailDetail(ReturnEMailDetail $returnEMailDetail)

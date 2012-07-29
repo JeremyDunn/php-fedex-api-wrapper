@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ContentRecord
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ContentRecord';
 
     /**
      * Part Number.
      *
-     * @param string $PartNumber
+     * @param string $partNumber
      * return ContentRecord
      */
     public function setPartNumber($partNumber)
@@ -30,7 +36,7 @@ class ContentRecord
     /**
      * Item Number.
      *
-     * @param string $ItemNumber
+     * @param string $itemNumber
      * return ContentRecord
      */
     public function setItemNumber($itemNumber)
@@ -42,7 +48,7 @@ class ContentRecord
     /**
      * Received Quantity.
      *
-     * @param nonNegativeInteger $ReceivedQuantity
+     * @param nonNegativeInteger $receivedQuantity
      * return ContentRecord
      */
     public function setReceivedQuantity($receivedQuantity)
@@ -54,7 +60,7 @@ class ContentRecord
     /**
      * Description.
      *
-     * @param string $Description
+     * @param string $description
      * return ContentRecord
      */
     public function setDescription($description)

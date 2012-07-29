@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class QualifiedTrackingNumber
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'QualifiedTrackingNumber';
 
     /**
      * FedEx assigned identifier for a package/shipment.
      *
-     * @param string $TrackingNumber
+     * @param string $trackingNumber
      * return QualifiedTrackingNumber
      */
     public function setTrackingNumber($trackingNumber)
@@ -30,7 +36,7 @@ class QualifiedTrackingNumber
     /**
      * The date the package was shipped.
      *
-     * @param date $ShipDate
+     * @param date $shipDate
      * return QualifiedTrackingNumber
      */
     public function setShipDate($shipDate)
@@ -42,7 +48,7 @@ class QualifiedTrackingNumber
     /**
      * If the account number used to ship the package is provided in the request the shipper and recipient information is included on the letter or fax.
      *
-     * @param string $AccountNumber
+     * @param string $accountNumber
      * return QualifiedTrackingNumber
      */
     public function setAccountNumber($accountNumber)
@@ -54,7 +60,7 @@ class QualifiedTrackingNumber
     /**
      * FedEx operating company that delivered the package.
      *
-     * @param CarrierCodeType $Carrier
+     * @param \FedEx\TrackService\SimpleType\CarrierCodeType  $carrier
      * return QualifiedTrackingNumber
      */
     public function setCarrier(\FedEx\TrackService\SimpleType\CarrierCodeType $carrier)
@@ -66,7 +72,7 @@ class QualifiedTrackingNumber
     /**
      * Only country is used for elimination of duplicate tracking numbers.
      *
-     * @param Address $Destination
+     * @param Address $destination
      * return QualifiedTrackingNumber
      */
     public function setDestination(Address $destination)

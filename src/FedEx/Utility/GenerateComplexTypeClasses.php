@@ -11,21 +11,29 @@ namespace FedEx\Utility;
 class GenerateComplexTypeClasses extends AbstractGenerate
 {
     /**
+     * Path to WSDL file
+     * 
      * @var string
      */
     protected $_wsdlPath;
 
     /**
+     * Export Path
+     * 
      * @var string
      */
     protected $_exportPath;
 
     /**
+     * Base namespace
+     * 
      * @var string
      */
     protected $_baseNamespace;
 
     /**
+     * Sub Package name
+     * 
      * @var string
      */
     protected $_subPackageName;
@@ -33,10 +41,10 @@ class GenerateComplexTypeClasses extends AbstractGenerate
     /**
      * Constructor
      *
-     * @param string $exportPath
-     * @param string $wsdlPath
-     * @param string $baseNamespace
-     * @param string $subPackageName
+     * @param string $exportPath Path to export ComplexType classes
+     * @param string $wsdlPath Path to .wsdl file
+     * @param string $baseNamespace base Namespace name (eg: FedEx\RateService).
+     * @param string $subPackageName Sub package the generated class belongs to (used in DocBlock)
      */
     public function __construct($exportPath, $wsdlPath, $baseNamespace, $subPackageName)
     {
@@ -59,6 +67,9 @@ class GenerateComplexTypeClasses extends AbstractGenerate
         $this->_loadXML();
     }
 
+    /**
+     * Run generator
+     */
     public function run()
     {
         foreach ($this->_xml->types->schema->children() as $schema) {
@@ -110,8 +121,20 @@ class GenerateComplexTypeClasses extends AbstractGenerate
         }
     }
 
+    /**
+     * Generates the body of the class file
+     * 
+     * @param string $className Name of class
+     * @param string $classDoc Documentation for class
+     * @param array $properties Properties
+     * @return string Generated code
+     */
     protected function _getGeneratedFileBody($className, $classDoc, array $properties)
     {
+        if (empty($classDoc)) {
+            $classDoc = $className;
+        }
+        
         $propertiesString = '';
         $methodString = '';
 
@@ -136,6 +159,12 @@ use FedEx\AbstractComplexType;
 class $className
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected \$_name = '$className';
 
 $methodString
@@ -146,6 +175,13 @@ TEXT;
         return $fileBody;
     }
 
+    /**
+     * Creates the set method for a particular type
+     * 
+     * @param string $className Class name
+     * @param array $property Properties
+     * @return string Generated set method
+     */
     protected function _getGeneratedSetMethod($className, array $property)
     {
         $invalidTypes = array('string', 'int', 'dateTime', 'boolean', 'nonNegativeInteger', 'positiveInteger', 'date', 'weight', 'decimal', 'double', 'base64Binary');
@@ -157,27 +193,33 @@ TEXT;
         $property['typePHPDoc'] = $property['type'];
 
         if ($property['maxOccurs'] > 1 || $property['maxOccurs'] == 'unbounded') {
-            $property['typePHPDoc'] = "array[{$property['type']}]";
+            $property['typePHPDoc'] = "{$property['type']}[]";
             $property['type'] = 'array';
         }
 
+        //set property type if is simple type
         if ($this->_isSimpleType($property['type'])) {
-            $property['type'] = $simpleTypeNamespace . $property['type'];
-        }
-
-        //check for invalid types for parameter type hints
-        if (in_array($property['type'], $invalidTypes)) {
-            $property['type'] = '';
+            $property['type'] = $simpleTypeNamespace . $property['type'] . ' ';
+            $property['typePHPDoc'] = $property['type'];
         } else {
-            $property['type'] = $property['type'] . ' ';
+            //check for invalid types for parameter type hints
+            if (in_array($property['type'], $invalidTypes)) {
+                $property['type'] = '';
+            } else {
+                $property['type'] = $property['type'] . ' ';
+            }
         }
-
+        
+        if (empty($property['doc'])) {
+            $property['doc'] = "Set {$property['name']}";
+        }
+        
 
         $returnString = <<<TEXT
     /**
      * {$property['doc']}
      *
-     * @param {$property['typePHPDoc']} \${$property['name']}
+     * @param {$property['typePHPDoc']} \${$varName}
      * return $className
      */
     public function set{$property['name']}({$property['type']}\${$varName})
@@ -191,6 +233,12 @@ TEXT;
         return $returnString;
     }
 
+    /**
+     * Checks to see if a particular class exists as a SimpleType
+     * 
+     * @param string $propertyType Property type
+     * @return boolean
+     */
     protected function _isSimpleType($propertyType)
     {
         $simpleTypeDir = realpath($this->_exportPath . \DIRECTORY_SEPARATOR . '..' . \DIRECTORY_SEPARATOR . 'SimpleType');

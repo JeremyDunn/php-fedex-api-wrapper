@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class FreightGuaranteeDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'FreightGuaranteeDetail';
 
     /**
      * Description of Guarantee
      *
-     * @param FreightGuaranteeType $Type
+     * @param \FedEx\Pickup\SimpleType\FreightGuaranteeType  $type
      * return FreightGuaranteeDetail
      */
     public function setType(\FedEx\Pickup\SimpleType\FreightGuaranteeType $type)
@@ -30,7 +36,7 @@ class FreightGuaranteeDetail
     /**
      * Date for all Freight guarantee types.
      *
-     * @param date $Date
+     * @param date $date
      * return FreightGuaranteeDetail
      */
     public function setDate($date)

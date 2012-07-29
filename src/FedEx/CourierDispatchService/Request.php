@@ -53,7 +53,7 @@ class Request
     /**
      * Sends the CourierDispatchRequest and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest
+     * @param ComplexType\CourierDispatchRequest $courierDispatchRequest 
      * @return stdClass
      */
     public function getCourierDispatchReply(ComplexType\CourierDispatchRequest $courierDispatchRequest)
@@ -63,7 +63,7 @@ class Request
        /**
      * Sends the CancelCourierDispatchRequest and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest
+     * @param ComplexType\CancelCourierDispatchRequest $cancelCourierDispatchRequest 
      * @return stdClass
      */
     public function getCancelCourierDispatchReply(ComplexType\CancelCourierDispatchRequest $cancelCourierDispatchRequest)
@@ -73,7 +73,7 @@ class Request
        /**
      * Sends the PickupAvailabilityRequest and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest
+     * @param ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest 
      * @return stdClass
      */
     public function getPickupAvailabilityReply(ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest)

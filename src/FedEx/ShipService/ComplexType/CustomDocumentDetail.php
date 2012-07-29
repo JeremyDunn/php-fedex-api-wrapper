@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CustomDocumentDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CustomDocumentDetail';
 
     /**
      * Common information controlling document production.
      *
-     * @param ShippingDocumentFormat $Format
+     * @param ShippingDocumentFormat $format
      * return CustomDocumentDetail
      */
     public function setFormat(ShippingDocumentFormat $format)
@@ -30,7 +36,7 @@ class CustomDocumentDetail
     /**
      * Applicable only to documents produced on thermal printers with roll stock.
      *
-     * @param LabelPrintingOrientationType $LabelPrintingOrientation
+     * @param \FedEx\ShipService\SimpleType\LabelPrintingOrientationType  $labelPrintingOrientation
      * return CustomDocumentDetail
      */
     public function setLabelPrintingOrientation(\FedEx\ShipService\SimpleType\LabelPrintingOrientationType $labelPrintingOrientation)
@@ -42,7 +48,7 @@ class CustomDocumentDetail
     /**
      * Applicable only to documents produced on thermal printers with roll stock.
      *
-     * @param LabelRotationType $LabelRotation
+     * @param \FedEx\ShipService\SimpleType\LabelRotationType  $labelRotation
      * return CustomDocumentDetail
      */
     public function setLabelRotation(\FedEx\ShipService\SimpleType\LabelRotationType $labelRotation)
@@ -54,7 +60,7 @@ class CustomDocumentDetail
     /**
      * Identifies the formatting specification used to construct this custom document.
      *
-     * @param string $SpecificationId
+     * @param string $specificationId
      * return CustomDocumentDetail
      */
     public function setSpecificationId($specificationId)
@@ -66,7 +72,7 @@ class CustomDocumentDetail
     /**
      * Identifies the individual document specified by the client.
      *
-     * @param string $CustomDocumentIdentifier
+     * @param string $customDocumentIdentifier
      * return CustomDocumentDetail
      */
     public function setCustomDocumentIdentifier($customDocumentIdentifier)
@@ -78,7 +84,7 @@ class CustomDocumentDetail
     /**
      * If provided, thermal documents will include specified doc tab content. If omitted, document will be produced without doc tab content.
      *
-     * @param DocTabContent $DocTabContent
+     * @param DocTabContent $docTabContent
      * return CustomDocumentDetail
      */
     public function setDocTabContent(DocTabContent $docTabContent)

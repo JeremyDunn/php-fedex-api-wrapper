@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class Dimensions
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'Dimensions';
 
     /**
      * Identifies the length of the package.
      *
-     * @param nonNegativeInteger $Length
+     * @param nonNegativeInteger $length
      * return Dimensions
      */
     public function setLength($length)
@@ -30,7 +36,7 @@ class Dimensions
     /**
      * Identifies the width of the package.
      *
-     * @param nonNegativeInteger $Width
+     * @param nonNegativeInteger $width
      * return Dimensions
      */
     public function setWidth($width)
@@ -42,7 +48,7 @@ class Dimensions
     /**
      * Identifies the height of the package.
      *
-     * @param nonNegativeInteger $Height
+     * @param nonNegativeInteger $height
      * return Dimensions
      */
     public function setHeight($height)
@@ -54,7 +60,7 @@ class Dimensions
     /**
      * Identifies the unit of measure associated with a dimensional values. See LinearUnits for valid values.
      *
-     * @param LinearUnits $Units
+     * @param \FedEx\Pickup\SimpleType\LinearUnits  $units
      * return Dimensions
      */
     public function setUnits(\FedEx\Pickup\SimpleType\LinearUnits $units)

@@ -4,7 +4,7 @@ namespace FedEx\UploadDocumentService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * ImageUploadStatusDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ImageUploadStatusDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ImageUploadStatusDetail';
 
     /**
-     * 
+     * Set Id
      *
-     * @param ImageId $Id
+     * @param \FedEx\UploadDocumentService\SimpleType\ImageId  $id
      * return ImageUploadStatusDetail
      */
     public function setId(\FedEx\UploadDocumentService\SimpleType\ImageId $id)
@@ -28,9 +34,9 @@ class ImageUploadStatusDetail
     }
     
     /**
-     * 
+     * Set Status
      *
-     * @param UploadImageStatusType $Status
+     * @param \FedEx\UploadDocumentService\SimpleType\UploadImageStatusType  $status
      * return ImageUploadStatusDetail
      */
     public function setStatus(\FedEx\UploadDocumentService\SimpleType\UploadImageStatusType $status)
@@ -40,9 +46,9 @@ class ImageUploadStatusDetail
     }
     
     /**
-     * 
+     * Set StatusInfo
      *
-     * @param UploadImageStatusInfoType $StatusInfo
+     * @param \FedEx\UploadDocumentService\SimpleType\UploadImageStatusInfoType  $statusInfo
      * return ImageUploadStatusDetail
      */
     public function setStatusInfo(\FedEx\UploadDocumentService\SimpleType\UploadImageStatusInfoType $statusInfo)
@@ -52,9 +58,9 @@ class ImageUploadStatusDetail
     }
     
     /**
-     * 
+     * Set Message
      *
-     * @param string $Message
+     * @param string $message
      * return ImageUploadStatusDetail
      */
     public function setMessage($message)

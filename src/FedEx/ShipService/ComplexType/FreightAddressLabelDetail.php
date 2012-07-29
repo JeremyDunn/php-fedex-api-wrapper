@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class FreightAddressLabelDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'FreightAddressLabelDetail';
 
     /**
-     * 
+     * Set Format
      *
-     * @param ShippingDocumentFormat $Format
+     * @param ShippingDocumentFormat $format
      * return FreightAddressLabelDetail
      */
     public function setFormat(ShippingDocumentFormat $format)
@@ -30,7 +36,7 @@ class FreightAddressLabelDetail
     /**
      * Indicates the number of copies to be produced for each unique label.
      *
-     * @param nonNegativeInteger $Copies
+     * @param nonNegativeInteger $copies
      * return FreightAddressLabelDetail
      */
     public function setCopies($copies)
@@ -42,7 +48,7 @@ class FreightAddressLabelDetail
     /**
      * If omitted, no doc tab will be produced (i.e. default = former NONE type).
      *
-     * @param DocTabContent $DocTabContent
+     * @param DocTabContent $docTabContent
      * return FreightAddressLabelDetail
      */
     public function setDocTabContent(DocTabContent $docTabContent)

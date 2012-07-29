@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class TaxpayerIdentification
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'TaxpayerIdentification';
 
     /**
      * Identifies the category of the taxpayer identification number. See TinType for the list of values.
      *
-     * @param TinType $TinType
+     * @param \FedEx\ShipService\SimpleType\TinType  $tinType
      * return TaxpayerIdentification
      */
     public function setTinType(\FedEx\ShipService\SimpleType\TinType $tinType)
@@ -30,7 +36,7 @@ class TaxpayerIdentification
     /**
      * Identifies the taxpayer identification number.
      *
-     * @param string $Number
+     * @param string $number
      * return TaxpayerIdentification
      */
     public function setNumber($number)
@@ -42,7 +48,7 @@ class TaxpayerIdentification
     /**
      * Identifies the usage of Tax Identification Number in Shipment processing
      *
-     * @param string $Usage
+     * @param string $usage
      * return TaxpayerIdentification
      */
     public function setUsage($usage)

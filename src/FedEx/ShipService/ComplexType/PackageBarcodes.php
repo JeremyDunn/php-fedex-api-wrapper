@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class PackageBarcodes
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'PackageBarcodes';
 
     /**
      * Binary-style barcodes for this package.
      *
-     * @param array[BinaryBarcode] $BinaryBarcodes
+     * @param BinaryBarcode[] $binaryBarcodes
      * return PackageBarcodes
      */
     public function setBinaryBarcodes(array $binaryBarcodes)
@@ -30,7 +36,7 @@ class PackageBarcodes
     /**
      * String-style barcodes for this package.
      *
-     * @param array[StringBarcode] $StringBarcodes
+     * @param StringBarcode[] $stringBarcodes
      * return PackageBarcodes
      */
     public function setStringBarcodes(array $stringBarcodes)

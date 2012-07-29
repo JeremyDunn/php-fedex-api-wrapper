@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * LiabilityCoverageDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class LiabilityCoverageDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'LiabilityCoverageDetail';
 
     /**
-     * 
+     * Set CoverageType
      *
-     * @param LiabilityCoverageType $CoverageType
+     * @param \FedEx\ShipService\SimpleType\LiabilityCoverageType  $coverageType
      * return LiabilityCoverageDetail
      */
     public function setCoverageType(\FedEx\ShipService\SimpleType\LiabilityCoverageType $coverageType)
@@ -30,7 +36,7 @@ class LiabilityCoverageDetail
     /**
      * Identifies the Liability Coverage Amount. For Jan 2010 this value represents coverage amount per pound
      *
-     * @param Money $CoverageAmount
+     * @param Money $coverageAmount
      * return LiabilityCoverageDetail
      */
     public function setCoverageAmount(Money $coverageAmount)

@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class PendingShipmentDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'PendingShipmentDetail';
 
     /**
      * Identifies the type of FedEx pending shipment
      *
-     * @param PendingShipmentType $Type
+     * @param \FedEx\Pickup\SimpleType\PendingShipmentType  $type
      * return PendingShipmentDetail
      */
     public function setType(\FedEx\Pickup\SimpleType\PendingShipmentType $type)
@@ -30,7 +36,7 @@ class PendingShipmentDetail
     /**
      * Date after which the pending shipment will no longer be available for completion.
      *
-     * @param date $ExpirationDate
+     * @param date $expirationDate
      * return PendingShipmentDetail
      */
     public function setExpirationDate($expirationDate)
@@ -42,7 +48,7 @@ class PendingShipmentDetail
     /**
      * Only used with type of EMAIL.
      *
-     * @param EMailLabelDetail $EmailLabelDetail
+     * @param EMailLabelDetail $emailLabelDetail
      * return PendingShipmentDetail
      */
     public function setEmailLabelDetail(EMailLabelDetail $emailLabelDetail)

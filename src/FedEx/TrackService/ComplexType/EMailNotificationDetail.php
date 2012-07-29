@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class EMailNotificationDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'EMailNotificationDetail';
 
     /**
      * A message that will be included in the email notifications
      *
-     * @param string $PersonalMessage
+     * @param string $personalMessage
      * return EMailNotificationDetail
      */
     public function setPersonalMessage($personalMessage)
@@ -30,7 +36,7 @@ class EMailNotificationDetail
     /**
      * Information describing the destination of the email, format of the email and events to be notified on
      *
-     * @param array[EMailNotificationRecipient] $Recipients
+     * @param EMailNotificationRecipient[] $recipients
      * return EMailNotificationDetail
      */
     public function setRecipients(array $recipients)

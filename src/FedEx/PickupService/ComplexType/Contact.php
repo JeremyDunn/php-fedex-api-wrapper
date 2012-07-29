@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class Contact
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'Contact';
 
     /**
      * Client provided identifier corresponding to this contact information.
      *
-     * @param string $ContactId
+     * @param string $contactId
      * return Contact
      */
     public function setContactId($contactId)
@@ -30,7 +36,7 @@ class Contact
     /**
      * Identifies the contact person's name.
      *
-     * @param string $PersonName
+     * @param string $personName
      * return Contact
      */
     public function setPersonName($personName)
@@ -42,7 +48,7 @@ class Contact
     /**
      * Identifies the contact person's title.
      *
-     * @param string $Title
+     * @param string $title
      * return Contact
      */
     public function setTitle($title)
@@ -54,7 +60,7 @@ class Contact
     /**
      * Identifies the company this contact is associated with.
      *
-     * @param string $CompanyName
+     * @param string $companyName
      * return Contact
      */
     public function setCompanyName($companyName)
@@ -66,7 +72,7 @@ class Contact
     /**
      * Identifies the phone number associated with this contact.
      *
-     * @param string $PhoneNumber
+     * @param string $phoneNumber
      * return Contact
      */
     public function setPhoneNumber($phoneNumber)
@@ -78,7 +84,7 @@ class Contact
     /**
      * Identifies the phone extension associated with this contact.
      *
-     * @param string $PhoneExtension
+     * @param string $phoneExtension
      * return Contact
      */
     public function setPhoneExtension($phoneExtension)
@@ -90,7 +96,7 @@ class Contact
     /**
      * Identifies the pager number associated with this contact.
      *
-     * @param string $PagerNumber
+     * @param string $pagerNumber
      * return Contact
      */
     public function setPagerNumber($pagerNumber)
@@ -102,7 +108,7 @@ class Contact
     /**
      * Identifies the fax number associated with this contact.
      *
-     * @param string $FaxNumber
+     * @param string $faxNumber
      * return Contact
      */
     public function setFaxNumber($faxNumber)
@@ -114,7 +120,7 @@ class Contact
     /**
      * Identifies the email address associated with this contact.
      *
-     * @param string $EMailAddress
+     * @param string $eMailAddress
      * return Contact
      */
     public function setEMailAddress($eMailAddress)

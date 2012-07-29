@@ -53,7 +53,7 @@ class Request
     /**
      * Sends the SmartPostCloseRequest and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest
+     * @param ComplexType\SmartPostCloseRequest $smartPostCloseRequest 
      * @return stdClass
      */
     public function getSmartPostCloseReply(ComplexType\SmartPostCloseRequest $smartPostCloseRequest)
@@ -63,7 +63,7 @@ class Request
        /**
      * Sends the GroundCloseRequest and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest
+     * @param ComplexType\GroundCloseRequest $groundCloseRequest 
      * @return stdClass
      */
     public function getGroundCloseReply(ComplexType\GroundCloseRequest $groundCloseRequest)
@@ -73,7 +73,7 @@ class Request
        /**
      * Sends the GroundCloseReportsReprintRequest and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest
+     * @param ComplexType\GroundCloseReportsReprintRequest $groundCloseReportsReprintRequest 
      * @return stdClass
      */
     public function getGroundCloseReportsReprintReply(ComplexType\GroundCloseReportsReprintRequest $groundCloseReportsReprintRequest)
@@ -83,7 +83,7 @@ class Request
        /**
      * Sends the GroundCloseWithDocumentsRequest and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest
+     * @param ComplexType\GroundCloseWithDocumentsRequest $groundCloseWithDocumentsRequest 
      * @return stdClass
      */
     public function getGroundCloseDocumentsReply(ComplexType\GroundCloseWithDocumentsRequest $groundCloseWithDocumentsRequest)
@@ -93,7 +93,7 @@ class Request
        /**
      * Sends the ReprintGroundCloseDocumentsRequest and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest
+     * @param ComplexType\ReprintGroundCloseDocumentsRequest $reprintGroundCloseDocumentsRequest 
      * @return stdClass
      */
     public function getGroundCloseDocumentsReply(ComplexType\ReprintGroundCloseDocumentsRequest $reprintGroundCloseDocumentsRequest)

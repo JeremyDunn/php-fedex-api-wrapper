@@ -53,7 +53,7 @@ class Request
     /**
      * Sends the PickupAvailabilityRequest and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest
+     * @param ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest 
      * @return stdClass
      */
     public function getPickupAvailabilityReply(ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest)
@@ -63,7 +63,7 @@ class Request
        /**
      * Sends the CreatePickupRequest and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest
+     * @param ComplexType\CreatePickupRequest $createPickupRequest 
      * @return stdClass
      */
     public function getCreatePickupReply(ComplexType\CreatePickupRequest $createPickupRequest)
@@ -73,7 +73,7 @@ class Request
        /**
      * Sends the CancelPickupRequest and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest
+     * @param ComplexType\CancelPickupRequest $cancelPickupRequest 
      * @return stdClass
      */
     public function getCancelPickupReply(ComplexType\CancelPickupRequest $cancelPickupRequest)

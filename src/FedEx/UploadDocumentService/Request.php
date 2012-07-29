@@ -53,7 +53,7 @@ class Request
     /**
      * Sends the UploadDocumentsRequest and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest
+     * @param ComplexType\UploadDocumentsRequest $uploadDocumentsRequest 
      * @return stdClass
      */
     public function getUploadDocumentsReply(ComplexType\UploadDocumentsRequest $uploadDocumentsRequest)
@@ -63,7 +63,7 @@ class Request
        /**
      * Sends the UploadImagesRequest and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest
+     * @param ComplexType\UploadImagesRequest $uploadImagesRequest 
      * @return stdClass
      */
     public function getUploadImagesReply(ComplexType\UploadImagesRequest $uploadImagesRequest)

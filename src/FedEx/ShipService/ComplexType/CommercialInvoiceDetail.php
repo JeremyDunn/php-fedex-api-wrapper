@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CommercialInvoiceDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CommercialInvoiceDetail';
 
     /**
-     * 
+     * Set Format
      *
-     * @param ShippingDocumentFormat $Format
+     * @param ShippingDocumentFormat $format
      * return CommercialInvoiceDetail
      */
     public function setFormat(ShippingDocumentFormat $format)
@@ -30,7 +36,7 @@ class CommercialInvoiceDetail
     /**
      * Specifies the usage and identification of a customer supplied image to be used on this document.
      *
-     * @param array[CustomerImageUsage] $CustomerImageUsages
+     * @param CustomerImageUsage[] $customerImageUsages
      * return CommercialInvoiceDetail
      */
     public function setCustomerImageUsages(array $customerImageUsages)

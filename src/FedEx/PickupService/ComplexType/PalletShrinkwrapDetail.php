@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class PalletShrinkwrapDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'PalletShrinkwrapDetail';
 
     /**
      * Number of pallets to be shrinkwrapped.
      *
-     * @param positiveInteger $PalletCount
+     * @param positiveInteger $palletCount
      * return PalletShrinkwrapDetail
      */
     public function setPalletCount($palletCount)

@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class RateReply
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'RateReply';
 
     /**
      * This indicates the highest level of severity of all the notifications returned in this reply.
      *
-     * @param NotificationSeverityType $HighestSeverity
+     * @param \FedEx\RateService\SimpleType\NotificationSeverityType  $highestSeverity
      * return RateReply
      */
     public function setHighestSeverity(\FedEx\RateService\SimpleType\NotificationSeverityType $highestSeverity)
@@ -30,7 +36,7 @@ class RateReply
     /**
      * The descriptive data regarding the results of the submitted transaction.
      *
-     * @param array[Notification] $Notifications
+     * @param Notification[] $notifications
      * return RateReply
      */
     public function setNotifications(array $notifications)
@@ -42,7 +48,7 @@ class RateReply
     /**
      * Contains the CustomerTransactionId that was sent in the request.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return RateReply
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class RateReply
     /**
      * The version of this reply.
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return RateReply
      */
     public function setVersion(VersionId $version)
@@ -66,7 +72,7 @@ class RateReply
     /**
      * Each element contains all rate data for a single service. If service was specified in the request, there will be a single entry in this array; if service was omitted in the request, there will be a separate entry in this array for each service being compared.
      *
-     * @param array[RateReplyDetail] $RateReplyDetails
+     * @param RateReplyDetail[] $rateReplyDetails
      * return RateReply
      */
     public function setRateReplyDetails(array $rateReplyDetails)

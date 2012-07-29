@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ServiceAvailabilityOption
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ServiceAvailabilityOption';
 
     /**
      * Identifies a FedEx Service that is available between the origin and destination provided in the request.
      *
-     * @param ServiceType $Service
+     * @param \FedEx\PackageMovementInformationService\SimpleType\ServiceType  $service
      * return ServiceAvailabilityOption
      */
     public function setService(\FedEx\PackageMovementInformationService\SimpleType\ServiceType $service)
@@ -30,7 +36,7 @@ class ServiceAvailabilityOption
     /**
      * Identifies the delivery date of the available service.
      *
-     * @param date $DeliveryDate
+     * @param date $deliveryDate
      * return ServiceAvailabilityOption
      */
     public function setDeliveryDate($deliveryDate)
@@ -42,7 +48,7 @@ class ServiceAvailabilityOption
     /**
      * Identifies the delivery day of week of the available service. See DayOfWeekType for valid values.
      *
-     * @param DayOfWeekType $DeliveryDay
+     * @param \FedEx\PackageMovementInformationService\SimpleType\DayOfWeekType  $deliveryDay
      * return ServiceAvailabilityOption
      */
     public function setDeliveryDay(\FedEx\PackageMovementInformationService\SimpleType\DayOfWeekType $deliveryDay)
@@ -54,7 +60,7 @@ class ServiceAvailabilityOption
     /**
      * Identifies the FedEx location identifier of the package destination.
      *
-     * @param string $DestinationStationId
+     * @param string $destinationStationId
      * return ServiceAvailabilityOption
      */
     public function setDestinationStationId($destinationStationId)
@@ -66,7 +72,7 @@ class ServiceAvailabilityOption
     /**
      * Identification of an airport, using standard three-letter abbreviations.
      *
-     * @param string $DestinationAirportId
+     * @param string $destinationAirportId
      * return ServiceAvailabilityOption
      */
     public function setDestinationAirportId($destinationAirportId)

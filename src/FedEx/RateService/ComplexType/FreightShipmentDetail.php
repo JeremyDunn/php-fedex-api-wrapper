@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class FreightShipmentDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'FreightShipmentDetail';
 
     /**
      * Account number used with FEDEX_FREIGHT service.
      *
-     * @param string $FedExFreightAccountNumber
+     * @param string $fedExFreightAccountNumber
      * return FreightShipmentDetail
      */
     public function setFedExFreightAccountNumber($fedExFreightAccountNumber)
@@ -30,7 +36,7 @@ class FreightShipmentDetail
     /**
      * Used for validating FedEx Freight account number and (optionally) identifying third party payment on the bill of lading.
      *
-     * @param ContactAndAddress $FedExFreightBillingContactAndAddress
+     * @param ContactAndAddress $fedExFreightBillingContactAndAddress
      * return FreightShipmentDetail
      */
     public function setFedExFreightBillingContactAndAddress(ContactAndAddress $fedExFreightBillingContactAndAddress)
@@ -42,7 +48,7 @@ class FreightShipmentDetail
     /**
      * Account number used with FEDEX_NATIONAL_FREIGHT service.
      *
-     * @param string $FedExNationalFreightAccountNumber
+     * @param string $fedExNationalFreightAccountNumber
      * return FreightShipmentDetail
      */
     public function setFedExNationalFreightAccountNumber($fedExNationalFreightAccountNumber)
@@ -54,7 +60,7 @@ class FreightShipmentDetail
     /**
      * Used for validating FedEx National Freight account number and (optionally) identifying third party payment on the bill of lading.
      *
-     * @param ContactAndAddress $FedExNationalFreightBillingContactAndAddress
+     * @param ContactAndAddress $fedExNationalFreightBillingContactAndAddress
      * return FreightShipmentDetail
      */
     public function setFedExNationalFreightBillingContactAndAddress(ContactAndAddress $fedExNationalFreightBillingContactAndAddress)
@@ -66,7 +72,7 @@ class FreightShipmentDetail
     /**
      * Indicates the role of the party submitting the transaction.
      *
-     * @param FreightShipmentRoleType $Role
+     * @param \FedEx\RateService\SimpleType\FreightShipmentRoleType  $role
      * return FreightShipmentDetail
      */
     public function setRole(\FedEx\RateService\SimpleType\FreightShipmentRoleType $role)
@@ -78,7 +84,7 @@ class FreightShipmentDetail
     /**
      * Designates which of the requester's tariffs will be used for rating.
      *
-     * @param FreightAccountPaymentType $PaymentType
+     * @param \FedEx\RateService\SimpleType\FreightAccountPaymentType  $paymentType
      * return FreightShipmentDetail
      */
     public function setPaymentType(\FedEx\RateService\SimpleType\FreightAccountPaymentType $paymentType)
@@ -90,7 +96,7 @@ class FreightShipmentDetail
     /**
      * Identifies the declared value for the shipment
      *
-     * @param Money $DeclaredValuePerUnit
+     * @param Money $declaredValuePerUnit
      * return FreightShipmentDetail
      */
     public function setDeclaredValuePerUnit(Money $declaredValuePerUnit)
@@ -102,7 +108,7 @@ class FreightShipmentDetail
     /**
      * Identifies the declared value units corresponding to the above defined declared value
      *
-     * @param string $DeclaredValueUnits
+     * @param string $declaredValueUnits
      * return FreightShipmentDetail
      */
     public function setDeclaredValueUnits($declaredValueUnits)
@@ -112,9 +118,9 @@ class FreightShipmentDetail
     }
     
     /**
-     * 
+     * Set LiabilityCoverageDetail
      *
-     * @param LiabilityCoverageDetail $LiabilityCoverageDetail
+     * @param LiabilityCoverageDetail $liabilityCoverageDetail
      * return FreightShipmentDetail
      */
     public function setLiabilityCoverageDetail(LiabilityCoverageDetail $liabilityCoverageDetail)
@@ -126,7 +132,7 @@ class FreightShipmentDetail
     /**
      * Identifiers for promotional discounts offered to customers.
      *
-     * @param array[string] $Coupons
+     * @param string[] $coupons
      * return FreightShipmentDetail
      */
     public function setCoupons(array $coupons)
@@ -138,7 +144,7 @@ class FreightShipmentDetail
     /**
      * Total number of individual handling units in the entire shipment (for unit pricing).
      *
-     * @param nonNegativeInteger $TotalHandlingUnits
+     * @param nonNegativeInteger $totalHandlingUnits
      * return FreightShipmentDetail
      */
     public function setTotalHandlingUnits($totalHandlingUnits)
@@ -150,7 +156,7 @@ class FreightShipmentDetail
     /**
      * Estimated discount rate provided by client for unsecured rate quote.
      *
-     * @param decimal $ClientDiscountPercent
+     * @param decimal $clientDiscountPercent
      * return FreightShipmentDetail
      */
     public function setClientDiscountPercent($clientDiscountPercent)
@@ -162,7 +168,7 @@ class FreightShipmentDetail
     /**
      * Total weight of pallets used in shipment.
      *
-     * @param Weight $PalletWeight
+     * @param Weight $palletWeight
      * return FreightShipmentDetail
      */
     public function setPalletWeight(Weight $palletWeight)
@@ -174,7 +180,7 @@ class FreightShipmentDetail
     /**
      * Overall shipment dimensions.
      *
-     * @param Dimensions $ShipmentDimensions
+     * @param Dimensions $shipmentDimensions
      * return FreightShipmentDetail
      */
     public function setShipmentDimensions(Dimensions $shipmentDimensions)
@@ -186,7 +192,7 @@ class FreightShipmentDetail
     /**
      * Description for the shipment.
      *
-     * @param string $Comment
+     * @param string $comment
      * return FreightShipmentDetail
      */
     public function setComment($comment)
@@ -198,7 +204,7 @@ class FreightShipmentDetail
     /**
      * Specifies which party will pay surcharges for any special services which support split billing.
      *
-     * @param array[FreightSpecialServicePayment] $SpecialServicePayments
+     * @param FreightSpecialServicePayment[] $specialServicePayments
      * return FreightShipmentDetail
      */
     public function setSpecialServicePayments(array $specialServicePayments)
@@ -210,7 +216,7 @@ class FreightShipmentDetail
     /**
      * Details of the commodities in the shipment.
      *
-     * @param array[FreightShipmentLineItem] $LineItems
+     * @param FreightShipmentLineItem[] $lineItems
      * return FreightShipmentDetail
      */
     public function setLineItems(array $lineItems)

@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CancelPickupRequest
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CancelPickupRequest';
 
     /**
      * Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
-     * @param WebAuthenticationDetail $WebAuthenticationDetail
+     * @param WebAuthenticationDetail $webAuthenticationDetail
      * return CancelPickupRequest
      */
     public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
@@ -30,7 +36,7 @@ class CancelPickupRequest
     /**
      * The descriptive data identifying the client submitting the transaction.
      *
-     * @param ClientDetail $ClientDetail
+     * @param ClientDetail $clientDetail
      * return CancelPickupRequest
      */
     public function setClientDetail(ClientDetail $clientDetail)
@@ -42,7 +48,7 @@ class CancelPickupRequest
     /**
      * The descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return CancelPickupRequest
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class CancelPickupRequest
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return CancelPickupRequest
      */
     public function setVersion(VersionId $version)
@@ -66,7 +72,7 @@ class CancelPickupRequest
     /**
      * Identifies the FedEx operating company (transportation) that was sent the pickup that is being canceled.
      *
-     * @param CarrierCodeType $CarrierCode
+     * @param \FedEx\Pickup\SimpleType\CarrierCodeType  $carrierCode
      * return CancelPickupRequest
      */
     public function setCarrierCode(\FedEx\Pickup\SimpleType\CarrierCodeType $carrierCode)
@@ -78,7 +84,7 @@ class CancelPickupRequest
     /**
      * Identifies the pickup confirmation number that is being canceled. The pickup confirmation number was returned to the client when the pickup was requested.
      *
-     * @param string $PickupConfirmationNumber
+     * @param string $pickupConfirmationNumber
      * return CancelPickupRequest
      */
     public function setPickupConfirmationNumber($pickupConfirmationNumber)
@@ -90,7 +96,7 @@ class CancelPickupRequest
     /**
      * Identifies the scheduled date for the pickup that is being canceled. The scheduled date was provided by the client when the pickup was requested.
      *
-     * @param date $ScheduledDate
+     * @param date $scheduledDate
      * return CancelPickupRequest
      */
     public function setScheduledDate($scheduledDate)
@@ -100,9 +106,9 @@ class CancelPickupRequest
     }
     
     /**
-     * 
+     * Set EndDate
      *
-     * @param date $EndDate
+     * @param date $endDate
      * return CancelPickupRequest
      */
     public function setEndDate($endDate)
@@ -114,7 +120,7 @@ class CancelPickupRequest
     /**
      * Identifies the FedEx location identifier responsible for processing the package pickup that is being canceled. The FedEx location identifier was returned to the client when the pickup was requested. Required for Express service type.
      *
-     * @param string $Location
+     * @param string $location
      * return CancelPickupRequest
      */
     public function setLocation($location)
@@ -126,7 +132,7 @@ class CancelPickupRequest
     /**
      * Identifies comments the customer wants to convey to the FedEx courier regarding the package pickup.
      *
-     * @param string $Remarks
+     * @param string $remarks
      * return CancelPickupRequest
      */
     public function setRemarks($remarks)
@@ -136,9 +142,9 @@ class CancelPickupRequest
     }
     
     /**
-     * 
+     * Set ShippingChargesPayment
      *
-     * @param Payment $ShippingChargesPayment
+     * @param Payment $shippingChargesPayment
      * return CancelPickupRequest
      */
     public function setShippingChargesPayment(Payment $shippingChargesPayment)
@@ -150,7 +156,7 @@ class CancelPickupRequest
     /**
      * The reason for canceling the pickup request.
      *
-     * @param string $Reason
+     * @param string $reason
      * return CancelPickupRequest
      */
     public function setReason($reason)
@@ -162,7 +168,7 @@ class CancelPickupRequest
     /**
      * Identifies the name of the person that requested pickup cancellation.
      *
-     * @param string $ContactName
+     * @param string $contactName
      * return CancelPickupRequest
      */
     public function setContactName($contactName)
@@ -174,7 +180,7 @@ class CancelPickupRequest
     /**
      * Identifies the phone number of the person that requested pickup cancellation.
      *
-     * @param string $PhoneNumber
+     * @param string $phoneNumber
      * return CancelPickupRequest
      */
     public function setPhoneNumber($phoneNumber)
@@ -186,7 +192,7 @@ class CancelPickupRequest
     /**
      * Identifies the phone extension of the person that requested pickup cancellation.
      *
-     * @param string $PhoneExtension
+     * @param string $phoneExtension
      * return CancelPickupRequest
      */
     public function setPhoneExtension($phoneExtension)

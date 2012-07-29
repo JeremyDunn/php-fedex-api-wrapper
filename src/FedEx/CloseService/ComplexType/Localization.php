@@ -4,7 +4,7 @@ namespace FedEx\CloseService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * Localization
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class Localization
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'Localization';
 
     /**
-     * 
+     * Set LanguageCode
      *
-     * @param string $LanguageCode
+     * @param string $languageCode
      * return Localization
      */
     public function setLanguageCode($languageCode)
@@ -28,9 +34,9 @@ class Localization
     }
     
     /**
-     * 
+     * Set LocaleCode
      *
-     * @param string $LocaleCode
+     * @param string $localeCode
      * return Localization
      */
     public function setLocaleCode($localeCode)

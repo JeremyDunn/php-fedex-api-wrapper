@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class SortAndSegregateDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'SortAndSegregateDetail';
 
     /**
      * Number of pieces or packages to be sorted/segregated
      *
-     * @param nonNegativeInteger $PieceCount
+     * @param nonNegativeInteger $pieceCount
      * return SortAndSegregateDetail
      */
     public function setPieceCount($pieceCount)
@@ -30,7 +36,7 @@ class SortAndSegregateDetail
     /**
      * Total weight of pieces or packages to be sorted/segregated
      *
-     * @param Weight $Weight
+     * @param Weight $weight
      * return SortAndSegregateDetail
      */
     public function setWeight(Weight $weight)

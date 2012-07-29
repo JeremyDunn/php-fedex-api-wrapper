@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CloseDocumentSpecification
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CloseDocumentSpecification';
 
     /**
      * Indicates the types of close documents requested by the caller.
      *
-     * @param array[CloseDocumentType] $CloseDocumentTypes
+     * @param CloseDocumentType[] $closeDocumentTypes
      * return CloseDocumentSpecification
      */
     public function setCloseDocumentTypes(array $closeDocumentTypes)
@@ -30,7 +36,7 @@ class CloseDocumentSpecification
     /**
      * Specifies the production of the OP-950 document for hazardous materials.
      *
-     * @param Op950Detail $Op950Detail
+     * @param Op950Detail $op950Detail
      * return CloseDocumentSpecification
      */
     public function setOp950Detail(Op950Detail $op950Detail)

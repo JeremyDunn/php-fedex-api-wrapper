@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * ShipmentOperationalDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ShipmentOperationalDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ShipmentOperationalDetail';
 
     /**
-     * 
+     * Set UrsaPrefixCode
      *
-     * @param string $UrsaPrefixCode
+     * @param string $ursaPrefixCode
      * return ShipmentOperationalDetail
      */
     public function setUrsaPrefixCode($ursaPrefixCode)
@@ -28,9 +34,9 @@ class ShipmentOperationalDetail
     }
     
     /**
-     * 
+     * Set UrsaSuffixCode
      *
-     * @param string $UrsaSuffixCode
+     * @param string $ursaSuffixCode
      * return ShipmentOperationalDetail
      */
     public function setUrsaSuffixCode($ursaSuffixCode)
@@ -40,9 +46,9 @@ class ShipmentOperationalDetail
     }
     
     /**
-     * 
+     * Set OriginLocationId
      *
-     * @param string $OriginLocationId
+     * @param string $originLocationId
      * return ShipmentOperationalDetail
      */
     public function setOriginLocationId($originLocationId)
@@ -52,9 +58,9 @@ class ShipmentOperationalDetail
     }
     
     /**
-     * 
+     * Set OriginLocationNumber
      *
-     * @param int $OriginLocationNumber
+     * @param int $originLocationNumber
      * return ShipmentOperationalDetail
      */
     public function setOriginLocationNumber($originLocationNumber)
@@ -64,9 +70,9 @@ class ShipmentOperationalDetail
     }
     
     /**
-     * 
+     * Set OriginServiceArea
      *
-     * @param string $OriginServiceArea
+     * @param string $originServiceArea
      * return ShipmentOperationalDetail
      */
     public function setOriginServiceArea($originServiceArea)
@@ -76,9 +82,9 @@ class ShipmentOperationalDetail
     }
     
     /**
-     * 
+     * Set DestinationLocationId
      *
-     * @param string $DestinationLocationId
+     * @param string $destinationLocationId
      * return ShipmentOperationalDetail
      */
     public function setDestinationLocationId($destinationLocationId)
@@ -88,9 +94,9 @@ class ShipmentOperationalDetail
     }
     
     /**
-     * 
+     * Set DestinationLocationNumber
      *
-     * @param int $DestinationLocationNumber
+     * @param int $destinationLocationNumber
      * return ShipmentOperationalDetail
      */
     public function setDestinationLocationNumber($destinationLocationNumber)
@@ -100,9 +106,9 @@ class ShipmentOperationalDetail
     }
     
     /**
-     * 
+     * Set DestinationServiceArea
      *
-     * @param string $DestinationServiceArea
+     * @param string $destinationServiceArea
      * return ShipmentOperationalDetail
      */
     public function setDestinationServiceArea($destinationServiceArea)
@@ -114,7 +120,7 @@ class ShipmentOperationalDetail
     /**
      * This is the state of the destination location ID, and is not necessarily the same as the postal state.
      *
-     * @param string $DestinationLocationStateOrProvinceCode
+     * @param string $destinationLocationStateOrProvinceCode
      * return ShipmentOperationalDetail
      */
     public function setDestinationLocationStateOrProvinceCode($destinationLocationStateOrProvinceCode)
@@ -126,7 +132,7 @@ class ShipmentOperationalDetail
     /**
      * Expected/estimated date of delivery.
      *
-     * @param date $DeliveryDate
+     * @param date $deliveryDate
      * return ShipmentOperationalDetail
      */
     public function setDeliveryDate($deliveryDate)
@@ -138,7 +144,7 @@ class ShipmentOperationalDetail
     /**
      * Expected/estimated day of week of delivery.
      *
-     * @param DayOfWeekType $DeliveryDay
+     * @param \FedEx\ShipService\SimpleType\DayOfWeekType  $deliveryDay
      * return ShipmentOperationalDetail
      */
     public function setDeliveryDay(\FedEx\ShipService\SimpleType\DayOfWeekType $deliveryDay)
@@ -150,7 +156,7 @@ class ShipmentOperationalDetail
     /**
      * Delivery time, as published in Service Guide.
      *
-     * @param time $PublishedDeliveryTime
+     * @param time $publishedDeliveryTime
      * return ShipmentOperationalDetail
      */
     public function setPublishedDeliveryTime(time $publishedDeliveryTime)
@@ -162,7 +168,7 @@ class ShipmentOperationalDetail
     /**
      * Committed date of delivery.
      *
-     * @param date $CommitDate
+     * @param date $commitDate
      * return ShipmentOperationalDetail
      */
     public function setCommitDate($commitDate)
@@ -174,7 +180,7 @@ class ShipmentOperationalDetail
     /**
      * Committed day of week of delivery.
      *
-     * @param DayOfWeekType $CommitDay
+     * @param \FedEx\ShipService\SimpleType\DayOfWeekType  $commitDay
      * return ShipmentOperationalDetail
      */
     public function setCommitDay(\FedEx\ShipService\SimpleType\DayOfWeekType $commitDay)
@@ -186,7 +192,7 @@ class ShipmentOperationalDetail
     /**
      * Standard transit time per origin, destination, and service.
      *
-     * @param TransitTimeType $TransitTime
+     * @param \FedEx\ShipService\SimpleType\TransitTimeType  $transitTime
      * return ShipmentOperationalDetail
      */
     public function setTransitTime(\FedEx\ShipService\SimpleType\TransitTimeType $transitTime)
@@ -198,7 +204,7 @@ class ShipmentOperationalDetail
     /**
      * Maximum expected transit time
      *
-     * @param TransitTimeType $MaximumTransitTime
+     * @param \FedEx\ShipService\SimpleType\TransitTimeType  $maximumTransitTime
      * return ShipmentOperationalDetail
      */
     public function setMaximumTransitTime(\FedEx\ShipService\SimpleType\TransitTimeType $maximumTransitTime)
@@ -210,7 +216,7 @@ class ShipmentOperationalDetail
     /**
      * Transit time based on customer eligibility.
      *
-     * @param TransitTimeType $CustomTransitTime
+     * @param \FedEx\ShipService\SimpleType\TransitTimeType  $customTransitTime
      * return ShipmentOperationalDetail
      */
     public function setCustomTransitTime(\FedEx\ShipService\SimpleType\TransitTimeType $customTransitTime)
@@ -222,7 +228,7 @@ class ShipmentOperationalDetail
     /**
      * Indicates that this shipment is not eligible for money back guarantee.
      *
-     * @param boolean $IneligibleForMoneyBackGuarantee
+     * @param boolean $ineligibleForMoneyBackGuarantee
      * return ShipmentOperationalDetail
      */
     public function setIneligibleForMoneyBackGuarantee($ineligibleForMoneyBackGuarantee)
@@ -234,7 +240,7 @@ class ShipmentOperationalDetail
     /**
      * FedEx Ground delivery features for which this shipment may be eligible.
      *
-     * @param array[GroundDeliveryEligibilityType] $DeliveryEligibilities
+     * @param GroundDeliveryEligibilityType[] $deliveryEligibilities
      * return ShipmentOperationalDetail
      */
     public function setDeliveryEligibilities(array $deliveryEligibilities)
@@ -246,7 +252,7 @@ class ShipmentOperationalDetail
     /**
      * Text describing planned delivery.
      *
-     * @param string $AstraPlannedServiceLevel
+     * @param string $astraPlannedServiceLevel
      * return ShipmentOperationalDetail
      */
     public function setAstraPlannedServiceLevel($astraPlannedServiceLevel)
@@ -256,9 +262,9 @@ class ShipmentOperationalDetail
     }
     
     /**
-     * 
+     * Set AstraDescription
      *
-     * @param string $AstraDescription
+     * @param string $astraDescription
      * return ShipmentOperationalDetail
      */
     public function setAstraDescription($astraDescription)
@@ -268,9 +274,9 @@ class ShipmentOperationalDetail
     }
     
     /**
-     * 
+     * Set PostalCode
      *
-     * @param string $PostalCode
+     * @param string $postalCode
      * return ShipmentOperationalDetail
      */
     public function setPostalCode($postalCode)
@@ -280,9 +286,9 @@ class ShipmentOperationalDetail
     }
     
     /**
-     * 
+     * Set StateOrProvinceCode
      *
-     * @param string $StateOrProvinceCode
+     * @param string $stateOrProvinceCode
      * return ShipmentOperationalDetail
      */
     public function setStateOrProvinceCode($stateOrProvinceCode)
@@ -292,9 +298,9 @@ class ShipmentOperationalDetail
     }
     
     /**
-     * 
+     * Set CountryCode
      *
-     * @param string $CountryCode
+     * @param string $countryCode
      * return ShipmentOperationalDetail
      */
     public function setCountryCode($countryCode)
@@ -304,9 +310,9 @@ class ShipmentOperationalDetail
     }
     
     /**
-     * 
+     * Set AirportId
      *
-     * @param string $AirportId
+     * @param string $airportId
      * return ShipmentOperationalDetail
      */
     public function setAirportId($airportId)
@@ -316,9 +322,9 @@ class ShipmentOperationalDetail
     }
     
     /**
-     * 
+     * Set ServiceCode
      *
-     * @param string $ServiceCode
+     * @param string $serviceCode
      * return ShipmentOperationalDetail
      */
     public function setServiceCode($serviceCode)

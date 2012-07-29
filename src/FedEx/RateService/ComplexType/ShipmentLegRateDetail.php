@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ShipmentLegRateDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ShipmentLegRateDetail';
 
     /**
      * Human-readable text describing the shipment leg.
      *
-     * @param string $LegDescription
+     * @param string $legDescription
      * return ShipmentLegRateDetail
      */
     public function setLegDescription($legDescription)
@@ -30,7 +36,7 @@ class ShipmentLegRateDetail
     /**
      * Origin for this leg.
      *
-     * @param Address $LegOrigin
+     * @param Address $legOrigin
      * return ShipmentLegRateDetail
      */
     public function setLegOrigin(Address $legOrigin)
@@ -42,7 +48,7 @@ class ShipmentLegRateDetail
     /**
      * Destination for this leg.
      *
-     * @param Address $LegDestination
+     * @param Address $legDestination
      * return ShipmentLegRateDetail
      */
     public function setLegDestination(Address $legDestination)
@@ -54,7 +60,7 @@ class ShipmentLegRateDetail
     /**
      * Type used for this specific set of rate data.
      *
-     * @param ReturnedRateType $RateType
+     * @param \FedEx\RateService\SimpleType\ReturnedRateType  $rateType
      * return ShipmentLegRateDetail
      */
     public function setRateType(\FedEx\RateService\SimpleType\ReturnedRateType $rateType)
@@ -66,7 +72,7 @@ class ShipmentLegRateDetail
     /**
      * Indicates the rate scale used.
      *
-     * @param string $RateScale
+     * @param string $rateScale
      * return ShipmentLegRateDetail
      */
     public function setRateScale($rateScale)
@@ -78,7 +84,7 @@ class ShipmentLegRateDetail
     /**
      * Indicates the rate zone used (based on origin and destination).
      *
-     * @param string $RateZone
+     * @param string $rateZone
      * return ShipmentLegRateDetail
      */
     public function setRateZone($rateZone)
@@ -88,9 +94,9 @@ class ShipmentLegRateDetail
     }
     
     /**
-     * 
+     * Set PricingCode
      *
-     * @param PricingCodeType $PricingCode
+     * @param \FedEx\RateService\SimpleType\PricingCodeType  $pricingCode
      * return ShipmentLegRateDetail
      */
     public function setPricingCode(\FedEx\RateService\SimpleType\PricingCodeType $pricingCode)
@@ -102,7 +108,7 @@ class ShipmentLegRateDetail
     /**
      * Indicates which weight was used.
      *
-     * @param RatedWeightMethod $RatedWeightMethod
+     * @param \FedEx\RateService\SimpleType\RatedWeightMethod  $ratedWeightMethod
      * return ShipmentLegRateDetail
      */
     public function setRatedWeightMethod(\FedEx\RateService\SimpleType\RatedWeightMethod $ratedWeightMethod)
@@ -114,7 +120,7 @@ class ShipmentLegRateDetail
     /**
      * INTERNAL FEDEX USE ONLY.
      *
-     * @param MinimumChargeType $MinimumChargeType
+     * @param \FedEx\RateService\SimpleType\MinimumChargeType  $minimumChargeType
      * return ShipmentLegRateDetail
      */
     public function setMinimumChargeType(\FedEx\RateService\SimpleType\MinimumChargeType $minimumChargeType)
@@ -126,7 +132,7 @@ class ShipmentLegRateDetail
     /**
      * Specifies the currency exchange performed on financial amounts for this rate.
      *
-     * @param CurrencyExchangeRate $CurrencyExchangeRate
+     * @param CurrencyExchangeRate $currencyExchangeRate
      * return ShipmentLegRateDetail
      */
     public function setCurrencyExchangeRate(CurrencyExchangeRate $currencyExchangeRate)
@@ -138,7 +144,7 @@ class ShipmentLegRateDetail
     /**
      * Indicates which special rating cases applied to this shipment.
      *
-     * @param array[SpecialRatingAppliedType] $SpecialRatingApplied
+     * @param SpecialRatingAppliedType[] $specialRatingApplied
      * return ShipmentLegRateDetail
      */
     public function setSpecialRatingApplied(array $specialRatingApplied)
@@ -148,9 +154,9 @@ class ShipmentLegRateDetail
     }
     
     /**
-     * 
+     * Set DimDivisor
      *
-     * @param nonNegativeInteger $DimDivisor
+     * @param nonNegativeInteger $dimDivisor
      * return ShipmentLegRateDetail
      */
     public function setDimDivisor($dimDivisor)
@@ -162,7 +168,7 @@ class ShipmentLegRateDetail
     /**
      * Identifies the type of dim divisor that was applied.
      *
-     * @param RateDimensionalDivisorType $DimDivisorType
+     * @param \FedEx\RateService\SimpleType\RateDimensionalDivisorType  $dimDivisorType
      * return ShipmentLegRateDetail
      */
     public function setDimDivisorType(\FedEx\RateService\SimpleType\RateDimensionalDivisorType $dimDivisorType)
@@ -172,9 +178,9 @@ class ShipmentLegRateDetail
     }
     
     /**
-     * 
+     * Set FuelSurchargePercent
      *
-     * @param decimal $FuelSurchargePercent
+     * @param decimal $fuelSurchargePercent
      * return ShipmentLegRateDetail
      */
     public function setFuelSurchargePercent($fuelSurchargePercent)
@@ -184,9 +190,9 @@ class ShipmentLegRateDetail
     }
     
     /**
-     * 
+     * Set TotalBillingWeight
      *
-     * @param Weight $TotalBillingWeight
+     * @param Weight $totalBillingWeight
      * return ShipmentLegRateDetail
      */
     public function setTotalBillingWeight(Weight $totalBillingWeight)
@@ -198,7 +204,7 @@ class ShipmentLegRateDetail
     /**
      * Sum of dimensional weights for all packages.
      *
-     * @param Weight $TotalDimWeight
+     * @param Weight $totalDimWeight
      * return ShipmentLegRateDetail
      */
     public function setTotalDimWeight(Weight $totalDimWeight)
@@ -208,9 +214,9 @@ class ShipmentLegRateDetail
     }
     
     /**
-     * 
+     * Set TotalBaseCharge
      *
-     * @param Money $TotalBaseCharge
+     * @param Money $totalBaseCharge
      * return ShipmentLegRateDetail
      */
     public function setTotalBaseCharge(Money $totalBaseCharge)
@@ -220,9 +226,9 @@ class ShipmentLegRateDetail
     }
     
     /**
-     * 
+     * Set TotalFreightDiscounts
      *
-     * @param Money $TotalFreightDiscounts
+     * @param Money $totalFreightDiscounts
      * return ShipmentLegRateDetail
      */
     public function setTotalFreightDiscounts(Money $totalFreightDiscounts)
@@ -232,9 +238,9 @@ class ShipmentLegRateDetail
     }
     
     /**
-     * 
+     * Set TotalNetFreight
      *
-     * @param Money $TotalNetFreight
+     * @param Money $totalNetFreight
      * return ShipmentLegRateDetail
      */
     public function setTotalNetFreight(Money $totalNetFreight)
@@ -244,9 +250,9 @@ class ShipmentLegRateDetail
     }
     
     /**
-     * 
+     * Set TotalSurcharges
      *
-     * @param Money $TotalSurcharges
+     * @param Money $totalSurcharges
      * return ShipmentLegRateDetail
      */
     public function setTotalSurcharges(Money $totalSurcharges)
@@ -258,7 +264,7 @@ class ShipmentLegRateDetail
     /**
      * This shipment's totalNetFreight + totalSurcharges (not including totalTaxes).
      *
-     * @param Money $TotalNetFedExCharge
+     * @param Money $totalNetFedExCharge
      * return ShipmentLegRateDetail
      */
     public function setTotalNetFedExCharge(Money $totalNetFedExCharge)
@@ -270,7 +276,7 @@ class ShipmentLegRateDetail
     /**
      * Total of the transportation-based taxes.
      *
-     * @param Money $TotalTaxes
+     * @param Money $totalTaxes
      * return ShipmentLegRateDetail
      */
     public function setTotalTaxes(Money $totalTaxes)
@@ -280,9 +286,9 @@ class ShipmentLegRateDetail
     }
     
     /**
-     * 
+     * Set TotalNetCharge
      *
-     * @param Money $TotalNetCharge
+     * @param Money $totalNetCharge
      * return ShipmentLegRateDetail
      */
     public function setTotalNetCharge(Money $totalNetCharge)
@@ -292,9 +298,9 @@ class ShipmentLegRateDetail
     }
     
     /**
-     * 
+     * Set TotalRebates
      *
-     * @param Money $TotalRebates
+     * @param Money $totalRebates
      * return ShipmentLegRateDetail
      */
     public function setTotalRebates(Money $totalRebates)
@@ -306,7 +312,7 @@ class ShipmentLegRateDetail
     /**
      * Total of all values under this shipment's dutiesAndTaxes; only provided if estimated duties and taxes were calculated for this shipment.
      *
-     * @param Money $TotalDutiesAndTaxes
+     * @param Money $totalDutiesAndTaxes
      * return ShipmentLegRateDetail
      */
     public function setTotalDutiesAndTaxes(Money $totalDutiesAndTaxes)
@@ -318,7 +324,7 @@ class ShipmentLegRateDetail
     /**
      * This shipment's totalNetCharge + totalDutiesAndTaxes; only provided if estimated duties and taxes were calculated for this shipment AND duties, taxes and transportation charges are all paid by the same sender's account.
      *
-     * @param Money $TotalNetChargeWithDutiesAndTaxes
+     * @param Money $totalNetChargeWithDutiesAndTaxes
      * return ShipmentLegRateDetail
      */
     public function setTotalNetChargeWithDutiesAndTaxes(Money $totalNetChargeWithDutiesAndTaxes)
@@ -330,7 +336,7 @@ class ShipmentLegRateDetail
     /**
      * Rate data specific to FedEx Freight and FedEx National Freight services.
      *
-     * @param FreightRateDetail $FreightRateDetail
+     * @param FreightRateDetail $freightRateDetail
      * return ShipmentLegRateDetail
      */
     public function setFreightRateDetail(FreightRateDetail $freightRateDetail)
@@ -342,7 +348,7 @@ class ShipmentLegRateDetail
     /**
      * All rate discounts that apply to this shipment.
      *
-     * @param array[RateDiscount] $FreightDiscounts
+     * @param RateDiscount[] $freightDiscounts
      * return ShipmentLegRateDetail
      */
     public function setFreightDiscounts(array $freightDiscounts)
@@ -354,7 +360,7 @@ class ShipmentLegRateDetail
     /**
      * All rebates that apply to this shipment.
      *
-     * @param array[Rebate] $Rebates
+     * @param Rebate[] $rebates
      * return ShipmentLegRateDetail
      */
     public function setRebates(array $rebates)
@@ -366,7 +372,7 @@ class ShipmentLegRateDetail
     /**
      * All surcharges that apply to this shipment.
      *
-     * @param array[Surcharge] $Surcharges
+     * @param Surcharge[] $surcharges
      * return ShipmentLegRateDetail
      */
     public function setSurcharges(array $surcharges)
@@ -378,7 +384,7 @@ class ShipmentLegRateDetail
     /**
      * All transportation-based taxes applicable to this shipment.
      *
-     * @param array[Tax] $Taxes
+     * @param Tax[] $taxes
      * return ShipmentLegRateDetail
      */
     public function setTaxes(array $taxes)
@@ -390,7 +396,7 @@ class ShipmentLegRateDetail
     /**
      * All commodity-based duties and taxes applicable to this shipment.
      *
-     * @param array[EdtCommodityTax] $DutiesAndTaxes
+     * @param EdtCommodityTax[] $dutiesAndTaxes
      * return ShipmentLegRateDetail
      */
     public function setDutiesAndTaxes(array $dutiesAndTaxes)
@@ -402,7 +408,7 @@ class ShipmentLegRateDetail
     /**
      * The "order level" variable handling charges.
      *
-     * @param VariableHandlingCharges $VariableHandlingCharges
+     * @param VariableHandlingCharges $variableHandlingCharges
      * return ShipmentLegRateDetail
      */
     public function setVariableHandlingCharges(VariableHandlingCharges $variableHandlingCharges)
@@ -414,7 +420,7 @@ class ShipmentLegRateDetail
     /**
      * The total of all variable handling charges at both shipment (order) and package level.
      *
-     * @param VariableHandlingCharges $TotalVariableHandlingCharges
+     * @param VariableHandlingCharges $totalVariableHandlingCharges
      * return ShipmentLegRateDetail
      */
     public function setTotalVariableHandlingCharges(VariableHandlingCharges $totalVariableHandlingCharges)

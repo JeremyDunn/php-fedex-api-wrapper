@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class PackageSpecialServicesRequested
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'PackageSpecialServicesRequested';
 
     /**
      * The types of all special services requested for the enclosing shipment or package.
      *
-     * @param array[PackageSpecialServiceType] $SpecialServiceTypes
+     * @param PackageSpecialServiceType[] $specialServiceTypes
      * return PackageSpecialServicesRequested
      */
     public function setSpecialServiceTypes(array $specialServiceTypes)
@@ -30,7 +36,7 @@ class PackageSpecialServicesRequested
     /**
      * For use with FedEx Ground services only; COD must be present in shipment's special services.
      *
-     * @param CodDetail $CodDetail
+     * @param CodDetail $codDetail
      * return PackageSpecialServicesRequested
      */
     public function setCodDetail(CodDetail $codDetail)
@@ -42,7 +48,7 @@ class PackageSpecialServicesRequested
     /**
      * Descriptive data required for a FedEx shipment containing dangerous materials. This element is required when SpecialServiceType.DANGEROUS_GOODS or HAZARDOUS_MATERIAL is present in the SpecialServiceTypes collection.
      *
-     * @param DangerousGoodsDetail $DangerousGoodsDetail
+     * @param DangerousGoodsDetail $dangerousGoodsDetail
      * return PackageSpecialServicesRequested
      */
     public function setDangerousGoodsDetail(DangerousGoodsDetail $dangerousGoodsDetail)
@@ -54,7 +60,7 @@ class PackageSpecialServicesRequested
     /**
      * Descriptive data required for a FedEx shipment containing dry ice. This element is required when SpecialServiceType.DRY_ICE is present in the SpecialServiceTypes collection.
      *
-     * @param Weight $DryIceWeight
+     * @param Weight $dryIceWeight
      * return PackageSpecialServicesRequested
      */
     public function setDryIceWeight(Weight $dryIceWeight)
@@ -66,7 +72,7 @@ class PackageSpecialServicesRequested
     /**
      * The descriptive data required for FedEx signature services. This element is required when SpecialServiceType.SIGNATURE_OPTION is present in the SpecialServiceTypes collection.
      *
-     * @param SignatureOptionDetail $SignatureOptionDetail
+     * @param SignatureOptionDetail $signatureOptionDetail
      * return PackageSpecialServicesRequested
      */
     public function setSignatureOptionDetail(SignatureOptionDetail $signatureOptionDetail)
@@ -78,7 +84,7 @@ class PackageSpecialServicesRequested
     /**
      * To be filled.
      *
-     * @param PriorityAlertDetail $PriorityAlertDetail
+     * @param PriorityAlertDetail $priorityAlertDetail
      * return PackageSpecialServicesRequested
      */
     public function setPriorityAlertDetail(PriorityAlertDetail $priorityAlertDetail)

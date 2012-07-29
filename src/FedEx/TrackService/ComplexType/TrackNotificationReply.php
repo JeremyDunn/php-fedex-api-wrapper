@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class TrackNotificationReply
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'TrackNotificationReply';
 
     /**
      * This contains the severity type of the most severe Notification in the Notifications array.
      *
-     * @param NotificationSeverityType $HighestSeverity
+     * @param \FedEx\TrackService\SimpleType\NotificationSeverityType  $highestSeverity
      * return TrackNotificationReply
      */
     public function setHighestSeverity(\FedEx\TrackService\SimpleType\NotificationSeverityType $highestSeverity)
@@ -30,7 +36,7 @@ class TrackNotificationReply
     /**
      * Information about the request/reply such was the transaction successful or not, and any additional information relevant to the request and/or reply. There may be multiple Notifications in a reply.
      *
-     * @param array[Notification] $Notifications
+     * @param Notification[] $notifications
      * return TrackNotificationReply
      */
     public function setNotifications(array $notifications)
@@ -42,7 +48,7 @@ class TrackNotificationReply
     /**
      * Contains the CustomerTransactionDetail that is echoed back to the caller for matching requests and replies and a Localization element for defining the language/translation used in the reply data.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return TrackNotificationReply
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class TrackNotificationReply
     /**
      * Contains the version of the reply being used.
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return TrackNotificationReply
      */
     public function setVersion(VersionId $version)
@@ -66,7 +72,7 @@ class TrackNotificationReply
     /**
      * True if duplicate packages (more than one package with the same tracking number) have been found, the packages array contains information about each duplicate. Use this information to determine which of the tracking numbers is the one you need and resend your request using the tracking number and TrackingNumberUniqueIdentifier for that package.
      *
-     * @param boolean $DuplicateWaybill
+     * @param boolean $duplicateWaybill
      * return TrackNotificationReply
      */
     public function setDuplicateWaybill($duplicateWaybill)
@@ -78,7 +84,7 @@ class TrackNotificationReply
     /**
      * True if additional packages remain to be retrieved.
      *
-     * @param boolean $MoreDataAvailable
+     * @param boolean $moreDataAvailable
      * return TrackNotificationReply
      */
     public function setMoreDataAvailable($moreDataAvailable)
@@ -90,7 +96,7 @@ class TrackNotificationReply
     /**
      * Value that must be passed in a TrackNotification request to retrieve the next set of packages (when MoreDataAvailable = true).
      *
-     * @param string $PagingToken
+     * @param string $pagingToken
      * return TrackNotificationReply
      */
     public function setPagingToken($pagingToken)
@@ -102,7 +108,7 @@ class TrackNotificationReply
     /**
      * Information about the notifications that are available for this tracking number. If there are duplicates the ship date and destination address information is returned for determining which TrackingNumberUniqueIdentifier to use on a subsequent request.
      *
-     * @param array[TrackNotificationPackage] $Packages
+     * @param TrackNotificationPackage[] $packages
      * return TrackNotificationReply
      */
     public function setPackages(array $packages)

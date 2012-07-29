@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ReturnShipmentDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ReturnShipmentDetail';
 
     /**
      * The type of return shipment that is being requested.
      *
-     * @param ReturnType $ReturnType
+     * @param \FedEx\Pickup\SimpleType\ReturnType  $returnType
      * return ReturnShipmentDetail
      */
     public function setReturnType(\FedEx\Pickup\SimpleType\ReturnType $returnType)
@@ -30,7 +36,7 @@ class ReturnShipmentDetail
     /**
      * Return Merchant Authorization
      *
-     * @param Rma $Rma
+     * @param Rma $rma
      * return ReturnShipmentDetail
      */
     public function setRma(Rma $rma)
@@ -42,7 +48,7 @@ class ReturnShipmentDetail
     /**
      * Describes specific information about the email label shipment.
      *
-     * @param ReturnEMailDetail $ReturnEMailDetail
+     * @param ReturnEMailDetail $returnEMailDetail
      * return ReturnShipmentDetail
      */
     public function setReturnEMailDetail(ReturnEMailDetail $returnEMailDetail)

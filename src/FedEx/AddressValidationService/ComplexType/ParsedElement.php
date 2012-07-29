@@ -4,7 +4,7 @@ namespace FedEx\AddressValidationService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * ParsedElement
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ParsedElement
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ParsedElement';
 
     /**
-     * 
+     * Set Name
      *
-     * @param string $Name
+     * @param string $name
      * return ParsedElement
      */
     public function setName($name)
@@ -28,9 +34,9 @@ class ParsedElement
     }
     
     /**
-     * 
+     * Set Value
      *
-     * @param string $Value
+     * @param string $value
      * return ParsedElement
      */
     public function setValue($value)
@@ -40,9 +46,9 @@ class ParsedElement
     }
     
     /**
-     * 
+     * Set Changes
      *
-     * @param array[AddressValidationChangeType] $Changes
+     * @param AddressValidationChangeType[] $changes
      * return ParsedElement
      */
     public function setChanges(array $changes)

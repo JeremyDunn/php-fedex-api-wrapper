@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CreatePickupReply
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CreatePickupReply';
 
     /**
      * Identifies the highest severity encountered when executing the request; in order from high to low: FAILURE, ERROR, WARNING, NOTE, SUCCESS.
      *
-     * @param NotificationSeverityType $HighestSeverity
+     * @param \FedEx\Pickup\SimpleType\NotificationSeverityType  $highestSeverity
      * return CreatePickupReply
      */
     public function setHighestSeverity(\FedEx\Pickup\SimpleType\NotificationSeverityType $highestSeverity)
@@ -30,7 +36,7 @@ class CreatePickupReply
     /**
      * The descriptive data detailing the status of a sumbitted transaction.
      *
-     * @param array[Notification] $Notifications
+     * @param Notification[] $notifications
      * return CreatePickupReply
      */
     public function setNotifications(array $notifications)
@@ -42,7 +48,7 @@ class CreatePickupReply
     /**
      * Descriptive data that governs data payload language/translations. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return CreatePickupReply
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class CreatePickupReply
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return CreatePickupReply
      */
     public function setVersion(VersionId $version)
@@ -66,7 +72,7 @@ class CreatePickupReply
     /**
      * Identifies the confirmation number assigned by FedEx for the request.
      *
-     * @param string $PickupConfirmationNumber
+     * @param string $pickupConfirmationNumber
      * return CreatePickupReply
      */
     public function setPickupConfirmationNumber($pickupConfirmationNumber)
@@ -78,7 +84,7 @@ class CreatePickupReply
     /**
      * Identifies the FedEx Location identifier responsible for processing the pickup of the package.
      *
-     * @param string $Location
+     * @param string $location
      * return CreatePickupReply
      */
     public function setLocation($location)
@@ -90,7 +96,7 @@ class CreatePickupReply
     /**
      * Coded value supplied by dispatch system.
      *
-     * @param string $MessageCode
+     * @param string $messageCode
      * return CreatePickupReply
      */
     public function setMessageCode($messageCode)
@@ -102,7 +108,7 @@ class CreatePickupReply
     /**
      * Message supplied by dispatch system.
      *
-     * @param string $Message
+     * @param string $message
      * return CreatePickupReply
      */
     public function setMessage($message)
@@ -114,7 +120,7 @@ class CreatePickupReply
     /**
      * Package Return Program control number
      *
-     * @param string $PRPControlNumber
+     * @param string $pRPControlNumber
      * return CreatePickupReply
      */
     public function setPRPControlNumber($pRPControlNumber)
@@ -126,7 +132,7 @@ class CreatePickupReply
     /**
      * Used with "stay late" requests; postal-code specific.
      *
-     * @param time $LastAccessTime
+     * @param time $lastAccessTime
      * return CreatePickupReply
      */
     public function setLastAccessTime(time $lastAccessTime)
@@ -138,7 +144,7 @@ class CreatePickupReply
     /**
      * Data resulting from the processing of an LTL Freight pickup request.
      *
-     * @param CompletedFreightPickupDetail $CompletedFreightPickupDetail
+     * @param CompletedFreightPickupDetail $completedFreightPickupDetail
      * return CreatePickupReply
      */
     public function setCompletedFreightPickupDetail(CompletedFreightPickupDetail $completedFreightPickupDetail)

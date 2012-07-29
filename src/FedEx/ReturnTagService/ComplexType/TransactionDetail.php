@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class TransactionDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'TransactionDetail';
 
     /**
      * Identifies a customer-supplied unique identifier for this transaction. It is returned in the reply message to aid in matching requests to replies.
      *
-     * @param string $CustomerTransactionId
+     * @param string $customerTransactionId
      * return TransactionDetail
      */
     public function setCustomerTransactionId($customerTransactionId)
@@ -30,7 +36,7 @@ class TransactionDetail
     /**
      * Governs any future language/translations applied to the data payload (contrasted with ClientDetail.localization, which governs Notification.localizedMessage language selection).
      *
-     * @param Localization $Localization
+     * @param Localization $localization
      * return TransactionDetail
      */
     public function setLocalization(Localization $localization)

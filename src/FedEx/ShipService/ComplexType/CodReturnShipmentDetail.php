@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * CodReturnShipmentDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CodReturnShipmentDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CodReturnShipmentDetail';
 
     /**
      * The COD amount (after any accumulations) that must be collected upon delivery of a package shipped using the COD special service.
      *
-     * @param Money $CollectionAmount
+     * @param Money $collectionAmount
      * return CodReturnShipmentDetail
      */
     public function setCollectionAmount(Money $collectionAmount)
@@ -30,7 +36,7 @@ class CodReturnShipmentDetail
     /**
      * Currently not supported.
      *
-     * @param Party $Remitter
+     * @param Party $remitter
      * return CodReturnShipmentDetail
      */
     public function setRemitter(Party $remitter)
@@ -42,7 +48,7 @@ class CodReturnShipmentDetail
     /**
      * Currently not supported.
      *
-     * @param Party $CodRecipient
+     * @param Party $codRecipient
      * return CodReturnShipmentDetail
      */
     public function setCodRecipient(Party $codRecipient)
@@ -52,9 +58,9 @@ class CodReturnShipmentDetail
     }
     
     /**
-     * 
+     * Set ShipmentOperationalDetail
      *
-     * @param ShipmentOperationalDetail $ShipmentOperationalDetail
+     * @param ShipmentOperationalDetail $shipmentOperationalDetail
      * return CodReturnShipmentDetail
      */
     public function setShipmentOperationalDetail(ShipmentOperationalDetail $shipmentOperationalDetail)
@@ -66,7 +72,7 @@ class CodReturnShipmentDetail
     /**
      * Specifies the tracking id for the payment on the COD return.
      *
-     * @param TrackingId $TrackingId
+     * @param TrackingId $trackingId
      * return CodReturnShipmentDetail
      */
     public function setTrackingId(TrackingId $trackingId)
@@ -78,7 +84,7 @@ class CodReturnShipmentDetail
     /**
      * Specifies the information for COD payment on an Express COD shipment. This information is not tied to any outbound package.
      *
-     * @param PackageOperationalDetail $PackageOperationalDetail
+     * @param PackageOperationalDetail $packageOperationalDetail
      * return CodReturnShipmentDetail
      */
     public function setPackageOperationalDetail(PackageOperationalDetail $packageOperationalDetail)
@@ -90,7 +96,7 @@ class CodReturnShipmentDetail
     /**
      * The label image or printer commands to print the label.
      *
-     * @param ShippingDocument $Label
+     * @param ShippingDocument $label
      * return CodReturnShipmentDetail
      */
     public function setLabel(ShippingDocument $label)

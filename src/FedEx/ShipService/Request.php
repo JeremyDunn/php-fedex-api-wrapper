@@ -53,7 +53,7 @@ class Request
     /**
      * Sends the ProcessTagRequest and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest
+     * @param ComplexType\ProcessTagRequest $processTagRequest 
      * @return stdClass
      */
     public function getProcessTagReply(ComplexType\ProcessTagRequest $processTagRequest)
@@ -63,7 +63,7 @@ class Request
        /**
      * Sends the CreatePendingShipmentRequest and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest
+     * @param ComplexType\CreatePendingShipmentRequest $createPendingShipmentRequest 
      * @return stdClass
      */
     public function getCreatePendingShipmentReply(ComplexType\CreatePendingShipmentRequest $createPendingShipmentRequest)
@@ -73,7 +73,7 @@ class Request
        /**
      * Sends the CancelPendingShipmentRequest and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest
+     * @param ComplexType\CancelPendingShipmentRequest $cancelPendingShipmentRequest 
      * @return stdClass
      */
     public function getCancelPendingShipmentReply(ComplexType\CancelPendingShipmentRequest $cancelPendingShipmentRequest)
@@ -83,7 +83,7 @@ class Request
        /**
      * Sends the ProcessShipmentRequest and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest
+     * @param ComplexType\ProcessShipmentRequest $processShipmentRequest 
      * @return stdClass
      */
     public function getProcessShipmentReply(ComplexType\ProcessShipmentRequest $processShipmentRequest)
@@ -93,7 +93,7 @@ class Request
        /**
      * Sends the DeleteTagRequest and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest
+     * @param ComplexType\DeleteTagRequest $deleteTagRequest 
      * @return stdClass
      */
     public function getShipmentReply(ComplexType\DeleteTagRequest $deleteTagRequest)
@@ -103,7 +103,7 @@ class Request
        /**
      * Sends the ValidateShipmentRequest and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest
+     * @param ComplexType\ValidateShipmentRequest $validateShipmentRequest 
      * @return stdClass
      */
     public function getShipmentReply(ComplexType\ValidateShipmentRequest $validateShipmentRequest)
@@ -113,7 +113,7 @@ class Request
        /**
      * Sends the DeleteShipmentRequest and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest
+     * @param ComplexType\DeleteShipmentRequest $deleteShipmentRequest 
      * @return stdClass
      */
     public function getShipmentReply(ComplexType\DeleteShipmentRequest $deleteShipmentRequest)

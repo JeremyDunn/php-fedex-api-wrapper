@@ -4,7 +4,7 @@ namespace FedEx\Pickup\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * AssociatedAccount
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class AssociatedAccount
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'AssociatedAccount';
 
     /**
-     * 
+     * Set Type
      *
-     * @param AssociatedAccountNumberType $Type
+     * @param \FedEx\Pickup\SimpleType\AssociatedAccountNumberType  $type
      * return AssociatedAccount
      */
     public function setType(\FedEx\Pickup\SimpleType\AssociatedAccountNumberType $type)
@@ -28,9 +34,9 @@ class AssociatedAccount
     }
     
     /**
-     * 
+     * Set AccountNumber
      *
-     * @param string $AccountNumber
+     * @param string $accountNumber
      * return AssociatedAccount
      */
     public function setAccountNumber($accountNumber)

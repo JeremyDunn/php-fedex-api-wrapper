@@ -4,7 +4,7 @@ namespace FedEx\LocatorService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * FedExLocatorReply
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class FedExLocatorReply
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'FedExLocatorReply';
 
     /**
      * Identifies the highest severity encountered when executing the request; in order from high to low: FAILURE, ERROR, WARNING, NOTE, SUCCESS.
      *
-     * @param NotificationSeverityType $HighestSeverity
+     * @param \FedEx\LocatorService\SimpleType\NotificationSeverityType  $highestSeverity
      * return FedExLocatorReply
      */
     public function setHighestSeverity(\FedEx\LocatorService\SimpleType\NotificationSeverityType $highestSeverity)
@@ -30,7 +36,7 @@ class FedExLocatorReply
     /**
      * The descriptive data detailing the status of a sumbitted transaction.
      *
-     * @param array[Notification] $Notifications
+     * @param Notification[] $notifications
      * return FedExLocatorReply
      */
     public function setNotifications(array $notifications)
@@ -42,7 +48,7 @@ class FedExLocatorReply
     /**
      * Descriptive data that governs data payload language/translations.	The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return FedExLocatorReply
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class FedExLocatorReply
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return FedExLocatorReply
      */
     public function setVersion(VersionId $version)
@@ -66,7 +72,7 @@ class FedExLocatorReply
     /**
      * Descriptive data for each of the drop-off locations matches found.
      *
-     * @param array[DropoffLocation] $DropoffLocations
+     * @param DropoffLocation[] $dropoffLocations
      * return FedExLocatorReply
      */
     public function setDropoffLocations(array $dropoffLocations)
@@ -78,7 +84,7 @@ class FedExLocatorReply
     /**
      * The total number of locations that matched the request criteria.
      *
-     * @param int $AvailableRecordCount
+     * @param int $availableRecordCount
      * return FedExLocatorReply
      */
     public function setAvailableRecordCount($availableRecordCount)

@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class StringBarcode
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'StringBarcode';
 
     /**
      * The kind of barcode data in this instance.
      *
-     * @param StringBarcodeType $Type
+     * @param \FedEx\TrackService\SimpleType\StringBarcodeType  $type
      * return StringBarcode
      */
     public function setType(\FedEx\TrackService\SimpleType\StringBarcodeType $type)
@@ -30,7 +36,7 @@ class StringBarcode
     /**
      * The data content of this instance.
      *
-     * @param string $Value
+     * @param string $value
      * return StringBarcode
      */
     public function setValue($value)

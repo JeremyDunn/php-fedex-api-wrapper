@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class Payment
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'Payment';
 
     /**
      * Identifies the method of payment for a service. See PaymentType for list of valid enumerated values.
      *
-     * @param PaymentType $PaymentType
+     * @param \FedEx\Pickup\SimpleType\PaymentType  $paymentType
      * return Payment
      */
     public function setPaymentType(\FedEx\Pickup\SimpleType\PaymentType $paymentType)
@@ -30,7 +36,7 @@ class Payment
     /**
      * Descriptive data identifying the party responsible for payment for a service.
      *
-     * @param Payor $Payor
+     * @param Payor $payor
      * return Payment
      */
     public function setPayor(Payor $payor)
@@ -40,9 +46,9 @@ class Payment
     }
     
     /**
-     * 
+     * Set CreditCard
      *
-     * @param CreditCard $CreditCard
+     * @param CreditCard $creditCard
      * return Payment
      */
     public function setCreditCard(CreditCard $creditCard)
@@ -52,9 +58,9 @@ class Payment
     }
     
     /**
-     * 
+     * Set CreditCardTransactionDetail
      *
-     * @param CreditCardTransactionDetail $CreditCardTransactionDetail
+     * @param CreditCardTransactionDetail $creditCardTransactionDetail
      * return Payment
      */
     public function setCreditCardTransactionDetail(CreditCardTransactionDetail $creditCardTransactionDetail)
@@ -66,7 +72,7 @@ class Payment
     /**
      * Descriptive data for the payor's cash payment.
      *
-     * @param Money $Amount
+     * @param Money $amount
      * return Payment
      */
     public function setAmount(Money $amount)

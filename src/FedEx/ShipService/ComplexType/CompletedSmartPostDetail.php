@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CompletedSmartPostDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CompletedSmartPostDetail';
 
     /**
      * Identifies the carrier that will pick up the SmartPost shipment.
      *
-     * @param CarrierCodeType $PickUpCarrier
+     * @param \FedEx\ShipService\SimpleType\CarrierCodeType  $pickUpCarrier
      * return CompletedSmartPostDetail
      */
     public function setPickUpCarrier(\FedEx\ShipService\SimpleType\CarrierCodeType $pickUpCarrier)
@@ -30,7 +36,7 @@ class CompletedSmartPostDetail
     /**
      * Indicates whether the shipment is deemed to be machineable, based on dimensions, weight, and packaging.
      *
-     * @param boolean $Machinable
+     * @param boolean $machinable
      * return CompletedSmartPostDetail
      */
     public function setMachinable($machinable)

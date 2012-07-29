@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ServiceAvailabilityRequest
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ServiceAvailabilityRequest';
 
     /**
      * Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
-     * @param WebAuthenticationDetail $WebAuthenticationDetail
+     * @param WebAuthenticationDetail $webAuthenticationDetail
      * return ServiceAvailabilityRequest
      */
     public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
@@ -30,7 +36,7 @@ class ServiceAvailabilityRequest
     /**
      * The descriptive data identifying the client submitting the transaction.
      *
-     * @param ClientDetail $ClientDetail
+     * @param ClientDetail $clientDetail
      * return ServiceAvailabilityRequest
      */
     public function setClientDetail(ClientDetail $clientDetail)
@@ -42,7 +48,7 @@ class ServiceAvailabilityRequest
     /**
      * The descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return ServiceAvailabilityRequest
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class ServiceAvailabilityRequest
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return ServiceAvailabilityRequest
      */
     public function setVersion(VersionId $version)
@@ -66,7 +72,7 @@ class ServiceAvailabilityRequest
     /**
      * The descriptive data for the physical location from which the shipment originates.
      *
-     * @param Address $Origin
+     * @param Address $origin
      * return ServiceAvailabilityRequest
      */
     public function setOrigin(Address $origin)
@@ -78,7 +84,7 @@ class ServiceAvailabilityRequest
     /**
      * The descriptive data for the physical location to which the shipment is destined.
      *
-     * @param Address $Destination
+     * @param Address $destination
      * return ServiceAvailabilityRequest
      */
     public function setDestination(Address $destination)
@@ -90,7 +96,7 @@ class ServiceAvailabilityRequest
     /**
      * The date on which the package will be shipped. The date should not  be a past date or a date more than 10 days in the future. The date format must be YYYY-MM-DD.
      *
-     * @param date $ShipDate
+     * @param date $shipDate
      * return ServiceAvailabilityRequest
      */
     public function setShipDate($shipDate)
@@ -102,7 +108,7 @@ class ServiceAvailabilityRequest
     /**
      * Optionally supplied instead of service to restrict reply to services for a specific carrier.
      *
-     * @param CarrierCodeType $CarrierCode
+     * @param \FedEx\PackageMovementInformationService\SimpleType\CarrierCodeType  $carrierCode
      * return ServiceAvailabilityRequest
      */
     public function setCarrierCode(\FedEx\PackageMovementInformationService\SimpleType\CarrierCodeType $carrierCode)
@@ -114,7 +120,7 @@ class ServiceAvailabilityRequest
     /**
      * Restricts reply to single service, if supplied.
      *
-     * @param ServiceType $Service
+     * @param \FedEx\PackageMovementInformationService\SimpleType\ServiceType  $service
      * return ServiceAvailabilityRequest
      */
     public function setService(\FedEx\PackageMovementInformationService\SimpleType\ServiceType $service)
@@ -126,7 +132,7 @@ class ServiceAvailabilityRequest
     /**
      * Identifies the FedEx packaging type used by the requestor for the package. See PackagingType for valid values. Omit this element and the Service element to get a list of every available service.
      *
-     * @param PackagingType $Packaging
+     * @param \FedEx\PackageMovementInformationService\SimpleType\PackagingType  $packaging
      * return ServiceAvailabilityRequest
      */
     public function setPackaging(\FedEx\PackageMovementInformationService\SimpleType\PackagingType $packaging)

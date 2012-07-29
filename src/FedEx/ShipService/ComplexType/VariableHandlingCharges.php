@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class VariableHandlingCharges
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'VariableHandlingCharges';
 
     /**
      * The variable handling charge amount calculated based on the requested variable handling charge detail.
      *
-     * @param Money $VariableHandlingCharge
+     * @param Money $variableHandlingCharge
      * return VariableHandlingCharges
      */
     public function setVariableHandlingCharge(Money $variableHandlingCharge)
@@ -30,7 +36,7 @@ class VariableHandlingCharges
     /**
      * The calculated varibale handling charge plus the net charge.
      *
-     * @param Money $TotalCustomerCharge
+     * @param Money $totalCustomerCharge
      * return VariableHandlingCharges
      */
     public function setTotalCustomerCharge(Money $totalCustomerCharge)

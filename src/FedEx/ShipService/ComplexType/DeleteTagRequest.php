@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * DeleteTagRequest
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class DeleteTagRequest
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'DeleteTagRequest';
 
     /**
      * Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
-     * @param WebAuthenticationDetail $WebAuthenticationDetail
+     * @param WebAuthenticationDetail $webAuthenticationDetail
      * return DeleteTagRequest
      */
     public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
@@ -30,7 +36,7 @@ class DeleteTagRequest
     /**
      * Descriptive data identifying the client submitting the transaction.
      *
-     * @param ClientDetail $ClientDetail
+     * @param ClientDetail $clientDetail
      * return DeleteTagRequest
      */
     public function setClientDetail(ClientDetail $clientDetail)
@@ -42,7 +48,7 @@ class DeleteTagRequest
     /**
      * Descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return DeleteTagRequest
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class DeleteTagRequest
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return DeleteTagRequest
      */
     public function setVersion(VersionId $version)
@@ -66,7 +72,7 @@ class DeleteTagRequest
     /**
      * Only used for tags which had FedEx Express services.
      *
-     * @param string $DispatchLocationId
+     * @param string $dispatchLocationId
      * return DeleteTagRequest
      */
     public function setDispatchLocationId($dispatchLocationId)
@@ -78,7 +84,7 @@ class DeleteTagRequest
     /**
      * Only used for tags which had FedEx Express services.
      *
-     * @param date $DispatchDate
+     * @param date $dispatchDate
      * return DeleteTagRequest
      */
     public function setDispatchDate($dispatchDate)
@@ -90,7 +96,7 @@ class DeleteTagRequest
     /**
      * If the original ProcessTagRequest specified third-party payment, then the delete request must contain the same pay type and payor account number for security purposes.
      *
-     * @param Payment $Payment
+     * @param Payment $payment
      * return DeleteTagRequest
      */
     public function setPayment(Payment $payment)
@@ -102,7 +108,7 @@ class DeleteTagRequest
     /**
      * Also known as Pickup Confirmation Number or Dispatch Number
      *
-     * @param string $ConfirmationNumber
+     * @param string $confirmationNumber
      * return DeleteTagRequest
      */
     public function setConfirmationNumber($confirmationNumber)

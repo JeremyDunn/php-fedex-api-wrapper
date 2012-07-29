@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * CustomsClearanceDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,6 +13,12 @@ use FedEx\AbstractComplexType;
 class CustomsClearanceDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CustomsClearanceDetail';
 
     /**
@@ -21,7 +27,7 @@ class CustomsClearanceDetail
                 Required if BROKER_SELECT_OPTION is requested in Special Services.
               
      *
-     * @param Party $Broker
+     * @param Party $broker
      * return CustomsClearanceDetail
      */
     public function setBroker(Party $broker)
@@ -33,7 +39,7 @@ class CustomsClearanceDetail
     /**
      * Interacts both with properties of the shipment and contractual relationship with the shipper.
      *
-     * @param ClearanceBrokerageType $ClearanceBrokerage
+     * @param \FedEx\RateService\SimpleType\ClearanceBrokerageType  $clearanceBrokerage
      * return CustomsClearanceDetail
      */
     public function setClearanceBrokerage(\FedEx\RateService\SimpleType\ClearanceBrokerageType $clearanceBrokerage)
@@ -55,7 +61,7 @@ class CustomsClearanceDetail
                 Importer/Address/CountryCode
               
      *
-     * @param Party $ImporterOfRecord
+     * @param Party $importerOfRecord
      * return CustomsClearanceDetail
      */
     public function setImporterOfRecord(Party $importerOfRecord)
@@ -67,7 +73,7 @@ class CustomsClearanceDetail
     /**
      * Specifies how the recipient is identified for customs purposes; the requirements on this information vary with destination country.
      *
-     * @param RecipientCustomsId $RecipientCustomsId
+     * @param RecipientCustomsId $recipientCustomsId
      * return CustomsClearanceDetail
      */
     public function setRecipientCustomsId(RecipientCustomsId $recipientCustomsId)
@@ -79,7 +85,7 @@ class CustomsClearanceDetail
     /**
      * Indicates how payment of duties for the shipment will be made.
      *
-     * @param Payment $DutiesPayment
+     * @param Payment $dutiesPayment
      * return CustomsClearanceDetail
      */
     public function setDutiesPayment(Payment $dutiesPayment)
@@ -91,7 +97,7 @@ class CustomsClearanceDetail
     /**
      * Indicates whether this shipment contains documents only or non-documents.
      *
-     * @param InternationalDocumentContentType $DocumentContent
+     * @param \FedEx\RateService\SimpleType\InternationalDocumentContentType  $documentContent
      * return CustomsClearanceDetail
      */
     public function setDocumentContent(\FedEx\RateService\SimpleType\InternationalDocumentContentType $documentContent)
@@ -103,7 +109,7 @@ class CustomsClearanceDetail
     /**
      * The total customs value for the shipment. This total will rrepresent th esum of the values of all commodities, and may include freight, miscellaneous, and insurance charges. Must contain 2 explicit decimal positions with a max length of 17 including the decimal. For Express International MPS, the Total Customs Value is in the master transaction and all child transactions
      *
-     * @param Money $CustomsValue
+     * @param Money $customsValue
      * return CustomsClearanceDetail
      */
     public function setCustomsValue(Money $customsValue)
@@ -115,7 +121,7 @@ class CustomsClearanceDetail
     /**
      * Identifies responsibilities with respect to loss, damage, etc.
      *
-     * @param FreightOnValueType $FreightOnValue
+     * @param \FedEx\RateService\SimpleType\FreightOnValueType  $freightOnValue
      * return CustomsClearanceDetail
      */
     public function setFreightOnValue(\FedEx\RateService\SimpleType\FreightOnValueType $freightOnValue)
@@ -127,7 +133,7 @@ class CustomsClearanceDetail
     /**
      * Documents amount paid to third party for coverage of shipment content.
      *
-     * @param Money $InsuranceCharges
+     * @param Money $insuranceCharges
      * return CustomsClearanceDetail
      */
     public function setInsuranceCharges(Money $insuranceCharges)
@@ -137,9 +143,9 @@ class CustomsClearanceDetail
     }
     
     /**
-     * 
+     * Set PartiesToTransactionAreRelated
      *
-     * @param boolean $PartiesToTransactionAreRelated
+     * @param boolean $partiesToTransactionAreRelated
      * return CustomsClearanceDetail
      */
     public function setPartiesToTransactionAreRelated($partiesToTransactionAreRelated)
@@ -151,7 +157,7 @@ class CustomsClearanceDetail
     /**
      * CommercialInvoice element is required for electronic upload of CI data. It will serve to create/transmit an Electronic Commercial Invoice through FedEx System. Customers are responsible for printing their own Commercial Invoice. Commercial Invoice support consists of a maximum of 20 commodity line items.
      *
-     * @param CommercialInvoice $CommercialInvoice
+     * @param CommercialInvoice $commercialInvoice
      * return CustomsClearanceDetail
      */
     public function setCommercialInvoice(CommercialInvoice $commercialInvoice)
@@ -166,7 +172,7 @@ class CustomsClearanceDetail
                 If this shipment cotains more than four commodities line items, the four highest valued should be included in the first 4 occurances for this request.
               
      *
-     * @param array[Commodity] $Commodities
+     * @param Commodity[] $commodities
      * return CustomsClearanceDetail
      */
     public function setCommodities(array $commodities)
@@ -178,7 +184,7 @@ class CustomsClearanceDetail
     /**
      * Country specific details of an International shipment.
      *
-     * @param ExportDetail $ExportDetail
+     * @param ExportDetail $exportDetail
      * return CustomsClearanceDetail
      */
     public function setExportDetail(ExportDetail $exportDetail)
@@ -190,7 +196,7 @@ class CustomsClearanceDetail
     /**
      * FOOD_OR_PERISHABLE is required by FDA/BTA; must be true for food/perishable items coming to US or PR from non-US/non-PR origin.
      *
-     * @param array[RegulatoryControlType] $RegulatoryControls
+     * @param RegulatoryControlType[] $regulatoryControls
      * return CustomsClearanceDetail
      */
     public function setRegulatoryControls(array $regulatoryControls)

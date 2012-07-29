@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class SignatureProofOfDeliveryFaxRequest
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'SignatureProofOfDeliveryFaxRequest';
 
     /**
      * Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
-     * @param WebAuthenticationDetail $WebAuthenticationDetail
+     * @param WebAuthenticationDetail $webAuthenticationDetail
      * return SignatureProofOfDeliveryFaxRequest
      */
     public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
@@ -30,7 +36,7 @@ class SignatureProofOfDeliveryFaxRequest
     /**
      * Descriptive data identifying the client submitting the transaction.
      *
-     * @param ClientDetail $ClientDetail
+     * @param ClientDetail $clientDetail
      * return SignatureProofOfDeliveryFaxRequest
      */
     public function setClientDetail(ClientDetail $clientDetail)
@@ -42,7 +48,7 @@ class SignatureProofOfDeliveryFaxRequest
     /**
      * Contains a free form field that is echoed back in the reply to match requests with replies and data that governs the data payload language/translations.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return SignatureProofOfDeliveryFaxRequest
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class SignatureProofOfDeliveryFaxRequest
     /**
      * The version of the request being used.
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return SignatureProofOfDeliveryFaxRequest
      */
     public function setVersion(VersionId $version)
@@ -66,7 +72,7 @@ class SignatureProofOfDeliveryFaxRequest
     /**
      * Tracking number and additional shipment data used to identify a unique shipment for proof of delivery.
      *
-     * @param QualifiedTrackingNumber $QualifiedTrackingNumber
+     * @param QualifiedTrackingNumber $qualifiedTrackingNumber
      * return SignatureProofOfDeliveryFaxRequest
      */
     public function setQualifiedTrackingNumber(QualifiedTrackingNumber $qualifiedTrackingNumber)
@@ -78,7 +84,7 @@ class SignatureProofOfDeliveryFaxRequest
     /**
      * Additional customer-supplied text to be added to the body of the letter.
      *
-     * @param string $AdditionalComments
+     * @param string $additionalComments
      * return SignatureProofOfDeliveryFaxRequest
      */
     public function setAdditionalComments($additionalComments)
@@ -90,7 +96,7 @@ class SignatureProofOfDeliveryFaxRequest
     /**
      * Contact and address information about the person requesting the fax to be sent.
      *
-     * @param ContactAndAddress $FaxSender
+     * @param ContactAndAddress $faxSender
      * return SignatureProofOfDeliveryFaxRequest
      */
     public function setFaxSender(ContactAndAddress $faxSender)
@@ -102,7 +108,7 @@ class SignatureProofOfDeliveryFaxRequest
     /**
      * Contact and address information, including the fax number, about the person to receive the fax.
      *
-     * @param ContactAndAddress $FaxRecipient
+     * @param ContactAndAddress $faxRecipient
      * return SignatureProofOfDeliveryFaxRequest
      */
     public function setFaxRecipient(ContactAndAddress $faxRecipient)

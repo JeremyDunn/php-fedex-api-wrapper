@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class FreightPickupDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'FreightPickupDetail';
 
     /**
      * Contact Information of origin service center representative that authorized the pickup
      *
-     * @param Contact $ApprovedBy
+     * @param Contact $approvedBy
      * return FreightPickupDetail
      */
     public function setApprovedBy(Contact $approvedBy)
@@ -30,7 +36,7 @@ class FreightPickupDetail
     /**
      * Identifies the type of payment to be tendered for the pickup.
      *
-     * @param FreightAccountPaymentType $Payment
+     * @param \FedEx\Pickup\SimpleType\FreightAccountPaymentType  $payment
      * return FreightPickupDetail
      */
     public function setPayment(\FedEx\Pickup\SimpleType\FreightAccountPaymentType $payment)
@@ -42,7 +48,7 @@ class FreightPickupDetail
     /**
      * Indicates the role of the party submitting the transaction.
      *
-     * @param FreightShipmentRoleType $Role
+     * @param \FedEx\Pickup\SimpleType\FreightShipmentRoleType  $role
      * return FreightPickupDetail
      */
     public function setRole(\FedEx\Pickup\SimpleType\FreightShipmentRoleType $role)
@@ -54,7 +60,7 @@ class FreightPickupDetail
     /**
      * Contact Information of the person submitting the pickup.
      *
-     * @param Contact $SubmittedBy
+     * @param Contact $submittedBy
      * return FreightPickupDetail
      */
     public function setSubmittedBy(Contact $submittedBy)
@@ -66,7 +72,7 @@ class FreightPickupDetail
     /**
      * Identifies the details about the contents of the shipments to be picked up.
      *
-     * @param array[FreightPickupLineItem] $LineItems
+     * @param FreightPickupLineItem[] $lineItems
      * return FreightPickupDetail
      */
     public function setLineItems(array $lineItems)

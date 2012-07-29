@@ -4,7 +4,7 @@ namespace FedEx\CloseService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * SmartPostCloseRequest
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class SmartPostCloseRequest
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'SmartPostCloseRequest';
 
     /**
      * The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
-     * @param WebAuthenticationDetail $WebAuthenticationDetail
+     * @param WebAuthenticationDetail $webAuthenticationDetail
      * return SmartPostCloseRequest
      */
     public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
@@ -28,9 +34,9 @@ class SmartPostCloseRequest
     }
     
     /**
-     * 
+     * Set ClientDetail
      *
-     * @param ClientDetail $ClientDetail
+     * @param ClientDetail $clientDetail
      * return SmartPostCloseRequest
      */
     public function setClientDetail(ClientDetail $clientDetail)
@@ -40,9 +46,9 @@ class SmartPostCloseRequest
     }
     
     /**
-     * 
+     * Set TransactionDetail
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return SmartPostCloseRequest
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -52,9 +58,9 @@ class SmartPostCloseRequest
     }
     
     /**
-     * 
+     * Set Version
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return SmartPostCloseRequest
      */
     public function setVersion(VersionId $version)
@@ -64,9 +70,9 @@ class SmartPostCloseRequest
     }
     
     /**
-     * 
+     * Set HubId
      *
-     * @param string $HubId
+     * @param string $hubId
      * return SmartPostCloseRequest
      */
     public function setHubId($hubId)
@@ -76,9 +82,9 @@ class SmartPostCloseRequest
     }
     
     /**
-     * 
+     * Set CustomerManifestId
      *
-     * @param string $CustomerManifestId
+     * @param string $customerManifestId
      * return SmartPostCloseRequest
      */
     public function setCustomerManifestId($customerManifestId)
@@ -88,9 +94,9 @@ class SmartPostCloseRequest
     }
     
     /**
-     * 
+     * Set DestinationCountryCode
      *
-     * @param string $DestinationCountryCode
+     * @param string $destinationCountryCode
      * return SmartPostCloseRequest
      */
     public function setDestinationCountryCode($destinationCountryCode)
@@ -100,9 +106,9 @@ class SmartPostCloseRequest
     }
     
     /**
-     * 
+     * Set PickUpCarrier
      *
-     * @param CarrierCodeType $PickUpCarrier
+     * @param \FedEx\CloseService\SimpleType\CarrierCodeType  $pickUpCarrier
      * return SmartPostCloseRequest
      */
     public function setPickUpCarrier(\FedEx\CloseService\SimpleType\CarrierCodeType $pickUpCarrier)

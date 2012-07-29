@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class MarkingOrTaggingDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'MarkingOrTaggingDetail';
 
     /**
      * Number of pieces to be marked or tagged by FedEx.
      *
-     * @param positiveInteger $Count
+     * @param positiveInteger $count
      * return MarkingOrTaggingDetail
      */
     public function setCount($count)

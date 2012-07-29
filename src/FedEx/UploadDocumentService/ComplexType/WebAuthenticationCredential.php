@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class WebAuthenticationCredential
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'WebAuthenticationCredential';
 
     /**
      * Publicly known part of authentication key used for authentication. This value is provided by FedEx after registration.
      *
-     * @param string $Key
+     * @param string $key
      * return WebAuthenticationCredential
      */
     public function setKey($key)
@@ -30,7 +36,7 @@ class WebAuthenticationCredential
     /**
      * Secret part of authentication key used for authentication. This value is provided by FedEx after registration.
      *
-     * @param string $Password
+     * @param string $password
      * return WebAuthenticationCredential
      */
     public function setPassword($password)

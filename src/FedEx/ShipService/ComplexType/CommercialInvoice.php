@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CommercialInvoice
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CommercialInvoice';
 
     /**
      * Any comments that need to be communicated about this shipment.
      *
-     * @param array[string] $Comments
+     * @param string[] $comments
      * return CommercialInvoice
      */
     public function setComments(array $comments)
@@ -30,7 +36,7 @@ class CommercialInvoice
     /**
      * Any freight charges that are associated with this shipment.
      *
-     * @param Money $FreightCharge
+     * @param Money $freightCharge
      * return CommercialInvoice
      */
     public function setFreightCharge(Money $freightCharge)
@@ -42,7 +48,7 @@ class CommercialInvoice
     /**
      * Any taxes or miscellaneous charges(other than Freight charges or Insurance charges) that are associated with this shipment.
      *
-     * @param Money $TaxesOrMiscellaneousCharge
+     * @param Money $taxesOrMiscellaneousCharge
      * return CommercialInvoice
      */
     public function setTaxesOrMiscellaneousCharge(Money $taxesOrMiscellaneousCharge)
@@ -54,7 +60,7 @@ class CommercialInvoice
     /**
      * Any packing costs that are associated with this shipment.
      *
-     * @param Money $PackingCosts
+     * @param Money $packingCosts
      * return CommercialInvoice
      */
     public function setPackingCosts(Money $packingCosts)
@@ -66,7 +72,7 @@ class CommercialInvoice
     /**
      * Any handling costs that are associated with this shipment.
      *
-     * @param Money $HandlingCosts
+     * @param Money $handlingCosts
      * return CommercialInvoice
      */
     public function setHandlingCosts(Money $handlingCosts)
@@ -78,7 +84,7 @@ class CommercialInvoice
     /**
      * Free-form text.
      *
-     * @param string $SpecialInstructions
+     * @param string $specialInstructions
      * return CommercialInvoice
      */
     public function setSpecialInstructions($specialInstructions)
@@ -90,7 +96,7 @@ class CommercialInvoice
     /**
      * Free-form text.
      *
-     * @param string $DeclarationStatment
+     * @param string $declarationStatment
      * return CommercialInvoice
      */
     public function setDeclarationStatment($declarationStatment)
@@ -102,7 +108,7 @@ class CommercialInvoice
     /**
      * Free-form text.
      *
-     * @param string $PaymentTerms
+     * @param string $paymentTerms
      * return CommercialInvoice
      */
     public function setPaymentTerms($paymentTerms)
@@ -114,7 +120,7 @@ class CommercialInvoice
     /**
      * The reason for the shipment. Note: SOLD is not a valid purpose for a Proforma Invoice.
      *
-     * @param PurposeOfShipmentType $Purpose
+     * @param \FedEx\ShipService\SimpleType\PurposeOfShipmentType  $purpose
      * return CommercialInvoice
      */
     public function setPurpose(\FedEx\ShipService\SimpleType\PurposeOfShipmentType $purpose)
@@ -126,7 +132,7 @@ class CommercialInvoice
     /**
      * Customer assigned Invoice number
      *
-     * @param string $CustomerInvoiceNumber
+     * @param string $customerInvoiceNumber
      * return CommercialInvoice
      */
     public function setCustomerInvoiceNumber($customerInvoiceNumber)
@@ -138,7 +144,7 @@ class CommercialInvoice
     /**
      * Name of the International Expert that completed the Commercial Invoice different from Sender.
      *
-     * @param string $OriginatorName
+     * @param string $originatorName
      * return CommercialInvoice
      */
     public function setOriginatorName($originatorName)
@@ -150,7 +156,7 @@ class CommercialInvoice
     /**
      * Required for dutiable international Express or Ground shipment. This field is not applicable to an international PIB(document) or a non-document which does not require a Commercial Invoice
      *
-     * @param TermsOfSaleType $TermsOfSale
+     * @param \FedEx\ShipService\SimpleType\TermsOfSaleType  $termsOfSale
      * return CommercialInvoice
      */
     public function setTermsOfSale(\FedEx\ShipService\SimpleType\TermsOfSaleType $termsOfSale)

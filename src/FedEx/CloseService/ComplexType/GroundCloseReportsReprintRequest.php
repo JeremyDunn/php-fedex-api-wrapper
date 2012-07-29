@@ -4,7 +4,7 @@ namespace FedEx\CloseService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * GroundCloseReportsReprintRequest
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class GroundCloseReportsReprintRequest
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'GroundCloseReportsReprintRequest';
 
     /**
      * The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
-     * @param WebAuthenticationDetail $WebAuthenticationDetail
+     * @param WebAuthenticationDetail $webAuthenticationDetail
      * return GroundCloseReportsReprintRequest
      */
     public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
@@ -28,9 +34,9 @@ class GroundCloseReportsReprintRequest
     }
     
     /**
-     * 
+     * Set ClientDetail
      *
-     * @param ClientDetail $ClientDetail
+     * @param ClientDetail $clientDetail
      * return GroundCloseReportsReprintRequest
      */
     public function setClientDetail(ClientDetail $clientDetail)
@@ -40,9 +46,9 @@ class GroundCloseReportsReprintRequest
     }
     
     /**
-     * 
+     * Set TransactionDetail
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return GroundCloseReportsReprintRequest
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -52,9 +58,9 @@ class GroundCloseReportsReprintRequest
     }
     
     /**
-     * 
+     * Set Version
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return GroundCloseReportsReprintRequest
      */
     public function setVersion(VersionId $version)
@@ -64,9 +70,9 @@ class GroundCloseReportsReprintRequest
     }
     
     /**
-     * 
+     * Set ReportDate
      *
-     * @param date $ReportDate
+     * @param date $reportDate
      * return GroundCloseReportsReprintRequest
      */
     public function setReportDate($reportDate)
@@ -76,9 +82,9 @@ class GroundCloseReportsReprintRequest
     }
     
     /**
-     * 
+     * Set TrackingNumber
      *
-     * @param string $TrackingNumber
+     * @param string $trackingNumber
      * return GroundCloseReportsReprintRequest
      */
     public function setTrackingNumber($trackingNumber)
@@ -88,9 +94,9 @@ class GroundCloseReportsReprintRequest
     }
     
     /**
-     * 
+     * Set CloseReportType
      *
-     * @param CloseReportType $CloseReportType
+     * @param \FedEx\CloseService\SimpleType\CloseReportType  $closeReportType
      * return GroundCloseReportsReprintRequest
      */
     public function setCloseReportType(\FedEx\CloseService\SimpleType\CloseReportType $closeReportType)

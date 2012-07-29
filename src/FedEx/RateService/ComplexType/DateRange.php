@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * DateRange
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class DateRange
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'DateRange';
 
     /**
-     * 
+     * Set Begins
      *
-     * @param date $Begins
+     * @param date $begins
      * return DateRange
      */
     public function setBegins($begins)
@@ -28,9 +34,9 @@ class DateRange
     }
     
     /**
-     * 
+     * Set Ends
      *
-     * @param date $Ends
+     * @param date $ends
      * return DateRange
      */
     public function setEnds($ends)

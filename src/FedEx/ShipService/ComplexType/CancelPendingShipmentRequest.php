@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CancelPendingShipmentRequest
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CancelPendingShipmentRequest';
 
     /**
      * Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
-     * @param WebAuthenticationDetail $WebAuthenticationDetail
+     * @param WebAuthenticationDetail $webAuthenticationDetail
      * return CancelPendingShipmentRequest
      */
     public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
@@ -30,7 +36,7 @@ class CancelPendingShipmentRequest
     /**
      * Descriptive data identifying the client submitting the transaction.
      *
-     * @param ClientDetail $ClientDetail
+     * @param ClientDetail $clientDetail
      * return CancelPendingShipmentRequest
      */
     public function setClientDetail(ClientDetail $clientDetail)
@@ -42,7 +48,7 @@ class CancelPendingShipmentRequest
     /**
      * Descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return CancelPendingShipmentRequest
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class CancelPendingShipmentRequest
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return CancelPendingShipmentRequest
      */
     public function setVersion(VersionId $version)
@@ -64,9 +70,9 @@ class CancelPendingShipmentRequest
     }
     
     /**
-     * 
+     * Set TrackingId
      *
-     * @param TrackingId $TrackingId
+     * @param TrackingId $trackingId
      * return CancelPendingShipmentRequest
      */
     public function setTrackingId(TrackingId $trackingId)

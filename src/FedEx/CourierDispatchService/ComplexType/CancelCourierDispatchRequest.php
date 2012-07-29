@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CancelCourierDispatchRequest
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CancelCourierDispatchRequest';
 
     /**
      * The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
-     * @param WebAuthenticationDetail $WebAuthenticationDetail
+     * @param WebAuthenticationDetail $webAuthenticationDetail
      * return CancelCourierDispatchRequest
      */
     public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
@@ -30,7 +36,7 @@ class CancelCourierDispatchRequest
     /**
      * The descriptive data identifying the client submitting the transaction.
      *
-     * @param ClientDetail $ClientDetail
+     * @param ClientDetail $clientDetail
      * return CancelCourierDispatchRequest
      */
     public function setClientDetail(ClientDetail $clientDetail)
@@ -42,7 +48,7 @@ class CancelCourierDispatchRequest
     /**
      * The descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return CancelCourierDispatchRequest
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class CancelCourierDispatchRequest
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return CancelCourierDispatchRequest
      */
     public function setVersion(VersionId $version)
@@ -66,7 +72,7 @@ class CancelCourierDispatchRequest
     /**
      * Identifies the FedEx operating company (transportation) that was sent the courier dispatch that is being canceled.
      *
-     * @param CarrierCodeType $CarrierCode
+     * @param \FedEx\CourierDispatchService\SimpleType\CarrierCodeType  $carrierCode
      * return CancelCourierDispatchRequest
      */
     public function setCarrierCode(\FedEx\CourierDispatchService\SimpleType\CarrierCodeType $carrierCode)
@@ -78,7 +84,7 @@ class CancelCourierDispatchRequest
     /**
      * Identifies the dispatch confirmation number that is being canceled. The dispatch confirmation number was returned to the client when the courier dispatch was requested.
      *
-     * @param string $DispatchConfirmationNumber
+     * @param string $dispatchConfirmationNumber
      * return CancelCourierDispatchRequest
      */
     public function setDispatchConfirmationNumber($dispatchConfirmationNumber)
@@ -90,7 +96,7 @@ class CancelCourierDispatchRequest
     /**
      * Identifies the scheduled date for the courier dispatch that is being canceled. The scheduled date was provided by the client when the courier dispatch was requested.
      *
-     * @param date $ScheduledDate
+     * @param date $scheduledDate
      * return CancelCourierDispatchRequest
      */
     public function setScheduledDate($scheduledDate)
@@ -102,7 +108,7 @@ class CancelCourierDispatchRequest
     /**
      * Identifies the FedEx location identifier responsible for dispatching the courier for package pickup that is being canceled. The FedEx location identifier was returned to the client when the courier dispatch was requested. Required for Express service type.
      *
-     * @param string $Location
+     * @param string $location
      * return CancelCourierDispatchRequest
      */
     public function setLocation($location)
@@ -114,7 +120,7 @@ class CancelCourierDispatchRequest
     /**
      * Identifies comments the customer wants to convey to the FedEx courier regarding the package pickup.
      *
-     * @param string $CourierRemarks
+     * @param string $courierRemarks
      * return CancelCourierDispatchRequest
      */
     public function setCourierRemarks($courierRemarks)

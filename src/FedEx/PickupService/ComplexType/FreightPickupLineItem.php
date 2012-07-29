@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class FreightPickupLineItem
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'FreightPickupLineItem';
 
     /**
-     * 
+     * Set Service
      *
-     * @param ServiceType $Service
+     * @param \FedEx\Pickup\SimpleType\ServiceType  $service
      * return FreightPickupLineItem
      */
     public function setService(\FedEx\Pickup\SimpleType\ServiceType $service)
@@ -30,7 +36,7 @@ class FreightPickupLineItem
     /**
      * Identifies the line item, to match reply line with request line.
      *
-     * @param int $SequenceNumber
+     * @param int $sequenceNumber
      * return FreightPickupLineItem
      */
     public function setSequenceNumber($sequenceNumber)
@@ -42,7 +48,7 @@ class FreightPickupLineItem
     /**
      * Identifies the destination of the shipment.
      *
-     * @param Address $Destination
+     * @param Address $destination
      * return FreightPickupLineItem
      */
     public function setDestination(Address $destination)
@@ -54,7 +60,7 @@ class FreightPickupLineItem
     /**
      * Identifies the physical packaging of the shipment.
      *
-     * @param PhysicalPackagingType $Packaging
+     * @param \FedEx\Pickup\SimpleType\PhysicalPackagingType  $packaging
      * return FreightPickupLineItem
      */
     public function setPackaging(\FedEx\Pickup\SimpleType\PhysicalPackagingType $packaging)
@@ -66,7 +72,7 @@ class FreightPickupLineItem
     /**
      * Identifies number of items contained in the packaging.
      *
-     * @param int $Pieces
+     * @param int $pieces
      * return FreightPickupLineItem
      */
     public function setPieces($pieces)
@@ -78,7 +84,7 @@ class FreightPickupLineItem
     /**
      * Identifies the total weight of the item being tendered to FedEx for this pickup request.
      *
-     * @param Weight $Weight
+     * @param Weight $weight
      * return FreightPickupLineItem
      */
     public function setWeight(Weight $weight)
@@ -90,7 +96,7 @@ class FreightPickupLineItem
     /**
      * Identifies number of items to be moved.
      *
-     * @param int $TotalHandlingUnits
+     * @param int $totalHandlingUnits
      * return FreightPickupLineItem
      */
     public function setTotalHandlingUnits($totalHandlingUnits)
@@ -100,9 +106,9 @@ class FreightPickupLineItem
     }
     
     /**
-     * 
+     * Set PurchaseOrderNumber
      *
-     * @param string $PurchaseOrderNumber
+     * @param string $purchaseOrderNumber
      * return FreightPickupLineItem
      */
     public function setPurchaseOrderNumber($purchaseOrderNumber)
@@ -112,9 +118,9 @@ class FreightPickupLineItem
     }
     
     /**
-     * 
+     * Set JustOneMore
      *
-     * @param boolean $JustOneMore
+     * @param boolean $justOneMore
      * return FreightPickupLineItem
      */
     public function setJustOneMore($justOneMore)
@@ -126,7 +132,7 @@ class FreightPickupLineItem
     /**
      * These special services are available at the shipment level for some or all service types. If the shipper is requesting a special service which requires additional data (such as the COD amount), the shipment special service type must be present in the specialServiceTypes collection, and the supporting detail must be provided in the appropriate sub-object below. 
      *
-     * @param ShipmentSpecialServicesRequested $SpecialServicesRequested
+     * @param ShipmentSpecialServicesRequested $specialServicesRequested
      * return FreightPickupLineItem
      */
     public function setSpecialServicesRequested(ShipmentSpecialServicesRequested $specialServicesRequested)
@@ -138,7 +144,7 @@ class FreightPickupLineItem
     /**
      * Identifies the delivery guarantee information.
      *
-     * @param FreightGuaranteeDetail $FreightGuaranteeDetail
+     * @param FreightGuaranteeDetail $freightGuaranteeDetail
      * return FreightPickupLineItem
      */
     public function setFreightGuaranteeDetail(FreightGuaranteeDetail $freightGuaranteeDetail)
@@ -150,7 +156,7 @@ class FreightPickupLineItem
     /**
      * Describes the contents of the package.
      *
-     * @param string $Description
+     * @param string $description
      * return FreightPickupLineItem
      */
     public function setDescription($description)

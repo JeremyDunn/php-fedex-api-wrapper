@@ -4,7 +4,7 @@ namespace FedEx\CloseService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * GroundCloseWithDocumentsRequest
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class GroundCloseWithDocumentsRequest
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'GroundCloseWithDocumentsRequest';
 
     /**
      * The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
-     * @param WebAuthenticationDetail $WebAuthenticationDetail
+     * @param WebAuthenticationDetail $webAuthenticationDetail
      * return GroundCloseWithDocumentsRequest
      */
     public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
@@ -30,7 +36,7 @@ class GroundCloseWithDocumentsRequest
     /**
      * Descriptive data identifying the client submitting the transaction.
      *
-     * @param ClientDetail $ClientDetail
+     * @param ClientDetail $clientDetail
      * return GroundCloseWithDocumentsRequest
      */
     public function setClientDetail(ClientDetail $clientDetail)
@@ -42,7 +48,7 @@ class GroundCloseWithDocumentsRequest
     /**
      * Descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return GroundCloseWithDocumentsRequest
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class GroundCloseWithDocumentsRequest
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return GroundCloseWithDocumentsRequest
      */
     public function setVersion(VersionId $version)
@@ -66,7 +72,7 @@ class GroundCloseWithDocumentsRequest
     /**
      * Date on which shipments were closed.
      *
-     * @param date $CloseDate
+     * @param date $closeDate
      * return GroundCloseWithDocumentsRequest
      */
     public function setCloseDate($closeDate)
@@ -78,7 +84,7 @@ class GroundCloseWithDocumentsRequest
     /**
      * Specifies characteristics of document(s) to be returned for this request.
      *
-     * @param CloseDocumentSpecification $CloseDocumentSpecification
+     * @param CloseDocumentSpecification $closeDocumentSpecification
      * return GroundCloseWithDocumentsRequest
      */
     public function setCloseDocumentSpecification(CloseDocumentSpecification $closeDocumentSpecification)

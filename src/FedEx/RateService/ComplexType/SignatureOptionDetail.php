@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class SignatureOptionDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'SignatureOptionDetail';
 
     /**
      * Identifies the delivery signature services option selected by the customer for this shipment. See OptionType for the list of valid values.
      *
-     * @param SignatureOptionType $OptionType
+     * @param \FedEx\RateService\SimpleType\SignatureOptionType  $optionType
      * return SignatureOptionDetail
      */
     public function setOptionType(\FedEx\RateService\SimpleType\SignatureOptionType $optionType)
@@ -30,7 +36,7 @@ class SignatureOptionDetail
     /**
      * Identifies the delivery signature release authorization number.
      *
-     * @param string $SignatureReleaseNumber
+     * @param string $signatureReleaseNumber
      * return SignatureOptionDetail
      */
     public function setSignatureReleaseNumber($signatureReleaseNumber)

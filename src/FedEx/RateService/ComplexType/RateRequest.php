@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class RateRequest
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'RateRequest';
 
     /**
      * Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
-     * @param WebAuthenticationDetail $WebAuthenticationDetail
+     * @param WebAuthenticationDetail $webAuthenticationDetail
      * return RateRequest
      */
     public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
@@ -30,7 +36,7 @@ class RateRequest
     /**
      * Descriptive data identifying the client submitting the transaction.
      *
-     * @param ClientDetail $ClientDetail
+     * @param ClientDetail $clientDetail
      * return RateRequest
      */
     public function setClientDetail(ClientDetail $clientDetail)
@@ -42,7 +48,7 @@ class RateRequest
     /**
      * Descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
-     * @param TransactionDetail $TransactionDetail
+     * @param TransactionDetail $transactionDetail
      * return RateRequest
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
@@ -54,7 +60,7 @@ class RateRequest
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
-     * @param VersionId $Version
+     * @param VersionId $version
      * return RateRequest
      */
     public function setVersion(VersionId $version)
@@ -66,7 +72,7 @@ class RateRequest
     /**
      * Allows the caller to specify that the transit time and commit data are to be returned in the reply.
      *
-     * @param boolean $ReturnTransitAndCommit
+     * @param boolean $returnTransitAndCommit
      * return RateRequest
      */
     public function setReturnTransitAndCommit($returnTransitAndCommit)
@@ -78,7 +84,7 @@ class RateRequest
     /**
      * Candidate carriers for rate-shopping use case. This field is only considered if requestedShipment/serviceType is omitted.
      *
-     * @param array[CarrierCodeType] $CarrierCodes
+     * @param CarrierCodeType[] $carrierCodes
      * return RateRequest
      */
     public function setCarrierCodes(array $carrierCodes)
@@ -90,7 +96,7 @@ class RateRequest
     /**
      * Contains zero or more service options whose combinations are to be considered when replying with available services.
      *
-     * @param array[ServiceOptionType] $VariableOptions
+     * @param ServiceOptionType[] $variableOptions
      * return RateRequest
      */
     public function setVariableOptions(array $variableOptions)
@@ -102,7 +108,7 @@ class RateRequest
     /**
      * The shipment for which a rate quote (or rate-shopping comparison) is desired.
      *
-     * @param RequestedShipment $RequestedShipment
+     * @param RequestedShipment $requestedShipment
      * return RateRequest
      */
     public function setRequestedShipment(RequestedShipment $requestedShipment)

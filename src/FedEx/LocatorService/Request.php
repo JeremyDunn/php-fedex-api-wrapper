@@ -53,7 +53,7 @@ class Request
     /**
      * Sends the FedExLocatorRequest and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest
+     * @param ComplexType\FedExLocatorRequest $fedExLocatorRequest 
      * @return stdClass
      */
     public function getFedExLocatorReply(ComplexType\FedExLocatorRequest $fedExLocatorRequest)

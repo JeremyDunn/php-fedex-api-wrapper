@@ -4,7 +4,7 @@ namespace FedEx\AddressValidationService\SimpleType;
 use FedEx\AbstractSimpleType;
 
 /**
- * 
+ * DeliveryPointValidationType
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper

@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class RequestedPackageLineItem
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'RequestedPackageLineItem';
 
     /**
      * Used only with INDIVIDUAL_PACKAGE, as a unique identifier of each requested package.
      *
-     * @param positiveInteger $SequenceNumber
+     * @param positiveInteger $sequenceNumber
      * return RequestedPackageLineItem
      */
     public function setSequenceNumber($sequenceNumber)
@@ -30,7 +36,7 @@ class RequestedPackageLineItem
     /**
      * Used only with PACKAGE_GROUPS, as a unique identifier of each group of identical packages.
      *
-     * @param nonNegativeInteger $GroupNumber
+     * @param nonNegativeInteger $groupNumber
      * return RequestedPackageLineItem
      */
     public function setGroupNumber($groupNumber)
@@ -42,7 +48,7 @@ class RequestedPackageLineItem
     /**
      * Used only with PACKAGE_GROUPS, as a count of packages within a group of identical packages.
      *
-     * @param nonNegativeInteger $GroupPackageCount
+     * @param nonNegativeInteger $groupPackageCount
      * return RequestedPackageLineItem
      */
     public function setGroupPackageCount($groupPackageCount)
@@ -52,9 +58,9 @@ class RequestedPackageLineItem
     }
     
     /**
-     * 
+     * Set VariableHandlingChargeDetail
      *
-     * @param VariableHandlingChargeDetail $VariableHandlingChargeDetail
+     * @param VariableHandlingChargeDetail $variableHandlingChargeDetail
      * return RequestedPackageLineItem
      */
     public function setVariableHandlingChargeDetail(VariableHandlingChargeDetail $variableHandlingChargeDetail)
@@ -66,7 +72,7 @@ class RequestedPackageLineItem
     /**
      * Only used for INDIVIDUAL_PACKAGES and PACKAGE_GROUPS. Ignored for PACKAGE_SUMMARY, in which case totalInsuredValue and packageCount on the shipment will be used to determine this value.
      *
-     * @param Money $InsuredValue
+     * @param Money $insuredValue
      * return RequestedPackageLineItem
      */
     public function setInsuredValue(Money $insuredValue)
@@ -78,7 +84,7 @@ class RequestedPackageLineItem
     /**
      * Only used for INDIVIDUAL_PACKAGES and PACKAGE_GROUPS. Ignored for PACKAGE_SUMMARY, in which case totalweight and packageCount on the shipment will be used to determine this value.
      *
-     * @param Weight $Weight
+     * @param Weight $weight
      * return RequestedPackageLineItem
      */
     public function setWeight(Weight $weight)
@@ -88,9 +94,9 @@ class RequestedPackageLineItem
     }
     
     /**
-     * 
+     * Set Dimensions
      *
-     * @param Dimensions $Dimensions
+     * @param Dimensions $dimensions
      * return RequestedPackageLineItem
      */
     public function setDimensions(Dimensions $dimensions)
@@ -102,7 +108,7 @@ class RequestedPackageLineItem
     /**
      * Provides additional detail on how the customer has physically packaged this item. As of June 2009, required for packages moving under international and SmartPost services.
      *
-     * @param PhysicalPackagingType $PhysicalPackaging
+     * @param \FedEx\RateService\SimpleType\PhysicalPackagingType  $physicalPackaging
      * return RequestedPackageLineItem
      */
     public function setPhysicalPackaging(\FedEx\RateService\SimpleType\PhysicalPackagingType $physicalPackaging)
@@ -114,7 +120,7 @@ class RequestedPackageLineItem
     /**
      * Human-readable text describing the package.
      *
-     * @param string $ItemDescription
+     * @param string $itemDescription
      * return RequestedPackageLineItem
      */
     public function setItemDescription($itemDescription)
@@ -124,9 +130,9 @@ class RequestedPackageLineItem
     }
     
     /**
-     * 
+     * Set CustomerReferences
      *
-     * @param array[CustomerReference] $CustomerReferences
+     * @param CustomerReference[] $customerReferences
      * return RequestedPackageLineItem
      */
     public function setCustomerReferences(array $customerReferences)
@@ -136,9 +142,9 @@ class RequestedPackageLineItem
     }
     
     /**
-     * 
+     * Set SpecialServicesRequested
      *
-     * @param PackageSpecialServicesRequested $SpecialServicesRequested
+     * @param PackageSpecialServicesRequested $specialServicesRequested
      * return RequestedPackageLineItem
      */
     public function setSpecialServicesRequested(PackageSpecialServicesRequested $specialServicesRequested)
@@ -150,7 +156,7 @@ class RequestedPackageLineItem
     /**
      * Only used for INDIVIDUAL_PACKAGES and PACKAGE_GROUPS.
      *
-     * @param array[ContentRecord] $ContentRecords
+     * @param ContentRecord[] $contentRecords
      * return RequestedPackageLineItem
      */
     public function setContentRecords(array $contentRecords)

@@ -4,7 +4,7 @@ namespace FedEx\Pickup\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * CreditCard
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CreditCard
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CreditCard';
 
     /**
-     * 
+     * Set Number
      *
-     * @param string $Number
+     * @param string $number
      * return CreditCard
      */
     public function setNumber($number)
@@ -28,9 +34,9 @@ class CreditCard
     }
     
     /**
-     * 
+     * Set CreditCardType
      *
-     * @param CreditCardType $CreditCardType
+     * @param \FedEx\Pickup\SimpleType\CreditCardType  $creditCardType
      * return CreditCard
      */
     public function setCreditCardType(\FedEx\Pickup\SimpleType\CreditCardType $creditCardType)
@@ -42,7 +48,7 @@ class CreditCard
     /**
      * Must be in one of the following formats: YYMM, YYYYMM, or YYYYMMDD.
      *
-     * @param string $ExpirationDate
+     * @param string $expirationDate
      * return CreditCard
      */
     public function setExpirationDate($expirationDate)
@@ -52,9 +58,9 @@ class CreditCard
     }
     
     /**
-     * 
+     * Set VerificationCode
      *
-     * @param string $VerificationCode
+     * @param string $verificationCode
      * return CreditCard
      */
     public function setVerificationCode($verificationCode)
@@ -64,9 +70,9 @@ class CreditCard
     }
     
     /**
-     * 
+     * Set CreditCardHolder
      *
-     * @param ParsedContactAndAddress $CreditCardHolder
+     * @param ParsedContactAndAddress $creditCardHolder
      * return CreditCard
      */
     public function setCreditCardHolder(ParsedContactAndAddress $creditCardHolder)

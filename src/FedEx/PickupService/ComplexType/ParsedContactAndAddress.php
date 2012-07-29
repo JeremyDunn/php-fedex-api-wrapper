@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ParsedContactAndAddress
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ParsedContactAndAddress';
 
     /**
-     * 
+     * Set Contact
      *
-     * @param ParsedContact $Contact
+     * @param ParsedContact $contact
      * return ParsedContactAndAddress
      */
     public function setContact(ParsedContact $contact)
@@ -28,9 +34,9 @@ class ParsedContactAndAddress
     }
     
     /**
-     * 
+     * Set Address
      *
-     * @param Address $Address
+     * @param Address $address
      * return ParsedContactAndAddress
      */
     public function setAddress(Address $address)

@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CourierDispatchFreightDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CourierDispatchFreightDetail';
 
     /**
      * Identifies the collection of available FedEx transportation service options. Must be a valid FedEx freight service identifier.
      *
-     * @param ServiceType $Service
+     * @param \FedEx\CourierDispatchService\SimpleType\ServiceType  $service
      * return CourierDispatchFreightDetail
      */
     public function setService(\FedEx\CourierDispatchService\SimpleType\ServiceType $service)
@@ -30,7 +36,7 @@ class CourierDispatchFreightDetail
     /**
      * Identifies the FedEx freight booking number. This element should contain numeric values only.
      *
-     * @param string $BookingNumber
+     * @param string $bookingNumber
      * return CourierDispatchFreightDetail
      */
     public function setBookingNumber($bookingNumber)
@@ -42,7 +48,7 @@ class CourierDispatchFreightDetail
     /**
      * Descriptive data detailing the length, width, and height of the freight package or shipment being picked up by FedEx.
      *
-     * @param Dimensions $Dimensions
+     * @param Dimensions $dimensions
      * return CourierDispatchFreightDetail
      */
     public function setDimensions(Dimensions $dimensions)
@@ -54,7 +60,7 @@ class CourierDispatchFreightDetail
     /**
      * Identifies the type of truck that is needed for FedEx to pick up the freight shipment. See TruckType for valid values.
      *
-     * @param TruckType $TruckType
+     * @param \FedEx\CourierDispatchService\SimpleType\TruckType  $truckType
      * return CourierDispatchFreightDetail
      */
     public function setTruckType(\FedEx\CourierDispatchService\SimpleType\TruckType $truckType)
@@ -66,7 +72,7 @@ class CourierDispatchFreightDetail
     /**
      * Identifies the tailer size needed for FedEx to pick up a freight shipment. See TrailerSizeType for valid values.
      *
-     * @param TrailerSizeType $TrailerSize
+     * @param \FedEx\CourierDispatchService\SimpleType\TrailerSizeType  $trailerSize
      * return CourierDispatchFreightDetail
      */
     public function setTrailerSize(\FedEx\CourierDispatchService\SimpleType\TrailerSizeType $trailerSize)

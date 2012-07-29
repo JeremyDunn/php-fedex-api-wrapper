@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class TrackPackageIdentifier
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'TrackPackageIdentifier';
 
     /**
      * The value to be used to retrieve tracking information for a package.
      *
-     * @param string $Value
+     * @param string $value
      * return TrackPackageIdentifier
      */
     public function setValue($value)
@@ -30,7 +36,7 @@ class TrackPackageIdentifier
     /**
      * The type of the Value to be used to retrieve tracking information for a package (e.g. SHIPPER_REFERENCE, PURCHASE_ORDER, TRACKING_NUMBER_OR_DOORTAG, etc..) .
      *
-     * @param TrackIdentifierType $Type
+     * @param \FedEx\TrackService\SimpleType\TrackIdentifierType  $type
      * return TrackPackageIdentifier
      */
     public function setType(\FedEx\TrackService\SimpleType\TrackIdentifierType $type)

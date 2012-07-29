@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class Localization
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'Localization';
 
     /**
      * Identifies the language to use for human-readable messages.
      *
-     * @param string $LanguageCode
+     * @param string $languageCode
      * return Localization
      */
     public function setLanguageCode($languageCode)
@@ -30,7 +36,7 @@ class Localization
     /**
      * Identifies the locale (i.e.	country code).
      *
-     * @param string $LocaleCode
+     * @param string $localeCode
      * return Localization
      */
     public function setLocaleCode($localeCode)

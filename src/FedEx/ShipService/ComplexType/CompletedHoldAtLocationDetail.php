@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
+ * CompletedHoldAtLocationDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CompletedHoldAtLocationDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CompletedHoldAtLocationDetail';
 
     /**
      * Identifies the branded location name, the hold at location phone number and the address of the location.
      *
-     * @param ContactAndAddress $HoldingLocation
+     * @param ContactAndAddress $holdingLocation
      * return CompletedHoldAtLocationDetail
      */
     public function setHoldingLocation(ContactAndAddress $holdingLocation)
@@ -30,7 +36,7 @@ class CompletedHoldAtLocationDetail
     /**
      * Identifies the type of FedEx location.
      *
-     * @param FedExLocationType $HoldingLocationType
+     * @param \FedEx\ShipService\SimpleType\FedExLocationType  $holdingLocationType
      * return CompletedHoldAtLocationDetail
      */
     public function setHoldingLocationType(\FedEx\ShipService\SimpleType\FedExLocationType $holdingLocationType)

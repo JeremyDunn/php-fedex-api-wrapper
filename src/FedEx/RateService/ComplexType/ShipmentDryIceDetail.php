@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class ShipmentDryIceDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'ShipmentDryIceDetail';
 
     /**
      * Total number of packages in the shipment that contain dry ice.
      *
-     * @param nonNegativeInteger $PackageCount
+     * @param nonNegativeInteger $packageCount
      * return ShipmentDryIceDetail
      */
     public function setPackageCount($packageCount)
@@ -30,7 +36,7 @@ class ShipmentDryIceDetail
     /**
      * Total shipment dry ice weight for all packages.
      *
-     * @param Weight $TotalWeight
+     * @param Weight $totalWeight
      * return ShipmentDryIceDetail
      */
     public function setTotalWeight(Weight $totalWeight)

@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class SmartPostShipmentDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'SmartPostShipmentDetail';
 
     /**
-     * 
+     * Set Indicia
      *
-     * @param SmartPostIndiciaType $Indicia
+     * @param \FedEx\RateService\SimpleType\SmartPostIndiciaType  $indicia
      * return SmartPostShipmentDetail
      */
     public function setIndicia(\FedEx\RateService\SimpleType\SmartPostIndiciaType $indicia)
@@ -28,9 +34,9 @@ class SmartPostShipmentDetail
     }
     
     /**
-     * 
+     * Set AncillaryEndorsement
      *
-     * @param SmartPostAncillaryEndorsementType $AncillaryEndorsement
+     * @param \FedEx\RateService\SimpleType\SmartPostAncillaryEndorsementType  $ancillaryEndorsement
      * return SmartPostShipmentDetail
      */
     public function setAncillaryEndorsement(\FedEx\RateService\SimpleType\SmartPostAncillaryEndorsementType $ancillaryEndorsement)
@@ -40,9 +46,9 @@ class SmartPostShipmentDetail
     }
     
     /**
-     * 
+     * Set HubId
      *
-     * @param string $HubId
+     * @param string $hubId
      * return SmartPostShipmentDetail
      */
     public function setHubId($hubId)
@@ -52,9 +58,9 @@ class SmartPostShipmentDetail
     }
     
     /**
-     * 
+     * Set CustomerManifestId
      *
-     * @param string $CustomerManifestId
+     * @param string $customerManifestId
      * return SmartPostShipmentDetail
      */
     public function setCustomerManifestId($customerManifestId)

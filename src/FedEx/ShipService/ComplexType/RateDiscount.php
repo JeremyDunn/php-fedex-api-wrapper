@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class RateDiscount
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'RateDiscount';
 
     /**
      * Identifies the type of discount applied to the shipment.
      *
-     * @param RateDiscountType $RateDiscountType
+     * @param \FedEx\ShipService\SimpleType\RateDiscountType  $rateDiscountType
      * return RateDiscount
      */
     public function setRateDiscountType(\FedEx\ShipService\SimpleType\RateDiscountType $rateDiscountType)
@@ -28,9 +34,9 @@ class RateDiscount
     }
     
     /**
-     * 
+     * Set Description
      *
-     * @param string $Description
+     * @param string $description
      * return RateDiscount
      */
     public function setDescription($description)
@@ -42,7 +48,7 @@ class RateDiscount
     /**
      * The amount of the discount applied to the shipment.
      *
-     * @param Money $Amount
+     * @param Money $amount
      * return RateDiscount
      */
     public function setAmount(Money $amount)
@@ -54,7 +60,7 @@ class RateDiscount
     /**
      * The percentage of the discount applied to the shipment.
      *
-     * @param decimal $Percent
+     * @param decimal $percent
      * return RateDiscount
      */
     public function setPercent($percent)

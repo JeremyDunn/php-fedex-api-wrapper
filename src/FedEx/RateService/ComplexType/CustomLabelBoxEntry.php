@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CustomLabelBoxEntry
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CustomLabelBoxEntry';
 
     /**
-     * 
+     * Set TopLeftCorner
      *
-     * @param CustomLabelPosition $TopLeftCorner
+     * @param CustomLabelPosition $topLeftCorner
      * return CustomLabelBoxEntry
      */
     public function setTopLeftCorner(CustomLabelPosition $topLeftCorner)
@@ -28,9 +34,9 @@ class CustomLabelBoxEntry
     }
     
     /**
-     * 
+     * Set BottomRightCorner
      *
-     * @param CustomLabelPosition $BottomRightCorner
+     * @param CustomLabelPosition $bottomRightCorner
      * return CustomLabelBoxEntry
      */
     public function setBottomRightCorner(CustomLabelPosition $bottomRightCorner)

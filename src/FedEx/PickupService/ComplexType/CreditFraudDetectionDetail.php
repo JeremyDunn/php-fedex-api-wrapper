@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CreditFraudDetectionDetail
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CreditFraudDetectionDetail';
 
     /**
-     * 
+     * Set IpAddress
      *
-     * @param string $IpAddress
+     * @param string $ipAddress
      * return CreditFraudDetectionDetail
      */
     public function setIpAddress($ipAddress)
@@ -28,9 +34,9 @@ class CreditFraudDetectionDetail
     }
     
     /**
-     * 
+     * Set ClientCookiesEnabled
      *
-     * @param boolean $ClientCookiesEnabled
+     * @param boolean $clientCookiesEnabled
      * return CreditFraudDetectionDetail
      */
     public function setClientCookiesEnabled($clientCookiesEnabled)
@@ -40,9 +46,9 @@ class CreditFraudDetectionDetail
     }
     
     /**
-     * 
+     * Set DevicePrint
      *
-     * @param string $DevicePrint
+     * @param string $devicePrint
      * return CreditFraudDetectionDetail
      */
     public function setDevicePrint($devicePrint)

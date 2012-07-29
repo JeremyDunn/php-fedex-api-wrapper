@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class CurrencyExchangeRate
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'CurrencyExchangeRate';
 
     /**
      * The currency code for the original (converted FROM) currency.
      *
-     * @param string $FromCurrency
+     * @param string $fromCurrency
      * return CurrencyExchangeRate
      */
     public function setFromCurrency($fromCurrency)
@@ -30,7 +36,7 @@ class CurrencyExchangeRate
     /**
      * The currency code for the final (converted INTO) currency.
      *
-     * @param string $IntoCurrency
+     * @param string $intoCurrency
      * return CurrencyExchangeRate
      */
     public function setIntoCurrency($intoCurrency)
@@ -42,7 +48,7 @@ class CurrencyExchangeRate
     /**
      * Multiplier used to convert fromCurrency units to intoCurrency units.
      *
-     * @param decimal $Rate
+     * @param decimal $rate
      * return CurrencyExchangeRate
      */
     public function setRate($rate)

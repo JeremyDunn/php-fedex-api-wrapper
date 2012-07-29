@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class Address
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'Address';
 
     /**
      * Combination of number, street name, etc. At least one line is required for a valid physical address; empty lines should not be included.
      *
-     * @param array[string] $StreetLines
+     * @param string[] $streetLines
      * return Address
      */
     public function setStreetLines(array $streetLines)
@@ -30,7 +36,7 @@ class Address
     /**
      * Name of city, town, etc. 
      *
-     * @param string $City
+     * @param string $city
      * return Address
      */
     public function setCity($city)
@@ -42,7 +48,7 @@ class Address
     /**
      * Identifying abbreviation for US state, Canada province, etc. Format and presence of this field will vary, depending on country.
      *
-     * @param string $StateOrProvinceCode
+     * @param string $stateOrProvinceCode
      * return Address
      */
     public function setStateOrProvinceCode($stateOrProvinceCode)
@@ -54,7 +60,7 @@ class Address
     /**
      * Identification of a region (usually small) for mail/package delivery. Format and presence of this field will vary, depending on country. First five characters will be accepted. 
      *
-     * @param string $PostalCode
+     * @param string $postalCode
      * return Address
      */
     public function setPostalCode($postalCode)
@@ -66,7 +72,7 @@ class Address
     /**
      * Relevant only to addresses in Puerto Rico. In Puerto Rico, multiple addresses within the same ZIP code can have the same house number and street name. When this is the case, the urbanization code is needed to distinguish them.
      *
-     * @param string $UrbanizationCode
+     * @param string $urbanizationCode
      * return Address
      */
     public function setUrbanizationCode($urbanizationCode)
@@ -78,7 +84,7 @@ class Address
     /**
      * Identification of a country.
      *
-     * @param string $CountryCode
+     * @param string $countryCode
      * return Address
      */
     public function setCountryCode($countryCode)
@@ -90,7 +96,7 @@ class Address
     /**
      * Indicates whether this address is residential (as opposed to commercial).
      *
-     * @param boolean $Residential
+     * @param boolean $residential
      * return Address
      */
     public function setResidential($residential)

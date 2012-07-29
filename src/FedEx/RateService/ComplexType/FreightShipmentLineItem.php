@@ -13,12 +13,18 @@ use FedEx\AbstractComplexType;
 class FreightShipmentLineItem
     extends AbstractComplexType
 {
+
+    /**
+     * Name of this complex type
+     * 
+     * @var string
+     */
     protected $_name = 'FreightShipmentLineItem';
 
     /**
      * Freight class for this line item.
      *
-     * @param FreightClassType $FreightClass
+     * @param \FedEx\RateService\SimpleType\FreightClassType  $freightClass
      * return FreightShipmentLineItem
      */
     public function setFreightClass(\FedEx\RateService\SimpleType\FreightClassType $freightClass)
@@ -30,7 +36,7 @@ class FreightShipmentLineItem
     /**
      * Specification of handling-unit packaging for this commodity or class line.
      *
-     * @param PhysicalPackagingType $Packaging
+     * @param \FedEx\RateService\SimpleType\PhysicalPackagingType  $packaging
      * return FreightShipmentLineItem
      */
     public function setPackaging(\FedEx\RateService\SimpleType\PhysicalPackagingType $packaging)
@@ -42,7 +48,7 @@ class FreightShipmentLineItem
     /**
      * Customer-provided description for this commodity or class line.
      *
-     * @param string $Description
+     * @param string $description
      * return FreightShipmentLineItem
      */
     public function setDescription($description)
@@ -54,7 +60,7 @@ class FreightShipmentLineItem
     /**
      * Weight for this commodity or class line.
      *
-     * @param Weight $Weight
+     * @param Weight $weight
      * return FreightShipmentLineItem
      */
     public function setWeight(Weight $weight)
@@ -66,7 +72,7 @@ class FreightShipmentLineItem
     /**
      * FED EX INTERNAL USE ONLY - Individual line item dimensions.
      *
-     * @param Dimensions $Dimensions
+     * @param Dimensions $dimensions
      * return FreightShipmentLineItem
      */
     public function setDimensions(Dimensions $dimensions)
@@ -78,7 +84,7 @@ class FreightShipmentLineItem
     /**
      * Volume (cubic measure) for this commodity or class line.
      *
-     * @param Volume $Volume
+     * @param Volume $volume
      * return FreightShipmentLineItem
      */
     public function setVolume(Volume $volume)
