@@ -1,0 +1,306 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>PHP Fedex API Wrapper » \FedEx\ShipService\SimpleType\TransitTimeType</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">PHP Fedex API Wrapper</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/FedEx.html"><i class="icon-th"></i> FedEx</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/PHP%20FedEx%20API%20wrapper.html"><i class="icon-folder-open"></i> PHP FedEx API wrapper</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">871</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public inherited"><a href="#__construct" title="__construct :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#__toString" title="__toString :: __toString() implementation"><span class="description">__toString() implementation</span><pre>__toString()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header protected">» Protected</li>
+<li class="property protected inherited"><a href="#%24_value" title="$_value :: "><span class="description">$_value</span><pre>$_value</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  "><a href="#_EIGHTEEN_DAYS" title="_EIGHTEEN_DAYS :: "><span class="description">_EIGHTEEN_DAYS</span><pre>_EIGHTEEN_DAYS</pre></a></li>
+<li class="constant  "><a href="#_EIGHT_DAYS" title="_EIGHT_DAYS :: "><span class="description">_EIGHT_DAYS</span><pre>_EIGHT_DAYS</pre></a></li>
+<li class="constant  "><a href="#_ELEVEN_DAYS" title="_ELEVEN_DAYS :: "><span class="description">_ELEVEN_DAYS</span><pre>_ELEVEN_DAYS</pre></a></li>
+<li class="constant  "><a href="#_FIFTEEN_DAYS" title="_FIFTEEN_DAYS :: "><span class="description">_FIFTEEN_DAYS</span><pre>_FIFTEEN_DAYS</pre></a></li>
+<li class="constant  "><a href="#_FIVE_DAYS" title="_FIVE_DAYS :: "><span class="description">_FIVE_DAYS</span><pre>_FIVE_DAYS</pre></a></li>
+<li class="constant  "><a href="#_FOURTEEN_DAYS" title="_FOURTEEN_DAYS :: "><span class="description">_FOURTEEN_DAYS</span><pre>_FOURTEEN_DAYS</pre></a></li>
+<li class="constant  "><a href="#_FOUR_DAYS" title="_FOUR_DAYS :: "><span class="description">_FOUR_DAYS</span><pre>_FOUR_DAYS</pre></a></li>
+<li class="constant  "><a href="#_NINETEEN_DAYS" title="_NINETEEN_DAYS :: "><span class="description">_NINETEEN_DAYS</span><pre>_NINETEEN_DAYS</pre></a></li>
+<li class="constant  "><a href="#_NINE_DAYS" title="_NINE_DAYS :: "><span class="description">_NINE_DAYS</span><pre>_NINE_DAYS</pre></a></li>
+<li class="constant  "><a href="#_ONE_DAY" title="_ONE_DAY :: "><span class="description">_ONE_DAY</span><pre>_ONE_DAY</pre></a></li>
+<li class="constant  "><a href="#_SEVENTEEN_DAYS" title="_SEVENTEEN_DAYS :: "><span class="description">_SEVENTEEN_DAYS</span><pre>_SEVENTEEN_DAYS</pre></a></li>
+<li class="constant  "><a href="#_SEVEN_DAYS" title="_SEVEN_DAYS :: "><span class="description">_SEVEN_DAYS</span><pre>_SEVEN_DAYS</pre></a></li>
+<li class="constant  "><a href="#_SIXTEEN_DAYS" title="_SIXTEEN_DAYS :: "><span class="description">_SIXTEEN_DAYS</span><pre>_SIXTEEN_DAYS</pre></a></li>
+<li class="constant  "><a href="#_SIX_DAYS" title="_SIX_DAYS :: "><span class="description">_SIX_DAYS</span><pre>_SIX_DAYS</pre></a></li>
+<li class="constant  "><a href="#_TEN_DAYS" title="_TEN_DAYS :: "><span class="description">_TEN_DAYS</span><pre>_TEN_DAYS</pre></a></li>
+<li class="constant  "><a href="#_THIRTEEN_DAYS" title="_THIRTEEN_DAYS :: "><span class="description">_THIRTEEN_DAYS</span><pre>_THIRTEEN_DAYS</pre></a></li>
+<li class="constant  "><a href="#_THREE_DAYS" title="_THREE_DAYS :: "><span class="description">_THREE_DAYS</span><pre>_THREE_DAYS</pre></a></li>
+<li class="constant  "><a href="#_TWELVE_DAYS" title="_TWELVE_DAYS :: "><span class="description">_TWELVE_DAYS</span><pre>_TWELVE_DAYS</pre></a></li>
+<li class="constant  "><a href="#_TWENTY_DAYS" title="_TWENTY_DAYS :: "><span class="description">_TWENTY_DAYS</span><pre>_TWENTY_DAYS</pre></a></li>
+<li class="constant  "><a href="#_TWO_DAYS" title="_TWO_DAYS :: "><span class="description">_TWO_DAYS</span><pre>_TWO_DAYS</pre></a></li>
+<li class="constant  "><a href="#_UNKNOWN" title="_UNKNOWN :: "><span class="description">_UNKNOWN</span><pre>_UNKNOWN</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CFedEx%5CShipService%5CSimpleType%5CTransitTimeType" id="\FedEx\ShipService\SimpleType\TransitTimeType"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/FedEx.html">FedEx</a></li>
+<span class="divider">\</span><li><a href="../namespaces/FedEx.ShipService.html">ShipService</a></li>
+<span class="divider">\</span><li><a href="../namespaces/FedEx.ShipService.SimpleType.html">SimpleType</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/FedEx.ShipService.SimpleType.TransitTimeType.html">TransitTimeType</a>
+</li>
+</ul>
+<div href="../classes/FedEx.ShipService.SimpleType.TransitTimeType.html" class="element class">
+<p class="short_description">Identifies the set of valid shipment transit time values.</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="mailto:jeremy@jsdunn.info">Jeremy Dunn</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/PHP%20FedEx%20API%20wrapper.Ship%20Service.html">PHP FedEx API wrapper</a></td>
+</tr>
+<tr>
+<th>subpackage</th>
+<td>Ship Service</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Constructor</h2>
+<pre>__construct(string $value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractSimpleType::__construct()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="__toString" id="__toString"></a><div class="element clickable method public __toString" data-toggle="collapse" data-target=".__toString .collapse">
+<h2>__toString() implementation</h2>
+<pre>__toString() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractSimpleType::__toString()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24_value" id="$_value"> </a><div class="element clickable property protected $_value" data-toggle="collapse" data-target=".$_value .collapse">
+<h2>$_value</h2>
+<pre>$_value : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractSimpleType::$$_value</td>
+</tr></table>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a name="_EIGHTEEN_DAYS" id="_EIGHTEEN_DAYS"> </a><div class="element clickable constant  _EIGHTEEN_DAYS" data-toggle="collapse" data-target="._EIGHTEEN_DAYS .collapse">
+<h2>_EIGHTEEN_DAYS</h2>
+<pre>_EIGHTEEN_DAYS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_EIGHT_DAYS" id="_EIGHT_DAYS"> </a><div class="element clickable constant  _EIGHT_DAYS" data-toggle="collapse" data-target="._EIGHT_DAYS .collapse">
+<h2>_EIGHT_DAYS</h2>
+<pre>_EIGHT_DAYS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_ELEVEN_DAYS" id="_ELEVEN_DAYS"> </a><div class="element clickable constant  _ELEVEN_DAYS" data-toggle="collapse" data-target="._ELEVEN_DAYS .collapse">
+<h2>_ELEVEN_DAYS</h2>
+<pre>_ELEVEN_DAYS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_FIFTEEN_DAYS" id="_FIFTEEN_DAYS"> </a><div class="element clickable constant  _FIFTEEN_DAYS" data-toggle="collapse" data-target="._FIFTEEN_DAYS .collapse">
+<h2>_FIFTEEN_DAYS</h2>
+<pre>_FIFTEEN_DAYS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_FIVE_DAYS" id="_FIVE_DAYS"> </a><div class="element clickable constant  _FIVE_DAYS" data-toggle="collapse" data-target="._FIVE_DAYS .collapse">
+<h2>_FIVE_DAYS</h2>
+<pre>_FIVE_DAYS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_FOURTEEN_DAYS" id="_FOURTEEN_DAYS"> </a><div class="element clickable constant  _FOURTEEN_DAYS" data-toggle="collapse" data-target="._FOURTEEN_DAYS .collapse">
+<h2>_FOURTEEN_DAYS</h2>
+<pre>_FOURTEEN_DAYS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_FOUR_DAYS" id="_FOUR_DAYS"> </a><div class="element clickable constant  _FOUR_DAYS" data-toggle="collapse" data-target="._FOUR_DAYS .collapse">
+<h2>_FOUR_DAYS</h2>
+<pre>_FOUR_DAYS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_NINETEEN_DAYS" id="_NINETEEN_DAYS"> </a><div class="element clickable constant  _NINETEEN_DAYS" data-toggle="collapse" data-target="._NINETEEN_DAYS .collapse">
+<h2>_NINETEEN_DAYS</h2>
+<pre>_NINETEEN_DAYS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_NINE_DAYS" id="_NINE_DAYS"> </a><div class="element clickable constant  _NINE_DAYS" data-toggle="collapse" data-target="._NINE_DAYS .collapse">
+<h2>_NINE_DAYS</h2>
+<pre>_NINE_DAYS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_ONE_DAY" id="_ONE_DAY"> </a><div class="element clickable constant  _ONE_DAY" data-toggle="collapse" data-target="._ONE_DAY .collapse">
+<h2>_ONE_DAY</h2>
+<pre>_ONE_DAY </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_SEVENTEEN_DAYS" id="_SEVENTEEN_DAYS"> </a><div class="element clickable constant  _SEVENTEEN_DAYS" data-toggle="collapse" data-target="._SEVENTEEN_DAYS .collapse">
+<h2>_SEVENTEEN_DAYS</h2>
+<pre>_SEVENTEEN_DAYS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_SEVEN_DAYS" id="_SEVEN_DAYS"> </a><div class="element clickable constant  _SEVEN_DAYS" data-toggle="collapse" data-target="._SEVEN_DAYS .collapse">
+<h2>_SEVEN_DAYS</h2>
+<pre>_SEVEN_DAYS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_SIXTEEN_DAYS" id="_SIXTEEN_DAYS"> </a><div class="element clickable constant  _SIXTEEN_DAYS" data-toggle="collapse" data-target="._SIXTEEN_DAYS .collapse">
+<h2>_SIXTEEN_DAYS</h2>
+<pre>_SIXTEEN_DAYS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_SIX_DAYS" id="_SIX_DAYS"> </a><div class="element clickable constant  _SIX_DAYS" data-toggle="collapse" data-target="._SIX_DAYS .collapse">
+<h2>_SIX_DAYS</h2>
+<pre>_SIX_DAYS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_TEN_DAYS" id="_TEN_DAYS"> </a><div class="element clickable constant  _TEN_DAYS" data-toggle="collapse" data-target="._TEN_DAYS .collapse">
+<h2>_TEN_DAYS</h2>
+<pre>_TEN_DAYS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_THIRTEEN_DAYS" id="_THIRTEEN_DAYS"> </a><div class="element clickable constant  _THIRTEEN_DAYS" data-toggle="collapse" data-target="._THIRTEEN_DAYS .collapse">
+<h2>_THIRTEEN_DAYS</h2>
+<pre>_THIRTEEN_DAYS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_THREE_DAYS" id="_THREE_DAYS"> </a><div class="element clickable constant  _THREE_DAYS" data-toggle="collapse" data-target="._THREE_DAYS .collapse">
+<h2>_THREE_DAYS</h2>
+<pre>_THREE_DAYS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_TWELVE_DAYS" id="_TWELVE_DAYS"> </a><div class="element clickable constant  _TWELVE_DAYS" data-toggle="collapse" data-target="._TWELVE_DAYS .collapse">
+<h2>_TWELVE_DAYS</h2>
+<pre>_TWELVE_DAYS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_TWENTY_DAYS" id="_TWENTY_DAYS"> </a><div class="element clickable constant  _TWENTY_DAYS" data-toggle="collapse" data-target="._TWENTY_DAYS .collapse">
+<h2>_TWENTY_DAYS</h2>
+<pre>_TWENTY_DAYS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_TWO_DAYS" id="_TWO_DAYS"> </a><div class="element clickable constant  _TWO_DAYS" data-toggle="collapse" data-target="._TWO_DAYS .collapse">
+<h2>_TWO_DAYS</h2>
+<pre>_TWO_DAYS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_UNKNOWN" id="_UNKNOWN"> </a><div class="element clickable constant  _UNKNOWN" data-toggle="collapse" data-target="._UNKNOWN .collapse">
+<h2>_UNKNOWN</h2>
+<pre>_UNKNOWN </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a8</a> and<br>
+            generated on 2012-07-29T13:59:16-05:00.<br></footer></div>
+</div>
+</body>
+</html>

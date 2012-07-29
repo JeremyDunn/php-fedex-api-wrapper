@@ -1,0 +1,422 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>PHP Fedex API Wrapper » \FedEx\ShipService\ComplexType\Commodity</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">PHP Fedex API Wrapper</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/FedEx.html"><i class="icon-th"></i> FedEx</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/PHP%20FedEx%20API%20wrapper.html"><i class="icon-folder-open"></i> PHP FedEx API wrapper</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">871</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public inherited"><a href="#__construct" title="__construct :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#__set" title="__set :: __set implementation"><span class="description">__set implementation</span><pre>__set()</pre></a></li>
+<li class="method public "><a href="#setAdditionalMeasures" title="setAdditionalMeasures :: Contains only additional quantitative information other than weight and quantity to calculate duties and taxes."><span class="description">Contains only additional quantitative information other than weight and quantity to calculate duties and taxes.</span><pre>setAdditionalMeasures()</pre></a></li>
+<li class="method public "><a href="#setCIMarksAndNumbers" title="setCIMarksAndNumbers :: An identifying mark or number used on the packaging of a shipment to help customers identify a particular shipment."><span class="description">An identifying mark or number used on the packaging of a shipment to help customers identify a particular shipment.</span><pre>setCIMarksAndNumbers()</pre></a></li>
+<li class="method public "><a href="#setCountryOfManufacture" title="setCountryOfManufacture :: Country code where commodity contents were produced or manufactured in their final form."><span class="description">Country code where commodity contents were produced or manufactured in their final form.</span><pre>setCountryOfManufacture()</pre></a></li>
+<li class="method public "><a href="#setCustomsValue" title="setCustomsValue :: Total customs value for this line item."><span class="description">Total customs value for this line item.</span><pre>setCustomsValue()</pre></a></li>
+<li class="method public "><a href="#setDescription" title="setDescription :: Complete and accurate description of this commodity."><span class="description">Complete and accurate description of this commodity.</span><pre>setDescription()</pre></a></li>
+<li class="method public "><a href="#setExciseConditions" title="setExciseConditions :: Defines additional characteristic of commodity used to calculate duties and taxes"><span class="description">Defines additional characteristic of commodity used to calculate duties and taxes</span><pre>setExciseConditions()</pre></a></li>
+<li class="method public "><a href="#setExportLicenseExpirationDate" title="setExportLicenseExpirationDate :: Date of expiration."><span class="description">Date of expiration.</span><pre>setExportLicenseExpirationDate()</pre></a></li>
+<li class="method public "><a href="#setExportLicenseNumber" title="setExportLicenseNumber :: Applicable to US export shipping only."><span class="description">Applicable to US export shipping only.</span><pre>setExportLicenseNumber()</pre></a></li>
+<li class="method public "><a href="#setHarmonizedCode" title="setHarmonizedCode :: Unique alpha/numeric representing commodity item."><span class="description">Unique alpha/numeric representing commodity item.</span><pre>setHarmonizedCode()</pre></a></li>
+<li class="method public "><a href="#setNaftaDetail" title="setNaftaDetail :: All data required for this commodity in NAFTA Certificate of Origin."><span class="description">All data required for this commodity in NAFTA Certificate of Origin.</span><pre>setNaftaDetail()</pre></a></li>
+<li class="method public "><a href="#setName" title="setName :: Name of this commodity."><span class="description">Name of this commodity.</span><pre>setName()</pre></a></li>
+<li class="method public "><a href="#setNumberOfPieces" title="setNumberOfPieces :: Total number of pieces of this commodity"><span class="description">Total number of pieces of this commodity</span><pre>setNumberOfPieces()</pre></a></li>
+<li class="method public "><a href="#setQuantity" title="setQuantity :: Number of units of a commodity in total number of pieces for this line item."><span class="description">Number of units of a commodity in total number of pieces for this line item.</span><pre>setQuantity()</pre></a></li>
+<li class="method public "><a href="#setQuantityUnits" title="setQuantityUnits :: Unit of measure used to express the quantity of this commodity line item."><span class="description">Unit of measure used to express the quantity of this commodity line item.</span><pre>setQuantityUnits()</pre></a></li>
+<li class="method public "><a href="#setUnitPrice" title="setUnitPrice :: Value of each unit in Quantity."><span class="description">Value of each unit in Quantity.</span><pre>setUnitPrice()</pre></a></li>
+<li class="method public "><a href="#setWeight" title="setWeight :: Total weight of this commodity."><span class="description">Total weight of this commodity.</span><pre>setWeight()</pre></a></li>
+<li class="method public inherited"><a href="#toArray" title="toArray :: Returns the complex type as an array"><span class="description">Returns the complex type as an array</span><pre>toArray()</pre></a></li>
+<li class="nav-header protected">» Protected</li>
+<li class="method protected inherited"><a href="#_convertToArray" title="_convertToArray :: Recursive algorthim to convert complex types to an array"><span class="description">Recursive algorthim to convert complex types to an array</span><pre>_convertToArray()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header protected">» Protected</li>
+<li class="property protected "><a href="#%24_name" title="$_name :: Name of this complex type"><span class="description">Name of this complex type</span><pre>$_name</pre></a></li>
+<li class="property protected inherited"><a href="#%24_values" title="$_values :: Holds the data as a key =&gt; value array"><span class="description">Holds the data as a key =&gt; value array</span><pre>$_values</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CFedEx%5CShipService%5CComplexType%5CCommodity" id="\FedEx\ShipService\ComplexType\Commodity"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/FedEx.html">FedEx</a></li>
+<span class="divider">\</span><li><a href="../namespaces/FedEx.ShipService.html">ShipService</a></li>
+<span class="divider">\</span><li><a href="../namespaces/FedEx.ShipService.ComplexType.html">ComplexType</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/FedEx.ShipService.ComplexType.Commodity.html">Commodity</a>
+</li>
+</ul>
+<div href="../classes/FedEx.ShipService.ComplexType.Commodity.html" class="element class">
+<p class="short_description">For international multiple piece shipments, commodity information must be passed in the Master and on each child transaction.</p>
+<div class="details">
+<p class="long_description"><p>If this shipment cotains more than four commodities line items, the four highest valued should be included in the first 4 occurances for this request.</p></p>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="mailto:jeremy@jsdunn.info">Jeremy Dunn</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/PHP%20FedEx%20API%20wrapper.Ship%20Service.html">PHP FedEx API wrapper</a></td>
+</tr>
+<tr>
+<th>subpackage</th>
+<td>Ship Service</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Constructor</h2>
+<pre>__construct(array $options) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractComplexType::__construct()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code><p>Data as key => value array</p>
+</div>
+</div></div>
+</div>
+<a name="__set" id="__set"></a><div class="element clickable method public __set" data-toggle="collapse" data-target=".__set .collapse">
+<h2>__set implementation</h2>
+<pre>__set(string $name, string $value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractComplexType::__set()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="setAdditionalMeasures" id="setAdditionalMeasures"></a><div class="element clickable method public setAdditionalMeasures" data-toggle="collapse" data-target=".setAdditionalMeasures .collapse">
+<h2>Contains only additional quantitative information other than weight and quantity to calculate duties and taxes.</h2>
+<pre>setAdditionalMeasures(array $additionalMeasures) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$additionalMeasures</h4>
+<code><a href="ShipService.ComplexType.Measure.html#%5CFedEx%5CShipService%5CComplexType%5CMeasure">\FedEx\ShipService\ComplexType\Measure[]</a></code><p>return Commodity</p></div>
+</div></div>
+</div>
+<a name="setCIMarksAndNumbers" id="setCIMarksAndNumbers"></a><div class="element clickable method public setCIMarksAndNumbers" data-toggle="collapse" data-target=".setCIMarksAndNumbers .collapse">
+<h2>An identifying mark or number used on the packaging of a shipment to help customers identify a particular shipment.</h2>
+<pre>setCIMarksAndNumbers(string $cIMarksAndNumbers) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$cIMarksAndNumbers</h4>
+<code>string</code><p>return Commodity</p></div>
+</div></div>
+</div>
+<a name="setCountryOfManufacture" id="setCountryOfManufacture"></a><div class="element clickable method public setCountryOfManufacture" data-toggle="collapse" data-target=".setCountryOfManufacture .collapse">
+<h2>Country code where commodity contents were produced or manufactured in their final form.</h2>
+<pre>setCountryOfManufacture(string $countryOfManufacture) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$countryOfManufacture</h4>
+<code>string</code><p>return Commodity</p></div>
+</div></div>
+</div>
+<a name="setCustomsValue" id="setCustomsValue"></a><div class="element clickable method public setCustomsValue" data-toggle="collapse" data-target=".setCustomsValue .collapse">
+<h2>Total customs value for this line item.</h2>
+<pre>setCustomsValue(\FedEx\ShipService\ComplexType\Money $customsValue) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>It should equal the commodity unit quantity times commodity unit value.
+Six explicit decimal positions, max length 18 including decimal.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$customsValue</h4>
+<code><a href="../classes/FedEx.ShipService.ComplexType.Money.html">\FedEx\ShipService\ComplexType\Money</a></code><p>return Commodity</p></div>
+</div></div>
+</div>
+<a name="setDescription" id="setDescription"></a><div class="element clickable method public setDescription" data-toggle="collapse" data-target=".setDescription .collapse">
+<h2>Complete and accurate description of this commodity.</h2>
+<pre>setDescription(string $description) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$description</h4>
+<code>string</code><p>return Commodity</p></div>
+</div></div>
+</div>
+<a name="setExciseConditions" id="setExciseConditions"></a><div class="element clickable method public setExciseConditions" data-toggle="collapse" data-target=".setExciseConditions .collapse">
+<h2>Defines additional characteristic of commodity used to calculate duties and taxes</h2>
+<pre>setExciseConditions(array $exciseConditions) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$exciseConditions</h4>
+<code><a href="ShipService.ComplexType.EdtExciseCondition.html#%5CFedEx%5CShipService%5CComplexType%5CEdtExciseCondition">\FedEx\ShipService\ComplexType\EdtExciseCondition[]</a></code><p>return Commodity</p></div>
+</div></div>
+</div>
+<a name="setExportLicenseExpirationDate" id="setExportLicenseExpirationDate"></a><div class="element clickable method public setExportLicenseExpirationDate" data-toggle="collapse" data-target=".setExportLicenseExpirationDate .collapse">
+<h2>Date of expiration.</h2>
+<pre>setExportLicenseExpirationDate(\FedEx\ShipService\ComplexType\date $exportLicenseExpirationDate) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>Must be at least 1 day into future.
+The date that the Commerce Export License expires. Export License commodities may not be exported from the U.S. on an expired license.
+Applicable to US Export shipping only.
+Required only if commodity is shipped on commerce export license, and Export License Number is supplied.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$exportLicenseExpirationDate</h4>
+<code>\FedEx\ShipService\ComplexType\date</code><p>return Commodity</p></div>
+</div></div>
+</div>
+<a name="setExportLicenseNumber" id="setExportLicenseNumber"></a><div class="element clickable method public setExportLicenseNumber" data-toggle="collapse" data-target=".setExportLicenseNumber .collapse">
+<h2>Applicable to US export shipping only.</h2>
+<pre>setExportLicenseNumber(string $exportLicenseNumber) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$exportLicenseNumber</h4>
+<code>string</code><p>return Commodity</p></div>
+</div></div>
+</div>
+<a name="setHarmonizedCode" id="setHarmonizedCode"></a><div class="element clickable method public setHarmonizedCode" data-toggle="collapse" data-target=".setHarmonizedCode .collapse">
+<h2>Unique alpha/numeric representing commodity item.</h2>
+<pre>setHarmonizedCode(string $harmonizedCode) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>At least one occurrence is required for US Export shipments if the Customs Value is greater than $2500 or if a valid US Export license is required.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$harmonizedCode</h4>
+<code>string</code><p>return Commodity</p></div>
+</div></div>
+</div>
+<a name="setNaftaDetail" id="setNaftaDetail"></a><div class="element clickable method public setNaftaDetail" data-toggle="collapse" data-target=".setNaftaDetail .collapse">
+<h2>All data required for this commodity in NAFTA Certificate of Origin.</h2>
+<pre>setNaftaDetail(\FedEx\ShipService\ComplexType\NaftaCommodityDetail $naftaDetail) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$naftaDetail</h4>
+<code><a href="../classes/FedEx.ShipService.ComplexType.NaftaCommodityDetail.html">\FedEx\ShipService\ComplexType\NaftaCommodityDetail</a></code><p>return Commodity</p></div>
+</div></div>
+</div>
+<a name="setName" id="setName"></a><div class="element clickable method public setName" data-toggle="collapse" data-target=".setName .collapse">
+<h2>Name of this commodity.</h2>
+<pre>setName(string $name) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>return Commodity</p></div>
+</div></div>
+</div>
+<a name="setNumberOfPieces" id="setNumberOfPieces"></a><div class="element clickable method public setNumberOfPieces" data-toggle="collapse" data-target=".setNumberOfPieces .collapse">
+<h2>Total number of pieces of this commodity</h2>
+<pre>setNumberOfPieces(\FedEx\ShipService\ComplexType\nonNegativeInteger $numberOfPieces) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$numberOfPieces</h4>
+<code>\FedEx\ShipService\ComplexType\nonNegativeInteger</code><p>return Commodity</p></div>
+</div></div>
+</div>
+<a name="setQuantity" id="setQuantity"></a><div class="element clickable method public setQuantity" data-toggle="collapse" data-target=".setQuantity .collapse">
+<h2>Number of units of a commodity in total number of pieces for this line item.</h2>
+<pre>setQuantity(\FedEx\ShipService\ComplexType\nonNegativeInteger $quantity) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>Max length is 9</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$quantity</h4>
+<code>\FedEx\ShipService\ComplexType\nonNegativeInteger</code><p>return Commodity</p></div>
+</div></div>
+</div>
+<a name="setQuantityUnits" id="setQuantityUnits"></a><div class="element clickable method public setQuantityUnits" data-toggle="collapse" data-target=".setQuantityUnits .collapse">
+<h2>Unit of measure used to express the quantity of this commodity line item.</h2>
+<pre>setQuantityUnits(string $quantityUnits) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$quantityUnits</h4>
+<code>string</code><p>return Commodity</p></div>
+</div></div>
+</div>
+<a name="setUnitPrice" id="setUnitPrice"></a><div class="element clickable method public setUnitPrice" data-toggle="collapse" data-target=".setUnitPrice .collapse">
+<h2>Value of each unit in Quantity.</h2>
+<pre>setUnitPrice(\FedEx\ShipService\ComplexType\Money $unitPrice) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>Six explicit decimal positions, Max length 18 including decimal.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$unitPrice</h4>
+<code><a href="../classes/FedEx.ShipService.ComplexType.Money.html">\FedEx\ShipService\ComplexType\Money</a></code><p>return Commodity</p></div>
+</div></div>
+</div>
+<a name="setWeight" id="setWeight"></a><div class="element clickable method public setWeight" data-toggle="collapse" data-target=".setWeight .collapse">
+<h2>Total weight of this commodity.</h2>
+<pre>setWeight(\FedEx\ShipService\ComplexType\Weight $weight) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>1 explicit decimal position. Max length 11 including decimal.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$weight</h4>
+<code><a href="../classes/FedEx.ShipService.ComplexType.Weight.html">\FedEx\ShipService\ComplexType\Weight</a></code><p>return Commodity</p></div>
+</div></div>
+</div>
+<a name="toArray" id="toArray"></a><div class="element clickable method public toArray" data-toggle="collapse" data-target=".toArray .collapse">
+<h2>Returns the complex type as an array</h2>
+<pre>toArray(boolean $renderTopKey) : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractComplexType::toArray()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$renderTopKey</h4>
+<code>boolean</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a name="_convertToArray" id="_convertToArray"></a><div class="element clickable method protected _convertToArray" data-toggle="collapse" data-target="._convertToArray .collapse">
+<h2>Recursive algorthim to convert complex types to an array</h2>
+<pre>_convertToArray(array $arrayValues) : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractComplexType::_convertToArray()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$arrayValues</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24_name" id="$_name"> </a><div class="element clickable property protected $_name" data-toggle="collapse" data-target=".$_name .collapse">
+<h2>Name of this complex type</h2>
+<pre>$_name : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_values" id="$_values"> </a><div class="element clickable property protected $_values" data-toggle="collapse" data-target=".$_values .collapse">
+<h2>Holds the data as a key =&gt; value array</h2>
+<pre>$_values : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractComplexType::$$_values</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a8</a> and<br>
+            generated on 2012-07-29T13:59:07-05:00.<br></footer></div>
+</div>
+</body>
+</html>

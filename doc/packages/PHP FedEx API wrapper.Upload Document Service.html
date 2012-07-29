@@ -1,0 +1,319 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>PHP Fedex API Wrapper » PHP FedEx API wrapper\Upload Document Service</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">PHP Fedex API Wrapper</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/FedEx.html"><i class="icon-th"></i> FedEx</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/PHP%20FedEx%20API%20wrapper.html"><i class="icon-folder-open"></i> PHP FedEx API wrapper</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">871</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-map-marker"></i> Packages</li>
+<li>
+<a href="../packages/PHP%20FedEx%20API%20wrapper.Upload%20Document%20Service.html" title="Upload Document Service"><i class="icon-folder-open"></i>Upload Document Service</a><ul class="nav nav-list nav-packages"></ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-class"></i> Classes</li>
+<li><a href="#ClientDetail" title="Descriptive data for the client submitting a transaction.">ClientDetail</a></li>
+<li><a href="#ImageUploadStatusDetail" title="ImageUploadStatusDetail">ImageUploadStatusDetail</a></li>
+<li><a href="#Localization" title="Governs any future language/translations used for human-readable text.">Localization</a></li>
+<li><a href="#Money" title="The descriptive data for the medium of exchange for FedEx services.">Money</a></li>
+<li><a href="#Notification" title="The descriptive data regarding the results of the submitted transaction.">Notification</a></li>
+<li><a href="#NotificationParameter" title="NotificationParameter">NotificationParameter</a></li>
+<li><a href="#TransactionDetail" title="Descriptive data for this customer transaction.">TransactionDetail</a></li>
+<li><a href="#UploadDocumentDetail" title="UploadDocumentDetail">UploadDocumentDetail</a></li>
+<li><a href="#UploadDocumentsReply" title="UploadDocumentsReply">UploadDocumentsReply</a></li>
+<li><a href="#UploadDocumentsRequest" title="UploadDocumentsRequest">UploadDocumentsRequest</a></li>
+<li><a href="#UploadDocumentStatusDetail" title="UploadDocumentStatusDetail">UploadDocumentStatusDetail</a></li>
+<li><a href="#UploadImageDetail" title="UploadImageDetail">UploadImageDetail</a></li>
+<li><a href="#UploadImagesReply" title="UploadImagesReply">UploadImagesReply</a></li>
+<li><a href="#UploadImagesRequest" title="UploadImagesRequest">UploadImagesRequest</a></li>
+<li><a href="#VersionId" title="Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).">VersionId</a></li>
+<li><a href="#WebAuthenticationCredential" title="Two part authentication string used for the sender's identity.">WebAuthenticationCredential</a></li>
+<li><a href="#WebAuthenticationDetail" title="The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).">WebAuthenticationDetail</a></li>
+<li><a href="#Request" title="Request sends the SOAP call to the FedEx servers and returns the response">Request</a></li>
+<li><a href="#ImageId" title="ImageId">ImageId</a></li>
+<li><a href="#NotificationSeverityType" title="Identifies the set of severity values for a Notification.">NotificationSeverityType</a></li>
+<li><a href="#PackagingType" title="Identifies the collection of available FedEx or customer packaging options.">PackagingType</a></li>
+<li><a href="#ServiceType" title="Identifies the collection of available FedEx service options.">ServiceType</a></li>
+<li><a href="#UploadDocumentIdProducer" title="UploadDocumentIdProducer">UploadDocumentIdProducer</a></li>
+<li><a href="#UploadDocumentProducerType" title="UploadDocumentProducerType">UploadDocumentProducerType</a></li>
+<li><a href="#UploadDocumentStatusInfoType" title="Each of these values identifies a specific reason why a document or reference could not be uploaded or associated with a shipment.">UploadDocumentStatusInfoType</a></li>
+<li><a href="#UploadDocumentStatusType" title="UploadDocumentStatusType">UploadDocumentStatusType</a></li>
+<li><a href="#UploadDocumentType" title="UploadDocumentType">UploadDocumentType</a></li>
+<li><a href="#UploadImageStatusInfoType" title="UploadImageStatusInfoType">UploadImageStatusInfoType</a></li>
+<li><a href="#UploadImageStatusType" title="UploadImageStatusType">UploadImageStatusType</a></li>
+</ul>
+</div>
+<div class="span8 package-contents">
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-folder-open"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../packages/PHP%20FedEx%20API%20wrapper.html">PHP FedEx API wrapper</a></li>
+<span class="divider">\</span><li class="active"><a href="../packages/PHP%20FedEx%20API%20wrapper.Upload%20Document%20Service.html">Upload Document Service</a></li>
+</ul>
+<div class="package-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<a name="ClientDetail" id="ClientDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.UploadDocumentService.ComplexType.ClientDetail.html">
+<h1>ClientDetail<a href="../classes/FedEx.UploadDocumentService.ComplexType.ClientDetail.html">¶</a>
+</h1>
+<p class="short_description">Descriptive data for the client submitting a transaction.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.UploadDocumentService.ComplexType.ClientDetail.html" class="more">« More »</a>
+</div>
+<a name="ImageUploadStatusDetail" id="ImageUploadStatusDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.UploadDocumentService.ComplexType.ImageUploadStatusDetail.html">
+<h1>ImageUploadStatusDetail<a href="../classes/FedEx.UploadDocumentService.ComplexType.ImageUploadStatusDetail.html">¶</a>
+</h1>
+<p class="short_description">ImageUploadStatusDetail</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.UploadDocumentService.ComplexType.ImageUploadStatusDetail.html" class="more">« More »</a>
+</div>
+<a name="Localization" id="Localization"></a><div class="element ajax clickable class" href="../classes/FedEx.UploadDocumentService.ComplexType.Localization.html">
+<h1>Localization<a href="../classes/FedEx.UploadDocumentService.ComplexType.Localization.html">¶</a>
+</h1>
+<p class="short_description">Governs any future language/translations used for human-readable text.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.UploadDocumentService.ComplexType.Localization.html" class="more">« More »</a>
+</div>
+<a name="Money" id="Money"></a><div class="element ajax clickable class" href="../classes/FedEx.UploadDocumentService.ComplexType.Money.html">
+<h1>Money<a href="../classes/FedEx.UploadDocumentService.ComplexType.Money.html">¶</a>
+</h1>
+<p class="short_description">The descriptive data for the medium of exchange for FedEx services.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.UploadDocumentService.ComplexType.Money.html" class="more">« More »</a>
+</div>
+<a name="Notification" id="Notification"></a><div class="element ajax clickable class" href="../classes/FedEx.UploadDocumentService.ComplexType.Notification.html">
+<h1>Notification<a href="../classes/FedEx.UploadDocumentService.ComplexType.Notification.html">¶</a>
+</h1>
+<p class="short_description">The descriptive data regarding the results of the submitted transaction.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.UploadDocumentService.ComplexType.Notification.html" class="more">« More »</a>
+</div>
+<a name="NotificationParameter" id="NotificationParameter"></a><div class="element ajax clickable class" href="../classes/FedEx.UploadDocumentService.ComplexType.NotificationParameter.html">
+<h1>NotificationParameter<a href="../classes/FedEx.UploadDocumentService.ComplexType.NotificationParameter.html">¶</a>
+</h1>
+<p class="short_description">NotificationParameter</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.UploadDocumentService.ComplexType.NotificationParameter.html" class="more">« More »</a>
+</div>
+<a name="TransactionDetail" id="TransactionDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.UploadDocumentService.ComplexType.TransactionDetail.html">
+<h1>TransactionDetail<a href="../classes/FedEx.UploadDocumentService.ComplexType.TransactionDetail.html">¶</a>
+</h1>
+<p class="short_description">Descriptive data for this customer transaction.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.UploadDocumentService.ComplexType.TransactionDetail.html" class="more">« More »</a>
+</div>
+<a name="UploadDocumentDetail" id="UploadDocumentDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.UploadDocumentService.ComplexType.UploadDocumentDetail.html">
+<h1>UploadDocumentDetail<a href="../classes/FedEx.UploadDocumentService.ComplexType.UploadDocumentDetail.html">¶</a>
+</h1>
+<p class="short_description">UploadDocumentDetail</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.UploadDocumentService.ComplexType.UploadDocumentDetail.html" class="more">« More »</a>
+</div>
+<a name="UploadDocumentStatusDetail" id="UploadDocumentStatusDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.UploadDocumentService.ComplexType.UploadDocumentStatusDetail.html">
+<h1>UploadDocumentStatusDetail<a href="../classes/FedEx.UploadDocumentService.ComplexType.UploadDocumentStatusDetail.html">¶</a>
+</h1>
+<p class="short_description">UploadDocumentStatusDetail</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.UploadDocumentService.ComplexType.UploadDocumentStatusDetail.html" class="more">« More »</a>
+</div>
+<a name="UploadDocumentsReply" id="UploadDocumentsReply"></a><div class="element ajax clickable class" href="../classes/FedEx.UploadDocumentService.ComplexType.UploadDocumentsReply.html">
+<h1>UploadDocumentsReply<a href="../classes/FedEx.UploadDocumentService.ComplexType.UploadDocumentsReply.html">¶</a>
+</h1>
+<p class="short_description">UploadDocumentsReply</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.UploadDocumentService.ComplexType.UploadDocumentsReply.html" class="more">« More »</a>
+</div>
+<a name="UploadDocumentsRequest" id="UploadDocumentsRequest"></a><div class="element ajax clickable class" href="../classes/FedEx.UploadDocumentService.ComplexType.UploadDocumentsRequest.html">
+<h1>UploadDocumentsRequest<a href="../classes/FedEx.UploadDocumentService.ComplexType.UploadDocumentsRequest.html">¶</a>
+</h1>
+<p class="short_description">UploadDocumentsRequest</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.UploadDocumentService.ComplexType.UploadDocumentsRequest.html" class="more">« More »</a>
+</div>
+<a name="UploadImageDetail" id="UploadImageDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.UploadDocumentService.ComplexType.UploadImageDetail.html">
+<h1>UploadImageDetail<a href="../classes/FedEx.UploadDocumentService.ComplexType.UploadImageDetail.html">¶</a>
+</h1>
+<p class="short_description">UploadImageDetail</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.UploadDocumentService.ComplexType.UploadImageDetail.html" class="more">« More »</a>
+</div>
+<a name="UploadImagesReply" id="UploadImagesReply"></a><div class="element ajax clickable class" href="../classes/FedEx.UploadDocumentService.ComplexType.UploadImagesReply.html">
+<h1>UploadImagesReply<a href="../classes/FedEx.UploadDocumentService.ComplexType.UploadImagesReply.html">¶</a>
+</h1>
+<p class="short_description">UploadImagesReply</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.UploadDocumentService.ComplexType.UploadImagesReply.html" class="more">« More »</a>
+</div>
+<a name="UploadImagesRequest" id="UploadImagesRequest"></a><div class="element ajax clickable class" href="../classes/FedEx.UploadDocumentService.ComplexType.UploadImagesRequest.html">
+<h1>UploadImagesRequest<a href="../classes/FedEx.UploadDocumentService.ComplexType.UploadImagesRequest.html">¶</a>
+</h1>
+<p class="short_description">UploadImagesRequest</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.UploadDocumentService.ComplexType.UploadImagesRequest.html" class="more">« More »</a>
+</div>
+<a name="VersionId" id="VersionId"></a><div class="element ajax clickable class" href="../classes/FedEx.UploadDocumentService.ComplexType.VersionId.html">
+<h1>VersionId<a href="../classes/FedEx.UploadDocumentService.ComplexType.VersionId.html">¶</a>
+</h1>
+<p class="short_description">Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.UploadDocumentService.ComplexType.VersionId.html" class="more">« More »</a>
+</div>
+<a name="WebAuthenticationCredential" id="WebAuthenticationCredential"></a><div class="element ajax clickable class" href="../classes/FedEx.UploadDocumentService.ComplexType.WebAuthenticationCredential.html">
+<h1>WebAuthenticationCredential<a href="../classes/FedEx.UploadDocumentService.ComplexType.WebAuthenticationCredential.html">¶</a>
+</h1>
+<p class="short_description">Two part authentication string used for the sender's identity.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.UploadDocumentService.ComplexType.WebAuthenticationCredential.html" class="more">« More »</a>
+</div>
+<a name="WebAuthenticationDetail" id="WebAuthenticationDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.UploadDocumentService.ComplexType.WebAuthenticationDetail.html">
+<h1>WebAuthenticationDetail<a href="../classes/FedEx.UploadDocumentService.ComplexType.WebAuthenticationDetail.html">¶</a>
+</h1>
+<p class="short_description">The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.UploadDocumentService.ComplexType.WebAuthenticationDetail.html" class="more">« More »</a>
+</div>
+<a name="Request" id="Request"></a><div class="element ajax clickable class" href="../classes/FedEx.UploadDocumentService.Request.html">
+<h1>Request<a href="../classes/FedEx.UploadDocumentService.Request.html">¶</a>
+</h1>
+<p class="short_description">Request sends the SOAP call to the FedEx servers and returns the response</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.UploadDocumentService.Request.html" class="more">« More »</a>
+</div>
+<a name="ImageId" id="ImageId"></a><div class="element ajax clickable class" href="../classes/FedEx.UploadDocumentService.SimpleType.ImageId.html">
+<h1>ImageId<a href="../classes/FedEx.UploadDocumentService.SimpleType.ImageId.html">¶</a>
+</h1>
+<p class="short_description">ImageId</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.UploadDocumentService.SimpleType.ImageId.html" class="more">« More »</a>
+</div>
+<a name="NotificationSeverityType" id="NotificationSeverityType"></a><div class="element ajax clickable class" href="../classes/FedEx.UploadDocumentService.SimpleType.NotificationSeverityType.html">
+<h1>NotificationSeverityType<a href="../classes/FedEx.UploadDocumentService.SimpleType.NotificationSeverityType.html">¶</a>
+</h1>
+<p class="short_description">Identifies the set of severity values for a Notification.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.UploadDocumentService.SimpleType.NotificationSeverityType.html" class="more">« More »</a>
+</div>
+<a name="PackagingType" id="PackagingType"></a><div class="element ajax clickable class" href="../classes/FedEx.UploadDocumentService.SimpleType.PackagingType.html">
+<h1>PackagingType<a href="../classes/FedEx.UploadDocumentService.SimpleType.PackagingType.html">¶</a>
+</h1>
+<p class="short_description">Identifies the collection of available FedEx or customer packaging options.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.UploadDocumentService.SimpleType.PackagingType.html" class="more">« More »</a>
+</div>
+<a name="ServiceType" id="ServiceType"></a><div class="element ajax clickable class" href="../classes/FedEx.UploadDocumentService.SimpleType.ServiceType.html">
+<h1>ServiceType<a href="../classes/FedEx.UploadDocumentService.SimpleType.ServiceType.html">¶</a>
+</h1>
+<p class="short_description">Identifies the collection of available FedEx service options.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.UploadDocumentService.SimpleType.ServiceType.html" class="more">« More »</a>
+</div>
+<a name="UploadDocumentIdProducer" id="UploadDocumentIdProducer"></a><div class="element ajax clickable class" href="../classes/FedEx.UploadDocumentService.SimpleType.UploadDocumentIdProducer.html">
+<h1>UploadDocumentIdProducer<a href="../classes/FedEx.UploadDocumentService.SimpleType.UploadDocumentIdProducer.html">¶</a>
+</h1>
+<p class="short_description">UploadDocumentIdProducer</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.UploadDocumentService.SimpleType.UploadDocumentIdProducer.html" class="more">« More »</a>
+</div>
+<a name="UploadDocumentProducerType" id="UploadDocumentProducerType"></a><div class="element ajax clickable class" href="../classes/FedEx.UploadDocumentService.SimpleType.UploadDocumentProducerType.html">
+<h1>UploadDocumentProducerType<a href="../classes/FedEx.UploadDocumentService.SimpleType.UploadDocumentProducerType.html">¶</a>
+</h1>
+<p class="short_description">UploadDocumentProducerType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.UploadDocumentService.SimpleType.UploadDocumentProducerType.html" class="more">« More »</a>
+</div>
+<a name="UploadDocumentStatusInfoType" id="UploadDocumentStatusInfoType"></a><div class="element ajax clickable class" href="../classes/FedEx.UploadDocumentService.SimpleType.UploadDocumentStatusInfoType.html">
+<h1>UploadDocumentStatusInfoType<a href="../classes/FedEx.UploadDocumentService.SimpleType.UploadDocumentStatusInfoType.html">¶</a>
+</h1>
+<p class="short_description">Each of these values identifies a specific reason why a document or reference could not be uploaded or associated with a shipment.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.UploadDocumentService.SimpleType.UploadDocumentStatusInfoType.html" class="more">« More »</a>
+</div>
+<a name="UploadDocumentStatusType" id="UploadDocumentStatusType"></a><div class="element ajax clickable class" href="../classes/FedEx.UploadDocumentService.SimpleType.UploadDocumentStatusType.html">
+<h1>UploadDocumentStatusType<a href="../classes/FedEx.UploadDocumentService.SimpleType.UploadDocumentStatusType.html">¶</a>
+</h1>
+<p class="short_description">UploadDocumentStatusType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.UploadDocumentService.SimpleType.UploadDocumentStatusType.html" class="more">« More »</a>
+</div>
+<a name="UploadDocumentType" id="UploadDocumentType"></a><div class="element ajax clickable class" href="../classes/FedEx.UploadDocumentService.SimpleType.UploadDocumentType.html">
+<h1>UploadDocumentType<a href="../classes/FedEx.UploadDocumentService.SimpleType.UploadDocumentType.html">¶</a>
+</h1>
+<p class="short_description">UploadDocumentType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.UploadDocumentService.SimpleType.UploadDocumentType.html" class="more">« More »</a>
+</div>
+<a name="UploadImageStatusInfoType" id="UploadImageStatusInfoType"></a><div class="element ajax clickable class" href="../classes/FedEx.UploadDocumentService.SimpleType.UploadImageStatusInfoType.html">
+<h1>UploadImageStatusInfoType<a href="../classes/FedEx.UploadDocumentService.SimpleType.UploadImageStatusInfoType.html">¶</a>
+</h1>
+<p class="short_description">UploadImageStatusInfoType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.UploadDocumentService.SimpleType.UploadImageStatusInfoType.html" class="more">« More »</a>
+</div>
+<a name="UploadImageStatusType" id="UploadImageStatusType"></a><div class="element ajax clickable class" href="../classes/FedEx.UploadDocumentService.SimpleType.UploadImageStatusType.html">
+<h1>UploadImageStatusType<a href="../classes/FedEx.UploadDocumentService.SimpleType.UploadImageStatusType.html">¶</a>
+</h1>
+<p class="short_description">UploadImageStatusType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.UploadDocumentService.SimpleType.UploadImageStatusType.html" class="more">« More »</a>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a8</a> and<br>
+            generated on 2012-07-29T13:58:39-05:00.<br></footer></div>
+</div>
+</body>
+</html>

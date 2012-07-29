@@ -1,0 +1,784 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>PHP Fedex API Wrapper » \FedEx\TrackService\ComplexType\TrackDetail</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">PHP Fedex API Wrapper</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/FedEx.html"><i class="icon-th"></i> FedEx</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/PHP%20FedEx%20API%20wrapper.html"><i class="icon-folder-open"></i> PHP FedEx API wrapper</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">871</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public inherited"><a href="#__construct" title="__construct :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#__set" title="__set :: __set implementation"><span class="description">__set implementation</span><pre>__set()</pre></a></li>
+<li class="method public "><a href="#setActualDeliveryAddress" title="setActualDeliveryAddress :: Actual address where package was delivered."><span class="description">Actual address where package was delivered.</span><pre>setActualDeliveryAddress()</pre></a></li>
+<li class="method public "><a href="#setActualDeliveryTimestamp" title="setActualDeliveryTimestamp :: The time the package was actually delivered."><span class="description">The time the package was actually delivered.</span><pre>setActualDeliveryTimestamp()</pre></a></li>
+<li class="method public "><a href="#setBarcode" title="setBarcode :: Set Barcode"><span class="description">Set Barcode</span><pre>setBarcode()</pre></a></li>
+<li class="method public "><a href="#setCarrierCode" title="setCarrierCode :: Identifies a FedEx operating company (transportation)."><span class="description">Identifies a FedEx operating company (transportation).</span><pre>setCarrierCode()</pre></a></li>
+<li class="method public "><a href="#setDeliveryLocationDescription" title="setDeliveryLocationDescription :: User/screen friendly representation of the DeliveryLocationType (delivery location at the delivered to address)."><span class="description">User/screen friendly representation of the DeliveryLocationType (delivery location at the delivered to address).</span><pre>setDeliveryLocationDescription()</pre></a></li>
+<li class="method public "><a href="#setDeliveryLocationType" title="setDeliveryLocationType :: Strict text indicating the delivery location at the delivered to address."><span class="description">Strict text indicating the delivery location at the delivered to address.</span><pre>setDeliveryLocationType()</pre></a></li>
+<li class="method public "><a href="#setDeliverySignatureName" title='setDeliverySignatureName :: This is either the name of the person that signed for the package or "Signature not requested" or "Signature on file".'><span class="description">This is either the name of the person that signed for the package or "Signature not requested" or "Signature on file".</span><pre>setDeliverySignatureName()</pre></a></li>
+<li class="method public "><a href="#setDestinationAddress" title="setDestinationAddress :: The address this package is to be (or has been) delivered."><span class="description">The address this package is to be (or has been) delivered.</span><pre>setDestinationAddress()</pre></a></li>
+<li class="method public "><a href="#setDestinationLocationAddress" title="setDestinationLocationAddress :: The address of the FedEx delivery location/facility."><span class="description">The address of the FedEx delivery location/facility.</span><pre>setDestinationLocationAddress()</pre></a></li>
+<li class="method public "><a href="#setDistanceToDestination" title="setDistanceToDestination :: Total distance package still has to travel."><span class="description">Total distance package still has to travel.</span><pre>setDistanceToDestination()</pre></a></li>
+<li class="method public "><a href="#setEstimatedDeliveryTimestamp" title="setEstimatedDeliveryTimestamp :: Projected package delivery time based on ship time stamp, service and destination."><span class="description">Projected package delivery time based on ship time stamp, service and destination.</span><pre>setEstimatedDeliveryTimestamp()</pre></a></li>
+<li class="method public "><a href="#setEstimatedPickupTimestamp" title="setEstimatedPickupTimestamp :: Estimated package pickup time for shipments that haven't been picked up."><span class="description">Estimated package pickup time for shipments that haven't been picked up.</span><pre>setEstimatedPickupTimestamp()</pre></a></li>
+<li class="method public "><a href="#setEvents" title="setEvents :: Event information for a tracking number."><span class="description">Event information for a tracking number.</span><pre>setEvents()</pre></a></li>
+<li class="method public "><a href="#setNotification" title="setNotification :: To report soft error on an individual track detail."><span class="description">To report soft error on an individual track detail.</span><pre>setNotification()</pre></a></li>
+<li class="method public "><a href="#setNotificationEventsAvailable" title="setNotificationEventsAvailable :: The types of email notifications that are available for the package."><span class="description">The types of email notifications that are available for the package.</span><pre>setNotificationEventsAvailable()</pre></a></li>
+<li class="method public "><a href="#setOfficeOrderDeliveryMethod" title="setOfficeOrderDeliveryMethod :: Identifies the method of office order delivery."><span class="description">Identifies the method of office order delivery.</span><pre>setOfficeOrderDeliveryMethod()</pre></a></li>
+<li class="method public "><a href="#setOperatingCompany" title="setOperatingCompany :: Identifies operating transportation company that is the specific to the carrier code."><span class="description">Identifies operating transportation company that is the specific to the carrier code.</span><pre>setOperatingCompany()</pre></a></li>
+<li class="method public "><a href="#setOriginLocationAddress" title="setOriginLocationAddress :: The address of the FedEx pickup location/facility."><span class="description">The address of the FedEx pickup location/facility.</span><pre>setOriginLocationAddress()</pre></a></li>
+<li class="method public "><a href="#setOtherIdentifiers" title="setOtherIdentifiers :: Other related identifiers for this package such as reference numbers."><span class="description">Other related identifiers for this package such as reference numbers.</span><pre>setOtherIdentifiers()</pre></a></li>
+<li class="method public "><a href="#setPackageCount" title="setPackageCount :: The number of packages in this shipment."><span class="description">The number of packages in this shipment.</span><pre>setPackageCount()</pre></a></li>
+<li class="method public "><a href="#setPackageDimensionalWeight" title="setPackageDimensionalWeight :: The dimensional weight of the package."><span class="description">The dimensional weight of the package.</span><pre>setPackageDimensionalWeight()</pre></a></li>
+<li class="method public "><a href="#setPackageDimensions" title="setPackageDimensions :: Physical dimensions of the package."><span class="description">Physical dimensions of the package.</span><pre>setPackageDimensions()</pre></a></li>
+<li class="method public "><a href="#setPackageSequenceNumber" title="setPackageSequenceNumber :: The sequence number of this package in a shipment."><span class="description">The sequence number of this package in a shipment.</span><pre>setPackageSequenceNumber()</pre></a></li>
+<li class="method public "><a href="#setPackageWeight" title="setPackageWeight :: The weight of this package."><span class="description">The weight of this package.</span><pre>setPackageWeight()</pre></a></li>
+<li class="method public "><a href="#setPackaging" title="setPackaging :: Retained for legacy compatibility only."><span class="description">Retained for legacy compatibility only.</span><pre>setPackaging()</pre></a></li>
+<li class="method public "><a href="#setPackagingType" title="setPackagingType :: Strict representation of the Packaging type (e.g."><span class="description">Strict representation of the Packaging type (e.g.</span><pre>setPackagingType()</pre></a></li>
+<li class="method public "><a href="#setProductionLocationContactAndAddress" title="setProductionLocationContactAndAddress :: Specifies the FXO production centre contact and address."><span class="description">Specifies the FXO production centre contact and address.</span><pre>setProductionLocationContactAndAddress()</pre></a></li>
+<li class="method public "><a href="#setReconciliation" title="setReconciliation :: Used to report the status of a piece of a multiple piece shipment which is no longer traveling with the rest of the packages in the shipment or has not been accounted for."><span class="description">Used to report the status of a piece of a multiple piece shipment which is no longer traveling with the rest of the packages in the shipment or has not been accounted for.</span><pre>setReconciliation()</pre></a></li>
+<li class="method public "><a href="#setRedirectToHoldEligibility" title="setRedirectToHoldEligibility :: Indicates redirection eligibility as determined by tracking service, subject to refinement/override by redirect-to-hold service."><span class="description">Indicates redirection eligibility as determined by tracking service, subject to refinement/override by redirect-to-hold service.</span><pre>setRedirectToHoldEligibility()</pre></a></li>
+<li class="method public "><a href="#setServiceCommitMessage" title="setServiceCommitMessage :: Used to convey information such as."><span class="description">Used to convey information such as.</span><pre>setServiceCommitMessage()</pre></a></li>
+<li class="method public "><a href="#setServiceInfo" title="setServiceInfo :: Retained for legacy compatibility only."><span class="description">Retained for legacy compatibility only.</span><pre>setServiceInfo()</pre></a></li>
+<li class="method public "><a href="#setServiceType" title="setServiceType :: Strict representation of the Service type (e.g."><span class="description">Strict representation of the Service type (e.g.</span><pre>setServiceType()</pre></a></li>
+<li class="method public "><a href="#setShipTimestamp" title="setShipTimestamp :: Time package was shipped/tendered over to FedEx."><span class="description">Time package was shipped/tendered over to FedEx.</span><pre>setShipTimestamp()</pre></a></li>
+<li class="method public "><a href="#setShipmentWeight" title="setShipmentWeight :: The weight of the entire shipment."><span class="description">The weight of the entire shipment.</span><pre>setShipmentWeight()</pre></a></li>
+<li class="method public "><a href="#setShipperAddress" title="setShipperAddress :: The address information for the shipper."><span class="description">The address information for the shipper.</span><pre>setShipperAddress()</pre></a></li>
+<li class="method public "><a href="#setSignatureProofOfDeliveryAvailable" title="setSignatureProofOfDeliveryAvailable :: True if signed for by signature image is available."><span class="description">True if signed for by signature image is available.</span><pre>setSignatureProofOfDeliveryAvailable()</pre></a></li>
+<li class="method public "><a href="#setSplitShipmentParts" title="setSplitShipmentParts :: Returned for cargo shipments only when they are currently split across vehicles."><span class="description">Returned for cargo shipments only when they are currently split across vehicles.</span><pre>setSplitShipmentParts()</pre></a></li>
+<li class="method public "><a href="#setStatusCode" title="setStatusCode :: A code that identifies this type of status."><span class="description">A code that identifies this type of status.</span><pre>setStatusCode()</pre></a></li>
+<li class="method public "><a href="#setStatusDescription" title="setStatusDescription :: A human-readable description of this status."><span class="description">A human-readable description of this status.</span><pre>setStatusDescription()</pre></a></li>
+<li class="method public "><a href="#setTotalTransitDistance" title="setTotalTransitDistance :: The distance from the origin to the destination."><span class="description">The distance from the origin to the destination.</span><pre>setTotalTransitDistance()</pre></a></li>
+<li class="method public "><a href="#setTrackReturnDescription" title="setTrackReturnDescription :: Set TrackReturnDescription"><span class="description">Set TrackReturnDescription</span><pre>setTrackReturnDescription()</pre></a></li>
+<li class="method public "><a href="#setTrackReturnLabelType" title="setTrackReturnLabelType :: Set TrackReturnLabelType"><span class="description">Set TrackReturnLabelType</span><pre>setTrackReturnLabelType()</pre></a></li>
+<li class="method public "><a href="#setTrackingNumber" title="setTrackingNumber :: The FedEx package identifier."><span class="description">The FedEx package identifier.</span><pre>setTrackingNumber()</pre></a></li>
+<li class="method public "><a href="#setTrackingNumberUniqueIdentifier" title="setTrackingNumberUniqueIdentifier :: When duplicate tracking numbers exist this data is returned with summary information for each of the duplicates."><span class="description">When duplicate tracking numbers exist this data is returned with summary information for each of the duplicates.</span><pre>setTrackingNumberUniqueIdentifier()</pre></a></li>
+<li class="method public inherited"><a href="#toArray" title="toArray :: Returns the complex type as an array"><span class="description">Returns the complex type as an array</span><pre>toArray()</pre></a></li>
+<li class="nav-header protected">» Protected</li>
+<li class="method protected inherited"><a href="#_convertToArray" title="_convertToArray :: Recursive algorthim to convert complex types to an array"><span class="description">Recursive algorthim to convert complex types to an array</span><pre>_convertToArray()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header protected">» Protected</li>
+<li class="property protected "><a href="#%24_name" title="$_name :: Name of this complex type"><span class="description">Name of this complex type</span><pre>$_name</pre></a></li>
+<li class="property protected inherited"><a href="#%24_values" title="$_values :: Holds the data as a key =&gt; value array"><span class="description">Holds the data as a key =&gt; value array</span><pre>$_values</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CFedEx%5CTrackService%5CComplexType%5CTrackDetail" id="\FedEx\TrackService\ComplexType\TrackDetail"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/FedEx.html">FedEx</a></li>
+<span class="divider">\</span><li><a href="../namespaces/FedEx.TrackService.html">TrackService</a></li>
+<span class="divider">\</span><li><a href="../namespaces/FedEx.TrackService.ComplexType.html">ComplexType</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/FedEx.TrackService.ComplexType.TrackDetail.html">TrackDetail</a>
+</li>
+</ul>
+<div href="../classes/FedEx.TrackService.ComplexType.TrackDetail.html" class="element class">
+<p class="short_description">Detailed tracking information about a particular package.</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="mailto:jeremy@jsdunn.info">Jeremy Dunn</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/PHP%20FedEx%20API%20wrapper.Package%20Movement%20Information%20Service.html">PHP FedEx API wrapper</a></td>
+</tr>
+<tr>
+<th>subpackage</th>
+<td>Package Movement Information Service</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Constructor</h2>
+<pre>__construct(array $options) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractComplexType::__construct()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code><p>Data as key => value array</p>
+</div>
+</div></div>
+</div>
+<a name="__set" id="__set"></a><div class="element clickable method public __set" data-toggle="collapse" data-target=".__set .collapse">
+<h2>__set implementation</h2>
+<pre>__set(string $name, string $value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractComplexType::__set()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="setActualDeliveryAddress" id="setActualDeliveryAddress"></a><div class="element clickable method public setActualDeliveryAddress" data-toggle="collapse" data-target=".setActualDeliveryAddress .collapse">
+<h2>Actual address where package was delivered.</h2>
+<pre>setActualDeliveryAddress(\FedEx\TrackService\ComplexType\Address $actualDeliveryAddress) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>Differs from destinationAddress, which indicates where the package was to be delivered; This field tells where delivery actually occurred (next door, at station, etc.)</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$actualDeliveryAddress</h4>
+<code><a href="../classes/FedEx.TrackService.ComplexType.Address.html">\FedEx\TrackService\ComplexType\Address</a></code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setActualDeliveryTimestamp" id="setActualDeliveryTimestamp"></a><div class="element clickable method public setActualDeliveryTimestamp" data-toggle="collapse" data-target=".setActualDeliveryTimestamp .collapse">
+<h2>The time the package was actually delivered.</h2>
+<pre>setActualDeliveryTimestamp(\FedEx\TrackService\ComplexType\dateTime $actualDeliveryTimestamp) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$actualDeliveryTimestamp</h4>
+<code>\FedEx\TrackService\ComplexType\dateTime</code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setBarcode" id="setBarcode"></a><div class="element clickable method public setBarcode" data-toggle="collapse" data-target=".setBarcode .collapse">
+<h2>Set Barcode</h2>
+<pre>setBarcode(\FedEx\TrackService\ComplexType\StringBarcode $barcode) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$barcode</h4>
+<code><a href="../classes/FedEx.TrackService.ComplexType.StringBarcode.html">\FedEx\TrackService\ComplexType\StringBarcode</a></code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setCarrierCode" id="setCarrierCode"></a><div class="element clickable method public setCarrierCode" data-toggle="collapse" data-target=".setCarrierCode .collapse">
+<h2>Identifies a FedEx operating company (transportation).</h2>
+<pre>setCarrierCode(\FedEx\TrackService\SimpleType\CarrierCodeType $carrierCode) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$carrierCode</h4>
+<code><a href="../classes/FedEx.TrackService.SimpleType.CarrierCodeType.html">\FedEx\TrackService\SimpleType\CarrierCodeType</a></code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setDeliveryLocationDescription" id="setDeliveryLocationDescription"></a><div class="element clickable method public setDeliveryLocationDescription" data-toggle="collapse" data-target=".setDeliveryLocationDescription .collapse">
+<h2>User/screen friendly representation of the DeliveryLocationType (delivery location at the delivered to address).</h2>
+<pre>setDeliveryLocationDescription(string $deliveryLocationDescription) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>Can be returned in localized text.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$deliveryLocationDescription</h4>
+<code>string</code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setDeliveryLocationType" id="setDeliveryLocationType"></a><div class="element clickable method public setDeliveryLocationType" data-toggle="collapse" data-target=".setDeliveryLocationType .collapse">
+<h2>Strict text indicating the delivery location at the delivered to address.</h2>
+<pre>setDeliveryLocationType(\FedEx\TrackService\SimpleType\TrackDeliveryLocationType $deliveryLocationType) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$deliveryLocationType</h4>
+<code><a href="../classes/FedEx.TrackService.SimpleType.TrackDeliveryLocationType.html">\FedEx\TrackService\SimpleType\TrackDeliveryLocationType</a></code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setDeliverySignatureName" id="setDeliverySignatureName"></a><div class="element clickable method public setDeliverySignatureName" data-toggle="collapse" data-target=".setDeliverySignatureName .collapse">
+<h2>This is either the name of the person that signed for the package or "Signature not requested" or "Signature on file".</h2>
+<pre>setDeliverySignatureName(string $deliverySignatureName) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$deliverySignatureName</h4>
+<code>string</code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setDestinationAddress" id="setDestinationAddress"></a><div class="element clickable method public setDestinationAddress" data-toggle="collapse" data-target=".setDestinationAddress .collapse">
+<h2>The address this package is to be (or has been) delivered.</h2>
+<pre>setDestinationAddress(\FedEx\TrackService\ComplexType\Address $destinationAddress) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$destinationAddress</h4>
+<code><a href="../classes/FedEx.TrackService.ComplexType.Address.html">\FedEx\TrackService\ComplexType\Address</a></code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setDestinationLocationAddress" id="setDestinationLocationAddress"></a><div class="element clickable method public setDestinationLocationAddress" data-toggle="collapse" data-target=".setDestinationLocationAddress .collapse">
+<h2>The address of the FedEx delivery location/facility.</h2>
+<pre>setDestinationLocationAddress(\FedEx\TrackService\ComplexType\Address $destinationLocationAddress) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$destinationLocationAddress</h4>
+<code><a href="../classes/FedEx.TrackService.ComplexType.Address.html">\FedEx\TrackService\ComplexType\Address</a></code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setDistanceToDestination" id="setDistanceToDestination"></a><div class="element clickable method public setDistanceToDestination" data-toggle="collapse" data-target=".setDistanceToDestination .collapse">
+<h2>Total distance package still has to travel.</h2>
+<pre>setDistanceToDestination(\FedEx\TrackService\ComplexType\Distance $distanceToDestination) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>Returned for Custom Critical shipments.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$distanceToDestination</h4>
+<code><a href="../classes/FedEx.TrackService.ComplexType.Distance.html">\FedEx\TrackService\ComplexType\Distance</a></code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setEstimatedDeliveryTimestamp" id="setEstimatedDeliveryTimestamp"></a><div class="element clickable method public setEstimatedDeliveryTimestamp" data-toggle="collapse" data-target=".setEstimatedDeliveryTimestamp .collapse">
+<h2>Projected package delivery time based on ship time stamp, service and destination.</h2>
+<pre>setEstimatedDeliveryTimestamp(\FedEx\TrackService\ComplexType\dateTime $estimatedDeliveryTimestamp) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>Not populated if delivery has already occurred.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$estimatedDeliveryTimestamp</h4>
+<code>\FedEx\TrackService\ComplexType\dateTime</code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setEstimatedPickupTimestamp" id="setEstimatedPickupTimestamp"></a><div class="element clickable method public setEstimatedPickupTimestamp" data-toggle="collapse" data-target=".setEstimatedPickupTimestamp .collapse">
+<h2>Estimated package pickup time for shipments that haven't been picked up.</h2>
+<pre>setEstimatedPickupTimestamp(\FedEx\TrackService\ComplexType\dateTime $estimatedPickupTimestamp) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$estimatedPickupTimestamp</h4>
+<code>\FedEx\TrackService\ComplexType\dateTime</code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setEvents" id="setEvents"></a><div class="element clickable method public setEvents" data-toggle="collapse" data-target=".setEvents .collapse">
+<h2>Event information for a tracking number.</h2>
+<pre>setEvents(array $events) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$events</h4>
+<code><a href="TrackService.ComplexType.TrackEvent.html#%5CFedEx%5CTrackService%5CComplexType%5CTrackEvent">\FedEx\TrackService\ComplexType\TrackEvent[]</a></code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setNotification" id="setNotification"></a><div class="element clickable method public setNotification" data-toggle="collapse" data-target=".setNotification .collapse">
+<h2>To report soft error on an individual track detail.</h2>
+<pre>setNotification(\FedEx\TrackService\ComplexType\Notification $notification) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$notification</h4>
+<code><a href="../classes/FedEx.TrackService.ComplexType.Notification.html">\FedEx\TrackService\ComplexType\Notification</a></code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setNotificationEventsAvailable" id="setNotificationEventsAvailable"></a><div class="element clickable method public setNotificationEventsAvailable" data-toggle="collapse" data-target=".setNotificationEventsAvailable .collapse">
+<h2>The types of email notifications that are available for the package.</h2>
+<pre>setNotificationEventsAvailable(array $notificationEventsAvailable) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$notificationEventsAvailable</h4>
+<code>\FedEx\TrackService\ComplexType\EMailNotificationEventType[]</code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setOfficeOrderDeliveryMethod" id="setOfficeOrderDeliveryMethod"></a><div class="element clickable method public setOfficeOrderDeliveryMethod" data-toggle="collapse" data-target=".setOfficeOrderDeliveryMethod .collapse">
+<h2>Identifies the method of office order delivery.</h2>
+<pre>setOfficeOrderDeliveryMethod(\FedEx\TrackService\SimpleType\OfficeOrderDeliveryMethodType $officeOrderDeliveryMethod) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$officeOrderDeliveryMethod</h4>
+<code><a href="../classes/FedEx.TrackService.SimpleType.OfficeOrderDeliveryMethodType.html">\FedEx\TrackService\SimpleType\OfficeOrderDeliveryMethodType</a></code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setOperatingCompany" id="setOperatingCompany"></a><div class="element clickable method public setOperatingCompany" data-toggle="collapse" data-target=".setOperatingCompany .collapse">
+<h2>Identifies operating transportation company that is the specific to the carrier code.</h2>
+<pre>setOperatingCompany(\FedEx\TrackService\SimpleType\OperatingCompanyType $operatingCompany) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$operatingCompany</h4>
+<code><a href="../classes/FedEx.TrackService.SimpleType.OperatingCompanyType.html">\FedEx\TrackService\SimpleType\OperatingCompanyType</a></code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setOriginLocationAddress" id="setOriginLocationAddress"></a><div class="element clickable method public setOriginLocationAddress" data-toggle="collapse" data-target=".setOriginLocationAddress .collapse">
+<h2>The address of the FedEx pickup location/facility.</h2>
+<pre>setOriginLocationAddress(\FedEx\TrackService\ComplexType\Address $originLocationAddress) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$originLocationAddress</h4>
+<code><a href="../classes/FedEx.TrackService.ComplexType.Address.html">\FedEx\TrackService\ComplexType\Address</a></code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setOtherIdentifiers" id="setOtherIdentifiers"></a><div class="element clickable method public setOtherIdentifiers" data-toggle="collapse" data-target=".setOtherIdentifiers .collapse">
+<h2>Other related identifiers for this package such as reference numbers.</h2>
+<pre>setOtherIdentifiers(array $otherIdentifiers) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$otherIdentifiers</h4>
+<code><a href="TrackService.ComplexType.TrackPackageIdentifier.html#%5CFedEx%5CTrackService%5CComplexType%5CTrackPackageIdentifier">\FedEx\TrackService\ComplexType\TrackPackageIdentifier[]</a></code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setPackageCount" id="setPackageCount"></a><div class="element clickable method public setPackageCount" data-toggle="collapse" data-target=".setPackageCount .collapse">
+<h2>The number of packages in this shipment.</h2>
+<pre>setPackageCount(\FedEx\TrackService\ComplexType\nonNegativeInteger $packageCount) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$packageCount</h4>
+<code>\FedEx\TrackService\ComplexType\nonNegativeInteger</code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setPackageDimensionalWeight" id="setPackageDimensionalWeight"></a><div class="element clickable method public setPackageDimensionalWeight" data-toggle="collapse" data-target=".setPackageDimensionalWeight .collapse">
+<h2>The dimensional weight of the package.</h2>
+<pre>setPackageDimensionalWeight(\FedEx\TrackService\ComplexType\Weight $packageDimensionalWeight) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$packageDimensionalWeight</h4>
+<code><a href="../classes/FedEx.TrackService.ComplexType.Weight.html">\FedEx\TrackService\ComplexType\Weight</a></code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setPackageDimensions" id="setPackageDimensions"></a><div class="element clickable method public setPackageDimensions" data-toggle="collapse" data-target=".setPackageDimensions .collapse">
+<h2>Physical dimensions of the package.</h2>
+<pre>setPackageDimensions(\FedEx\TrackService\ComplexType\Dimensions $packageDimensions) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$packageDimensions</h4>
+<code><a href="../classes/FedEx.TrackService.ComplexType.Dimensions.html">\FedEx\TrackService\ComplexType\Dimensions</a></code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setPackageSequenceNumber" id="setPackageSequenceNumber"></a><div class="element clickable method public setPackageSequenceNumber" data-toggle="collapse" data-target=".setPackageSequenceNumber .collapse">
+<h2>The sequence number of this package in a shipment.</h2>
+<pre>setPackageSequenceNumber(\FedEx\TrackService\ComplexType\nonNegativeInteger $packageSequenceNumber) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>This would be 2 if it was package number 2 of 4.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$packageSequenceNumber</h4>
+<code>\FedEx\TrackService\ComplexType\nonNegativeInteger</code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setPackageWeight" id="setPackageWeight"></a><div class="element clickable method public setPackageWeight" data-toggle="collapse" data-target=".setPackageWeight .collapse">
+<h2>The weight of this package.</h2>
+<pre>setPackageWeight(\FedEx\TrackService\ComplexType\Weight $packageWeight) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$packageWeight</h4>
+<code><a href="../classes/FedEx.TrackService.ComplexType.Weight.html">\FedEx\TrackService\ComplexType\Weight</a></code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setPackaging" id="setPackaging"></a><div class="element clickable method public setPackaging" data-toggle="collapse" data-target=".setPackaging .collapse">
+<h2>Retained for legacy compatibility only.</h2>
+<pre>setPackaging(string $packaging) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$packaging</h4>
+<code>string</code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setPackagingType" id="setPackagingType"></a><div class="element clickable method public setPackagingType" data-toggle="collapse" data-target=".setPackagingType .collapse">
+<h2>Strict representation of the Packaging type (e.g.</h2>
+<pre>setPackagingType(\FedEx\TrackService\SimpleType\PackagingType $packagingType) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>FEDEX_BOX, YOUR_PACKAGING).</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$packagingType</h4>
+<code><a href="../classes/FedEx.TrackService.SimpleType.PackagingType.html">\FedEx\TrackService\SimpleType\PackagingType</a></code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setProductionLocationContactAndAddress" id="setProductionLocationContactAndAddress"></a><div class="element clickable method public setProductionLocationContactAndAddress" data-toggle="collapse" data-target=".setProductionLocationContactAndAddress .collapse">
+<h2>Specifies the FXO production centre contact and address.</h2>
+<pre>setProductionLocationContactAndAddress(\FedEx\TrackService\ComplexType\ContactAndAddress $productionLocationContactAndAddress) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$productionLocationContactAndAddress</h4>
+<code><a href="../classes/FedEx.TrackService.ComplexType.ContactAndAddress.html">\FedEx\TrackService\ComplexType\ContactAndAddress</a></code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setReconciliation" id="setReconciliation"></a><div class="element clickable method public setReconciliation" data-toggle="collapse" data-target=".setReconciliation .collapse">
+<h2>Used to report the status of a piece of a multiple piece shipment which is no longer traveling with the rest of the packages in the shipment or has not been accounted for.</h2>
+<pre>setReconciliation(\FedEx\TrackService\ComplexType\TrackReconciliation $reconciliation) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$reconciliation</h4>
+<code><a href="../classes/FedEx.TrackService.ComplexType.TrackReconciliation.html">\FedEx\TrackService\ComplexType\TrackReconciliation</a></code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setRedirectToHoldEligibility" id="setRedirectToHoldEligibility"></a><div class="element clickable method public setRedirectToHoldEligibility" data-toggle="collapse" data-target=".setRedirectToHoldEligibility .collapse">
+<h2>Indicates redirection eligibility as determined by tracking service, subject to refinement/override by redirect-to-hold service.</h2>
+<pre>setRedirectToHoldEligibility(\FedEx\TrackService\SimpleType\RedirectToHoldEligibilityType $redirectToHoldEligibility) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$redirectToHoldEligibility</h4>
+<code><a href="../classes/FedEx.TrackService.SimpleType.RedirectToHoldEligibilityType.html">\FedEx\TrackService\SimpleType\RedirectToHoldEligibilityType</a></code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setServiceCommitMessage" id="setServiceCommitMessage"></a><div class="element clickable method public setServiceCommitMessage" data-toggle="collapse" data-target=".setServiceCommitMessage .collapse">
+<h2>Used to convey information such as.</h2>
+<pre>setServiceCommitMessage(string $serviceCommitMessage) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><ol>
+<li>FedEx has received information about a package but has not yet taken possession of it. 2. FedEx has handed the package off to a third party for final delivery. 3. The package delivery has been cancelled</li>
+</ol></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$serviceCommitMessage</h4>
+<code>string</code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setServiceInfo" id="setServiceInfo"></a><div class="element clickable method public setServiceInfo" data-toggle="collapse" data-target=".setServiceInfo .collapse">
+<h2>Retained for legacy compatibility only.</h2>
+<pre>setServiceInfo(string $serviceInfo) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>User/screen friendly description of the Service type (e.g. Priority Overnight).</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$serviceInfo</h4>
+<code>string</code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setServiceType" id="setServiceType"></a><div class="element clickable method public setServiceType" data-toggle="collapse" data-target=".setServiceType .collapse">
+<h2>Strict representation of the Service type (e.g.</h2>
+<pre>setServiceType(\FedEx\TrackService\SimpleType\ServiceType $serviceType) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>PRIORITY_OVERNIGHT).</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$serviceType</h4>
+<code><a href="../classes/FedEx.TrackService.SimpleType.ServiceType.html">\FedEx\TrackService\SimpleType\ServiceType</a></code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setShipTimestamp" id="setShipTimestamp"></a><div class="element clickable method public setShipTimestamp" data-toggle="collapse" data-target=".setShipTimestamp .collapse">
+<h2>Time package was shipped/tendered over to FedEx.</h2>
+<pre>setShipTimestamp(\FedEx\TrackService\ComplexType\dateTime $shipTimestamp) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>Time portion will be populated if available, otherwise will be set to midnight.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$shipTimestamp</h4>
+<code>\FedEx\TrackService\ComplexType\dateTime</code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setShipmentWeight" id="setShipmentWeight"></a><div class="element clickable method public setShipmentWeight" data-toggle="collapse" data-target=".setShipmentWeight .collapse">
+<h2>The weight of the entire shipment.</h2>
+<pre>setShipmentWeight(\FedEx\TrackService\ComplexType\Weight $shipmentWeight) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$shipmentWeight</h4>
+<code><a href="../classes/FedEx.TrackService.ComplexType.Weight.html">\FedEx\TrackService\ComplexType\Weight</a></code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setShipperAddress" id="setShipperAddress"></a><div class="element clickable method public setShipperAddress" data-toggle="collapse" data-target=".setShipperAddress .collapse">
+<h2>The address information for the shipper.</h2>
+<pre>setShipperAddress(\FedEx\TrackService\ComplexType\Address $shipperAddress) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$shipperAddress</h4>
+<code><a href="../classes/FedEx.TrackService.ComplexType.Address.html">\FedEx\TrackService\ComplexType\Address</a></code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setSignatureProofOfDeliveryAvailable" id="setSignatureProofOfDeliveryAvailable"></a><div class="element clickable method public setSignatureProofOfDeliveryAvailable" data-toggle="collapse" data-target=".setSignatureProofOfDeliveryAvailable .collapse">
+<h2>True if signed for by signature image is available.</h2>
+<pre>setSignatureProofOfDeliveryAvailable(boolean $signatureProofOfDeliveryAvailable) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$signatureProofOfDeliveryAvailable</h4>
+<code>boolean</code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setSplitShipmentParts" id="setSplitShipmentParts"></a><div class="element clickable method public setSplitShipmentParts" data-toggle="collapse" data-target=".setSplitShipmentParts .collapse">
+<h2>Returned for cargo shipments only when they are currently split across vehicles.</h2>
+<pre>setSplitShipmentParts(array $splitShipmentParts) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$splitShipmentParts</h4>
+<code><a href="TrackService.ComplexType.TrackSplitShipmentPart.html#%5CFedEx%5CTrackService%5CComplexType%5CTrackSplitShipmentPart">\FedEx\TrackService\ComplexType\TrackSplitShipmentPart[]</a></code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setStatusCode" id="setStatusCode"></a><div class="element clickable method public setStatusCode" data-toggle="collapse" data-target=".setStatusCode .collapse">
+<h2>A code that identifies this type of status.</h2>
+<pre>setStatusCode(string $statusCode) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>This is the most recent status.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$statusCode</h4>
+<code>string</code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setStatusDescription" id="setStatusDescription"></a><div class="element clickable method public setStatusDescription" data-toggle="collapse" data-target=".setStatusDescription .collapse">
+<h2>A human-readable description of this status.</h2>
+<pre>setStatusDescription(string $statusDescription) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$statusDescription</h4>
+<code>string</code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setTotalTransitDistance" id="setTotalTransitDistance"></a><div class="element clickable method public setTotalTransitDistance" data-toggle="collapse" data-target=".setTotalTransitDistance .collapse">
+<h2>The distance from the origin to the destination.</h2>
+<pre>setTotalTransitDistance(\FedEx\TrackService\ComplexType\Distance $totalTransitDistance) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>Returned for Custom Critical shipments.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$totalTransitDistance</h4>
+<code><a href="../classes/FedEx.TrackService.ComplexType.Distance.html">\FedEx\TrackService\ComplexType\Distance</a></code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setTrackReturnDescription" id="setTrackReturnDescription"></a><div class="element clickable method public setTrackReturnDescription" data-toggle="collapse" data-target=".setTrackReturnDescription .collapse">
+<h2>Set TrackReturnDescription</h2>
+<pre>setTrackReturnDescription(string $trackReturnDescription) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$trackReturnDescription</h4>
+<code>string</code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setTrackReturnLabelType" id="setTrackReturnLabelType"></a><div class="element clickable method public setTrackReturnLabelType" data-toggle="collapse" data-target=".setTrackReturnLabelType .collapse">
+<h2>Set TrackReturnLabelType</h2>
+<pre>setTrackReturnLabelType(\FedEx\TrackService\SimpleType\TrackReturnLabelType $trackReturnLabelType) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$trackReturnLabelType</h4>
+<code><a href="../classes/FedEx.TrackService.SimpleType.TrackReturnLabelType.html">\FedEx\TrackService\SimpleType\TrackReturnLabelType</a></code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setTrackingNumber" id="setTrackingNumber"></a><div class="element clickable method public setTrackingNumber" data-toggle="collapse" data-target=".setTrackingNumber .collapse">
+<h2>The FedEx package identifier.</h2>
+<pre>setTrackingNumber(string $trackingNumber) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$trackingNumber</h4>
+<code>string</code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="setTrackingNumberUniqueIdentifier" id="setTrackingNumberUniqueIdentifier"></a><div class="element clickable method public setTrackingNumberUniqueIdentifier" data-toggle="collapse" data-target=".setTrackingNumberUniqueIdentifier .collapse">
+<h2>When duplicate tracking numbers exist this data is returned with summary information for each of the duplicates.</h2>
+<pre>setTrackingNumberUniqueIdentifier(string $trackingNumberUniqueIdentifier) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>The summary information is used to determine which of the duplicates the intended tracking number is. This identifier is used on a subsequent track request to retrieve the tracking data for the desired tracking number.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$trackingNumberUniqueIdentifier</h4>
+<code>string</code><p>return TrackDetail</p></div>
+</div></div>
+</div>
+<a name="toArray" id="toArray"></a><div class="element clickable method public toArray" data-toggle="collapse" data-target=".toArray .collapse">
+<h2>Returns the complex type as an array</h2>
+<pre>toArray(boolean $renderTopKey) : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractComplexType::toArray()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$renderTopKey</h4>
+<code>boolean</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a name="_convertToArray" id="_convertToArray"></a><div class="element clickable method protected _convertToArray" data-toggle="collapse" data-target="._convertToArray .collapse">
+<h2>Recursive algorthim to convert complex types to an array</h2>
+<pre>_convertToArray(array $arrayValues) : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractComplexType::_convertToArray()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$arrayValues</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24_name" id="$_name"> </a><div class="element clickable property protected $_name" data-toggle="collapse" data-target=".$_name .collapse">
+<h2>Name of this complex type</h2>
+<pre>$_name : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_values" id="$_values"> </a><div class="element clickable property protected $_values" data-toggle="collapse" data-target=".$_values .collapse">
+<h2>Holds the data as a key =&gt; value array</h2>
+<pre>$_values : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractComplexType::$$_values</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a8</a> and<br>
+            generated on 2012-07-29T13:59:17-05:00.<br></footer></div>
+</div>
+</body>
+</html>

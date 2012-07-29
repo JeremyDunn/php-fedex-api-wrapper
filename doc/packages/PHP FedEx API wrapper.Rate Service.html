@@ -1,0 +1,1975 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>PHP Fedex API Wrapper » PHP FedEx API wrapper\Rate Service</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">PHP Fedex API Wrapper</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/FedEx.html"><i class="icon-th"></i> FedEx</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/PHP%20FedEx%20API%20wrapper.html"><i class="icon-folder-open"></i> PHP FedEx API wrapper</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">871</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-map-marker"></i> Packages</li>
+<li>
+<a href="../packages/PHP%20FedEx%20API%20wrapper.Rate%20Service.html" title="Rate Service"><i class="icon-folder-open"></i>Rate Service</a><ul class="nav nav-list nav-packages"></ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-class"></i> Classes</li>
+<li><a href="#ShippingDocumentPrintDetail" title="Specifies printing options for a shipping document.">ShippingDocumentPrintDetail</a></li>
+<li><a href="#ShippingDocumentSpecification" title="Contains all data required for additional (non-label) shipping documents to be produced in conjunction with a specific shipment.">ShippingDocumentSpecification</a></li>
+<li><a href="#SignatureOptionDetail" title="The descriptive data required for FedEx delivery signature services.">SignatureOptionDetail</a></li>
+<li><a href="#SmartPostShipmentDetail" title="Data required for shipments handled under the SMART_POST and GROUND_SMART_POST service types.">SmartPostShipmentDetail</a></li>
+<li><a href="#Surcharge" title="Identifies each surcharge applied to the shipment.">Surcharge</a></li>
+<li><a href="#Tax" title="Identifies each tax applied to the shipment.">Tax</a></li>
+<li><a href="#TaxpayerIdentification" title="The descriptive data for taxpayer identification information.">TaxpayerIdentification</a></li>
+<li><a href="#TrackingId" title="TrackingId">TrackingId</a></li>
+<li><a href="#TransactionDetail" title="Descriptive data for this customer transaction.">TransactionDetail</a></li>
+<li><a href="#UploadDocumentDetail" title="UploadDocumentDetail">UploadDocumentDetail</a></li>
+<li><a href="#UploadDocumentReferenceDetail" title="UploadDocumentReferenceDetail">UploadDocumentReferenceDetail</a></li>
+<li><a href="#VariableHandlingChargeDetail" title="This definition of variable handling charge detail is intended for use in Jan 2011 corp load.">VariableHandlingChargeDetail</a></li>
+<li><a href="#VariableHandlingCharges" title="The variable handling charges calculated based on the type variable handling charges requested.">VariableHandlingCharges</a></li>
+<li><a href="#VersionId" title="Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).">VersionId</a></li>
+<li><a href="#Volume" title="Three-dimensional volume/cubic measurement.">Volume</a></li>
+<li><a href="#WebAuthenticationCredential" title="Two part authentication string used for the sender's identity">WebAuthenticationCredential</a></li>
+<li><a href="#WebAuthenticationDetail" title="Used in authentication of the sender's identity.">WebAuthenticationDetail</a></li>
+<li><a href="#Weight" title="The descriptive data for the heaviness of an object.">Weight</a></li>
+<li><a href="#AdditionalLabelsDetail" title="Specifies additional labels to be produced.">AdditionalLabelsDetail</a></li>
+<li><a href="#Address" title="Descriptive data for a physical location.">Address</a></li>
+<li><a href="#CertificateOfOriginDetail" title="The instructions indicating how to print the Certificate of Origin ( e.g.">CertificateOfOriginDetail</a></li>
+<li><a href="#ClientDetail" title="Descriptive data for the client submitting a transaction.">ClientDetail</a></li>
+<li><a href="#CodAddTransportationChargesDetail" title="CodAddTransportationChargesDetail">CodAddTransportationChargesDetail</a></li>
+<li><a href="#CodDetail" title="Descriptive data required for a FedEx COD (Collect-On-Delivery) shipment.">CodDetail</a></li>
+<li><a href="#CommercialInvoice" title="CommercialInvoice element is required for electronic upload of CI data.">CommercialInvoice</a></li>
+<li><a href="#CommercialInvoiceDetail" title="The instructions indicating how to print the Commercial Invoice( e.g.">CommercialInvoiceDetail</a></li>
+<li><a href="#CommitDetail" title="Information about the transit time and delivery commitment date and time.">CommitDetail</a></li>
+<li><a href="#Commodity" title="For international multiple piece shipments, commodity information must be passed in the Master and on each child transaction.">Commodity</a></li>
+<li><a href="#ConfigurableLabelReferenceEntry" title="Defines additional data to print in the Configurable portion of the label, this allows you to print the same type information on the label that can also be printed on the doc tab.">ConfigurableLabelReferenceEntry</a></li>
+<li><a href="#Contact" title="The descriptive data for a point-of-contact person.">Contact</a></li>
+<li><a href="#ContactAndAddress" title="ContactAndAddress">ContactAndAddress</a></li>
+<li><a href="#ContentRecord" title="ContentRecord">ContentRecord</a></li>
+<li><a href="#CurrencyExchangeRate" title="Specifies the currency exchange performed on financial amounts for this rate.">CurrencyExchangeRate</a></li>
+<li><a href="#CustomDeliveryWindowDetail" title="CustomDeliveryWindowDetail">CustomDeliveryWindowDetail</a></li>
+<li><a href="#CustomDocumentDetail" title="Data required to produce a custom-specified document, either at shipment or package level.">CustomDocumentDetail</a></li>
+<li><a href="#CustomerImageUsage" title="CustomerImageUsage">CustomerImageUsage</a></li>
+<li><a href="#CustomerReference" title="Reference information to be associated with this package.">CustomerReference</a></li>
+<li><a href="#CustomerSpecifiedLabelDetail" title="Allows customer-specified control of label content.">CustomerSpecifiedLabelDetail</a></li>
+<li><a href="#CustomLabelBarcodeEntry" title="Constructed string, based on format and zero or more data fields, printed in specified barcode symbology.">CustomLabelBarcodeEntry</a></li>
+<li><a href="#CustomLabelBoxEntry" title="Solid (filled) rectangular area on label.">CustomLabelBoxEntry</a></li>
+<li><a href="#CustomLabelDetail" title="CustomLabelDetail">CustomLabelDetail</a></li>
+<li><a href="#CustomLabelGraphicEntry" title="Image to be included from printer's memory, or from a local file for offline clients.">CustomLabelGraphicEntry</a></li>
+<li><a href="#CustomLabelPosition" title="CustomLabelPosition">CustomLabelPosition</a></li>
+<li><a href="#CustomLabelTextEntry" title="Constructed string, based on format and zero or more data fields, printed in specified printer font (for thermal labels) or generic font/size (for plain paper labels).">CustomLabelTextEntry</a></li>
+<li><a href="#CustomsClearanceDetail" title="CustomsClearanceDetail">CustomsClearanceDetail</a></li>
+<li><a href="#DangerousGoodsDetail" title="The descriptive data required for a FedEx shipment containing dangerous goods (hazardous materials).">DangerousGoodsDetail</a></li>
+<li><a href="#DateRange" title="DateRange">DateRange</a></li>
+<li><a href="#DelayDetail" title="Information about why a shipment delivery is delayed and at what level( country/service etc.).">DelayDetail</a></li>
+<li><a href="#DestinationControlDetail" title="Data required to complete the Destionation Control Statement for US exports.">DestinationControlDetail</a></li>
+<li><a href="#Dimensions" title="The dimensions of this package and the unit type used for the measurements.">Dimensions</a></li>
+<li><a href="#Distance" title="Driving or other transportation distances, distinct from dimension measurements.">Distance</a></li>
+<li><a href="#DocTabContent" title="DocTabContent">DocTabContent</a></li>
+<li><a href="#DocTabContentBarcoded" title="DocTabContentBarcoded">DocTabContentBarcoded</a></li>
+<li><a href="#DocTabContentZone001" title="DocTabContentZone001">DocTabContentZone001</a></li>
+<li><a href="#DocTabZoneSpecification" title="DocTabZoneSpecification">DocTabZoneSpecification</a></li>
+<li><a href="#EdtCommodityTax" title="EdtCommodityTax">EdtCommodityTax</a></li>
+<li><a href="#EdtExciseCondition" title="EdtExciseCondition">EdtExciseCondition</a></li>
+<li><a href="#EdtTaxDetail" title="EdtTaxDetail">EdtTaxDetail</a></li>
+<li><a href="#EMailLabelDetail" title="Specific information about the delivery of the email and options for the shipment.">EMailLabelDetail</a></li>
+<li><a href="#EMailNotificationDetail" title="Information describing email notifications that will be sent in relation to events that occur during package movement">EMailNotificationDetail</a></li>
+<li><a href="#EMailNotificationRecipient" title="The descriptive data for a FedEx email notification recipient.">EMailNotificationRecipient</a></li>
+<li><a href="#EtdDetail" title="Electronic Trade document references used with the ETD special service.">EtdDetail</a></li>
+<li><a href="#ExportDetail" title="Country specific details of an International shipment.">ExportDetail</a></li>
+<li><a href="#ExpressFreightDetail" title="Details specific to an Express freight shipment.">ExpressFreightDetail</a></li>
+<li><a href="#ExpressFreightDetailContact" title="Currently not supported.">ExpressFreightDetailContact</a></li>
+<li><a href="#FlatbedTrailerDetail" title="Specifies the optional features/characteristics requested for a Freight shipment utilizing a flatbed trailer.">FlatbedTrailerDetail</a></li>
+<li><a href="#FreightBaseCharge" title="Individual charge which contributes to the total base charge for the shipment.">FreightBaseCharge</a></li>
+<li><a href="#FreightCommitDetail" title="Information about the Freight Service Centers associated with this shipment.">FreightCommitDetail</a></li>
+<li><a href="#FreightGuaranteeDetail" title="FreightGuaranteeDetail">FreightGuaranteeDetail</a></li>
+<li><a href="#FreightRateDetail" title="Rate data specific to FedEx Freight or FedEx National Freight services.">FreightRateDetail</a></li>
+<li><a href="#FreightRateNotation" title="Additional non-monetary data returned with Freight rates.">FreightRateNotation</a></li>
+<li><a href="#FreightServiceCenterDetail" title="This class describes the relationship between a customer-specified address and the FedEx Freight / FedEx National Freight Service Center that supports that address.">FreightServiceCenterDetail</a></li>
+<li><a href="#FreightShipmentDetail" title="Data applicable to shipments using FEDEX_FREIGHT and FEDEX_NATIONAL_FREIGHT services.">FreightShipmentDetail</a></li>
+<li><a href="#FreightShipmentLineItem" title="Description of an individual commodity or class of content in a shipment.">FreightShipmentLineItem</a></li>
+<li><a href="#FreightSpecialServicePayment" title="Specifies which party will be responsible for payment of any surcharges for Freight special services for which split billing is allowed.">FreightSpecialServicePayment</a></li>
+<li><a href="#GeneralAgencyAgreementDetail" title="Data required to produce a General Agency Agreement document.">GeneralAgencyAgreementDetail</a></li>
+<li><a href="#HazardousCommodityContent" title="Documents the kind and quantity of an individual hazardous commodity in a package.">HazardousCommodityContent</a></li>
+<li><a href="#HazardousCommodityDescription" title="Identifies and describes an individual hazardous commodity.">HazardousCommodityDescription</a></li>
+<li><a href="#HazardousCommodityOptionDetail" title="Customer-provided specifications for handling individual commodities.">HazardousCommodityOptionDetail</a></li>
+<li><a href="#HazardousCommodityPackagingDetail" title="Identifies number and type of packaging units for hazardous commodities.">HazardousCommodityPackagingDetail</a></li>
+<li><a href="#HazardousCommodityQuantityDetail" title="Identifies amount and units for quantity of hazardous commodities.">HazardousCommodityQuantityDetail</a></li>
+<li><a href="#HoldAtLocationDetail" title="Descriptive data required for a FedEx shipment that is to be held at the destination FedEx location for pickup by the recipient.">HoldAtLocationDetail</a></li>
+<li><a href="#HomeDeliveryPremiumDetail" title="The descriptive data required by FedEx for home delivery services.">HomeDeliveryPremiumDetail</a></li>
+<li><a href="#LabelSpecification" title="Description of shipping label to be returned in the reply">LabelSpecification</a></li>
+<li><a href="#LiabilityCoverageDetail" title="LiabilityCoverageDetail">LiabilityCoverageDetail</a></li>
+<li><a href="#LinearMeasure" title="Represents a one-dimensional measurement in small units (e.g.">LinearMeasure</a></li>
+<li><a href="#Localization" title="Identifies the representation of human-readable text.">Localization</a></li>
+<li><a href="#Measure" title="Measure">Measure</a></li>
+<li><a href="#Money" title="Money">Money</a></li>
+<li><a href="#NaftaCertificateOfOriginDetail" title="Data required to produce a Certificate of Origin document.">NaftaCertificateOfOriginDetail</a></li>
+<li><a href="#NaftaCommodityDetail" title="NaftaCommodityDetail">NaftaCommodityDetail</a></li>
+<li><a href="#NaftaProducer" title="NaftaProducer">NaftaProducer</a></li>
+<li><a href="#Notification" title="The descriptive data regarding the result of the submitted transaction.">Notification</a></li>
+<li><a href="#NotificationParameter" title="NotificationParameter">NotificationParameter</a></li>
+<li><a href="#Op900Detail" title="The instructions indicating how to print the OP-900 form for hazardous materials packages.">Op900Detail</a></li>
+<li><a href="#PackageRateDetail" title="Data for a package's rates, as calculated per a specific rate type.">PackageRateDetail</a></li>
+<li><a href="#PackageSpecialServicesRequested" title="These special services are available at the package level for some or all service types.">PackageSpecialServicesRequested</a></li>
+<li><a href="#Party" title="The descriptive data for a person or company entitiy doing business with FedEx.">Party</a></li>
+<li><a href="#Payment" title="The descriptive data for the monetary compensation given to FedEx for services rendered to the customer.">Payment</a></li>
+<li><a href="#Payor" title="Descriptive data identifying the party responsible for payment for a service.">Payor</a></li>
+<li><a href="#PendingShipmentDetail" title="This information describes the kind of pending shipment being requested.">PendingShipmentDetail</a></li>
+<li><a href="#PickupDetail" title="This class describes the pickup characteristics of a shipment (e.g.">PickupDetail</a></li>
+<li><a href="#PriorityAlertDetail" title="Currently not supported.">PriorityAlertDetail</a></li>
+<li><a href="#RateDiscount" title="Identifies a discount applied to the shipment.">RateDiscount</a></li>
+<li><a href="#RatedPackageDetail" title="If requesting rates using the PackageDetails element (one package at a time) in the request, the rates for each package will be returned in this element.">RatedPackageDetail</a></li>
+<li><a href="#RatedShipmentDetail" title="This class groups the shipment and package rating data for a specific rate type for use in a rating reply, which groups result data by rate type.">RatedShipmentDetail</a></li>
+<li><a href="#RateReply" title="The response to a RateRequest.">RateReply</a></li>
+<li><a href="#RateReplyDetail" title="RateReplyDetail">RateReplyDetail</a></li>
+<li><a href="#RateRequest" title="Descriptive data sent to FedEx by a customer in order to rate a package/shipment.">RateRequest</a></li>
+<li><a href="#Rebate" title="Identifies a discount applied to the shipment.">Rebate</a></li>
+<li><a href="#RecipientCustomsId" title="Specifies how the recipient is identified for customs purposes; the requirements on this information vary with destination country.">RecipientCustomsId</a></li>
+<li><a href="#RequestedPackageLineItem" title="This class rationalizes RequestedPackage and RequestedPackageSummary from previous interfaces.">RequestedPackageLineItem</a></li>
+<li><a href="#RequestedShipment" title="The descriptive data for the shipment being tendered to FedEx.">RequestedShipment</a></li>
+<li><a href="#ReturnEMailDetail" title="ReturnEMailDetail">ReturnEMailDetail</a></li>
+<li><a href="#ReturnShipmentDetail" title="Information relating to a return shipment.">ReturnShipmentDetail</a></li>
+<li><a href="#Rma" title="Return Merchant Authorization">Rma</a></li>
+<li><a href="#ServiceSubOptionDetail" title="Supporting detail for applied options identified in a rate quote.">ServiceSubOptionDetail</a></li>
+<li><a href="#ShipmentDryIceDetail" title="Shipment-level totals of dry ice data across all packages.">ShipmentDryIceDetail</a></li>
+<li><a href="#ShipmentLegRateDetail" title="Data for a single leg of a shipment's total/summary rates, as calculated per a specific rate type.">ShipmentLegRateDetail</a></li>
+<li><a href="#ShipmentRateDetail" title="Data for a shipment's total/summary rates, as calculated per a specific rate type.">ShipmentRateDetail</a></li>
+<li><a href="#ShipmentSpecialServicesRequested" title="These special services are available at the shipment level for some or all service types.">ShipmentSpecialServicesRequested</a></li>
+<li><a href="#ShippingDocumentDispositionDetail" title="Each occurrence of this class specifies a particular way in which a kind of shipping document is to be produced and provided.">ShippingDocumentDispositionDetail</a></li>
+<li><a href="#ShippingDocumentEMailDetail" title="Specifies how to e-mail shipping documents.">ShippingDocumentEMailDetail</a></li>
+<li><a href="#ShippingDocumentEMailRecipient" title="Specifies an individual recipient of e-mailed shipping document(s).">ShippingDocumentEMailRecipient</a></li>
+<li><a href="#ShippingDocumentFormat" title="Specifies characteristics of a shipping document to be produced.">ShippingDocumentFormat</a></li>
+<li><a href="#Request" title="Request sends the SOAP call to the FedEx servers and returns the response">Request</a></li>
+<li><a href="#UploadDocumentProducerType" title="UploadDocumentProducerType">UploadDocumentProducerType</a></li>
+<li><a href="#UploadDocumentType" title="UploadDocumentType">UploadDocumentType</a></li>
+<li><a href="#VolumeUnits" title="Units of three-dimensional volume/cubic measure.">VolumeUnits</a></li>
+<li><a href="#WeightUnits" title="Identifies the unit of measure associated with a weight value.">WeightUnits</a></li>
+<li><a href="#AdditionalLabelsType" title="Identifies the type of additional labels.">AdditionalLabelsType</a></li>
+<li><a href="#B13AFilingOptionType" title="Specifies which filing option is being exercised by the customer.">B13AFilingOptionType</a></li>
+<li><a href="#BarcodeSymbologyType" title="Identification of the type of barcode (symbology) used on FedEx documents and labels.">BarcodeSymbologyType</a></li>
+<li><a href="#CarrierCodeType" title="Identification of a FedEx operating company (transportation).">CarrierCodeType</a></li>
+<li><a href="#ChargeBasisLevelType" title="ChargeBasisLevelType">ChargeBasisLevelType</a></li>
+<li><a href="#ClearanceBrokerageType" title="Specifies the type of brokerage to be applied to a shipment.">ClearanceBrokerageType</a></li>
+<li><a href="#CodAddTransportationChargeBasisType" title="CodAddTransportationChargeBasisType">CodAddTransportationChargeBasisType</a></li>
+<li><a href="#CodCollectionType" title="Identifies the type of funds FedEx should collect upon shipment delivery.">CodCollectionType</a></li>
+<li><a href="#CodReturnReferenceIndicatorType" title="Indicates which type of reference information to include on the COD return shipping label.">CodReturnReferenceIndicatorType</a></li>
+<li><a href="#CommitmentDelayType" title="The type of delay this shipment will encounter.">CommitmentDelayType</a></li>
+<li><a href="#CustomDeliveryWindowType" title="CustomDeliveryWindowType">CustomDeliveryWindowType</a></li>
+<li><a href="#CustomerImageUsageType" title="CustomerImageUsageType">CustomerImageUsageType</a></li>
+<li><a href="#CustomerReferenceType" title="CustomerReferenceType">CustomerReferenceType</a></li>
+<li><a href="#CustomLabelCoordinateUnits" title="CustomLabelCoordinateUnits">CustomLabelCoordinateUnits</a></li>
+<li><a href="#DangerousGoodsAccessibilityType" title="Identifies whether or not the products being shipped are required to be accessible during delivery.">DangerousGoodsAccessibilityType</a></li>
+<li><a href="#DayOfWeekType" title="DayOfWeekType">DayOfWeekType</a></li>
+<li><a href="#DelayLevelType" title="The attribute of the shipment that caused the delay(e.g.">DelayLevelType</a></li>
+<li><a href="#DelayPointType" title="The point where the delay is occurring ( e.g.">DelayPointType</a></li>
+<li><a href="#DestinationControlStatementType" title="Used to indicate whether the Destination Control Statement is of type Department of Commerce, Department of State or both.">DestinationControlStatementType</a></li>
+<li><a href="#DistanceUnits" title="DistanceUnits">DistanceUnits</a></li>
+<li><a href="#DocTabContentType" title="DocTabContentType">DocTabContentType</a></li>
+<li><a href="#DocTabZoneJustificationType" title="DocTabZoneJustificationType">DocTabZoneJustificationType</a></li>
+<li><a href="#DropoffType" title="Identifies the method by which the package is to be tendered to FedEx.">DropoffType</a></li>
+<li><a href="#EdtRequestType" title="Specifies the types of Estimated Duties and Taxes to be included in a rate quotation for an international shipment.">EdtRequestType</a></li>
+<li><a href="#EdtTaxType" title="EdtTaxType">EdtTaxType</a></li>
+<li><a href="#EMailNotificationEventType" title="EMailNotificationEventType">EMailNotificationEventType</a></li>
+<li><a href="#EMailNotificationFormatType" title="The format of the email">EMailNotificationFormatType</a></li>
+<li><a href="#EMailNotificationRecipientType" title="Identifies the set of valid email notification recipient types.">EMailNotificationRecipientType</a></li>
+<li><a href="#ExpressRegionCode" title="Indicates a FedEx Express operating region.">ExpressRegionCode</a></li>
+<li><a href="#FedExLocationType" title="Identifies a kind of FedEx facility.">FedExLocationType</a></li>
+<li><a href="#FlatbedTrailerOption" title="FlatbedTrailerOption">FlatbedTrailerOption</a></li>
+<li><a href="#FreightAccountPaymentType" title="FreightAccountPaymentType">FreightAccountPaymentType</a></li>
+<li><a href="#FreightBaseChargeCalculationType" title="Specifies the way in which base charges for a Freight shipment or shipment leg are calculated.">FreightBaseChargeCalculationType</a></li>
+<li><a href="#FreightChargeBasisType" title="FreightChargeBasisType">FreightChargeBasisType</a></li>
+<li><a href="#FreightClassType" title="These values represent the industry-standard freight classes used for FedEx Freight and FedEx National Freight shipment description.">FreightClassType</a></li>
+<li><a href="#FreightGuaranteeType" title="FreightGuaranteeType">FreightGuaranteeType</a></li>
+<li><a href="#FreightOnValueType" title="Identifies responsibilities with respect to loss, damage, etc.">FreightOnValueType</a></li>
+<li><a href="#FreightServiceSchedulingType" title="Specifies the type of service scheduling offered from a Freight or National Freight Service Center to a customer-supplied address.">FreightServiceSchedulingType</a></li>
+<li><a href="#FreightShipmentRoleType" title="Indicates the role of the party submitting the transaction.">FreightShipmentRoleType</a></li>
+<li><a href="#HazardousCommodityLabelTextOptionType" title="Specifies how the commodity is to be labeled.">HazardousCommodityLabelTextOptionType</a></li>
+<li><a href="#HazardousCommodityOptionType" title="Indicates which kind of hazardous content (as defined by DOT) is being reported.">HazardousCommodityOptionType</a></li>
+<li><a href="#HazardousCommodityPackingGroupType" title="Identifies DOT packing group for a hazardous commodity.">HazardousCommodityPackingGroupType</a></li>
+<li><a href="#HomeDeliveryPremiumType" title="HomeDeliveryPremiumType">HomeDeliveryPremiumType</a></li>
+<li><a href="#ImageId" title="ImageId">ImageId</a></li>
+<li><a href="#InternationalDocumentContentType" title="The type of International shipment.">InternationalDocumentContentType</a></li>
+<li><a href="#LabelFormatType" title="Specifies the type of label to be returned.">LabelFormatType</a></li>
+<li><a href="#LabelMaskableDataType" title="Names for data elements / areas which may be suppressed from printing on labels.">LabelMaskableDataType</a></li>
+<li><a href="#LabelPrintingOrientationType" title="This indicates if the top or bottom of the label comes out of the printer first.">LabelPrintingOrientationType</a></li>
+<li><a href="#LabelRotationType" title="Relative to normal orientation for the printer.">LabelRotationType</a></li>
+<li><a href="#LabelStockType" title="For thermal printer labels this indicates the size of the label and the location of the doc tab if present.">LabelStockType</a></li>
+<li><a href="#LiabilityCoverageType" title="LiabilityCoverageType">LiabilityCoverageType</a></li>
+<li><a href="#LinearUnits" title="CM = centimeters, IN = inches">LinearUnits</a></li>
+<li><a href="#MinimumChargeType" title="Internal FedEx use only.">MinimumChargeType</a></li>
+<li><a href="#NaftaImporterSpecificationType" title="NaftaImporterSpecificationType">NaftaImporterSpecificationType</a></li>
+<li><a href="#NaftaNetCostMethodCode" title="Net cost method used.">NaftaNetCostMethodCode</a></li>
+<li><a href="#NaftaPreferenceCriterionCode" title="See instructions for NAFTA Certificate of Origin for code definitions.">NaftaPreferenceCriterionCode</a></li>
+<li><a href="#NaftaProducerDeterminationCode" title="See instructions for NAFTA Certificate of Origin for code definitions.">NaftaProducerDeterminationCode</a></li>
+<li><a href="#NaftaProducerSpecificationType" title="NaftaProducerSpecificationType">NaftaProducerSpecificationType</a></li>
+<li><a href="#NotificationSeverityType" title="Identifies the set of severity values for a Notification.">NotificationSeverityType</a></li>
+<li><a href="#OversizeClassType" title="The Oversize classification for a package.">OversizeClassType</a></li>
+<li><a href="#PackageSpecialServiceType" title="Identifies the collection of special services offered by FedEx.">PackageSpecialServiceType</a></li>
+<li><a href="#PackagingType" title="Identifies the packaging used by the requestor for the package.">PackagingType</a></li>
+<li><a href="#PaymentType" title="Identifies the method of payment for a service.">PaymentType</a></li>
+<li><a href="#PendingShipmentType" title="PendingShipmentType">PendingShipmentType</a></li>
+<li><a href="#PhysicalPackagingType" title='This enumeration rationalizes the former FedEx Express international "admissibility package" types (based on ANSI X.12) and the FedEx Freight packaging types.'>PhysicalPackagingType</a></li>
+<li><a href="#PickupRequestSourceType" title="PickupRequestSourceType">PickupRequestSourceType</a></li>
+<li><a href="#PickupRequestType" title="PickupRequestType">PickupRequestType</a></li>
+<li><a href="#PricingCodeType" title="PricingCodeType">PricingCodeType</a></li>
+<li><a href="#PurposeOfShipmentType" title="PurposeOfShipmentType">PurposeOfShipmentType</a></li>
+<li><a href="#RateDimensionalDivisorType" title="Indicates the reason that a dim divisor value was chose.">RateDimensionalDivisorType</a></li>
+<li><a href="#RateDiscountType" title="Identifies the type of discount applied to the shipment.">RateDiscountType</a></li>
+<li><a href="#RatedWeightMethod" title="The method used to calculate the weight to be used in rating the package.">RatedWeightMethod</a></li>
+<li><a href="#RateElementBasisType" title="Selects the value from a set of rate data to which the percentage is applied.">RateElementBasisType</a></li>
+<li><a href="#RateRequestType" title="Indicates the type of rates to be returned.">RateRequestType</a></li>
+<li><a href="#RateTypeBasisType" title="Select the type of rate from which the element is to be selected.">RateTypeBasisType</a></li>
+<li><a href="#RebateType" title="Identifies the type of discount applied to the shipment.">RebateType</a></li>
+<li><a href="#RecipientCustomsIdType" title="Type of Brazilian taxpayer identifier provided in Recipient/TaxPayerIdentification/Number.">RecipientCustomsIdType</a></li>
+<li><a href="#RegulatoryControlType" title="FOOD_OR_PERISHABLE is required by FDA/BTA; must be true for food/perishable items coming to US or PR from non-US/non-PR origin">RegulatoryControlType</a></li>
+<li><a href="#RequestedShippingDocumentType" title="RequestedShippingDocumentType">RequestedShippingDocumentType</a></li>
+<li><a href="#RequiredShippingDocumentType" title="RequiredShippingDocumentType">RequiredShippingDocumentType</a></li>
+<li><a href="#ReturnedRateType" title='The "PAYOR.'>ReturnedRateType</a></li>
+<li><a href="#ReturnEMailAllowedSpecialServiceType" title="These values are used to control the availability of certain special services at the time when a customer uses the e-mail label link to create a return shipment.">ReturnEMailAllowedSpecialServiceType</a></li>
+<li><a href="#ReturnType" title="The type of return shipment that is being requested.">ReturnType</a></li>
+<li><a href="#SecondaryBarcodeType" title="SecondaryBarcodeType">SecondaryBarcodeType</a></li>
+<li><a href="#ServiceOptionType" title="These values control the optional features of service that may be combined in a commitment/rate comparision transaction.">ServiceOptionType</a></li>
+<li><a href="#ServiceType" title="Identifies the FedEx service to use in shipping the package.">ServiceType</a></li>
+<li><a href="#ShipmentOnlyFieldsType" title="These values identify which package-level data values will be provided at the shipment-level.">ShipmentOnlyFieldsType</a></li>
+<li><a href="#ShipmentSpecialServiceType" title="Identifies the collection of special service offered by FedEx.">ShipmentSpecialServiceType</a></li>
+<li><a href="#ShippingDocumentDispositionType" title="Specifies how to return a shipping document to the caller.">ShippingDocumentDispositionType</a></li>
+<li><a href="#ShippingDocumentEMailGroupingType" title="ShippingDocumentEMailGroupingType">ShippingDocumentEMailGroupingType</a></li>
+<li><a href="#ShippingDocumentGroupingType" title="Specifies how to organize all shipping documents of the same type.">ShippingDocumentGroupingType</a></li>
+<li><a href="#ShippingDocumentImageType" title="Specifies the image format used for a shipping document.">ShippingDocumentImageType</a></li>
+<li><a href="#ShippingDocumentStockType" title="Specifies the type of paper (stock) on which a document will be printed.">ShippingDocumentStockType</a></li>
+<li><a href="#SignatureOptionType" title="Identifies the delivery signature services options offered by FedEx.">SignatureOptionType</a></li>
+<li><a href="#SmartPostAncillaryEndorsementType" title="These values are mutually exclusive; at most one of them can be attached to a SmartPost shipment.">SmartPostAncillaryEndorsementType</a></li>
+<li><a href="#SmartPostIndiciaType" title="SmartPostIndiciaType">SmartPostIndiciaType</a></li>
+<li><a href="#SpecialRatingAppliedType" title="Indicates which special rating cases applied to this shipment.">SpecialRatingAppliedType</a></li>
+<li><a href="#SurchargeLevelType" title="SurchargeLevelType">SurchargeLevelType</a></li>
+<li><a href="#SurchargeType" title="SurchargeType">SurchargeType</a></li>
+<li><a href="#TaxesOrMiscellaneousChargeType" title="Specifice the kind of tax or miscellaneous charge being reported on a Commercial Invoice.">TaxesOrMiscellaneousChargeType</a></li>
+<li><a href="#TaxType" title="TaxType">TaxType</a></li>
+<li><a href="#TermsOfSaleType" title="Required for dutiable international express or ground shipment.">TermsOfSaleType</a></li>
+<li><a href="#TinType" title="Identifies the category of the taxpayer identification number.">TinType</a></li>
+<li><a href="#TrackingIdType" title="TrackingIdType">TrackingIdType</a></li>
+<li><a href="#TransitTimeType" title="Time in transit from pickup to delivery.">TransitTimeType</a></li>
+<li><a href="#UploadDocumentIdProducer" title="UploadDocumentIdProducer">UploadDocumentIdProducer</a></li>
+</ul>
+</div>
+<div class="span8 package-contents">
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-folder-open"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../packages/PHP%20FedEx%20API%20wrapper.html">PHP FedEx API wrapper</a></li>
+<span class="divider">\</span><li class="active"><a href="../packages/PHP%20FedEx%20API%20wrapper.Rate%20Service.html">Rate Service</a></li>
+</ul>
+<div class="package-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<a name="AdditionalLabelsDetail" id="AdditionalLabelsDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.AdditionalLabelsDetail.html">
+<h1>AdditionalLabelsDetail<a href="../classes/FedEx.RateService.ComplexType.AdditionalLabelsDetail.html">¶</a>
+</h1>
+<p class="short_description">Specifies additional labels to be produced.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.AdditionalLabelsDetail.html" class="more">« More »</a>
+</div>
+<a name="Address" id="Address"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.Address.html">
+<h1>Address<a href="../classes/FedEx.RateService.ComplexType.Address.html">¶</a>
+</h1>
+<p class="short_description">Descriptive data for a physical location.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.Address.html" class="more">« More »</a>
+</div>
+<a name="CertificateOfOriginDetail" id="CertificateOfOriginDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.CertificateOfOriginDetail.html">
+<h1>CertificateOfOriginDetail<a href="../classes/FedEx.RateService.ComplexType.CertificateOfOriginDetail.html">¶</a>
+</h1>
+<p class="short_description">The instructions indicating how to print the Certificate of Origin ( e.g.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.CertificateOfOriginDetail.html" class="more">« More »</a>
+</div>
+<a name="ClientDetail" id="ClientDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.ClientDetail.html">
+<h1>ClientDetail<a href="../classes/FedEx.RateService.ComplexType.ClientDetail.html">¶</a>
+</h1>
+<p class="short_description">Descriptive data for the client submitting a transaction.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.ClientDetail.html" class="more">« More »</a>
+</div>
+<a name="CodAddTransportationChargesDetail" id="CodAddTransportationChargesDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.CodAddTransportationChargesDetail.html">
+<h1>CodAddTransportationChargesDetail<a href="../classes/FedEx.RateService.ComplexType.CodAddTransportationChargesDetail.html">¶</a>
+</h1>
+<p class="short_description">CodAddTransportationChargesDetail</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.CodAddTransportationChargesDetail.html" class="more">« More »</a>
+</div>
+<a name="CodDetail" id="CodDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.CodDetail.html">
+<h1>CodDetail<a href="../classes/FedEx.RateService.ComplexType.CodDetail.html">¶</a>
+</h1>
+<p class="short_description">Descriptive data required for a FedEx COD (Collect-On-Delivery) shipment.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.CodDetail.html" class="more">« More »</a>
+</div>
+<a name="CommercialInvoice" id="CommercialInvoice"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.CommercialInvoice.html">
+<h1>CommercialInvoice<a href="../classes/FedEx.RateService.ComplexType.CommercialInvoice.html">¶</a>
+</h1>
+<p class="short_description">CommercialInvoice element is required for electronic upload of CI data.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.CommercialInvoice.html" class="more">« More »</a>
+</div>
+<a name="CommercialInvoiceDetail" id="CommercialInvoiceDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.CommercialInvoiceDetail.html">
+<h1>CommercialInvoiceDetail<a href="../classes/FedEx.RateService.ComplexType.CommercialInvoiceDetail.html">¶</a>
+</h1>
+<p class="short_description">The instructions indicating how to print the Commercial Invoice( e.g.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.CommercialInvoiceDetail.html" class="more">« More »</a>
+</div>
+<a name="CommitDetail" id="CommitDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.CommitDetail.html">
+<h1>CommitDetail<a href="../classes/FedEx.RateService.ComplexType.CommitDetail.html">¶</a>
+</h1>
+<p class="short_description">Information about the transit time and delivery commitment date and time.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.CommitDetail.html" class="more">« More »</a>
+</div>
+<a name="Commodity" id="Commodity"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.Commodity.html">
+<h1>Commodity<a href="../classes/FedEx.RateService.ComplexType.Commodity.html">¶</a>
+</h1>
+<p class="short_description">For international multiple piece shipments, commodity information must be passed in the Master and on each child transaction.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.Commodity.html" class="more">« More »</a>
+</div>
+<a name="ConfigurableLabelReferenceEntry" id="ConfigurableLabelReferenceEntry"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.ConfigurableLabelReferenceEntry.html">
+<h1>ConfigurableLabelReferenceEntry<a href="../classes/FedEx.RateService.ComplexType.ConfigurableLabelReferenceEntry.html">¶</a>
+</h1>
+<p class="short_description">Defines additional data to print in the Configurable portion of the label, this allows you to print the same type information on the label that can also be printed on the doc tab.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.ConfigurableLabelReferenceEntry.html" class="more">« More »</a>
+</div>
+<a name="Contact" id="Contact"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.Contact.html">
+<h1>Contact<a href="../classes/FedEx.RateService.ComplexType.Contact.html">¶</a>
+</h1>
+<p class="short_description">The descriptive data for a point-of-contact person.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.Contact.html" class="more">« More »</a>
+</div>
+<a name="ContactAndAddress" id="ContactAndAddress"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.ContactAndAddress.html">
+<h1>ContactAndAddress<a href="../classes/FedEx.RateService.ComplexType.ContactAndAddress.html">¶</a>
+</h1>
+<p class="short_description">ContactAndAddress</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.ContactAndAddress.html" class="more">« More »</a>
+</div>
+<a name="ContentRecord" id="ContentRecord"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.ContentRecord.html">
+<h1>ContentRecord<a href="../classes/FedEx.RateService.ComplexType.ContentRecord.html">¶</a>
+</h1>
+<p class="short_description">ContentRecord</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.ContentRecord.html" class="more">« More »</a>
+</div>
+<a name="CurrencyExchangeRate" id="CurrencyExchangeRate"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.CurrencyExchangeRate.html">
+<h1>CurrencyExchangeRate<a href="../classes/FedEx.RateService.ComplexType.CurrencyExchangeRate.html">¶</a>
+</h1>
+<p class="short_description">Specifies the currency exchange performed on financial amounts for this rate.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.CurrencyExchangeRate.html" class="more">« More »</a>
+</div>
+<a name="CustomDeliveryWindowDetail" id="CustomDeliveryWindowDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.CustomDeliveryWindowDetail.html">
+<h1>CustomDeliveryWindowDetail<a href="../classes/FedEx.RateService.ComplexType.CustomDeliveryWindowDetail.html">¶</a>
+</h1>
+<p class="short_description">CustomDeliveryWindowDetail</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.CustomDeliveryWindowDetail.html" class="more">« More »</a>
+</div>
+<a name="CustomDocumentDetail" id="CustomDocumentDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.CustomDocumentDetail.html">
+<h1>CustomDocumentDetail<a href="../classes/FedEx.RateService.ComplexType.CustomDocumentDetail.html">¶</a>
+</h1>
+<p class="short_description">Data required to produce a custom-specified document, either at shipment or package level.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.CustomDocumentDetail.html" class="more">« More »</a>
+</div>
+<a name="CustomLabelBarcodeEntry" id="CustomLabelBarcodeEntry"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.CustomLabelBarcodeEntry.html">
+<h1>CustomLabelBarcodeEntry<a href="../classes/FedEx.RateService.ComplexType.CustomLabelBarcodeEntry.html">¶</a>
+</h1>
+<p class="short_description">Constructed string, based on format and zero or more data fields, printed in specified barcode symbology.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.CustomLabelBarcodeEntry.html" class="more">« More »</a>
+</div>
+<a name="CustomLabelBoxEntry" id="CustomLabelBoxEntry"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.CustomLabelBoxEntry.html">
+<h1>CustomLabelBoxEntry<a href="../classes/FedEx.RateService.ComplexType.CustomLabelBoxEntry.html">¶</a>
+</h1>
+<p class="short_description">Solid (filled) rectangular area on label.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.CustomLabelBoxEntry.html" class="more">« More »</a>
+</div>
+<a name="CustomLabelDetail" id="CustomLabelDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.CustomLabelDetail.html">
+<h1>CustomLabelDetail<a href="../classes/FedEx.RateService.ComplexType.CustomLabelDetail.html">¶</a>
+</h1>
+<p class="short_description">CustomLabelDetail</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.CustomLabelDetail.html" class="more">« More »</a>
+</div>
+<a name="CustomLabelGraphicEntry" id="CustomLabelGraphicEntry"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.CustomLabelGraphicEntry.html">
+<h1>CustomLabelGraphicEntry<a href="../classes/FedEx.RateService.ComplexType.CustomLabelGraphicEntry.html">¶</a>
+</h1>
+<p class="short_description">Image to be included from printer's memory, or from a local file for offline clients.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.CustomLabelGraphicEntry.html" class="more">« More »</a>
+</div>
+<a name="CustomLabelPosition" id="CustomLabelPosition"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.CustomLabelPosition.html">
+<h1>CustomLabelPosition<a href="../classes/FedEx.RateService.ComplexType.CustomLabelPosition.html">¶</a>
+</h1>
+<p class="short_description">CustomLabelPosition</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.CustomLabelPosition.html" class="more">« More »</a>
+</div>
+<a name="CustomLabelTextEntry" id="CustomLabelTextEntry"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.CustomLabelTextEntry.html">
+<h1>CustomLabelTextEntry<a href="../classes/FedEx.RateService.ComplexType.CustomLabelTextEntry.html">¶</a>
+</h1>
+<p class="short_description">Constructed string, based on format and zero or more data fields, printed in specified printer font (for thermal labels) or generic font/size (for plain paper labels).</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.CustomLabelTextEntry.html" class="more">« More »</a>
+</div>
+<a name="CustomerImageUsage" id="CustomerImageUsage"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.CustomerImageUsage.html">
+<h1>CustomerImageUsage<a href="../classes/FedEx.RateService.ComplexType.CustomerImageUsage.html">¶</a>
+</h1>
+<p class="short_description">CustomerImageUsage</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.CustomerImageUsage.html" class="more">« More »</a>
+</div>
+<a name="CustomerReference" id="CustomerReference"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.CustomerReference.html">
+<h1>CustomerReference<a href="../classes/FedEx.RateService.ComplexType.CustomerReference.html">¶</a>
+</h1>
+<p class="short_description">Reference information to be associated with this package.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.CustomerReference.html" class="more">« More »</a>
+</div>
+<a name="CustomerSpecifiedLabelDetail" id="CustomerSpecifiedLabelDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.CustomerSpecifiedLabelDetail.html">
+<h1>CustomerSpecifiedLabelDetail<a href="../classes/FedEx.RateService.ComplexType.CustomerSpecifiedLabelDetail.html">¶</a>
+</h1>
+<p class="short_description">Allows customer-specified control of label content.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.CustomerSpecifiedLabelDetail.html" class="more">« More »</a>
+</div>
+<a name="CustomsClearanceDetail" id="CustomsClearanceDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.CustomsClearanceDetail.html">
+<h1>CustomsClearanceDetail<a href="../classes/FedEx.RateService.ComplexType.CustomsClearanceDetail.html">¶</a>
+</h1>
+<p class="short_description">CustomsClearanceDetail</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.CustomsClearanceDetail.html" class="more">« More »</a>
+</div>
+<a name="DangerousGoodsDetail" id="DangerousGoodsDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.DangerousGoodsDetail.html">
+<h1>DangerousGoodsDetail<a href="../classes/FedEx.RateService.ComplexType.DangerousGoodsDetail.html">¶</a>
+</h1>
+<p class="short_description">The descriptive data required for a FedEx shipment containing dangerous goods (hazardous materials).</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.DangerousGoodsDetail.html" class="more">« More »</a>
+</div>
+<a name="DateRange" id="DateRange"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.DateRange.html">
+<h1>DateRange<a href="../classes/FedEx.RateService.ComplexType.DateRange.html">¶</a>
+</h1>
+<p class="short_description">DateRange</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.DateRange.html" class="more">« More »</a>
+</div>
+<a name="DelayDetail" id="DelayDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.DelayDetail.html">
+<h1>DelayDetail<a href="../classes/FedEx.RateService.ComplexType.DelayDetail.html">¶</a>
+</h1>
+<p class="short_description">Information about why a shipment delivery is delayed and at what level( country/service etc.).</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.DelayDetail.html" class="more">« More »</a>
+</div>
+<a name="DestinationControlDetail" id="DestinationControlDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.DestinationControlDetail.html">
+<h1>DestinationControlDetail<a href="../classes/FedEx.RateService.ComplexType.DestinationControlDetail.html">¶</a>
+</h1>
+<p class="short_description">Data required to complete the Destionation Control Statement for US exports.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.DestinationControlDetail.html" class="more">« More »</a>
+</div>
+<a name="Dimensions" id="Dimensions"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.Dimensions.html">
+<h1>Dimensions<a href="../classes/FedEx.RateService.ComplexType.Dimensions.html">¶</a>
+</h1>
+<p class="short_description">The dimensions of this package and the unit type used for the measurements.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.Dimensions.html" class="more">« More »</a>
+</div>
+<a name="Distance" id="Distance"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.Distance.html">
+<h1>Distance<a href="../classes/FedEx.RateService.ComplexType.Distance.html">¶</a>
+</h1>
+<p class="short_description">Driving or other transportation distances, distinct from dimension measurements.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.Distance.html" class="more">« More »</a>
+</div>
+<a name="DocTabContent" id="DocTabContent"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.DocTabContent.html">
+<h1>DocTabContent<a href="../classes/FedEx.RateService.ComplexType.DocTabContent.html">¶</a>
+</h1>
+<p class="short_description">DocTabContent</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.DocTabContent.html" class="more">« More »</a>
+</div>
+<a name="DocTabContentBarcoded" id="DocTabContentBarcoded"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.DocTabContentBarcoded.html">
+<h1>DocTabContentBarcoded<a href="../classes/FedEx.RateService.ComplexType.DocTabContentBarcoded.html">¶</a>
+</h1>
+<p class="short_description">DocTabContentBarcoded</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.DocTabContentBarcoded.html" class="more">« More »</a>
+</div>
+<a name="DocTabContentZone001" id="DocTabContentZone001"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.DocTabContentZone001.html">
+<h1>DocTabContentZone001<a href="../classes/FedEx.RateService.ComplexType.DocTabContentZone001.html">¶</a>
+</h1>
+<p class="short_description">DocTabContentZone001</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.DocTabContentZone001.html" class="more">« More »</a>
+</div>
+<a name="DocTabZoneSpecification" id="DocTabZoneSpecification"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.DocTabZoneSpecification.html">
+<h1>DocTabZoneSpecification<a href="../classes/FedEx.RateService.ComplexType.DocTabZoneSpecification.html">¶</a>
+</h1>
+<p class="short_description">DocTabZoneSpecification</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.DocTabZoneSpecification.html" class="more">« More »</a>
+</div>
+<a name="EMailLabelDetail" id="EMailLabelDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.EMailLabelDetail.html">
+<h1>EMailLabelDetail<a href="../classes/FedEx.RateService.ComplexType.EMailLabelDetail.html">¶</a>
+</h1>
+<p class="short_description">Specific information about the delivery of the email and options for the shipment.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.EMailLabelDetail.html" class="more">« More »</a>
+</div>
+<a name="EMailNotificationDetail" id="EMailNotificationDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.EMailNotificationDetail.html">
+<h1>EMailNotificationDetail<a href="../classes/FedEx.RateService.ComplexType.EMailNotificationDetail.html">¶</a>
+</h1>
+<p class="short_description">Information describing email notifications that will be sent in relation to events that occur during package movement</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.EMailNotificationDetail.html" class="more">« More »</a>
+</div>
+<a name="EMailNotificationRecipient" id="EMailNotificationRecipient"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.EMailNotificationRecipient.html">
+<h1>EMailNotificationRecipient<a href="../classes/FedEx.RateService.ComplexType.EMailNotificationRecipient.html">¶</a>
+</h1>
+<p class="short_description">The descriptive data for a FedEx email notification recipient.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.EMailNotificationRecipient.html" class="more">« More »</a>
+</div>
+<a name="EdtCommodityTax" id="EdtCommodityTax"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.EdtCommodityTax.html">
+<h1>EdtCommodityTax<a href="../classes/FedEx.RateService.ComplexType.EdtCommodityTax.html">¶</a>
+</h1>
+<p class="short_description">EdtCommodityTax</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.EdtCommodityTax.html" class="more">« More »</a>
+</div>
+<a name="EdtExciseCondition" id="EdtExciseCondition"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.EdtExciseCondition.html">
+<h1>EdtExciseCondition<a href="../classes/FedEx.RateService.ComplexType.EdtExciseCondition.html">¶</a>
+</h1>
+<p class="short_description">EdtExciseCondition</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.EdtExciseCondition.html" class="more">« More »</a>
+</div>
+<a name="EdtTaxDetail" id="EdtTaxDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.EdtTaxDetail.html">
+<h1>EdtTaxDetail<a href="../classes/FedEx.RateService.ComplexType.EdtTaxDetail.html">¶</a>
+</h1>
+<p class="short_description">EdtTaxDetail</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.EdtTaxDetail.html" class="more">« More »</a>
+</div>
+<a name="EtdDetail" id="EtdDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.EtdDetail.html">
+<h1>EtdDetail<a href="../classes/FedEx.RateService.ComplexType.EtdDetail.html">¶</a>
+</h1>
+<p class="short_description">Electronic Trade document references used with the ETD special service.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.EtdDetail.html" class="more">« More »</a>
+</div>
+<a name="ExportDetail" id="ExportDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.ExportDetail.html">
+<h1>ExportDetail<a href="../classes/FedEx.RateService.ComplexType.ExportDetail.html">¶</a>
+</h1>
+<p class="short_description">Country specific details of an International shipment.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.ExportDetail.html" class="more">« More »</a>
+</div>
+<a name="ExpressFreightDetail" id="ExpressFreightDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.ExpressFreightDetail.html">
+<h1>ExpressFreightDetail<a href="../classes/FedEx.RateService.ComplexType.ExpressFreightDetail.html">¶</a>
+</h1>
+<p class="short_description">Details specific to an Express freight shipment.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.ExpressFreightDetail.html" class="more">« More »</a>
+</div>
+<a name="ExpressFreightDetailContact" id="ExpressFreightDetailContact"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.ExpressFreightDetailContact.html">
+<h1>ExpressFreightDetailContact<a href="../classes/FedEx.RateService.ComplexType.ExpressFreightDetailContact.html">¶</a>
+</h1>
+<p class="short_description">Currently not supported.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.ExpressFreightDetailContact.html" class="more">« More »</a>
+</div>
+<a name="FlatbedTrailerDetail" id="FlatbedTrailerDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.FlatbedTrailerDetail.html">
+<h1>FlatbedTrailerDetail<a href="../classes/FedEx.RateService.ComplexType.FlatbedTrailerDetail.html">¶</a>
+</h1>
+<p class="short_description">Specifies the optional features/characteristics requested for a Freight shipment utilizing a flatbed trailer.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.FlatbedTrailerDetail.html" class="more">« More »</a>
+</div>
+<a name="FreightBaseCharge" id="FreightBaseCharge"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.FreightBaseCharge.html">
+<h1>FreightBaseCharge<a href="../classes/FedEx.RateService.ComplexType.FreightBaseCharge.html">¶</a>
+</h1>
+<p class="short_description">Individual charge which contributes to the total base charge for the shipment.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.FreightBaseCharge.html" class="more">« More »</a>
+</div>
+<a name="FreightCommitDetail" id="FreightCommitDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.FreightCommitDetail.html">
+<h1>FreightCommitDetail<a href="../classes/FedEx.RateService.ComplexType.FreightCommitDetail.html">¶</a>
+</h1>
+<p class="short_description">Information about the Freight Service Centers associated with this shipment.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.FreightCommitDetail.html" class="more">« More »</a>
+</div>
+<a name="FreightGuaranteeDetail" id="FreightGuaranteeDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.FreightGuaranteeDetail.html">
+<h1>FreightGuaranteeDetail<a href="../classes/FedEx.RateService.ComplexType.FreightGuaranteeDetail.html">¶</a>
+</h1>
+<p class="short_description">FreightGuaranteeDetail</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.FreightGuaranteeDetail.html" class="more">« More »</a>
+</div>
+<a name="FreightRateDetail" id="FreightRateDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.FreightRateDetail.html">
+<h1>FreightRateDetail<a href="../classes/FedEx.RateService.ComplexType.FreightRateDetail.html">¶</a>
+</h1>
+<p class="short_description">Rate data specific to FedEx Freight or FedEx National Freight services.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.FreightRateDetail.html" class="more">« More »</a>
+</div>
+<a name="FreightRateNotation" id="FreightRateNotation"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.FreightRateNotation.html">
+<h1>FreightRateNotation<a href="../classes/FedEx.RateService.ComplexType.FreightRateNotation.html">¶</a>
+</h1>
+<p class="short_description">Additional non-monetary data returned with Freight rates.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.FreightRateNotation.html" class="more">« More »</a>
+</div>
+<a name="FreightServiceCenterDetail" id="FreightServiceCenterDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.FreightServiceCenterDetail.html">
+<h1>FreightServiceCenterDetail<a href="../classes/FedEx.RateService.ComplexType.FreightServiceCenterDetail.html">¶</a>
+</h1>
+<p class="short_description">This class describes the relationship between a customer-specified address and the FedEx Freight / FedEx National Freight Service Center that supports that address.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.FreightServiceCenterDetail.html" class="more">« More »</a>
+</div>
+<a name="FreightShipmentDetail" id="FreightShipmentDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.FreightShipmentDetail.html">
+<h1>FreightShipmentDetail<a href="../classes/FedEx.RateService.ComplexType.FreightShipmentDetail.html">¶</a>
+</h1>
+<p class="short_description">Data applicable to shipments using FEDEX_FREIGHT and FEDEX_NATIONAL_FREIGHT services.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.FreightShipmentDetail.html" class="more">« More »</a>
+</div>
+<a name="FreightShipmentLineItem" id="FreightShipmentLineItem"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.FreightShipmentLineItem.html">
+<h1>FreightShipmentLineItem<a href="../classes/FedEx.RateService.ComplexType.FreightShipmentLineItem.html">¶</a>
+</h1>
+<p class="short_description">Description of an individual commodity or class of content in a shipment.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.FreightShipmentLineItem.html" class="more">« More »</a>
+</div>
+<a name="FreightSpecialServicePayment" id="FreightSpecialServicePayment"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.FreightSpecialServicePayment.html">
+<h1>FreightSpecialServicePayment<a href="../classes/FedEx.RateService.ComplexType.FreightSpecialServicePayment.html">¶</a>
+</h1>
+<p class="short_description">Specifies which party will be responsible for payment of any surcharges for Freight special services for which split billing is allowed.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.FreightSpecialServicePayment.html" class="more">« More »</a>
+</div>
+<a name="GeneralAgencyAgreementDetail" id="GeneralAgencyAgreementDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.GeneralAgencyAgreementDetail.html">
+<h1>GeneralAgencyAgreementDetail<a href="../classes/FedEx.RateService.ComplexType.GeneralAgencyAgreementDetail.html">¶</a>
+</h1>
+<p class="short_description">Data required to produce a General Agency Agreement document.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.GeneralAgencyAgreementDetail.html" class="more">« More »</a>
+</div>
+<a name="HazardousCommodityContent" id="HazardousCommodityContent"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.HazardousCommodityContent.html">
+<h1>HazardousCommodityContent<a href="../classes/FedEx.RateService.ComplexType.HazardousCommodityContent.html">¶</a>
+</h1>
+<p class="short_description">Documents the kind and quantity of an individual hazardous commodity in a package.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.HazardousCommodityContent.html" class="more">« More »</a>
+</div>
+<a name="HazardousCommodityDescription" id="HazardousCommodityDescription"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.HazardousCommodityDescription.html">
+<h1>HazardousCommodityDescription<a href="../classes/FedEx.RateService.ComplexType.HazardousCommodityDescription.html">¶</a>
+</h1>
+<p class="short_description">Identifies and describes an individual hazardous commodity.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.HazardousCommodityDescription.html" class="more">« More »</a>
+</div>
+<a name="HazardousCommodityOptionDetail" id="HazardousCommodityOptionDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.HazardousCommodityOptionDetail.html">
+<h1>HazardousCommodityOptionDetail<a href="../classes/FedEx.RateService.ComplexType.HazardousCommodityOptionDetail.html">¶</a>
+</h1>
+<p class="short_description">Customer-provided specifications for handling individual commodities.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.HazardousCommodityOptionDetail.html" class="more">« More »</a>
+</div>
+<a name="HazardousCommodityPackagingDetail" id="HazardousCommodityPackagingDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.HazardousCommodityPackagingDetail.html">
+<h1>HazardousCommodityPackagingDetail<a href="../classes/FedEx.RateService.ComplexType.HazardousCommodityPackagingDetail.html">¶</a>
+</h1>
+<p class="short_description">Identifies number and type of packaging units for hazardous commodities.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.HazardousCommodityPackagingDetail.html" class="more">« More »</a>
+</div>
+<a name="HazardousCommodityQuantityDetail" id="HazardousCommodityQuantityDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.HazardousCommodityQuantityDetail.html">
+<h1>HazardousCommodityQuantityDetail<a href="../classes/FedEx.RateService.ComplexType.HazardousCommodityQuantityDetail.html">¶</a>
+</h1>
+<p class="short_description">Identifies amount and units for quantity of hazardous commodities.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.HazardousCommodityQuantityDetail.html" class="more">« More »</a>
+</div>
+<a name="HoldAtLocationDetail" id="HoldAtLocationDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.HoldAtLocationDetail.html">
+<h1>HoldAtLocationDetail<a href="../classes/FedEx.RateService.ComplexType.HoldAtLocationDetail.html">¶</a>
+</h1>
+<p class="short_description">Descriptive data required for a FedEx shipment that is to be held at the destination FedEx location for pickup by the recipient.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.HoldAtLocationDetail.html" class="more">« More »</a>
+</div>
+<a name="HomeDeliveryPremiumDetail" id="HomeDeliveryPremiumDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.HomeDeliveryPremiumDetail.html">
+<h1>HomeDeliveryPremiumDetail<a href="../classes/FedEx.RateService.ComplexType.HomeDeliveryPremiumDetail.html">¶</a>
+</h1>
+<p class="short_description">The descriptive data required by FedEx for home delivery services.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.HomeDeliveryPremiumDetail.html" class="more">« More »</a>
+</div>
+<a name="LabelSpecification" id="LabelSpecification"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.LabelSpecification.html">
+<h1>LabelSpecification<a href="../classes/FedEx.RateService.ComplexType.LabelSpecification.html">¶</a>
+</h1>
+<p class="short_description">Description of shipping label to be returned in the reply</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.LabelSpecification.html" class="more">« More »</a>
+</div>
+<a name="LiabilityCoverageDetail" id="LiabilityCoverageDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.LiabilityCoverageDetail.html">
+<h1>LiabilityCoverageDetail<a href="../classes/FedEx.RateService.ComplexType.LiabilityCoverageDetail.html">¶</a>
+</h1>
+<p class="short_description">LiabilityCoverageDetail</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.LiabilityCoverageDetail.html" class="more">« More »</a>
+</div>
+<a name="LinearMeasure" id="LinearMeasure"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.LinearMeasure.html">
+<h1>LinearMeasure<a href="../classes/FedEx.RateService.ComplexType.LinearMeasure.html">¶</a>
+</h1>
+<p class="short_description">Represents a one-dimensional measurement in small units (e.g.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.LinearMeasure.html" class="more">« More »</a>
+</div>
+<a name="Localization" id="Localization"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.Localization.html">
+<h1>Localization<a href="../classes/FedEx.RateService.ComplexType.Localization.html">¶</a>
+</h1>
+<p class="short_description">Identifies the representation of human-readable text.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.Localization.html" class="more">« More »</a>
+</div>
+<a name="Measure" id="Measure"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.Measure.html">
+<h1>Measure<a href="../classes/FedEx.RateService.ComplexType.Measure.html">¶</a>
+</h1>
+<p class="short_description">Measure</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.Measure.html" class="more">« More »</a>
+</div>
+<a name="Money" id="Money"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.Money.html">
+<h1>Money<a href="../classes/FedEx.RateService.ComplexType.Money.html">¶</a>
+</h1>
+<p class="short_description">Money</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.Money.html" class="more">« More »</a>
+</div>
+<a name="NaftaCertificateOfOriginDetail" id="NaftaCertificateOfOriginDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.NaftaCertificateOfOriginDetail.html">
+<h1>NaftaCertificateOfOriginDetail<a href="../classes/FedEx.RateService.ComplexType.NaftaCertificateOfOriginDetail.html">¶</a>
+</h1>
+<p class="short_description">Data required to produce a Certificate of Origin document.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.NaftaCertificateOfOriginDetail.html" class="more">« More »</a>
+</div>
+<a name="NaftaCommodityDetail" id="NaftaCommodityDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.NaftaCommodityDetail.html">
+<h1>NaftaCommodityDetail<a href="../classes/FedEx.RateService.ComplexType.NaftaCommodityDetail.html">¶</a>
+</h1>
+<p class="short_description">NaftaCommodityDetail</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.NaftaCommodityDetail.html" class="more">« More »</a>
+</div>
+<a name="NaftaProducer" id="NaftaProducer"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.NaftaProducer.html">
+<h1>NaftaProducer<a href="../classes/FedEx.RateService.ComplexType.NaftaProducer.html">¶</a>
+</h1>
+<p class="short_description">NaftaProducer</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.NaftaProducer.html" class="more">« More »</a>
+</div>
+<a name="Notification" id="Notification"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.Notification.html">
+<h1>Notification<a href="../classes/FedEx.RateService.ComplexType.Notification.html">¶</a>
+</h1>
+<p class="short_description">The descriptive data regarding the result of the submitted transaction.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.Notification.html" class="more">« More »</a>
+</div>
+<a name="NotificationParameter" id="NotificationParameter"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.NotificationParameter.html">
+<h1>NotificationParameter<a href="../classes/FedEx.RateService.ComplexType.NotificationParameter.html">¶</a>
+</h1>
+<p class="short_description">NotificationParameter</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.NotificationParameter.html" class="more">« More »</a>
+</div>
+<a name="Op900Detail" id="Op900Detail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.Op900Detail.html">
+<h1>Op900Detail<a href="../classes/FedEx.RateService.ComplexType.Op900Detail.html">¶</a>
+</h1>
+<p class="short_description">The instructions indicating how to print the OP-900 form for hazardous materials packages.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.Op900Detail.html" class="more">« More »</a>
+</div>
+<a name="PackageRateDetail" id="PackageRateDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.PackageRateDetail.html">
+<h1>PackageRateDetail<a href="../classes/FedEx.RateService.ComplexType.PackageRateDetail.html">¶</a>
+</h1>
+<p class="short_description">Data for a package's rates, as calculated per a specific rate type.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.PackageRateDetail.html" class="more">« More »</a>
+</div>
+<a name="PackageSpecialServicesRequested" id="PackageSpecialServicesRequested"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.PackageSpecialServicesRequested.html">
+<h1>PackageSpecialServicesRequested<a href="../classes/FedEx.RateService.ComplexType.PackageSpecialServicesRequested.html">¶</a>
+</h1>
+<p class="short_description">These special services are available at the package level for some or all service types.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.PackageSpecialServicesRequested.html" class="more">« More »</a>
+</div>
+<a name="Party" id="Party"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.Party.html">
+<h1>Party<a href="../classes/FedEx.RateService.ComplexType.Party.html">¶</a>
+</h1>
+<p class="short_description">The descriptive data for a person or company entitiy doing business with FedEx.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.Party.html" class="more">« More »</a>
+</div>
+<a name="Payment" id="Payment"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.Payment.html">
+<h1>Payment<a href="../classes/FedEx.RateService.ComplexType.Payment.html">¶</a>
+</h1>
+<p class="short_description">The descriptive data for the monetary compensation given to FedEx for services rendered to the customer.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.Payment.html" class="more">« More »</a>
+</div>
+<a name="Payor" id="Payor"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.Payor.html">
+<h1>Payor<a href="../classes/FedEx.RateService.ComplexType.Payor.html">¶</a>
+</h1>
+<p class="short_description">Descriptive data identifying the party responsible for payment for a service.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.Payor.html" class="more">« More »</a>
+</div>
+<a name="PendingShipmentDetail" id="PendingShipmentDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.PendingShipmentDetail.html">
+<h1>PendingShipmentDetail<a href="../classes/FedEx.RateService.ComplexType.PendingShipmentDetail.html">¶</a>
+</h1>
+<p class="short_description">This information describes the kind of pending shipment being requested.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.PendingShipmentDetail.html" class="more">« More »</a>
+</div>
+<a name="PickupDetail" id="PickupDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.PickupDetail.html">
+<h1>PickupDetail<a href="../classes/FedEx.RateService.ComplexType.PickupDetail.html">¶</a>
+</h1>
+<p class="short_description">This class describes the pickup characteristics of a shipment (e.g.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.PickupDetail.html" class="more">« More »</a>
+</div>
+<a name="PriorityAlertDetail" id="PriorityAlertDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.PriorityAlertDetail.html">
+<h1>PriorityAlertDetail<a href="../classes/FedEx.RateService.ComplexType.PriorityAlertDetail.html">¶</a>
+</h1>
+<p class="short_description">Currently not supported.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.PriorityAlertDetail.html" class="more">« More »</a>
+</div>
+<a name="RateDiscount" id="RateDiscount"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.RateDiscount.html">
+<h1>RateDiscount<a href="../classes/FedEx.RateService.ComplexType.RateDiscount.html">¶</a>
+</h1>
+<p class="short_description">Identifies a discount applied to the shipment.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.RateDiscount.html" class="more">« More »</a>
+</div>
+<a name="RateReply" id="RateReply"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.RateReply.html">
+<h1>RateReply<a href="../classes/FedEx.RateService.ComplexType.RateReply.html">¶</a>
+</h1>
+<p class="short_description">The response to a RateRequest.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.RateReply.html" class="more">« More »</a>
+</div>
+<a name="RateReplyDetail" id="RateReplyDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.RateReplyDetail.html">
+<h1>RateReplyDetail<a href="../classes/FedEx.RateService.ComplexType.RateReplyDetail.html">¶</a>
+</h1>
+<p class="short_description">RateReplyDetail</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.RateReplyDetail.html" class="more">« More »</a>
+</div>
+<a name="RateRequest" id="RateRequest"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.RateRequest.html">
+<h1>RateRequest<a href="../classes/FedEx.RateService.ComplexType.RateRequest.html">¶</a>
+</h1>
+<p class="short_description">Descriptive data sent to FedEx by a customer in order to rate a package/shipment.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.RateRequest.html" class="more">« More »</a>
+</div>
+<a name="RatedPackageDetail" id="RatedPackageDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.RatedPackageDetail.html">
+<h1>RatedPackageDetail<a href="../classes/FedEx.RateService.ComplexType.RatedPackageDetail.html">¶</a>
+</h1>
+<p class="short_description">If requesting rates using the PackageDetails element (one package at a time) in the request, the rates for each package will be returned in this element.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.RatedPackageDetail.html" class="more">« More »</a>
+</div>
+<a name="RatedShipmentDetail" id="RatedShipmentDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.RatedShipmentDetail.html">
+<h1>RatedShipmentDetail<a href="../classes/FedEx.RateService.ComplexType.RatedShipmentDetail.html">¶</a>
+</h1>
+<p class="short_description">This class groups the shipment and package rating data for a specific rate type for use in a rating reply, which groups result data by rate type.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.RatedShipmentDetail.html" class="more">« More »</a>
+</div>
+<a name="Rebate" id="Rebate"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.Rebate.html">
+<h1>Rebate<a href="../classes/FedEx.RateService.ComplexType.Rebate.html">¶</a>
+</h1>
+<p class="short_description">Identifies a discount applied to the shipment.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.Rebate.html" class="more">« More »</a>
+</div>
+<a name="RecipientCustomsId" id="RecipientCustomsId"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.RecipientCustomsId.html">
+<h1>RecipientCustomsId<a href="../classes/FedEx.RateService.ComplexType.RecipientCustomsId.html">¶</a>
+</h1>
+<p class="short_description">Specifies how the recipient is identified for customs purposes; the requirements on this information vary with destination country.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.RecipientCustomsId.html" class="more">« More »</a>
+</div>
+<a name="RequestedPackageLineItem" id="RequestedPackageLineItem"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.RequestedPackageLineItem.html">
+<h1>RequestedPackageLineItem<a href="../classes/FedEx.RateService.ComplexType.RequestedPackageLineItem.html">¶</a>
+</h1>
+<p class="short_description">This class rationalizes RequestedPackage and RequestedPackageSummary from previous interfaces.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.RequestedPackageLineItem.html" class="more">« More »</a>
+</div>
+<a name="RequestedShipment" id="RequestedShipment"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.RequestedShipment.html">
+<h1>RequestedShipment<a href="../classes/FedEx.RateService.ComplexType.RequestedShipment.html">¶</a>
+</h1>
+<p class="short_description">The descriptive data for the shipment being tendered to FedEx.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.RequestedShipment.html" class="more">« More »</a>
+</div>
+<a name="ReturnEMailDetail" id="ReturnEMailDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.ReturnEMailDetail.html">
+<h1>ReturnEMailDetail<a href="../classes/FedEx.RateService.ComplexType.ReturnEMailDetail.html">¶</a>
+</h1>
+<p class="short_description">ReturnEMailDetail</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.ReturnEMailDetail.html" class="more">« More »</a>
+</div>
+<a name="ReturnShipmentDetail" id="ReturnShipmentDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.ReturnShipmentDetail.html">
+<h1>ReturnShipmentDetail<a href="../classes/FedEx.RateService.ComplexType.ReturnShipmentDetail.html">¶</a>
+</h1>
+<p class="short_description">Information relating to a return shipment.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.ReturnShipmentDetail.html" class="more">« More »</a>
+</div>
+<a name="Rma" id="Rma"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.Rma.html">
+<h1>Rma<a href="../classes/FedEx.RateService.ComplexType.Rma.html">¶</a>
+</h1>
+<p class="short_description">Return Merchant Authorization</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.Rma.html" class="more">« More »</a>
+</div>
+<a name="ServiceSubOptionDetail" id="ServiceSubOptionDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.ServiceSubOptionDetail.html">
+<h1>ServiceSubOptionDetail<a href="../classes/FedEx.RateService.ComplexType.ServiceSubOptionDetail.html">¶</a>
+</h1>
+<p class="short_description">Supporting detail for applied options identified in a rate quote.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.ServiceSubOptionDetail.html" class="more">« More »</a>
+</div>
+<a name="ShipmentDryIceDetail" id="ShipmentDryIceDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.ShipmentDryIceDetail.html">
+<h1>ShipmentDryIceDetail<a href="../classes/FedEx.RateService.ComplexType.ShipmentDryIceDetail.html">¶</a>
+</h1>
+<p class="short_description">Shipment-level totals of dry ice data across all packages.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.ShipmentDryIceDetail.html" class="more">« More »</a>
+</div>
+<a name="ShipmentLegRateDetail" id="ShipmentLegRateDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.ShipmentLegRateDetail.html">
+<h1>ShipmentLegRateDetail<a href="../classes/FedEx.RateService.ComplexType.ShipmentLegRateDetail.html">¶</a>
+</h1>
+<p class="short_description">Data for a single leg of a shipment's total/summary rates, as calculated per a specific rate type.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.ShipmentLegRateDetail.html" class="more">« More »</a>
+</div>
+<a name="ShipmentRateDetail" id="ShipmentRateDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.ShipmentRateDetail.html">
+<h1>ShipmentRateDetail<a href="../classes/FedEx.RateService.ComplexType.ShipmentRateDetail.html">¶</a>
+</h1>
+<p class="short_description">Data for a shipment's total/summary rates, as calculated per a specific rate type.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.ShipmentRateDetail.html" class="more">« More »</a>
+</div>
+<a name="ShipmentSpecialServicesRequested" id="ShipmentSpecialServicesRequested"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.ShipmentSpecialServicesRequested.html">
+<h1>ShipmentSpecialServicesRequested<a href="../classes/FedEx.RateService.ComplexType.ShipmentSpecialServicesRequested.html">¶</a>
+</h1>
+<p class="short_description">These special services are available at the shipment level for some or all service types.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.ShipmentSpecialServicesRequested.html" class="more">« More »</a>
+</div>
+<a name="ShippingDocumentDispositionDetail" id="ShippingDocumentDispositionDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.ShippingDocumentDispositionDetail.html">
+<h1>ShippingDocumentDispositionDetail<a href="../classes/FedEx.RateService.ComplexType.ShippingDocumentDispositionDetail.html">¶</a>
+</h1>
+<p class="short_description">Each occurrence of this class specifies a particular way in which a kind of shipping document is to be produced and provided.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.ShippingDocumentDispositionDetail.html" class="more">« More »</a>
+</div>
+<a name="ShippingDocumentEMailDetail" id="ShippingDocumentEMailDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.ShippingDocumentEMailDetail.html">
+<h1>ShippingDocumentEMailDetail<a href="../classes/FedEx.RateService.ComplexType.ShippingDocumentEMailDetail.html">¶</a>
+</h1>
+<p class="short_description">Specifies how to e-mail shipping documents.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.ShippingDocumentEMailDetail.html" class="more">« More »</a>
+</div>
+<a name="ShippingDocumentEMailRecipient" id="ShippingDocumentEMailRecipient"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.ShippingDocumentEMailRecipient.html">
+<h1>ShippingDocumentEMailRecipient<a href="../classes/FedEx.RateService.ComplexType.ShippingDocumentEMailRecipient.html">¶</a>
+</h1>
+<p class="short_description">Specifies an individual recipient of e-mailed shipping document(s).</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.ShippingDocumentEMailRecipient.html" class="more">« More »</a>
+</div>
+<a name="ShippingDocumentFormat" id="ShippingDocumentFormat"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.ShippingDocumentFormat.html">
+<h1>ShippingDocumentFormat<a href="../classes/FedEx.RateService.ComplexType.ShippingDocumentFormat.html">¶</a>
+</h1>
+<p class="short_description">Specifies characteristics of a shipping document to be produced.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.ShippingDocumentFormat.html" class="more">« More »</a>
+</div>
+<a name="ShippingDocumentPrintDetail" id="ShippingDocumentPrintDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.ShippingDocumentPrintDetail.html">
+<h1>ShippingDocumentPrintDetail<a href="../classes/FedEx.RateService.ComplexType.ShippingDocumentPrintDetail.html">¶</a>
+</h1>
+<p class="short_description">Specifies printing options for a shipping document.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.ShippingDocumentPrintDetail.html" class="more">« More »</a>
+</div>
+<a name="ShippingDocumentSpecification" id="ShippingDocumentSpecification"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.ShippingDocumentSpecification.html">
+<h1>ShippingDocumentSpecification<a href="../classes/FedEx.RateService.ComplexType.ShippingDocumentSpecification.html">¶</a>
+</h1>
+<p class="short_description">Contains all data required for additional (non-label) shipping documents to be produced in conjunction with a specific shipment.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.ShippingDocumentSpecification.html" class="more">« More »</a>
+</div>
+<a name="SignatureOptionDetail" id="SignatureOptionDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.SignatureOptionDetail.html">
+<h1>SignatureOptionDetail<a href="../classes/FedEx.RateService.ComplexType.SignatureOptionDetail.html">¶</a>
+</h1>
+<p class="short_description">The descriptive data required for FedEx delivery signature services.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.SignatureOptionDetail.html" class="more">« More »</a>
+</div>
+<a name="SmartPostShipmentDetail" id="SmartPostShipmentDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.SmartPostShipmentDetail.html">
+<h1>SmartPostShipmentDetail<a href="../classes/FedEx.RateService.ComplexType.SmartPostShipmentDetail.html">¶</a>
+</h1>
+<p class="short_description">Data required for shipments handled under the SMART_POST and GROUND_SMART_POST service types.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.SmartPostShipmentDetail.html" class="more">« More »</a>
+</div>
+<a name="Surcharge" id="Surcharge"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.Surcharge.html">
+<h1>Surcharge<a href="../classes/FedEx.RateService.ComplexType.Surcharge.html">¶</a>
+</h1>
+<p class="short_description">Identifies each surcharge applied to the shipment.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.Surcharge.html" class="more">« More »</a>
+</div>
+<a name="Tax" id="Tax"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.Tax.html">
+<h1>Tax<a href="../classes/FedEx.RateService.ComplexType.Tax.html">¶</a>
+</h1>
+<p class="short_description">Identifies each tax applied to the shipment.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.Tax.html" class="more">« More »</a>
+</div>
+<a name="TaxpayerIdentification" id="TaxpayerIdentification"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.TaxpayerIdentification.html">
+<h1>TaxpayerIdentification<a href="../classes/FedEx.RateService.ComplexType.TaxpayerIdentification.html">¶</a>
+</h1>
+<p class="short_description">The descriptive data for taxpayer identification information.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.TaxpayerIdentification.html" class="more">« More »</a>
+</div>
+<a name="TrackingId" id="TrackingId"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.TrackingId.html">
+<h1>TrackingId<a href="../classes/FedEx.RateService.ComplexType.TrackingId.html">¶</a>
+</h1>
+<p class="short_description">TrackingId</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.TrackingId.html" class="more">« More »</a>
+</div>
+<a name="TransactionDetail" id="TransactionDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.TransactionDetail.html">
+<h1>TransactionDetail<a href="../classes/FedEx.RateService.ComplexType.TransactionDetail.html">¶</a>
+</h1>
+<p class="short_description">Descriptive data for this customer transaction.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.TransactionDetail.html" class="more">« More »</a>
+</div>
+<a name="UploadDocumentDetail" id="UploadDocumentDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.UploadDocumentDetail.html">
+<h1>UploadDocumentDetail<a href="../classes/FedEx.RateService.ComplexType.UploadDocumentDetail.html">¶</a>
+</h1>
+<p class="short_description">UploadDocumentDetail</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.UploadDocumentDetail.html" class="more">« More »</a>
+</div>
+<a name="UploadDocumentReferenceDetail" id="UploadDocumentReferenceDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.UploadDocumentReferenceDetail.html">
+<h1>UploadDocumentReferenceDetail<a href="../classes/FedEx.RateService.ComplexType.UploadDocumentReferenceDetail.html">¶</a>
+</h1>
+<p class="short_description">UploadDocumentReferenceDetail</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.UploadDocumentReferenceDetail.html" class="more">« More »</a>
+</div>
+<a name="VariableHandlingChargeDetail" id="VariableHandlingChargeDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.VariableHandlingChargeDetail.html">
+<h1>VariableHandlingChargeDetail<a href="../classes/FedEx.RateService.ComplexType.VariableHandlingChargeDetail.html">¶</a>
+</h1>
+<p class="short_description">This definition of variable handling charge detail is intended for use in Jan 2011 corp load.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.VariableHandlingChargeDetail.html" class="more">« More »</a>
+</div>
+<a name="VariableHandlingCharges" id="VariableHandlingCharges"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.VariableHandlingCharges.html">
+<h1>VariableHandlingCharges<a href="../classes/FedEx.RateService.ComplexType.VariableHandlingCharges.html">¶</a>
+</h1>
+<p class="short_description">The variable handling charges calculated based on the type variable handling charges requested.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.VariableHandlingCharges.html" class="more">« More »</a>
+</div>
+<a name="VersionId" id="VersionId"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.VersionId.html">
+<h1>VersionId<a href="../classes/FedEx.RateService.ComplexType.VersionId.html">¶</a>
+</h1>
+<p class="short_description">Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.VersionId.html" class="more">« More »</a>
+</div>
+<a name="Volume" id="Volume"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.Volume.html">
+<h1>Volume<a href="../classes/FedEx.RateService.ComplexType.Volume.html">¶</a>
+</h1>
+<p class="short_description">Three-dimensional volume/cubic measurement.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.Volume.html" class="more">« More »</a>
+</div>
+<a name="WebAuthenticationCredential" id="WebAuthenticationCredential"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.WebAuthenticationCredential.html">
+<h1>WebAuthenticationCredential<a href="../classes/FedEx.RateService.ComplexType.WebAuthenticationCredential.html">¶</a>
+</h1>
+<p class="short_description">Two part authentication string used for the sender's identity</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.WebAuthenticationCredential.html" class="more">« More »</a>
+</div>
+<a name="WebAuthenticationDetail" id="WebAuthenticationDetail"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.WebAuthenticationDetail.html">
+<h1>WebAuthenticationDetail<a href="../classes/FedEx.RateService.ComplexType.WebAuthenticationDetail.html">¶</a>
+</h1>
+<p class="short_description">Used in authentication of the sender's identity.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.WebAuthenticationDetail.html" class="more">« More »</a>
+</div>
+<a name="Weight" id="Weight"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.ComplexType.Weight.html">
+<h1>Weight<a href="../classes/FedEx.RateService.ComplexType.Weight.html">¶</a>
+</h1>
+<p class="short_description">The descriptive data for the heaviness of an object.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.ComplexType.Weight.html" class="more">« More »</a>
+</div>
+<a name="Request" id="Request"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.Request.html">
+<h1>Request<a href="../classes/FedEx.RateService.Request.html">¶</a>
+</h1>
+<p class="short_description">Request sends the SOAP call to the FedEx servers and returns the response</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.Request.html" class="more">« More »</a>
+</div>
+<a name="AdditionalLabelsType" id="AdditionalLabelsType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.AdditionalLabelsType.html">
+<h1>AdditionalLabelsType<a href="../classes/FedEx.RateService.SimpleType.AdditionalLabelsType.html">¶</a>
+</h1>
+<p class="short_description">Identifies the type of additional labels.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.AdditionalLabelsType.html" class="more">« More »</a>
+</div>
+<a name="B13AFilingOptionType" id="B13AFilingOptionType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.B13AFilingOptionType.html">
+<h1>B13AFilingOptionType<a href="../classes/FedEx.RateService.SimpleType.B13AFilingOptionType.html">¶</a>
+</h1>
+<p class="short_description">Specifies which filing option is being exercised by the customer.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.B13AFilingOptionType.html" class="more">« More »</a>
+</div>
+<a name="BarcodeSymbologyType" id="BarcodeSymbologyType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.BarcodeSymbologyType.html">
+<h1>BarcodeSymbologyType<a href="../classes/FedEx.RateService.SimpleType.BarcodeSymbologyType.html">¶</a>
+</h1>
+<p class="short_description">Identification of the type of barcode (symbology) used on FedEx documents and labels.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.BarcodeSymbologyType.html" class="more">« More »</a>
+</div>
+<a name="CarrierCodeType" id="CarrierCodeType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.CarrierCodeType.html">
+<h1>CarrierCodeType<a href="../classes/FedEx.RateService.SimpleType.CarrierCodeType.html">¶</a>
+</h1>
+<p class="short_description">Identification of a FedEx operating company (transportation).</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.CarrierCodeType.html" class="more">« More »</a>
+</div>
+<a name="ChargeBasisLevelType" id="ChargeBasisLevelType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.ChargeBasisLevelType.html">
+<h1>ChargeBasisLevelType<a href="../classes/FedEx.RateService.SimpleType.ChargeBasisLevelType.html">¶</a>
+</h1>
+<p class="short_description">ChargeBasisLevelType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.ChargeBasisLevelType.html" class="more">« More »</a>
+</div>
+<a name="ClearanceBrokerageType" id="ClearanceBrokerageType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.ClearanceBrokerageType.html">
+<h1>ClearanceBrokerageType<a href="../classes/FedEx.RateService.SimpleType.ClearanceBrokerageType.html">¶</a>
+</h1>
+<p class="short_description">Specifies the type of brokerage to be applied to a shipment.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.ClearanceBrokerageType.html" class="more">« More »</a>
+</div>
+<a name="CodAddTransportationChargeBasisType" id="CodAddTransportationChargeBasisType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.CodAddTransportationChargeBasisType.html">
+<h1>CodAddTransportationChargeBasisType<a href="../classes/FedEx.RateService.SimpleType.CodAddTransportationChargeBasisType.html">¶</a>
+</h1>
+<p class="short_description">CodAddTransportationChargeBasisType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.CodAddTransportationChargeBasisType.html" class="more">« More »</a>
+</div>
+<a name="CodCollectionType" id="CodCollectionType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.CodCollectionType.html">
+<h1>CodCollectionType<a href="../classes/FedEx.RateService.SimpleType.CodCollectionType.html">¶</a>
+</h1>
+<p class="short_description">Identifies the type of funds FedEx should collect upon shipment delivery.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.CodCollectionType.html" class="more">« More »</a>
+</div>
+<a name="CodReturnReferenceIndicatorType" id="CodReturnReferenceIndicatorType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.CodReturnReferenceIndicatorType.html">
+<h1>CodReturnReferenceIndicatorType<a href="../classes/FedEx.RateService.SimpleType.CodReturnReferenceIndicatorType.html">¶</a>
+</h1>
+<p class="short_description">Indicates which type of reference information to include on the COD return shipping label.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.CodReturnReferenceIndicatorType.html" class="more">« More »</a>
+</div>
+<a name="CommitmentDelayType" id="CommitmentDelayType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.CommitmentDelayType.html">
+<h1>CommitmentDelayType<a href="../classes/FedEx.RateService.SimpleType.CommitmentDelayType.html">¶</a>
+</h1>
+<p class="short_description">The type of delay this shipment will encounter.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.CommitmentDelayType.html" class="more">« More »</a>
+</div>
+<a name="CustomDeliveryWindowType" id="CustomDeliveryWindowType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.CustomDeliveryWindowType.html">
+<h1>CustomDeliveryWindowType<a href="../classes/FedEx.RateService.SimpleType.CustomDeliveryWindowType.html">¶</a>
+</h1>
+<p class="short_description">CustomDeliveryWindowType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.CustomDeliveryWindowType.html" class="more">« More »</a>
+</div>
+<a name="CustomLabelCoordinateUnits" id="CustomLabelCoordinateUnits"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.CustomLabelCoordinateUnits.html">
+<h1>CustomLabelCoordinateUnits<a href="../classes/FedEx.RateService.SimpleType.CustomLabelCoordinateUnits.html">¶</a>
+</h1>
+<p class="short_description">CustomLabelCoordinateUnits</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.CustomLabelCoordinateUnits.html" class="more">« More »</a>
+</div>
+<a name="CustomerImageUsageType" id="CustomerImageUsageType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.CustomerImageUsageType.html">
+<h1>CustomerImageUsageType<a href="../classes/FedEx.RateService.SimpleType.CustomerImageUsageType.html">¶</a>
+</h1>
+<p class="short_description">CustomerImageUsageType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.CustomerImageUsageType.html" class="more">« More »</a>
+</div>
+<a name="CustomerReferenceType" id="CustomerReferenceType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.CustomerReferenceType.html">
+<h1>CustomerReferenceType<a href="../classes/FedEx.RateService.SimpleType.CustomerReferenceType.html">¶</a>
+</h1>
+<p class="short_description">CustomerReferenceType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.CustomerReferenceType.html" class="more">« More »</a>
+</div>
+<a name="DangerousGoodsAccessibilityType" id="DangerousGoodsAccessibilityType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.DangerousGoodsAccessibilityType.html">
+<h1>DangerousGoodsAccessibilityType<a href="../classes/FedEx.RateService.SimpleType.DangerousGoodsAccessibilityType.html">¶</a>
+</h1>
+<p class="short_description">Identifies whether or not the products being shipped are required to be accessible during delivery.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.DangerousGoodsAccessibilityType.html" class="more">« More »</a>
+</div>
+<a name="DayOfWeekType" id="DayOfWeekType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.DayOfWeekType.html">
+<h1>DayOfWeekType<a href="../classes/FedEx.RateService.SimpleType.DayOfWeekType.html">¶</a>
+</h1>
+<p class="short_description">DayOfWeekType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.DayOfWeekType.html" class="more">« More »</a>
+</div>
+<a name="DelayLevelType" id="DelayLevelType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.DelayLevelType.html">
+<h1>DelayLevelType<a href="../classes/FedEx.RateService.SimpleType.DelayLevelType.html">¶</a>
+</h1>
+<p class="short_description">The attribute of the shipment that caused the delay(e.g.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.DelayLevelType.html" class="more">« More »</a>
+</div>
+<a name="DelayPointType" id="DelayPointType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.DelayPointType.html">
+<h1>DelayPointType<a href="../classes/FedEx.RateService.SimpleType.DelayPointType.html">¶</a>
+</h1>
+<p class="short_description">The point where the delay is occurring ( e.g.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.DelayPointType.html" class="more">« More »</a>
+</div>
+<a name="DestinationControlStatementType" id="DestinationControlStatementType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.DestinationControlStatementType.html">
+<h1>DestinationControlStatementType<a href="../classes/FedEx.RateService.SimpleType.DestinationControlStatementType.html">¶</a>
+</h1>
+<p class="short_description">Used to indicate whether the Destination Control Statement is of type Department of Commerce, Department of State or both.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.DestinationControlStatementType.html" class="more">« More »</a>
+</div>
+<a name="DistanceUnits" id="DistanceUnits"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.DistanceUnits.html">
+<h1>DistanceUnits<a href="../classes/FedEx.RateService.SimpleType.DistanceUnits.html">¶</a>
+</h1>
+<p class="short_description">DistanceUnits</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.DistanceUnits.html" class="more">« More »</a>
+</div>
+<a name="DocTabContentType" id="DocTabContentType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.DocTabContentType.html">
+<h1>DocTabContentType<a href="../classes/FedEx.RateService.SimpleType.DocTabContentType.html">¶</a>
+</h1>
+<p class="short_description">DocTabContentType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.DocTabContentType.html" class="more">« More »</a>
+</div>
+<a name="DocTabZoneJustificationType" id="DocTabZoneJustificationType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.DocTabZoneJustificationType.html">
+<h1>DocTabZoneJustificationType<a href="../classes/FedEx.RateService.SimpleType.DocTabZoneJustificationType.html">¶</a>
+</h1>
+<p class="short_description">DocTabZoneJustificationType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.DocTabZoneJustificationType.html" class="more">« More »</a>
+</div>
+<a name="DropoffType" id="DropoffType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.DropoffType.html">
+<h1>DropoffType<a href="../classes/FedEx.RateService.SimpleType.DropoffType.html">¶</a>
+</h1>
+<p class="short_description">Identifies the method by which the package is to be tendered to FedEx.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.DropoffType.html" class="more">« More »</a>
+</div>
+<a name="EMailNotificationEventType" id="EMailNotificationEventType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.EMailNotificationEventType.html">
+<h1>EMailNotificationEventType<a href="../classes/FedEx.RateService.SimpleType.EMailNotificationEventType.html">¶</a>
+</h1>
+<p class="short_description">EMailNotificationEventType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.EMailNotificationEventType.html" class="more">« More »</a>
+</div>
+<a name="EMailNotificationFormatType" id="EMailNotificationFormatType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.EMailNotificationFormatType.html">
+<h1>EMailNotificationFormatType<a href="../classes/FedEx.RateService.SimpleType.EMailNotificationFormatType.html">¶</a>
+</h1>
+<p class="short_description">The format of the email</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.EMailNotificationFormatType.html" class="more">« More »</a>
+</div>
+<a name="EMailNotificationRecipientType" id="EMailNotificationRecipientType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.EMailNotificationRecipientType.html">
+<h1>EMailNotificationRecipientType<a href="../classes/FedEx.RateService.SimpleType.EMailNotificationRecipientType.html">¶</a>
+</h1>
+<p class="short_description">Identifies the set of valid email notification recipient types.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.EMailNotificationRecipientType.html" class="more">« More »</a>
+</div>
+<a name="EdtRequestType" id="EdtRequestType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.EdtRequestType.html">
+<h1>EdtRequestType<a href="../classes/FedEx.RateService.SimpleType.EdtRequestType.html">¶</a>
+</h1>
+<p class="short_description">Specifies the types of Estimated Duties and Taxes to be included in a rate quotation for an international shipment.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.EdtRequestType.html" class="more">« More »</a>
+</div>
+<a name="EdtTaxType" id="EdtTaxType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.EdtTaxType.html">
+<h1>EdtTaxType<a href="../classes/FedEx.RateService.SimpleType.EdtTaxType.html">¶</a>
+</h1>
+<p class="short_description">EdtTaxType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.EdtTaxType.html" class="more">« More »</a>
+</div>
+<a name="ExpressRegionCode" id="ExpressRegionCode"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.ExpressRegionCode.html">
+<h1>ExpressRegionCode<a href="../classes/FedEx.RateService.SimpleType.ExpressRegionCode.html">¶</a>
+</h1>
+<p class="short_description">Indicates a FedEx Express operating region.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.ExpressRegionCode.html" class="more">« More »</a>
+</div>
+<a name="FedExLocationType" id="FedExLocationType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.FedExLocationType.html">
+<h1>FedExLocationType<a href="../classes/FedEx.RateService.SimpleType.FedExLocationType.html">¶</a>
+</h1>
+<p class="short_description">Identifies a kind of FedEx facility.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.FedExLocationType.html" class="more">« More »</a>
+</div>
+<a name="FlatbedTrailerOption" id="FlatbedTrailerOption"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.FlatbedTrailerOption.html">
+<h1>FlatbedTrailerOption<a href="../classes/FedEx.RateService.SimpleType.FlatbedTrailerOption.html">¶</a>
+</h1>
+<p class="short_description">FlatbedTrailerOption</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.FlatbedTrailerOption.html" class="more">« More »</a>
+</div>
+<a name="FreightAccountPaymentType" id="FreightAccountPaymentType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.FreightAccountPaymentType.html">
+<h1>FreightAccountPaymentType<a href="../classes/FedEx.RateService.SimpleType.FreightAccountPaymentType.html">¶</a>
+</h1>
+<p class="short_description">FreightAccountPaymentType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.FreightAccountPaymentType.html" class="more">« More »</a>
+</div>
+<a name="FreightBaseChargeCalculationType" id="FreightBaseChargeCalculationType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.FreightBaseChargeCalculationType.html">
+<h1>FreightBaseChargeCalculationType<a href="../classes/FedEx.RateService.SimpleType.FreightBaseChargeCalculationType.html">¶</a>
+</h1>
+<p class="short_description">Specifies the way in which base charges for a Freight shipment or shipment leg are calculated.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.FreightBaseChargeCalculationType.html" class="more">« More »</a>
+</div>
+<a name="FreightChargeBasisType" id="FreightChargeBasisType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.FreightChargeBasisType.html">
+<h1>FreightChargeBasisType<a href="../classes/FedEx.RateService.SimpleType.FreightChargeBasisType.html">¶</a>
+</h1>
+<p class="short_description">FreightChargeBasisType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.FreightChargeBasisType.html" class="more">« More »</a>
+</div>
+<a name="FreightClassType" id="FreightClassType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.FreightClassType.html">
+<h1>FreightClassType<a href="../classes/FedEx.RateService.SimpleType.FreightClassType.html">¶</a>
+</h1>
+<p class="short_description">These values represent the industry-standard freight classes used for FedEx Freight and FedEx National Freight shipment description.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.FreightClassType.html" class="more">« More »</a>
+</div>
+<a name="FreightGuaranteeType" id="FreightGuaranteeType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.FreightGuaranteeType.html">
+<h1>FreightGuaranteeType<a href="../classes/FedEx.RateService.SimpleType.FreightGuaranteeType.html">¶</a>
+</h1>
+<p class="short_description">FreightGuaranteeType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.FreightGuaranteeType.html" class="more">« More »</a>
+</div>
+<a name="FreightOnValueType" id="FreightOnValueType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.FreightOnValueType.html">
+<h1>FreightOnValueType<a href="../classes/FedEx.RateService.SimpleType.FreightOnValueType.html">¶</a>
+</h1>
+<p class="short_description">Identifies responsibilities with respect to loss, damage, etc.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.FreightOnValueType.html" class="more">« More »</a>
+</div>
+<a name="FreightServiceSchedulingType" id="FreightServiceSchedulingType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.FreightServiceSchedulingType.html">
+<h1>FreightServiceSchedulingType<a href="../classes/FedEx.RateService.SimpleType.FreightServiceSchedulingType.html">¶</a>
+</h1>
+<p class="short_description">Specifies the type of service scheduling offered from a Freight or National Freight Service Center to a customer-supplied address.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.FreightServiceSchedulingType.html" class="more">« More »</a>
+</div>
+<a name="FreightShipmentRoleType" id="FreightShipmentRoleType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.FreightShipmentRoleType.html">
+<h1>FreightShipmentRoleType<a href="../classes/FedEx.RateService.SimpleType.FreightShipmentRoleType.html">¶</a>
+</h1>
+<p class="short_description">Indicates the role of the party submitting the transaction.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.FreightShipmentRoleType.html" class="more">« More »</a>
+</div>
+<a name="HazardousCommodityLabelTextOptionType" id="HazardousCommodityLabelTextOptionType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.HazardousCommodityLabelTextOptionType.html">
+<h1>HazardousCommodityLabelTextOptionType<a href="../classes/FedEx.RateService.SimpleType.HazardousCommodityLabelTextOptionType.html">¶</a>
+</h1>
+<p class="short_description">Specifies how the commodity is to be labeled.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.HazardousCommodityLabelTextOptionType.html" class="more">« More »</a>
+</div>
+<a name="HazardousCommodityOptionType" id="HazardousCommodityOptionType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.HazardousCommodityOptionType.html">
+<h1>HazardousCommodityOptionType<a href="../classes/FedEx.RateService.SimpleType.HazardousCommodityOptionType.html">¶</a>
+</h1>
+<p class="short_description">Indicates which kind of hazardous content (as defined by DOT) is being reported.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.HazardousCommodityOptionType.html" class="more">« More »</a>
+</div>
+<a name="HazardousCommodityPackingGroupType" id="HazardousCommodityPackingGroupType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.HazardousCommodityPackingGroupType.html">
+<h1>HazardousCommodityPackingGroupType<a href="../classes/FedEx.RateService.SimpleType.HazardousCommodityPackingGroupType.html">¶</a>
+</h1>
+<p class="short_description">Identifies DOT packing group for a hazardous commodity.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.HazardousCommodityPackingGroupType.html" class="more">« More »</a>
+</div>
+<a name="HomeDeliveryPremiumType" id="HomeDeliveryPremiumType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.HomeDeliveryPremiumType.html">
+<h1>HomeDeliveryPremiumType<a href="../classes/FedEx.RateService.SimpleType.HomeDeliveryPremiumType.html">¶</a>
+</h1>
+<p class="short_description">HomeDeliveryPremiumType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.HomeDeliveryPremiumType.html" class="more">« More »</a>
+</div>
+<a name="ImageId" id="ImageId"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.ImageId.html">
+<h1>ImageId<a href="../classes/FedEx.RateService.SimpleType.ImageId.html">¶</a>
+</h1>
+<p class="short_description">ImageId</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.ImageId.html" class="more">« More »</a>
+</div>
+<a name="InternationalDocumentContentType" id="InternationalDocumentContentType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.InternationalDocumentContentType.html">
+<h1>InternationalDocumentContentType<a href="../classes/FedEx.RateService.SimpleType.InternationalDocumentContentType.html">¶</a>
+</h1>
+<p class="short_description">The type of International shipment.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.InternationalDocumentContentType.html" class="more">« More »</a>
+</div>
+<a name="LabelFormatType" id="LabelFormatType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.LabelFormatType.html">
+<h1>LabelFormatType<a href="../classes/FedEx.RateService.SimpleType.LabelFormatType.html">¶</a>
+</h1>
+<p class="short_description">Specifies the type of label to be returned.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.LabelFormatType.html" class="more">« More »</a>
+</div>
+<a name="LabelMaskableDataType" id="LabelMaskableDataType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.LabelMaskableDataType.html">
+<h1>LabelMaskableDataType<a href="../classes/FedEx.RateService.SimpleType.LabelMaskableDataType.html">¶</a>
+</h1>
+<p class="short_description">Names for data elements / areas which may be suppressed from printing on labels.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.LabelMaskableDataType.html" class="more">« More »</a>
+</div>
+<a name="LabelPrintingOrientationType" id="LabelPrintingOrientationType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.LabelPrintingOrientationType.html">
+<h1>LabelPrintingOrientationType<a href="../classes/FedEx.RateService.SimpleType.LabelPrintingOrientationType.html">¶</a>
+</h1>
+<p class="short_description">This indicates if the top or bottom of the label comes out of the printer first.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.LabelPrintingOrientationType.html" class="more">« More »</a>
+</div>
+<a name="LabelRotationType" id="LabelRotationType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.LabelRotationType.html">
+<h1>LabelRotationType<a href="../classes/FedEx.RateService.SimpleType.LabelRotationType.html">¶</a>
+</h1>
+<p class="short_description">Relative to normal orientation for the printer.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.LabelRotationType.html" class="more">« More »</a>
+</div>
+<a name="LabelStockType" id="LabelStockType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.LabelStockType.html">
+<h1>LabelStockType<a href="../classes/FedEx.RateService.SimpleType.LabelStockType.html">¶</a>
+</h1>
+<p class="short_description">For thermal printer labels this indicates the size of the label and the location of the doc tab if present.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.LabelStockType.html" class="more">« More »</a>
+</div>
+<a name="LiabilityCoverageType" id="LiabilityCoverageType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.LiabilityCoverageType.html">
+<h1>LiabilityCoverageType<a href="../classes/FedEx.RateService.SimpleType.LiabilityCoverageType.html">¶</a>
+</h1>
+<p class="short_description">LiabilityCoverageType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.LiabilityCoverageType.html" class="more">« More »</a>
+</div>
+<a name="LinearUnits" id="LinearUnits"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.LinearUnits.html">
+<h1>LinearUnits<a href="../classes/FedEx.RateService.SimpleType.LinearUnits.html">¶</a>
+</h1>
+<p class="short_description">CM = centimeters, IN = inches</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.LinearUnits.html" class="more">« More »</a>
+</div>
+<a name="MinimumChargeType" id="MinimumChargeType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.MinimumChargeType.html">
+<h1>MinimumChargeType<a href="../classes/FedEx.RateService.SimpleType.MinimumChargeType.html">¶</a>
+</h1>
+<p class="short_description">Internal FedEx use only.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.MinimumChargeType.html" class="more">« More »</a>
+</div>
+<a name="NaftaImporterSpecificationType" id="NaftaImporterSpecificationType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.NaftaImporterSpecificationType.html">
+<h1>NaftaImporterSpecificationType<a href="../classes/FedEx.RateService.SimpleType.NaftaImporterSpecificationType.html">¶</a>
+</h1>
+<p class="short_description">NaftaImporterSpecificationType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.NaftaImporterSpecificationType.html" class="more">« More »</a>
+</div>
+<a name="NaftaNetCostMethodCode" id="NaftaNetCostMethodCode"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.NaftaNetCostMethodCode.html">
+<h1>NaftaNetCostMethodCode<a href="../classes/FedEx.RateService.SimpleType.NaftaNetCostMethodCode.html">¶</a>
+</h1>
+<p class="short_description">Net cost method used.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.NaftaNetCostMethodCode.html" class="more">« More »</a>
+</div>
+<a name="NaftaPreferenceCriterionCode" id="NaftaPreferenceCriterionCode"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.NaftaPreferenceCriterionCode.html">
+<h1>NaftaPreferenceCriterionCode<a href="../classes/FedEx.RateService.SimpleType.NaftaPreferenceCriterionCode.html">¶</a>
+</h1>
+<p class="short_description">See instructions for NAFTA Certificate of Origin for code definitions.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.NaftaPreferenceCriterionCode.html" class="more">« More »</a>
+</div>
+<a name="NaftaProducerDeterminationCode" id="NaftaProducerDeterminationCode"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.NaftaProducerDeterminationCode.html">
+<h1>NaftaProducerDeterminationCode<a href="../classes/FedEx.RateService.SimpleType.NaftaProducerDeterminationCode.html">¶</a>
+</h1>
+<p class="short_description">See instructions for NAFTA Certificate of Origin for code definitions.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.NaftaProducerDeterminationCode.html" class="more">« More »</a>
+</div>
+<a name="NaftaProducerSpecificationType" id="NaftaProducerSpecificationType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.NaftaProducerSpecificationType.html">
+<h1>NaftaProducerSpecificationType<a href="../classes/FedEx.RateService.SimpleType.NaftaProducerSpecificationType.html">¶</a>
+</h1>
+<p class="short_description">NaftaProducerSpecificationType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.NaftaProducerSpecificationType.html" class="more">« More »</a>
+</div>
+<a name="NotificationSeverityType" id="NotificationSeverityType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.NotificationSeverityType.html">
+<h1>NotificationSeverityType<a href="../classes/FedEx.RateService.SimpleType.NotificationSeverityType.html">¶</a>
+</h1>
+<p class="short_description">Identifies the set of severity values for a Notification.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.NotificationSeverityType.html" class="more">« More »</a>
+</div>
+<a name="OversizeClassType" id="OversizeClassType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.OversizeClassType.html">
+<h1>OversizeClassType<a href="../classes/FedEx.RateService.SimpleType.OversizeClassType.html">¶</a>
+</h1>
+<p class="short_description">The Oversize classification for a package.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.OversizeClassType.html" class="more">« More »</a>
+</div>
+<a name="PackageSpecialServiceType" id="PackageSpecialServiceType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.PackageSpecialServiceType.html">
+<h1>PackageSpecialServiceType<a href="../classes/FedEx.RateService.SimpleType.PackageSpecialServiceType.html">¶</a>
+</h1>
+<p class="short_description">Identifies the collection of special services offered by FedEx.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.PackageSpecialServiceType.html" class="more">« More »</a>
+</div>
+<a name="PackagingType" id="PackagingType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.PackagingType.html">
+<h1>PackagingType<a href="../classes/FedEx.RateService.SimpleType.PackagingType.html">¶</a>
+</h1>
+<p class="short_description">Identifies the packaging used by the requestor for the package.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.PackagingType.html" class="more">« More »</a>
+</div>
+<a name="PaymentType" id="PaymentType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.PaymentType.html">
+<h1>PaymentType<a href="../classes/FedEx.RateService.SimpleType.PaymentType.html">¶</a>
+</h1>
+<p class="short_description">Identifies the method of payment for a service.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.PaymentType.html" class="more">« More »</a>
+</div>
+<a name="PendingShipmentType" id="PendingShipmentType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.PendingShipmentType.html">
+<h1>PendingShipmentType<a href="../classes/FedEx.RateService.SimpleType.PendingShipmentType.html">¶</a>
+</h1>
+<p class="short_description">PendingShipmentType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.PendingShipmentType.html" class="more">« More »</a>
+</div>
+<a name="PhysicalPackagingType" id="PhysicalPackagingType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.PhysicalPackagingType.html">
+<h1>PhysicalPackagingType<a href="../classes/FedEx.RateService.SimpleType.PhysicalPackagingType.html">¶</a>
+</h1>
+<p class="short_description">This enumeration rationalizes the former FedEx Express international "admissibility package" types (based on ANSI X.12) and the FedEx Freight packaging types.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.PhysicalPackagingType.html" class="more">« More »</a>
+</div>
+<a name="PickupRequestSourceType" id="PickupRequestSourceType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.PickupRequestSourceType.html">
+<h1>PickupRequestSourceType<a href="../classes/FedEx.RateService.SimpleType.PickupRequestSourceType.html">¶</a>
+</h1>
+<p class="short_description">PickupRequestSourceType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.PickupRequestSourceType.html" class="more">« More »</a>
+</div>
+<a name="PickupRequestType" id="PickupRequestType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.PickupRequestType.html">
+<h1>PickupRequestType<a href="../classes/FedEx.RateService.SimpleType.PickupRequestType.html">¶</a>
+</h1>
+<p class="short_description">PickupRequestType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.PickupRequestType.html" class="more">« More »</a>
+</div>
+<a name="PricingCodeType" id="PricingCodeType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.PricingCodeType.html">
+<h1>PricingCodeType<a href="../classes/FedEx.RateService.SimpleType.PricingCodeType.html">¶</a>
+</h1>
+<p class="short_description">PricingCodeType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.PricingCodeType.html" class="more">« More »</a>
+</div>
+<a name="PurposeOfShipmentType" id="PurposeOfShipmentType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.PurposeOfShipmentType.html">
+<h1>PurposeOfShipmentType<a href="../classes/FedEx.RateService.SimpleType.PurposeOfShipmentType.html">¶</a>
+</h1>
+<p class="short_description">PurposeOfShipmentType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.PurposeOfShipmentType.html" class="more">« More »</a>
+</div>
+<a name="RateDimensionalDivisorType" id="RateDimensionalDivisorType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.RateDimensionalDivisorType.html">
+<h1>RateDimensionalDivisorType<a href="../classes/FedEx.RateService.SimpleType.RateDimensionalDivisorType.html">¶</a>
+</h1>
+<p class="short_description">Indicates the reason that a dim divisor value was chose.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.RateDimensionalDivisorType.html" class="more">« More »</a>
+</div>
+<a name="RateDiscountType" id="RateDiscountType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.RateDiscountType.html">
+<h1>RateDiscountType<a href="../classes/FedEx.RateService.SimpleType.RateDiscountType.html">¶</a>
+</h1>
+<p class="short_description">Identifies the type of discount applied to the shipment.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.RateDiscountType.html" class="more">« More »</a>
+</div>
+<a name="RateElementBasisType" id="RateElementBasisType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.RateElementBasisType.html">
+<h1>RateElementBasisType<a href="../classes/FedEx.RateService.SimpleType.RateElementBasisType.html">¶</a>
+</h1>
+<p class="short_description">Selects the value from a set of rate data to which the percentage is applied.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.RateElementBasisType.html" class="more">« More »</a>
+</div>
+<a name="RateRequestType" id="RateRequestType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.RateRequestType.html">
+<h1>RateRequestType<a href="../classes/FedEx.RateService.SimpleType.RateRequestType.html">¶</a>
+</h1>
+<p class="short_description">Indicates the type of rates to be returned.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.RateRequestType.html" class="more">« More »</a>
+</div>
+<a name="RateTypeBasisType" id="RateTypeBasisType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.RateTypeBasisType.html">
+<h1>RateTypeBasisType<a href="../classes/FedEx.RateService.SimpleType.RateTypeBasisType.html">¶</a>
+</h1>
+<p class="short_description">Select the type of rate from which the element is to be selected.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.RateTypeBasisType.html" class="more">« More »</a>
+</div>
+<a name="RatedWeightMethod" id="RatedWeightMethod"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.RatedWeightMethod.html">
+<h1>RatedWeightMethod<a href="../classes/FedEx.RateService.SimpleType.RatedWeightMethod.html">¶</a>
+</h1>
+<p class="short_description">The method used to calculate the weight to be used in rating the package.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.RatedWeightMethod.html" class="more">« More »</a>
+</div>
+<a name="RebateType" id="RebateType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.RebateType.html">
+<h1>RebateType<a href="../classes/FedEx.RateService.SimpleType.RebateType.html">¶</a>
+</h1>
+<p class="short_description">Identifies the type of discount applied to the shipment.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.RebateType.html" class="more">« More »</a>
+</div>
+<a name="RecipientCustomsIdType" id="RecipientCustomsIdType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.RecipientCustomsIdType.html">
+<h1>RecipientCustomsIdType<a href="../classes/FedEx.RateService.SimpleType.RecipientCustomsIdType.html">¶</a>
+</h1>
+<p class="short_description">Type of Brazilian taxpayer identifier provided in Recipient/TaxPayerIdentification/Number.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.RecipientCustomsIdType.html" class="more">« More »</a>
+</div>
+<a name="RegulatoryControlType" id="RegulatoryControlType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.RegulatoryControlType.html">
+<h1>RegulatoryControlType<a href="../classes/FedEx.RateService.SimpleType.RegulatoryControlType.html">¶</a>
+</h1>
+<p class="short_description">FOOD_OR_PERISHABLE is required by FDA/BTA; must be true for food/perishable items coming to US or PR from non-US/non-PR origin</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.RegulatoryControlType.html" class="more">« More »</a>
+</div>
+<a name="RequestedShippingDocumentType" id="RequestedShippingDocumentType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.RequestedShippingDocumentType.html">
+<h1>RequestedShippingDocumentType<a href="../classes/FedEx.RateService.SimpleType.RequestedShippingDocumentType.html">¶</a>
+</h1>
+<p class="short_description">RequestedShippingDocumentType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.RequestedShippingDocumentType.html" class="more">« More »</a>
+</div>
+<a name="RequiredShippingDocumentType" id="RequiredShippingDocumentType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.RequiredShippingDocumentType.html">
+<h1>RequiredShippingDocumentType<a href="../classes/FedEx.RateService.SimpleType.RequiredShippingDocumentType.html">¶</a>
+</h1>
+<p class="short_description">RequiredShippingDocumentType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.RequiredShippingDocumentType.html" class="more">« More »</a>
+</div>
+<a name="ReturnEMailAllowedSpecialServiceType" id="ReturnEMailAllowedSpecialServiceType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.ReturnEMailAllowedSpecialServiceType.html">
+<h1>ReturnEMailAllowedSpecialServiceType<a href="../classes/FedEx.RateService.SimpleType.ReturnEMailAllowedSpecialServiceType.html">¶</a>
+</h1>
+<p class="short_description">These values are used to control the availability of certain special services at the time when a customer uses the e-mail label link to create a return shipment.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.ReturnEMailAllowedSpecialServiceType.html" class="more">« More »</a>
+</div>
+<a name="ReturnType" id="ReturnType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.ReturnType.html">
+<h1>ReturnType<a href="../classes/FedEx.RateService.SimpleType.ReturnType.html">¶</a>
+</h1>
+<p class="short_description">The type of return shipment that is being requested.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.ReturnType.html" class="more">« More »</a>
+</div>
+<a name="ReturnedRateType" id="ReturnedRateType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.ReturnedRateType.html">
+<h1>ReturnedRateType<a href="../classes/FedEx.RateService.SimpleType.ReturnedRateType.html">¶</a>
+</h1>
+<p class="short_description">The "PAYOR.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.ReturnedRateType.html" class="more">« More »</a>
+</div>
+<a name="SecondaryBarcodeType" id="SecondaryBarcodeType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.SecondaryBarcodeType.html">
+<h1>SecondaryBarcodeType<a href="../classes/FedEx.RateService.SimpleType.SecondaryBarcodeType.html">¶</a>
+</h1>
+<p class="short_description">SecondaryBarcodeType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.SecondaryBarcodeType.html" class="more">« More »</a>
+</div>
+<a name="ServiceOptionType" id="ServiceOptionType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.ServiceOptionType.html">
+<h1>ServiceOptionType<a href="../classes/FedEx.RateService.SimpleType.ServiceOptionType.html">¶</a>
+</h1>
+<p class="short_description">These values control the optional features of service that may be combined in a commitment/rate comparision transaction.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.ServiceOptionType.html" class="more">« More »</a>
+</div>
+<a name="ServiceType" id="ServiceType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.ServiceType.html">
+<h1>ServiceType<a href="../classes/FedEx.RateService.SimpleType.ServiceType.html">¶</a>
+</h1>
+<p class="short_description">Identifies the FedEx service to use in shipping the package.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.ServiceType.html" class="more">« More »</a>
+</div>
+<a name="ShipmentOnlyFieldsType" id="ShipmentOnlyFieldsType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.ShipmentOnlyFieldsType.html">
+<h1>ShipmentOnlyFieldsType<a href="../classes/FedEx.RateService.SimpleType.ShipmentOnlyFieldsType.html">¶</a>
+</h1>
+<p class="short_description">These values identify which package-level data values will be provided at the shipment-level.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.ShipmentOnlyFieldsType.html" class="more">« More »</a>
+</div>
+<a name="ShipmentSpecialServiceType" id="ShipmentSpecialServiceType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.ShipmentSpecialServiceType.html">
+<h1>ShipmentSpecialServiceType<a href="../classes/FedEx.RateService.SimpleType.ShipmentSpecialServiceType.html">¶</a>
+</h1>
+<p class="short_description">Identifies the collection of special service offered by FedEx.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.ShipmentSpecialServiceType.html" class="more">« More »</a>
+</div>
+<a name="ShippingDocumentDispositionType" id="ShippingDocumentDispositionType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.ShippingDocumentDispositionType.html">
+<h1>ShippingDocumentDispositionType<a href="../classes/FedEx.RateService.SimpleType.ShippingDocumentDispositionType.html">¶</a>
+</h1>
+<p class="short_description">Specifies how to return a shipping document to the caller.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.ShippingDocumentDispositionType.html" class="more">« More »</a>
+</div>
+<a name="ShippingDocumentEMailGroupingType" id="ShippingDocumentEMailGroupingType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.ShippingDocumentEMailGroupingType.html">
+<h1>ShippingDocumentEMailGroupingType<a href="../classes/FedEx.RateService.SimpleType.ShippingDocumentEMailGroupingType.html">¶</a>
+</h1>
+<p class="short_description">ShippingDocumentEMailGroupingType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.ShippingDocumentEMailGroupingType.html" class="more">« More »</a>
+</div>
+<a name="ShippingDocumentGroupingType" id="ShippingDocumentGroupingType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.ShippingDocumentGroupingType.html">
+<h1>ShippingDocumentGroupingType<a href="../classes/FedEx.RateService.SimpleType.ShippingDocumentGroupingType.html">¶</a>
+</h1>
+<p class="short_description">Specifies how to organize all shipping documents of the same type.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.ShippingDocumentGroupingType.html" class="more">« More »</a>
+</div>
+<a name="ShippingDocumentImageType" id="ShippingDocumentImageType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.ShippingDocumentImageType.html">
+<h1>ShippingDocumentImageType<a href="../classes/FedEx.RateService.SimpleType.ShippingDocumentImageType.html">¶</a>
+</h1>
+<p class="short_description">Specifies the image format used for a shipping document.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.ShippingDocumentImageType.html" class="more">« More »</a>
+</div>
+<a name="ShippingDocumentStockType" id="ShippingDocumentStockType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.ShippingDocumentStockType.html">
+<h1>ShippingDocumentStockType<a href="../classes/FedEx.RateService.SimpleType.ShippingDocumentStockType.html">¶</a>
+</h1>
+<p class="short_description">Specifies the type of paper (stock) on which a document will be printed.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.ShippingDocumentStockType.html" class="more">« More »</a>
+</div>
+<a name="SignatureOptionType" id="SignatureOptionType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.SignatureOptionType.html">
+<h1>SignatureOptionType<a href="../classes/FedEx.RateService.SimpleType.SignatureOptionType.html">¶</a>
+</h1>
+<p class="short_description">Identifies the delivery signature services options offered by FedEx.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.SignatureOptionType.html" class="more">« More »</a>
+</div>
+<a name="SmartPostAncillaryEndorsementType" id="SmartPostAncillaryEndorsementType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.SmartPostAncillaryEndorsementType.html">
+<h1>SmartPostAncillaryEndorsementType<a href="../classes/FedEx.RateService.SimpleType.SmartPostAncillaryEndorsementType.html">¶</a>
+</h1>
+<p class="short_description">These values are mutually exclusive; at most one of them can be attached to a SmartPost shipment.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.SmartPostAncillaryEndorsementType.html" class="more">« More »</a>
+</div>
+<a name="SmartPostIndiciaType" id="SmartPostIndiciaType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.SmartPostIndiciaType.html">
+<h1>SmartPostIndiciaType<a href="../classes/FedEx.RateService.SimpleType.SmartPostIndiciaType.html">¶</a>
+</h1>
+<p class="short_description">SmartPostIndiciaType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.SmartPostIndiciaType.html" class="more">« More »</a>
+</div>
+<a name="SpecialRatingAppliedType" id="SpecialRatingAppliedType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.SpecialRatingAppliedType.html">
+<h1>SpecialRatingAppliedType<a href="../classes/FedEx.RateService.SimpleType.SpecialRatingAppliedType.html">¶</a>
+</h1>
+<p class="short_description">Indicates which special rating cases applied to this shipment.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.SpecialRatingAppliedType.html" class="more">« More »</a>
+</div>
+<a name="SurchargeLevelType" id="SurchargeLevelType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.SurchargeLevelType.html">
+<h1>SurchargeLevelType<a href="../classes/FedEx.RateService.SimpleType.SurchargeLevelType.html">¶</a>
+</h1>
+<p class="short_description">SurchargeLevelType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.SurchargeLevelType.html" class="more">« More »</a>
+</div>
+<a name="SurchargeType" id="SurchargeType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.SurchargeType.html">
+<h1>SurchargeType<a href="../classes/FedEx.RateService.SimpleType.SurchargeType.html">¶</a>
+</h1>
+<p class="short_description">SurchargeType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.SurchargeType.html" class="more">« More »</a>
+</div>
+<a name="TaxType" id="TaxType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.TaxType.html">
+<h1>TaxType<a href="../classes/FedEx.RateService.SimpleType.TaxType.html">¶</a>
+</h1>
+<p class="short_description">TaxType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.TaxType.html" class="more">« More »</a>
+</div>
+<a name="TaxesOrMiscellaneousChargeType" id="TaxesOrMiscellaneousChargeType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.TaxesOrMiscellaneousChargeType.html">
+<h1>TaxesOrMiscellaneousChargeType<a href="../classes/FedEx.RateService.SimpleType.TaxesOrMiscellaneousChargeType.html">¶</a>
+</h1>
+<p class="short_description">Specifice the kind of tax or miscellaneous charge being reported on a Commercial Invoice.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.TaxesOrMiscellaneousChargeType.html" class="more">« More »</a>
+</div>
+<a name="TermsOfSaleType" id="TermsOfSaleType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.TermsOfSaleType.html">
+<h1>TermsOfSaleType<a href="../classes/FedEx.RateService.SimpleType.TermsOfSaleType.html">¶</a>
+</h1>
+<p class="short_description">Required for dutiable international express or ground shipment.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.TermsOfSaleType.html" class="more">« More »</a>
+</div>
+<a name="TinType" id="TinType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.TinType.html">
+<h1>TinType<a href="../classes/FedEx.RateService.SimpleType.TinType.html">¶</a>
+</h1>
+<p class="short_description">Identifies the category of the taxpayer identification number.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.TinType.html" class="more">« More »</a>
+</div>
+<a name="TrackingIdType" id="TrackingIdType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.TrackingIdType.html">
+<h1>TrackingIdType<a href="../classes/FedEx.RateService.SimpleType.TrackingIdType.html">¶</a>
+</h1>
+<p class="short_description">TrackingIdType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.TrackingIdType.html" class="more">« More »</a>
+</div>
+<a name="TransitTimeType" id="TransitTimeType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.TransitTimeType.html">
+<h1>TransitTimeType<a href="../classes/FedEx.RateService.SimpleType.TransitTimeType.html">¶</a>
+</h1>
+<p class="short_description">Time in transit from pickup to delivery.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.TransitTimeType.html" class="more">« More »</a>
+</div>
+<a name="UploadDocumentIdProducer" id="UploadDocumentIdProducer"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.UploadDocumentIdProducer.html">
+<h1>UploadDocumentIdProducer<a href="../classes/FedEx.RateService.SimpleType.UploadDocumentIdProducer.html">¶</a>
+</h1>
+<p class="short_description">UploadDocumentIdProducer</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.UploadDocumentIdProducer.html" class="more">« More »</a>
+</div>
+<a name="UploadDocumentProducerType" id="UploadDocumentProducerType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.UploadDocumentProducerType.html">
+<h1>UploadDocumentProducerType<a href="../classes/FedEx.RateService.SimpleType.UploadDocumentProducerType.html">¶</a>
+</h1>
+<p class="short_description">UploadDocumentProducerType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.UploadDocumentProducerType.html" class="more">« More »</a>
+</div>
+<a name="UploadDocumentType" id="UploadDocumentType"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.UploadDocumentType.html">
+<h1>UploadDocumentType<a href="../classes/FedEx.RateService.SimpleType.UploadDocumentType.html">¶</a>
+</h1>
+<p class="short_description">UploadDocumentType</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.UploadDocumentType.html" class="more">« More »</a>
+</div>
+<a name="VolumeUnits" id="VolumeUnits"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.VolumeUnits.html">
+<h1>VolumeUnits<a href="../classes/FedEx.RateService.SimpleType.VolumeUnits.html">¶</a>
+</h1>
+<p class="short_description">Units of three-dimensional volume/cubic measure.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.VolumeUnits.html" class="more">« More »</a>
+</div>
+<a name="WeightUnits" id="WeightUnits"></a><div class="element ajax clickable class" href="../classes/FedEx.RateService.SimpleType.WeightUnits.html">
+<h1>WeightUnits<a href="../classes/FedEx.RateService.SimpleType.WeightUnits.html">¶</a>
+</h1>
+<p class="short_description">Identifies the unit of measure associated with a weight value.</p>
+<div class="details collapse"></div>
+<a href="../classes/FedEx.RateService.SimpleType.WeightUnits.html" class="more">« More »</a>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a8</a> and<br>
+            generated on 2012-07-29T13:58:39-05:00.<br></footer></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>PHP Fedex API Wrapper » \FedEx\RateService\ComplexType\FreightServiceCenterDetail</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">PHP Fedex API Wrapper</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/FedEx.html"><i class="icon-th"></i> FedEx</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/PHP%20FedEx%20API%20wrapper.html"><i class="icon-folder-open"></i> PHP FedEx API wrapper</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">871</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public inherited"><a href="#__construct" title="__construct :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#__set" title="__set :: __set implementation"><span class="description">__set implementation</span><pre>__set()</pre></a></li>
+<li class="method public "><a href="#setAdditionalDays" title="setAdditionalDays :: Additional time it might take at the origin or destination to pickup or deliver the freight."><span class="description">Additional time it might take at the origin or destination to pickup or deliver the freight.</span><pre>setAdditionalDays()</pre></a></li>
+<li class="method public "><a href="#setContactAndAddress" title="setContactAndAddress :: Freight service center Contact and Address"><span class="description">Freight service center Contact and Address</span><pre>setContactAndAddress()</pre></a></li>
+<li class="method public "><a href="#setGatewayLocationId" title="setGatewayLocationId :: Freight service center that is a gateway on the border of Canada or Mexico."><span class="description">Freight service center that is a gateway on the border of Canada or Mexico.</span><pre>setGatewayLocationId()</pre></a></li>
+<li class="method public "><a href="#setInterlineCarrierCode" title="setInterlineCarrierCode :: Freight Industry standard non-FedEx carrier identification"><span class="description">Freight Industry standard non-FedEx carrier identification</span><pre>setInterlineCarrierCode()</pre></a></li>
+<li class="method public "><a href="#setInterlineCarrierName" title="setInterlineCarrierName :: The name of the Interline carrier."><span class="description">The name of the Interline carrier.</span><pre>setInterlineCarrierName()</pre></a></li>
+<li class="method public "><a href="#setLimitedServiceDays" title="setLimitedServiceDays :: Specifies days of operation if localServiceScheduling is LIMITED."><span class="description">Specifies days of operation if localServiceScheduling is LIMITED.</span><pre>setLimitedServiceDays()</pre></a></li>
+<li class="method public "><a href="#setLocalDistance" title="setLocalDistance :: Distance between customer address (pickup or delivery) and the supporting Freight / National Freight service center."><span class="description">Distance between customer address (pickup or delivery) and the supporting Freight / National Freight service center.</span><pre>setLocalDistance()</pre></a></li>
+<li class="method public "><a href="#setLocalDuration" title="setLocalDuration :: Time to travel between customer address (pickup or delivery) and the supporting Freight / National Freight service center."><span class="description">Time to travel between customer address (pickup or delivery) and the supporting Freight / National Freight service center.</span><pre>setLocalDuration()</pre></a></li>
+<li class="method public "><a href="#setLocalService" title="setLocalService :: Service branding which may be used for local pickup or delivery, distinct from service used for line-haul of customer's shipment."><span class="description">Service branding which may be used for local pickup or delivery, distinct from service used for line-haul of customer's shipment.</span><pre>setLocalService()</pre></a></li>
+<li class="method public "><a href="#setLocalServiceScheduling" title="setLocalServiceScheduling :: Specifies when/how the customer can arrange for pickup or delivery."><span class="description">Specifies when/how the customer can arrange for pickup or delivery.</span><pre>setLocalServiceScheduling()</pre></a></li>
+<li class="method public "><a href="#setLocation" title="setLocation :: Alphabetical code identifying a Freight Service Center"><span class="description">Alphabetical code identifying a Freight Service Center</span><pre>setLocation()</pre></a></li>
+<li class="method public inherited"><a href="#toArray" title="toArray :: Returns the complex type as an array"><span class="description">Returns the complex type as an array</span><pre>toArray()</pre></a></li>
+<li class="nav-header protected">» Protected</li>
+<li class="method protected inherited"><a href="#_convertToArray" title="_convertToArray :: Recursive algorthim to convert complex types to an array"><span class="description">Recursive algorthim to convert complex types to an array</span><pre>_convertToArray()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header protected">» Protected</li>
+<li class="property protected "><a href="#%24_name" title="$_name :: Name of this complex type"><span class="description">Name of this complex type</span><pre>$_name</pre></a></li>
+<li class="property protected inherited"><a href="#%24_values" title="$_values :: Holds the data as a key =&gt; value array"><span class="description">Holds the data as a key =&gt; value array</span><pre>$_values</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CFedEx%5CRateService%5CComplexType%5CFreightServiceCenterDetail" id="\FedEx\RateService\ComplexType\FreightServiceCenterDetail"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/FedEx.html">FedEx</a></li>
+<span class="divider">\</span><li><a href="../namespaces/FedEx.RateService.html">RateService</a></li>
+<span class="divider">\</span><li><a href="../namespaces/FedEx.RateService.ComplexType.html">ComplexType</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/FedEx.RateService.ComplexType.FreightServiceCenterDetail.html">FreightServiceCenterDetail</a>
+</li>
+</ul>
+<div href="../classes/FedEx.RateService.ComplexType.FreightServiceCenterDetail.html" class="element class">
+<p class="short_description">This class describes the relationship between a customer-specified address and the FedEx Freight / FedEx National Freight Service Center that supports that address.</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="mailto:jeremy@jsdunn.info">Jeremy Dunn</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/PHP%20FedEx%20API%20wrapper.Rate%20Service.html">PHP FedEx API wrapper</a></td>
+</tr>
+<tr>
+<th>subpackage</th>
+<td>Rate Service</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Constructor</h2>
+<pre>__construct(array $options) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractComplexType::__construct()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code><p>Data as key => value array</p>
+</div>
+</div></div>
+</div>
+<a name="__set" id="__set"></a><div class="element clickable method public __set" data-toggle="collapse" data-target=".__set .collapse">
+<h2>__set implementation</h2>
+<pre>__set(string $name, string $value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractComplexType::__set()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="setAdditionalDays" id="setAdditionalDays"></a><div class="element clickable method public setAdditionalDays" data-toggle="collapse" data-target=".setAdditionalDays .collapse">
+<h2>Additional time it might take at the origin or destination to pickup or deliver the freight.</h2>
+<pre>setAdditionalDays(int $additionalDays) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>This is usually due to the remoteness of the location. This time is included in the total transit time.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$additionalDays</h4>
+<code>int</code><p>return FreightServiceCenterDetail</p></div>
+</div></div>
+</div>
+<a name="setContactAndAddress" id="setContactAndAddress"></a><div class="element clickable method public setContactAndAddress" data-toggle="collapse" data-target=".setContactAndAddress .collapse">
+<h2>Freight service center Contact and Address</h2>
+<pre>setContactAndAddress(\FedEx\RateService\ComplexType\ContactAndAddress $contactAndAddress) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$contactAndAddress</h4>
+<code><a href="../classes/FedEx.RateService.ComplexType.ContactAndAddress.html">\FedEx\RateService\ComplexType\ContactAndAddress</a></code><p>return FreightServiceCenterDetail</p></div>
+</div></div>
+</div>
+<a name="setGatewayLocationId" id="setGatewayLocationId"></a><div class="element clickable method public setGatewayLocationId" data-toggle="collapse" data-target=".setGatewayLocationId .collapse">
+<h2>Freight service center that is a gateway on the border of Canada or Mexico.</h2>
+<pre>setGatewayLocationId(string $gatewayLocationId) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$gatewayLocationId</h4>
+<code>string</code><p>return FreightServiceCenterDetail</p></div>
+</div></div>
+</div>
+<a name="setInterlineCarrierCode" id="setInterlineCarrierCode"></a><div class="element clickable method public setInterlineCarrierCode" data-toggle="collapse" data-target=".setInterlineCarrierCode .collapse">
+<h2>Freight Industry standard non-FedEx carrier identification</h2>
+<pre>setInterlineCarrierCode(string $interlineCarrierCode) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$interlineCarrierCode</h4>
+<code>string</code><p>return FreightServiceCenterDetail</p></div>
+</div></div>
+</div>
+<a name="setInterlineCarrierName" id="setInterlineCarrierName"></a><div class="element clickable method public setInterlineCarrierName" data-toggle="collapse" data-target=".setInterlineCarrierName .collapse">
+<h2>The name of the Interline carrier.</h2>
+<pre>setInterlineCarrierName(string $interlineCarrierName) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$interlineCarrierName</h4>
+<code>string</code><p>return FreightServiceCenterDetail</p></div>
+</div></div>
+</div>
+<a name="setLimitedServiceDays" id="setLimitedServiceDays"></a><div class="element clickable method public setLimitedServiceDays" data-toggle="collapse" data-target=".setLimitedServiceDays .collapse">
+<h2>Specifies days of operation if localServiceScheduling is LIMITED.</h2>
+<pre>setLimitedServiceDays(array $limitedServiceDays) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$limitedServiceDays</h4>
+<code>\FedEx\RateService\ComplexType\DayOfWeekType[]</code><p>return FreightServiceCenterDetail</p></div>
+</div></div>
+</div>
+<a name="setLocalDistance" id="setLocalDistance"></a><div class="element clickable method public setLocalDistance" data-toggle="collapse" data-target=".setLocalDistance .collapse">
+<h2>Distance between customer address (pickup or delivery) and the supporting Freight / National Freight service center.</h2>
+<pre>setLocalDistance(\FedEx\RateService\ComplexType\Distance $localDistance) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$localDistance</h4>
+<code><a href="../classes/FedEx.RateService.ComplexType.Distance.html">\FedEx\RateService\ComplexType\Distance</a></code><p>return FreightServiceCenterDetail</p></div>
+</div></div>
+</div>
+<a name="setLocalDuration" id="setLocalDuration"></a><div class="element clickable method public setLocalDuration" data-toggle="collapse" data-target=".setLocalDuration .collapse">
+<h2>Time to travel between customer address (pickup or delivery) and the supporting Freight / National Freight service center.</h2>
+<pre>setLocalDuration(\FedEx\RateService\ComplexType\duration $localDuration) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$localDuration</h4>
+<code>\FedEx\RateService\ComplexType\duration</code><p>return FreightServiceCenterDetail</p></div>
+</div></div>
+</div>
+<a name="setLocalService" id="setLocalService"></a><div class="element clickable method public setLocalService" data-toggle="collapse" data-target=".setLocalService .collapse">
+<h2>Service branding which may be used for local pickup or delivery, distinct from service used for line-haul of customer's shipment.</h2>
+<pre>setLocalService(\FedEx\RateService\SimpleType\ServiceType $localService) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$localService</h4>
+<code><a href="../classes/FedEx.RateService.SimpleType.ServiceType.html">\FedEx\RateService\SimpleType\ServiceType</a></code><p>return FreightServiceCenterDetail</p></div>
+</div></div>
+</div>
+<a name="setLocalServiceScheduling" id="setLocalServiceScheduling"></a><div class="element clickable method public setLocalServiceScheduling" data-toggle="collapse" data-target=".setLocalServiceScheduling .collapse">
+<h2>Specifies when/how the customer can arrange for pickup or delivery.</h2>
+<pre>setLocalServiceScheduling(\FedEx\RateService\SimpleType\FreightServiceSchedulingType $localServiceScheduling) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$localServiceScheduling</h4>
+<code><a href="../classes/FedEx.RateService.SimpleType.FreightServiceSchedulingType.html">\FedEx\RateService\SimpleType\FreightServiceSchedulingType</a></code><p>return FreightServiceCenterDetail</p></div>
+</div></div>
+</div>
+<a name="setLocation" id="setLocation"></a><div class="element clickable method public setLocation" data-toggle="collapse" data-target=".setLocation .collapse">
+<h2>Alphabetical code identifying a Freight Service Center</h2>
+<pre>setLocation(string $location) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$location</h4>
+<code>string</code><p>return FreightServiceCenterDetail</p></div>
+</div></div>
+</div>
+<a name="toArray" id="toArray"></a><div class="element clickable method public toArray" data-toggle="collapse" data-target=".toArray .collapse">
+<h2>Returns the complex type as an array</h2>
+<pre>toArray(boolean $renderTopKey) : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractComplexType::toArray()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$renderTopKey</h4>
+<code>boolean</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a name="_convertToArray" id="_convertToArray"></a><div class="element clickable method protected _convertToArray" data-toggle="collapse" data-target="._convertToArray .collapse">
+<h2>Recursive algorthim to convert complex types to an array</h2>
+<pre>_convertToArray(array $arrayValues) : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractComplexType::_convertToArray()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$arrayValues</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24_name" id="$_name"> </a><div class="element clickable property protected $_name" data-toggle="collapse" data-target=".$_name .collapse">
+<h2>Name of this complex type</h2>
+<pre>$_name : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_values" id="$_values"> </a><div class="element clickable property protected $_values" data-toggle="collapse" data-target=".$_values .collapse">
+<h2>Holds the data as a key =&gt; value array</h2>
+<pre>$_values : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractComplexType::$$_values</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a8</a> and<br>
+            generated on 2012-07-29T13:58:56-05:00.<br></footer></div>
+</div>
+</body>
+</html>

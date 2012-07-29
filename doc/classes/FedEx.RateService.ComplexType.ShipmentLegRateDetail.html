@@ -1,0 +1,652 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>PHP Fedex API Wrapper » \FedEx\RateService\ComplexType\ShipmentLegRateDetail</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">PHP Fedex API Wrapper</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/FedEx.html"><i class="icon-th"></i> FedEx</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/PHP%20FedEx%20API%20wrapper.html"><i class="icon-folder-open"></i> PHP FedEx API wrapper</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">871</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public inherited"><a href="#__construct" title="__construct :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#__set" title="__set :: __set implementation"><span class="description">__set implementation</span><pre>__set()</pre></a></li>
+<li class="method public "><a href="#setCurrencyExchangeRate" title="setCurrencyExchangeRate :: Specifies the currency exchange performed on financial amounts for this rate."><span class="description">Specifies the currency exchange performed on financial amounts for this rate.</span><pre>setCurrencyExchangeRate()</pre></a></li>
+<li class="method public "><a href="#setDimDivisor" title="setDimDivisor :: Set DimDivisor"><span class="description">Set DimDivisor</span><pre>setDimDivisor()</pre></a></li>
+<li class="method public "><a href="#setDimDivisorType" title="setDimDivisorType :: Identifies the type of dim divisor that was applied."><span class="description">Identifies the type of dim divisor that was applied.</span><pre>setDimDivisorType()</pre></a></li>
+<li class="method public "><a href="#setDutiesAndTaxes" title="setDutiesAndTaxes :: All commodity-based duties and taxes applicable to this shipment."><span class="description">All commodity-based duties and taxes applicable to this shipment.</span><pre>setDutiesAndTaxes()</pre></a></li>
+<li class="method public "><a href="#setFreightDiscounts" title="setFreightDiscounts :: All rate discounts that apply to this shipment."><span class="description">All rate discounts that apply to this shipment.</span><pre>setFreightDiscounts()</pre></a></li>
+<li class="method public "><a href="#setFreightRateDetail" title="setFreightRateDetail :: Rate data specific to FedEx Freight and FedEx National Freight services."><span class="description">Rate data specific to FedEx Freight and FedEx National Freight services.</span><pre>setFreightRateDetail()</pre></a></li>
+<li class="method public "><a href="#setFuelSurchargePercent" title="setFuelSurchargePercent :: Set FuelSurchargePercent"><span class="description">Set FuelSurchargePercent</span><pre>setFuelSurchargePercent()</pre></a></li>
+<li class="method public "><a href="#setLegDescription" title="setLegDescription :: Human-readable text describing the shipment leg."><span class="description">Human-readable text describing the shipment leg.</span><pre>setLegDescription()</pre></a></li>
+<li class="method public "><a href="#setLegDestination" title="setLegDestination :: Destination for this leg."><span class="description">Destination for this leg.</span><pre>setLegDestination()</pre></a></li>
+<li class="method public "><a href="#setLegOrigin" title="setLegOrigin :: Origin for this leg."><span class="description">Origin for this leg.</span><pre>setLegOrigin()</pre></a></li>
+<li class="method public "><a href="#setMinimumChargeType" title="setMinimumChargeType :: INTERNAL FEDEX USE ONLY."><span class="description">INTERNAL FEDEX USE ONLY.</span><pre>setMinimumChargeType()</pre></a></li>
+<li class="method public "><a href="#setPricingCode" title="setPricingCode :: Set PricingCode"><span class="description">Set PricingCode</span><pre>setPricingCode()</pre></a></li>
+<li class="method public "><a href="#setRateScale" title="setRateScale :: Indicates the rate scale used."><span class="description">Indicates the rate scale used.</span><pre>setRateScale()</pre></a></li>
+<li class="method public "><a href="#setRateType" title="setRateType :: Type used for this specific set of rate data."><span class="description">Type used for this specific set of rate data.</span><pre>setRateType()</pre></a></li>
+<li class="method public "><a href="#setRateZone" title="setRateZone :: Indicates the rate zone used (based on origin and destination)."><span class="description">Indicates the rate zone used (based on origin and destination).</span><pre>setRateZone()</pre></a></li>
+<li class="method public "><a href="#setRatedWeightMethod" title="setRatedWeightMethod :: Indicates which weight was used."><span class="description">Indicates which weight was used.</span><pre>setRatedWeightMethod()</pre></a></li>
+<li class="method public "><a href="#setRebates" title="setRebates :: All rebates that apply to this shipment."><span class="description">All rebates that apply to this shipment.</span><pre>setRebates()</pre></a></li>
+<li class="method public "><a href="#setSpecialRatingApplied" title="setSpecialRatingApplied :: Indicates which special rating cases applied to this shipment."><span class="description">Indicates which special rating cases applied to this shipment.</span><pre>setSpecialRatingApplied()</pre></a></li>
+<li class="method public "><a href="#setSurcharges" title="setSurcharges :: All surcharges that apply to this shipment."><span class="description">All surcharges that apply to this shipment.</span><pre>setSurcharges()</pre></a></li>
+<li class="method public "><a href="#setTaxes" title="setTaxes :: All transportation-based taxes applicable to this shipment."><span class="description">All transportation-based taxes applicable to this shipment.</span><pre>setTaxes()</pre></a></li>
+<li class="method public "><a href="#setTotalBaseCharge" title="setTotalBaseCharge :: Set TotalBaseCharge"><span class="description">Set TotalBaseCharge</span><pre>setTotalBaseCharge()</pre></a></li>
+<li class="method public "><a href="#setTotalBillingWeight" title="setTotalBillingWeight :: Set TotalBillingWeight"><span class="description">Set TotalBillingWeight</span><pre>setTotalBillingWeight()</pre></a></li>
+<li class="method public "><a href="#setTotalDimWeight" title="setTotalDimWeight :: Sum of dimensional weights for all packages."><span class="description">Sum of dimensional weights for all packages.</span><pre>setTotalDimWeight()</pre></a></li>
+<li class="method public "><a href="#setTotalDutiesAndTaxes" title="setTotalDutiesAndTaxes :: Total of all values under this shipment's dutiesAndTaxes; only provided if estimated duties and taxes were calculated for this shipment."><span class="description">Total of all values under this shipment's dutiesAndTaxes; only provided if estimated duties and taxes were calculated for this shipment.</span><pre>setTotalDutiesAndTaxes()</pre></a></li>
+<li class="method public "><a href="#setTotalFreightDiscounts" title="setTotalFreightDiscounts :: Set TotalFreightDiscounts"><span class="description">Set TotalFreightDiscounts</span><pre>setTotalFreightDiscounts()</pre></a></li>
+<li class="method public "><a href="#setTotalNetCharge" title="setTotalNetCharge :: Set TotalNetCharge"><span class="description">Set TotalNetCharge</span><pre>setTotalNetCharge()</pre></a></li>
+<li class="method public "><a href="#setTotalNetChargeWithDutiesAndTaxes" title="setTotalNetChargeWithDutiesAndTaxes :: This shipment's totalNetCharge + totalDutiesAndTaxes; only provided if estimated duties and taxes were calculated for this shipment AND duties, taxes and transportation charges are all paid by the same sender's account."><span class="description">This shipment's totalNetCharge + totalDutiesAndTaxes; only provided if estimated duties and taxes were calculated for this shipment AND duties, taxes and transportation charges are all paid by the same sender's account.</span><pre>setTotalNetChargeWithDutiesAndTaxes()</pre></a></li>
+<li class="method public "><a href="#setTotalNetFedExCharge" title="setTotalNetFedExCharge :: This shipment's totalNetFreight + totalSurcharges (not including totalTaxes)."><span class="description">This shipment's totalNetFreight + totalSurcharges (not including totalTaxes).</span><pre>setTotalNetFedExCharge()</pre></a></li>
+<li class="method public "><a href="#setTotalNetFreight" title="setTotalNetFreight :: Set TotalNetFreight"><span class="description">Set TotalNetFreight</span><pre>setTotalNetFreight()</pre></a></li>
+<li class="method public "><a href="#setTotalRebates" title="setTotalRebates :: Set TotalRebates"><span class="description">Set TotalRebates</span><pre>setTotalRebates()</pre></a></li>
+<li class="method public "><a href="#setTotalSurcharges" title="setTotalSurcharges :: Set TotalSurcharges"><span class="description">Set TotalSurcharges</span><pre>setTotalSurcharges()</pre></a></li>
+<li class="method public "><a href="#setTotalTaxes" title="setTotalTaxes :: Total of the transportation-based taxes."><span class="description">Total of the transportation-based taxes.</span><pre>setTotalTaxes()</pre></a></li>
+<li class="method public "><a href="#setTotalVariableHandlingCharges" title="setTotalVariableHandlingCharges :: The total of all variable handling charges at both shipment (order) and package level."><span class="description">The total of all variable handling charges at both shipment (order) and package level.</span><pre>setTotalVariableHandlingCharges()</pre></a></li>
+<li class="method public "><a href="#setVariableHandlingCharges" title='setVariableHandlingCharges :: The "order level" variable handling charges.'><span class="description">The "order level" variable handling charges.</span><pre>setVariableHandlingCharges()</pre></a></li>
+<li class="method public inherited"><a href="#toArray" title="toArray :: Returns the complex type as an array"><span class="description">Returns the complex type as an array</span><pre>toArray()</pre></a></li>
+<li class="nav-header protected">» Protected</li>
+<li class="method protected inherited"><a href="#_convertToArray" title="_convertToArray :: Recursive algorthim to convert complex types to an array"><span class="description">Recursive algorthim to convert complex types to an array</span><pre>_convertToArray()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header protected">» Protected</li>
+<li class="property protected "><a href="#%24_name" title="$_name :: Name of this complex type"><span class="description">Name of this complex type</span><pre>$_name</pre></a></li>
+<li class="property protected inherited"><a href="#%24_values" title="$_values :: Holds the data as a key =&gt; value array"><span class="description">Holds the data as a key =&gt; value array</span><pre>$_values</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CFedEx%5CRateService%5CComplexType%5CShipmentLegRateDetail" id="\FedEx\RateService\ComplexType\ShipmentLegRateDetail"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/FedEx.html">FedEx</a></li>
+<span class="divider">\</span><li><a href="../namespaces/FedEx.RateService.html">RateService</a></li>
+<span class="divider">\</span><li><a href="../namespaces/FedEx.RateService.ComplexType.html">ComplexType</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/FedEx.RateService.ComplexType.ShipmentLegRateDetail.html">ShipmentLegRateDetail</a>
+</li>
+</ul>
+<div href="../classes/FedEx.RateService.ComplexType.ShipmentLegRateDetail.html" class="element class">
+<p class="short_description">Data for a single leg of a shipment's total/summary rates, as calculated per a specific rate type.</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="mailto:jeremy@jsdunn.info">Jeremy Dunn</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/PHP%20FedEx%20API%20wrapper.Rate%20Service.html">PHP FedEx API wrapper</a></td>
+</tr>
+<tr>
+<th>subpackage</th>
+<td>Rate Service</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Constructor</h2>
+<pre>__construct(array $options) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractComplexType::__construct()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code><p>Data as key => value array</p>
+</div>
+</div></div>
+</div>
+<a name="__set" id="__set"></a><div class="element clickable method public __set" data-toggle="collapse" data-target=".__set .collapse">
+<h2>__set implementation</h2>
+<pre>__set(string $name, string $value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractComplexType::__set()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="setCurrencyExchangeRate" id="setCurrencyExchangeRate"></a><div class="element clickable method public setCurrencyExchangeRate" data-toggle="collapse" data-target=".setCurrencyExchangeRate .collapse">
+<h2>Specifies the currency exchange performed on financial amounts for this rate.</h2>
+<pre>setCurrencyExchangeRate(\FedEx\RateService\ComplexType\CurrencyExchangeRate $currencyExchangeRate) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$currencyExchangeRate</h4>
+<code><a href="../classes/FedEx.RateService.ComplexType.CurrencyExchangeRate.html">\FedEx\RateService\ComplexType\CurrencyExchangeRate</a></code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setDimDivisor" id="setDimDivisor"></a><div class="element clickable method public setDimDivisor" data-toggle="collapse" data-target=".setDimDivisor .collapse">
+<h2>Set DimDivisor</h2>
+<pre>setDimDivisor(\FedEx\RateService\ComplexType\nonNegativeInteger $dimDivisor) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$dimDivisor</h4>
+<code>\FedEx\RateService\ComplexType\nonNegativeInteger</code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setDimDivisorType" id="setDimDivisorType"></a><div class="element clickable method public setDimDivisorType" data-toggle="collapse" data-target=".setDimDivisorType .collapse">
+<h2>Identifies the type of dim divisor that was applied.</h2>
+<pre>setDimDivisorType(\FedEx\RateService\SimpleType\RateDimensionalDivisorType $dimDivisorType) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$dimDivisorType</h4>
+<code><a href="../classes/FedEx.RateService.SimpleType.RateDimensionalDivisorType.html">\FedEx\RateService\SimpleType\RateDimensionalDivisorType</a></code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setDutiesAndTaxes" id="setDutiesAndTaxes"></a><div class="element clickable method public setDutiesAndTaxes" data-toggle="collapse" data-target=".setDutiesAndTaxes .collapse">
+<h2>All commodity-based duties and taxes applicable to this shipment.</h2>
+<pre>setDutiesAndTaxes(array $dutiesAndTaxes) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$dutiesAndTaxes</h4>
+<code><a href="RateService.ComplexType.EdtCommodityTax.html#%5CFedEx%5CRateService%5CComplexType%5CEdtCommodityTax">\FedEx\RateService\ComplexType\EdtCommodityTax[]</a></code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setFreightDiscounts" id="setFreightDiscounts"></a><div class="element clickable method public setFreightDiscounts" data-toggle="collapse" data-target=".setFreightDiscounts .collapse">
+<h2>All rate discounts that apply to this shipment.</h2>
+<pre>setFreightDiscounts(array $freightDiscounts) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$freightDiscounts</h4>
+<code><a href="RateService.ComplexType.RateDiscount.html#%5CFedEx%5CRateService%5CComplexType%5CRateDiscount">\FedEx\RateService\ComplexType\RateDiscount[]</a></code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setFreightRateDetail" id="setFreightRateDetail"></a><div class="element clickable method public setFreightRateDetail" data-toggle="collapse" data-target=".setFreightRateDetail .collapse">
+<h2>Rate data specific to FedEx Freight and FedEx National Freight services.</h2>
+<pre>setFreightRateDetail(\FedEx\RateService\ComplexType\FreightRateDetail $freightRateDetail) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$freightRateDetail</h4>
+<code><a href="../classes/FedEx.RateService.ComplexType.FreightRateDetail.html">\FedEx\RateService\ComplexType\FreightRateDetail</a></code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setFuelSurchargePercent" id="setFuelSurchargePercent"></a><div class="element clickable method public setFuelSurchargePercent" data-toggle="collapse" data-target=".setFuelSurchargePercent .collapse">
+<h2>Set FuelSurchargePercent</h2>
+<pre>setFuelSurchargePercent(\FedEx\RateService\ComplexType\decimal $fuelSurchargePercent) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$fuelSurchargePercent</h4>
+<code>\FedEx\RateService\ComplexType\decimal</code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setLegDescription" id="setLegDescription"></a><div class="element clickable method public setLegDescription" data-toggle="collapse" data-target=".setLegDescription .collapse">
+<h2>Human-readable text describing the shipment leg.</h2>
+<pre>setLegDescription(string $legDescription) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$legDescription</h4>
+<code>string</code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setLegDestination" id="setLegDestination"></a><div class="element clickable method public setLegDestination" data-toggle="collapse" data-target=".setLegDestination .collapse">
+<h2>Destination for this leg.</h2>
+<pre>setLegDestination(\FedEx\RateService\ComplexType\Address $legDestination) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$legDestination</h4>
+<code><a href="../classes/FedEx.RateService.ComplexType.Address.html">\FedEx\RateService\ComplexType\Address</a></code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setLegOrigin" id="setLegOrigin"></a><div class="element clickable method public setLegOrigin" data-toggle="collapse" data-target=".setLegOrigin .collapse">
+<h2>Origin for this leg.</h2>
+<pre>setLegOrigin(\FedEx\RateService\ComplexType\Address $legOrigin) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$legOrigin</h4>
+<code><a href="../classes/FedEx.RateService.ComplexType.Address.html">\FedEx\RateService\ComplexType\Address</a></code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setMinimumChargeType" id="setMinimumChargeType"></a><div class="element clickable method public setMinimumChargeType" data-toggle="collapse" data-target=".setMinimumChargeType .collapse">
+<h2>INTERNAL FEDEX USE ONLY.</h2>
+<pre>setMinimumChargeType(\FedEx\RateService\SimpleType\MinimumChargeType $minimumChargeType) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$minimumChargeType</h4>
+<code><a href="../classes/FedEx.RateService.SimpleType.MinimumChargeType.html">\FedEx\RateService\SimpleType\MinimumChargeType</a></code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setPricingCode" id="setPricingCode"></a><div class="element clickable method public setPricingCode" data-toggle="collapse" data-target=".setPricingCode .collapse">
+<h2>Set PricingCode</h2>
+<pre>setPricingCode(\FedEx\RateService\SimpleType\PricingCodeType $pricingCode) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pricingCode</h4>
+<code><a href="../classes/FedEx.RateService.SimpleType.PricingCodeType.html">\FedEx\RateService\SimpleType\PricingCodeType</a></code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setRateScale" id="setRateScale"></a><div class="element clickable method public setRateScale" data-toggle="collapse" data-target=".setRateScale .collapse">
+<h2>Indicates the rate scale used.</h2>
+<pre>setRateScale(string $rateScale) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$rateScale</h4>
+<code>string</code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setRateType" id="setRateType"></a><div class="element clickable method public setRateType" data-toggle="collapse" data-target=".setRateType .collapse">
+<h2>Type used for this specific set of rate data.</h2>
+<pre>setRateType(\FedEx\RateService\SimpleType\ReturnedRateType $rateType) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$rateType</h4>
+<code><a href="../classes/FedEx.RateService.SimpleType.ReturnedRateType.html">\FedEx\RateService\SimpleType\ReturnedRateType</a></code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setRateZone" id="setRateZone"></a><div class="element clickable method public setRateZone" data-toggle="collapse" data-target=".setRateZone .collapse">
+<h2>Indicates the rate zone used (based on origin and destination).</h2>
+<pre>setRateZone(string $rateZone) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$rateZone</h4>
+<code>string</code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setRatedWeightMethod" id="setRatedWeightMethod"></a><div class="element clickable method public setRatedWeightMethod" data-toggle="collapse" data-target=".setRatedWeightMethod .collapse">
+<h2>Indicates which weight was used.</h2>
+<pre>setRatedWeightMethod(\FedEx\RateService\SimpleType\RatedWeightMethod $ratedWeightMethod) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$ratedWeightMethod</h4>
+<code><a href="../classes/FedEx.RateService.SimpleType.RatedWeightMethod.html">\FedEx\RateService\SimpleType\RatedWeightMethod</a></code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setRebates" id="setRebates"></a><div class="element clickable method public setRebates" data-toggle="collapse" data-target=".setRebates .collapse">
+<h2>All rebates that apply to this shipment.</h2>
+<pre>setRebates(array $rebates) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$rebates</h4>
+<code><a href="RateService.ComplexType.Rebate.html#%5CFedEx%5CRateService%5CComplexType%5CRebate">\FedEx\RateService\ComplexType\Rebate[]</a></code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setSpecialRatingApplied" id="setSpecialRatingApplied"></a><div class="element clickable method public setSpecialRatingApplied" data-toggle="collapse" data-target=".setSpecialRatingApplied .collapse">
+<h2>Indicates which special rating cases applied to this shipment.</h2>
+<pre>setSpecialRatingApplied(array $specialRatingApplied) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$specialRatingApplied</h4>
+<code>\FedEx\RateService\ComplexType\SpecialRatingAppliedType[]</code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setSurcharges" id="setSurcharges"></a><div class="element clickable method public setSurcharges" data-toggle="collapse" data-target=".setSurcharges .collapse">
+<h2>All surcharges that apply to this shipment.</h2>
+<pre>setSurcharges(array $surcharges) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$surcharges</h4>
+<code><a href="RateService.ComplexType.Surcharge.html#%5CFedEx%5CRateService%5CComplexType%5CSurcharge">\FedEx\RateService\ComplexType\Surcharge[]</a></code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setTaxes" id="setTaxes"></a><div class="element clickable method public setTaxes" data-toggle="collapse" data-target=".setTaxes .collapse">
+<h2>All transportation-based taxes applicable to this shipment.</h2>
+<pre>setTaxes(array $taxes) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$taxes</h4>
+<code><a href="RateService.ComplexType.Tax.html#%5CFedEx%5CRateService%5CComplexType%5CTax">\FedEx\RateService\ComplexType\Tax[]</a></code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setTotalBaseCharge" id="setTotalBaseCharge"></a><div class="element clickable method public setTotalBaseCharge" data-toggle="collapse" data-target=".setTotalBaseCharge .collapse">
+<h2>Set TotalBaseCharge</h2>
+<pre>setTotalBaseCharge(\FedEx\RateService\ComplexType\Money $totalBaseCharge) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$totalBaseCharge</h4>
+<code><a href="../classes/FedEx.RateService.ComplexType.Money.html">\FedEx\RateService\ComplexType\Money</a></code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setTotalBillingWeight" id="setTotalBillingWeight"></a><div class="element clickable method public setTotalBillingWeight" data-toggle="collapse" data-target=".setTotalBillingWeight .collapse">
+<h2>Set TotalBillingWeight</h2>
+<pre>setTotalBillingWeight(\FedEx\RateService\ComplexType\Weight $totalBillingWeight) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$totalBillingWeight</h4>
+<code><a href="../classes/FedEx.RateService.ComplexType.Weight.html">\FedEx\RateService\ComplexType\Weight</a></code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setTotalDimWeight" id="setTotalDimWeight"></a><div class="element clickable method public setTotalDimWeight" data-toggle="collapse" data-target=".setTotalDimWeight .collapse">
+<h2>Sum of dimensional weights for all packages.</h2>
+<pre>setTotalDimWeight(\FedEx\RateService\ComplexType\Weight $totalDimWeight) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$totalDimWeight</h4>
+<code><a href="../classes/FedEx.RateService.ComplexType.Weight.html">\FedEx\RateService\ComplexType\Weight</a></code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setTotalDutiesAndTaxes" id="setTotalDutiesAndTaxes"></a><div class="element clickable method public setTotalDutiesAndTaxes" data-toggle="collapse" data-target=".setTotalDutiesAndTaxes .collapse">
+<h2>Total of all values under this shipment's dutiesAndTaxes; only provided if estimated duties and taxes were calculated for this shipment.</h2>
+<pre>setTotalDutiesAndTaxes(\FedEx\RateService\ComplexType\Money $totalDutiesAndTaxes) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$totalDutiesAndTaxes</h4>
+<code><a href="../classes/FedEx.RateService.ComplexType.Money.html">\FedEx\RateService\ComplexType\Money</a></code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setTotalFreightDiscounts" id="setTotalFreightDiscounts"></a><div class="element clickable method public setTotalFreightDiscounts" data-toggle="collapse" data-target=".setTotalFreightDiscounts .collapse">
+<h2>Set TotalFreightDiscounts</h2>
+<pre>setTotalFreightDiscounts(\FedEx\RateService\ComplexType\Money $totalFreightDiscounts) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$totalFreightDiscounts</h4>
+<code><a href="../classes/FedEx.RateService.ComplexType.Money.html">\FedEx\RateService\ComplexType\Money</a></code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setTotalNetCharge" id="setTotalNetCharge"></a><div class="element clickable method public setTotalNetCharge" data-toggle="collapse" data-target=".setTotalNetCharge .collapse">
+<h2>Set TotalNetCharge</h2>
+<pre>setTotalNetCharge(\FedEx\RateService\ComplexType\Money $totalNetCharge) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$totalNetCharge</h4>
+<code><a href="../classes/FedEx.RateService.ComplexType.Money.html">\FedEx\RateService\ComplexType\Money</a></code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setTotalNetChargeWithDutiesAndTaxes" id="setTotalNetChargeWithDutiesAndTaxes"></a><div class="element clickable method public setTotalNetChargeWithDutiesAndTaxes" data-toggle="collapse" data-target=".setTotalNetChargeWithDutiesAndTaxes .collapse">
+<h2>This shipment's totalNetCharge + totalDutiesAndTaxes; only provided if estimated duties and taxes were calculated for this shipment AND duties, taxes and transportation charges are all paid by the same sender's account.</h2>
+<pre>setTotalNetChargeWithDutiesAndTaxes(\FedEx\RateService\ComplexType\Money $totalNetChargeWithDutiesAndTaxes) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$totalNetChargeWithDutiesAndTaxes</h4>
+<code><a href="../classes/FedEx.RateService.ComplexType.Money.html">\FedEx\RateService\ComplexType\Money</a></code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setTotalNetFedExCharge" id="setTotalNetFedExCharge"></a><div class="element clickable method public setTotalNetFedExCharge" data-toggle="collapse" data-target=".setTotalNetFedExCharge .collapse">
+<h2>This shipment's totalNetFreight + totalSurcharges (not including totalTaxes).</h2>
+<pre>setTotalNetFedExCharge(\FedEx\RateService\ComplexType\Money $totalNetFedExCharge) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$totalNetFedExCharge</h4>
+<code><a href="../classes/FedEx.RateService.ComplexType.Money.html">\FedEx\RateService\ComplexType\Money</a></code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setTotalNetFreight" id="setTotalNetFreight"></a><div class="element clickable method public setTotalNetFreight" data-toggle="collapse" data-target=".setTotalNetFreight .collapse">
+<h2>Set TotalNetFreight</h2>
+<pre>setTotalNetFreight(\FedEx\RateService\ComplexType\Money $totalNetFreight) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$totalNetFreight</h4>
+<code><a href="../classes/FedEx.RateService.ComplexType.Money.html">\FedEx\RateService\ComplexType\Money</a></code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setTotalRebates" id="setTotalRebates"></a><div class="element clickable method public setTotalRebates" data-toggle="collapse" data-target=".setTotalRebates .collapse">
+<h2>Set TotalRebates</h2>
+<pre>setTotalRebates(\FedEx\RateService\ComplexType\Money $totalRebates) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$totalRebates</h4>
+<code><a href="../classes/FedEx.RateService.ComplexType.Money.html">\FedEx\RateService\ComplexType\Money</a></code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setTotalSurcharges" id="setTotalSurcharges"></a><div class="element clickable method public setTotalSurcharges" data-toggle="collapse" data-target=".setTotalSurcharges .collapse">
+<h2>Set TotalSurcharges</h2>
+<pre>setTotalSurcharges(\FedEx\RateService\ComplexType\Money $totalSurcharges) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$totalSurcharges</h4>
+<code><a href="../classes/FedEx.RateService.ComplexType.Money.html">\FedEx\RateService\ComplexType\Money</a></code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setTotalTaxes" id="setTotalTaxes"></a><div class="element clickable method public setTotalTaxes" data-toggle="collapse" data-target=".setTotalTaxes .collapse">
+<h2>Total of the transportation-based taxes.</h2>
+<pre>setTotalTaxes(\FedEx\RateService\ComplexType\Money $totalTaxes) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$totalTaxes</h4>
+<code><a href="../classes/FedEx.RateService.ComplexType.Money.html">\FedEx\RateService\ComplexType\Money</a></code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setTotalVariableHandlingCharges" id="setTotalVariableHandlingCharges"></a><div class="element clickable method public setTotalVariableHandlingCharges" data-toggle="collapse" data-target=".setTotalVariableHandlingCharges .collapse">
+<h2>The total of all variable handling charges at both shipment (order) and package level.</h2>
+<pre>setTotalVariableHandlingCharges(\FedEx\RateService\ComplexType\VariableHandlingCharges $totalVariableHandlingCharges) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$totalVariableHandlingCharges</h4>
+<code><a href="../classes/FedEx.RateService.ComplexType.VariableHandlingCharges.html">\FedEx\RateService\ComplexType\VariableHandlingCharges</a></code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="setVariableHandlingCharges" id="setVariableHandlingCharges"></a><div class="element clickable method public setVariableHandlingCharges" data-toggle="collapse" data-target=".setVariableHandlingCharges .collapse">
+<h2>The "order level" variable handling charges.</h2>
+<pre>setVariableHandlingCharges(\FedEx\RateService\ComplexType\VariableHandlingCharges $variableHandlingCharges) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$variableHandlingCharges</h4>
+<code><a href="../classes/FedEx.RateService.ComplexType.VariableHandlingCharges.html">\FedEx\RateService\ComplexType\VariableHandlingCharges</a></code><p>return ShipmentLegRateDetail</p></div>
+</div></div>
+</div>
+<a name="toArray" id="toArray"></a><div class="element clickable method public toArray" data-toggle="collapse" data-target=".toArray .collapse">
+<h2>Returns the complex type as an array</h2>
+<pre>toArray(boolean $renderTopKey) : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractComplexType::toArray()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$renderTopKey</h4>
+<code>boolean</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a name="_convertToArray" id="_convertToArray"></a><div class="element clickable method protected _convertToArray" data-toggle="collapse" data-target="._convertToArray .collapse">
+<h2>Recursive algorthim to convert complex types to an array</h2>
+<pre>_convertToArray(array $arrayValues) : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractComplexType::_convertToArray()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$arrayValues</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24_name" id="$_name"> </a><div class="element clickable property protected $_name" data-toggle="collapse" data-target=".$_name .collapse">
+<h2>Name of this complex type</h2>
+<pre>$_name : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_values" id="$_values"> </a><div class="element clickable property protected $_values" data-toggle="collapse" data-target=".$_values .collapse">
+<h2>Holds the data as a key =&gt; value array</h2>
+<pre>$_values : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractComplexType::$$_values</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a8</a> and<br>
+            generated on 2012-07-29T13:58:58-05:00.<br></footer></div>
+</div>
+</body>
+</html>

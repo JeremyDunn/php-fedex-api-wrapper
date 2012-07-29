@@ -1,0 +1,677 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>PHP Fedex API Wrapper » \FedEx\Pickup\SimpleType\ShipmentSpecialServiceType</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">PHP Fedex API Wrapper</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/FedEx.html"><i class="icon-th"></i> FedEx</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/PHP%20FedEx%20API%20wrapper.html"><i class="icon-folder-open"></i> PHP FedEx API wrapper</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">871</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public inherited"><a href="#__construct" title="__construct :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#__toString" title="__toString :: __toString() implementation"><span class="description">__toString() implementation</span><pre>__toString()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header protected">» Protected</li>
+<li class="property protected inherited"><a href="#%24_value" title="$_value :: "><span class="description">$_value</span><pre>$_value</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  "><a href="#_BLIND_SHIPMENT" title="_BLIND_SHIPMENT :: "><span class="description">_BLIND_SHIPMENT</span><pre>_BLIND_SHIPMENT</pre></a></li>
+<li class="constant  "><a href="#_BROKER_SELECT_OPTION" title="_BROKER_SELECT_OPTION :: "><span class="description">_BROKER_SELECT_OPTION</span><pre>_BROKER_SELECT_OPTION</pre></a></li>
+<li class="constant  "><a href="#_CALL_BEFORE_DELIVERY" title="_CALL_BEFORE_DELIVERY :: "><span class="description">_CALL_BEFORE_DELIVERY</span><pre>_CALL_BEFORE_DELIVERY</pre></a></li>
+<li class="constant  "><a href="#_COD" title="_COD :: "><span class="description">_COD</span><pre>_COD</pre></a></li>
+<li class="constant  "><a href="#_COD_REMITTANCE" title="_COD_REMITTANCE :: "><span class="description">_COD_REMITTANCE</span><pre>_COD_REMITTANCE</pre></a></li>
+<li class="constant  "><a href="#_CUSTOM_DELIVERY_WINDOW" title="_CUSTOM_DELIVERY_WINDOW :: "><span class="description">_CUSTOM_DELIVERY_WINDOW</span><pre>_CUSTOM_DELIVERY_WINDOW</pre></a></li>
+<li class="constant  "><a href="#_CUT_FLOWERS" title="_CUT_FLOWERS :: "><span class="description">_CUT_FLOWERS</span><pre>_CUT_FLOWERS</pre></a></li>
+<li class="constant  "><a href="#_DANGEROUS_GOODS" title="_DANGEROUS_GOODS :: "><span class="description">_DANGEROUS_GOODS</span><pre>_DANGEROUS_GOODS</pre></a></li>
+<li class="constant  "><a href="#_DELIVERY_ON_INVOICE_ACCEPTANCE" title="_DELIVERY_ON_INVOICE_ACCEPTANCE :: "><span class="description">_DELIVERY_ON_INVOICE_ACCEPTANCE</span><pre>_DELIVERY_ON_INVOICE_ACCEPTANCE</pre></a></li>
+<li class="constant  "><a href="#_DETENTION" title="_DETENTION :: "><span class="description">_DETENTION</span><pre>_DETENTION</pre></a></li>
+<li class="constant  "><a href="#_DO_NOT_BREAK_DOWN_PALLETS" title="_DO_NOT_BREAK_DOWN_PALLETS :: "><span class="description">_DO_NOT_BREAK_DOWN_PALLETS</span><pre>_DO_NOT_BREAK_DOWN_PALLETS</pre></a></li>
+<li class="constant  "><a href="#_DO_NOT_STACK_PALLETS" title="_DO_NOT_STACK_PALLETS :: "><span class="description">_DO_NOT_STACK_PALLETS</span><pre>_DO_NOT_STACK_PALLETS</pre></a></li>
+<li class="constant  "><a href="#_DRY_ICE" title="_DRY_ICE :: "><span class="description">_DRY_ICE</span><pre>_DRY_ICE</pre></a></li>
+<li class="constant  "><a href="#_EAST_COAST_SPECIAL" title="_EAST_COAST_SPECIAL :: "><span class="description">_EAST_COAST_SPECIAL</span><pre>_EAST_COAST_SPECIAL</pre></a></li>
+<li class="constant  "><a href="#_ELECTRONIC_TRADE_DOCUMENTS" title="_ELECTRONIC_TRADE_DOCUMENTS :: "><span class="description">_ELECTRONIC_TRADE_DOCUMENTS</span><pre>_ELECTRONIC_TRADE_DOCUMENTS</pre></a></li>
+<li class="constant  "><a href="#_EMAIL_NOTIFICATION" title="_EMAIL_NOTIFICATION :: "><span class="description">_EMAIL_NOTIFICATION</span><pre>_EMAIL_NOTIFICATION</pre></a></li>
+<li class="constant  "><a href="#_EMAIL_NOTIFICATION_AGGREGATED" title="_EMAIL_NOTIFICATION_AGGREGATED :: "><span class="description">_EMAIL_NOTIFICATION_AGGREGATED</span><pre>_EMAIL_NOTIFICATION_AGGREGATED</pre></a></li>
+<li class="constant  "><a href="#_EXCLUSIVE_USE" title="_EXCLUSIVE_USE :: "><span class="description">_EXCLUSIVE_USE</span><pre>_EXCLUSIVE_USE</pre></a></li>
+<li class="constant  "><a href="#_EXHIBITION_DELIVERY" title="_EXHIBITION_DELIVERY :: "><span class="description">_EXHIBITION_DELIVERY</span><pre>_EXHIBITION_DELIVERY</pre></a></li>
+<li class="constant  "><a href="#_EXHIBITION_PICKUP" title="_EXHIBITION_PICKUP :: "><span class="description">_EXHIBITION_PICKUP</span><pre>_EXHIBITION_PICKUP</pre></a></li>
+<li class="constant  "><a href="#_EXPEDITED_ALTERNATE_DELIVERY_ROUTE" title="_EXPEDITED_ALTERNATE_DELIVERY_ROUTE :: "><span class="description">_EXPEDITED_ALTERNATE_DELIVERY_ROUTE</span><pre>_EXPEDITED_ALTERNATE_DELIVERY_ROUTE</pre></a></li>
+<li class="constant  "><a href="#_EXPEDITED_ONE_DAY_EARLIER" title="_EXPEDITED_ONE_DAY_EARLIER :: "><span class="description">_EXPEDITED_ONE_DAY_EARLIER</span><pre>_EXPEDITED_ONE_DAY_EARLIER</pre></a></li>
+<li class="constant  "><a href="#_EXPEDITED_SERVICE_MONITORING_AND_DELIVERY" title="_EXPEDITED_SERVICE_MONITORING_AND_DELIVERY :: "><span class="description">_EXPEDITED_SERVICE_MONITORING_AND_DELIVERY</span><pre>_EXPEDITED_SERVICE_MONITORING_AND_DELIVERY</pre></a></li>
+<li class="constant  "><a href="#_EXPEDITED_STANDARD_DAY_EARLY_DELIVERY" title="_EXPEDITED_STANDARD_DAY_EARLY_DELIVERY :: "><span class="description">_EXPEDITED_STANDARD_DAY_EARLY_DELIVERY</span><pre>_EXPEDITED_STANDARD_DAY_EARLY_DELIVERY</pre></a></li>
+<li class="constant  "><a href="#_EXTRA_LABOR" title="_EXTRA_LABOR :: "><span class="description">_EXTRA_LABOR</span><pre>_EXTRA_LABOR</pre></a></li>
+<li class="constant  "><a href="#_EXTREME_LENGTH" title="_EXTREME_LENGTH :: "><span class="description">_EXTREME_LENGTH</span><pre>_EXTREME_LENGTH</pre></a></li>
+<li class="constant  "><a href="#_FLATBED_TRAILER" title="_FLATBED_TRAILER :: "><span class="description">_FLATBED_TRAILER</span><pre>_FLATBED_TRAILER</pre></a></li>
+<li class="constant  "><a href="#_FOOD" title="_FOOD :: "><span class="description">_FOOD</span><pre>_FOOD</pre></a></li>
+<li class="constant  "><a href="#_FREIGHT_GUARANTEE" title="_FREIGHT_GUARANTEE :: "><span class="description">_FREIGHT_GUARANTEE</span><pre>_FREIGHT_GUARANTEE</pre></a></li>
+<li class="constant  "><a href="#_FREIGHT_TO_COLLECT" title="_FREIGHT_TO_COLLECT :: "><span class="description">_FREIGHT_TO_COLLECT</span><pre>_FREIGHT_TO_COLLECT</pre></a></li>
+<li class="constant  "><a href="#_FUTURE_DAY_SHIPMENT" title="_FUTURE_DAY_SHIPMENT :: "><span class="description">_FUTURE_DAY_SHIPMENT</span><pre>_FUTURE_DAY_SHIPMENT</pre></a></li>
+<li class="constant  "><a href="#_HOLD_AT_LOCATION" title="_HOLD_AT_LOCATION :: "><span class="description">_HOLD_AT_LOCATION</span><pre>_HOLD_AT_LOCATION</pre></a></li>
+<li class="constant  "><a href="#_HOLIDAY_DELIVERY" title="_HOLIDAY_DELIVERY :: "><span class="description">_HOLIDAY_DELIVERY</span><pre>_HOLIDAY_DELIVERY</pre></a></li>
+<li class="constant  "><a href="#_HOLIDAY_GUARANTEE" title="_HOLIDAY_GUARANTEE :: "><span class="description">_HOLIDAY_GUARANTEE</span><pre>_HOLIDAY_GUARANTEE</pre></a></li>
+<li class="constant  "><a href="#_HOME_DELIVERY_PREMIUM" title="_HOME_DELIVERY_PREMIUM :: "><span class="description">_HOME_DELIVERY_PREMIUM</span><pre>_HOME_DELIVERY_PREMIUM</pre></a></li>
+<li class="constant  "><a href="#_INSIDE_DELIVERY" title="_INSIDE_DELIVERY :: "><span class="description">_INSIDE_DELIVERY</span><pre>_INSIDE_DELIVERY</pre></a></li>
+<li class="constant  "><a href="#_INSIDE_PICKUP" title="_INSIDE_PICKUP :: "><span class="description">_INSIDE_PICKUP</span><pre>_INSIDE_PICKUP</pre></a></li>
+<li class="constant  "><a href="#_INTERNATIONAL_CONTROLLED_EXPORT_SERVICE" title="_INTERNATIONAL_CONTROLLED_EXPORT_SERVICE :: "><span class="description">_INTERNATIONAL_CONTROLLED_EXPORT_SERVICE</span><pre>_INTERNATIONAL_CONTROLLED_EXPORT_SERVICE</pre></a></li>
+<li class="constant  "><a href="#_INTERNATIONAL_MAIL_SERVICE" title="_INTERNATIONAL_MAIL_SERVICE :: "><span class="description">_INTERNATIONAL_MAIL_SERVICE</span><pre>_INTERNATIONAL_MAIL_SERVICE</pre></a></li>
+<li class="constant  "><a href="#_LIFTGATE_DELIVERY" title="_LIFTGATE_DELIVERY :: "><span class="description">_LIFTGATE_DELIVERY</span><pre>_LIFTGATE_DELIVERY</pre></a></li>
+<li class="constant  "><a href="#_LIFTGATE_PICKUP" title="_LIFTGATE_PICKUP :: "><span class="description">_LIFTGATE_PICKUP</span><pre>_LIFTGATE_PICKUP</pre></a></li>
+<li class="constant  "><a href="#_LIMITED_ACCESS_DELIVERY" title="_LIMITED_ACCESS_DELIVERY :: "><span class="description">_LIMITED_ACCESS_DELIVERY</span><pre>_LIMITED_ACCESS_DELIVERY</pre></a></li>
+<li class="constant  "><a href="#_LIMITED_ACCESS_PICKUP" title="_LIMITED_ACCESS_PICKUP :: "><span class="description">_LIMITED_ACCESS_PICKUP</span><pre>_LIMITED_ACCESS_PICKUP</pre></a></li>
+<li class="constant  "><a href="#_MARKING_OR_TAGGING" title="_MARKING_OR_TAGGING :: "><span class="description">_MARKING_OR_TAGGING</span><pre>_MARKING_OR_TAGGING</pre></a></li>
+<li class="constant  "><a href="#_NON_BUSINESS_TIME" title="_NON_BUSINESS_TIME :: "><span class="description">_NON_BUSINESS_TIME</span><pre>_NON_BUSINESS_TIME</pre></a></li>
+<li class="constant  "><a href="#_PALLETS_PROVIDED" title="_PALLETS_PROVIDED :: "><span class="description">_PALLETS_PROVIDED</span><pre>_PALLETS_PROVIDED</pre></a></li>
+<li class="constant  "><a href="#_PALLET_SHRINKWRAP" title="_PALLET_SHRINKWRAP :: "><span class="description">_PALLET_SHRINKWRAP</span><pre>_PALLET_SHRINKWRAP</pre></a></li>
+<li class="constant  "><a href="#_PALLET_WEIGHT_ALLOWANCE" title="_PALLET_WEIGHT_ALLOWANCE :: "><span class="description">_PALLET_WEIGHT_ALLOWANCE</span><pre>_PALLET_WEIGHT_ALLOWANCE</pre></a></li>
+<li class="constant  "><a href="#_PENDING_COMPLETE" title="_PENDING_COMPLETE :: "><span class="description">_PENDING_COMPLETE</span><pre>_PENDING_COMPLETE</pre></a></li>
+<li class="constant  "><a href="#_PENDING_SHIPMENT" title="_PENDING_SHIPMENT :: "><span class="description">_PENDING_SHIPMENT</span><pre>_PENDING_SHIPMENT</pre></a></li>
+<li class="constant  "><a href="#_PERMIT" title="_PERMIT :: "><span class="description">_PERMIT</span><pre>_PERMIT</pre></a></li>
+<li class="constant  "><a href="#_POISON" title="_POISON :: "><span class="description">_POISON</span><pre>_POISON</pre></a></li>
+<li class="constant  "><a href="#_PORT_DELIVERY" title="_PORT_DELIVERY :: "><span class="description">_PORT_DELIVERY</span><pre>_PORT_DELIVERY</pre></a></li>
+<li class="constant  "><a href="#_PORT_PICKUP" title="_PORT_PICKUP :: "><span class="description">_PORT_PICKUP</span><pre>_PORT_PICKUP</pre></a></li>
+<li class="constant  "><a href="#_PRE_DELIVERY_NOTIFICATION" title="_PRE_DELIVERY_NOTIFICATION :: "><span class="description">_PRE_DELIVERY_NOTIFICATION</span><pre>_PRE_DELIVERY_NOTIFICATION</pre></a></li>
+<li class="constant  "><a href="#_PRE_EIG_PROCESSING" title="_PRE_EIG_PROCESSING :: "><span class="description">_PRE_EIG_PROCESSING</span><pre>_PRE_EIG_PROCESSING</pre></a></li>
+<li class="constant  "><a href="#_PRE_MULTIPLIER_PROCESSING" title="_PRE_MULTIPLIER_PROCESSING :: "><span class="description">_PRE_MULTIPLIER_PROCESSING</span><pre>_PRE_MULTIPLIER_PROCESSING</pre></a></li>
+<li class="constant  "><a href="#_PROTECTION_FROM_FREEZING" title="_PROTECTION_FROM_FREEZING :: "><span class="description">_PROTECTION_FROM_FREEZING</span><pre>_PROTECTION_FROM_FREEZING</pre></a></li>
+<li class="constant  "><a href="#_REGIONAL_MALL_DELIVERY" title="_REGIONAL_MALL_DELIVERY :: "><span class="description">_REGIONAL_MALL_DELIVERY</span><pre>_REGIONAL_MALL_DELIVERY</pre></a></li>
+<li class="constant  "><a href="#_REGIONAL_MALL_PICKUP" title="_REGIONAL_MALL_PICKUP :: "><span class="description">_REGIONAL_MALL_PICKUP</span><pre>_REGIONAL_MALL_PICKUP</pre></a></li>
+<li class="constant  "><a href="#_RETURN_SHIPMENT" title="_RETURN_SHIPMENT :: "><span class="description">_RETURN_SHIPMENT</span><pre>_RETURN_SHIPMENT</pre></a></li>
+<li class="constant  "><a href="#_SATURDAY_DELIVERY" title="_SATURDAY_DELIVERY :: "><span class="description">_SATURDAY_DELIVERY</span><pre>_SATURDAY_DELIVERY</pre></a></li>
+<li class="constant  "><a href="#_SATURDAY_PICKUP" title="_SATURDAY_PICKUP :: "><span class="description">_SATURDAY_PICKUP</span><pre>_SATURDAY_PICKUP</pre></a></li>
+<li class="constant  "><a href="#_SHIPMENT_ASSEMBLY" title="_SHIPMENT_ASSEMBLY :: "><span class="description">_SHIPMENT_ASSEMBLY</span><pre>_SHIPMENT_ASSEMBLY</pre></a></li>
+<li class="constant  "><a href="#_SORT_AND_SEGREGATE" title="_SORT_AND_SEGREGATE :: "><span class="description">_SORT_AND_SEGREGATE</span><pre>_SORT_AND_SEGREGATE</pre></a></li>
+<li class="constant  "><a href="#_SPECIAL_DELIVERY" title="_SPECIAL_DELIVERY :: "><span class="description">_SPECIAL_DELIVERY</span><pre>_SPECIAL_DELIVERY</pre></a></li>
+<li class="constant  "><a href="#_SPECIAL_EQUIPMENT" title="_SPECIAL_EQUIPMENT :: "><span class="description">_SPECIAL_EQUIPMENT</span><pre>_SPECIAL_EQUIPMENT</pre></a></li>
+<li class="constant  "><a href="#_STORAGE" title="_STORAGE :: "><span class="description">_STORAGE</span><pre>_STORAGE</pre></a></li>
+<li class="constant  "><a href="#_SUNDAY_DELIVERY" title="_SUNDAY_DELIVERY :: "><span class="description">_SUNDAY_DELIVERY</span><pre>_SUNDAY_DELIVERY</pre></a></li>
+<li class="constant  "><a href="#_THIRD_PARTY_CONSIGNEE" title="_THIRD_PARTY_CONSIGNEE :: "><span class="description">_THIRD_PARTY_CONSIGNEE</span><pre>_THIRD_PARTY_CONSIGNEE</pre></a></li>
+<li class="constant  "><a href="#_TOP_LOAD" title="_TOP_LOAD :: "><span class="description">_TOP_LOAD</span><pre>_TOP_LOAD</pre></a></li>
+<li class="constant  "><a href="#_USPS_DELIVERY" title="_USPS_DELIVERY :: "><span class="description">_USPS_DELIVERY</span><pre>_USPS_DELIVERY</pre></a></li>
+<li class="constant  "><a href="#_USPS_PICKUP" title="_USPS_PICKUP :: "><span class="description">_USPS_PICKUP</span><pre>_USPS_PICKUP</pre></a></li>
+<li class="constant  "><a href="#_WEIGHING" title="_WEIGHING :: "><span class="description">_WEIGHING</span><pre>_WEIGHING</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CFedEx%5CPickup%5CSimpleType%5CShipmentSpecialServiceType" id="\FedEx\Pickup\SimpleType\ShipmentSpecialServiceType"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/FedEx.html">FedEx</a></li>
+<span class="divider">\</span><li><a href="../namespaces/FedEx.Pickup.html">Pickup</a></li>
+<span class="divider">\</span><li><a href="../namespaces/FedEx.Pickup.SimpleType.html">SimpleType</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/FedEx.Pickup.SimpleType.ShipmentSpecialServiceType.html">ShipmentSpecialServiceType</a>
+</li>
+</ul>
+<div href="../classes/FedEx.Pickup.SimpleType.ShipmentSpecialServiceType.html" class="element class">
+<p class="short_description">Identifies the collection of special service offered by FedEx.</p>
+<div class="details">
+<p class="long_description"><p>BROKER_SELECT_OPTION should be used for Express shipments only.</p></p>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="mailto:jeremy@jsdunn.info">Jeremy Dunn</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/PHP%20FedEx%20API%20wrapper.Pickup%20Service.html">PHP FedEx API wrapper</a></td>
+</tr>
+<tr>
+<th>subpackage</th>
+<td>Pickup Service</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Constructor</h2>
+<pre>__construct(string $value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractSimpleType::__construct()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="__toString" id="__toString"></a><div class="element clickable method public __toString" data-toggle="collapse" data-target=".__toString .collapse">
+<h2>__toString() implementation</h2>
+<pre>__toString() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractSimpleType::__toString()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24_value" id="$_value"> </a><div class="element clickable property protected $_value" data-toggle="collapse" data-target=".$_value .collapse">
+<h2>$_value</h2>
+<pre>$_value : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractSimpleType::$$_value</td>
+</tr></table>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a name="_BLIND_SHIPMENT" id="_BLIND_SHIPMENT"> </a><div class="element clickable constant  _BLIND_SHIPMENT" data-toggle="collapse" data-target="._BLIND_SHIPMENT .collapse">
+<h2>_BLIND_SHIPMENT</h2>
+<pre>_BLIND_SHIPMENT </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_BROKER_SELECT_OPTION" id="_BROKER_SELECT_OPTION"> </a><div class="element clickable constant  _BROKER_SELECT_OPTION" data-toggle="collapse" data-target="._BROKER_SELECT_OPTION .collapse">
+<h2>_BROKER_SELECT_OPTION</h2>
+<pre>_BROKER_SELECT_OPTION </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_CALL_BEFORE_DELIVERY" id="_CALL_BEFORE_DELIVERY"> </a><div class="element clickable constant  _CALL_BEFORE_DELIVERY" data-toggle="collapse" data-target="._CALL_BEFORE_DELIVERY .collapse">
+<h2>_CALL_BEFORE_DELIVERY</h2>
+<pre>_CALL_BEFORE_DELIVERY </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_COD" id="_COD"> </a><div class="element clickable constant  _COD" data-toggle="collapse" data-target="._COD .collapse">
+<h2>_COD</h2>
+<pre>_COD </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_COD_REMITTANCE" id="_COD_REMITTANCE"> </a><div class="element clickable constant  _COD_REMITTANCE" data-toggle="collapse" data-target="._COD_REMITTANCE .collapse">
+<h2>_COD_REMITTANCE</h2>
+<pre>_COD_REMITTANCE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_CUSTOM_DELIVERY_WINDOW" id="_CUSTOM_DELIVERY_WINDOW"> </a><div class="element clickable constant  _CUSTOM_DELIVERY_WINDOW" data-toggle="collapse" data-target="._CUSTOM_DELIVERY_WINDOW .collapse">
+<h2>_CUSTOM_DELIVERY_WINDOW</h2>
+<pre>_CUSTOM_DELIVERY_WINDOW </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_CUT_FLOWERS" id="_CUT_FLOWERS"> </a><div class="element clickable constant  _CUT_FLOWERS" data-toggle="collapse" data-target="._CUT_FLOWERS .collapse">
+<h2>_CUT_FLOWERS</h2>
+<pre>_CUT_FLOWERS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_DANGEROUS_GOODS" id="_DANGEROUS_GOODS"> </a><div class="element clickable constant  _DANGEROUS_GOODS" data-toggle="collapse" data-target="._DANGEROUS_GOODS .collapse">
+<h2>_DANGEROUS_GOODS</h2>
+<pre>_DANGEROUS_GOODS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_DELIVERY_ON_INVOICE_ACCEPTANCE" id="_DELIVERY_ON_INVOICE_ACCEPTANCE"> </a><div class="element clickable constant  _DELIVERY_ON_INVOICE_ACCEPTANCE" data-toggle="collapse" data-target="._DELIVERY_ON_INVOICE_ACCEPTANCE .collapse">
+<h2>_DELIVERY_ON_INVOICE_ACCEPTANCE</h2>
+<pre>_DELIVERY_ON_INVOICE_ACCEPTANCE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_DETENTION" id="_DETENTION"> </a><div class="element clickable constant  _DETENTION" data-toggle="collapse" data-target="._DETENTION .collapse">
+<h2>_DETENTION</h2>
+<pre>_DETENTION </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_DO_NOT_BREAK_DOWN_PALLETS" id="_DO_NOT_BREAK_DOWN_PALLETS"> </a><div class="element clickable constant  _DO_NOT_BREAK_DOWN_PALLETS" data-toggle="collapse" data-target="._DO_NOT_BREAK_DOWN_PALLETS .collapse">
+<h2>_DO_NOT_BREAK_DOWN_PALLETS</h2>
+<pre>_DO_NOT_BREAK_DOWN_PALLETS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_DO_NOT_STACK_PALLETS" id="_DO_NOT_STACK_PALLETS"> </a><div class="element clickable constant  _DO_NOT_STACK_PALLETS" data-toggle="collapse" data-target="._DO_NOT_STACK_PALLETS .collapse">
+<h2>_DO_NOT_STACK_PALLETS</h2>
+<pre>_DO_NOT_STACK_PALLETS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_DRY_ICE" id="_DRY_ICE"> </a><div class="element clickable constant  _DRY_ICE" data-toggle="collapse" data-target="._DRY_ICE .collapse">
+<h2>_DRY_ICE</h2>
+<pre>_DRY_ICE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_EAST_COAST_SPECIAL" id="_EAST_COAST_SPECIAL"> </a><div class="element clickable constant  _EAST_COAST_SPECIAL" data-toggle="collapse" data-target="._EAST_COAST_SPECIAL .collapse">
+<h2>_EAST_COAST_SPECIAL</h2>
+<pre>_EAST_COAST_SPECIAL </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_ELECTRONIC_TRADE_DOCUMENTS" id="_ELECTRONIC_TRADE_DOCUMENTS"> </a><div class="element clickable constant  _ELECTRONIC_TRADE_DOCUMENTS" data-toggle="collapse" data-target="._ELECTRONIC_TRADE_DOCUMENTS .collapse">
+<h2>_ELECTRONIC_TRADE_DOCUMENTS</h2>
+<pre>_ELECTRONIC_TRADE_DOCUMENTS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_EMAIL_NOTIFICATION" id="_EMAIL_NOTIFICATION"> </a><div class="element clickable constant  _EMAIL_NOTIFICATION" data-toggle="collapse" data-target="._EMAIL_NOTIFICATION .collapse">
+<h2>_EMAIL_NOTIFICATION</h2>
+<pre>_EMAIL_NOTIFICATION </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_EMAIL_NOTIFICATION_AGGREGATED" id="_EMAIL_NOTIFICATION_AGGREGATED"> </a><div class="element clickable constant  _EMAIL_NOTIFICATION_AGGREGATED" data-toggle="collapse" data-target="._EMAIL_NOTIFICATION_AGGREGATED .collapse">
+<h2>_EMAIL_NOTIFICATION_AGGREGATED</h2>
+<pre>_EMAIL_NOTIFICATION_AGGREGATED </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_EXCLUSIVE_USE" id="_EXCLUSIVE_USE"> </a><div class="element clickable constant  _EXCLUSIVE_USE" data-toggle="collapse" data-target="._EXCLUSIVE_USE .collapse">
+<h2>_EXCLUSIVE_USE</h2>
+<pre>_EXCLUSIVE_USE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_EXHIBITION_DELIVERY" id="_EXHIBITION_DELIVERY"> </a><div class="element clickable constant  _EXHIBITION_DELIVERY" data-toggle="collapse" data-target="._EXHIBITION_DELIVERY .collapse">
+<h2>_EXHIBITION_DELIVERY</h2>
+<pre>_EXHIBITION_DELIVERY </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_EXHIBITION_PICKUP" id="_EXHIBITION_PICKUP"> </a><div class="element clickable constant  _EXHIBITION_PICKUP" data-toggle="collapse" data-target="._EXHIBITION_PICKUP .collapse">
+<h2>_EXHIBITION_PICKUP</h2>
+<pre>_EXHIBITION_PICKUP </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_EXPEDITED_ALTERNATE_DELIVERY_ROUTE" id="_EXPEDITED_ALTERNATE_DELIVERY_ROUTE"> </a><div class="element clickable constant  _EXPEDITED_ALTERNATE_DELIVERY_ROUTE" data-toggle="collapse" data-target="._EXPEDITED_ALTERNATE_DELIVERY_ROUTE .collapse">
+<h2>_EXPEDITED_ALTERNATE_DELIVERY_ROUTE</h2>
+<pre>_EXPEDITED_ALTERNATE_DELIVERY_ROUTE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_EXPEDITED_ONE_DAY_EARLIER" id="_EXPEDITED_ONE_DAY_EARLIER"> </a><div class="element clickable constant  _EXPEDITED_ONE_DAY_EARLIER" data-toggle="collapse" data-target="._EXPEDITED_ONE_DAY_EARLIER .collapse">
+<h2>_EXPEDITED_ONE_DAY_EARLIER</h2>
+<pre>_EXPEDITED_ONE_DAY_EARLIER </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_EXPEDITED_SERVICE_MONITORING_AND_DELIVERY" id="_EXPEDITED_SERVICE_MONITORING_AND_DELIVERY"> </a><div class="element clickable constant  _EXPEDITED_SERVICE_MONITORING_AND_DELIVERY" data-toggle="collapse" data-target="._EXPEDITED_SERVICE_MONITORING_AND_DELIVERY .collapse">
+<h2>_EXPEDITED_SERVICE_MONITORING_AND_DELIVERY</h2>
+<pre>_EXPEDITED_SERVICE_MONITORING_AND_DELIVERY </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_EXPEDITED_STANDARD_DAY_EARLY_DELIVERY" id="_EXPEDITED_STANDARD_DAY_EARLY_DELIVERY"> </a><div class="element clickable constant  _EXPEDITED_STANDARD_DAY_EARLY_DELIVERY" data-toggle="collapse" data-target="._EXPEDITED_STANDARD_DAY_EARLY_DELIVERY .collapse">
+<h2>_EXPEDITED_STANDARD_DAY_EARLY_DELIVERY</h2>
+<pre>_EXPEDITED_STANDARD_DAY_EARLY_DELIVERY </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_EXTRA_LABOR" id="_EXTRA_LABOR"> </a><div class="element clickable constant  _EXTRA_LABOR" data-toggle="collapse" data-target="._EXTRA_LABOR .collapse">
+<h2>_EXTRA_LABOR</h2>
+<pre>_EXTRA_LABOR </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_EXTREME_LENGTH" id="_EXTREME_LENGTH"> </a><div class="element clickable constant  _EXTREME_LENGTH" data-toggle="collapse" data-target="._EXTREME_LENGTH .collapse">
+<h2>_EXTREME_LENGTH</h2>
+<pre>_EXTREME_LENGTH </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_FLATBED_TRAILER" id="_FLATBED_TRAILER"> </a><div class="element clickable constant  _FLATBED_TRAILER" data-toggle="collapse" data-target="._FLATBED_TRAILER .collapse">
+<h2>_FLATBED_TRAILER</h2>
+<pre>_FLATBED_TRAILER </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_FOOD" id="_FOOD"> </a><div class="element clickable constant  _FOOD" data-toggle="collapse" data-target="._FOOD .collapse">
+<h2>_FOOD</h2>
+<pre>_FOOD </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_FREIGHT_GUARANTEE" id="_FREIGHT_GUARANTEE"> </a><div class="element clickable constant  _FREIGHT_GUARANTEE" data-toggle="collapse" data-target="._FREIGHT_GUARANTEE .collapse">
+<h2>_FREIGHT_GUARANTEE</h2>
+<pre>_FREIGHT_GUARANTEE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_FREIGHT_TO_COLLECT" id="_FREIGHT_TO_COLLECT"> </a><div class="element clickable constant  _FREIGHT_TO_COLLECT" data-toggle="collapse" data-target="._FREIGHT_TO_COLLECT .collapse">
+<h2>_FREIGHT_TO_COLLECT</h2>
+<pre>_FREIGHT_TO_COLLECT </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_FUTURE_DAY_SHIPMENT" id="_FUTURE_DAY_SHIPMENT"> </a><div class="element clickable constant  _FUTURE_DAY_SHIPMENT" data-toggle="collapse" data-target="._FUTURE_DAY_SHIPMENT .collapse">
+<h2>_FUTURE_DAY_SHIPMENT</h2>
+<pre>_FUTURE_DAY_SHIPMENT </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_HOLD_AT_LOCATION" id="_HOLD_AT_LOCATION"> </a><div class="element clickable constant  _HOLD_AT_LOCATION" data-toggle="collapse" data-target="._HOLD_AT_LOCATION .collapse">
+<h2>_HOLD_AT_LOCATION</h2>
+<pre>_HOLD_AT_LOCATION </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_HOLIDAY_DELIVERY" id="_HOLIDAY_DELIVERY"> </a><div class="element clickable constant  _HOLIDAY_DELIVERY" data-toggle="collapse" data-target="._HOLIDAY_DELIVERY .collapse">
+<h2>_HOLIDAY_DELIVERY</h2>
+<pre>_HOLIDAY_DELIVERY </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_HOLIDAY_GUARANTEE" id="_HOLIDAY_GUARANTEE"> </a><div class="element clickable constant  _HOLIDAY_GUARANTEE" data-toggle="collapse" data-target="._HOLIDAY_GUARANTEE .collapse">
+<h2>_HOLIDAY_GUARANTEE</h2>
+<pre>_HOLIDAY_GUARANTEE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_HOME_DELIVERY_PREMIUM" id="_HOME_DELIVERY_PREMIUM"> </a><div class="element clickable constant  _HOME_DELIVERY_PREMIUM" data-toggle="collapse" data-target="._HOME_DELIVERY_PREMIUM .collapse">
+<h2>_HOME_DELIVERY_PREMIUM</h2>
+<pre>_HOME_DELIVERY_PREMIUM </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_INSIDE_DELIVERY" id="_INSIDE_DELIVERY"> </a><div class="element clickable constant  _INSIDE_DELIVERY" data-toggle="collapse" data-target="._INSIDE_DELIVERY .collapse">
+<h2>_INSIDE_DELIVERY</h2>
+<pre>_INSIDE_DELIVERY </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_INSIDE_PICKUP" id="_INSIDE_PICKUP"> </a><div class="element clickable constant  _INSIDE_PICKUP" data-toggle="collapse" data-target="._INSIDE_PICKUP .collapse">
+<h2>_INSIDE_PICKUP</h2>
+<pre>_INSIDE_PICKUP </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_INTERNATIONAL_CONTROLLED_EXPORT_SERVICE" id="_INTERNATIONAL_CONTROLLED_EXPORT_SERVICE"> </a><div class="element clickable constant  _INTERNATIONAL_CONTROLLED_EXPORT_SERVICE" data-toggle="collapse" data-target="._INTERNATIONAL_CONTROLLED_EXPORT_SERVICE .collapse">
+<h2>_INTERNATIONAL_CONTROLLED_EXPORT_SERVICE</h2>
+<pre>_INTERNATIONAL_CONTROLLED_EXPORT_SERVICE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_INTERNATIONAL_MAIL_SERVICE" id="_INTERNATIONAL_MAIL_SERVICE"> </a><div class="element clickable constant  _INTERNATIONAL_MAIL_SERVICE" data-toggle="collapse" data-target="._INTERNATIONAL_MAIL_SERVICE .collapse">
+<h2>_INTERNATIONAL_MAIL_SERVICE</h2>
+<pre>_INTERNATIONAL_MAIL_SERVICE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_LIFTGATE_DELIVERY" id="_LIFTGATE_DELIVERY"> </a><div class="element clickable constant  _LIFTGATE_DELIVERY" data-toggle="collapse" data-target="._LIFTGATE_DELIVERY .collapse">
+<h2>_LIFTGATE_DELIVERY</h2>
+<pre>_LIFTGATE_DELIVERY </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_LIFTGATE_PICKUP" id="_LIFTGATE_PICKUP"> </a><div class="element clickable constant  _LIFTGATE_PICKUP" data-toggle="collapse" data-target="._LIFTGATE_PICKUP .collapse">
+<h2>_LIFTGATE_PICKUP</h2>
+<pre>_LIFTGATE_PICKUP </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_LIMITED_ACCESS_DELIVERY" id="_LIMITED_ACCESS_DELIVERY"> </a><div class="element clickable constant  _LIMITED_ACCESS_DELIVERY" data-toggle="collapse" data-target="._LIMITED_ACCESS_DELIVERY .collapse">
+<h2>_LIMITED_ACCESS_DELIVERY</h2>
+<pre>_LIMITED_ACCESS_DELIVERY </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_LIMITED_ACCESS_PICKUP" id="_LIMITED_ACCESS_PICKUP"> </a><div class="element clickable constant  _LIMITED_ACCESS_PICKUP" data-toggle="collapse" data-target="._LIMITED_ACCESS_PICKUP .collapse">
+<h2>_LIMITED_ACCESS_PICKUP</h2>
+<pre>_LIMITED_ACCESS_PICKUP </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_MARKING_OR_TAGGING" id="_MARKING_OR_TAGGING"> </a><div class="element clickable constant  _MARKING_OR_TAGGING" data-toggle="collapse" data-target="._MARKING_OR_TAGGING .collapse">
+<h2>_MARKING_OR_TAGGING</h2>
+<pre>_MARKING_OR_TAGGING </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_NON_BUSINESS_TIME" id="_NON_BUSINESS_TIME"> </a><div class="element clickable constant  _NON_BUSINESS_TIME" data-toggle="collapse" data-target="._NON_BUSINESS_TIME .collapse">
+<h2>_NON_BUSINESS_TIME</h2>
+<pre>_NON_BUSINESS_TIME </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_PALLETS_PROVIDED" id="_PALLETS_PROVIDED"> </a><div class="element clickable constant  _PALLETS_PROVIDED" data-toggle="collapse" data-target="._PALLETS_PROVIDED .collapse">
+<h2>_PALLETS_PROVIDED</h2>
+<pre>_PALLETS_PROVIDED </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_PALLET_SHRINKWRAP" id="_PALLET_SHRINKWRAP"> </a><div class="element clickable constant  _PALLET_SHRINKWRAP" data-toggle="collapse" data-target="._PALLET_SHRINKWRAP .collapse">
+<h2>_PALLET_SHRINKWRAP</h2>
+<pre>_PALLET_SHRINKWRAP </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_PALLET_WEIGHT_ALLOWANCE" id="_PALLET_WEIGHT_ALLOWANCE"> </a><div class="element clickable constant  _PALLET_WEIGHT_ALLOWANCE" data-toggle="collapse" data-target="._PALLET_WEIGHT_ALLOWANCE .collapse">
+<h2>_PALLET_WEIGHT_ALLOWANCE</h2>
+<pre>_PALLET_WEIGHT_ALLOWANCE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_PENDING_COMPLETE" id="_PENDING_COMPLETE"> </a><div class="element clickable constant  _PENDING_COMPLETE" data-toggle="collapse" data-target="._PENDING_COMPLETE .collapse">
+<h2>_PENDING_COMPLETE</h2>
+<pre>_PENDING_COMPLETE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_PENDING_SHIPMENT" id="_PENDING_SHIPMENT"> </a><div class="element clickable constant  _PENDING_SHIPMENT" data-toggle="collapse" data-target="._PENDING_SHIPMENT .collapse">
+<h2>_PENDING_SHIPMENT</h2>
+<pre>_PENDING_SHIPMENT </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_PERMIT" id="_PERMIT"> </a><div class="element clickable constant  _PERMIT" data-toggle="collapse" data-target="._PERMIT .collapse">
+<h2>_PERMIT</h2>
+<pre>_PERMIT </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_POISON" id="_POISON"> </a><div class="element clickable constant  _POISON" data-toggle="collapse" data-target="._POISON .collapse">
+<h2>_POISON</h2>
+<pre>_POISON </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_PORT_DELIVERY" id="_PORT_DELIVERY"> </a><div class="element clickable constant  _PORT_DELIVERY" data-toggle="collapse" data-target="._PORT_DELIVERY .collapse">
+<h2>_PORT_DELIVERY</h2>
+<pre>_PORT_DELIVERY </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_PORT_PICKUP" id="_PORT_PICKUP"> </a><div class="element clickable constant  _PORT_PICKUP" data-toggle="collapse" data-target="._PORT_PICKUP .collapse">
+<h2>_PORT_PICKUP</h2>
+<pre>_PORT_PICKUP </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_PRE_DELIVERY_NOTIFICATION" id="_PRE_DELIVERY_NOTIFICATION"> </a><div class="element clickable constant  _PRE_DELIVERY_NOTIFICATION" data-toggle="collapse" data-target="._PRE_DELIVERY_NOTIFICATION .collapse">
+<h2>_PRE_DELIVERY_NOTIFICATION</h2>
+<pre>_PRE_DELIVERY_NOTIFICATION </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_PRE_EIG_PROCESSING" id="_PRE_EIG_PROCESSING"> </a><div class="element clickable constant  _PRE_EIG_PROCESSING" data-toggle="collapse" data-target="._PRE_EIG_PROCESSING .collapse">
+<h2>_PRE_EIG_PROCESSING</h2>
+<pre>_PRE_EIG_PROCESSING </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_PRE_MULTIPLIER_PROCESSING" id="_PRE_MULTIPLIER_PROCESSING"> </a><div class="element clickable constant  _PRE_MULTIPLIER_PROCESSING" data-toggle="collapse" data-target="._PRE_MULTIPLIER_PROCESSING .collapse">
+<h2>_PRE_MULTIPLIER_PROCESSING</h2>
+<pre>_PRE_MULTIPLIER_PROCESSING </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_PROTECTION_FROM_FREEZING" id="_PROTECTION_FROM_FREEZING"> </a><div class="element clickable constant  _PROTECTION_FROM_FREEZING" data-toggle="collapse" data-target="._PROTECTION_FROM_FREEZING .collapse">
+<h2>_PROTECTION_FROM_FREEZING</h2>
+<pre>_PROTECTION_FROM_FREEZING </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_REGIONAL_MALL_DELIVERY" id="_REGIONAL_MALL_DELIVERY"> </a><div class="element clickable constant  _REGIONAL_MALL_DELIVERY" data-toggle="collapse" data-target="._REGIONAL_MALL_DELIVERY .collapse">
+<h2>_REGIONAL_MALL_DELIVERY</h2>
+<pre>_REGIONAL_MALL_DELIVERY </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_REGIONAL_MALL_PICKUP" id="_REGIONAL_MALL_PICKUP"> </a><div class="element clickable constant  _REGIONAL_MALL_PICKUP" data-toggle="collapse" data-target="._REGIONAL_MALL_PICKUP .collapse">
+<h2>_REGIONAL_MALL_PICKUP</h2>
+<pre>_REGIONAL_MALL_PICKUP </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_RETURN_SHIPMENT" id="_RETURN_SHIPMENT"> </a><div class="element clickable constant  _RETURN_SHIPMENT" data-toggle="collapse" data-target="._RETURN_SHIPMENT .collapse">
+<h2>_RETURN_SHIPMENT</h2>
+<pre>_RETURN_SHIPMENT </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_SATURDAY_DELIVERY" id="_SATURDAY_DELIVERY"> </a><div class="element clickable constant  _SATURDAY_DELIVERY" data-toggle="collapse" data-target="._SATURDAY_DELIVERY .collapse">
+<h2>_SATURDAY_DELIVERY</h2>
+<pre>_SATURDAY_DELIVERY </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_SATURDAY_PICKUP" id="_SATURDAY_PICKUP"> </a><div class="element clickable constant  _SATURDAY_PICKUP" data-toggle="collapse" data-target="._SATURDAY_PICKUP .collapse">
+<h2>_SATURDAY_PICKUP</h2>
+<pre>_SATURDAY_PICKUP </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_SHIPMENT_ASSEMBLY" id="_SHIPMENT_ASSEMBLY"> </a><div class="element clickable constant  _SHIPMENT_ASSEMBLY" data-toggle="collapse" data-target="._SHIPMENT_ASSEMBLY .collapse">
+<h2>_SHIPMENT_ASSEMBLY</h2>
+<pre>_SHIPMENT_ASSEMBLY </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_SORT_AND_SEGREGATE" id="_SORT_AND_SEGREGATE"> </a><div class="element clickable constant  _SORT_AND_SEGREGATE" data-toggle="collapse" data-target="._SORT_AND_SEGREGATE .collapse">
+<h2>_SORT_AND_SEGREGATE</h2>
+<pre>_SORT_AND_SEGREGATE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_SPECIAL_DELIVERY" id="_SPECIAL_DELIVERY"> </a><div class="element clickable constant  _SPECIAL_DELIVERY" data-toggle="collapse" data-target="._SPECIAL_DELIVERY .collapse">
+<h2>_SPECIAL_DELIVERY</h2>
+<pre>_SPECIAL_DELIVERY </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_SPECIAL_EQUIPMENT" id="_SPECIAL_EQUIPMENT"> </a><div class="element clickable constant  _SPECIAL_EQUIPMENT" data-toggle="collapse" data-target="._SPECIAL_EQUIPMENT .collapse">
+<h2>_SPECIAL_EQUIPMENT</h2>
+<pre>_SPECIAL_EQUIPMENT </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_STORAGE" id="_STORAGE"> </a><div class="element clickable constant  _STORAGE" data-toggle="collapse" data-target="._STORAGE .collapse">
+<h2>_STORAGE</h2>
+<pre>_STORAGE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_SUNDAY_DELIVERY" id="_SUNDAY_DELIVERY"> </a><div class="element clickable constant  _SUNDAY_DELIVERY" data-toggle="collapse" data-target="._SUNDAY_DELIVERY .collapse">
+<h2>_SUNDAY_DELIVERY</h2>
+<pre>_SUNDAY_DELIVERY </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_THIRD_PARTY_CONSIGNEE" id="_THIRD_PARTY_CONSIGNEE"> </a><div class="element clickable constant  _THIRD_PARTY_CONSIGNEE" data-toggle="collapse" data-target="._THIRD_PARTY_CONSIGNEE .collapse">
+<h2>_THIRD_PARTY_CONSIGNEE</h2>
+<pre>_THIRD_PARTY_CONSIGNEE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_TOP_LOAD" id="_TOP_LOAD"> </a><div class="element clickable constant  _TOP_LOAD" data-toggle="collapse" data-target="._TOP_LOAD .collapse">
+<h2>_TOP_LOAD</h2>
+<pre>_TOP_LOAD </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_USPS_DELIVERY" id="_USPS_DELIVERY"> </a><div class="element clickable constant  _USPS_DELIVERY" data-toggle="collapse" data-target="._USPS_DELIVERY .collapse">
+<h2>_USPS_DELIVERY</h2>
+<pre>_USPS_DELIVERY </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_USPS_PICKUP" id="_USPS_PICKUP"> </a><div class="element clickable constant  _USPS_PICKUP" data-toggle="collapse" data-target="._USPS_PICKUP .collapse">
+<h2>_USPS_PICKUP</h2>
+<pre>_USPS_PICKUP </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_WEIGHING" id="_WEIGHING"> </a><div class="element clickable constant  _WEIGHING" data-toggle="collapse" data-target="._WEIGHING .collapse">
+<h2>_WEIGHING</h2>
+<pre>_WEIGHING </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a8</a> and<br>
+            generated on 2012-07-29T13:58:51-05:00.<br></footer></div>
+</div>
+</body>
+</html>

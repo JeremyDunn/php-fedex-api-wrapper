@@ -1,0 +1,353 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>PHP Fedex API Wrapper » \FedEx\ShipService\ComplexType\ShipmentSpecialServicesRequested</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">PHP Fedex API Wrapper</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/FedEx.html"><i class="icon-th"></i> FedEx</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/PHP%20FedEx%20API%20wrapper.html"><i class="icon-folder-open"></i> PHP FedEx API wrapper</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">871</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public inherited"><a href="#__construct" title="__construct :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#__set" title="__set :: __set implementation"><span class="description">__set implementation</span><pre>__set()</pre></a></li>
+<li class="method public "><a href="#setCodDetail" title="setCodDetail :: Descriptive data required for a FedEx COD (Collect-On-Delivery) shipment."><span class="description">Descriptive data required for a FedEx COD (Collect-On-Delivery) shipment.</span><pre>setCodDetail()</pre></a></li>
+<li class="method public "><a href="#setCustomDeliveryWindowDetail" title="setCustomDeliveryWindowDetail :: Specification for date or range of dates on which delivery is to be attempted."><span class="description">Specification for date or range of dates on which delivery is to be attempted.</span><pre>setCustomDeliveryWindowDetail()</pre></a></li>
+<li class="method public "><a href="#setEMailNotificationDetail" title="setEMailNotificationDetail :: Descriptive data required for FedEx to provide email notification to the customer regarding the shipment."><span class="description">Descriptive data required for FedEx to provide email notification to the customer regarding the shipment.</span><pre>setEMailNotificationDetail()</pre></a></li>
+<li class="method public "><a href="#setEtdDetail" title="setEtdDetail :: Electronic Trade document references."><span class="description">Electronic Trade document references.</span><pre>setEtdDetail()</pre></a></li>
+<li class="method public "><a href="#setFreightGuaranteeDetail" title="setFreightGuaranteeDetail :: Set FreightGuaranteeDetail"><span class="description">Set FreightGuaranteeDetail</span><pre>setFreightGuaranteeDetail()</pre></a></li>
+<li class="method public "><a href="#setHoldAtLocationDetail" title="setHoldAtLocationDetail :: Descriptive data required for a FedEx shipment that is to be held at the destination FedEx location for pickup by the recipient."><span class="description">Descriptive data required for a FedEx shipment that is to be held at the destination FedEx location for pickup by the recipient.</span><pre>setHoldAtLocationDetail()</pre></a></li>
+<li class="method public "><a href="#setHomeDeliveryPremiumDetail" title="setHomeDeliveryPremiumDetail :: The descriptive data required for FedEx Home Delivery options."><span class="description">The descriptive data required for FedEx Home Delivery options.</span><pre>setHomeDeliveryPremiumDetail()</pre></a></li>
+<li class="method public "><a href="#setPendingShipmentDetail" title="setPendingShipmentDetail :: This field should be populated for pending shipments (e.g."><span class="description">This field should be populated for pending shipments (e.g.</span><pre>setPendingShipmentDetail()</pre></a></li>
+<li class="method public "><a href="#setReturnShipmentDetail" title="setReturnShipmentDetail :: The descriptive data required for FedEx Printed Return Label."><span class="description">The descriptive data required for FedEx Printed Return Label.</span><pre>setReturnShipmentDetail()</pre></a></li>
+<li class="method public "><a href="#setShipmentDryIceDetail" title="setShipmentDryIceDetail :: Number of packages in this shipment which contain dry ice and the total weight of the dry ice for this shipment."><span class="description">Number of packages in this shipment which contain dry ice and the total weight of the dry ice for this shipment.</span><pre>setShipmentDryIceDetail()</pre></a></li>
+<li class="method public "><a href="#setSpecialServiceTypes" title="setSpecialServiceTypes :: The types of all special services requested for the enclosing shipment (or other shipment-level transaction)."><span class="description">The types of all special services requested for the enclosing shipment (or other shipment-level transaction).</span><pre>setSpecialServiceTypes()</pre></a></li>
+<li class="method public inherited"><a href="#toArray" title="toArray :: Returns the complex type as an array"><span class="description">Returns the complex type as an array</span><pre>toArray()</pre></a></li>
+<li class="nav-header protected">» Protected</li>
+<li class="method protected inherited"><a href="#_convertToArray" title="_convertToArray :: Recursive algorthim to convert complex types to an array"><span class="description">Recursive algorthim to convert complex types to an array</span><pre>_convertToArray()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header protected">» Protected</li>
+<li class="property protected "><a href="#%24_name" title="$_name :: Name of this complex type"><span class="description">Name of this complex type</span><pre>$_name</pre></a></li>
+<li class="property protected inherited"><a href="#%24_values" title="$_values :: Holds the data as a key =&gt; value array"><span class="description">Holds the data as a key =&gt; value array</span><pre>$_values</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CFedEx%5CShipService%5CComplexType%5CShipmentSpecialServicesRequested" id="\FedEx\ShipService\ComplexType\ShipmentSpecialServicesRequested"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/FedEx.html">FedEx</a></li>
+<span class="divider">\</span><li><a href="../namespaces/FedEx.ShipService.html">ShipService</a></li>
+<span class="divider">\</span><li><a href="../namespaces/FedEx.ShipService.ComplexType.html">ComplexType</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/FedEx.ShipService.ComplexType.ShipmentSpecialServicesRequested.html">ShipmentSpecialServicesRequested</a>
+</li>
+</ul>
+<div href="../classes/FedEx.ShipService.ComplexType.ShipmentSpecialServicesRequested.html" class="element class">
+<p class="short_description">These special services are available at the shipment level for some or all service types.</p>
+<div class="details">
+<p class="long_description"><p>If the shipper is requesting a special service which requires additional data (such as the COD amount), the shipment special service type must be present in the specialServiceTypes collection, and the supporting detail must be provided in the appropriate sub-object below.</p></p>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="mailto:jeremy@jsdunn.info">Jeremy Dunn</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/PHP%20FedEx%20API%20wrapper.Ship%20Service.html">PHP FedEx API wrapper</a></td>
+</tr>
+<tr>
+<th>subpackage</th>
+<td>Ship Service</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Constructor</h2>
+<pre>__construct(array $options) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractComplexType::__construct()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code><p>Data as key => value array</p>
+</div>
+</div></div>
+</div>
+<a name="__set" id="__set"></a><div class="element clickable method public __set" data-toggle="collapse" data-target=".__set .collapse">
+<h2>__set implementation</h2>
+<pre>__set(string $name, string $value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractComplexType::__set()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="setCodDetail" id="setCodDetail"></a><div class="element clickable method public setCodDetail" data-toggle="collapse" data-target=".setCodDetail .collapse">
+<h2>Descriptive data required for a FedEx COD (Collect-On-Delivery) shipment.</h2>
+<pre>setCodDetail(\FedEx\ShipService\ComplexType\CodDetail $codDetail) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>This element is required when SpecialServiceType.COD is present in the SpecialServiceTypes collection.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$codDetail</h4>
+<code><a href="../classes/FedEx.ShipService.ComplexType.CodDetail.html">\FedEx\ShipService\ComplexType\CodDetail</a></code><p>return ShipmentSpecialServicesRequested</p></div>
+</div></div>
+</div>
+<a name="setCustomDeliveryWindowDetail" id="setCustomDeliveryWindowDetail"></a><div class="element clickable method public setCustomDeliveryWindowDetail" data-toggle="collapse" data-target=".setCustomDeliveryWindowDetail .collapse">
+<h2>Specification for date or range of dates on which delivery is to be attempted.</h2>
+<pre>setCustomDeliveryWindowDetail(\FedEx\ShipService\ComplexType\CustomDeliveryWindowDetail $customDeliveryWindowDetail) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$customDeliveryWindowDetail</h4>
+<code><a href="../classes/FedEx.ShipService.ComplexType.CustomDeliveryWindowDetail.html">\FedEx\ShipService\ComplexType\CustomDeliveryWindowDetail</a></code><p>return ShipmentSpecialServicesRequested</p></div>
+</div></div>
+</div>
+<a name="setEMailNotificationDetail" id="setEMailNotificationDetail"></a><div class="element clickable method public setEMailNotificationDetail" data-toggle="collapse" data-target=".setEMailNotificationDetail .collapse">
+<h2>Descriptive data required for FedEx to provide email notification to the customer regarding the shipment.</h2>
+<pre>setEMailNotificationDetail(\FedEx\ShipService\ComplexType\EMailNotificationDetail $eMailNotificationDetail) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>This element is required when SpecialServiceType.EMAIL_NOTIFICATION is present in the SpecialServiceTypes collection.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$eMailNotificationDetail</h4>
+<code><a href="../classes/FedEx.ShipService.ComplexType.EMailNotificationDetail.html">\FedEx\ShipService\ComplexType\EMailNotificationDetail</a></code><p>return ShipmentSpecialServicesRequested</p></div>
+</div></div>
+</div>
+<a name="setEtdDetail" id="setEtdDetail"></a><div class="element clickable method public setEtdDetail" data-toggle="collapse" data-target=".setEtdDetail .collapse">
+<h2>Electronic Trade document references.</h2>
+<pre>setEtdDetail(\FedEx\ShipService\ComplexType\EtdDetail $etdDetail) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$etdDetail</h4>
+<code><a href="../classes/FedEx.ShipService.ComplexType.EtdDetail.html">\FedEx\ShipService\ComplexType\EtdDetail</a></code><p>return ShipmentSpecialServicesRequested</p></div>
+</div></div>
+</div>
+<a name="setFreightGuaranteeDetail" id="setFreightGuaranteeDetail"></a><div class="element clickable method public setFreightGuaranteeDetail" data-toggle="collapse" data-target=".setFreightGuaranteeDetail .collapse">
+<h2>Set FreightGuaranteeDetail</h2>
+<pre>setFreightGuaranteeDetail(\FedEx\ShipService\ComplexType\FreightGuaranteeDetail $freightGuaranteeDetail) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$freightGuaranteeDetail</h4>
+<code><a href="../classes/FedEx.ShipService.ComplexType.FreightGuaranteeDetail.html">\FedEx\ShipService\ComplexType\FreightGuaranteeDetail</a></code><p>return ShipmentSpecialServicesRequested</p></div>
+</div></div>
+</div>
+<a name="setHoldAtLocationDetail" id="setHoldAtLocationDetail"></a><div class="element clickable method public setHoldAtLocationDetail" data-toggle="collapse" data-target=".setHoldAtLocationDetail .collapse">
+<h2>Descriptive data required for a FedEx shipment that is to be held at the destination FedEx location for pickup by the recipient.</h2>
+<pre>setHoldAtLocationDetail(\FedEx\ShipService\ComplexType\HoldAtLocationDetail $holdAtLocationDetail) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>This element is required when SpecialServiceType.HOLD_AT_LOCATION is present in the SpecialServiceTypes collection.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$holdAtLocationDetail</h4>
+<code><a href="../classes/FedEx.ShipService.ComplexType.HoldAtLocationDetail.html">\FedEx\ShipService\ComplexType\HoldAtLocationDetail</a></code><p>return ShipmentSpecialServicesRequested</p></div>
+</div></div>
+</div>
+<a name="setHomeDeliveryPremiumDetail" id="setHomeDeliveryPremiumDetail"></a><div class="element clickable method public setHomeDeliveryPremiumDetail" data-toggle="collapse" data-target=".setHomeDeliveryPremiumDetail .collapse">
+<h2>The descriptive data required for FedEx Home Delivery options.</h2>
+<pre>setHomeDeliveryPremiumDetail(\FedEx\ShipService\ComplexType\HomeDeliveryPremiumDetail $homeDeliveryPremiumDetail) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>This element is required when SpecialServiceType.HOME_DELIVERY_PREMIUM is present in the SpecialServiceTypes collection</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$homeDeliveryPremiumDetail</h4>
+<code><a href="../classes/FedEx.ShipService.ComplexType.HomeDeliveryPremiumDetail.html">\FedEx\ShipService\ComplexType\HomeDeliveryPremiumDetail</a></code><p>return ShipmentSpecialServicesRequested</p></div>
+</div></div>
+</div>
+<a name="setPendingShipmentDetail" id="setPendingShipmentDetail"></a><div class="element clickable method public setPendingShipmentDetail" data-toggle="collapse" data-target=".setPendingShipmentDetail .collapse">
+<h2>This field should be populated for pending shipments (e.g.</h2>
+<pre>setPendingShipmentDetail(\FedEx\ShipService\ComplexType\PendingShipmentDetail $pendingShipmentDetail) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>e-mail label) It is required by a PENDING_SHIPMENT special service type.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pendingShipmentDetail</h4>
+<code><a href="../classes/FedEx.ShipService.ComplexType.PendingShipmentDetail.html">\FedEx\ShipService\ComplexType\PendingShipmentDetail</a></code><p>return ShipmentSpecialServicesRequested</p></div>
+</div></div>
+</div>
+<a name="setReturnShipmentDetail" id="setReturnShipmentDetail"></a><div class="element clickable method public setReturnShipmentDetail" data-toggle="collapse" data-target=".setReturnShipmentDetail .collapse">
+<h2>The descriptive data required for FedEx Printed Return Label.</h2>
+<pre>setReturnShipmentDetail(\FedEx\ShipService\ComplexType\ReturnShipmentDetail $returnShipmentDetail) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>This element is required when SpecialServiceType.PRINTED_RETURN_LABEL is present in the SpecialServiceTypes collection</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$returnShipmentDetail</h4>
+<code><a href="../classes/FedEx.ShipService.ComplexType.ReturnShipmentDetail.html">\FedEx\ShipService\ComplexType\ReturnShipmentDetail</a></code><p>return ShipmentSpecialServicesRequested</p></div>
+</div></div>
+</div>
+<a name="setShipmentDryIceDetail" id="setShipmentDryIceDetail"></a><div class="element clickable method public setShipmentDryIceDetail" data-toggle="collapse" data-target=".setShipmentDryIceDetail .collapse">
+<h2>Number of packages in this shipment which contain dry ice and the total weight of the dry ice for this shipment.</h2>
+<pre>setShipmentDryIceDetail(\FedEx\ShipService\ComplexType\ShipmentDryIceDetail $shipmentDryIceDetail) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$shipmentDryIceDetail</h4>
+<code><a href="../classes/FedEx.ShipService.ComplexType.ShipmentDryIceDetail.html">\FedEx\ShipService\ComplexType\ShipmentDryIceDetail</a></code><p>return ShipmentSpecialServicesRequested</p></div>
+</div></div>
+</div>
+<a name="setSpecialServiceTypes" id="setSpecialServiceTypes"></a><div class="element clickable method public setSpecialServiceTypes" data-toggle="collapse" data-target=".setSpecialServiceTypes .collapse">
+<h2>The types of all special services requested for the enclosing shipment (or other shipment-level transaction).</h2>
+<pre>setSpecialServiceTypes(array $specialServiceTypes) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$specialServiceTypes</h4>
+<code>\FedEx\ShipService\ComplexType\ShipmentSpecialServiceType[]</code><p>return ShipmentSpecialServicesRequested</p></div>
+</div></div>
+</div>
+<a name="toArray" id="toArray"></a><div class="element clickable method public toArray" data-toggle="collapse" data-target=".toArray .collapse">
+<h2>Returns the complex type as an array</h2>
+<pre>toArray(boolean $renderTopKey) : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractComplexType::toArray()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$renderTopKey</h4>
+<code>boolean</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a name="_convertToArray" id="_convertToArray"></a><div class="element clickable method protected _convertToArray" data-toggle="collapse" data-target="._convertToArray .collapse">
+<h2>Recursive algorthim to convert complex types to an array</h2>
+<pre>_convertToArray(array $arrayValues) : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractComplexType::_convertToArray()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$arrayValues</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24_name" id="$_name"> </a><div class="element clickable property protected $_name" data-toggle="collapse" data-target=".$_name .collapse">
+<h2>Name of this complex type</h2>
+<pre>$_name : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_values" id="$_values"> </a><div class="element clickable property protected $_values" data-toggle="collapse" data-target=".$_values .collapse">
+<h2>Holds the data as a key =&gt; value array</h2>
+<pre>$_values : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractComplexType::$$_values</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a8</a> and<br>
+            generated on 2012-07-29T13:59:04-05:00.<br></footer></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>PHP Fedex API Wrapper » \FedEx\RateService\ComplexType\CustomsClearanceDetail</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">PHP Fedex API Wrapper</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/FedEx.html"><i class="icon-th"></i> FedEx</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/PHP%20FedEx%20API%20wrapper.html"><i class="icon-folder-open"></i> PHP FedEx API wrapper</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">871</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public inherited"><a href="#__construct" title="__construct :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#__set" title="__set :: __set implementation"><span class="description">__set implementation</span><pre>__set()</pre></a></li>
+<li class="method public "><a href="#setBroker" title="setBroker :: Descriptive data identifying the Broker responsible for the shipmet."><span class="description">Descriptive data identifying the Broker responsible for the shipmet.</span><pre>setBroker()</pre></a></li>
+<li class="method public "><a href="#setClearanceBrokerage" title="setClearanceBrokerage :: Interacts both with properties of the shipment and contractual relationship with the shipper."><span class="description">Interacts both with properties of the shipment and contractual relationship with the shipper.</span><pre>setClearanceBrokerage()</pre></a></li>
+<li class="method public "><a href="#setCommercialInvoice" title="setCommercialInvoice :: CommercialInvoice element is required for electronic upload of CI data."><span class="description">CommercialInvoice element is required for electronic upload of CI data.</span><pre>setCommercialInvoice()</pre></a></li>
+<li class="method public "><a href="#setCommodities" title="setCommodities :: For international multiple piece shipments, commodity information must be passed in the Master and on each child transaction."><span class="description">For international multiple piece shipments, commodity information must be passed in the Master and on each child transaction.</span><pre>setCommodities()</pre></a></li>
+<li class="method public "><a href="#setCustomsValue" title="setCustomsValue :: The total customs value for the shipment."><span class="description">The total customs value for the shipment.</span><pre>setCustomsValue()</pre></a></li>
+<li class="method public "><a href="#setDocumentContent" title="setDocumentContent :: Indicates whether this shipment contains documents only or non-documents."><span class="description">Indicates whether this shipment contains documents only or non-documents.</span><pre>setDocumentContent()</pre></a></li>
+<li class="method public "><a href="#setDutiesPayment" title="setDutiesPayment :: Indicates how payment of duties for the shipment will be made."><span class="description">Indicates how payment of duties for the shipment will be made.</span><pre>setDutiesPayment()</pre></a></li>
+<li class="method public "><a href="#setExportDetail" title="setExportDetail :: Country specific details of an International shipment."><span class="description">Country specific details of an International shipment.</span><pre>setExportDetail()</pre></a></li>
+<li class="method public "><a href="#setFreightOnValue" title="setFreightOnValue :: Identifies responsibilities with respect to loss, damage, etc."><span class="description">Identifies responsibilities with respect to loss, damage, etc.</span><pre>setFreightOnValue()</pre></a></li>
+<li class="method public "><a href="#setImporterOfRecord" title="setImporterOfRecord :: Applicable only for Commercial Invoice."><span class="description">Applicable only for Commercial Invoice.</span><pre>setImporterOfRecord()</pre></a></li>
+<li class="method public "><a href="#setInsuranceCharges" title="setInsuranceCharges :: Documents amount paid to third party for coverage of shipment content."><span class="description">Documents amount paid to third party for coverage of shipment content.</span><pre>setInsuranceCharges()</pre></a></li>
+<li class="method public "><a href="#setPartiesToTransactionAreRelated" title="setPartiesToTransactionAreRelated :: Set PartiesToTransactionAreRelated"><span class="description">Set PartiesToTransactionAreRelated</span><pre>setPartiesToTransactionAreRelated()</pre></a></li>
+<li class="method public "><a href="#setRecipientCustomsId" title="setRecipientCustomsId :: Specifies how the recipient is identified for customs purposes; the requirements on this information vary with destination country."><span class="description">Specifies how the recipient is identified for customs purposes; the requirements on this information vary with destination country.</span><pre>setRecipientCustomsId()</pre></a></li>
+<li class="method public "><a href="#setRegulatoryControls" title="setRegulatoryControls :: FOOD_OR_PERISHABLE is required by FDA/BTA; must be true for food/perishable items coming to US or PR from non-US/non-PR origin."><span class="description">FOOD_OR_PERISHABLE is required by FDA/BTA; must be true for food/perishable items coming to US or PR from non-US/non-PR origin.</span><pre>setRegulatoryControls()</pre></a></li>
+<li class="method public inherited"><a href="#toArray" title="toArray :: Returns the complex type as an array"><span class="description">Returns the complex type as an array</span><pre>toArray()</pre></a></li>
+<li class="nav-header protected">» Protected</li>
+<li class="method protected inherited"><a href="#_convertToArray" title="_convertToArray :: Recursive algorthim to convert complex types to an array"><span class="description">Recursive algorthim to convert complex types to an array</span><pre>_convertToArray()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header protected">» Protected</li>
+<li class="property protected "><a href="#%24_name" title="$_name :: Name of this complex type"><span class="description">Name of this complex type</span><pre>$_name</pre></a></li>
+<li class="property protected inherited"><a href="#%24_values" title="$_values :: Holds the data as a key =&gt; value array"><span class="description">Holds the data as a key =&gt; value array</span><pre>$_values</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CFedEx%5CRateService%5CComplexType%5CCustomsClearanceDetail" id="\FedEx\RateService\ComplexType\CustomsClearanceDetail"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/FedEx.html">FedEx</a></li>
+<span class="divider">\</span><li><a href="../namespaces/FedEx.RateService.html">RateService</a></li>
+<span class="divider">\</span><li><a href="../namespaces/FedEx.RateService.ComplexType.html">ComplexType</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/FedEx.RateService.ComplexType.CustomsClearanceDetail.html">CustomsClearanceDetail</a>
+</li>
+</ul>
+<div href="../classes/FedEx.RateService.ComplexType.CustomsClearanceDetail.html" class="element class">
+<p class="short_description">CustomsClearanceDetail</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="mailto:jeremy@jsdunn.info">Jeremy Dunn</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/PHP%20FedEx%20API%20wrapper.Rate%20Service.html">PHP FedEx API wrapper</a></td>
+</tr>
+<tr>
+<th>subpackage</th>
+<td>Rate Service</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Constructor</h2>
+<pre>__construct(array $options) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractComplexType::__construct()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code><p>Data as key => value array</p>
+</div>
+</div></div>
+</div>
+<a name="__set" id="__set"></a><div class="element clickable method public __set" data-toggle="collapse" data-target=".__set .collapse">
+<h2>__set implementation</h2>
+<pre>__set(string $name, string $value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractComplexType::__set()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="setBroker" id="setBroker"></a><div class="element clickable method public setBroker" data-toggle="collapse" data-target=".setBroker .collapse">
+<h2>Descriptive data identifying the Broker responsible for the shipmet.</h2>
+<pre>setBroker(\FedEx\RateService\ComplexType\Party $broker) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>Required if BROKER_SELECT_OPTION is requested in Special Services.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$broker</h4>
+<code><a href="../classes/FedEx.RateService.ComplexType.Party.html">\FedEx\RateService\ComplexType\Party</a></code><p>return CustomsClearanceDetail</p></div>
+</div></div>
+</div>
+<a name="setClearanceBrokerage" id="setClearanceBrokerage"></a><div class="element clickable method public setClearanceBrokerage" data-toggle="collapse" data-target=".setClearanceBrokerage .collapse">
+<h2>Interacts both with properties of the shipment and contractual relationship with the shipper.</h2>
+<pre>setClearanceBrokerage(\FedEx\RateService\SimpleType\ClearanceBrokerageType $clearanceBrokerage) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$clearanceBrokerage</h4>
+<code><a href="../classes/FedEx.RateService.SimpleType.ClearanceBrokerageType.html">\FedEx\RateService\SimpleType\ClearanceBrokerageType</a></code><p>return CustomsClearanceDetail</p></div>
+</div></div>
+</div>
+<a name="setCommercialInvoice" id="setCommercialInvoice"></a><div class="element clickable method public setCommercialInvoice" data-toggle="collapse" data-target=".setCommercialInvoice .collapse">
+<h2>CommercialInvoice element is required for electronic upload of CI data.</h2>
+<pre>setCommercialInvoice(\FedEx\RateService\ComplexType\CommercialInvoice $commercialInvoice) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>It will serve to create/transmit an Electronic Commercial Invoice through FedEx System. Customers are responsible for printing their own Commercial Invoice. Commercial Invoice support consists of a maximum of 20 commodity line items.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$commercialInvoice</h4>
+<code><a href="../classes/FedEx.RateService.ComplexType.CommercialInvoice.html">\FedEx\RateService\ComplexType\CommercialInvoice</a></code><p>return CustomsClearanceDetail</p></div>
+</div></div>
+</div>
+<a name="setCommodities" id="setCommodities"></a><div class="element clickable method public setCommodities" data-toggle="collapse" data-target=".setCommodities .collapse">
+<h2>For international multiple piece shipments, commodity information must be passed in the Master and on each child transaction.</h2>
+<pre>setCommodities(array $commodities) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>If this shipment cotains more than four commodities line items, the four highest valued should be included in the first 4 occurances for this request.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$commodities</h4>
+<code><a href="RateService.ComplexType.Commodity.html#%5CFedEx%5CRateService%5CComplexType%5CCommodity">\FedEx\RateService\ComplexType\Commodity[]</a></code><p>return CustomsClearanceDetail</p></div>
+</div></div>
+</div>
+<a name="setCustomsValue" id="setCustomsValue"></a><div class="element clickable method public setCustomsValue" data-toggle="collapse" data-target=".setCustomsValue .collapse">
+<h2>The total customs value for the shipment.</h2>
+<pre>setCustomsValue(\FedEx\RateService\ComplexType\Money $customsValue) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>This total will rrepresent th esum of the values of all commodities, and may include freight, miscellaneous, and insurance charges. Must contain 2 explicit decimal positions with a max length of 17 including the decimal. For Express International MPS, the Total Customs Value is in the master transaction and all child transactions</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$customsValue</h4>
+<code><a href="../classes/FedEx.RateService.ComplexType.Money.html">\FedEx\RateService\ComplexType\Money</a></code><p>return CustomsClearanceDetail</p></div>
+</div></div>
+</div>
+<a name="setDocumentContent" id="setDocumentContent"></a><div class="element clickable method public setDocumentContent" data-toggle="collapse" data-target=".setDocumentContent .collapse">
+<h2>Indicates whether this shipment contains documents only or non-documents.</h2>
+<pre>setDocumentContent(\FedEx\RateService\SimpleType\InternationalDocumentContentType $documentContent) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$documentContent</h4>
+<code><a href="../classes/FedEx.RateService.SimpleType.InternationalDocumentContentType.html">\FedEx\RateService\SimpleType\InternationalDocumentContentType</a></code><p>return CustomsClearanceDetail</p></div>
+</div></div>
+</div>
+<a name="setDutiesPayment" id="setDutiesPayment"></a><div class="element clickable method public setDutiesPayment" data-toggle="collapse" data-target=".setDutiesPayment .collapse">
+<h2>Indicates how payment of duties for the shipment will be made.</h2>
+<pre>setDutiesPayment(\FedEx\RateService\ComplexType\Payment $dutiesPayment) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$dutiesPayment</h4>
+<code><a href="../classes/FedEx.RateService.ComplexType.Payment.html">\FedEx\RateService\ComplexType\Payment</a></code><p>return CustomsClearanceDetail</p></div>
+</div></div>
+</div>
+<a name="setExportDetail" id="setExportDetail"></a><div class="element clickable method public setExportDetail" data-toggle="collapse" data-target=".setExportDetail .collapse">
+<h2>Country specific details of an International shipment.</h2>
+<pre>setExportDetail(\FedEx\RateService\ComplexType\ExportDetail $exportDetail) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$exportDetail</h4>
+<code><a href="../classes/FedEx.RateService.ComplexType.ExportDetail.html">\FedEx\RateService\ComplexType\ExportDetail</a></code><p>return CustomsClearanceDetail</p></div>
+</div></div>
+</div>
+<a name="setFreightOnValue" id="setFreightOnValue"></a><div class="element clickable method public setFreightOnValue" data-toggle="collapse" data-target=".setFreightOnValue .collapse">
+<h2>Identifies responsibilities with respect to loss, damage, etc.</h2>
+<pre>setFreightOnValue(\FedEx\RateService\SimpleType\FreightOnValueType $freightOnValue) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$freightOnValue</h4>
+<code><a href="../classes/FedEx.RateService.SimpleType.FreightOnValueType.html">\FedEx\RateService\SimpleType\FreightOnValueType</a></code><p>return CustomsClearanceDetail</p></div>
+</div></div>
+</div>
+<a name="setImporterOfRecord" id="setImporterOfRecord"></a><div class="element clickable method public setImporterOfRecord" data-toggle="collapse" data-target=".setImporterOfRecord .collapse">
+<h2>Applicable only for Commercial Invoice.</h2>
+<pre>setImporterOfRecord(\FedEx\RateService\ComplexType\Party $importerOfRecord) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>If the consignee and importer are not the same, the Following importer fields are required.
+Importer/Contact/PersonName
+Importer/Contact/CompanyName
+Importer/Contact/PhoneNumber
+Importer/Address/StreetLine[0]
+Importer/Address/City
+Importer/Address/StateOrProvinceCode - if Importer Country Code is US or CA
+Importer/Address/PostalCode - if Importer Country Code is US or CA
+Importer/Address/CountryCode</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$importerOfRecord</h4>
+<code><a href="../classes/FedEx.RateService.ComplexType.Party.html">\FedEx\RateService\ComplexType\Party</a></code><p>return CustomsClearanceDetail</p></div>
+</div></div>
+</div>
+<a name="setInsuranceCharges" id="setInsuranceCharges"></a><div class="element clickable method public setInsuranceCharges" data-toggle="collapse" data-target=".setInsuranceCharges .collapse">
+<h2>Documents amount paid to third party for coverage of shipment content.</h2>
+<pre>setInsuranceCharges(\FedEx\RateService\ComplexType\Money $insuranceCharges) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$insuranceCharges</h4>
+<code><a href="../classes/FedEx.RateService.ComplexType.Money.html">\FedEx\RateService\ComplexType\Money</a></code><p>return CustomsClearanceDetail</p></div>
+</div></div>
+</div>
+<a name="setPartiesToTransactionAreRelated" id="setPartiesToTransactionAreRelated"></a><div class="element clickable method public setPartiesToTransactionAreRelated" data-toggle="collapse" data-target=".setPartiesToTransactionAreRelated .collapse">
+<h2>Set PartiesToTransactionAreRelated</h2>
+<pre>setPartiesToTransactionAreRelated(boolean $partiesToTransactionAreRelated) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$partiesToTransactionAreRelated</h4>
+<code>boolean</code><p>return CustomsClearanceDetail</p></div>
+</div></div>
+</div>
+<a name="setRecipientCustomsId" id="setRecipientCustomsId"></a><div class="element clickable method public setRecipientCustomsId" data-toggle="collapse" data-target=".setRecipientCustomsId .collapse">
+<h2>Specifies how the recipient is identified for customs purposes; the requirements on this information vary with destination country.</h2>
+<pre>setRecipientCustomsId(\FedEx\RateService\ComplexType\RecipientCustomsId $recipientCustomsId) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$recipientCustomsId</h4>
+<code><a href="../classes/FedEx.RateService.ComplexType.RecipientCustomsId.html">\FedEx\RateService\ComplexType\RecipientCustomsId</a></code><p>return CustomsClearanceDetail</p></div>
+</div></div>
+</div>
+<a name="setRegulatoryControls" id="setRegulatoryControls"></a><div class="element clickable method public setRegulatoryControls" data-toggle="collapse" data-target=".setRegulatoryControls .collapse">
+<h2>FOOD_OR_PERISHABLE is required by FDA/BTA; must be true for food/perishable items coming to US or PR from non-US/non-PR origin.</h2>
+<pre>setRegulatoryControls(array $regulatoryControls) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$regulatoryControls</h4>
+<code>\FedEx\RateService\ComplexType\RegulatoryControlType[]</code><p>return CustomsClearanceDetail</p></div>
+</div></div>
+</div>
+<a name="toArray" id="toArray"></a><div class="element clickable method public toArray" data-toggle="collapse" data-target=".toArray .collapse">
+<h2>Returns the complex type as an array</h2>
+<pre>toArray(boolean $renderTopKey) : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractComplexType::toArray()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$renderTopKey</h4>
+<code>boolean</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a name="_convertToArray" id="_convertToArray"></a><div class="element clickable method protected _convertToArray" data-toggle="collapse" data-target="._convertToArray .collapse">
+<h2>Recursive algorthim to convert complex types to an array</h2>
+<pre>_convertToArray(array $arrayValues) : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractComplexType::_convertToArray()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$arrayValues</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24_name" id="$_name"> </a><div class="element clickable property protected $_name" data-toggle="collapse" data-target=".$_name .collapse">
+<h2>Name of this complex type</h2>
+<pre>$_name : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_values" id="$_values"> </a><div class="element clickable property protected $_values" data-toggle="collapse" data-target=".$_values .collapse">
+<h2>Holds the data as a key =&gt; value array</h2>
+<pre>$_values : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractComplexType::$$_values</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a8</a> and<br>
+            generated on 2012-07-29T13:58:54-05:00.<br></footer></div>
+</div>
+</body>
+</html>

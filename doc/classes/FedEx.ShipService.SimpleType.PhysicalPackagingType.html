@@ -1,0 +1,320 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>PHP Fedex API Wrapper » \FedEx\ShipService\SimpleType\PhysicalPackagingType</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">PHP Fedex API Wrapper</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/FedEx.html"><i class="icon-th"></i> FedEx</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/PHP%20FedEx%20API%20wrapper.html"><i class="icon-folder-open"></i> PHP FedEx API wrapper</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">871</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public inherited"><a href="#__construct" title="__construct :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#__toString" title="__toString :: __toString() implementation"><span class="description">__toString() implementation</span><pre>__toString()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header protected">» Protected</li>
+<li class="property protected inherited"><a href="#%24_value" title="$_value :: "><span class="description">$_value</span><pre>$_value</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  "><a href="#_BAG" title="_BAG :: "><span class="description">_BAG</span><pre>_BAG</pre></a></li>
+<li class="constant  "><a href="#_BARREL" title="_BARREL :: "><span class="description">_BARREL</span><pre>_BARREL</pre></a></li>
+<li class="constant  "><a href="#_BASKET" title="_BASKET :: "><span class="description">_BASKET</span><pre>_BASKET</pre></a></li>
+<li class="constant  "><a href="#_BOX" title="_BOX :: "><span class="description">_BOX</span><pre>_BOX</pre></a></li>
+<li class="constant  "><a href="#_BUCKET" title="_BUCKET :: "><span class="description">_BUCKET</span><pre>_BUCKET</pre></a></li>
+<li class="constant  "><a href="#_BUNDLE" title="_BUNDLE :: "><span class="description">_BUNDLE</span><pre>_BUNDLE</pre></a></li>
+<li class="constant  "><a href="#_CARTON" title="_CARTON :: "><span class="description">_CARTON</span><pre>_CARTON</pre></a></li>
+<li class="constant  "><a href="#_CASE" title="_CASE :: "><span class="description">_CASE</span><pre>_CASE</pre></a></li>
+<li class="constant  "><a href="#_CONTAINER" title="_CONTAINER :: "><span class="description">_CONTAINER</span><pre>_CONTAINER</pre></a></li>
+<li class="constant  "><a href="#_CRATE" title="_CRATE :: "><span class="description">_CRATE</span><pre>_CRATE</pre></a></li>
+<li class="constant  "><a href="#_CYLINDER" title="_CYLINDER :: "><span class="description">_CYLINDER</span><pre>_CYLINDER</pre></a></li>
+<li class="constant  "><a href="#_DRUM" title="_DRUM :: "><span class="description">_DRUM</span><pre>_DRUM</pre></a></li>
+<li class="constant  "><a href="#_ENVELOPE" title="_ENVELOPE :: "><span class="description">_ENVELOPE</span><pre>_ENVELOPE</pre></a></li>
+<li class="constant  "><a href="#_HAMPER" title="_HAMPER :: "><span class="description">_HAMPER</span><pre>_HAMPER</pre></a></li>
+<li class="constant  "><a href="#_OTHER" title="_OTHER :: "><span class="description">_OTHER</span><pre>_OTHER</pre></a></li>
+<li class="constant  "><a href="#_PAIL" title="_PAIL :: "><span class="description">_PAIL</span><pre>_PAIL</pre></a></li>
+<li class="constant  "><a href="#_PALLET" title="_PALLET :: "><span class="description">_PALLET</span><pre>_PALLET</pre></a></li>
+<li class="constant  "><a href="#_PIECE" title="_PIECE :: "><span class="description">_PIECE</span><pre>_PIECE</pre></a></li>
+<li class="constant  "><a href="#_REEL" title="_REEL :: "><span class="description">_REEL</span><pre>_REEL</pre></a></li>
+<li class="constant  "><a href="#_ROLL" title="_ROLL :: "><span class="description">_ROLL</span><pre>_ROLL</pre></a></li>
+<li class="constant  "><a href="#_SKID" title="_SKID :: "><span class="description">_SKID</span><pre>_SKID</pre></a></li>
+<li class="constant  "><a href="#_TANK" title="_TANK :: "><span class="description">_TANK</span><pre>_TANK</pre></a></li>
+<li class="constant  "><a href="#_TUBE" title="_TUBE :: "><span class="description">_TUBE</span><pre>_TUBE</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CFedEx%5CShipService%5CSimpleType%5CPhysicalPackagingType" id="\FedEx\ShipService\SimpleType\PhysicalPackagingType"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/FedEx.html">FedEx</a></li>
+<span class="divider">\</span><li><a href="../namespaces/FedEx.ShipService.html">ShipService</a></li>
+<span class="divider">\</span><li><a href="../namespaces/FedEx.ShipService.SimpleType.html">SimpleType</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/FedEx.ShipService.SimpleType.PhysicalPackagingType.html">PhysicalPackagingType</a>
+</li>
+</ul>
+<div href="../classes/FedEx.ShipService.SimpleType.PhysicalPackagingType.html" class="element class">
+<p class="short_description">This enumeration rationalizes the former FedEx Express international "admissibility package" types (based on ANSI X.12) and the FedEx Freight packaging types.</p>
+<div class="details">
+<p class="long_description"><p>The values represented are those common to both carriers.</p></p>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="mailto:jeremy@jsdunn.info">Jeremy Dunn</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/PHP%20FedEx%20API%20wrapper.Ship%20Service.html">PHP FedEx API wrapper</a></td>
+</tr>
+<tr>
+<th>subpackage</th>
+<td>Ship Service</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Constructor</h2>
+<pre>__construct(string $value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractSimpleType::__construct()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="__toString" id="__toString"></a><div class="element clickable method public __toString" data-toggle="collapse" data-target=".__toString .collapse">
+<h2>__toString() implementation</h2>
+<pre>__toString() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractSimpleType::__toString()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24_value" id="$_value"> </a><div class="element clickable property protected $_value" data-toggle="collapse" data-target=".$_value .collapse">
+<h2>$_value</h2>
+<pre>$_value : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\FedEx\AbstractSimpleType::$$_value</td>
+</tr></table>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a name="_BAG" id="_BAG"> </a><div class="element clickable constant  _BAG" data-toggle="collapse" data-target="._BAG .collapse">
+<h2>_BAG</h2>
+<pre>_BAG </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_BARREL" id="_BARREL"> </a><div class="element clickable constant  _BARREL" data-toggle="collapse" data-target="._BARREL .collapse">
+<h2>_BARREL</h2>
+<pre>_BARREL </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_BASKET" id="_BASKET"> </a><div class="element clickable constant  _BASKET" data-toggle="collapse" data-target="._BASKET .collapse">
+<h2>_BASKET</h2>
+<pre>_BASKET </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_BOX" id="_BOX"> </a><div class="element clickable constant  _BOX" data-toggle="collapse" data-target="._BOX .collapse">
+<h2>_BOX</h2>
+<pre>_BOX </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_BUCKET" id="_BUCKET"> </a><div class="element clickable constant  _BUCKET" data-toggle="collapse" data-target="._BUCKET .collapse">
+<h2>_BUCKET</h2>
+<pre>_BUCKET </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_BUNDLE" id="_BUNDLE"> </a><div class="element clickable constant  _BUNDLE" data-toggle="collapse" data-target="._BUNDLE .collapse">
+<h2>_BUNDLE</h2>
+<pre>_BUNDLE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_CARTON" id="_CARTON"> </a><div class="element clickable constant  _CARTON" data-toggle="collapse" data-target="._CARTON .collapse">
+<h2>_CARTON</h2>
+<pre>_CARTON </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_CASE" id="_CASE"> </a><div class="element clickable constant  _CASE" data-toggle="collapse" data-target="._CASE .collapse">
+<h2>_CASE</h2>
+<pre>_CASE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_CONTAINER" id="_CONTAINER"> </a><div class="element clickable constant  _CONTAINER" data-toggle="collapse" data-target="._CONTAINER .collapse">
+<h2>_CONTAINER</h2>
+<pre>_CONTAINER </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_CRATE" id="_CRATE"> </a><div class="element clickable constant  _CRATE" data-toggle="collapse" data-target="._CRATE .collapse">
+<h2>_CRATE</h2>
+<pre>_CRATE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_CYLINDER" id="_CYLINDER"> </a><div class="element clickable constant  _CYLINDER" data-toggle="collapse" data-target="._CYLINDER .collapse">
+<h2>_CYLINDER</h2>
+<pre>_CYLINDER </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_DRUM" id="_DRUM"> </a><div class="element clickable constant  _DRUM" data-toggle="collapse" data-target="._DRUM .collapse">
+<h2>_DRUM</h2>
+<pre>_DRUM </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_ENVELOPE" id="_ENVELOPE"> </a><div class="element clickable constant  _ENVELOPE" data-toggle="collapse" data-target="._ENVELOPE .collapse">
+<h2>_ENVELOPE</h2>
+<pre>_ENVELOPE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_HAMPER" id="_HAMPER"> </a><div class="element clickable constant  _HAMPER" data-toggle="collapse" data-target="._HAMPER .collapse">
+<h2>_HAMPER</h2>
+<pre>_HAMPER </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_OTHER" id="_OTHER"> </a><div class="element clickable constant  _OTHER" data-toggle="collapse" data-target="._OTHER .collapse">
+<h2>_OTHER</h2>
+<pre>_OTHER </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_PAIL" id="_PAIL"> </a><div class="element clickable constant  _PAIL" data-toggle="collapse" data-target="._PAIL .collapse">
+<h2>_PAIL</h2>
+<pre>_PAIL </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_PALLET" id="_PALLET"> </a><div class="element clickable constant  _PALLET" data-toggle="collapse" data-target="._PALLET .collapse">
+<h2>_PALLET</h2>
+<pre>_PALLET </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_PIECE" id="_PIECE"> </a><div class="element clickable constant  _PIECE" data-toggle="collapse" data-target="._PIECE .collapse">
+<h2>_PIECE</h2>
+<pre>_PIECE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_REEL" id="_REEL"> </a><div class="element clickable constant  _REEL" data-toggle="collapse" data-target="._REEL .collapse">
+<h2>_REEL</h2>
+<pre>_REEL </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_ROLL" id="_ROLL"> </a><div class="element clickable constant  _ROLL" data-toggle="collapse" data-target="._ROLL .collapse">
+<h2>_ROLL</h2>
+<pre>_ROLL </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_SKID" id="_SKID"> </a><div class="element clickable constant  _SKID" data-toggle="collapse" data-target="._SKID .collapse">
+<h2>_SKID</h2>
+<pre>_SKID </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_TANK" id="_TANK"> </a><div class="element clickable constant  _TANK" data-toggle="collapse" data-target="._TANK .collapse">
+<h2>_TANK</h2>
+<pre>_TANK </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="_TUBE" id="_TUBE"> </a><div class="element clickable constant  _TUBE" data-toggle="collapse" data-target="._TUBE .collapse">
+<h2>_TUBE</h2>
+<pre>_TUBE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a8</a> and<br>
+            generated on 2012-07-29T13:59:15-05:00.<br></footer></div>
+</div>
+</body>
+</html>
