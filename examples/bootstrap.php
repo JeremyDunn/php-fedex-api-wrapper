@@ -2,18 +2,29 @@
 //turn off SOAP wsdl caching
 ini_set("soap.wsdl_cache_enabled", "0");
 
-//set include path
-$libraryPath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'library');
-$testLibraryPath = realpath(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'library');
+set_include_path(implode(PATH_SEPARATOR, array(
+    realpath(dirname(__FILE__) .'/../src'),
+    get_include_path(),
+)));
 
-set_include_path(get_include_path() . PATH_SEPARATOR . $libraryPath . PATH_SEPARATOR . $testLibraryPath);
-
-//set up autoloaders
-spl_autoload_register('library_autoloader');
-function library_autoloader($className)
+function autoload($className)
 {
-    include str_replace('\\', DIRECTORY_SEPARATOR, $className . '.php');
+    $className = ltrim($className, '\\');
+    $fileName  = '';
+    $namespace = '';
+    if ($lastNsPos = strripos($className, '\\')) {
+        $namespace = substr($className, 0, $lastNsPos);
+        $className = substr($className, $lastNsPos + 1);
+        $fileName  = str_replace('\\', DIRECTORY_SEPARATOR, $namespace) . DIRECTORY_SEPARATOR;
+    }
+    $fileName .= str_replace('_', DIRECTORY_SEPARATOR, $className) . '.php';
+
+    require $fileName;
 }
+
+spl_autoload_register('autoload');
+
+
 
 require_once 'credentials.php';
 

@@ -5,7 +5,7 @@
  */
 
 set_include_path(implode(PATH_SEPARATOR, array(
-    realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'src'),
+    realpath(dirname(__FILE__) .'/../src'),
     get_include_path(),
 )));
 
