@@ -1,33 +1,14 @@
+#!/usr/bin/env php
 <?php
 
 /**
- * This script will generate the ComplexType and SimpleType classes based off the WSDL files provided by FedEx.  
+ * This script will generate the Request, ComplexType, and SimpleType classes based off the WSDL files provided by FedEx.  
  */
 
-set_include_path(implode(PATH_SEPARATOR, array(
-    realpath(dirname(__FILE__) .'/../src'),
-    get_include_path(),
-)));
-
-function autoload($className)
-{
-    $className = ltrim($className, '\\');
-    $fileName  = '';
-    $namespace = '';
-    if ($lastNsPos = strripos($className, '\\')) {
-        $namespace = substr($className, 0, $lastNsPos);
-        $className = substr($className, $lastNsPos + 1);
-        $fileName  = str_replace('\\', DIRECTORY_SEPARATOR, $namespace) . DIRECTORY_SEPARATOR;
-    }
-    $fileName .= str_replace('_', DIRECTORY_SEPARATOR, $className) . '.php';
-
-    require $fileName;
-}
-
-spl_autoload_register('autoload');
+$vendorDir = dirname(__DIR__) . '/vendor';
+require_once $vendorDir . '/autoload.php';
 
 use FedEx\Utility;
-
 
 //RateRequest
 $wsdlPath = realpath(dirname(__FILE__) . '/../src/FedEx/_wsdl/RateService_v10.wsdl');

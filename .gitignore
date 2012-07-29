@@ -1,2 +1,4 @@
 nbproject
 examples/credentials.php
+composer.lock
+vendor

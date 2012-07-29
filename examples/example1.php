@@ -4,9 +4,9 @@
  * /php/RateAvailableServices/RateAvailableServices.php5
  */
 
-//remember to update /tests/credentials.php
+//remember to update credentials.php or replace 'FEDEX_KEY', 'FEDEX_PASSWORD', 'FEDEX_ACCOUNT_NUMBER', and 'FEDEX_METER_NUMBER'
+require_once 'credentials.php';
 require_once 'bootstrap.php';
-
 
 use     FedEx\RateService,
         FedEx\RateService\ComplexType,
