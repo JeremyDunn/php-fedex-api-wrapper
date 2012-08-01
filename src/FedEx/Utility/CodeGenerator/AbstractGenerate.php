@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Utility;
+namespace FedEx\Utility\CodeGenerator;
 
 /**
  * Abstract class for code generation utilities

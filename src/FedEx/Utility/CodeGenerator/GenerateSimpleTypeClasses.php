@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Utility;
+namespace FedEx\Utility\CodeGenerator;
 
 /**
  * Converts simple types in .wsdl file to PHP class files

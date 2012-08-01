@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Utility;
+namespace FedEx\Utility\CodeGenerator;
 
 /**
  * Generates the Request.php class for each 
