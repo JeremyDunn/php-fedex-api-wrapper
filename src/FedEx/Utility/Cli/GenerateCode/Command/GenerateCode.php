@@ -8,8 +8,18 @@ use FedEx\Utility\CodeGenerator,
     Symfony\Component\Console\Input\InputInterface,
     Symfony\Component\Console\Output\OutputInterface;
 
+/**
+ * Generate Command for Generate Code CLI Application
+ *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
+ * @package     PHP FedEx API wrapper
+ * @subpackage  Utilities
+ */
 class GenerateCode extends Console\Command\Command
 {     
+    /**
+     * Configure implementation
+     */
     protected function configure()
     {
         $description = "Parses the .wsdl files and generates Request, ComplexType, and SimpleType classes.";
@@ -20,10 +30,17 @@ class GenerateCode extends Console\Command\Command
             ->setHelp(PHP_EOL . $description . PHP_EOL);
     }
     
+    /**
+     * Executes the command
+     * 
+     * @param \Symfony\Component\Console\Input\InputInterface $input
+     * @param \Symfony\Component\Console\Output\OutputInterface $output
+     * @throws \Exception
+     */
     protected function execute(InputInterface $input, OutputInterface $output) {
 
         if (!isset($_SERVER['PWD'])) {
-            throw new Exception('Cannot determin current working directory.  Make sure you run this script from command line.');
+            throw new \Exception('Cannot determin current working directory.  Make sure you run this script from command line.');
         }
         
         $fedexSrcDir = realpath(dirname($_SERVER['PWD'] . '/' . $_SERVER['PHP_SELF']) . '/../src/FedEx');
