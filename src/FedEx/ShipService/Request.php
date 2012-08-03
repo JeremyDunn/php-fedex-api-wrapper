@@ -98,7 +98,7 @@ class Request extends AbstractRequest
      * @param ComplexType\DeleteTagRequest $deleteTagRequest 
      * @return stdClass
      */
-    public function getShipmentReply(ComplexType\DeleteTagRequest $deleteTagRequest)
+    public function getDeleteTagReply(ComplexType\DeleteTagRequest $deleteTagRequest)
     {
         return $this->_soapClient->deleteTag($deleteTagRequest->toArray());
     }
@@ -108,7 +108,7 @@ class Request extends AbstractRequest
      * @param ComplexType\ValidateShipmentRequest $validateShipmentRequest 
      * @return stdClass
      */
-    public function getShipmentReply(ComplexType\ValidateShipmentRequest $validateShipmentRequest)
+    public function getValidateShipmentReply(ComplexType\ValidateShipmentRequest $validateShipmentRequest)
     {
         return $this->_soapClient->validateShipment($validateShipmentRequest->toArray());
     }
@@ -118,7 +118,7 @@ class Request extends AbstractRequest
      * @param ComplexType\DeleteShipmentRequest $deleteShipmentRequest 
      * @return stdClass
      */
-    public function getShipmentReply(ComplexType\DeleteShipmentRequest $deleteShipmentRequest)
+    public function getDeleteShipmentReply(ComplexType\DeleteShipmentRequest $deleteShipmentRequest)
     {
         return $this->_soapClient->deleteShipment($deleteShipmentRequest->toArray());
     }

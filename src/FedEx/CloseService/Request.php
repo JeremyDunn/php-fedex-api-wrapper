@@ -88,7 +88,7 @@ class Request extends AbstractRequest
      * @param ComplexType\GroundCloseWithDocumentsRequest $groundCloseWithDocumentsRequest 
      * @return stdClass
      */
-    public function getGroundCloseDocumentsReply(ComplexType\GroundCloseWithDocumentsRequest $groundCloseWithDocumentsRequest)
+    public function getGroundCloseWithDocumentsReply(ComplexType\GroundCloseWithDocumentsRequest $groundCloseWithDocumentsRequest)
     {
         return $this->_soapClient->groundCloseWithDocuments($groundCloseWithDocumentsRequest->toArray());
     }
@@ -98,7 +98,7 @@ class Request extends AbstractRequest
      * @param ComplexType\ReprintGroundCloseDocumentsRequest $reprintGroundCloseDocumentsRequest 
      * @return stdClass
      */
-    public function getGroundCloseDocumentsReply(ComplexType\ReprintGroundCloseDocumentsRequest $reprintGroundCloseDocumentsRequest)
+    public function getReprintGroundCloseDocumentsReply(ComplexType\ReprintGroundCloseDocumentsRequest $reprintGroundCloseDocumentsRequest)
     {
         return $this->_soapClient->reprintGroundCloseDocuments($reprintGroundCloseDocumentsRequest->toArray());
     }

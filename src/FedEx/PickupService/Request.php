@@ -58,7 +58,7 @@ class Request extends AbstractRequest
      * @param ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest 
      * @return stdClass
      */
-    public function getPickupAvailabilityReply(ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest)
+    public function getGetPickupAvailabilityReply(ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest)
     {
         return $this->_soapClient->getPickupAvailability($pickupAvailabilityRequest->toArray());
     }

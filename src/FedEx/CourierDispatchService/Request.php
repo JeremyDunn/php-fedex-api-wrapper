@@ -58,7 +58,7 @@ class Request extends AbstractRequest
      * @param ComplexType\CourierDispatchRequest $courierDispatchRequest 
      * @return stdClass
      */
-    public function getCourierDispatchReply(ComplexType\CourierDispatchRequest $courierDispatchRequest)
+    public function getCreateCourierDispatchReply(ComplexType\CourierDispatchRequest $courierDispatchRequest)
     {
         return $this->_soapClient->createCourierDispatch($courierDispatchRequest->toArray());
     }
@@ -78,7 +78,7 @@ class Request extends AbstractRequest
      * @param ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest 
      * @return stdClass
      */
-    public function getPickupAvailabilityReply(ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest)
+    public function getGetPickupAvailabilityReply(ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest)
     {
         return $this->_soapClient->getPickupAvailability($pickupAvailabilityRequest->toArray());
     }

@@ -58,7 +58,7 @@ class Request extends AbstractRequest
      * @param ComplexType\TrackNotificationRequest $trackNotificationRequest 
      * @return stdClass
      */
-    public function getTrackNotificationReply(ComplexType\TrackNotificationRequest $trackNotificationRequest)
+    public function getGetTrackNotificationReply(ComplexType\TrackNotificationRequest $trackNotificationRequest)
     {
         return $this->_soapClient->getTrackNotification($trackNotificationRequest->toArray());
     }
@@ -68,7 +68,7 @@ class Request extends AbstractRequest
      * @param ComplexType\SignatureProofOfDeliveryLetterRequest $signatureProofOfDeliveryLetterRequest 
      * @return stdClass
      */
-    public function getSignatureProofOfDeliveryLetterReply(ComplexType\SignatureProofOfDeliveryLetterRequest $signatureProofOfDeliveryLetterRequest)
+    public function getRetrieveSignatureProofOfDeliveryLetterReply(ComplexType\SignatureProofOfDeliveryLetterRequest $signatureProofOfDeliveryLetterRequest)
     {
         return $this->_soapClient->retrieveSignatureProofOfDeliveryLetter($signatureProofOfDeliveryLetterRequest->toArray());
     }
@@ -88,7 +88,7 @@ class Request extends AbstractRequest
      * @param ComplexType\SignatureProofOfDeliveryFaxRequest $signatureProofOfDeliveryFaxRequest 
      * @return stdClass
      */
-    public function getSignatureProofOfDeliveryFaxReply(ComplexType\SignatureProofOfDeliveryFaxRequest $signatureProofOfDeliveryFaxRequest)
+    public function getSendSignatureProofOfDeliveryFaxReply(ComplexType\SignatureProofOfDeliveryFaxRequest $signatureProofOfDeliveryFaxRequest)
     {
         return $this->_soapClient->sendSignatureProofOfDeliveryFax($signatureProofOfDeliveryFaxRequest->toArray());
     }

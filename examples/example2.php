@@ -114,4 +114,4 @@ var_dump($rateRequest->toArray());
 echo "<hr />";
 
 $request = new RateService\Request();
-var_dump($request->getRateReply($rateRequest));
+var_dump($request->getGetRatesReply($rateRequest));

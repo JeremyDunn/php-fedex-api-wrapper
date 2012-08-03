@@ -58,7 +58,7 @@ class Request extends AbstractRequest
      * @param ComplexType\ExpressTagAvailabilityRequest $expressTagAvailabilityRequest 
      * @return stdClass
      */
-    public function getExpressTagAvailabilityReply(ComplexType\ExpressTagAvailabilityRequest $expressTagAvailabilityRequest)
+    public function getGetExpressTagAvailabilityReply(ComplexType\ExpressTagAvailabilityRequest $expressTagAvailabilityRequest)
     {
         return $this->_soapClient->getExpressTagAvailability($expressTagAvailabilityRequest->toArray());
     }

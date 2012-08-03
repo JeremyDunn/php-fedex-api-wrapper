@@ -58,7 +58,7 @@ class Request extends AbstractRequest
      * @param ComplexType\RateRequest $rateRequest 
      * @return stdClass
      */
-    public function getRateReply(ComplexType\RateRequest $rateRequest)
+    public function getGetRatesReply(ComplexType\RateRequest $rateRequest)
     {
         return $this->_soapClient->getRates($rateRequest->toArray());
     }

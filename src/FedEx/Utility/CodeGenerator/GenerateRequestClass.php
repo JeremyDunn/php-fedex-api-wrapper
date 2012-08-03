@@ -83,7 +83,7 @@ class GenerateRequestClass extends AbstractGenerate
             
             $parts = explode(' ', $soapFunctionDescription);
             
-            $functionDefinition = 'public function get' . $parts[0];
+            $functionDefinition = 'public function get' . ucfirst(substr($parts[1], 0, stripos($parts[1], '(')) . 'Reply');
             
             $thisDefinition['soapFunction'] = substr($parts[1], 0, stripos($parts[1], '('));
             
@@ -125,7 +125,7 @@ class GenerateRequestClass extends AbstractGenerate
         $relativePathToWSDL = $this->getRelativePath($this->_pathToRequestClassFile, $this->_wsdlPath);
 
         $requestFunctions = '';
-        
+                
         foreach ($requestFunctionDefinitions as $functionDefinition)
         {
             $requestFunctions .= <<<TEXT

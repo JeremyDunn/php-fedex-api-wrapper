@@ -161,6 +161,7 @@ echo "<hr />";
 
 $request = new RateService\Request();
 
-var_dump($request->getRateReply($rateRequest));
+
+var_dump($request->getGetRatesReply($rateRequest));
 
 var_dump($request->getSoapClient()->__getFunctions());
