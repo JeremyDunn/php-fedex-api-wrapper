@@ -1,6 +1,8 @@
 <?php
 namespace FedEx\RateService;
     
+use FedEx\AbstractRequest;
+
 /**
  * Request sends the SOAP call to the FedEx servers and returns the response
  *
@@ -8,7 +10,7 @@ namespace FedEx\RateService;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class Request
+class Request extends AbstractRequest
 {
     /**
      * WSDL Path

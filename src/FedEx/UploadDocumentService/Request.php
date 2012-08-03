@@ -1,6 +1,8 @@
 <?php
 namespace FedEx\UploadDocumentService;
     
+use FedEx\AbstractRequest;
+
 /**
  * Request sends the SOAP call to the FedEx servers and returns the response
  *
@@ -8,7 +10,7 @@ namespace FedEx\UploadDocumentService;
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */
-class Request
+class Request extends AbstractRequest
 {
     /**
      * WSDL Path

@@ -148,6 +148,8 @@ TEXT;
 <?php
 namespace {$this->_namespace};
     
+use FedEx\AbstractRequest;
+
 /**
  * Request sends the SOAP call to the FedEx servers and returns the response
  *
@@ -155,7 +157,7 @@ namespace {$this->_namespace};
  * @package     PHP FedEx API wrapper
  * @subpackage  {$this->_subPackageName}
  */
-class Request
+class Request extends AbstractRequest
 {
     /**
      * WSDL Path

@@ -1,6 +1,8 @@
 <?php
 namespace FedEx\ReturnTagService;
     
+use FedEx\AbstractRequest;
+
 /**
  * Request sends the SOAP call to the FedEx servers and returns the response
  *
@@ -8,7 +10,7 @@ namespace FedEx\ReturnTagService;
  * @package     PHP FedEx API wrapper
  * @subpackage  Return Tag Service
  */
-class Request
+class Request extends AbstractRequest
 {
     /**
      * WSDL Path
