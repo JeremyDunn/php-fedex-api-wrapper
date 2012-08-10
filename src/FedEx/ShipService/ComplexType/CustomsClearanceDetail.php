@@ -36,10 +36,10 @@ class CustomsClearanceDetail
     /**
      * Interacts both with properties of the shipment and contractual relationship with the shipper.
      *
-     * @param \FedEx\ShipService\SimpleType\ClearanceBrokerageType  $clearanceBrokerage
+     * @param \FedEx\ShipService\SimpleType\ClearanceBrokerageType|string $clearanceBrokerage
      * return CustomsClearanceDetail
      */
-    public function setClearanceBrokerage(\FedEx\ShipService\SimpleType\ClearanceBrokerageType $clearanceBrokerage)
+    public function setClearanceBrokerage($clearanceBrokerage)
     {
         $this->ClearanceBrokerage = $clearanceBrokerage;
         return $this;
@@ -84,10 +84,10 @@ class CustomsClearanceDetail
     /**
      * Set DocumentContent
      *
-     * @param \FedEx\ShipService\SimpleType\InternationalDocumentContentType  $documentContent
+     * @param \FedEx\ShipService\SimpleType\InternationalDocumentContentType|string $documentContent
      * return CustomsClearanceDetail
      */
-    public function setDocumentContent(\FedEx\ShipService\SimpleType\InternationalDocumentContentType $documentContent)
+    public function setDocumentContent($documentContent)
     {
         $this->DocumentContent = $documentContent;
         return $this;
@@ -108,10 +108,10 @@ class CustomsClearanceDetail
     /**
      * Identifies responsibilities with respect to loss, damage, etc.
      *
-     * @param \FedEx\ShipService\SimpleType\FreightOnValueType  $freightOnValue
+     * @param \FedEx\ShipService\SimpleType\FreightOnValueType|string $freightOnValue
      * return CustomsClearanceDetail
      */
-    public function setFreightOnValue(\FedEx\ShipService\SimpleType\FreightOnValueType $freightOnValue)
+    public function setFreightOnValue($freightOnValue)
     {
         $this->FreightOnValue = $freightOnValue;
         return $this;

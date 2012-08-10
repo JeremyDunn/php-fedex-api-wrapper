@@ -72,10 +72,10 @@ class TrackRequest
     /**
      * The FedEx operating company (transportation) used for this package's delivery.
      *
-     * @param \FedEx\TrackService\SimpleType\CarrierCodeType  $carrierCode
+     * @param \FedEx\TrackService\SimpleType\CarrierCodeType|string $carrierCode
      * return TrackRequest
      */
-    public function setCarrierCode(\FedEx\TrackService\SimpleType\CarrierCodeType $carrierCode)
+    public function setCarrierCode($carrierCode)
     {
         $this->CarrierCode = $carrierCode;
         return $this;
@@ -84,10 +84,10 @@ class TrackRequest
     /**
      * Identifies operating transportation company that is the specific to the carrier code.
      *
-     * @param \FedEx\TrackService\SimpleType\OperatingCompanyType  $operatingCompany
+     * @param \FedEx\TrackService\SimpleType\OperatingCompanyType|string $operatingCompany
      * return TrackRequest
      */
-    public function setOperatingCompany(\FedEx\TrackService\SimpleType\OperatingCompanyType $operatingCompany)
+    public function setOperatingCompany($operatingCompany)
     {
         $this->OperatingCompany = $operatingCompany;
         return $this;

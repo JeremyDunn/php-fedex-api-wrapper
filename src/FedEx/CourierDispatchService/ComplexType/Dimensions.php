@@ -60,10 +60,10 @@ class Dimensions
     /**
      * Identifies the unit of measure associated with a dimensional values. See LinearUnits for valid values.
      *
-     * @param \FedEx\CourierDispatchService\SimpleType\LinearUnits  $units
+     * @param \FedEx\CourierDispatchService\SimpleType\LinearUnits|string $units
      * return Dimensions
      */
-    public function setUnits(\FedEx\CourierDispatchService\SimpleType\LinearUnits $units)
+    public function setUnits($units)
     {
         $this->Units = $units;
         return $this;

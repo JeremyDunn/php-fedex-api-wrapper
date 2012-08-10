@@ -24,10 +24,10 @@ class FreightShipmentLineItem
     /**
      * Freight class for this line item.
      *
-     * @param \FedEx\RateService\SimpleType\FreightClassType  $freightClass
+     * @param \FedEx\RateService\SimpleType\FreightClassType|string $freightClass
      * return FreightShipmentLineItem
      */
-    public function setFreightClass(\FedEx\RateService\SimpleType\FreightClassType $freightClass)
+    public function setFreightClass($freightClass)
     {
         $this->FreightClass = $freightClass;
         return $this;
@@ -36,10 +36,10 @@ class FreightShipmentLineItem
     /**
      * Specification of handling-unit packaging for this commodity or class line.
      *
-     * @param \FedEx\RateService\SimpleType\PhysicalPackagingType  $packaging
+     * @param \FedEx\RateService\SimpleType\PhysicalPackagingType|string $packaging
      * return FreightShipmentLineItem
      */
-    public function setPackaging(\FedEx\RateService\SimpleType\PhysicalPackagingType $packaging)
+    public function setPackaging($packaging)
     {
         $this->Packaging = $packaging;
         return $this;

@@ -60,10 +60,10 @@ class PickupDetail
     /**
      * Set RequestType
      *
-     * @param \FedEx\RateService\SimpleType\PickupRequestType  $requestType
+     * @param \FedEx\RateService\SimpleType\PickupRequestType|string $requestType
      * return PickupDetail
      */
-    public function setRequestType(\FedEx\RateService\SimpleType\PickupRequestType $requestType)
+    public function setRequestType($requestType)
     {
         $this->RequestType = $requestType;
         return $this;
@@ -72,10 +72,10 @@ class PickupDetail
     /**
      * Set RequestSource
      *
-     * @param \FedEx\RateService\SimpleType\PickupRequestSourceType  $requestSource
+     * @param \FedEx\RateService\SimpleType\PickupRequestSourceType|string $requestSource
      * return PickupDetail
      */
-    public function setRequestSource(\FedEx\RateService\SimpleType\PickupRequestSourceType $requestSource)
+    public function setRequestSource($requestSource)
     {
         $this->RequestSource = $requestSource;
         return $this;

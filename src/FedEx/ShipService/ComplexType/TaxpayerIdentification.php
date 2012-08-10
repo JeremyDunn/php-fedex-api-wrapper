@@ -24,10 +24,10 @@ class TaxpayerIdentification
     /**
      * Identifies the category of the taxpayer identification number. See TinType for the list of values.
      *
-     * @param \FedEx\ShipService\SimpleType\TinType  $tinType
+     * @param \FedEx\ShipService\SimpleType\TinType|string $tinType
      * return TaxpayerIdentification
      */
-    public function setTinType(\FedEx\ShipService\SimpleType\TinType $tinType)
+    public function setTinType($tinType)
     {
         $this->TinType = $tinType;
         return $this;

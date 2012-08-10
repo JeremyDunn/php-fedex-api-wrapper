@@ -24,10 +24,10 @@ class SmartPostShipmentDetail
     /**
      * Set Indicia
      *
-     * @param \FedEx\ShipService\SimpleType\SmartPostIndiciaType  $indicia
+     * @param \FedEx\ShipService\SimpleType\SmartPostIndiciaType|string $indicia
      * return SmartPostShipmentDetail
      */
-    public function setIndicia(\FedEx\ShipService\SimpleType\SmartPostIndiciaType $indicia)
+    public function setIndicia($indicia)
     {
         $this->Indicia = $indicia;
         return $this;
@@ -36,10 +36,10 @@ class SmartPostShipmentDetail
     /**
      * Set AncillaryEndorsement
      *
-     * @param \FedEx\ShipService\SimpleType\SmartPostAncillaryEndorsementType  $ancillaryEndorsement
+     * @param \FedEx\ShipService\SimpleType\SmartPostAncillaryEndorsementType|string $ancillaryEndorsement
      * return SmartPostShipmentDetail
      */
-    public function setAncillaryEndorsement(\FedEx\ShipService\SimpleType\SmartPostAncillaryEndorsementType $ancillaryEndorsement)
+    public function setAncillaryEndorsement($ancillaryEndorsement)
     {
         $this->AncillaryEndorsement = $ancillaryEndorsement;
         return $this;

@@ -24,10 +24,10 @@ class Tax
     /**
      * The type of tax applied to the shipment.
      *
-     * @param \FedEx\ShipService\SimpleType\TaxType  $taxType
+     * @param \FedEx\ShipService\SimpleType\TaxType|string $taxType
      * return Tax
      */
-    public function setTaxType(\FedEx\ShipService\SimpleType\TaxType $taxType)
+    public function setTaxType($taxType)
     {
         $this->TaxType = $taxType;
         return $this;

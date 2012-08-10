@@ -27,10 +27,10 @@ class ExportDetail
                 Required for non-document shipments originating in Canada destined for any country other than Canada, the United States, Puerto Rico or the U.S. Virgin Islands.
               
      *
-     * @param \FedEx\RateService\SimpleType\B13AFilingOptionType  $b13AFilingOption
+     * @param \FedEx\RateService\SimpleType\B13AFilingOptionType|string $b13AFilingOption
      * return ExportDetail
      */
-    public function setB13AFilingOption(\FedEx\RateService\SimpleType\B13AFilingOptionType $b13AFilingOption)
+    public function setB13AFilingOption($b13AFilingOption)
     {
         $this->B13AFilingOption = $b13AFilingOption;
         return $this;

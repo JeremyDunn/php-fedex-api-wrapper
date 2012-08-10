@@ -36,10 +36,10 @@ class CreditCardTransactionDetail
     /**
      * Set AuthorizationType
      *
-     * @param \FedEx\Pickup\SimpleType\CreditCardAuthorizationType  $authorizationType
+     * @param \FedEx\Pickup\SimpleType\CreditCardAuthorizationType|string $authorizationType
      * return CreditCardTransactionDetail
      */
-    public function setAuthorizationType(\FedEx\Pickup\SimpleType\CreditCardAuthorizationType $authorizationType)
+    public function setAuthorizationType($authorizationType)
     {
         $this->AuthorizationType = $authorizationType;
         return $this;

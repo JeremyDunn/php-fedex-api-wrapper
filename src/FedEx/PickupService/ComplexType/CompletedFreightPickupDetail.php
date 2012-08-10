@@ -84,10 +84,10 @@ class CompletedFreightPickupDetail
     /**
      * Resulting status of pickup.
      *
-     * @param \FedEx\Pickup\SimpleType\PickupEventType  $status
+     * @param \FedEx\Pickup\SimpleType\PickupEventType|string $status
      * return CompletedFreightPickupDetail
      */
-    public function setStatus(\FedEx\Pickup\SimpleType\PickupEventType $status)
+    public function setStatus($status)
     {
         $this->Status = $status;
         return $this;

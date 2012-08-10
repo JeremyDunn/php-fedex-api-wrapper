@@ -144,10 +144,10 @@ class ShipmentOperationalDetail
     /**
      * Expected/estimated day of week of delivery.
      *
-     * @param \FedEx\ShipService\SimpleType\DayOfWeekType  $deliveryDay
+     * @param \FedEx\ShipService\SimpleType\DayOfWeekType|string $deliveryDay
      * return ShipmentOperationalDetail
      */
-    public function setDeliveryDay(\FedEx\ShipService\SimpleType\DayOfWeekType $deliveryDay)
+    public function setDeliveryDay($deliveryDay)
     {
         $this->DeliveryDay = $deliveryDay;
         return $this;
@@ -180,10 +180,10 @@ class ShipmentOperationalDetail
     /**
      * Committed day of week of delivery.
      *
-     * @param \FedEx\ShipService\SimpleType\DayOfWeekType  $commitDay
+     * @param \FedEx\ShipService\SimpleType\DayOfWeekType|string $commitDay
      * return ShipmentOperationalDetail
      */
-    public function setCommitDay(\FedEx\ShipService\SimpleType\DayOfWeekType $commitDay)
+    public function setCommitDay($commitDay)
     {
         $this->CommitDay = $commitDay;
         return $this;
@@ -192,10 +192,10 @@ class ShipmentOperationalDetail
     /**
      * Standard transit time per origin, destination, and service.
      *
-     * @param \FedEx\ShipService\SimpleType\TransitTimeType  $transitTime
+     * @param \FedEx\ShipService\SimpleType\TransitTimeType|string $transitTime
      * return ShipmentOperationalDetail
      */
-    public function setTransitTime(\FedEx\ShipService\SimpleType\TransitTimeType $transitTime)
+    public function setTransitTime($transitTime)
     {
         $this->TransitTime = $transitTime;
         return $this;
@@ -204,10 +204,10 @@ class ShipmentOperationalDetail
     /**
      * Maximum expected transit time
      *
-     * @param \FedEx\ShipService\SimpleType\TransitTimeType  $maximumTransitTime
+     * @param \FedEx\ShipService\SimpleType\TransitTimeType|string $maximumTransitTime
      * return ShipmentOperationalDetail
      */
-    public function setMaximumTransitTime(\FedEx\ShipService\SimpleType\TransitTimeType $maximumTransitTime)
+    public function setMaximumTransitTime($maximumTransitTime)
     {
         $this->MaximumTransitTime = $maximumTransitTime;
         return $this;
@@ -216,10 +216,10 @@ class ShipmentOperationalDetail
     /**
      * Transit time based on customer eligibility.
      *
-     * @param \FedEx\ShipService\SimpleType\TransitTimeType  $customTransitTime
+     * @param \FedEx\ShipService\SimpleType\TransitTimeType|string $customTransitTime
      * return ShipmentOperationalDetail
      */
-    public function setCustomTransitTime(\FedEx\ShipService\SimpleType\TransitTimeType $customTransitTime)
+    public function setCustomTransitTime($customTransitTime)
     {
         $this->CustomTransitTime = $customTransitTime;
         return $this;

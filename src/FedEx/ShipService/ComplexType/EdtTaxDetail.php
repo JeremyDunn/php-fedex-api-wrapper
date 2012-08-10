@@ -24,10 +24,10 @@ class EdtTaxDetail
     /**
      * Set TaxType
      *
-     * @param \FedEx\ShipService\SimpleType\EdtTaxType  $taxType
+     * @param \FedEx\ShipService\SimpleType\EdtTaxType|string $taxType
      * return EdtTaxDetail
      */
-    public function setTaxType(\FedEx\ShipService\SimpleType\EdtTaxType $taxType)
+    public function setTaxType($taxType)
     {
         $this->TaxType = $taxType;
         return $this;

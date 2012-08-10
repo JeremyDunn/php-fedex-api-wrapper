@@ -24,10 +24,10 @@ class CourierDispatchFreightDetail
     /**
      * Identifies the collection of available FedEx transportation service options. Must be a valid FedEx freight service identifier.
      *
-     * @param \FedEx\CourierDispatchService\SimpleType\ServiceType  $service
+     * @param \FedEx\CourierDispatchService\SimpleType\ServiceType|string $service
      * return CourierDispatchFreightDetail
      */
-    public function setService(\FedEx\CourierDispatchService\SimpleType\ServiceType $service)
+    public function setService($service)
     {
         $this->Service = $service;
         return $this;
@@ -60,10 +60,10 @@ class CourierDispatchFreightDetail
     /**
      * Identifies the type of truck that is needed for FedEx to pick up the freight shipment. See TruckType for valid values.
      *
-     * @param \FedEx\CourierDispatchService\SimpleType\TruckType  $truckType
+     * @param \FedEx\CourierDispatchService\SimpleType\TruckType|string $truckType
      * return CourierDispatchFreightDetail
      */
-    public function setTruckType(\FedEx\CourierDispatchService\SimpleType\TruckType $truckType)
+    public function setTruckType($truckType)
     {
         $this->TruckType = $truckType;
         return $this;
@@ -72,10 +72,10 @@ class CourierDispatchFreightDetail
     /**
      * Identifies the tailer size needed for FedEx to pick up a freight shipment. See TrailerSizeType for valid values.
      *
-     * @param \FedEx\CourierDispatchService\SimpleType\TrailerSizeType  $trailerSize
+     * @param \FedEx\CourierDispatchService\SimpleType\TrailerSizeType|string $trailerSize
      * return CourierDispatchFreightDetail
      */
-    public function setTrailerSize(\FedEx\CourierDispatchService\SimpleType\TrailerSizeType $trailerSize)
+    public function setTrailerSize($trailerSize)
     {
         $this->TrailerSize = $trailerSize;
         return $this;

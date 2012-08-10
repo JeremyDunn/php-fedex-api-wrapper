@@ -48,10 +48,10 @@ class ProposedAddressDetail
     /**
      * Set ResidentialStatus
      *
-     * @param \FedEx\AddressValidationService\SimpleType\ResidentialStatusType  $residentialStatus
+     * @param \FedEx\AddressValidationService\SimpleType\ResidentialStatusType|string $residentialStatus
      * return ProposedAddressDetail
      */
-    public function setResidentialStatus(\FedEx\AddressValidationService\SimpleType\ResidentialStatusType $residentialStatus)
+    public function setResidentialStatus($residentialStatus)
     {
         $this->ResidentialStatus = $residentialStatus;
         return $this;
@@ -60,10 +60,10 @@ class ProposedAddressDetail
     /**
      * Set DeliveryPointValidation
      *
-     * @param \FedEx\AddressValidationService\SimpleType\DeliveryPointValidationType  $deliveryPointValidation
+     * @param \FedEx\AddressValidationService\SimpleType\DeliveryPointValidationType|string $deliveryPointValidation
      * return ProposedAddressDetail
      */
-    public function setDeliveryPointValidation(\FedEx\AddressValidationService\SimpleType\DeliveryPointValidationType $deliveryPointValidation)
+    public function setDeliveryPointValidation($deliveryPointValidation)
     {
         $this->DeliveryPointValidation = $deliveryPointValidation;
         return $this;

@@ -24,10 +24,10 @@ class RecipientCustomsId
     /**
      * Specifies the kind of identification being used.
      *
-     * @param \FedEx\RateService\SimpleType\RecipientCustomsIdType  $type
+     * @param \FedEx\RateService\SimpleType\RecipientCustomsIdType|string $type
      * return RecipientCustomsId
      */
-    public function setType(\FedEx\RateService\SimpleType\RecipientCustomsIdType $type)
+    public function setType($type)
     {
         $this->Type = $type;
         return $this;

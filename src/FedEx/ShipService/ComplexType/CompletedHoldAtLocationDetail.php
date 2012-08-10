@@ -36,10 +36,10 @@ class CompletedHoldAtLocationDetail
     /**
      * Identifies the type of FedEx location.
      *
-     * @param \FedEx\ShipService\SimpleType\FedExLocationType  $holdingLocationType
+     * @param \FedEx\ShipService\SimpleType\FedExLocationType|string $holdingLocationType
      * return CompletedHoldAtLocationDetail
      */
-    public function setHoldingLocationType(\FedEx\ShipService\SimpleType\FedExLocationType $holdingLocationType)
+    public function setHoldingLocationType($holdingLocationType)
     {
         $this->HoldingLocationType = $holdingLocationType;
         return $this;

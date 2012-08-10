@@ -24,10 +24,10 @@ class PickupShipmentAttributes
     /**
      * Set ServiceType
      *
-     * @param \FedEx\Pickup\SimpleType\ServiceType  $serviceType
+     * @param \FedEx\Pickup\SimpleType\ServiceType|string $serviceType
      * return PickupShipmentAttributes
      */
-    public function setServiceType(\FedEx\Pickup\SimpleType\ServiceType $serviceType)
+    public function setServiceType($serviceType)
     {
         $this->ServiceType = $serviceType;
         return $this;
@@ -36,10 +36,10 @@ class PickupShipmentAttributes
     /**
      * Set PackagingType
      *
-     * @param \FedEx\Pickup\SimpleType\PackagingType  $packagingType
+     * @param \FedEx\Pickup\SimpleType\PackagingType|string $packagingType
      * return PickupShipmentAttributes
      */
-    public function setPackagingType(\FedEx\Pickup\SimpleType\PackagingType $packagingType)
+    public function setPackagingType($packagingType)
     {
         $this->PackagingType = $packagingType;
         return $this;

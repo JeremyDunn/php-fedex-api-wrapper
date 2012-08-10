@@ -24,10 +24,10 @@ class Notification
     /**
      * Identifies the severity of the Notification item. See NotificationSeverityType for list of returned values.
      *
-     * @param \FedEx\ReturnTagService\SimpleType\NotificationSeverityType  $severity
+     * @param \FedEx\ReturnTagService\SimpleType\NotificationSeverityType|string $severity
      * return Notification
      */
-    public function setSeverity(\FedEx\ReturnTagService\SimpleType\NotificationSeverityType $severity)
+    public function setSeverity($severity)
     {
         $this->Severity = $severity;
         return $this;

@@ -24,10 +24,10 @@ class Weight
     /**
      * Identifies the unit of measure associated with a weight value.
      *
-     * @param \FedEx\RateService\SimpleType\WeightUnits  $units
+     * @param \FedEx\RateService\SimpleType\WeightUnits|string $units
      * return Weight
      */
-    public function setUnits(\FedEx\RateService\SimpleType\WeightUnits $units)
+    public function setUnits($units)
     {
         $this->Units = $units;
         return $this;

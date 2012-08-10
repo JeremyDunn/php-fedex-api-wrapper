@@ -108,10 +108,10 @@ class RequestedPackageLineItem
     /**
      * Provides additional detail on how the customer has physically packaged this item. As of June 2009, required for packages moving under international and SmartPost services.
      *
-     * @param \FedEx\RateService\SimpleType\PhysicalPackagingType  $physicalPackaging
+     * @param \FedEx\RateService\SimpleType\PhysicalPackagingType|string $physicalPackaging
      * return RequestedPackageLineItem
      */
-    public function setPhysicalPackaging(\FedEx\RateService\SimpleType\PhysicalPackagingType $physicalPackaging)
+    public function setPhysicalPackaging($physicalPackaging)
     {
         $this->PhysicalPackaging = $physicalPackaging;
         return $this;

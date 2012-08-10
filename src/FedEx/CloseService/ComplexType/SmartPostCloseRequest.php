@@ -108,10 +108,10 @@ class SmartPostCloseRequest
     /**
      * Set PickUpCarrier
      *
-     * @param \FedEx\CloseService\SimpleType\CarrierCodeType  $pickUpCarrier
+     * @param \FedEx\CloseService\SimpleType\CarrierCodeType|string $pickUpCarrier
      * return SmartPostCloseRequest
      */
-    public function setPickUpCarrier(\FedEx\CloseService\SimpleType\CarrierCodeType $pickUpCarrier)
+    public function setPickUpCarrier($pickUpCarrier)
     {
         $this->PickUpCarrier = $pickUpCarrier;
         return $this;

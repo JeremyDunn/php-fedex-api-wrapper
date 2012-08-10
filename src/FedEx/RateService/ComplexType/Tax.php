@@ -24,10 +24,10 @@ class Tax
     /**
      * Set TaxType
      *
-     * @param \FedEx\RateService\SimpleType\TaxType  $taxType
+     * @param \FedEx\RateService\SimpleType\TaxType|string $taxType
      * return Tax
      */
-    public function setTaxType(\FedEx\RateService\SimpleType\TaxType $taxType)
+    public function setTaxType($taxType)
     {
         $this->TaxType = $taxType;
         return $this;

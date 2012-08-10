@@ -96,10 +96,10 @@ class SignatureProofOfDeliveryLetterRequest
     /**
      * Identifies the set of SPOD image types.
      *
-     * @param \FedEx\TrackService\SimpleType\SignatureProofOfDeliveryImageType  $letterFormat
+     * @param \FedEx\TrackService\SimpleType\SignatureProofOfDeliveryImageType|string $letterFormat
      * return SignatureProofOfDeliveryLetterRequest
      */
-    public function setLetterFormat(\FedEx\TrackService\SimpleType\SignatureProofOfDeliveryImageType $letterFormat)
+    public function setLetterFormat($letterFormat)
     {
         $this->LetterFormat = $letterFormat;
         return $this;

@@ -96,10 +96,10 @@ class DeleteShipmentRequest
     /**
      * Determines the type of deletion to be performed in relation to package level vs shipment level.
      *
-     * @param \FedEx\ShipService\SimpleType\DeletionControlType  $deletionControl
+     * @param \FedEx\ShipService\SimpleType\DeletionControlType|string $deletionControl
      * return DeleteShipmentRequest
      */
-    public function setDeletionControl(\FedEx\ShipService\SimpleType\DeletionControlType $deletionControl)
+    public function setDeletionControl($deletionControl)
     {
         $this->DeletionControl = $deletionControl;
         return $this;

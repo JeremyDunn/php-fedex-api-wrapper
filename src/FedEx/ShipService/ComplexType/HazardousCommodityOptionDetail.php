@@ -24,10 +24,10 @@ class HazardousCommodityOptionDetail
     /**
      * Specifies how the customer wishes the label text to be handled for this commodity in this package.
      *
-     * @param \FedEx\ShipService\SimpleType\HazardousCommodityLabelTextOptionType  $labelTextOption
+     * @param \FedEx\ShipService\SimpleType\HazardousCommodityLabelTextOptionType|string $labelTextOption
      * return HazardousCommodityOptionDetail
      */
-    public function setLabelTextOption(\FedEx\ShipService\SimpleType\HazardousCommodityLabelTextOptionType $labelTextOption)
+    public function setLabelTextOption($labelTextOption)
     {
         $this->LabelTextOption = $labelTextOption;
         return $this;

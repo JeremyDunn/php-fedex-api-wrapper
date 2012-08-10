@@ -60,10 +60,10 @@ class CompletedPackageDetail
     /**
      * Oversize class for this package.
      *
-     * @param \FedEx\ShipService\SimpleType\OversizeClassType  $oversizeClass
+     * @param \FedEx\ShipService\SimpleType\OversizeClassType|string $oversizeClass
      * return CompletedPackageDetail
      */
-    public function setOversizeClass(\FedEx\ShipService\SimpleType\OversizeClassType $oversizeClass)
+    public function setOversizeClass($oversizeClass)
     {
         $this->OversizeClass = $oversizeClass;
         return $this;
@@ -132,10 +132,10 @@ class CompletedPackageDetail
     /**
      * Actual signature option applied, to allow for cases in which the original value conflicted with other service features in the shipment.
      *
-     * @param \FedEx\ShipService\SimpleType\SignatureOptionType  $signatureOption
+     * @param \FedEx\ShipService\SimpleType\SignatureOptionType|string $signatureOption
      * return CompletedPackageDetail
      */
-    public function setSignatureOption(\FedEx\ShipService\SimpleType\SignatureOptionType $signatureOption)
+    public function setSignatureOption($signatureOption)
     {
         $this->SignatureOption = $signatureOption;
         return $this;

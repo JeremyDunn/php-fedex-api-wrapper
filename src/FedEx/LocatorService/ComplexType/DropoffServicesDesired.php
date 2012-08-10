@@ -192,10 +192,10 @@ class DropoffServicesDesired
     /**
      * Locations that support Redirect to Hold of shipments.
      *
-     * @param \FedEx\LocatorService\SimpleType\RedirectToHoldLocationType  $redirectToHoldLocation
+     * @param \FedEx\LocatorService\SimpleType\RedirectToHoldLocationType|string $redirectToHoldLocation
      * return DropoffServicesDesired
      */
-    public function setRedirectToHoldLocation(\FedEx\LocatorService\SimpleType\RedirectToHoldLocationType $redirectToHoldLocation)
+    public function setRedirectToHoldLocation($redirectToHoldLocation)
     {
         $this->RedirectToHoldLocation = $redirectToHoldLocation;
         return $this;

@@ -24,10 +24,10 @@ class CustomDeliveryWindowDetail
     /**
      * Indicates the type of custom delivery being requested.
      *
-     * @param \FedEx\ShipService\SimpleType\CustomDeliveryWindowType  $type
+     * @param \FedEx\ShipService\SimpleType\CustomDeliveryWindowType|string $type
      * return CustomDeliveryWindowDetail
      */
-    public function setType(\FedEx\ShipService\SimpleType\CustomDeliveryWindowType $type)
+    public function setType($type)
     {
         $this->Type = $type;
         return $this;

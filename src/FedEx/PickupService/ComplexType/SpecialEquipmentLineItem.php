@@ -24,10 +24,10 @@ class SpecialEquipmentLineItem
     /**
      * Type of equipment used
      *
-     * @param \FedEx\Pickup\SimpleType\SpecialEquipmentType  $type
+     * @param \FedEx\Pickup\SimpleType\SpecialEquipmentType|string $type
      * return SpecialEquipmentLineItem
      */
-    public function setType(\FedEx\Pickup\SimpleType\SpecialEquipmentType $type)
+    public function setType($type)
     {
         $this->Type = $type;
         return $this;

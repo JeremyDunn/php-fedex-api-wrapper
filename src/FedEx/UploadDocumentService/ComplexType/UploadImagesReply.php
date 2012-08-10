@@ -24,10 +24,10 @@ class UploadImagesReply
     /**
      * Identifies the highest severity encountered when executing the request; in order from high to low: FAILURE, ERROR, WARNING, NOTE, SUCCESS.
      *
-     * @param \FedEx\UploadDocumentService\SimpleType\NotificationSeverityType  $highestSeverity
+     * @param \FedEx\UploadDocumentService\SimpleType\NotificationSeverityType|string $highestSeverity
      * return UploadImagesReply
      */
-    public function setHighestSeverity(\FedEx\UploadDocumentService\SimpleType\NotificationSeverityType $highestSeverity)
+    public function setHighestSeverity($highestSeverity)
     {
         $this->HighestSeverity = $highestSeverity;
         return $this;

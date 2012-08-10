@@ -48,10 +48,10 @@ class NaftaCertificateOfOriginDetail
     /**
      * Indicates which Party (if any) from the shipment is to be used as the source of importer data on the NAFTA COO form.
      *
-     * @param \FedEx\RateService\SimpleType\NaftaImporterSpecificationType  $importerSpecification
+     * @param \FedEx\RateService\SimpleType\NaftaImporterSpecificationType|string $importerSpecification
      * return NaftaCertificateOfOriginDetail
      */
-    public function setImporterSpecification(\FedEx\RateService\SimpleType\NaftaImporterSpecificationType $importerSpecification)
+    public function setImporterSpecification($importerSpecification)
     {
         $this->ImporterSpecification = $importerSpecification;
         return $this;
@@ -72,10 +72,10 @@ class NaftaCertificateOfOriginDetail
     /**
      * Set ProducerSpecification
      *
-     * @param \FedEx\RateService\SimpleType\NaftaProducerSpecificationType  $producerSpecification
+     * @param \FedEx\RateService\SimpleType\NaftaProducerSpecificationType|string $producerSpecification
      * return NaftaCertificateOfOriginDetail
      */
-    public function setProducerSpecification(\FedEx\RateService\SimpleType\NaftaProducerSpecificationType $producerSpecification)
+    public function setProducerSpecification($producerSpecification)
     {
         $this->ProducerSpecification = $producerSpecification;
         return $this;

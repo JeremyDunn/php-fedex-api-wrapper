@@ -120,10 +120,10 @@ class CourierDispatchRequest
     /**
      * Identifies the FedEx operating company (transportation) that is being sent the package pickup request.
      *
-     * @param \FedEx\CourierDispatchService\SimpleType\CarrierCodeType  $carrierCode
+     * @param \FedEx\CourierDispatchService\SimpleType\CarrierCodeType|string $carrierCode
      * return CourierDispatchRequest
      */
-    public function setCarrierCode(\FedEx\CourierDispatchService\SimpleType\CarrierCodeType $carrierCode)
+    public function setCarrierCode($carrierCode)
     {
         $this->CarrierCode = $carrierCode;
         return $this;

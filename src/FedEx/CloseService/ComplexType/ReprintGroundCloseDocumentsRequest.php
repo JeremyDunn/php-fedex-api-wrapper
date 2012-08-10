@@ -72,10 +72,10 @@ class ReprintGroundCloseDocumentsRequest
     /**
      * Set ReprintOption
      *
-     * @param \FedEx\CloseService\SimpleType\ReprintGroundCloseDocumentsOptionType  $reprintOption
+     * @param \FedEx\CloseService\SimpleType\ReprintGroundCloseDocumentsOptionType|string $reprintOption
      * return ReprintGroundCloseDocumentsRequest
      */
-    public function setReprintOption(\FedEx\CloseService\SimpleType\ReprintGroundCloseDocumentsOptionType $reprintOption)
+    public function setReprintOption($reprintOption)
     {
         $this->ReprintOption = $reprintOption;
         return $this;

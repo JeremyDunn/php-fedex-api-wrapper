@@ -24,10 +24,10 @@ class SignatureProofOfDeliveryLetterReply
     /**
      * This contains the severity type of the most severe Notification in the Notifications array.
      *
-     * @param \FedEx\TrackService\SimpleType\NotificationSeverityType  $highestSeverity
+     * @param \FedEx\TrackService\SimpleType\NotificationSeverityType|string $highestSeverity
      * return SignatureProofOfDeliveryLetterReply
      */
-    public function setHighestSeverity(\FedEx\TrackService\SimpleType\NotificationSeverityType $highestSeverity)
+    public function setHighestSeverity($highestSeverity)
     {
         $this->HighestSeverity = $highestSeverity;
         return $this;

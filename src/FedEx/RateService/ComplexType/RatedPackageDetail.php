@@ -72,10 +72,10 @@ class RatedPackageDetail
     /**
      * Set OversizeClass
      *
-     * @param \FedEx\RateService\SimpleType\OversizeClassType  $oversizeClass
+     * @param \FedEx\RateService\SimpleType\OversizeClassType|string $oversizeClass
      * return RatedPackageDetail
      */
-    public function setOversizeClass(\FedEx\RateService\SimpleType\OversizeClassType $oversizeClass)
+    public function setOversizeClass($oversizeClass)
     {
         $this->OversizeClass = $oversizeClass;
         return $this;

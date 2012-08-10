@@ -72,10 +72,10 @@ class CustomerSpecifiedLabelDetail
     /**
      * For customers producing their own Ground labels, this field specifies which secondary barcode will be printed on the label; so that the primary barcode produced by FedEx has the corect SCNC.
      *
-     * @param \FedEx\RateService\SimpleType\SecondaryBarcodeType  $secondaryBarcode
+     * @param \FedEx\RateService\SimpleType\SecondaryBarcodeType|string $secondaryBarcode
      * return CustomerSpecifiedLabelDetail
      */
-    public function setSecondaryBarcode(\FedEx\RateService\SimpleType\SecondaryBarcodeType $secondaryBarcode)
+    public function setSecondaryBarcode($secondaryBarcode)
     {
         $this->SecondaryBarcode = $secondaryBarcode;
         return $this;

@@ -24,10 +24,10 @@ class AssociatedAccount
     /**
      * Set Type
      *
-     * @param \FedEx\Pickup\SimpleType\AssociatedAccountNumberType  $type
+     * @param \FedEx\Pickup\SimpleType\AssociatedAccountNumberType|string $type
      * return AssociatedAccount
      */
-    public function setType(\FedEx\Pickup\SimpleType\AssociatedAccountNumberType $type)
+    public function setType($type)
     {
         $this->Type = $type;
         return $this;

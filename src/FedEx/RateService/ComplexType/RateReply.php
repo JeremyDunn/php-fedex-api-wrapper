@@ -24,10 +24,10 @@ class RateReply
     /**
      * This indicates the highest level of severity of all the notifications returned in this reply.
      *
-     * @param \FedEx\RateService\SimpleType\NotificationSeverityType  $highestSeverity
+     * @param \FedEx\RateService\SimpleType\NotificationSeverityType|string $highestSeverity
      * return RateReply
      */
-    public function setHighestSeverity(\FedEx\RateService\SimpleType\NotificationSeverityType $highestSeverity)
+    public function setHighestSeverity($highestSeverity)
     {
         $this->HighestSeverity = $highestSeverity;
         return $this;

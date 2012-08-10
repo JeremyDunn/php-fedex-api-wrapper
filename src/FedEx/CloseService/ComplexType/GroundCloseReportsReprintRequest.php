@@ -96,10 +96,10 @@ class GroundCloseReportsReprintRequest
     /**
      * Set CloseReportType
      *
-     * @param \FedEx\CloseService\SimpleType\CloseReportType  $closeReportType
+     * @param \FedEx\CloseService\SimpleType\CloseReportType|string $closeReportType
      * return GroundCloseReportsReprintRequest
      */
-    public function setCloseReportType(\FedEx\CloseService\SimpleType\CloseReportType $closeReportType)
+    public function setCloseReportType($closeReportType)
     {
         $this->CloseReportType = $closeReportType;
         return $this;

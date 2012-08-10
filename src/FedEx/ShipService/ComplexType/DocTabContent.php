@@ -24,10 +24,10 @@ class DocTabContent
     /**
      * The DocTabContentType options available.
      *
-     * @param \FedEx\ShipService\SimpleType\DocTabContentType  $docTabContentType
+     * @param \FedEx\ShipService\SimpleType\DocTabContentType|string $docTabContentType
      * return DocTabContent
      */
-    public function setDocTabContentType(\FedEx\ShipService\SimpleType\DocTabContentType $docTabContentType)
+    public function setDocTabContentType($docTabContentType)
     {
         $this->DocTabContentType = $docTabContentType;
         return $this;

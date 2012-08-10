@@ -24,10 +24,10 @@ class CancelPickupReply
     /**
      * Identifies the highest severity encountered when executing the request; in order from high to low: FAILURE, ERROR, WARNING, NOTE, SUCCESS.
      *
-     * @param \FedEx\Pickup\SimpleType\NotificationSeverityType  $highestSeverity
+     * @param \FedEx\Pickup\SimpleType\NotificationSeverityType|string $highestSeverity
      * return CancelPickupReply
      */
-    public function setHighestSeverity(\FedEx\Pickup\SimpleType\NotificationSeverityType $highestSeverity)
+    public function setHighestSeverity($highestSeverity)
     {
         $this->HighestSeverity = $highestSeverity;
         return $this;

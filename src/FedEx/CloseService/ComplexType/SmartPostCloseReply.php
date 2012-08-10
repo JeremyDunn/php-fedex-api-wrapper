@@ -24,10 +24,10 @@ class SmartPostCloseReply
     /**
      * Set HighestSeverity
      *
-     * @param \FedEx\CloseService\SimpleType\NotificationSeverityType  $highestSeverity
+     * @param \FedEx\CloseService\SimpleType\NotificationSeverityType|string $highestSeverity
      * return SmartPostCloseReply
      */
-    public function setHighestSeverity(\FedEx\CloseService\SimpleType\NotificationSeverityType $highestSeverity)
+    public function setHighestSeverity($highestSeverity)
     {
         $this->HighestSeverity = $highestSeverity;
         return $this;

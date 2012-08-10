@@ -24,10 +24,10 @@ class FreightBaseCharge
     /**
      * Freight class for this line item.
      *
-     * @param \FedEx\ShipService\SimpleType\FreightClassType  $freightClass
+     * @param \FedEx\ShipService\SimpleType\FreightClassType|string $freightClass
      * return FreightBaseCharge
      */
-    public function setFreightClass(\FedEx\ShipService\SimpleType\FreightClassType $freightClass)
+    public function setFreightClass($freightClass)
     {
         $this->FreightClass = $freightClass;
         return $this;
@@ -36,10 +36,10 @@ class FreightBaseCharge
     /**
      * Effective freight class used for rating this line item.
      *
-     * @param \FedEx\ShipService\SimpleType\FreightClassType  $ratedAsClass
+     * @param \FedEx\ShipService\SimpleType\FreightClassType|string $ratedAsClass
      * return FreightBaseCharge
      */
-    public function setRatedAsClass(\FedEx\ShipService\SimpleType\FreightClassType $ratedAsClass)
+    public function setRatedAsClass($ratedAsClass)
     {
         $this->RatedAsClass = $ratedAsClass;
         return $this;
@@ -96,10 +96,10 @@ class FreightBaseCharge
     /**
      * Identifies the manner in which the chargeRate for this line item was applied.
      *
-     * @param \FedEx\ShipService\SimpleType\FreightChargeBasisType  $chargeBasis
+     * @param \FedEx\ShipService\SimpleType\FreightChargeBasisType|string $chargeBasis
      * return FreightBaseCharge
      */
-    public function setChargeBasis(\FedEx\ShipService\SimpleType\FreightChargeBasisType $chargeBasis)
+    public function setChargeBasis($chargeBasis)
     {
         $this->ChargeBasis = $chargeBasis;
         return $this;

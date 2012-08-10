@@ -72,10 +72,10 @@ class DocTabZoneSpecification
     /**
      * Justification for the text printed on this zone.
      *
-     * @param \FedEx\RateService\SimpleType\DocTabZoneJustificationType  $justification
+     * @param \FedEx\RateService\SimpleType\DocTabZoneJustificationType|string $justification
      * return DocTabZoneSpecification
      */
-    public function setJustification(\FedEx\RateService\SimpleType\DocTabZoneJustificationType $justification)
+    public function setJustification($justification)
     {
         $this->Justification = $justification;
         return $this;

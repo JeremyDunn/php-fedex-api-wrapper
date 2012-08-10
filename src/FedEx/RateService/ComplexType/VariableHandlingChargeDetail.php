@@ -48,10 +48,10 @@ class VariableHandlingChargeDetail
     /**
      * Select the value from a set of rate data to which the percentage is applied.
      *
-     * @param \FedEx\RateService\SimpleType\RateElementBasisType  $rateElementBasis
+     * @param \FedEx\RateService\SimpleType\RateElementBasisType|string $rateElementBasis
      * return VariableHandlingChargeDetail
      */
-    public function setRateElementBasis(\FedEx\RateService\SimpleType\RateElementBasisType $rateElementBasis)
+    public function setRateElementBasis($rateElementBasis)
     {
         $this->RateElementBasis = $rateElementBasis;
         return $this;
@@ -60,10 +60,10 @@ class VariableHandlingChargeDetail
     /**
      * Select the type of rate from which the element is to be selected.
      *
-     * @param \FedEx\RateService\SimpleType\RateTypeBasisType  $rateTypeBasis
+     * @param \FedEx\RateService\SimpleType\RateTypeBasisType|string $rateTypeBasis
      * return VariableHandlingChargeDetail
      */
-    public function setRateTypeBasis(\FedEx\RateService\SimpleType\RateTypeBasisType $rateTypeBasis)
+    public function setRateTypeBasis($rateTypeBasis)
     {
         $this->RateTypeBasis = $rateTypeBasis;
         return $this;

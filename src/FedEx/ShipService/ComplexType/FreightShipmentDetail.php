@@ -60,10 +60,10 @@ class FreightShipmentDetail
     /**
      * Indicates the role of the party submitting the transaction.
      *
-     * @param \FedEx\ShipService\SimpleType\FreightShipmentRoleType  $role
+     * @param \FedEx\ShipService\SimpleType\FreightShipmentRoleType|string $role
      * return FreightShipmentDetail
      */
-    public function setRole(\FedEx\ShipService\SimpleType\FreightShipmentRoleType $role)
+    public function setRole($role)
     {
         $this->Role = $role;
         return $this;
@@ -72,10 +72,10 @@ class FreightShipmentDetail
     /**
      * Designates which of the requester's tariffs will be used for rating.
      *
-     * @param \FedEx\ShipService\SimpleType\FreightAccountPaymentType  $paymentType
+     * @param \FedEx\ShipService\SimpleType\FreightAccountPaymentType|string $paymentType
      * return FreightShipmentDetail
      */
-    public function setPaymentType(\FedEx\ShipService\SimpleType\FreightAccountPaymentType $paymentType)
+    public function setPaymentType($paymentType)
     {
         $this->PaymentType = $paymentType;
         return $this;
@@ -84,10 +84,10 @@ class FreightShipmentDetail
     /**
      * Designates the terms of the "collect" payment for a Freight Shipment.
      *
-     * @param \FedEx\ShipService\SimpleType\FreightCollectTermsType  $collectTermsType
+     * @param \FedEx\ShipService\SimpleType\FreightCollectTermsType|string $collectTermsType
      * return FreightShipmentDetail
      */
-    public function setCollectTermsType(\FedEx\ShipService\SimpleType\FreightCollectTermsType $collectTermsType)
+    public function setCollectTermsType($collectTermsType)
     {
         $this->CollectTermsType = $collectTermsType;
         return $this;

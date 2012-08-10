@@ -24,10 +24,10 @@ class Rebate
     /**
      * Set RebateType
      *
-     * @param \FedEx\RateService\SimpleType\RebateType  $rebateType
+     * @param \FedEx\RateService\SimpleType\RebateType|string $rebateType
      * return Rebate
      */
-    public function setRebateType(\FedEx\RateService\SimpleType\RebateType $rebateType)
+    public function setRebateType($rebateType)
     {
         $this->RebateType = $rebateType;
         return $this;

@@ -84,10 +84,10 @@ class CustomLabelBarcodeEntry
     /**
      * Set BarcodeSymbology
      *
-     * @param \FedEx\ShipService\SimpleType\BarcodeSymbologyType  $barcodeSymbology
+     * @param \FedEx\ShipService\SimpleType\BarcodeSymbologyType|string $barcodeSymbology
      * return CustomLabelBarcodeEntry
      */
-    public function setBarcodeSymbology(\FedEx\ShipService\SimpleType\BarcodeSymbologyType $barcodeSymbology)
+    public function setBarcodeSymbology($barcodeSymbology)
     {
         $this->BarcodeSymbology = $barcodeSymbology;
         return $this;

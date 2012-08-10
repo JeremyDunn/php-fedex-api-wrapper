@@ -24,10 +24,10 @@ class FreightGuaranteeDetail
     /**
      * Description of Guarantee
      *
-     * @param \FedEx\Pickup\SimpleType\FreightGuaranteeType  $type
+     * @param \FedEx\Pickup\SimpleType\FreightGuaranteeType|string $type
      * return FreightGuaranteeDetail
      */
-    public function setType(\FedEx\Pickup\SimpleType\FreightGuaranteeType $type)
+    public function setType($type)
     {
         $this->Type = $type;
         return $this;

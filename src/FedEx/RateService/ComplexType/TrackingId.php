@@ -24,10 +24,10 @@ class TrackingId
     /**
      * Set TrackingIdType
      *
-     * @param \FedEx\RateService\SimpleType\TrackingIdType  $trackingIdType
+     * @param \FedEx\RateService\SimpleType\TrackingIdType|string $trackingIdType
      * return TrackingId
      */
-    public function setTrackingIdType(\FedEx\RateService\SimpleType\TrackingIdType $trackingIdType)
+    public function setTrackingIdType($trackingIdType)
     {
         $this->TrackingIdType = $trackingIdType;
         return $this;

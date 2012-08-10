@@ -24,10 +24,10 @@ class Notification
     /**
      * The severity of this notification. This can indicate success or failure or some other information about the request such as errors or notes.
      *
-     * @param \FedEx\UploadDocumentService\SimpleType\NotificationSeverityType  $severity
+     * @param \FedEx\UploadDocumentService\SimpleType\NotificationSeverityType|string $severity
      * return Notification
      */
-    public function setSeverity(\FedEx\UploadDocumentService\SimpleType\NotificationSeverityType $severity)
+    public function setSeverity($severity)
     {
         $this->Severity = $severity;
         return $this;

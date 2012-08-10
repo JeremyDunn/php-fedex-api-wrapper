@@ -36,10 +36,10 @@ class CommitDetail
     /**
      * The FedEx service type applicable to this commitment.
      *
-     * @param \FedEx\RateService\SimpleType\ServiceType  $serviceType
+     * @param \FedEx\RateService\SimpleType\ServiceType|string $serviceType
      * return CommitDetail
      */
-    public function setServiceType(\FedEx\RateService\SimpleType\ServiceType $serviceType)
+    public function setServiceType($serviceType)
     {
         $this->ServiceType = $serviceType;
         return $this;
@@ -84,10 +84,10 @@ class CommitDetail
     /**
      * The delivery commitment day of the week.
      *
-     * @param \FedEx\RateService\SimpleType\DayOfWeekType  $dayOfWeek
+     * @param \FedEx\RateService\SimpleType\DayOfWeekType|string $dayOfWeek
      * return CommitDetail
      */
-    public function setDayOfWeek(\FedEx\RateService\SimpleType\DayOfWeekType $dayOfWeek)
+    public function setDayOfWeek($dayOfWeek)
     {
         $this->DayOfWeek = $dayOfWeek;
         return $this;
@@ -96,10 +96,10 @@ class CommitDetail
     /**
      * The number of transit days; applies to Ground and LTL Freight; indicates minimum transit time for SmartPost.
      *
-     * @param \FedEx\RateService\SimpleType\TransitTimeType  $transitTime
+     * @param \FedEx\RateService\SimpleType\TransitTimeType|string $transitTime
      * return CommitDetail
      */
-    public function setTransitTime(\FedEx\RateService\SimpleType\TransitTimeType $transitTime)
+    public function setTransitTime($transitTime)
     {
         $this->TransitTime = $transitTime;
         return $this;
@@ -108,10 +108,10 @@ class CommitDetail
     /**
      * Maximum number of transit days, for SmartPost shipments.
      *
-     * @param \FedEx\RateService\SimpleType\TransitTimeType  $maximumTransitTime
+     * @param \FedEx\RateService\SimpleType\TransitTimeType|string $maximumTransitTime
      * return CommitDetail
      */
-    public function setMaximumTransitTime(\FedEx\RateService\SimpleType\TransitTimeType $maximumTransitTime)
+    public function setMaximumTransitTime($maximumTransitTime)
     {
         $this->MaximumTransitTime = $maximumTransitTime;
         return $this;
@@ -168,10 +168,10 @@ class CommitDetail
     /**
      * The delivery commitment day of the week the shipment will arrive at the border.
      *
-     * @param \FedEx\RateService\SimpleType\DayOfWeekType  $brokerCommitDayOfWeek
+     * @param \FedEx\RateService\SimpleType\DayOfWeekType|string $brokerCommitDayOfWeek
      * return CommitDetail
      */
-    public function setBrokerCommitDayOfWeek(\FedEx\RateService\SimpleType\DayOfWeekType $brokerCommitDayOfWeek)
+    public function setBrokerCommitDayOfWeek($brokerCommitDayOfWeek)
     {
         $this->BrokerCommitDayOfWeek = $brokerCommitDayOfWeek;
         return $this;
@@ -204,10 +204,10 @@ class CommitDetail
     /**
      * The delivery commitment day of the week for the shipment served by GSP (Global Service Provider)
      *
-     * @param \FedEx\RateService\SimpleType\DayOfWeekType  $proofOfDeliveryDayOfWeek
+     * @param \FedEx\RateService\SimpleType\DayOfWeekType|string $proofOfDeliveryDayOfWeek
      * return CommitDetail
      */
-    public function setProofOfDeliveryDayOfWeek(\FedEx\RateService\SimpleType\DayOfWeekType $proofOfDeliveryDayOfWeek)
+    public function setProofOfDeliveryDayOfWeek($proofOfDeliveryDayOfWeek)
     {
         $this->ProofOfDeliveryDayOfWeek = $proofOfDeliveryDayOfWeek;
         return $this;
@@ -252,10 +252,10 @@ class CommitDetail
     /**
      * Set DocumentContent
      *
-     * @param \FedEx\RateService\SimpleType\InternationalDocumentContentType  $documentContent
+     * @param \FedEx\RateService\SimpleType\InternationalDocumentContentType|string $documentContent
      * return CommitDetail
      */
-    public function setDocumentContent(\FedEx\RateService\SimpleType\InternationalDocumentContentType $documentContent)
+    public function setDocumentContent($documentContent)
     {
         $this->DocumentContent = $documentContent;
         return $this;

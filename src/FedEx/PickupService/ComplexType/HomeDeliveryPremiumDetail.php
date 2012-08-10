@@ -24,10 +24,10 @@ class HomeDeliveryPremiumDetail
     /**
      * The type of Home Delivery Premium service being requested.
      *
-     * @param \FedEx\Pickup\SimpleType\HomeDeliveryPremiumType  $homeDeliveryPremiumType
+     * @param \FedEx\Pickup\SimpleType\HomeDeliveryPremiumType|string $homeDeliveryPremiumType
      * return HomeDeliveryPremiumDetail
      */
-    public function setHomeDeliveryPremiumType(\FedEx\Pickup\SimpleType\HomeDeliveryPremiumType $homeDeliveryPremiumType)
+    public function setHomeDeliveryPremiumType($homeDeliveryPremiumType)
     {
         $this->HomeDeliveryPremiumType = $homeDeliveryPremiumType;
         return $this;

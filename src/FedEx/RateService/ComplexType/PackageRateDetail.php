@@ -24,10 +24,10 @@ class PackageRateDetail
     /**
      * Type used for this specific set of rate data.
      *
-     * @param \FedEx\RateService\SimpleType\ReturnedRateType  $rateType
+     * @param \FedEx\RateService\SimpleType\ReturnedRateType|string $rateType
      * return PackageRateDetail
      */
-    public function setRateType(\FedEx\RateService\SimpleType\ReturnedRateType $rateType)
+    public function setRateType($rateType)
     {
         $this->RateType = $rateType;
         return $this;
@@ -36,10 +36,10 @@ class PackageRateDetail
     /**
      * Indicates which weight was used.
      *
-     * @param \FedEx\RateService\SimpleType\RatedWeightMethod  $ratedWeightMethod
+     * @param \FedEx\RateService\SimpleType\RatedWeightMethod|string $ratedWeightMethod
      * return PackageRateDetail
      */
-    public function setRatedWeightMethod(\FedEx\RateService\SimpleType\RatedWeightMethod $ratedWeightMethod)
+    public function setRatedWeightMethod($ratedWeightMethod)
     {
         $this->RatedWeightMethod = $ratedWeightMethod;
         return $this;
@@ -48,10 +48,10 @@ class PackageRateDetail
     /**
      * INTERNAL FEDEX USE ONLY.
      *
-     * @param \FedEx\RateService\SimpleType\MinimumChargeType  $minimumChargeType
+     * @param \FedEx\RateService\SimpleType\MinimumChargeType|string $minimumChargeType
      * return PackageRateDetail
      */
-    public function setMinimumChargeType(\FedEx\RateService\SimpleType\MinimumChargeType $minimumChargeType)
+    public function setMinimumChargeType($minimumChargeType)
     {
         $this->MinimumChargeType = $minimumChargeType;
         return $this;

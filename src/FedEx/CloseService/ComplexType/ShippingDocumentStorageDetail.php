@@ -36,10 +36,10 @@ class ShippingDocumentStorageDetail
     /**
      * Identifies the convention by which file names are constructed for STORED or DEFERRED documents.
      *
-     * @param \FedEx\CloseService\SimpleType\ShippingDocumentNamingType  $fileNaming
+     * @param \FedEx\CloseService\SimpleType\ShippingDocumentNamingType|string $fileNaming
      * return ShippingDocumentStorageDetail
      */
-    public function setFileNaming(\FedEx\CloseService\SimpleType\ShippingDocumentNamingType $fileNaming)
+    public function setFileNaming($fileNaming)
     {
         $this->FileNaming = $fileNaming;
         return $this;

@@ -24,10 +24,10 @@ class ImageUploadStatusDetail
     /**
      * Set Id
      *
-     * @param \FedEx\UploadDocumentService\SimpleType\ImageId  $id
+     * @param \FedEx\UploadDocumentService\SimpleType\ImageId|string $id
      * return ImageUploadStatusDetail
      */
-    public function setId(\FedEx\UploadDocumentService\SimpleType\ImageId $id)
+    public function setId($id)
     {
         $this->Id = $id;
         return $this;
@@ -36,10 +36,10 @@ class ImageUploadStatusDetail
     /**
      * Set Status
      *
-     * @param \FedEx\UploadDocumentService\SimpleType\UploadImageStatusType  $status
+     * @param \FedEx\UploadDocumentService\SimpleType\UploadImageStatusType|string $status
      * return ImageUploadStatusDetail
      */
-    public function setStatus(\FedEx\UploadDocumentService\SimpleType\UploadImageStatusType $status)
+    public function setStatus($status)
     {
         $this->Status = $status;
         return $this;
@@ -48,10 +48,10 @@ class ImageUploadStatusDetail
     /**
      * Set StatusInfo
      *
-     * @param \FedEx\UploadDocumentService\SimpleType\UploadImageStatusInfoType  $statusInfo
+     * @param \FedEx\UploadDocumentService\SimpleType\UploadImageStatusInfoType|string $statusInfo
      * return ImageUploadStatusDetail
      */
-    public function setStatusInfo(\FedEx\UploadDocumentService\SimpleType\UploadImageStatusInfoType $statusInfo)
+    public function setStatusInfo($statusInfo)
     {
         $this->StatusInfo = $statusInfo;
         return $this;

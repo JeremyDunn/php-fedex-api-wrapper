@@ -24,10 +24,10 @@ class LiabilityCoverageDetail
     /**
      * Set CoverageType
      *
-     * @param \FedEx\RateService\SimpleType\LiabilityCoverageType  $coverageType
+     * @param \FedEx\RateService\SimpleType\LiabilityCoverageType|string $coverageType
      * return LiabilityCoverageDetail
      */
-    public function setCoverageType(\FedEx\RateService\SimpleType\LiabilityCoverageType $coverageType)
+    public function setCoverageType($coverageType)
     {
         $this->CoverageType = $coverageType;
         return $this;

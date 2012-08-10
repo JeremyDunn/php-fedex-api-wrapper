@@ -24,10 +24,10 @@ class CancelPendingShipmentReply
     /**
      * Set HighestSeverity
      *
-     * @param \FedEx\ShipService\SimpleType\NotificationSeverityType  $highestSeverity
+     * @param \FedEx\ShipService\SimpleType\NotificationSeverityType|string $highestSeverity
      * return CancelPendingShipmentReply
      */
-    public function setHighestSeverity(\FedEx\ShipService\SimpleType\NotificationSeverityType $highestSeverity)
+    public function setHighestSeverity($highestSeverity)
     {
         $this->HighestSeverity = $highestSeverity;
         return $this;

@@ -48,10 +48,10 @@ class UploadDocumentDetail
     /**
      * Set DocumentProducer
      *
-     * @param \FedEx\Pickup\SimpleType\UploadDocumentProducerType  $documentProducer
+     * @param \FedEx\Pickup\SimpleType\UploadDocumentProducerType|string $documentProducer
      * return UploadDocumentDetail
      */
-    public function setDocumentProducer(\FedEx\Pickup\SimpleType\UploadDocumentProducerType $documentProducer)
+    public function setDocumentProducer($documentProducer)
     {
         $this->DocumentProducer = $documentProducer;
         return $this;
@@ -60,10 +60,10 @@ class UploadDocumentDetail
     /**
      * Set DocumentType
      *
-     * @param \FedEx\Pickup\SimpleType\UploadDocumentType  $documentType
+     * @param \FedEx\Pickup\SimpleType\UploadDocumentType|string $documentType
      * return UploadDocumentDetail
      */
-    public function setDocumentType(\FedEx\Pickup\SimpleType\UploadDocumentType $documentType)
+    public function setDocumentType($documentType)
     {
         $this->DocumentType = $documentType;
         return $this;

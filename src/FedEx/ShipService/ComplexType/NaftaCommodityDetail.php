@@ -24,10 +24,10 @@ class NaftaCommodityDetail
     /**
      * Defined by NAFTA regulations.
      *
-     * @param \FedEx\ShipService\SimpleType\NaftaPreferenceCriterionCode  $preferenceCriterion
+     * @param \FedEx\ShipService\SimpleType\NaftaPreferenceCriterionCode|string $preferenceCriterion
      * return NaftaCommodityDetail
      */
-    public function setPreferenceCriterion(\FedEx\ShipService\SimpleType\NaftaPreferenceCriterionCode $preferenceCriterion)
+    public function setPreferenceCriterion($preferenceCriterion)
     {
         $this->PreferenceCriterion = $preferenceCriterion;
         return $this;
@@ -36,10 +36,10 @@ class NaftaCommodityDetail
     /**
      * Defined by NAFTA regulations.
      *
-     * @param \FedEx\ShipService\SimpleType\NaftaProducerDeterminationCode  $producerDetermination
+     * @param \FedEx\ShipService\SimpleType\NaftaProducerDeterminationCode|string $producerDetermination
      * return NaftaCommodityDetail
      */
-    public function setProducerDetermination(\FedEx\ShipService\SimpleType\NaftaProducerDeterminationCode $producerDetermination)
+    public function setProducerDetermination($producerDetermination)
     {
         $this->ProducerDetermination = $producerDetermination;
         return $this;
@@ -60,10 +60,10 @@ class NaftaCommodityDetail
     /**
      * Set NetCostMethod
      *
-     * @param \FedEx\ShipService\SimpleType\NaftaNetCostMethodCode  $netCostMethod
+     * @param \FedEx\ShipService\SimpleType\NaftaNetCostMethodCode|string $netCostMethod
      * return NaftaCommodityDetail
      */
-    public function setNetCostMethod(\FedEx\ShipService\SimpleType\NaftaNetCostMethodCode $netCostMethod)
+    public function setNetCostMethod($netCostMethod)
     {
         $this->NetCostMethod = $netCostMethod;
         return $this;

@@ -36,10 +36,10 @@ class Distance
     /**
      * Identifies the unit of measure for the distance value.
      *
-     * @param \FedEx\Pickup\SimpleType\DistanceUnits  $units
+     * @param \FedEx\Pickup\SimpleType\DistanceUnits|string $units
      * return Distance
      */
-    public function setUnits(\FedEx\Pickup\SimpleType\DistanceUnits $units)
+    public function setUnits($units)
     {
         $this->Units = $units;
         return $this;

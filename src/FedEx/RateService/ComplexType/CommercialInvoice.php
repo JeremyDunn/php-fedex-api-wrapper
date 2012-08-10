@@ -60,10 +60,10 @@ class CommercialInvoice
     /**
      * Specifies which kind of charge is being recorded in the preceding field.
      *
-     * @param \FedEx\RateService\SimpleType\TaxesOrMiscellaneousChargeType  $taxesOrMiscellaneousChargeType
+     * @param \FedEx\RateService\SimpleType\TaxesOrMiscellaneousChargeType|string $taxesOrMiscellaneousChargeType
      * return CommercialInvoice
      */
-    public function setTaxesOrMiscellaneousChargeType(\FedEx\RateService\SimpleType\TaxesOrMiscellaneousChargeType $taxesOrMiscellaneousChargeType)
+    public function setTaxesOrMiscellaneousChargeType($taxesOrMiscellaneousChargeType)
     {
         $this->TaxesOrMiscellaneousChargeType = $taxesOrMiscellaneousChargeType;
         return $this;
@@ -132,10 +132,10 @@ class CommercialInvoice
     /**
      * The reason for the shipment. Note: SOLD is not a valid purpose for a Proforma Invoice.
      *
-     * @param \FedEx\RateService\SimpleType\PurposeOfShipmentType  $purpose
+     * @param \FedEx\RateService\SimpleType\PurposeOfShipmentType|string $purpose
      * return CommercialInvoice
      */
-    public function setPurpose(\FedEx\RateService\SimpleType\PurposeOfShipmentType $purpose)
+    public function setPurpose($purpose)
     {
         $this->Purpose = $purpose;
         return $this;
@@ -168,10 +168,10 @@ class CommercialInvoice
     /**
      * Required for dutiable international Express or Ground shipment. This field is not applicable to an international PIB(document) or a non-document which does not require a Commercial Invoice
      *
-     * @param \FedEx\RateService\SimpleType\TermsOfSaleType  $termsOfSale
+     * @param \FedEx\RateService\SimpleType\TermsOfSaleType|string $termsOfSale
      * return CommercialInvoice
      */
-    public function setTermsOfSale(\FedEx\RateService\SimpleType\TermsOfSaleType $termsOfSale)
+    public function setTermsOfSale($termsOfSale)
     {
         $this->TermsOfSale = $termsOfSale;
         return $this;

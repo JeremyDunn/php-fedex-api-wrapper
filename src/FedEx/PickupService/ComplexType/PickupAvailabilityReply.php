@@ -24,10 +24,10 @@ class PickupAvailabilityReply
     /**
      * Identifies the highest severity encountered when executing the request; in order from high to low: FAILURE, ERROR, WARNING, NOTE, SUCCESS.
      *
-     * @param \FedEx\Pickup\SimpleType\NotificationSeverityType  $highestSeverity
+     * @param \FedEx\Pickup\SimpleType\NotificationSeverityType|string $highestSeverity
      * return PickupAvailabilityReply
      */
-    public function setHighestSeverity(\FedEx\Pickup\SimpleType\NotificationSeverityType $highestSeverity)
+    public function setHighestSeverity($highestSeverity)
     {
         $this->HighestSeverity = $highestSeverity;
         return $this;
@@ -96,10 +96,10 @@ class PickupAvailabilityReply
     /**
      * Identifies whether the close time is specified by the customer or is the default time.
      *
-     * @param \FedEx\Pickup\SimpleType\CloseTimeType  $closeTimeType
+     * @param \FedEx\Pickup\SimpleType\CloseTimeType|string $closeTimeType
      * return PickupAvailabilityReply
      */
-    public function setCloseTimeType(\FedEx\Pickup\SimpleType\CloseTimeType $closeTimeType)
+    public function setCloseTimeType($closeTimeType)
     {
         $this->CloseTimeType = $closeTimeType;
         return $this;

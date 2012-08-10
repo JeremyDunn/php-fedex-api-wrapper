@@ -24,10 +24,10 @@ class ShippingDocumentDispositionDetail
     /**
      * Values in this field specify how to create and return the document.
      *
-     * @param \FedEx\RateService\SimpleType\ShippingDocumentDispositionType  $dispositionType
+     * @param \FedEx\RateService\SimpleType\ShippingDocumentDispositionType|string $dispositionType
      * return ShippingDocumentDispositionDetail
      */
-    public function setDispositionType(\FedEx\RateService\SimpleType\ShippingDocumentDispositionType $dispositionType)
+    public function setDispositionType($dispositionType)
     {
         $this->DispositionType = $dispositionType;
         return $this;
@@ -36,10 +36,10 @@ class ShippingDocumentDispositionDetail
     /**
      * Specifies how to organize all documents of this type.
      *
-     * @param \FedEx\RateService\SimpleType\ShippingDocumentGroupingType  $grouping
+     * @param \FedEx\RateService\SimpleType\ShippingDocumentGroupingType|string $grouping
      * return ShippingDocumentDispositionDetail
      */
-    public function setGrouping(\FedEx\RateService\SimpleType\ShippingDocumentGroupingType $grouping)
+    public function setGrouping($grouping)
     {
         $this->Grouping = $grouping;
         return $this;

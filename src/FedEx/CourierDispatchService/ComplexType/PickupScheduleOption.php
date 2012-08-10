@@ -27,10 +27,10 @@ class PickupScheduleOption
     /**
      * the carrier to which this PickupScheduleOption applies
      *
-     * @param \FedEx\CourierDispatchService\SimpleType\CarrierCodeType  $carrier
+     * @param \FedEx\CourierDispatchService\SimpleType\CarrierCodeType|string $carrier
      * return PickupScheduleOption
      */
-    public function setCarrier(\FedEx\CourierDispatchService\SimpleType\CarrierCodeType $carrier)
+    public function setCarrier($carrier)
     {
         $this->Carrier = $carrier;
         return $this;
@@ -51,10 +51,10 @@ class PickupScheduleOption
     /**
      * Tells whether this option describes a dispatch created on the dispatch date (SAME_DAY), or on a prior date (FUTURE_DAY)
      *
-     * @param \FedEx\CourierDispatchService\SimpleType\PickupRequestType  $scheduleDay
+     * @param \FedEx\CourierDispatchService\SimpleType\PickupRequestType|string $scheduleDay
      * return PickupScheduleOption
      */
-    public function setScheduleDay(\FedEx\CourierDispatchService\SimpleType\PickupRequestType $scheduleDay)
+    public function setScheduleDay($scheduleDay)
     {
         $this->ScheduleDay = $scheduleDay;
         return $this;

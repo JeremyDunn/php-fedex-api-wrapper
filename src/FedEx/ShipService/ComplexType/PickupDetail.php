@@ -60,10 +60,10 @@ class PickupDetail
     /**
      * Identifies the type of Pickup request
      *
-     * @param \FedEx\ShipService\SimpleType\PickupRequestType  $requestType
+     * @param \FedEx\ShipService\SimpleType\PickupRequestType|string $requestType
      * return PickupDetail
      */
-    public function setRequestType(\FedEx\ShipService\SimpleType\PickupRequestType $requestType)
+    public function setRequestType($requestType)
     {
         $this->RequestType = $requestType;
         return $this;
@@ -72,10 +72,10 @@ class PickupDetail
     /**
      * Identifies the type of source for Pickup request
      *
-     * @param \FedEx\ShipService\SimpleType\PickupRequestSourceType  $requestSource
+     * @param \FedEx\ShipService\SimpleType\PickupRequestSourceType|string $requestSource
      * return PickupDetail
      */
-    public function setRequestSource(\FedEx\ShipService\SimpleType\PickupRequestSourceType $requestSource)
+    public function setRequestSource($requestSource)
     {
         $this->RequestSource = $requestSource;
         return $this;

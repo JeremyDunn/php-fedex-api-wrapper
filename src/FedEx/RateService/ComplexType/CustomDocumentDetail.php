@@ -36,10 +36,10 @@ class CustomDocumentDetail
     /**
      * Applicable only to documents produced on thermal printers with roll stock.
      *
-     * @param \FedEx\RateService\SimpleType\LabelPrintingOrientationType  $labelPrintingOrientation
+     * @param \FedEx\RateService\SimpleType\LabelPrintingOrientationType|string $labelPrintingOrientation
      * return CustomDocumentDetail
      */
-    public function setLabelPrintingOrientation(\FedEx\RateService\SimpleType\LabelPrintingOrientationType $labelPrintingOrientation)
+    public function setLabelPrintingOrientation($labelPrintingOrientation)
     {
         $this->LabelPrintingOrientation = $labelPrintingOrientation;
         return $this;
@@ -48,10 +48,10 @@ class CustomDocumentDetail
     /**
      * Applicable only to documents produced on thermal printers with roll stock.
      *
-     * @param \FedEx\RateService\SimpleType\LabelRotationType  $labelRotation
+     * @param \FedEx\RateService\SimpleType\LabelRotationType|string $labelRotation
      * return CustomDocumentDetail
      */
-    public function setLabelRotation(\FedEx\RateService\SimpleType\LabelRotationType $labelRotation)
+    public function setLabelRotation($labelRotation)
     {
         $this->LabelRotation = $labelRotation;
         return $this;

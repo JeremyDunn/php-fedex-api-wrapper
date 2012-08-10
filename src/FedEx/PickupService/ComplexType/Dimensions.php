@@ -60,10 +60,10 @@ class Dimensions
     /**
      * Identifies the unit of measure associated with a dimensional values. See LinearUnits for valid values.
      *
-     * @param \FedEx\Pickup\SimpleType\LinearUnits  $units
+     * @param \FedEx\Pickup\SimpleType\LinearUnits|string $units
      * return Dimensions
      */
-    public function setUnits(\FedEx\Pickup\SimpleType\LinearUnits $units)
+    public function setUnits($units)
     {
         $this->Units = $units;
         return $this;

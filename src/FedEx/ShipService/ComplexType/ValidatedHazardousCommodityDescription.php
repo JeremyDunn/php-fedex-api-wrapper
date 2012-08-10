@@ -36,10 +36,10 @@ class ValidatedHazardousCommodityDescription
     /**
      * Set PackingGroup
      *
-     * @param \FedEx\ShipService\SimpleType\HazardousCommodityPackingGroupType  $packingGroup
+     * @param \FedEx\ShipService\SimpleType\HazardousCommodityPackingGroupType|string $packingGroup
      * return ValidatedHazardousCommodityDescription
      */
-    public function setPackingGroup(\FedEx\ShipService\SimpleType\HazardousCommodityPackingGroupType $packingGroup)
+    public function setPackingGroup($packingGroup)
     {
         $this->PackingGroup = $packingGroup;
         return $this;

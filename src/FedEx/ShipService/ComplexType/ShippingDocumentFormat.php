@@ -48,10 +48,10 @@ class ShippingDocumentFormat
     /**
      * Set ImageType
      *
-     * @param \FedEx\ShipService\SimpleType\ShippingDocumentImageType  $imageType
+     * @param \FedEx\ShipService\SimpleType\ShippingDocumentImageType|string $imageType
      * return ShippingDocumentFormat
      */
-    public function setImageType(\FedEx\ShipService\SimpleType\ShippingDocumentImageType $imageType)
+    public function setImageType($imageType)
     {
         $this->ImageType = $imageType;
         return $this;
@@ -60,10 +60,10 @@ class ShippingDocumentFormat
     /**
      * Set StockType
      *
-     * @param \FedEx\ShipService\SimpleType\ShippingDocumentStockType  $stockType
+     * @param \FedEx\ShipService\SimpleType\ShippingDocumentStockType|string $stockType
      * return ShippingDocumentFormat
      */
-    public function setStockType(\FedEx\ShipService\SimpleType\ShippingDocumentStockType $stockType)
+    public function setStockType($stockType)
     {
         $this->StockType = $stockType;
         return $this;

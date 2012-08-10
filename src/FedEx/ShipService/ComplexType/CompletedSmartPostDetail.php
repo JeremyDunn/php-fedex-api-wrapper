@@ -24,10 +24,10 @@ class CompletedSmartPostDetail
     /**
      * Identifies the carrier that will pick up the SmartPost shipment.
      *
-     * @param \FedEx\ShipService\SimpleType\CarrierCodeType  $pickUpCarrier
+     * @param \FedEx\ShipService\SimpleType\CarrierCodeType|string $pickUpCarrier
      * return CompletedSmartPostDetail
      */
-    public function setPickUpCarrier(\FedEx\ShipService\SimpleType\CarrierCodeType $pickUpCarrier)
+    public function setPickUpCarrier($pickUpCarrier)
     {
         $this->PickUpCarrier = $pickUpCarrier;
         return $this;

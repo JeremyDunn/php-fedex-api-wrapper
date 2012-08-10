@@ -24,10 +24,10 @@ class Notification
     /**
      * The severity of this notification. this can indicate success or failure or some other information about the request such as errors or notes.
      *
-     * @param \FedEx\AddressValidationService\SimpleType\NotificationSeverityType  $severity
+     * @param \FedEx\AddressValidationService\SimpleType\NotificationSeverityType|string $severity
      * return Notification
      */
-    public function setSeverity(\FedEx\AddressValidationService\SimpleType\NotificationSeverityType $severity)
+    public function setSeverity($severity)
     {
         $this->Severity = $severity;
         return $this;

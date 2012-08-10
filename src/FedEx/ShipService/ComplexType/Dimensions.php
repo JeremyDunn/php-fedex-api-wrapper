@@ -60,10 +60,10 @@ class Dimensions
     /**
      * Set Units
      *
-     * @param \FedEx\ShipService\SimpleType\LinearUnits  $units
+     * @param \FedEx\ShipService\SimpleType\LinearUnits|string $units
      * return Dimensions
      */
-    public function setUnits(\FedEx\ShipService\SimpleType\LinearUnits $units)
+    public function setUnits($units)
     {
         $this->Units = $units;
         return $this;

@@ -36,10 +36,10 @@ class LabelSpecification
     /**
      * Specify type of label to be returned
      *
-     * @param \FedEx\ShipService\SimpleType\LabelFormatType  $labelFormatType
+     * @param \FedEx\ShipService\SimpleType\LabelFormatType|string $labelFormatType
      * return LabelSpecification
      */
-    public function setLabelFormatType(\FedEx\ShipService\SimpleType\LabelFormatType $labelFormatType)
+    public function setLabelFormatType($labelFormatType)
     {
         $this->LabelFormatType = $labelFormatType;
         return $this;
@@ -48,10 +48,10 @@ class LabelSpecification
     /**
      * Specifies the image format used for a shipping document.
      *
-     * @param \FedEx\ShipService\SimpleType\ShippingDocumentImageType  $imageType
+     * @param \FedEx\ShipService\SimpleType\ShippingDocumentImageType|string $imageType
      * return LabelSpecification
      */
-    public function setImageType(\FedEx\ShipService\SimpleType\ShippingDocumentImageType $imageType)
+    public function setImageType($imageType)
     {
         $this->ImageType = $imageType;
         return $this;
@@ -60,10 +60,10 @@ class LabelSpecification
     /**
      * For thermal printer lables this indicates the size of the label and the location of the doc tab if present.
      *
-     * @param \FedEx\ShipService\SimpleType\LabelStockType  $labelStockType
+     * @param \FedEx\ShipService\SimpleType\LabelStockType|string $labelStockType
      * return LabelSpecification
      */
-    public function setLabelStockType(\FedEx\ShipService\SimpleType\LabelStockType $labelStockType)
+    public function setLabelStockType($labelStockType)
     {
         $this->LabelStockType = $labelStockType;
         return $this;
@@ -72,10 +72,10 @@ class LabelSpecification
     /**
      * This indicates if the top or bottom of the label comes out of the printer first.
      *
-     * @param \FedEx\ShipService\SimpleType\LabelPrintingOrientationType  $labelPrintingOrientation
+     * @param \FedEx\ShipService\SimpleType\LabelPrintingOrientationType|string $labelPrintingOrientation
      * return LabelSpecification
      */
-    public function setLabelPrintingOrientation(\FedEx\ShipService\SimpleType\LabelPrintingOrientationType $labelPrintingOrientation)
+    public function setLabelPrintingOrientation($labelPrintingOrientation)
     {
         $this->LabelPrintingOrientation = $labelPrintingOrientation;
         return $this;

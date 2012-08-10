@@ -96,10 +96,10 @@ class TrackEvent
     /**
      * Indicates where the arrival actually occurred.
      *
-     * @param \FedEx\TrackService\SimpleType\ArrivalLocationType  $arrivalLocation
+     * @param \FedEx\TrackService\SimpleType\ArrivalLocationType|string $arrivalLocation
      * return TrackEvent
      */
-    public function setArrivalLocation(\FedEx\TrackService\SimpleType\ArrivalLocationType $arrivalLocation)
+    public function setArrivalLocation($arrivalLocation)
     {
         $this->ArrivalLocation = $arrivalLocation;
         return $this;

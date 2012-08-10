@@ -24,10 +24,10 @@ class Payment
     /**
      * Identifies the method of payment for a service. See PaymentType for list of valid enumerated values.
      *
-     * @param \FedEx\ShipService\SimpleType\PaymentType  $paymentType
+     * @param \FedEx\ShipService\SimpleType\PaymentType|string $paymentType
      * return Payment
      */
-    public function setPaymentType(\FedEx\ShipService\SimpleType\PaymentType $paymentType)
+    public function setPaymentType($paymentType)
     {
         $this->PaymentType = $paymentType;
         return $this;

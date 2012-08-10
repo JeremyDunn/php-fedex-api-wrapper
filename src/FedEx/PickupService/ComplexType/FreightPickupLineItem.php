@@ -24,10 +24,10 @@ class FreightPickupLineItem
     /**
      * Set Service
      *
-     * @param \FedEx\Pickup\SimpleType\ServiceType  $service
+     * @param \FedEx\Pickup\SimpleType\ServiceType|string $service
      * return FreightPickupLineItem
      */
-    public function setService(\FedEx\Pickup\SimpleType\ServiceType $service)
+    public function setService($service)
     {
         $this->Service = $service;
         return $this;
@@ -60,10 +60,10 @@ class FreightPickupLineItem
     /**
      * Identifies the physical packaging of the shipment.
      *
-     * @param \FedEx\Pickup\SimpleType\PhysicalPackagingType  $packaging
+     * @param \FedEx\Pickup\SimpleType\PhysicalPackagingType|string $packaging
      * return FreightPickupLineItem
      */
-    public function setPackaging(\FedEx\Pickup\SimpleType\PhysicalPackagingType $packaging)
+    public function setPackaging($packaging)
     {
         $this->Packaging = $packaging;
         return $this;

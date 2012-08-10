@@ -36,10 +36,10 @@ class TrackPackageIdentifier
     /**
      * The type of the Value to be used to retrieve tracking information for a package (e.g. SHIPPER_REFERENCE, PURCHASE_ORDER, TRACKING_NUMBER_OR_DOORTAG, etc..) .
      *
-     * @param \FedEx\TrackService\SimpleType\TrackIdentifierType  $type
+     * @param \FedEx\TrackService\SimpleType\TrackIdentifierType|string $type
      * return TrackPackageIdentifier
      */
-    public function setType(\FedEx\TrackService\SimpleType\TrackIdentifierType $type)
+    public function setType($type)
     {
         $this->Type = $type;
         return $this;

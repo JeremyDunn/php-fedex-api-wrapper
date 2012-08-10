@@ -24,10 +24,10 @@ class FedExLocatorReply
     /**
      * Identifies the highest severity encountered when executing the request; in order from high to low: FAILURE, ERROR, WARNING, NOTE, SUCCESS.
      *
-     * @param \FedEx\LocatorService\SimpleType\NotificationSeverityType  $highestSeverity
+     * @param \FedEx\LocatorService\SimpleType\NotificationSeverityType|string $highestSeverity
      * return FedExLocatorReply
      */
-    public function setHighestSeverity(\FedEx\LocatorService\SimpleType\NotificationSeverityType $highestSeverity)
+    public function setHighestSeverity($highestSeverity)
     {
         $this->HighestSeverity = $highestSeverity;
         return $this;

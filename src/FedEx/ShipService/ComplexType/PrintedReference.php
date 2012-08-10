@@ -24,10 +24,10 @@ class PrintedReference
     /**
      * Set Type
      *
-     * @param \FedEx\ShipService\SimpleType\PrintedReferenceType  $type
+     * @param \FedEx\ShipService\SimpleType\PrintedReferenceType|string $type
      * return PrintedReference
      */
-    public function setType(\FedEx\ShipService\SimpleType\PrintedReferenceType $type)
+    public function setType($type)
     {
         $this->Type = $type;
         return $this;

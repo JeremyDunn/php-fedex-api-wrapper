@@ -24,10 +24,10 @@ class ShippingDocumentEMailRecipient
     /**
      * Identifies the relationship of this recipient in the shipment.
      *
-     * @param \FedEx\ShipService\SimpleType\EMailNotificationRecipientType  $recipientType
+     * @param \FedEx\ShipService\SimpleType\EMailNotificationRecipientType|string $recipientType
      * return ShippingDocumentEMailRecipient
      */
-    public function setRecipientType(\FedEx\ShipService\SimpleType\EMailNotificationRecipientType $recipientType)
+    public function setRecipientType($recipientType)
     {
         $this->RecipientType = $recipientType;
         return $this;

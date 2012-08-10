@@ -24,10 +24,10 @@ class PendingShipmentDetail
     /**
      * Identifies the type of FedEx pending shipment
      *
-     * @param \FedEx\Pickup\SimpleType\PendingShipmentType  $type
+     * @param \FedEx\Pickup\SimpleType\PendingShipmentType|string $type
      * return PendingShipmentDetail
      */
-    public function setType(\FedEx\Pickup\SimpleType\PendingShipmentType $type)
+    public function setType($type)
     {
         $this->Type = $type;
         return $this;

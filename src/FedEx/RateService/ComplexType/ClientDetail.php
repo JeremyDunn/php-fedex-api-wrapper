@@ -60,10 +60,10 @@ class ClientDetail
     /**
      * Indicates the region from which the transaction is submitted.
      *
-     * @param \FedEx\RateService\SimpleType\ExpressRegionCode  $region
+     * @param \FedEx\RateService\SimpleType\ExpressRegionCode|string $region
      * return ClientDetail
      */
-    public function setRegion(\FedEx\RateService\SimpleType\ExpressRegionCode $region)
+    public function setRegion($region)
     {
         $this->Region = $region;
         return $this;

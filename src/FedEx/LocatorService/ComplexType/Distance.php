@@ -36,10 +36,10 @@ class Distance
     /**
      * Identifies the unit of distance from the point indicated by the search location (e.g. "MI"). See DistanceUnits for list of returned values.
      *
-     * @param \FedEx\LocatorService\SimpleType\DistanceUnits  $units
+     * @param \FedEx\LocatorService\SimpleType\DistanceUnits|string $units
      * return Distance
      */
-    public function setUnits(\FedEx\LocatorService\SimpleType\DistanceUnits $units)
+    public function setUnits($units)
     {
         $this->Units = $units;
         return $this;

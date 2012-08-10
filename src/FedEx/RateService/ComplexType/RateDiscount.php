@@ -24,10 +24,10 @@ class RateDiscount
     /**
      * Identifies the type of discount applied to the shipment.
      *
-     * @param \FedEx\RateService\SimpleType\RateDiscountType  $rateDiscountType
+     * @param \FedEx\RateService\SimpleType\RateDiscountType|string $rateDiscountType
      * return RateDiscount
      */
-    public function setRateDiscountType(\FedEx\RateService\SimpleType\RateDiscountType $rateDiscountType)
+    public function setRateDiscountType($rateDiscountType)
     {
         $this->RateDiscountType = $rateDiscountType;
         return $this;

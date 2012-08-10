@@ -108,10 +108,10 @@ class ServiceAvailabilityRequest
     /**
      * Optionally supplied instead of service to restrict reply to services for a specific carrier.
      *
-     * @param \FedEx\PackageMovementInformationService\SimpleType\CarrierCodeType  $carrierCode
+     * @param \FedEx\PackageMovementInformationService\SimpleType\CarrierCodeType|string $carrierCode
      * return ServiceAvailabilityRequest
      */
-    public function setCarrierCode(\FedEx\PackageMovementInformationService\SimpleType\CarrierCodeType $carrierCode)
+    public function setCarrierCode($carrierCode)
     {
         $this->CarrierCode = $carrierCode;
         return $this;
@@ -120,10 +120,10 @@ class ServiceAvailabilityRequest
     /**
      * Restricts reply to single service, if supplied.
      *
-     * @param \FedEx\PackageMovementInformationService\SimpleType\ServiceType  $service
+     * @param \FedEx\PackageMovementInformationService\SimpleType\ServiceType|string $service
      * return ServiceAvailabilityRequest
      */
-    public function setService(\FedEx\PackageMovementInformationService\SimpleType\ServiceType $service)
+    public function setService($service)
     {
         $this->Service = $service;
         return $this;
@@ -132,10 +132,10 @@ class ServiceAvailabilityRequest
     /**
      * Identifies the FedEx packaging type used by the requestor for the package. See PackagingType for valid values. Omit this element and the Service element to get a list of every available service.
      *
-     * @param \FedEx\PackageMovementInformationService\SimpleType\PackagingType  $packaging
+     * @param \FedEx\PackageMovementInformationService\SimpleType\PackagingType|string $packaging
      * return ServiceAvailabilityRequest
      */
-    public function setPackaging(\FedEx\PackageMovementInformationService\SimpleType\PackagingType $packaging)
+    public function setPackaging($packaging)
     {
         $this->Packaging = $packaging;
         return $this;

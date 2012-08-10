@@ -96,10 +96,10 @@ class FedExLocatorRequest
     /**
      * Units in which Distance to location is to be expressed. See DistanceUnits for list of returned values.
      *
-     * @param \FedEx\LocatorService\SimpleType\DistanceUnits  $distanceUnits
+     * @param \FedEx\LocatorService\SimpleType\DistanceUnits|string $distanceUnits
      * return FedExLocatorRequest
      */
-    public function setDistanceUnits(\FedEx\LocatorService\SimpleType\DistanceUnits $distanceUnits)
+    public function setDistanceUnits($distanceUnits)
     {
         $this->DistanceUnits = $distanceUnits;
         return $this;

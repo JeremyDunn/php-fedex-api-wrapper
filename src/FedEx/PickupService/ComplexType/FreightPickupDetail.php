@@ -36,10 +36,10 @@ class FreightPickupDetail
     /**
      * Identifies the type of payment to be tendered for the pickup.
      *
-     * @param \FedEx\Pickup\SimpleType\FreightAccountPaymentType  $payment
+     * @param \FedEx\Pickup\SimpleType\FreightAccountPaymentType|string $payment
      * return FreightPickupDetail
      */
-    public function setPayment(\FedEx\Pickup\SimpleType\FreightAccountPaymentType $payment)
+    public function setPayment($payment)
     {
         $this->Payment = $payment;
         return $this;
@@ -48,10 +48,10 @@ class FreightPickupDetail
     /**
      * Indicates the role of the party submitting the transaction.
      *
-     * @param \FedEx\Pickup\SimpleType\FreightShipmentRoleType  $role
+     * @param \FedEx\Pickup\SimpleType\FreightShipmentRoleType|string $role
      * return FreightPickupDetail
      */
-    public function setRole(\FedEx\Pickup\SimpleType\FreightShipmentRoleType $role)
+    public function setRole($role)
     {
         $this->Role = $role;
         return $this;

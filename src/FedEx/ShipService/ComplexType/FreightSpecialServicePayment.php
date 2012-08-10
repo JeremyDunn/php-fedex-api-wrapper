@@ -24,10 +24,10 @@ class FreightSpecialServicePayment
     /**
      * Identifies the special service.
      *
-     * @param \FedEx\ShipService\SimpleType\ShipmentSpecialServiceType  $specialService
+     * @param \FedEx\ShipService\SimpleType\ShipmentSpecialServiceType|string $specialService
      * return FreightSpecialServicePayment
      */
-    public function setSpecialService(\FedEx\ShipService\SimpleType\ShipmentSpecialServiceType $specialService)
+    public function setSpecialService($specialService)
     {
         $this->SpecialService = $specialService;
         return $this;
@@ -36,10 +36,10 @@ class FreightSpecialServicePayment
     /**
      * Indicates who will pay for the special service.
      *
-     * @param \FedEx\ShipService\SimpleType\FreightAccountPaymentType  $paymentType
+     * @param \FedEx\ShipService\SimpleType\FreightAccountPaymentType|string $paymentType
      * return FreightSpecialServicePayment
      */
-    public function setPaymentType(\FedEx\ShipService\SimpleType\FreightAccountPaymentType $paymentType)
+    public function setPaymentType($paymentType)
     {
         $this->PaymentType = $paymentType;
         return $this;

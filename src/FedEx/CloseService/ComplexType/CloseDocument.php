@@ -24,10 +24,10 @@ class CloseDocument
     /**
      * Set Type
      *
-     * @param \FedEx\CloseService\SimpleType\CloseDocumentType  $type
+     * @param \FedEx\CloseService\SimpleType\CloseDocumentType|string $type
      * return CloseDocument
      */
-    public function setType(\FedEx\CloseService\SimpleType\CloseDocumentType $type)
+    public function setType($type)
     {
         $this->Type = $type;
         return $this;
@@ -48,10 +48,10 @@ class CloseDocument
     /**
      * Set ShippingDocumentDisposition
      *
-     * @param \FedEx\CloseService\SimpleType\ShippingDocumentDispositionType  $shippingDocumentDisposition
+     * @param \FedEx\CloseService\SimpleType\ShippingDocumentDispositionType|string $shippingDocumentDisposition
      * return CloseDocument
      */
-    public function setShippingDocumentDisposition(\FedEx\CloseService\SimpleType\ShippingDocumentDispositionType $shippingDocumentDisposition)
+    public function setShippingDocumentDisposition($shippingDocumentDisposition)
     {
         $this->ShippingDocumentDisposition = $shippingDocumentDisposition;
         return $this;

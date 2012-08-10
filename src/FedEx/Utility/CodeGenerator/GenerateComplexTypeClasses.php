@@ -198,9 +198,9 @@ TEXT;
         }
 
         //set property type if is simple type
-        if ($this->_isSimpleType($property['type'])) {
-            $property['type'] = $simpleTypeNamespace . $property['type'] . ' ';
-            $property['typePHPDoc'] = $property['type'];
+        if ($this->_isSimpleType($property['type'])) {        
+            $property['typePHPDoc'] = $simpleTypeNamespace . $property['type'] . '|string';
+            $property['type'] = null;
         } else {
             //check for invalid types for parameter type hints
             if (in_array($property['type'], $invalidTypes)) {

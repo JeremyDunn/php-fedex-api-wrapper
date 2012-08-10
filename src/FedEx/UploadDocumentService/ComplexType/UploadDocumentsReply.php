@@ -24,10 +24,10 @@ class UploadDocumentsReply
     /**
      * This indicates the highest level of severity of all the notifications returned in this reply
      *
-     * @param \FedEx\UploadDocumentService\SimpleType\NotificationSeverityType  $highestSeverity
+     * @param \FedEx\UploadDocumentService\SimpleType\NotificationSeverityType|string $highestSeverity
      * return UploadDocumentsReply
      */
-    public function setHighestSeverity(\FedEx\UploadDocumentService\SimpleType\NotificationSeverityType $highestSeverity)
+    public function setHighestSeverity($highestSeverity)
     {
         $this->HighestSeverity = $highestSeverity;
         return $this;

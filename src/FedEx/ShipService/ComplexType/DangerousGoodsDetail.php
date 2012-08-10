@@ -24,10 +24,10 @@ class DangerousGoodsDetail
     /**
      * Identifies whether or not the products being shipped are required to be accessible during delivery.
      *
-     * @param \FedEx\ShipService\SimpleType\DangerousGoodsAccessibilityType  $accessibility
+     * @param \FedEx\ShipService\SimpleType\DangerousGoodsAccessibilityType|string $accessibility
      * return DangerousGoodsDetail
      */
-    public function setAccessibility(\FedEx\ShipService\SimpleType\DangerousGoodsAccessibilityType $accessibility)
+    public function setAccessibility($accessibility)
     {
         $this->Accessibility = $accessibility;
         return $this;

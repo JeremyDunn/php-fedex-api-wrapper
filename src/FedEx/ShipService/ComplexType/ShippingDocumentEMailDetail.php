@@ -36,10 +36,10 @@ class ShippingDocumentEMailDetail
     /**
      * Identifies the convention by which documents are to be grouped as e-mail attachments.
      *
-     * @param \FedEx\ShipService\SimpleType\ShippingDocumentEMailGroupingType  $grouping
+     * @param \FedEx\ShipService\SimpleType\ShippingDocumentEMailGroupingType|string $grouping
      * return ShippingDocumentEMailDetail
      */
-    public function setGrouping(\FedEx\ShipService\SimpleType\ShippingDocumentEMailGroupingType $grouping)
+    public function setGrouping($grouping)
     {
         $this->Grouping = $grouping;
         return $this;

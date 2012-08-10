@@ -24,10 +24,10 @@ class DocTabContent
     /**
      * The DocTabContentType options available.
      *
-     * @param \FedEx\RateService\SimpleType\DocTabContentType  $docTabContentType
+     * @param \FedEx\RateService\SimpleType\DocTabContentType|string $docTabContentType
      * return DocTabContent
      */
-    public function setDocTabContentType(\FedEx\RateService\SimpleType\DocTabContentType $docTabContentType)
+    public function setDocTabContentType($docTabContentType)
     {
         $this->DocTabContentType = $docTabContentType;
         return $this;

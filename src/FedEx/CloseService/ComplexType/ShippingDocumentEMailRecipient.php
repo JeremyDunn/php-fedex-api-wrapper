@@ -24,10 +24,10 @@ class ShippingDocumentEMailRecipient
     /**
      * Identifies the relationship of this recipient in the shipment.
      *
-     * @param \FedEx\CloseService\SimpleType\EMailNotificationRecipientType  $recipientType
+     * @param \FedEx\CloseService\SimpleType\EMailNotificationRecipientType|string $recipientType
      * return ShippingDocumentEMailRecipient
      */
-    public function setRecipientType(\FedEx\CloseService\SimpleType\EMailNotificationRecipientType $recipientType)
+    public function setRecipientType($recipientType)
     {
         $this->RecipientType = $recipientType;
         return $this;

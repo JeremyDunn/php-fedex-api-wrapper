@@ -36,10 +36,10 @@ class LinearMeasure
     /**
      * The units for this measurement.
      *
-     * @param \FedEx\RateService\SimpleType\LinearUnits  $units
+     * @param \FedEx\RateService\SimpleType\LinearUnits|string $units
      * return LinearMeasure
      */
-    public function setUnits(\FedEx\RateService\SimpleType\LinearUnits $units)
+    public function setUnits($units)
     {
         $this->Units = $units;
         return $this;

@@ -48,10 +48,10 @@ class CourierDispatchOriginDetail
     /**
      * Identifies the physical location where the courier should pick up the shipment. See CourierDispatchBuildingLocationType for valid values.
      *
-     * @param \FedEx\CourierDispatchService\SimpleType\CourierDispatchBuildingLocationType  $packageLocation
+     * @param \FedEx\CourierDispatchService\SimpleType\CourierDispatchBuildingLocationType|string $packageLocation
      * return CourierDispatchOriginDetail
      */
-    public function setPackageLocation(\FedEx\CourierDispatchService\SimpleType\CourierDispatchBuildingLocationType $packageLocation)
+    public function setPackageLocation($packageLocation)
     {
         $this->PackageLocation = $packageLocation;
         return $this;
@@ -60,10 +60,10 @@ class CourierDispatchOriginDetail
     /**
      * Identifies the part of the building where the package is located for pickup by FedEx. See BuildingPartCode for valid values.
      *
-     * @param \FedEx\CourierDispatchService\SimpleType\BuildingPartCode  $buildingPartCode
+     * @param \FedEx\CourierDispatchService\SimpleType\BuildingPartCode|string $buildingPartCode
      * return CourierDispatchOriginDetail
      */
-    public function setBuildingPartCode(\FedEx\CourierDispatchService\SimpleType\BuildingPartCode $buildingPartCode)
+    public function setBuildingPartCode($buildingPartCode)
     {
         $this->BuildingPartCode = $buildingPartCode;
         return $this;

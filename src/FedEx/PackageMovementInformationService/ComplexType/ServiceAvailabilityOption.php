@@ -24,10 +24,10 @@ class ServiceAvailabilityOption
     /**
      * Identifies a FedEx Service that is available between the origin and destination provided in the request.
      *
-     * @param \FedEx\PackageMovementInformationService\SimpleType\ServiceType  $service
+     * @param \FedEx\PackageMovementInformationService\SimpleType\ServiceType|string $service
      * return ServiceAvailabilityOption
      */
-    public function setService(\FedEx\PackageMovementInformationService\SimpleType\ServiceType $service)
+    public function setService($service)
     {
         $this->Service = $service;
         return $this;
@@ -48,10 +48,10 @@ class ServiceAvailabilityOption
     /**
      * Identifies the delivery day of week of the available service. See DayOfWeekType for valid values.
      *
-     * @param \FedEx\PackageMovementInformationService\SimpleType\DayOfWeekType  $deliveryDay
+     * @param \FedEx\PackageMovementInformationService\SimpleType\DayOfWeekType|string $deliveryDay
      * return ServiceAvailabilityOption
      */
-    public function setDeliveryDay(\FedEx\PackageMovementInformationService\SimpleType\DayOfWeekType $deliveryDay)
+    public function setDeliveryDay($deliveryDay)
     {
         $this->DeliveryDay = $deliveryDay;
         return $this;

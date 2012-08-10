@@ -24,10 +24,10 @@ class PendingShipmentDetail
     /**
      * Set Type
      *
-     * @param \FedEx\RateService\SimpleType\PendingShipmentType  $type
+     * @param \FedEx\RateService\SimpleType\PendingShipmentType|string $type
      * return PendingShipmentDetail
      */
-    public function setType(\FedEx\RateService\SimpleType\PendingShipmentType $type)
+    public function setType($type)
     {
         $this->Type = $type;
         return $this;

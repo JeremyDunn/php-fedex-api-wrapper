@@ -48,10 +48,10 @@ class UploadDocumentDetail
     /**
      * Set DocumentProducer
      *
-     * @param \FedEx\RateService\SimpleType\UploadDocumentProducerType  $documentProducer
+     * @param \FedEx\RateService\SimpleType\UploadDocumentProducerType|string $documentProducer
      * return UploadDocumentDetail
      */
-    public function setDocumentProducer(\FedEx\RateService\SimpleType\UploadDocumentProducerType $documentProducer)
+    public function setDocumentProducer($documentProducer)
     {
         $this->DocumentProducer = $documentProducer;
         return $this;
@@ -60,10 +60,10 @@ class UploadDocumentDetail
     /**
      * Set DocumentType
      *
-     * @param \FedEx\RateService\SimpleType\UploadDocumentType  $documentType
+     * @param \FedEx\RateService\SimpleType\UploadDocumentType|string $documentType
      * return UploadDocumentDetail
      */
-    public function setDocumentType(\FedEx\RateService\SimpleType\UploadDocumentType $documentType)
+    public function setDocumentType($documentType)
     {
         $this->DocumentType = $documentType;
         return $this;

@@ -24,10 +24,10 @@ class Notification
     /**
      * The severity of this notification. This can indicate success or failure or some other information about the request. The values that can be returned are SUCCESS - Your transaction succeeded with no other applicable information. NOTE - Additional information that may be of interest to you about your transaction. WARNING - Additional information that you need to know about your transaction that you may need to take action on. ERROR - Information about an error that occurred while processing your transaction. FAILURE - FedEx was unable to process your transaction at this time due to a system failure. Please try again later
      *
-     * @param \FedEx\RateService\SimpleType\NotificationSeverityType  $severity
+     * @param \FedEx\RateService\SimpleType\NotificationSeverityType|string $severity
      * return Notification
      */
-    public function setSeverity(\FedEx\RateService\SimpleType\NotificationSeverityType $severity)
+    public function setSeverity($severity)
     {
         $this->Severity = $severity;
         return $this;

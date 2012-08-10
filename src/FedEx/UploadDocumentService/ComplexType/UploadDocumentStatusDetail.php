@@ -48,10 +48,10 @@ class UploadDocumentStatusDetail
     /**
      * Set DocumentProducer
      *
-     * @param \FedEx\UploadDocumentService\SimpleType\UploadDocumentProducerType  $documentProducer
+     * @param \FedEx\UploadDocumentService\SimpleType\UploadDocumentProducerType|string $documentProducer
      * return UploadDocumentStatusDetail
      */
-    public function setDocumentProducer(\FedEx\UploadDocumentService\SimpleType\UploadDocumentProducerType $documentProducer)
+    public function setDocumentProducer($documentProducer)
     {
         $this->DocumentProducer = $documentProducer;
         return $this;
@@ -60,10 +60,10 @@ class UploadDocumentStatusDetail
     /**
      * Set DocumentType
      *
-     * @param \FedEx\UploadDocumentService\SimpleType\UploadDocumentType  $documentType
+     * @param \FedEx\UploadDocumentService\SimpleType\UploadDocumentType|string $documentType
      * return UploadDocumentStatusDetail
      */
-    public function setDocumentType(\FedEx\UploadDocumentService\SimpleType\UploadDocumentType $documentType)
+    public function setDocumentType($documentType)
     {
         $this->DocumentType = $documentType;
         return $this;
@@ -84,10 +84,10 @@ class UploadDocumentStatusDetail
     /**
      * Set Status
      *
-     * @param \FedEx\UploadDocumentService\SimpleType\UploadDocumentStatusType  $status
+     * @param \FedEx\UploadDocumentService\SimpleType\UploadDocumentStatusType|string $status
      * return UploadDocumentStatusDetail
      */
-    public function setStatus(\FedEx\UploadDocumentService\SimpleType\UploadDocumentStatusType $status)
+    public function setStatus($status)
     {
         $this->Status = $status;
         return $this;
@@ -96,10 +96,10 @@ class UploadDocumentStatusDetail
     /**
      * Distinct value for reason status was assigned.
      *
-     * @param \FedEx\UploadDocumentService\SimpleType\UploadDocumentStatusInfoType  $statusInfo
+     * @param \FedEx\UploadDocumentService\SimpleType\UploadDocumentStatusInfoType|string $statusInfo
      * return UploadDocumentStatusDetail
      */
-    public function setStatusInfo(\FedEx\UploadDocumentService\SimpleType\UploadDocumentStatusInfoType $statusInfo)
+    public function setStatusInfo($statusInfo)
     {
         $this->StatusInfo = $statusInfo;
         return $this;
@@ -132,10 +132,10 @@ class UploadDocumentStatusDetail
     /**
      * Set DocumentIdProducer
      *
-     * @param \FedEx\UploadDocumentService\SimpleType\UploadDocumentIdProducer  $documentIdProducer
+     * @param \FedEx\UploadDocumentService\SimpleType\UploadDocumentIdProducer|string $documentIdProducer
      * return UploadDocumentStatusDetail
      */
-    public function setDocumentIdProducer(\FedEx\UploadDocumentService\SimpleType\UploadDocumentIdProducer $documentIdProducer)
+    public function setDocumentIdProducer($documentIdProducer)
     {
         $this->DocumentIdProducer = $documentIdProducer;
         return $this;

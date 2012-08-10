@@ -24,10 +24,10 @@ class DocTabContentBarcoded
     /**
      * Set Symbology
      *
-     * @param \FedEx\RateService\SimpleType\BarcodeSymbologyType  $symbology
+     * @param \FedEx\RateService\SimpleType\BarcodeSymbologyType|string $symbology
      * return DocTabContentBarcoded
      */
-    public function setSymbology(\FedEx\RateService\SimpleType\BarcodeSymbologyType $symbology)
+    public function setSymbology($symbology)
     {
         $this->Symbology = $symbology;
         return $this;

@@ -36,10 +36,10 @@ class CompletedShipmentDetail
     /**
      * Indicates the carrier that will be used to deliver this shipment.
      *
-     * @param \FedEx\ShipService\SimpleType\CarrierCodeType  $carrierCode
+     * @param \FedEx\ShipService\SimpleType\CarrierCodeType|string $carrierCode
      * return CompletedShipmentDetail
      */
-    public function setCarrierCode(\FedEx\ShipService\SimpleType\CarrierCodeType $carrierCode)
+    public function setCarrierCode($carrierCode)
     {
         $this->CarrierCode = $carrierCode;
         return $this;

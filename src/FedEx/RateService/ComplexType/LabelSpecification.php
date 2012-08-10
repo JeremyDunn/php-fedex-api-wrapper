@@ -24,10 +24,10 @@ class LabelSpecification
     /**
      * Specify type of label to be returned
      *
-     * @param \FedEx\RateService\SimpleType\LabelFormatType  $labelFormatType
+     * @param \FedEx\RateService\SimpleType\LabelFormatType|string $labelFormatType
      * return LabelSpecification
      */
-    public function setLabelFormatType(\FedEx\RateService\SimpleType\LabelFormatType $labelFormatType)
+    public function setLabelFormatType($labelFormatType)
     {
         $this->LabelFormatType = $labelFormatType;
         return $this;
@@ -43,10 +43,10 @@ class LabelSpecification
                 ZPLII = Zebra thermal printer language
               
      *
-     * @param \FedEx\RateService\SimpleType\ShippingDocumentImageType  $imageType
+     * @param \FedEx\RateService\SimpleType\ShippingDocumentImageType|string $imageType
      * return LabelSpecification
      */
-    public function setImageType(\FedEx\RateService\SimpleType\ShippingDocumentImageType $imageType)
+    public function setImageType($imageType)
     {
         $this->ImageType = $imageType;
         return $this;
@@ -55,10 +55,10 @@ class LabelSpecification
     /**
      * For thermal printer lables this indicates the size of the label and the location of the doc tab if present.
      *
-     * @param \FedEx\RateService\SimpleType\LabelStockType  $labelStockType
+     * @param \FedEx\RateService\SimpleType\LabelStockType|string $labelStockType
      * return LabelSpecification
      */
-    public function setLabelStockType(\FedEx\RateService\SimpleType\LabelStockType $labelStockType)
+    public function setLabelStockType($labelStockType)
     {
         $this->LabelStockType = $labelStockType;
         return $this;
@@ -67,10 +67,10 @@ class LabelSpecification
     /**
      * This indicates if the top or bottom of the label comes out of the printer first.
      *
-     * @param \FedEx\RateService\SimpleType\LabelPrintingOrientationType  $labelPrintingOrientation
+     * @param \FedEx\RateService\SimpleType\LabelPrintingOrientationType|string $labelPrintingOrientation
      * return LabelSpecification
      */
-    public function setLabelPrintingOrientation(\FedEx\RateService\SimpleType\LabelPrintingOrientationType $labelPrintingOrientation)
+    public function setLabelPrintingOrientation($labelPrintingOrientation)
     {
         $this->LabelPrintingOrientation = $labelPrintingOrientation;
         return $this;
@@ -79,10 +79,10 @@ class LabelSpecification
     /**
      * Relative to normal orientation for the printer. RIGHT=90 degrees clockwise, UPSIDE_DOWN=180 degrees, LEFT=90 degrees counterclockwise.
      *
-     * @param \FedEx\RateService\SimpleType\LabelRotationType  $labelRotation
+     * @param \FedEx\RateService\SimpleType\LabelRotationType|string $labelRotation
      * return LabelSpecification
      */
-    public function setLabelRotation(\FedEx\RateService\SimpleType\LabelRotationType $labelRotation)
+    public function setLabelRotation($labelRotation)
     {
         $this->LabelRotation = $labelRotation;
         return $this;

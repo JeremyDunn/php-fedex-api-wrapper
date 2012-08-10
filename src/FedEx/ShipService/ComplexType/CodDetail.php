@@ -48,10 +48,10 @@ class CodDetail
     /**
      * Identifies the type of funds FedEx should collect upon package delivery
      *
-     * @param \FedEx\ShipService\SimpleType\CodCollectionType  $collectionType
+     * @param \FedEx\ShipService\SimpleType\CodCollectionType|string $collectionType
      * return CodDetail
      */
-    public function setCollectionType(\FedEx\ShipService\SimpleType\CodCollectionType $collectionType)
+    public function setCollectionType($collectionType)
     {
         $this->CollectionType = $collectionType;
         return $this;
@@ -72,10 +72,10 @@ class CodDetail
     /**
      * Indicates which type of reference information to include on the COD return shipping label.
      *
-     * @param \FedEx\ShipService\SimpleType\CodReturnReferenceIndicatorType  $referenceIndicator
+     * @param \FedEx\ShipService\SimpleType\CodReturnReferenceIndicatorType|string $referenceIndicator
      * return CodDetail
      */
-    public function setReferenceIndicator(\FedEx\ShipService\SimpleType\CodReturnReferenceIndicatorType $referenceIndicator)
+    public function setReferenceIndicator($referenceIndicator)
     {
         $this->ReferenceIndicator = $referenceIndicator;
         return $this;

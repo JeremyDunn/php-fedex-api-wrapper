@@ -24,10 +24,10 @@ class Notification
     /**
      * Identifies the severity of the Notification item. See NotificationSeverityType for list of returned values.
      *
-     * @param \FedEx\CourierDispatchService\SimpleType\NotificationSeverityType  $severity
+     * @param \FedEx\CourierDispatchService\SimpleType\NotificationSeverityType|string $severity
      * return Notification
      */
-    public function setSeverity(\FedEx\CourierDispatchService\SimpleType\NotificationSeverityType $severity)
+    public function setSeverity($severity)
     {
         $this->Severity = $severity;
         return $this;

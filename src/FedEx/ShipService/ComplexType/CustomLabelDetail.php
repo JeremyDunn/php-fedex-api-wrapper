@@ -24,10 +24,10 @@ class CustomLabelDetail
     /**
      * Set CoordinateUnits
      *
-     * @param \FedEx\ShipService\SimpleType\CustomLabelCoordinateUnits  $coordinateUnits
+     * @param \FedEx\ShipService\SimpleType\CustomLabelCoordinateUnits|string $coordinateUnits
      * return CustomLabelDetail
      */
-    public function setCoordinateUnits(\FedEx\ShipService\SimpleType\CustomLabelCoordinateUnits $coordinateUnits)
+    public function setCoordinateUnits($coordinateUnits)
     {
         $this->CoordinateUnits = $coordinateUnits;
         return $this;

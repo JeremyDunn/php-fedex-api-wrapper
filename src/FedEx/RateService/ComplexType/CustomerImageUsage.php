@@ -24,10 +24,10 @@ class CustomerImageUsage
     /**
      * Set Type
      *
-     * @param \FedEx\RateService\SimpleType\CustomerImageUsageType  $type
+     * @param \FedEx\RateService\SimpleType\CustomerImageUsageType|string $type
      * return CustomerImageUsage
      */
-    public function setType(\FedEx\RateService\SimpleType\CustomerImageUsageType $type)
+    public function setType($type)
     {
         $this->Type = $type;
         return $this;
@@ -36,10 +36,10 @@ class CustomerImageUsage
     /**
      * Set Id
      *
-     * @param \FedEx\RateService\SimpleType\ImageId  $id
+     * @param \FedEx\RateService\SimpleType\ImageId|string $id
      * return CustomerImageUsage
      */
-    public function setId(\FedEx\RateService\SimpleType\ImageId $id)
+    public function setId($id)
     {
         $this->Id = $id;
         return $this;

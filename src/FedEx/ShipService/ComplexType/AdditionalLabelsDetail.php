@@ -24,10 +24,10 @@ class AdditionalLabelsDetail
     /**
      * The type of additional labels to return.
      *
-     * @param \FedEx\ShipService\SimpleType\AdditionalLabelsType  $type
+     * @param \FedEx\ShipService\SimpleType\AdditionalLabelsType|string $type
      * return AdditionalLabelsDetail
      */
-    public function setType(\FedEx\ShipService\SimpleType\AdditionalLabelsType $type)
+    public function setType($type)
     {
         $this->Type = $type;
         return $this;

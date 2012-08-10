@@ -24,10 +24,10 @@ class ReturnShipmentDetail
     /**
      * The type of return shipment that is being requested. At present the only type of retrun shipment that is supported is PRINT_RETURN_LABEL. With this option you can print a return label to insert into the box of an outbound shipment. This option can not be used to print an outbound label.
      *
-     * @param \FedEx\RateService\SimpleType\ReturnType  $returnType
+     * @param \FedEx\RateService\SimpleType\ReturnType|string $returnType
      * return ReturnShipmentDetail
      */
-    public function setReturnType(\FedEx\RateService\SimpleType\ReturnType $returnType)
+    public function setReturnType($returnType)
     {
         $this->ReturnType = $returnType;
         return $this;

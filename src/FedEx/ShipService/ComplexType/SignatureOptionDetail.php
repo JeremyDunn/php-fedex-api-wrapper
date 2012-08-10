@@ -24,10 +24,10 @@ class SignatureOptionDetail
     /**
      * Identifies the delivery signature services option selected by the customer for this shipment. See OptionType for the list of valid values.
      *
-     * @param \FedEx\ShipService\SimpleType\SignatureOptionType  $optionType
+     * @param \FedEx\ShipService\SimpleType\SignatureOptionType|string $optionType
      * return SignatureOptionDetail
      */
-    public function setOptionType(\FedEx\ShipService\SimpleType\SignatureOptionType $optionType)
+    public function setOptionType($optionType)
     {
         $this->OptionType = $optionType;
         return $this;

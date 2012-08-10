@@ -48,10 +48,10 @@ class HoldAtLocationDetail
     /**
      * Type of facility at which package/shipment is to be held.
      *
-     * @param \FedEx\ShipService\SimpleType\FedExLocationType  $locationType
+     * @param \FedEx\ShipService\SimpleType\FedExLocationType|string $locationType
      * return HoldAtLocationDetail
      */
-    public function setLocationType(\FedEx\ShipService\SimpleType\FedExLocationType $locationType)
+    public function setLocationType($locationType)
     {
         $this->LocationType = $locationType;
         return $this;

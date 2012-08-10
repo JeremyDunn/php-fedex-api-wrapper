@@ -24,10 +24,10 @@ class InternationalControlledExportDetail
     /**
      * Set Type
      *
-     * @param \FedEx\Pickup\SimpleType\InternationalControlledExportType  $type
+     * @param \FedEx\Pickup\SimpleType\InternationalControlledExportType|string $type
      * return InternationalControlledExportDetail
      */
-    public function setType(\FedEx\Pickup\SimpleType\InternationalControlledExportType $type)
+    public function setType($type)
     {
         $this->Type = $type;
         return $this;

@@ -24,10 +24,10 @@ class HomeDeliveryPremiumDetail
     /**
      * Set HomeDeliveryPremiumType
      *
-     * @param \FedEx\RateService\SimpleType\HomeDeliveryPremiumType  $homeDeliveryPremiumType
+     * @param \FedEx\RateService\SimpleType\HomeDeliveryPremiumType|string $homeDeliveryPremiumType
      * return HomeDeliveryPremiumDetail
      */
-    public function setHomeDeliveryPremiumType(\FedEx\RateService\SimpleType\HomeDeliveryPremiumType $homeDeliveryPremiumType)
+    public function setHomeDeliveryPremiumType($homeDeliveryPremiumType)
     {
         $this->HomeDeliveryPremiumType = $homeDeliveryPremiumType;
         return $this;

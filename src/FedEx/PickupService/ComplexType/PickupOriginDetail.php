@@ -60,10 +60,10 @@ class PickupOriginDetail
     /**
      * Identifies the physical location where the courier should pick up the shipment. See CourierDispatchBuildingLocationType for valid values.
      *
-     * @param \FedEx\Pickup\SimpleType\PickupBuildingLocationType  $packageLocation
+     * @param \FedEx\Pickup\SimpleType\PickupBuildingLocationType|string $packageLocation
      * return PickupOriginDetail
      */
-    public function setPackageLocation(\FedEx\Pickup\SimpleType\PickupBuildingLocationType $packageLocation)
+    public function setPackageLocation($packageLocation)
     {
         $this->PackageLocation = $packageLocation;
         return $this;
@@ -72,10 +72,10 @@ class PickupOriginDetail
     /**
      * Set BuildingPart
      *
-     * @param \FedEx\Pickup\SimpleType\BuildingPartCode  $buildingPart
+     * @param \FedEx\Pickup\SimpleType\BuildingPartCode|string $buildingPart
      * return PickupOriginDetail
      */
-    public function setBuildingPart(\FedEx\Pickup\SimpleType\BuildingPartCode $buildingPart)
+    public function setBuildingPart($buildingPart)
     {
         $this->BuildingPart = $buildingPart;
         return $this;
@@ -132,10 +132,10 @@ class PickupOriginDetail
     /**
      * FedEx USE ONLY (with IVR client)
      *
-     * @param \FedEx\Pickup\SimpleType\PickupRequestType  $pickupDateType
+     * @param \FedEx\Pickup\SimpleType\PickupRequestType|string $pickupDateType
      * return PickupOriginDetail
      */
-    public function setPickupDateType(\FedEx\Pickup\SimpleType\PickupRequestType $pickupDateType)
+    public function setPickupDateType($pickupDateType)
     {
         $this->PickupDateType = $pickupDateType;
         return $this;

@@ -120,10 +120,10 @@ class TrackDetail
     /**
      * Identifies a FedEx operating company (transportation).
      *
-     * @param \FedEx\TrackService\SimpleType\CarrierCodeType  $carrierCode
+     * @param \FedEx\TrackService\SimpleType\CarrierCodeType|string $carrierCode
      * return TrackDetail
      */
-    public function setCarrierCode(\FedEx\TrackService\SimpleType\CarrierCodeType $carrierCode)
+    public function setCarrierCode($carrierCode)
     {
         $this->CarrierCode = $carrierCode;
         return $this;
@@ -132,10 +132,10 @@ class TrackDetail
     /**
      * Identifies operating transportation company that is the specific to the carrier code.
      *
-     * @param \FedEx\TrackService\SimpleType\OperatingCompanyType  $operatingCompany
+     * @param \FedEx\TrackService\SimpleType\OperatingCompanyType|string $operatingCompany
      * return TrackDetail
      */
-    public function setOperatingCompany(\FedEx\TrackService\SimpleType\OperatingCompanyType $operatingCompany)
+    public function setOperatingCompany($operatingCompany)
     {
         $this->OperatingCompany = $operatingCompany;
         return $this;
@@ -180,10 +180,10 @@ class TrackDetail
     /**
      * Strict representation of the Service type (e.g. PRIORITY_OVERNIGHT).
      *
-     * @param \FedEx\TrackService\SimpleType\ServiceType  $serviceType
+     * @param \FedEx\TrackService\SimpleType\ServiceType|string $serviceType
      * return TrackDetail
      */
-    public function setServiceType(\FedEx\TrackService\SimpleType\ServiceType $serviceType)
+    public function setServiceType($serviceType)
     {
         $this->ServiceType = $serviceType;
         return $this;
@@ -252,10 +252,10 @@ class TrackDetail
     /**
      * Strict representation of the Packaging type (e.g. FEDEX_BOX, YOUR_PACKAGING).
      *
-     * @param \FedEx\TrackService\SimpleType\PackagingType  $packagingType
+     * @param \FedEx\TrackService\SimpleType\PackagingType|string $packagingType
      * return TrackDetail
      */
-    public function setPackagingType(\FedEx\TrackService\SimpleType\PackagingType $packagingType)
+    public function setPackagingType($packagingType)
     {
         $this->PackagingType = $packagingType;
         return $this;
@@ -288,10 +288,10 @@ class TrackDetail
     /**
      * Set TrackReturnLabelType
      *
-     * @param \FedEx\TrackService\SimpleType\TrackReturnLabelType  $trackReturnLabelType
+     * @param \FedEx\TrackService\SimpleType\TrackReturnLabelType|string $trackReturnLabelType
      * return TrackDetail
      */
-    public function setTrackReturnLabelType(\FedEx\TrackService\SimpleType\TrackReturnLabelType $trackReturnLabelType)
+    public function setTrackReturnLabelType($trackReturnLabelType)
     {
         $this->TrackReturnLabelType = $trackReturnLabelType;
         return $this;
@@ -444,10 +444,10 @@ class TrackDetail
     /**
      * Identifies the method of office order delivery.
      *
-     * @param \FedEx\TrackService\SimpleType\OfficeOrderDeliveryMethodType  $officeOrderDeliveryMethod
+     * @param \FedEx\TrackService\SimpleType\OfficeOrderDeliveryMethodType|string $officeOrderDeliveryMethod
      * return TrackDetail
      */
-    public function setOfficeOrderDeliveryMethod(\FedEx\TrackService\SimpleType\OfficeOrderDeliveryMethodType $officeOrderDeliveryMethod)
+    public function setOfficeOrderDeliveryMethod($officeOrderDeliveryMethod)
     {
         $this->OfficeOrderDeliveryMethod = $officeOrderDeliveryMethod;
         return $this;
@@ -456,10 +456,10 @@ class TrackDetail
     /**
      * Strict text indicating the delivery location at the delivered to address.
      *
-     * @param \FedEx\TrackService\SimpleType\TrackDeliveryLocationType  $deliveryLocationType
+     * @param \FedEx\TrackService\SimpleType\TrackDeliveryLocationType|string $deliveryLocationType
      * return TrackDetail
      */
-    public function setDeliveryLocationType(\FedEx\TrackService\SimpleType\TrackDeliveryLocationType $deliveryLocationType)
+    public function setDeliveryLocationType($deliveryLocationType)
     {
         $this->DeliveryLocationType = $deliveryLocationType;
         return $this;
@@ -528,10 +528,10 @@ class TrackDetail
     /**
      * Indicates redirection eligibility as determined by tracking service, subject to refinement/override by redirect-to-hold service.
      *
-     * @param \FedEx\TrackService\SimpleType\RedirectToHoldEligibilityType  $redirectToHoldEligibility
+     * @param \FedEx\TrackService\SimpleType\RedirectToHoldEligibilityType|string $redirectToHoldEligibility
      * return TrackDetail
      */
-    public function setRedirectToHoldEligibility(\FedEx\TrackService\SimpleType\RedirectToHoldEligibilityType $redirectToHoldEligibility)
+    public function setRedirectToHoldEligibility($redirectToHoldEligibility)
     {
         $this->RedirectToHoldEligibility = $redirectToHoldEligibility;
         return $this;

@@ -36,10 +36,10 @@ class CreditCard
     /**
      * Set CreditCardType
      *
-     * @param \FedEx\Pickup\SimpleType\CreditCardType  $creditCardType
+     * @param \FedEx\Pickup\SimpleType\CreditCardType|string $creditCardType
      * return CreditCard
      */
-    public function setCreditCardType(\FedEx\Pickup\SimpleType\CreditCardType $creditCardType)
+    public function setCreditCardType($creditCardType)
     {
         $this->CreditCardType = $creditCardType;
         return $this;

@@ -24,10 +24,10 @@ class ShippingDocument
     /**
      * Shipping Document Type
      *
-     * @param \FedEx\ShipService\SimpleType\ReturnedShippingDocumentType  $type
+     * @param \FedEx\ShipService\SimpleType\ReturnedShippingDocumentType|string $type
      * return ShippingDocument
      */
-    public function setType(\FedEx\ShipService\SimpleType\ReturnedShippingDocumentType $type)
+    public function setType($type)
     {
         $this->Type = $type;
         return $this;
@@ -36,10 +36,10 @@ class ShippingDocument
     /**
      * Specifies how this document image/file is organized.
      *
-     * @param \FedEx\ShipService\SimpleType\ShippingDocumentGroupingType  $grouping
+     * @param \FedEx\ShipService\SimpleType\ShippingDocumentGroupingType|string $grouping
      * return ShippingDocument
      */
-    public function setGrouping(\FedEx\ShipService\SimpleType\ShippingDocumentGroupingType $grouping)
+    public function setGrouping($grouping)
     {
         $this->Grouping = $grouping;
         return $this;
@@ -48,10 +48,10 @@ class ShippingDocument
     /**
      * Set ShippingDocumentDisposition
      *
-     * @param \FedEx\ShipService\SimpleType\ShippingDocumentDispositionType  $shippingDocumentDisposition
+     * @param \FedEx\ShipService\SimpleType\ShippingDocumentDispositionType|string $shippingDocumentDisposition
      * return ShippingDocument
      */
-    public function setShippingDocumentDisposition(\FedEx\ShipService\SimpleType\ShippingDocumentDispositionType $shippingDocumentDisposition)
+    public function setShippingDocumentDisposition($shippingDocumentDisposition)
     {
         $this->ShippingDocumentDisposition = $shippingDocumentDisposition;
         return $this;

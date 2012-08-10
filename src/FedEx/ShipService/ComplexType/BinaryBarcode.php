@@ -24,10 +24,10 @@ class BinaryBarcode
     /**
      * The kind of barcode data in this instance.
      *
-     * @param \FedEx\ShipService\SimpleType\BinaryBarcodeType  $type
+     * @param \FedEx\ShipService\SimpleType\BinaryBarcodeType|string $type
      * return BinaryBarcode
      */
-    public function setType(\FedEx\ShipService\SimpleType\BinaryBarcodeType $type)
+    public function setType($type)
     {
         $this->Type = $type;
         return $this;

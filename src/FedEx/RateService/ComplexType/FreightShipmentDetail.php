@@ -72,10 +72,10 @@ class FreightShipmentDetail
     /**
      * Indicates the role of the party submitting the transaction.
      *
-     * @param \FedEx\RateService\SimpleType\FreightShipmentRoleType  $role
+     * @param \FedEx\RateService\SimpleType\FreightShipmentRoleType|string $role
      * return FreightShipmentDetail
      */
-    public function setRole(\FedEx\RateService\SimpleType\FreightShipmentRoleType $role)
+    public function setRole($role)
     {
         $this->Role = $role;
         return $this;
@@ -84,10 +84,10 @@ class FreightShipmentDetail
     /**
      * Designates which of the requester's tariffs will be used for rating.
      *
-     * @param \FedEx\RateService\SimpleType\FreightAccountPaymentType  $paymentType
+     * @param \FedEx\RateService\SimpleType\FreightAccountPaymentType|string $paymentType
      * return FreightShipmentDetail
      */
-    public function setPaymentType(\FedEx\RateService\SimpleType\FreightAccountPaymentType $paymentType)
+    public function setPaymentType($paymentType)
     {
         $this->PaymentType = $paymentType;
         return $this;

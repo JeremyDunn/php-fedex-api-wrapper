@@ -24,10 +24,10 @@ class FreightShipmentLineItem
     /**
      * Freight class for this line item.
      *
-     * @param \FedEx\ShipService\SimpleType\FreightClassType  $freightClass
+     * @param \FedEx\ShipService\SimpleType\FreightClassType|string $freightClass
      * return FreightShipmentLineItem
      */
-    public function setFreightClass(\FedEx\ShipService\SimpleType\FreightClassType $freightClass)
+    public function setFreightClass($freightClass)
     {
         $this->FreightClass = $freightClass;
         return $this;
@@ -60,10 +60,10 @@ class FreightShipmentLineItem
     /**
      * Specification of handling-unit packaging for this commodity or class line.
      *
-     * @param \FedEx\ShipService\SimpleType\PhysicalPackagingType  $packaging
+     * @param \FedEx\ShipService\SimpleType\PhysicalPackagingType|string $packaging
      * return FreightShipmentLineItem
      */
-    public function setPackaging(\FedEx\ShipService\SimpleType\PhysicalPackagingType $packaging)
+    public function setPackaging($packaging)
     {
         $this->Packaging = $packaging;
         return $this;
@@ -96,10 +96,10 @@ class FreightShipmentLineItem
     /**
      * Indicates the kind of hazardous material content in this line item.
      *
-     * @param \FedEx\ShipService\SimpleType\HazardousCommodityOptionType  $hazardousMaterials
+     * @param \FedEx\ShipService\SimpleType\HazardousCommodityOptionType|string $hazardousMaterials
      * return FreightShipmentLineItem
      */
-    public function setHazardousMaterials(\FedEx\ShipService\SimpleType\HazardousCommodityOptionType $hazardousMaterials)
+    public function setHazardousMaterials($hazardousMaterials)
     {
         $this->HazardousMaterials = $hazardousMaterials;
         return $this;

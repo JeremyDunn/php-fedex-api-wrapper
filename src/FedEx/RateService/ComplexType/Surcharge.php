@@ -24,10 +24,10 @@ class Surcharge
     /**
      * The type of surcharge applied to the shipment.
      *
-     * @param \FedEx\RateService\SimpleType\SurchargeType  $surchargeType
+     * @param \FedEx\RateService\SimpleType\SurchargeType|string $surchargeType
      * return Surcharge
      */
-    public function setSurchargeType(\FedEx\RateService\SimpleType\SurchargeType $surchargeType)
+    public function setSurchargeType($surchargeType)
     {
         $this->SurchargeType = $surchargeType;
         return $this;
@@ -36,10 +36,10 @@ class Surcharge
     /**
      * Set Level
      *
-     * @param \FedEx\RateService\SimpleType\SurchargeLevelType  $level
+     * @param \FedEx\RateService\SimpleType\SurchargeLevelType|string $level
      * return Surcharge
      */
-    public function setLevel(\FedEx\RateService\SimpleType\SurchargeLevelType $level)
+    public function setLevel($level)
     {
         $this->Level = $level;
         return $this;

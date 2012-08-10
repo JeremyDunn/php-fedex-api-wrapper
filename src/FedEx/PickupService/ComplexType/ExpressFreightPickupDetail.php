@@ -24,10 +24,10 @@ class ExpressFreightPickupDetail
     /**
      * Identifies the collection of available FedEx transportation service options. Must be a valid FedEx freight service identifier.
      *
-     * @param \FedEx\Pickup\SimpleType\ServiceType  $service
+     * @param \FedEx\Pickup\SimpleType\ServiceType|string $service
      * return ExpressFreightPickupDetail
      */
-    public function setService(\FedEx\Pickup\SimpleType\ServiceType $service)
+    public function setService($service)
     {
         $this->Service = $service;
         return $this;
@@ -60,10 +60,10 @@ class ExpressFreightPickupDetail
     /**
      * Identifies the type of truck that is needed for FedEx to pick up the freight shipment. See TruckType for valid values.
      *
-     * @param \FedEx\Pickup\SimpleType\TruckType  $truckType
+     * @param \FedEx\Pickup\SimpleType\TruckType|string $truckType
      * return ExpressFreightPickupDetail
      */
-    public function setTruckType(\FedEx\Pickup\SimpleType\TruckType $truckType)
+    public function setTruckType($truckType)
     {
         $this->TruckType = $truckType;
         return $this;
@@ -72,10 +72,10 @@ class ExpressFreightPickupDetail
     /**
      * Identifies the tailer size needed for FedEx to pick up a freight shipment. See TrailerSizeType for valid values.
      *
-     * @param \FedEx\Pickup\SimpleType\TrailerSizeType  $trailerSize
+     * @param \FedEx\Pickup\SimpleType\TrailerSizeType|string $trailerSize
      * return ExpressFreightPickupDetail
      */
-    public function setTrailerSize(\FedEx\Pickup\SimpleType\TrailerSizeType $trailerSize)
+    public function setTrailerSize($trailerSize)
     {
         $this->TrailerSize = $trailerSize;
         return $this;

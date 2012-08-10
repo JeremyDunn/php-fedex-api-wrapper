@@ -120,10 +120,10 @@ class CommercialInvoice
     /**
      * The reason for the shipment. Note: SOLD is not a valid purpose for a Proforma Invoice.
      *
-     * @param \FedEx\ShipService\SimpleType\PurposeOfShipmentType  $purpose
+     * @param \FedEx\ShipService\SimpleType\PurposeOfShipmentType|string $purpose
      * return CommercialInvoice
      */
-    public function setPurpose(\FedEx\ShipService\SimpleType\PurposeOfShipmentType $purpose)
+    public function setPurpose($purpose)
     {
         $this->Purpose = $purpose;
         return $this;
@@ -156,10 +156,10 @@ class CommercialInvoice
     /**
      * Required for dutiable international Express or Ground shipment. This field is not applicable to an international PIB(document) or a non-document which does not require a Commercial Invoice
      *
-     * @param \FedEx\ShipService\SimpleType\TermsOfSaleType  $termsOfSale
+     * @param \FedEx\ShipService\SimpleType\TermsOfSaleType|string $termsOfSale
      * return CommercialInvoice
      */
-    public function setTermsOfSale(\FedEx\ShipService\SimpleType\TermsOfSaleType $termsOfSale)
+    public function setTermsOfSale($termsOfSale)
     {
         $this->TermsOfSale = $termsOfSale;
         return $this;

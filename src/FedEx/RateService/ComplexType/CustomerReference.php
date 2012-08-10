@@ -24,10 +24,10 @@ class CustomerReference
     /**
      * Set CustomerReferenceType
      *
-     * @param \FedEx\RateService\SimpleType\CustomerReferenceType  $customerReferenceType
+     * @param \FedEx\RateService\SimpleType\CustomerReferenceType|string $customerReferenceType
      * return CustomerReference
      */
-    public function setCustomerReferenceType(\FedEx\RateService\SimpleType\CustomerReferenceType $customerReferenceType)
+    public function setCustomerReferenceType($customerReferenceType)
     {
         $this->CustomerReferenceType = $customerReferenceType;
         return $this;

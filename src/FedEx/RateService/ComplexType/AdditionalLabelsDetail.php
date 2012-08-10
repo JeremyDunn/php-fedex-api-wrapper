@@ -24,10 +24,10 @@ class AdditionalLabelsDetail
     /**
      * The type of additional labels to return.
      *
-     * @param \FedEx\RateService\SimpleType\AdditionalLabelsType  $type
+     * @param \FedEx\RateService\SimpleType\AdditionalLabelsType|string $type
      * return AdditionalLabelsDetail
      */
-    public function setType(\FedEx\RateService\SimpleType\AdditionalLabelsType $type)
+    public function setType($type)
     {
         $this->Type = $type;
         return $this;

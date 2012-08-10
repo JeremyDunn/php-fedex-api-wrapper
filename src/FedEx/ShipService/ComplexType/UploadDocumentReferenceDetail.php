@@ -48,10 +48,10 @@ class UploadDocumentReferenceDetail
     /**
      * Set DocumentProducer
      *
-     * @param \FedEx\ShipService\SimpleType\UploadDocumentProducerType  $documentProducer
+     * @param \FedEx\ShipService\SimpleType\UploadDocumentProducerType|string $documentProducer
      * return UploadDocumentReferenceDetail
      */
-    public function setDocumentProducer(\FedEx\ShipService\SimpleType\UploadDocumentProducerType $documentProducer)
+    public function setDocumentProducer($documentProducer)
     {
         $this->DocumentProducer = $documentProducer;
         return $this;
@@ -60,10 +60,10 @@ class UploadDocumentReferenceDetail
     /**
      * Set DocumentType
      *
-     * @param \FedEx\ShipService\SimpleType\UploadDocumentType  $documentType
+     * @param \FedEx\ShipService\SimpleType\UploadDocumentType|string $documentType
      * return UploadDocumentReferenceDetail
      */
-    public function setDocumentType(\FedEx\ShipService\SimpleType\UploadDocumentType $documentType)
+    public function setDocumentType($documentType)
     {
         $this->DocumentType = $documentType;
         return $this;
@@ -84,10 +84,10 @@ class UploadDocumentReferenceDetail
     /**
      * Set DocumentIdProducer
      *
-     * @param \FedEx\ShipService\SimpleType\UploadDocumentIdProducer  $documentIdProducer
+     * @param \FedEx\ShipService\SimpleType\UploadDocumentIdProducer|string $documentIdProducer
      * return UploadDocumentReferenceDetail
      */
-    public function setDocumentIdProducer(\FedEx\ShipService\SimpleType\UploadDocumentIdProducer $documentIdProducer)
+    public function setDocumentIdProducer($documentIdProducer)
     {
         $this->DocumentIdProducer = $documentIdProducer;
         return $this;

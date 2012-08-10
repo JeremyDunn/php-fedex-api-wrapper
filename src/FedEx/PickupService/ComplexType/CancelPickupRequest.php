@@ -72,10 +72,10 @@ class CancelPickupRequest
     /**
      * Identifies the FedEx operating company (transportation) that was sent the pickup that is being canceled.
      *
-     * @param \FedEx\Pickup\SimpleType\CarrierCodeType  $carrierCode
+     * @param \FedEx\Pickup\SimpleType\CarrierCodeType|string $carrierCode
      * return CancelPickupRequest
      */
-    public function setCarrierCode(\FedEx\Pickup\SimpleType\CarrierCodeType $carrierCode)
+    public function setCarrierCode($carrierCode)
     {
         $this->CarrierCode = $carrierCode;
         return $this;

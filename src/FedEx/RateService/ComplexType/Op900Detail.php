@@ -36,10 +36,10 @@ class Op900Detail
     /**
      * Identifies which reference type (from the package's customer references) is to be used as the source for the reference on this OP-900.
      *
-     * @param \FedEx\RateService\SimpleType\CustomerReferenceType  $reference
+     * @param \FedEx\RateService\SimpleType\CustomerReferenceType|string $reference
      * return Op900Detail
      */
-    public function setReference(\FedEx\RateService\SimpleType\CustomerReferenceType $reference)
+    public function setReference($reference)
     {
         $this->Reference = $reference;
         return $this;

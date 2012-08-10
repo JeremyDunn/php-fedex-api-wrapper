@@ -48,10 +48,10 @@ class CloseDocumentFormat
     /**
      * The type of image or printer commands the image is to be formatted in.
      *
-     * @param \FedEx\CloseService\SimpleType\ShippingDocumentImageType  $imageType
+     * @param \FedEx\CloseService\SimpleType\ShippingDocumentImageType|string $imageType
      * return CloseDocumentFormat
      */
-    public function setImageType(\FedEx\CloseService\SimpleType\ShippingDocumentImageType $imageType)
+    public function setImageType($imageType)
     {
         $this->ImageType = $imageType;
         return $this;
@@ -60,10 +60,10 @@ class CloseDocumentFormat
     /**
      * Set StockType
      *
-     * @param \FedEx\CloseService\SimpleType\ShippingDocumentStockType  $stockType
+     * @param \FedEx\CloseService\SimpleType\ShippingDocumentStockType|string $stockType
      * return CloseDocumentFormat
      */
-    public function setStockType(\FedEx\CloseService\SimpleType\ShippingDocumentStockType $stockType)
+    public function setStockType($stockType)
     {
         $this->StockType = $stockType;
         return $this;

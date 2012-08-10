@@ -24,10 +24,10 @@ class CreatePendingShipmentReply
     /**
      * Identifies the highest severity encountered when executing the request; in order from high to low: FAILURE, ERROR, WARNING, NOTE, SUCCESS.
      *
-     * @param \FedEx\ShipService\SimpleType\NotificationSeverityType  $highestSeverity
+     * @param \FedEx\ShipService\SimpleType\NotificationSeverityType|string $highestSeverity
      * return CreatePendingShipmentReply
      */
-    public function setHighestSeverity(\FedEx\ShipService\SimpleType\NotificationSeverityType $highestSeverity)
+    public function setHighestSeverity($highestSeverity)
     {
         $this->HighestSeverity = $highestSeverity;
         return $this;

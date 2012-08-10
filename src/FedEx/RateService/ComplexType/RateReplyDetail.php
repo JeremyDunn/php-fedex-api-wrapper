@@ -24,10 +24,10 @@ class RateReplyDetail
     /**
      * Identifies the FedEx service to use in shipping the package. See ServiceType for list of valid enumerated values.
      *
-     * @param \FedEx\RateService\SimpleType\ServiceType  $serviceType
+     * @param \FedEx\RateService\SimpleType\ServiceType|string $serviceType
      * return RateReplyDetail
      */
-    public function setServiceType(\FedEx\RateService\SimpleType\ServiceType $serviceType)
+    public function setServiceType($serviceType)
     {
         $this->ServiceType = $serviceType;
         return $this;
@@ -36,10 +36,10 @@ class RateReplyDetail
     /**
      * Identifies the packaging used by the requestor for the package. See PackagingType for list of valid enumerated values.
      *
-     * @param \FedEx\RateService\SimpleType\PackagingType  $packagingType
+     * @param \FedEx\RateService\SimpleType\PackagingType|string $packagingType
      * return RateReplyDetail
      */
-    public function setPackagingType(\FedEx\RateService\SimpleType\PackagingType $packagingType)
+    public function setPackagingType($packagingType)
     {
         $this->PackagingType = $packagingType;
         return $this;
@@ -84,10 +84,10 @@ class RateReplyDetail
     /**
      * Set DeliveryDayOfWeek
      *
-     * @param \FedEx\RateService\SimpleType\DayOfWeekType  $deliveryDayOfWeek
+     * @param \FedEx\RateService\SimpleType\DayOfWeekType|string $deliveryDayOfWeek
      * return RateReplyDetail
      */
-    public function setDeliveryDayOfWeek(\FedEx\RateService\SimpleType\DayOfWeekType $deliveryDayOfWeek)
+    public function setDeliveryDayOfWeek($deliveryDayOfWeek)
     {
         $this->DeliveryDayOfWeek = $deliveryDayOfWeek;
         return $this;
@@ -168,10 +168,10 @@ class RateReplyDetail
     /**
      * Time in transit from pickup to delivery.
      *
-     * @param \FedEx\RateService\SimpleType\TransitTimeType  $transitTime
+     * @param \FedEx\RateService\SimpleType\TransitTimeType|string $transitTime
      * return RateReplyDetail
      */
-    public function setTransitTime(\FedEx\RateService\SimpleType\TransitTimeType $transitTime)
+    public function setTransitTime($transitTime)
     {
         $this->TransitTime = $transitTime;
         return $this;
@@ -180,10 +180,10 @@ class RateReplyDetail
     /**
      * Maximum expected transit time
      *
-     * @param \FedEx\RateService\SimpleType\TransitTimeType  $maximumTransitTime
+     * @param \FedEx\RateService\SimpleType\TransitTimeType|string $maximumTransitTime
      * return RateReplyDetail
      */
-    public function setMaximumTransitTime(\FedEx\RateService\SimpleType\TransitTimeType $maximumTransitTime)
+    public function setMaximumTransitTime($maximumTransitTime)
     {
         $this->MaximumTransitTime = $maximumTransitTime;
         return $this;
@@ -192,10 +192,10 @@ class RateReplyDetail
     /**
      * The signature option for this package.
      *
-     * @param \FedEx\RateService\SimpleType\SignatureOptionType  $signatureOption
+     * @param \FedEx\RateService\SimpleType\SignatureOptionType|string $signatureOption
      * return RateReplyDetail
      */
-    public function setSignatureOption(\FedEx\RateService\SimpleType\SignatureOptionType $signatureOption)
+    public function setSignatureOption($signatureOption)
     {
         $this->SignatureOption = $signatureOption;
         return $this;
@@ -204,10 +204,10 @@ class RateReplyDetail
     /**
      * The actual rate type of the charges for this package.
      *
-     * @param \FedEx\RateService\SimpleType\ReturnedRateType  $actualRateType
+     * @param \FedEx\RateService\SimpleType\ReturnedRateType|string $actualRateType
      * return RateReplyDetail
      */
-    public function setActualRateType(\FedEx\RateService\SimpleType\ReturnedRateType $actualRateType)
+    public function setActualRateType($actualRateType)
     {
         $this->ActualRateType = $actualRateType;
         return $this;

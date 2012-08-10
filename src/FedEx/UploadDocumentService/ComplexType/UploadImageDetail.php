@@ -24,10 +24,10 @@ class UploadImageDetail
     /**
      * Set Id
      *
-     * @param \FedEx\UploadDocumentService\SimpleType\ImageId  $id
+     * @param \FedEx\UploadDocumentService\SimpleType\ImageId|string $id
      * return UploadImageDetail
      */
-    public function setId(\FedEx\UploadDocumentService\SimpleType\ImageId $id)
+    public function setId($id)
     {
         $this->Id = $id;
         return $this;

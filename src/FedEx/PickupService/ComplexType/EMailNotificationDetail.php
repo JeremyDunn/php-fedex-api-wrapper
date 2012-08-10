@@ -24,10 +24,10 @@ class EMailNotificationDetail
     /**
      * Specifies whether/how email notifications are grouped.
      *
-     * @param \FedEx\Pickup\SimpleType\EMailNotificationAggregationType  $aggregationType
+     * @param \FedEx\Pickup\SimpleType\EMailNotificationAggregationType|string $aggregationType
      * return EMailNotificationDetail
      */
-    public function setAggregationType(\FedEx\Pickup\SimpleType\EMailNotificationAggregationType $aggregationType)
+    public function setAggregationType($aggregationType)
     {
         $this->AggregationType = $aggregationType;
         return $this;

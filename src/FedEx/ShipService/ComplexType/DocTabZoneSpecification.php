@@ -72,10 +72,10 @@ class DocTabZoneSpecification
     /**
      * Justification for the text printed on this zone.
      *
-     * @param \FedEx\ShipService\SimpleType\DocTabZoneJustificationType  $justification
+     * @param \FedEx\ShipService\SimpleType\DocTabZoneJustificationType|string $justification
      * return DocTabZoneSpecification
      */
-    public function setJustification(\FedEx\ShipService\SimpleType\DocTabZoneJustificationType $justification)
+    public function setJustification($justification)
     {
         $this->Justification = $justification;
         return $this;

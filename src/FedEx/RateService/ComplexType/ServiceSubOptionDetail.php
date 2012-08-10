@@ -24,10 +24,10 @@ class ServiceSubOptionDetail
     /**
      * Identifies the type of Freight Guarantee applied, if FREIGHT_GUARANTEE is applied to the rate quote.
      *
-     * @param \FedEx\RateService\SimpleType\FreightGuaranteeType  $freightGuarantee
+     * @param \FedEx\RateService\SimpleType\FreightGuaranteeType|string $freightGuarantee
      * return ServiceSubOptionDetail
      */
-    public function setFreightGuarantee(\FedEx\RateService\SimpleType\FreightGuaranteeType $freightGuarantee)
+    public function setFreightGuarantee($freightGuarantee)
     {
         $this->FreightGuarantee = $freightGuarantee;
         return $this;
@@ -48,10 +48,10 @@ class ServiceSubOptionDetail
     /**
      * Identifies the indicia used during rate quote, if SMART_POST_ALLOWED_INDICIA is a variable option on the rate request.
      *
-     * @param \FedEx\RateService\SimpleType\SmartPostIndiciaType  $smartPostIndicia
+     * @param \FedEx\RateService\SimpleType\SmartPostIndiciaType|string $smartPostIndicia
      * return ServiceSubOptionDetail
      */
-    public function setSmartPostIndicia(\FedEx\RateService\SimpleType\SmartPostIndiciaType $smartPostIndicia)
+    public function setSmartPostIndicia($smartPostIndicia)
     {
         $this->SmartPostIndicia = $smartPostIndicia;
         return $this;

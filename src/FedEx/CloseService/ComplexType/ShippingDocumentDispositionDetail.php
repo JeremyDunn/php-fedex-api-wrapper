@@ -24,10 +24,10 @@ class ShippingDocumentDispositionDetail
     /**
      * Values in this field specify how to create and return the document.
      *
-     * @param \FedEx\CloseService\SimpleType\ShippingDocumentDispositionType  $dispositionType
+     * @param \FedEx\CloseService\SimpleType\ShippingDocumentDispositionType|string $dispositionType
      * return ShippingDocumentDispositionDetail
      */
-    public function setDispositionType(\FedEx\CloseService\SimpleType\ShippingDocumentDispositionType $dispositionType)
+    public function setDispositionType($dispositionType)
     {
         $this->DispositionType = $dispositionType;
         return $this;
@@ -36,10 +36,10 @@ class ShippingDocumentDispositionDetail
     /**
      * Specifies how to organize all documents of this type.
      *
-     * @param \FedEx\CloseService\SimpleType\ShippingDocumentGroupingType  $grouping
+     * @param \FedEx\CloseService\SimpleType\ShippingDocumentGroupingType|string $grouping
      * return ShippingDocumentDispositionDetail
      */
-    public function setGrouping(\FedEx\CloseService\SimpleType\ShippingDocumentGroupingType $grouping)
+    public function setGrouping($grouping)
     {
         $this->Grouping = $grouping;
         return $this;

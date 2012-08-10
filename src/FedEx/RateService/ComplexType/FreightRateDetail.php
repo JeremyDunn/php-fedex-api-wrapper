@@ -36,10 +36,10 @@ class FreightRateDetail
     /**
      * Specifies how total base charge is determined.
      *
-     * @param \FedEx\RateService\SimpleType\FreightBaseChargeCalculationType  $baseChargeCalculation
+     * @param \FedEx\RateService\SimpleType\FreightBaseChargeCalculationType|string $baseChargeCalculation
      * return FreightRateDetail
      */
-    public function setBaseChargeCalculation(\FedEx\RateService\SimpleType\FreightBaseChargeCalculationType $baseChargeCalculation)
+    public function setBaseChargeCalculation($baseChargeCalculation)
     {
         $this->BaseChargeCalculation = $baseChargeCalculation;
         return $this;

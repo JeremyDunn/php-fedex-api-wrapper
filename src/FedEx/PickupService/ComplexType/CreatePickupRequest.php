@@ -144,10 +144,10 @@ class CreatePickupRequest
     /**
      * Identifies the FedEx operating company (transportation) that is being sent the package pickup request.
      *
-     * @param \FedEx\Pickup\SimpleType\CarrierCodeType  $carrierCode
+     * @param \FedEx\Pickup\SimpleType\CarrierCodeType|string $carrierCode
      * return CreatePickupRequest
      */
-    public function setCarrierCode(\FedEx\Pickup\SimpleType\CarrierCodeType $carrierCode)
+    public function setCarrierCode($carrierCode)
     {
         $this->CarrierCode = $carrierCode;
         return $this;
@@ -192,10 +192,10 @@ class CreatePickupRequest
     /**
      * Describes the country relationship (domestic and/or international) among the shipments being picked up.
      *
-     * @param \FedEx\Pickup\SimpleType\CountryRelationshipType  $countryRelationship
+     * @param \FedEx\Pickup\SimpleType\CountryRelationshipType|string $countryRelationship
      * return CreatePickupRequest
      */
-    public function setCountryRelationship(\FedEx\Pickup\SimpleType\CountryRelationshipType $countryRelationship)
+    public function setCountryRelationship($countryRelationship)
     {
         $this->CountryRelationship = $countryRelationship;
         return $this;

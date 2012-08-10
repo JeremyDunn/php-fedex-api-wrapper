@@ -36,10 +36,10 @@ class RequestedShipment
     /**
      * Identifies the method by which the package is to be tendered to FedEx. This element does not dispatch a courier for package pickup. See DropoffType for list of valid enumerated values.
      *
-     * @param \FedEx\ShipService\SimpleType\DropoffType  $dropoffType
+     * @param \FedEx\ShipService\SimpleType\DropoffType|string $dropoffType
      * return RequestedShipment
      */
-    public function setDropoffType(\FedEx\ShipService\SimpleType\DropoffType $dropoffType)
+    public function setDropoffType($dropoffType)
     {
         $this->DropoffType = $dropoffType;
         return $this;
@@ -48,10 +48,10 @@ class RequestedShipment
     /**
      * Identifies the FedEx service to use in shipping the package. See ServiceType for list of valid enumerated values.
      *
-     * @param \FedEx\ShipService\SimpleType\ServiceType  $serviceType
+     * @param \FedEx\ShipService\SimpleType\ServiceType|string $serviceType
      * return RequestedShipment
      */
-    public function setServiceType(\FedEx\ShipService\SimpleType\ServiceType $serviceType)
+    public function setServiceType($serviceType)
     {
         $this->ServiceType = $serviceType;
         return $this;
@@ -60,10 +60,10 @@ class RequestedShipment
     /**
      * Identifies the packaging used by the requestor for the package. See PackagingType for list of valid enumerated values.
      *
-     * @param \FedEx\ShipService\SimpleType\PackagingType  $packagingType
+     * @param \FedEx\ShipService\SimpleType\PackagingType|string $packagingType
      * return RequestedShipment
      */
-    public function setPackagingType(\FedEx\ShipService\SimpleType\PackagingType $packagingType)
+    public function setPackagingType($packagingType)
     {
         $this->PackagingType = $packagingType;
         return $this;
@@ -276,10 +276,10 @@ class RequestedShipment
     /**
      * Specifies the client-requested response in the event of errors within shipment.
      *
-     * @param \FedEx\ShipService\SimpleType\ErrorLabelBehaviorType  $errorLabelBehavior
+     * @param \FedEx\ShipService\SimpleType\ErrorLabelBehaviorType|string $errorLabelBehavior
      * return RequestedShipment
      */
-    public function setErrorLabelBehavior(\FedEx\ShipService\SimpleType\ErrorLabelBehaviorType $errorLabelBehavior)
+    public function setErrorLabelBehavior($errorLabelBehavior)
     {
         $this->ErrorLabelBehavior = $errorLabelBehavior;
         return $this;
@@ -324,10 +324,10 @@ class RequestedShipment
     /**
      * Specifies whether the customer wishes to have Estimated Duties and Taxes provided with the rate quotation on this shipment. Only applies with shipments moving under international services.
      *
-     * @param \FedEx\ShipService\SimpleType\EdtRequestType  $edtRequestType
+     * @param \FedEx\ShipService\SimpleType\EdtRequestType|string $edtRequestType
      * return RequestedShipment
      */
-    public function setEdtRequestType(\FedEx\ShipService\SimpleType\EdtRequestType $edtRequestType)
+    public function setEdtRequestType($edtRequestType)
     {
         $this->EdtRequestType = $edtRequestType;
         return $this;

@@ -24,10 +24,10 @@ class Weight
     /**
      * Identifies the unit of measure associated with a weight value. See WeightUnits for the valid values.
      *
-     * @param \FedEx\CourierDispatchService\SimpleType\WeightUnits  $units
+     * @param \FedEx\CourierDispatchService\SimpleType\WeightUnits|string $units
      * return Weight
      */
-    public function setUnits(\FedEx\CourierDispatchService\SimpleType\WeightUnits $units)
+    public function setUnits($units)
     {
         $this->Units = $units;
         return $this;

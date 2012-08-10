@@ -24,10 +24,10 @@ class EtdDetail
     /**
      * Specifies client's intent for whether all documents must be confirmed before shipment processing.
      *
-     * @param \FedEx\Pickup\SimpleType\EtdConfirmationType  $confirmation
+     * @param \FedEx\Pickup\SimpleType\EtdConfirmationType|string $confirmation
      * return EtdDetail
      */
-    public function setConfirmation(\FedEx\Pickup\SimpleType\EtdConfirmationType $confirmation)
+    public function setConfirmation($confirmation)
     {
         $this->Confirmation = $confirmation;
         return $this;

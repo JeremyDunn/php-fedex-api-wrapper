@@ -48,10 +48,10 @@ class TrackNotificationPackage
     /**
      * Identification of a FedEx operating company (transportation).
      *
-     * @param \FedEx\TrackService\SimpleType\CarrierCodeType  $carrierCode
+     * @param \FedEx\TrackService\SimpleType\CarrierCodeType|string $carrierCode
      * return TrackNotificationPackage
      */
-    public function setCarrierCode(\FedEx\TrackService\SimpleType\CarrierCodeType $carrierCode)
+    public function setCarrierCode($carrierCode)
     {
         $this->CarrierCode = $carrierCode;
         return $this;

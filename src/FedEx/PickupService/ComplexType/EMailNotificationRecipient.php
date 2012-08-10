@@ -24,10 +24,10 @@ class EMailNotificationRecipient
     /**
      * Identifies the relationship this email recipient has to the shipment.
      *
-     * @param \FedEx\Pickup\SimpleType\EMailNotificationRecipientType  $eMailNotificationRecipientType
+     * @param \FedEx\Pickup\SimpleType\EMailNotificationRecipientType|string $eMailNotificationRecipientType
      * return EMailNotificationRecipient
      */
-    public function setEMailNotificationRecipientType(\FedEx\Pickup\SimpleType\EMailNotificationRecipientType $eMailNotificationRecipientType)
+    public function setEMailNotificationRecipientType($eMailNotificationRecipientType)
     {
         $this->EMailNotificationRecipientType = $eMailNotificationRecipientType;
         return $this;
@@ -60,10 +60,10 @@ class EMailNotificationRecipient
     /**
      * The format of the email notification.
      *
-     * @param \FedEx\Pickup\SimpleType\EMailNotificationFormatType  $format
+     * @param \FedEx\Pickup\SimpleType\EMailNotificationFormatType|string $format
      * return EMailNotificationRecipient
      */
-    public function setFormat(\FedEx\Pickup\SimpleType\EMailNotificationFormatType $format)
+    public function setFormat($format)
     {
         $this->Format = $format;
         return $this;

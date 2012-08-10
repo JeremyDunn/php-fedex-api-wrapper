@@ -24,10 +24,10 @@ class CustomerImageUsage
     /**
      * Set Type
      *
-     * @param \FedEx\CloseService\SimpleType\CustomerImageUsageType  $type
+     * @param \FedEx\CloseService\SimpleType\CustomerImageUsageType|string $type
      * return CustomerImageUsage
      */
-    public function setType(\FedEx\CloseService\SimpleType\CustomerImageUsageType $type)
+    public function setType($type)
     {
         $this->Type = $type;
         return $this;
@@ -36,10 +36,10 @@ class CustomerImageUsage
     /**
      * Set Id
      *
-     * @param \FedEx\CloseService\SimpleType\ImageId  $id
+     * @param \FedEx\CloseService\SimpleType\ImageId|string $id
      * return CustomerImageUsage
      */
-    public function setId(\FedEx\CloseService\SimpleType\ImageId $id)
+    public function setId($id)
     {
         $this->Id = $id;
         return $this;
@@ -60,10 +60,10 @@ class CustomerImageUsage
     /**
      * Internal image type used by INET to identify customer provided images during documents generation. Ex COO etc ..
      *
-     * @param \FedEx\CloseService\SimpleType\InternalImageType  $internalImageType
+     * @param \FedEx\CloseService\SimpleType\InternalImageType|string $internalImageType
      * return CustomerImageUsage
      */
-    public function setInternalImageType(\FedEx\CloseService\SimpleType\InternalImageType $internalImageType)
+    public function setInternalImageType($internalImageType)
     {
         $this->InternalImageType = $internalImageType;
         return $this;

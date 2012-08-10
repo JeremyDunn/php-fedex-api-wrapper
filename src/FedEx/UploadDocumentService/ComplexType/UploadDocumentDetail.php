@@ -48,10 +48,10 @@ class UploadDocumentDetail
     /**
      * Set DocumentType
      *
-     * @param \FedEx\UploadDocumentService\SimpleType\UploadDocumentType  $documentType
+     * @param \FedEx\UploadDocumentService\SimpleType\UploadDocumentType|string $documentType
      * return UploadDocumentDetail
      */
-    public function setDocumentType(\FedEx\UploadDocumentService\SimpleType\UploadDocumentType $documentType)
+    public function setDocumentType($documentType)
     {
         $this->DocumentType = $documentType;
         return $this;

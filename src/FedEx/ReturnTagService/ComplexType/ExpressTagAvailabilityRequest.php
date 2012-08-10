@@ -96,10 +96,10 @@ class ExpressTagAvailabilityRequest
     /**
      * FedEx Service type.
      *
-     * @param \FedEx\ReturnTagService\SimpleType\ServiceType  $service
+     * @param \FedEx\ReturnTagService\SimpleType\ServiceType|string $service
      * return ExpressTagAvailabilityRequest
      */
-    public function setService(\FedEx\ReturnTagService\SimpleType\ServiceType $service)
+    public function setService($service)
     {
         $this->Service = $service;
         return $this;
@@ -108,10 +108,10 @@ class ExpressTagAvailabilityRequest
     /**
      * FedEx Packaging type.
      *
-     * @param \FedEx\ReturnTagService\SimpleType\PackagingType  $packaging
+     * @param \FedEx\ReturnTagService\SimpleType\PackagingType|string $packaging
      * return ExpressTagAvailabilityRequest
      */
-    public function setPackaging(\FedEx\ReturnTagService\SimpleType\PackagingType $packaging)
+    public function setPackaging($packaging)
     {
         $this->Packaging = $packaging;
         return $this;

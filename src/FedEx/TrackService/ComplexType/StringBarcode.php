@@ -24,10 +24,10 @@ class StringBarcode
     /**
      * The kind of barcode data in this instance.
      *
-     * @param \FedEx\TrackService\SimpleType\StringBarcodeType  $type
+     * @param \FedEx\TrackService\SimpleType\StringBarcodeType|string $type
      * return StringBarcode
      */
-    public function setType(\FedEx\TrackService\SimpleType\StringBarcodeType $type)
+    public function setType($type)
     {
         $this->Type = $type;
         return $this;

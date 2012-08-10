@@ -24,10 +24,10 @@ class ReturnShipmentDetail
     /**
      * The type of return shipment that is being requested.
      *
-     * @param \FedEx\Pickup\SimpleType\ReturnType  $returnType
+     * @param \FedEx\Pickup\SimpleType\ReturnType|string $returnType
      * return ReturnShipmentDetail
      */
-    public function setReturnType(\FedEx\Pickup\SimpleType\ReturnType $returnType)
+    public function setReturnType($returnType)
     {
         $this->ReturnType = $returnType;
         return $this;

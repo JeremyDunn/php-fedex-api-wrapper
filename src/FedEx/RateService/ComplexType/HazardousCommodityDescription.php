@@ -36,10 +36,10 @@ class HazardousCommodityDescription
     /**
      * Set PackingGroup
      *
-     * @param \FedEx\RateService\SimpleType\HazardousCommodityPackingGroupType  $packingGroup
+     * @param \FedEx\RateService\SimpleType\HazardousCommodityPackingGroupType|string $packingGroup
      * return HazardousCommodityDescription
      */
-    public function setPackingGroup(\FedEx\RateService\SimpleType\HazardousCommodityPackingGroupType $packingGroup)
+    public function setPackingGroup($packingGroup)
     {
         $this->PackingGroup = $packingGroup;
         return $this;

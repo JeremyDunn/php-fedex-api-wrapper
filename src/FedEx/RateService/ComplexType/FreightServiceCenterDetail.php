@@ -60,10 +60,10 @@ class FreightServiceCenterDetail
     /**
      * Service branding which may be used for local pickup or delivery, distinct from service used for line-haul of customer's shipment.
      *
-     * @param \FedEx\RateService\SimpleType\ServiceType  $localService
+     * @param \FedEx\RateService\SimpleType\ServiceType|string $localService
      * return FreightServiceCenterDetail
      */
-    public function setLocalService(\FedEx\RateService\SimpleType\ServiceType $localService)
+    public function setLocalService($localService)
     {
         $this->LocalService = $localService;
         return $this;
@@ -96,10 +96,10 @@ class FreightServiceCenterDetail
     /**
      * Specifies when/how the customer can arrange for pickup or delivery.
      *
-     * @param \FedEx\RateService\SimpleType\FreightServiceSchedulingType  $localServiceScheduling
+     * @param \FedEx\RateService\SimpleType\FreightServiceSchedulingType|string $localServiceScheduling
      * return FreightServiceCenterDetail
      */
-    public function setLocalServiceScheduling(\FedEx\RateService\SimpleType\FreightServiceSchedulingType $localServiceScheduling)
+    public function setLocalServiceScheduling($localServiceScheduling)
     {
         $this->LocalServiceScheduling = $localServiceScheduling;
         return $this;

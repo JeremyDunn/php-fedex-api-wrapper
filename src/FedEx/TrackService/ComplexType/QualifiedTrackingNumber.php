@@ -60,10 +60,10 @@ class QualifiedTrackingNumber
     /**
      * FedEx operating company that delivered the package.
      *
-     * @param \FedEx\TrackService\SimpleType\CarrierCodeType  $carrier
+     * @param \FedEx\TrackService\SimpleType\CarrierCodeType|string $carrier
      * return QualifiedTrackingNumber
      */
-    public function setCarrier(\FedEx\TrackService\SimpleType\CarrierCodeType $carrier)
+    public function setCarrier($carrier)
     {
         $this->Carrier = $carrier;
         return $this;

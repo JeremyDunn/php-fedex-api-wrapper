@@ -24,10 +24,10 @@ class ShipmentRateDetail
     /**
      * Type used for this specific set of rate data.
      *
-     * @param \FedEx\RateService\SimpleType\ReturnedRateType  $rateType
+     * @param \FedEx\RateService\SimpleType\ReturnedRateType|string $rateType
      * return ShipmentRateDetail
      */
-    public function setRateType(\FedEx\RateService\SimpleType\ReturnedRateType $rateType)
+    public function setRateType($rateType)
     {
         $this->RateType = $rateType;
         return $this;
@@ -60,10 +60,10 @@ class ShipmentRateDetail
     /**
      * Indicates the type of pricing used for this shipment.
      *
-     * @param \FedEx\RateService\SimpleType\PricingCodeType  $pricingCode
+     * @param \FedEx\RateService\SimpleType\PricingCodeType|string $pricingCode
      * return ShipmentRateDetail
      */
-    public function setPricingCode(\FedEx\RateService\SimpleType\PricingCodeType $pricingCode)
+    public function setPricingCode($pricingCode)
     {
         $this->PricingCode = $pricingCode;
         return $this;
@@ -72,10 +72,10 @@ class ShipmentRateDetail
     /**
      * Indicates which weight was used.
      *
-     * @param \FedEx\RateService\SimpleType\RatedWeightMethod  $ratedWeightMethod
+     * @param \FedEx\RateService\SimpleType\RatedWeightMethod|string $ratedWeightMethod
      * return ShipmentRateDetail
      */
-    public function setRatedWeightMethod(\FedEx\RateService\SimpleType\RatedWeightMethod $ratedWeightMethod)
+    public function setRatedWeightMethod($ratedWeightMethod)
     {
         $this->RatedWeightMethod = $ratedWeightMethod;
         return $this;
@@ -84,10 +84,10 @@ class ShipmentRateDetail
     /**
      * INTERNAL FEDEX USE ONLY.
      *
-     * @param \FedEx\RateService\SimpleType\MinimumChargeType  $minimumChargeType
+     * @param \FedEx\RateService\SimpleType\MinimumChargeType|string $minimumChargeType
      * return ShipmentRateDetail
      */
-    public function setMinimumChargeType(\FedEx\RateService\SimpleType\MinimumChargeType $minimumChargeType)
+    public function setMinimumChargeType($minimumChargeType)
     {
         $this->MinimumChargeType = $minimumChargeType;
         return $this;
@@ -132,10 +132,10 @@ class ShipmentRateDetail
     /**
      * Identifies the type of dim divisor that was applied.
      *
-     * @param \FedEx\RateService\SimpleType\RateDimensionalDivisorType  $dimDivisorType
+     * @param \FedEx\RateService\SimpleType\RateDimensionalDivisorType|string $dimDivisorType
      * return ShipmentRateDetail
      */
-    public function setDimDivisorType(\FedEx\RateService\SimpleType\RateDimensionalDivisorType $dimDivisorType)
+    public function setDimDivisorType($dimDivisorType)
     {
         $this->DimDivisorType = $dimDivisorType;
         return $this;

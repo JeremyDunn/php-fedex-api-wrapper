@@ -24,10 +24,10 @@ class AddressValidationReply
     /**
      * Set HighestSeverity
      *
-     * @param \FedEx\AddressValidationService\SimpleType\NotificationSeverityType  $highestSeverity
+     * @param \FedEx\AddressValidationService\SimpleType\NotificationSeverityType|string $highestSeverity
      * return AddressValidationReply
      */
-    public function setHighestSeverity(\FedEx\AddressValidationService\SimpleType\NotificationSeverityType $highestSeverity)
+    public function setHighestSeverity($highestSeverity)
     {
         $this->HighestSeverity = $highestSeverity;
         return $this;

@@ -24,10 +24,10 @@ class Volume
     /**
      * Set Units
      *
-     * @param \FedEx\RateService\SimpleType\VolumeUnits  $units
+     * @param \FedEx\RateService\SimpleType\VolumeUnits|string $units
      * return Volume
      */
-    public function setUnits(\FedEx\RateService\SimpleType\VolumeUnits $units)
+    public function setUnits($units)
     {
         $this->Units = $units;
         return $this;

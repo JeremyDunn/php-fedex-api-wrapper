@@ -24,10 +24,10 @@ class DocTabContentBarcoded
     /**
      * Set Symbology
      *
-     * @param \FedEx\ShipService\SimpleType\BarcodeSymbologyType  $symbology
+     * @param \FedEx\ShipService\SimpleType\BarcodeSymbologyType|string $symbology
      * return DocTabContentBarcoded
      */
-    public function setSymbology(\FedEx\ShipService\SimpleType\BarcodeSymbologyType $symbology)
+    public function setSymbology($symbology)
     {
         $this->Symbology = $symbology;
         return $this;

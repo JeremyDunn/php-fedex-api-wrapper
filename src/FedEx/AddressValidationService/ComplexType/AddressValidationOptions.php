@@ -60,10 +60,10 @@ class AddressValidationOptions
     /**
      * Set StreetAccuracy
      *
-     * @param \FedEx\AddressValidationService\SimpleType\AddressValidationAccuracyType  $streetAccuracy
+     * @param \FedEx\AddressValidationService\SimpleType\AddressValidationAccuracyType|string $streetAccuracy
      * return AddressValidationOptions
      */
-    public function setStreetAccuracy(\FedEx\AddressValidationService\SimpleType\AddressValidationAccuracyType $streetAccuracy)
+    public function setStreetAccuracy($streetAccuracy)
     {
         $this->StreetAccuracy = $streetAccuracy;
         return $this;
@@ -72,10 +72,10 @@ class AddressValidationOptions
     /**
      * Set DirectionalAccuracy
      *
-     * @param \FedEx\AddressValidationService\SimpleType\AddressValidationAccuracyType  $directionalAccuracy
+     * @param \FedEx\AddressValidationService\SimpleType\AddressValidationAccuracyType|string $directionalAccuracy
      * return AddressValidationOptions
      */
-    public function setDirectionalAccuracy(\FedEx\AddressValidationService\SimpleType\AddressValidationAccuracyType $directionalAccuracy)
+    public function setDirectionalAccuracy($directionalAccuracy)
     {
         $this->DirectionalAccuracy = $directionalAccuracy;
         return $this;
@@ -84,10 +84,10 @@ class AddressValidationOptions
     /**
      * Set CompanyNameAccuracy
      *
-     * @param \FedEx\AddressValidationService\SimpleType\AddressValidationAccuracyType  $companyNameAccuracy
+     * @param \FedEx\AddressValidationService\SimpleType\AddressValidationAccuracyType|string $companyNameAccuracy
      * return AddressValidationOptions
      */
-    public function setCompanyNameAccuracy(\FedEx\AddressValidationService\SimpleType\AddressValidationAccuracyType $companyNameAccuracy)
+    public function setCompanyNameAccuracy($companyNameAccuracy)
     {
         $this->CompanyNameAccuracy = $companyNameAccuracy;
         return $this;

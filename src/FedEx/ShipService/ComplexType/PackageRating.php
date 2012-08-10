@@ -24,10 +24,10 @@ class PackageRating
     /**
      * This rate type identifies which entry in the following array is considered as presenting the "actual" rates for the package.
      *
-     * @param \FedEx\ShipService\SimpleType\ReturnedRateType  $actualRateType
+     * @param \FedEx\ShipService\SimpleType\ReturnedRateType|string $actualRateType
      * return PackageRating
      */
-    public function setActualRateType(\FedEx\ShipService\SimpleType\ReturnedRateType $actualRateType)
+    public function setActualRateType($actualRateType)
     {
         $this->ActualRateType = $actualRateType;
         return $this;

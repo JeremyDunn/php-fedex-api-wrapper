@@ -24,10 +24,10 @@ class WeighingDetail
     /**
      * Type of scale used
      *
-     * @param \FedEx\Pickup\SimpleType\WeighingScaleType  $type
+     * @param \FedEx\Pickup\SimpleType\WeighingScaleType|string $type
      * return WeighingDetail
      */
-    public function setType(\FedEx\Pickup\SimpleType\WeighingScaleType $type)
+    public function setType($type)
     {
         $this->Type = $type;
         return $this;

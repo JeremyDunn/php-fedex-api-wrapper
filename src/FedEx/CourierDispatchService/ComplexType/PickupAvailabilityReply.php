@@ -24,10 +24,10 @@ class PickupAvailabilityReply
     /**
      * Identifies the highest severity encountered when executing the request; in order from high to low: FAILURE, ERROR, WARNING, NOTE, SUCCESS.
      *
-     * @param \FedEx\CourierDispatchService\SimpleType\NotificationSeverityType  $highestSeverity
+     * @param \FedEx\CourierDispatchService\SimpleType\NotificationSeverityType|string $highestSeverity
      * return PickupAvailabilityReply
      */
-    public function setHighestSeverity(\FedEx\CourierDispatchService\SimpleType\NotificationSeverityType $highestSeverity)
+    public function setHighestSeverity($highestSeverity)
     {
         $this->HighestSeverity = $highestSeverity;
         return $this;

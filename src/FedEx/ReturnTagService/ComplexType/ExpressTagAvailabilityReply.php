@@ -24,10 +24,10 @@ class ExpressTagAvailabilityReply
     /**
      * Identifies the highest severity encountered when executing the request; in order from high to low: FAILURE, ERROR, WARNING, NOTE, SUCCESS.
      *
-     * @param \FedEx\ReturnTagService\SimpleType\NotificationSeverityType  $highestSeverity
+     * @param \FedEx\ReturnTagService\SimpleType\NotificationSeverityType|string $highestSeverity
      * return ExpressTagAvailabilityReply
      */
-    public function setHighestSeverity(\FedEx\ReturnTagService\SimpleType\NotificationSeverityType $highestSeverity)
+    public function setHighestSeverity($highestSeverity)
     {
         $this->HighestSeverity = $highestSeverity;
         return $this;
@@ -96,10 +96,10 @@ class ExpressTagAvailabilityReply
     /**
      * Indicates the Express Tag Service availability at the sender postal code indicated in the request.
      *
-     * @param \FedEx\ReturnTagService\SimpleType\ExpressTagAvailabilityType  $availability
+     * @param \FedEx\ReturnTagService\SimpleType\ExpressTagAvailabilityType|string $availability
      * return ExpressTagAvailabilityReply
      */
-    public function setAvailability(\FedEx\ReturnTagService\SimpleType\ExpressTagAvailabilityType $availability)
+    public function setAvailability($availability)
     {
         $this->Availability = $availability;
         return $this;

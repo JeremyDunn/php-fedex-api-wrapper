@@ -72,10 +72,10 @@ class CancelCourierDispatchRequest
     /**
      * Identifies the FedEx operating company (transportation) that was sent the courier dispatch that is being canceled.
      *
-     * @param \FedEx\CourierDispatchService\SimpleType\CarrierCodeType  $carrierCode
+     * @param \FedEx\CourierDispatchService\SimpleType\CarrierCodeType|string $carrierCode
      * return CancelCourierDispatchRequest
      */
-    public function setCarrierCode(\FedEx\CourierDispatchService\SimpleType\CarrierCodeType $carrierCode)
+    public function setCarrierCode($carrierCode)
     {
         $this->CarrierCode = $carrierCode;
         return $this;
