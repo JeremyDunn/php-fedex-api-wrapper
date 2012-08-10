@@ -57,7 +57,7 @@ $rateRequest->setReturnTransitAndCommit(true);
 $requestedShipment = new ComplexType\RequestedShipment();
 
 //RequestedShipment/DropoffType
-$requestedShipment->setDropoffType(new SimpleType\DropoffType(SimpleType\DropoffType::_REGULAR_PICKUP));
+$requestedShipment->setDropoffType(SimpleType\DropoffType::_REGULAR_PICKUP);
 
 //RequestedShipment/Shiptimestamp
 $requestedShipment->setShipTimestamp(date('c'));
@@ -161,6 +161,7 @@ echo "<hr />";
 
 $request = new RateService\Request();
 
+$request->getSoapClient()->__setLocation('https://ws.fedex.com:443/web-services/rate');
 
 var_dump($request->getGetRatesReply($rateRequest));
 
