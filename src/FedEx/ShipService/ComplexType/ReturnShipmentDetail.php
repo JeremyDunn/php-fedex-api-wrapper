@@ -57,6 +57,18 @@ class ReturnShipmentDetail
         return $this;
     }
     
+    /**
+     * Set ReturnAssociation
+     *
+     * @param ReturnAssociationDetail $returnAssociation
+     * return ReturnShipmentDetail
+     */
+    public function setReturnAssociation(ReturnAssociationDetail $returnAssociation)
+    {
+        $this->ReturnAssociation = $returnAssociation;
+        return $this;
+    }
+    
 
     
 }

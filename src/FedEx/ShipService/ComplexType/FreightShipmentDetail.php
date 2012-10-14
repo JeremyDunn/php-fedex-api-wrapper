@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Data applicable to shipments using FEDEX_FREIGHT and FEDEX_NATIONAL_FREIGHT services.
+ * Data applicable to shipments using FEDEX_FREIGHT_ECONOMY and FEDEX_FREIGHT_PRIORITY services.
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -46,6 +46,18 @@ class FreightShipmentDetail
     }
     
     /**
+     * Used in connection with "Send Bill To" (SBT) identification of customer's account used for billing.
+     *
+     * @param Party $alternateBilling
+     * return FreightShipmentDetail
+     */
+    public function setAlternateBilling(Party $alternateBilling)
+    {
+        $this->AlternateBilling = $alternateBilling;
+        return $this;
+    }
+    
+    /**
      * Identification values to be printed during creation of a Freight bill of lading.
      *
      * @param PrintedReference[] $printedReferences
@@ -66,18 +78,6 @@ class FreightShipmentDetail
     public function setRole($role)
     {
         $this->Role = $role;
-        return $this;
-    }
-    
-    /**
-     * Designates which of the requester's tariffs will be used for rating.
-     *
-     * @param \FedEx\ShipService\SimpleType\FreightAccountPaymentType|string $paymentType
-     * return FreightShipmentDetail
-     */
-    public function setPaymentType($paymentType)
-    {
-        $this->PaymentType = $paymentType;
         return $this;
     }
     
@@ -222,6 +222,18 @@ class FreightShipmentDetail
     public function setHazardousMaterialsEmergencyContactNumber($hazardousMaterialsEmergencyContactNumber)
     {
         $this->HazardousMaterialsEmergencyContactNumber = $hazardousMaterialsEmergencyContactNumber;
+        return $this;
+    }
+    
+    /**
+     * Set HazardousMaterialsOfferor
+     *
+     * @param string $hazardousMaterialsOfferor
+     * return FreightShipmentDetail
+     */
+    public function setHazardousMaterialsOfferor($hazardousMaterialsOfferor)
+    {
+        $this->HazardousMaterialsOfferor = $hazardousMaterialsOfferor;
         return $this;
     }
     

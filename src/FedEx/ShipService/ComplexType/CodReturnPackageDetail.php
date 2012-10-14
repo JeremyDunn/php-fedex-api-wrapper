@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * CodReturnPackageDetail
+ * Specifies the information associated with a package that has COD special service in a ground shipment.
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -30,6 +30,18 @@ class CodReturnPackageDetail
     public function setCollectionAmount(Money $collectionAmount)
     {
         $this->CollectionAmount = $collectionAmount;
+        return $this;
+    }
+    
+    /**
+     * Set AdjustmentType
+     *
+     * @param \FedEx\ShipService\SimpleType\CodAdjustmentType|string $adjustmentType
+     * return CodReturnPackageDetail
+     */
+    public function setAdjustmentType($adjustmentType)
+    {
+        $this->AdjustmentType = $adjustmentType;
         return $this;
     }
     

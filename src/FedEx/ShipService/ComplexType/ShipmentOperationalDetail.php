@@ -333,6 +333,18 @@ class ShipmentOperationalDetail
         return $this;
     }
     
+    /**
+     * Set Scac
+     *
+     * @param string $scac
+     * return ShipmentOperationalDetail
+     */
+    public function setScac($scac)
+    {
+        $this->Scac = $scac;
+        return $this;
+    }
+    
 
     
 }

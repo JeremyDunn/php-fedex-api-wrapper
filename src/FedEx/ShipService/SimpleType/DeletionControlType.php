@@ -14,6 +14,7 @@ class DeletionControlType
     extends AbstractSimpleType
 {
     const _DELETE_ALL_PACKAGES = 'DELETE_ALL_PACKAGES';
+    const _DELETE_ENTIRE_CONSOLIDATION = 'DELETE_ENTIRE_CONSOLIDATION';
     const _DELETE_ONE_PACKAGE = 'DELETE_ONE_PACKAGE';
     const _LEGACY = 'LEGACY';
 }

@@ -108,18 +108,6 @@ class FreightShipmentLineItem
     /**
      * For printed reference per line item.
      *
-     * @param string $billOfLadingNumber
-     * return FreightShipmentLineItem
-     */
-    public function setBillOfLadingNumber($billOfLadingNumber)
-    {
-        $this->BillOfLadingNumber = $billOfLadingNumber;
-        return $this;
-    }
-    
-    /**
-     * For printed reference per line item.
-     *
      * @param string $purchaseOrderNumber
      * return FreightShipmentLineItem
      */

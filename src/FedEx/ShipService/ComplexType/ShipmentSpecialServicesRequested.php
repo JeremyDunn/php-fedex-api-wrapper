@@ -46,6 +46,18 @@ class ShipmentSpecialServicesRequested
     }
     
     /**
+     * Set DeliveryOnInvoiceAcceptanceDetail
+     *
+     * @param DeliveryOnInvoiceAcceptanceDetail $deliveryOnInvoiceAcceptanceDetail
+     * return ShipmentSpecialServicesRequested
+     */
+    public function setDeliveryOnInvoiceAcceptanceDetail(DeliveryOnInvoiceAcceptanceDetail $deliveryOnInvoiceAcceptanceDetail)
+    {
+        $this->DeliveryOnInvoiceAcceptanceDetail = $deliveryOnInvoiceAcceptanceDetail;
+        return $this;
+    }
+    
+    /**
      * Descriptive data required for a FedEx shipment that is to be held at the destination FedEx location for pickup by the recipient. This element is required when SpecialServiceType.HOLD_AT_LOCATION is present in the SpecialServiceTypes collection.
      *
      * @param HoldAtLocationDetail $holdAtLocationDetail
@@ -90,6 +102,30 @@ class ShipmentSpecialServicesRequested
     public function setPendingShipmentDetail(PendingShipmentDetail $pendingShipmentDetail)
     {
         $this->PendingShipmentDetail = $pendingShipmentDetail;
+        return $this;
+    }
+    
+    /**
+     * Set InternationalControlledExportDetail
+     *
+     * @param InternationalControlledExportDetail $internationalControlledExportDetail
+     * return ShipmentSpecialServicesRequested
+     */
+    public function setInternationalControlledExportDetail(InternationalControlledExportDetail $internationalControlledExportDetail)
+    {
+        $this->InternationalControlledExportDetail = $internationalControlledExportDetail;
+        return $this;
+    }
+    
+    /**
+     * Set InternationalTrafficInArmsRegulationsDetail
+     *
+     * @param InternationalTrafficInArmsRegulationsDetail $internationalTrafficInArmsRegulationsDetail
+     * return ShipmentSpecialServicesRequested
+     */
+    public function setInternationalTrafficInArmsRegulationsDetail(InternationalTrafficInArmsRegulationsDetail $internationalTrafficInArmsRegulationsDetail)
+    {
+        $this->InternationalTrafficInArmsRegulationsDetail = $internationalTrafficInArmsRegulationsDetail;
         return $this;
     }
     

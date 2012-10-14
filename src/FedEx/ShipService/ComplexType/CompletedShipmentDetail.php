@@ -130,6 +130,18 @@ class CompletedShipmentDetail
     }
     
     /**
+     * Computed shipment level information about hazarous commodities.
+     *
+     * @param CompletedHazardousShipmentDetail $hazardousShipmentDetail
+     * return CompletedShipmentDetail
+     */
+    public function setHazardousShipmentDetail(CompletedHazardousShipmentDetail $hazardousShipmentDetail)
+    {
+        $this->HazardousShipmentDetail = $hazardousShipmentDetail;
+        return $this;
+    }
+    
+    /**
      * All shipment-level rating data for this shipment, which may include data for multiple rate types.
      *
      * @param ShipmentRating $shipmentRating
@@ -142,18 +154,6 @@ class CompletedShipmentDetail
     }
     
     /**
-     * Information about the COD return shipment.
-     *
-     * @param CodReturnShipmentDetail $codReturnDetail
-     * return CompletedShipmentDetail
-     */
-    public function setCodReturnDetail(CodReturnShipmentDetail $codReturnDetail)
-    {
-        $this->CodReturnDetail = $codReturnDetail;
-        return $this;
-    }
-    
-    /**
      * Returns the default holding location information when HOLD_AT_LOCATION special service is requested and the client does not specify the hold location address.
      *
      * @param CompletedHoldAtLocationDetail $completedHoldAtLocationDetail
@@ -162,18 +162,6 @@ class CompletedShipmentDetail
     public function setCompletedHoldAtLocationDetail(CompletedHoldAtLocationDetail $completedHoldAtLocationDetail)
     {
         $this->CompletedHoldAtLocationDetail = $completedHoldAtLocationDetail;
-        return $this;
-    }
-    
-    /**
-     * Indicates whether or not this shipment is eligible for a money back guarantee.
-     *
-     * @param boolean $ineligibleForMoneyBackGuarantee
-     * return CompletedShipmentDetail
-     */
-    public function setIneligibleForMoneyBackGuarantee($ineligibleForMoneyBackGuarantee)
-    {
-        $this->IneligibleForMoneyBackGuarantee = $ineligibleForMoneyBackGuarantee;
         return $this;
     }
     
@@ -210,6 +198,30 @@ class CompletedShipmentDetail
     public function setShipmentDocuments(array $shipmentDocuments)
     {
         $this->ShipmentDocuments = $shipmentDocuments;
+        return $this;
+    }
+    
+    /**
+     * Set AssociatedShipments
+     *
+     * @param AssociatedShipmentDetail[] $associatedShipments
+     * return CompletedShipmentDetail
+     */
+    public function setAssociatedShipments(array $associatedShipments)
+    {
+        $this->AssociatedShipments = $associatedShipments;
+        return $this;
+    }
+    
+    /**
+     * Set CompletedCodDetail
+     *
+     * @param CompletedCodDetail $completedCodDetail
+     * return CompletedShipmentDetail
+     */
+    public function setCompletedCodDetail(CompletedCodDetail $completedCodDetail)
+    {
+        $this->CompletedCodDetail = $completedCodDetail;
         return $this;
     }
     

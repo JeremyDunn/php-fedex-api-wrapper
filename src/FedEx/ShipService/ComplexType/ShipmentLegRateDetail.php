@@ -46,6 +46,18 @@ class ShipmentLegRateDetail
     }
     
     /**
+     * Specifies the location id the origin of shipment leg.
+     *
+     * @param string $legOriginLocationId
+     * return ShipmentLegRateDetail
+     */
+    public function setLegOriginLocationId($legOriginLocationId)
+    {
+        $this->LegOriginLocationId = $legOriginLocationId;
+        return $this;
+    }
+    
+    /**
      * Destination for this leg.
      *
      * @param Address $legDestination
@@ -54,6 +66,18 @@ class ShipmentLegRateDetail
     public function setLegDestination(Address $legDestination)
     {
         $this->LegDestination = $legDestination;
+        return $this;
+    }
+    
+    /**
+     * Specifies the location id the destination of shipment leg.
+     *
+     * @param string $legDestinationLocationId
+     * return ShipmentLegRateDetail
+     */
+    public function setLegDestinationLocationId($legDestinationLocationId)
+    {
+        $this->LegDestinationLocationId = $legDestinationLocationId;
         return $this;
     }
     

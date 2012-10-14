@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Details about how to calculate variable handling charges at the shipment level.
+ * This definition of variable handling charge detail is intended for use in Jan 2011 corp load.
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper

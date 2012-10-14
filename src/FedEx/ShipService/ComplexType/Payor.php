@@ -22,26 +22,14 @@ class Payor
     protected $_name = 'Payor';
 
     /**
-     * Identifies the FedEx account number assigned to the payor.
+     * Set ResponsibleParty
      *
-     * @param string $accountNumber
+     * @param Party $responsibleParty
      * return Payor
      */
-    public function setAccountNumber($accountNumber)
+    public function setResponsibleParty(Party $responsibleParty)
     {
-        $this->AccountNumber = $accountNumber;
-        return $this;
-    }
-    
-    /**
-     * Identifies the country of the payor.
-     *
-     * @param string $countryCode
-     * return Payor
-     */
-    public function setCountryCode($countryCode)
-    {
-        $this->CountryCode = $countryCode;
+        $this->ResponsibleParty = $responsibleParty;
         return $this;
     }
     

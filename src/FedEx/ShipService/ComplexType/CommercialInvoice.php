@@ -58,6 +58,18 @@ class CommercialInvoice
     }
     
     /**
+     * Specifies which kind of charge is being recorded in the preceding field.
+     *
+     * @param \FedEx\ShipService\SimpleType\TaxesOrMiscellaneousChargeType|string $taxesOrMiscellaneousChargeType
+     * return CommercialInvoice
+     */
+    public function setTaxesOrMiscellaneousChargeType($taxesOrMiscellaneousChargeType)
+    {
+        $this->TaxesOrMiscellaneousChargeType = $taxesOrMiscellaneousChargeType;
+        return $this;
+    }
+    
+    /**
      * Any packing costs that are associated with this shipment.
      *
      * @param Money $packingCosts
@@ -96,12 +108,12 @@ class CommercialInvoice
     /**
      * Free-form text.
      *
-     * @param string $declarationStatment
+     * @param string $declarationStatement
      * return CommercialInvoice
      */
-    public function setDeclarationStatment($declarationStatment)
+    public function setDeclarationStatement($declarationStatement)
     {
-        $this->DeclarationStatment = $declarationStatment;
+        $this->DeclarationStatement = $declarationStatement;
         return $this;
     }
     
@@ -130,14 +142,14 @@ class CommercialInvoice
     }
     
     /**
-     * Customer assigned Invoice number
+     * Additional customer reference data.
      *
-     * @param string $customerInvoiceNumber
+     * @param CustomerReference[] $customerReferences
      * return CommercialInvoice
      */
-    public function setCustomerInvoiceNumber($customerInvoiceNumber)
+    public function setCustomerReferences(array $customerReferences)
     {
-        $this->CustomerInvoiceNumber = $customerInvoiceNumber;
+        $this->CustomerReferences = $customerReferences;
         return $this;
     }
     

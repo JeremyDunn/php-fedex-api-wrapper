@@ -46,6 +46,18 @@ class FreightAddressLabelDetail
     }
     
     /**
+     * Specifies the quadrant of the page on which the label printing will start.
+     *
+     * @param \FedEx\ShipService\SimpleType\PageQuadrantType|string $startingPosition
+     * return FreightAddressLabelDetail
+     */
+    public function setStartingPosition($startingPosition)
+    {
+        $this->StartingPosition = $startingPosition;
+        return $this;
+    }
+    
+    /**
      * If omitted, no doc tab will be produced (i.e. default = former NONE type).
      *
      * @param DocTabContent $docTabContent

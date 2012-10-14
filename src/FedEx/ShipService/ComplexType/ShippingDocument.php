@@ -70,6 +70,18 @@ class ShippingDocument
     }
     
     /**
+     * Specifies the image type of this shipping document.
+     *
+     * @param \FedEx\ShipService\SimpleType\ShippingDocumentImageType|string $imageType
+     * return ShippingDocument
+     */
+    public function setImageType($imageType)
+    {
+        $this->ImageType = $imageType;
+        return $this;
+    }
+    
+    /**
      * Specifies the image resolution in DPI (dots per inch).
      *
      * @param nonNegativeInteger $resolution

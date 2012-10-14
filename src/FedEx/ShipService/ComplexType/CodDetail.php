@@ -70,6 +70,30 @@ class CodDetail
     }
     
     /**
+     * When the FedEx COD payment type is not CASH, indicates the contact and address of the financial institution used to service the payment of the COD.
+     *
+     * @param ContactAndAddress $financialInstitutionContactAndAddress
+     * return CodDetail
+     */
+    public function setFinancialInstitutionContactAndAddress(ContactAndAddress $financialInstitutionContactAndAddress)
+    {
+        $this->FinancialInstitutionContactAndAddress = $financialInstitutionContactAndAddress;
+        return $this;
+    }
+    
+    /**
+     * Specifies the name of person or company receiving the secured/unsecured funds payment
+     *
+     * @param string $remitToName
+     * return CodDetail
+     */
+    public function setRemitToName($remitToName)
+    {
+        $this->RemitToName = $remitToName;
+        return $this;
+    }
+    
+    /**
      * Indicates which type of reference information to include on the COD return shipping label.
      *
      * @param \FedEx\ShipService\SimpleType\CodReturnReferenceIndicatorType|string $referenceIndicator
@@ -78,6 +102,18 @@ class CodDetail
     public function setReferenceIndicator($referenceIndicator)
     {
         $this->ReferenceIndicator = $referenceIndicator;
+        return $this;
+    }
+    
+    /**
+     * Only used with multi-piece COD shipments sent in multiple transactions. Required on last transaction only.
+     *
+     * @param TrackingId $returnTrackingId
+     * return CodDetail
+     */
+    public function setReturnTrackingId(TrackingId $returnTrackingId)
+    {
+        $this->ReturnTrackingId = $returnTrackingId;
         return $this;
     }
     

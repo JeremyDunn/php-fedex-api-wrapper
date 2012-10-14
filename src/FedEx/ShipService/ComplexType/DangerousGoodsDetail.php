@@ -58,14 +58,38 @@ class DangerousGoodsDetail
     }
     
     /**
-     * Documents the kinds and quantities of all hazardous commodities in the current package.
+     * Indicates whether there is additional customer provided packaging enclosing the approved dangerous goods containers.
      *
-     * @param HazardousCommodityContent[] $hazardousCommodities
+     * @param \FedEx\ShipService\SimpleType\DangerousGoodsPackingOptionType|string $packingOption
      * return DangerousGoodsDetail
      */
-    public function setHazardousCommodities(array $hazardousCommodities)
+    public function setPackingOption($packingOption)
     {
-        $this->HazardousCommodities = $hazardousCommodities;
+        $this->PackingOption = $packingOption;
+        return $this;
+    }
+    
+    /**
+     * Identifies the configuration of this dangerous goods package. The common configuration is represented at the shipment level.
+     *
+     * @param string $referenceId
+     * return DangerousGoodsDetail
+     */
+    public function setReferenceId($referenceId)
+    {
+        $this->ReferenceId = $referenceId;
+        return $this;
+    }
+    
+    /**
+     * Indicates one or more containers used to pack dangerous goods commodities.
+     *
+     * @param DangerousGoodsContainer[] $containers
+     * return DangerousGoodsDetail
+     */
+    public function setContainers(array $containers)
+    {
+        $this->Containers = $containers;
         return $this;
     }
     
@@ -78,6 +102,18 @@ class DangerousGoodsDetail
     public function setPackaging(HazardousCommodityPackagingDetail $packaging)
     {
         $this->Packaging = $packaging;
+        return $this;
+    }
+    
+    /**
+     * Name, title and place of the signatory for this shipment.
+     *
+     * @param DangerousGoodsSignatory $signatory
+     * return DangerousGoodsDetail
+     */
+    public function setSignatory(DangerousGoodsSignatory $signatory)
+    {
+        $this->Signatory = $signatory;
         return $this;
     }
     
@@ -102,6 +138,42 @@ class DangerousGoodsDetail
     public function setOfferor($offeror)
     {
         $this->Offeror = $offeror;
+        return $this;
+    }
+    
+    /**
+     * Specifies the contact of the party responsible for handling the infectious substances, if any, in the dangerous goods shipment.
+     *
+     * @param Contact $infectiousSubstanceResponsibleContact
+     * return DangerousGoodsDetail
+     */
+    public function setInfectiousSubstanceResponsibleContact(Contact $infectiousSubstanceResponsibleContact)
+    {
+        $this->InfectiousSubstanceResponsibleContact = $infectiousSubstanceResponsibleContact;
+        return $this;
+    }
+    
+    /**
+     * Specifies additional handling information for the current package.
+     *
+     * @param string $additionalHandling
+     * return DangerousGoodsDetail
+     */
+    public function setAdditionalHandling($additionalHandling)
+    {
+        $this->AdditionalHandling = $additionalHandling;
+        return $this;
+    }
+    
+    /**
+     * Specifies the radioactivity detail for the current package, if the package contains radioactive materials.
+     *
+     * @param RadioactivityDetail $radioactivityDetail
+     * return DangerousGoodsDetail
+     */
+    public function setRadioactivityDetail(RadioactivityDetail $radioactivityDetail)
+    {
+        $this->RadioactivityDetail = $radioactivityDetail;
         return $this;
     }
     

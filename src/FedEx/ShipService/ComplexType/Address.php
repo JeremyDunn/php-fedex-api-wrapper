@@ -94,6 +94,18 @@ class Address
     }
     
     /**
+     * The fully spelt out name of a country.
+     *
+     * @param string $countryName
+     * return Address
+     */
+    public function setCountryName($countryName)
+    {
+        $this->CountryName = $countryName;
+        return $this;
+    }
+    
+    /**
      * Indicates whether this address residential (as opposed to commercial).
      *
      * @param boolean $residential

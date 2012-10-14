@@ -100,7 +100,7 @@ class Commodity
     }
     
     /**
-     * Number of units of a commodity in total number of pieces for this line item. Max length is 9
+     * This field is used for enterprise transactions.
      *
      * @param nonNegativeInteger $quantity
      * return Commodity
@@ -215,6 +215,18 @@ class Commodity
     public function setCIMarksAndNumbers($cIMarksAndNumbers)
     {
         $this->CIMarksAndNumbers = $cIMarksAndNumbers;
+        return $this;
+    }
+    
+    /**
+     * Set PartNumber
+     *
+     * @param string $partNumber
+     * return Commodity
+     */
+    public function setPartNumber($partNumber)
+    {
+        $this->PartNumber = $partNumber;
         return $this;
     }
     

@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Identifies and describes an individual hazardous commodity. For 201001 load, this is based on data from the FedEx Ground Hazardous Materials Shipping Guide.
+ * Identifies and describes an individual hazardous commodity.
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -34,6 +34,18 @@ class HazardousCommodityDescription
     }
     
     /**
+     * In conjunction with the regulatory identifier, this field uniquely identifies a specific hazardous materials commodity.
+     *
+     * @param nonNegativeInteger $sequenceNumber
+     * return HazardousCommodityDescription
+     */
+    public function setSequenceNumber($sequenceNumber)
+    {
+        $this->SequenceNumber = $sequenceNumber;
+        return $this;
+    }
+    
+    /**
      * Set PackingGroup
      *
      * @param \FedEx\ShipService\SimpleType\HazardousCommodityPackingGroupType|string $packingGroup
@@ -42,6 +54,30 @@ class HazardousCommodityDescription
     public function setPackingGroup($packingGroup)
     {
         $this->PackingGroup = $packingGroup;
+        return $this;
+    }
+    
+    /**
+     * Set PackingDetails
+     *
+     * @param HazardousCommodityPackingDetail $packingDetails
+     * return HazardousCommodityDescription
+     */
+    public function setPackingDetails(HazardousCommodityPackingDetail $packingDetails)
+    {
+        $this->PackingDetails = $packingDetails;
+        return $this;
+    }
+    
+    /**
+     * Set ReportableQuantity
+     *
+     * @param boolean $reportableQuantity
+     * return HazardousCommodityDescription
+     */
+    public function setReportableQuantity($reportableQuantity)
+    {
+        $this->ReportableQuantity = $reportableQuantity;
         return $this;
     }
     
@@ -66,6 +102,18 @@ class HazardousCommodityDescription
     public function setTechnicalName($technicalName)
     {
         $this->TechnicalName = $technicalName;
+        return $this;
+    }
+    
+    /**
+     * Set Percentage
+     *
+     * @param decimal $percentage
+     * return HazardousCommodityDescription
+     */
+    public function setPercentage($percentage)
+    {
+        $this->Percentage = $percentage;
         return $this;
     }
     
@@ -102,6 +150,30 @@ class HazardousCommodityDescription
     public function setLabelText($labelText)
     {
         $this->LabelText = $labelText;
+        return $this;
+    }
+    
+    /**
+     * Indicates any special processing options to be applied to the description of the dangerous goods commodity.
+     *
+     * @param HazardousCommodityDescriptionProcessingOptionType[] $processingOptions
+     * return HazardousCommodityDescription
+     */
+    public function setProcessingOptions(array $processingOptions)
+    {
+        $this->ProcessingOptions = $processingOptions;
+        return $this;
+    }
+    
+    /**
+     * Information related to quantity limitations and operator or state variations as may be applicable to the dangerous goods commodity.
+     *
+     * @param string $authorization
+     * return HazardousCommodityDescription
+     */
+    public function setAuthorization($authorization)
+    {
+        $this->Authorization = $authorization;
         return $this;
     }
     

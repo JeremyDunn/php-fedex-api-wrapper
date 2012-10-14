@@ -118,6 +118,18 @@ class ShippingDocumentSpecification
     }
     
     /**
+     * Specifies the production of the 1421c document for dangerous goods shipment.
+     *
+     * @param DangerousGoodsShippersDeclarationDetail $dangerousGoodsShippersDeclarationDetail
+     * return ShippingDocumentSpecification
+     */
+    public function setDangerousGoodsShippersDeclarationDetail(DangerousGoodsShippersDeclarationDetail $dangerousGoodsShippersDeclarationDetail)
+    {
+        $this->DangerousGoodsShippersDeclarationDetail = $dangerousGoodsShippersDeclarationDetail;
+        return $this;
+    }
+    
+    /**
      * Specifies the production of the OP-900 document for hazardous materials.
      *
      * @param FreightAddressLabelDetail $freightAddressLabelDetail
@@ -126,6 +138,18 @@ class ShippingDocumentSpecification
     public function setFreightAddressLabelDetail(FreightAddressLabelDetail $freightAddressLabelDetail)
     {
         $this->FreightAddressLabelDetail = $freightAddressLabelDetail;
+        return $this;
+    }
+    
+    /**
+     * Specifies the production of the return instructions document.
+     *
+     * @param ReturnInstructionsDetail $returnInstructionsDetail
+     * return ShippingDocumentSpecification
+     */
+    public function setReturnInstructionsDetail(ReturnInstructionsDetail $returnInstructionsDetail)
+    {
+        $this->ReturnInstructionsDetail = $returnInstructionsDetail;
         return $this;
     }
     

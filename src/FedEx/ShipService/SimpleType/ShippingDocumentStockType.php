@@ -17,6 +17,7 @@ class ShippingDocumentStockType
     const _OP_900_LL_B = 'OP_900_LL_B';
     const _OP_950 = 'OP_950';
     const _PAPER_4X6 = 'PAPER_4X6';
+    const _PAPER_4_PER_PAGE_PORTRAIT = 'PAPER_4_PER_PAGE_PORTRAIT';
     const _PAPER_LETTER = 'PAPER_LETTER';
     const _STOCK_4X6 = 'STOCK_4X6';
     const _STOCK_4X6point75_LEADING_DOC_TAB = 'STOCK_4X6.75_LEADING_DOC_TAB';

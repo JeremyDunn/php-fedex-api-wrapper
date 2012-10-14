@@ -190,7 +190,7 @@ class RequestedShipment
     }
     
     /**
-     * Data applicable to shipments using FEDEX_FREIGHT and FEDEX_NATIONAL_FREIGHT services.
+     * Data applicable to shipments using FEDEX_FREIGHT_ECONOMY and FEDEX_FREIGHT_PRIORITY services.
      *
      * @param FreightShipmentDetail $freightShipmentDetail
      * return RequestedShipment
@@ -250,7 +250,7 @@ class RequestedShipment
     }
     
     /**
-     * Set SmartPostDetail
+     * Specifies the characteristics of a shipment pertaining to SmartPost services.
      *
      * @param SmartPostShipmentDetail $smartPostDetail
      * return RequestedShipment
@@ -270,18 +270,6 @@ class RequestedShipment
     public function setBlockInsightVisibility($blockInsightVisibility)
     {
         $this->BlockInsightVisibility = $blockInsightVisibility;
-        return $this;
-    }
-    
-    /**
-     * Specifies the client-requested response in the event of errors within shipment.
-     *
-     * @param \FedEx\ShipService\SimpleType\ErrorLabelBehaviorType|string $errorLabelBehavior
-     * return RequestedShipment
-     */
-    public function setErrorLabelBehavior($errorLabelBehavior)
-    {
-        $this->ErrorLabelBehavior = $errorLabelBehavior;
         return $this;
     }
     
@@ -334,7 +322,7 @@ class RequestedShipment
     }
     
     /**
-     * Only used with multiple-transaction shipments.
+     * Only used with multiple-transaction shipments, to identify the master package in a multi-piece shipment.
      *
      * @param TrackingId $masterTrackingId
      * return RequestedShipment
@@ -342,18 +330,6 @@ class RequestedShipment
     public function setMasterTrackingId(TrackingId $masterTrackingId)
     {
         $this->MasterTrackingId = $masterTrackingId;
-        return $this;
-    }
-    
-    /**
-     * Only used with multi-piece COD shipments sent in multiple transactions. Required on last transaction only.
-     *
-     * @param TrackingId $codReturnTrackingId
-     * return RequestedShipment
-     */
-    public function setCodReturnTrackingId(TrackingId $codReturnTrackingId)
-    {
-        $this->CodReturnTrackingId = $codReturnTrackingId;
         return $this;
     }
     
@@ -366,6 +342,18 @@ class RequestedShipment
     public function setPackageCount($packageCount)
     {
         $this->PackageCount = $packageCount;
+        return $this;
+    }
+    
+    /**
+     * Specifies data structures that may be re-used multiple times with s single shipment.
+     *
+     * @param ShipmentConfigurationData $configurationData
+     * return RequestedShipment
+     */
+    public function setConfigurationData(ShipmentConfigurationData $configurationData)
+    {
+        $this->ConfigurationData = $configurationData;
         return $this;
     }
     

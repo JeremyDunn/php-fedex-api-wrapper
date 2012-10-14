@@ -34,6 +34,30 @@ class VariableHandlingCharges
     }
     
     /**
+     * Set FixedVariableHandlingCharge
+     *
+     * @param Money $fixedVariableHandlingCharge
+     * return VariableHandlingCharges
+     */
+    public function setFixedVariableHandlingCharge(Money $fixedVariableHandlingCharge)
+    {
+        $this->FixedVariableHandlingCharge = $fixedVariableHandlingCharge;
+        return $this;
+    }
+    
+    /**
+     * Set PercentVariableHandlingCharge
+     *
+     * @param Money $percentVariableHandlingCharge
+     * return VariableHandlingCharges
+     */
+    public function setPercentVariableHandlingCharge(Money $percentVariableHandlingCharge)
+    {
+        $this->PercentVariableHandlingCharge = $percentVariableHandlingCharge;
+        return $this;
+    }
+    
+    /**
      * The calculated varibale handling charge plus the net charge.
      *
      * @param Money $totalCustomerCharge

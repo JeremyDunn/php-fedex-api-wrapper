@@ -22,7 +22,7 @@ class CodAddTransportationChargesDetail
     protected $_name = 'CodAddTransportationChargesDetail';
 
     /**
-     * Set RateTypeBasis
+     * Select the type of rate from which the element is to be selected.
      *
      * @param \FedEx\ShipService\SimpleType\RateTypeBasisType|string $rateTypeBasis
      * return CodAddTransportationChargesDetail

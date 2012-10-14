@@ -22,6 +22,18 @@ class PriorityAlertDetail
     protected $_name = 'PriorityAlertDetail';
 
     /**
+     * Set EnhancementTypes
+     *
+     * @param PriorityAlertEnhancementType[] $enhancementTypes
+     * return PriorityAlertDetail
+     */
+    public function setEnhancementTypes(array $enhancementTypes)
+    {
+        $this->EnhancementTypes = $enhancementTypes;
+        return $this;
+    }
+    
+    /**
      * Set Content
      *
      * @param string[] $content

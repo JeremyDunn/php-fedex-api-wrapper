@@ -22,7 +22,7 @@ class CustomerSpecifiedLabelDetail
     protected $_name = 'CustomerSpecifiedLabelDetail';
 
     /**
-     * If omitted, no doc tab will be produced (i.e. default = former NONE type).
+     * If omitted, no doc tab will be produced (i.e. default is former NONE type).
      *
      * @param DocTabContent $docTabContent
      * return CustomerSpecifiedLabelDetail
@@ -70,7 +70,7 @@ class CustomerSpecifiedLabelDetail
     }
     
     /**
-     * For customers producing their own Ground labels, this field specifies which secondary barcode will be printed on the label; so that the primary barcode produced by FedEx has the corect SCNC.
+     * For customers producing their own Ground labels, this field specifies which secondary barcode will be printed on the label; so that the primary barcode produced by FedEx has the correct SCNC.
      *
      * @param \FedEx\ShipService\SimpleType\SecondaryBarcodeType|string $secondaryBarcode
      * return CustomerSpecifiedLabelDetail

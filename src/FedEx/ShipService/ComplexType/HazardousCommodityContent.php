@@ -57,6 +57,18 @@ class HazardousCommodityContent
         return $this;
     }
     
+    /**
+     * Specifies the details of any radio active materials within the commodity.
+     *
+     * @param RadionuclideDetail $radionuclideDetail
+     * return HazardousCommodityContent
+     */
+    public function setRadionuclideDetail(RadionuclideDetail $radionuclideDetail)
+    {
+        $this->RadionuclideDetail = $radionuclideDetail;
+        return $this;
+    }
+    
 
     
 }

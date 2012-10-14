@@ -70,6 +70,18 @@ class ProcessShipmentReply
     }
     
     /**
+     * Set JobId
+     *
+     * @param string $jobId
+     * return ProcessShipmentReply
+     */
+    public function setJobId($jobId)
+    {
+        $this->JobId = $jobId;
+        return $this;
+    }
+    
+    /**
      * The reply payload. All of the returned information about this shipment/package.
      *
      * @param CompletedShipmentDetail $completedShipmentDetail

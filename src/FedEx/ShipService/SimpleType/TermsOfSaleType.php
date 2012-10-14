@@ -23,6 +23,8 @@ class TermsOfSaleType
 {
     const _CFR_OR_CPT = 'CFR_OR_CPT';
     const _CIF_OR_CIP = 'CIF_OR_CIP';
+    const _DAP = 'DAP';
+    const _DAT = 'DAT';
     const _DDP = 'DDP';
     const _DDU = 'DDU';
     const _EXW = 'EXW';

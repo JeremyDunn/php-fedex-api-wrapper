@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * This class rationalizes RequestedPackage and RequestedPackageSummary from previous interfaces. The way in which it is uses within a RequestedShipment depends on the RequestedPackageDetailType value specified for that shipment.
+ * This class rationalizes RequestedPackage and RequestedPackageSummary from previous interfaces.
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -70,7 +70,7 @@ class RequestedPackageLineItem
     }
     
     /**
-     * Used for INDIVIDUAL_PACKAGES, PACKAGE_GROUPS and PACKAGE_SUMMARY.
+     * Only used for INDIVIDUAL_PACKAGES and PACKAGE_GROUPS. Ignored for PACKAGE_SUMMARY, in which case totalInsuredValue and packageCount on the shipment will be used to determine this value.
      *
      * @param Money $insuredValue
      * return RequestedPackageLineItem
@@ -82,7 +82,7 @@ class RequestedPackageLineItem
     }
     
     /**
-     * Used for INDIVIDUAL_PACKAGES, PACKAGE_GROUPS and PACKAGE_SUMMARY.
+     * Only used for INDIVIDUAL_PACKAGES and PACKAGE_GROUPS. Ignored for PACKAGE_SUMMARY, in which case total weight and packageCount on the shipment will be used to determine this value.
      *
      * @param Weight $weight
      * return RequestedPackageLineItem

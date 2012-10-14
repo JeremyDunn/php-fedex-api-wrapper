@@ -22,14 +22,14 @@ class CustomsClearanceDetail
     protected $_name = 'CustomsClearanceDetail';
 
     /**
-     * Set Broker
+     * Set Brokers
      *
-     * @param Party $broker
+     * @param BrokerDetail[] $brokers
      * return CustomsClearanceDetail
      */
-    public function setBroker(Party $broker)
+    public function setBrokers(array $brokers)
     {
-        $this->Broker = $broker;
+        $this->Brokers = $brokers;
         return $this;
     }
     
@@ -42,6 +42,18 @@ class CustomsClearanceDetail
     public function setClearanceBrokerage($clearanceBrokerage)
     {
         $this->ClearanceBrokerage = $clearanceBrokerage;
+        return $this;
+    }
+    
+    /**
+     * Set CustomsOptions
+     *
+     * @param CustomsOptionDetail $customsOptions
+     * return CustomsClearanceDetail
+     */
+    public function setCustomsOptions(CustomsOptionDetail $customsOptions)
+    {
+        $this->CustomsOptions = $customsOptions;
         return $this;
     }
     

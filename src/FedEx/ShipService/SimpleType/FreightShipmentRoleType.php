@@ -15,5 +15,4 @@ class FreightShipmentRoleType
 {
     const _CONSIGNEE = 'CONSIGNEE';
     const _SHIPPER = 'SHIPPER';
-    const _THIRD_PARTY = 'THIRD_PARTY';
 }

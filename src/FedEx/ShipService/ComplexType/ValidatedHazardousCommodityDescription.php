@@ -34,6 +34,18 @@ class ValidatedHazardousCommodityDescription
     }
     
     /**
+     * In conjunction with the regulatory identifier, this field uniquely identifies a specific hazardous materials commodity.
+     *
+     * @param nonNegativeInteger $sequenceNumber
+     * return ValidatedHazardousCommodityDescription
+     */
+    public function setSequenceNumber($sequenceNumber)
+    {
+        $this->SequenceNumber = $sequenceNumber;
+        return $this;
+    }
+    
+    /**
      * Set PackingGroup
      *
      * @param \FedEx\ShipService\SimpleType\HazardousCommodityPackingGroupType|string $packingGroup
@@ -42,6 +54,18 @@ class ValidatedHazardousCommodityDescription
     public function setPackingGroup($packingGroup)
     {
         $this->PackingGroup = $packingGroup;
+        return $this;
+    }
+    
+    /**
+     * Set PackingInstructions
+     *
+     * @param string $packingInstructions
+     * return ValidatedHazardousCommodityDescription
+     */
+    public function setPackingInstructions($packingInstructions)
+    {
+        $this->PackingInstructions = $packingInstructions;
         return $this;
     }
     
@@ -114,6 +138,30 @@ class ValidatedHazardousCommodityDescription
     public function setSymbols($symbols)
     {
         $this->Symbols = $symbols;
+        return $this;
+    }
+    
+    /**
+     * Set SpecialProvisions
+     *
+     * @param string $specialProvisions
+     * return ValidatedHazardousCommodityDescription
+     */
+    public function setSpecialProvisions($specialProvisions)
+    {
+        $this->SpecialProvisions = $specialProvisions;
+        return $this;
+    }
+    
+    /**
+     * Set Authorization
+     *
+     * @param string $authorization
+     * return ValidatedHazardousCommodityDescription
+     */
+    public function setAuthorization($authorization)
+    {
+        $this->Authorization = $authorization;
         return $this;
     }
     

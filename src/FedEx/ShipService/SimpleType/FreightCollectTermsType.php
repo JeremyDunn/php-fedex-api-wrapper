@@ -13,6 +13,6 @@ use FedEx\AbstractSimpleType;
 class FreightCollectTermsType
     extends AbstractSimpleType
 {
-    const _SECTION_7_SIGNED = 'SECTION_7_SIGNED';
+    const _NON_RECOURSE_SHIPPER_SIGNED = 'NON_RECOURSE_SHIPPER_SIGNED';
     const _STANDARD = 'STANDARD';
 }

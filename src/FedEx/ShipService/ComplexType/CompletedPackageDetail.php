@@ -118,7 +118,7 @@ class CompletedPackageDetail
     }
     
     /**
-     * Information about the COD return shipment.
+     * Specifies the information associated with this package that has COD special service in a ground shipment.
      *
      * @param CodReturnPackageDetail $codReturnDetail
      * return CompletedPackageDetail
@@ -142,14 +142,26 @@ class CompletedPackageDetail
     }
     
     /**
-     * Documents the kinds and quantities of all hazardous commodities in the current package, using updated hazardous commodity description data.
+     * Set DryIceWeight
      *
-     * @param ValidatedHazardousCommodityContent[] $hazardousCommodities
+     * @param Weight $dryIceWeight
      * return CompletedPackageDetail
      */
-    public function setHazardousCommodities(array $hazardousCommodities)
+    public function setDryIceWeight(Weight $dryIceWeight)
     {
-        $this->HazardousCommodities = $hazardousCommodities;
+        $this->DryIceWeight = $dryIceWeight;
+        return $this;
+    }
+    
+    /**
+     * Documents the kinds and quantities of all hazardous commodities in the current package, using updated hazardous commodity description data.
+     *
+     * @param CompletedHazardousPackageDetail $hazardousPackageDetail
+     * return CompletedPackageDetail
+     */
+    public function setHazardousPackageDetail(CompletedHazardousPackageDetail $hazardousPackageDetail)
+    {
+        $this->HazardousPackageDetail = $hazardousPackageDetail;
         return $this;
     }
     
