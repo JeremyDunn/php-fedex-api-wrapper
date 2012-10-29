@@ -220,12 +220,22 @@ TEXT;
      * {$property['doc']}
      *
      * @param {$property['typePHPDoc']} \${$varName}
-     * return $className
+     * @return $className
      */
     public function set{$property['name']}({$property['type']}\${$varName})
     {
         \$this->{$property['name']} = \${$varName};
         return \$this;
+    }
+    
+    /**
+     * Returns {$property['doc']}
+     *
+     * @return {$property['typePHPDoc']}
+     */
+    public function get{$property['name']}()
+    {
+        return \$this->{$property['name']};
     }
     
 TEXT;
