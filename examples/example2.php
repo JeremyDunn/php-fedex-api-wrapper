@@ -113,5 +113,5 @@ $rateRequest->setRequestedShipment(new ComplexType\RequestedShipment(array(
 var_dump($rateRequest->toArray());
 echo "<hr />";
 
-$request = new RateService\Request();
-var_dump($request->getGetRatesReply($rateRequest));
+$validateShipmentRequest = new RateService\Request();
+var_dump($validateShipmentRequest->getGetRatesReply($rateRequest));

@@ -159,10 +159,17 @@ var_dump($rateRequest->toArray());
 
 echo "<hr />";
 
-$request = new RateService\Request();
+$validateShipmentRequest = new RateService\Request();
 
-$request->getSoapClient()->__setLocation('https://ws.fedex.com:443/web-services/rate');
 
-var_dump($request->getGetRatesReply($rateRequest));
 
-var_dump($request->getSoapClient()->__getFunctions());
+//$request->getSoapClient()->__setLocation('https://ws.fedex.com:443/web-services/rate');
+
+
+
+var_dump($validateShipmentRequest->getGetRatesReply($rateRequest));
+
+var_dump($validateShipmentRequest->getSoapClient()->__getLastRequest());
+var_dump($validateShipmentRequest->getSoapClient()->__getLastRequestHeaders());
+
+var_dump($validateShipmentRequest->getSoapClient()->__getFunctions());
