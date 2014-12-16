@@ -1,5 +1,5 @@
 {
-    "name": "php-fedex-api-wrapper/php-fedex-api-wrapper",
+    "name": "jeremy-dunn/php-fedex-api-wrapper",
     "description": "API Wrapper for Fedex web services",
     "keywords": ["shipping","fedex","soap"],
     "homepage": "https://github.com/JeremyDunn/php-fedex-api-wrapper",
@@ -14,7 +14,7 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "symfony/console": "2.3.*"
+        "symfony/console": "2.*"
     },
     "autoload": {
         "psr-0": {"FedEx": "src/"}
