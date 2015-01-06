@@ -25,7 +25,7 @@ class EMailLabelDetail
      * Notification email will be sent to this email address
      *
      * @param string $notificationEMailAddress
-     * return EMailLabelDetail
+     * @return EMailLabelDetail
      */
     public function setNotificationEMailAddress($notificationEMailAddress)
     {
@@ -34,15 +34,35 @@ class EMailLabelDetail
     }
     
     /**
+     * Returns Notification email will be sent to this email address
+     *
+     * @return string
+     */
+    public function getNotificationEMailAddress()
+    {
+        return $this->NotificationEMailAddress;
+    }
+    
+    /**
      * Message to be sent in the notification email
      *
      * @param string $notificationMessage
-     * return EMailLabelDetail
+     * @return EMailLabelDetail
      */
     public function setNotificationMessage($notificationMessage)
     {
         $this->NotificationMessage = $notificationMessage;
         return $this;
+    }
+    
+    /**
+     * Returns Message to be sent in the notification email
+     *
+     * @return string
+     */
+    public function getNotificationMessage()
+    {
+        return $this->NotificationMessage;
     }
     
 

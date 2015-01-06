@@ -25,7 +25,7 @@ class CodAddTransportationChargesDetail
      * Set RateTypeBasis
      *
      * @param \FedEx\RateService\SimpleType\RateTypeBasisType|string $rateTypeBasis
-     * return CodAddTransportationChargesDetail
+     * @return CodAddTransportationChargesDetail
      */
     public function setRateTypeBasis($rateTypeBasis)
     {
@@ -34,10 +34,20 @@ class CodAddTransportationChargesDetail
     }
     
     /**
+     * Returns Set RateTypeBasis
+     *
+     * @return \FedEx\RateService\SimpleType\RateTypeBasisType|string
+     */
+    public function getRateTypeBasis()
+    {
+        return $this->RateTypeBasis;
+    }
+    
+    /**
      * Set ChargeBasis
      *
      * @param \FedEx\RateService\SimpleType\CodAddTransportationChargeBasisType|string $chargeBasis
-     * return CodAddTransportationChargesDetail
+     * @return CodAddTransportationChargesDetail
      */
     public function setChargeBasis($chargeBasis)
     {
@@ -46,15 +56,35 @@ class CodAddTransportationChargesDetail
     }
     
     /**
+     * Returns Set ChargeBasis
+     *
+     * @return \FedEx\RateService\SimpleType\CodAddTransportationChargeBasisType|string
+     */
+    public function getChargeBasis()
+    {
+        return $this->ChargeBasis;
+    }
+    
+    /**
      * Set ChargeBasisLevel
      *
      * @param \FedEx\RateService\SimpleType\ChargeBasisLevelType|string $chargeBasisLevel
-     * return CodAddTransportationChargesDetail
+     * @return CodAddTransportationChargesDetail
      */
     public function setChargeBasisLevel($chargeBasisLevel)
     {
         $this->ChargeBasisLevel = $chargeBasisLevel;
         return $this;
+    }
+    
+    /**
+     * Returns Set ChargeBasisLevel
+     *
+     * @return \FedEx\RateService\SimpleType\ChargeBasisLevelType|string
+     */
+    public function getChargeBasisLevel()
+    {
+        return $this->ChargeBasisLevel;
     }
     
 

@@ -25,7 +25,7 @@ class DangerousGoodsDetail
      * Identifies whether or not the products being shipped are required to be accessible during delivery.
      *
      * @param \FedEx\ShipService\SimpleType\DangerousGoodsAccessibilityType|string $accessibility
-     * return DangerousGoodsDetail
+     * @return DangerousGoodsDetail
      */
     public function setAccessibility($accessibility)
     {
@@ -34,10 +34,20 @@ class DangerousGoodsDetail
     }
     
     /**
+     * Returns Identifies whether or not the products being shipped are required to be accessible during delivery.
+     *
+     * @return \FedEx\ShipService\SimpleType\DangerousGoodsAccessibilityType|string
+     */
+    public function getAccessibility()
+    {
+        return $this->Accessibility;
+    }
+    
+    /**
      * Shipment is packaged/documented for movement ONLY on cargo aircraft.
      *
      * @param boolean $cargoAircraftOnly
-     * return DangerousGoodsDetail
+     * @return DangerousGoodsDetail
      */
     public function setCargoAircraftOnly($cargoAircraftOnly)
     {
@@ -46,10 +56,20 @@ class DangerousGoodsDetail
     }
     
     /**
+     * Returns Shipment is packaged/documented for movement ONLY on cargo aircraft.
+     *
+     * @return boolean
+     */
+    public function getCargoAircraftOnly()
+    {
+        return $this->CargoAircraftOnly;
+    }
+    
+    /**
      * Indicates which kinds of hazardous content are in the current package.
      *
      * @param HazardousCommodityOptionType[] $options
-     * return DangerousGoodsDetail
+     * @return DangerousGoodsDetail
      */
     public function setOptions(array $options)
     {
@@ -58,10 +78,20 @@ class DangerousGoodsDetail
     }
     
     /**
+     * Returns Indicates which kinds of hazardous content are in the current package.
+     *
+     * @return HazardousCommodityOptionType[]
+     */
+    public function getOptions()
+    {
+        return $this->Options;
+    }
+    
+    /**
      * Indicates whether there is additional customer provided packaging enclosing the approved dangerous goods containers.
      *
      * @param \FedEx\ShipService\SimpleType\DangerousGoodsPackingOptionType|string $packingOption
-     * return DangerousGoodsDetail
+     * @return DangerousGoodsDetail
      */
     public function setPackingOption($packingOption)
     {
@@ -70,10 +100,20 @@ class DangerousGoodsDetail
     }
     
     /**
+     * Returns Indicates whether there is additional customer provided packaging enclosing the approved dangerous goods containers.
+     *
+     * @return \FedEx\ShipService\SimpleType\DangerousGoodsPackingOptionType|string
+     */
+    public function getPackingOption()
+    {
+        return $this->PackingOption;
+    }
+    
+    /**
      * Identifies the configuration of this dangerous goods package. The common configuration is represented at the shipment level.
      *
      * @param string $referenceId
-     * return DangerousGoodsDetail
+     * @return DangerousGoodsDetail
      */
     public function setReferenceId($referenceId)
     {
@@ -82,10 +122,20 @@ class DangerousGoodsDetail
     }
     
     /**
+     * Returns Identifies the configuration of this dangerous goods package. The common configuration is represented at the shipment level.
+     *
+     * @return string
+     */
+    public function getReferenceId()
+    {
+        return $this->ReferenceId;
+    }
+    
+    /**
      * Indicates one or more containers used to pack dangerous goods commodities.
      *
      * @param DangerousGoodsContainer[] $containers
-     * return DangerousGoodsDetail
+     * @return DangerousGoodsDetail
      */
     public function setContainers(array $containers)
     {
@@ -94,10 +144,20 @@ class DangerousGoodsDetail
     }
     
     /**
+     * Returns Indicates one or more containers used to pack dangerous goods commodities.
+     *
+     * @return DangerousGoodsContainer[]
+     */
+    public function getContainers()
+    {
+        return $this->Containers;
+    }
+    
+    /**
      * Description of the packaging of this commodity, suitable for use on OP-900 and OP-950 forms.
      *
      * @param HazardousCommodityPackagingDetail $packaging
-     * return DangerousGoodsDetail
+     * @return DangerousGoodsDetail
      */
     public function setPackaging(HazardousCommodityPackagingDetail $packaging)
     {
@@ -106,10 +166,20 @@ class DangerousGoodsDetail
     }
     
     /**
+     * Returns Description of the packaging of this commodity, suitable for use on OP-900 and OP-950 forms.
+     *
+     * @return HazardousCommodityPackagingDetail
+     */
+    public function getPackaging()
+    {
+        return $this->Packaging;
+    }
+    
+    /**
      * Name, title and place of the signatory for this shipment.
      *
      * @param DangerousGoodsSignatory $signatory
-     * return DangerousGoodsDetail
+     * @return DangerousGoodsDetail
      */
     public function setSignatory(DangerousGoodsSignatory $signatory)
     {
@@ -118,10 +188,20 @@ class DangerousGoodsDetail
     }
     
     /**
+     * Returns Name, title and place of the signatory for this shipment.
+     *
+     * @return DangerousGoodsSignatory
+     */
+    public function getSignatory()
+    {
+        return $this->Signatory;
+    }
+    
+    /**
      * Telephone number to use for contact in the event of an emergency.
      *
      * @param string $emergencyContactNumber
-     * return DangerousGoodsDetail
+     * @return DangerousGoodsDetail
      */
     public function setEmergencyContactNumber($emergencyContactNumber)
     {
@@ -130,10 +210,20 @@ class DangerousGoodsDetail
     }
     
     /**
+     * Returns Telephone number to use for contact in the event of an emergency.
+     *
+     * @return string
+     */
+    public function getEmergencyContactNumber()
+    {
+        return $this->EmergencyContactNumber;
+    }
+    
+    /**
      * Offeror's name or contract number, per DOT regulation.
      *
      * @param string $offeror
-     * return DangerousGoodsDetail
+     * @return DangerousGoodsDetail
      */
     public function setOfferor($offeror)
     {
@@ -142,10 +232,20 @@ class DangerousGoodsDetail
     }
     
     /**
+     * Returns Offeror's name or contract number, per DOT regulation.
+     *
+     * @return string
+     */
+    public function getOfferor()
+    {
+        return $this->Offeror;
+    }
+    
+    /**
      * Specifies the contact of the party responsible for handling the infectious substances, if any, in the dangerous goods shipment.
      *
      * @param Contact $infectiousSubstanceResponsibleContact
-     * return DangerousGoodsDetail
+     * @return DangerousGoodsDetail
      */
     public function setInfectiousSubstanceResponsibleContact(Contact $infectiousSubstanceResponsibleContact)
     {
@@ -154,10 +254,20 @@ class DangerousGoodsDetail
     }
     
     /**
+     * Returns Specifies the contact of the party responsible for handling the infectious substances, if any, in the dangerous goods shipment.
+     *
+     * @return Contact
+     */
+    public function getInfectiousSubstanceResponsibleContact()
+    {
+        return $this->InfectiousSubstanceResponsibleContact;
+    }
+    
+    /**
      * Specifies additional handling information for the current package.
      *
      * @param string $additionalHandling
-     * return DangerousGoodsDetail
+     * @return DangerousGoodsDetail
      */
     public function setAdditionalHandling($additionalHandling)
     {
@@ -166,15 +276,35 @@ class DangerousGoodsDetail
     }
     
     /**
+     * Returns Specifies additional handling information for the current package.
+     *
+     * @return string
+     */
+    public function getAdditionalHandling()
+    {
+        return $this->AdditionalHandling;
+    }
+    
+    /**
      * Specifies the radioactivity detail for the current package, if the package contains radioactive materials.
      *
      * @param RadioactivityDetail $radioactivityDetail
-     * return DangerousGoodsDetail
+     * @return DangerousGoodsDetail
      */
     public function setRadioactivityDetail(RadioactivityDetail $radioactivityDetail)
     {
         $this->RadioactivityDetail = $radioactivityDetail;
         return $this;
+    }
+    
+    /**
+     * Returns Specifies the radioactivity detail for the current package, if the package contains radioactive materials.
+     *
+     * @return RadioactivityDetail
+     */
+    public function getRadioactivityDetail()
+    {
+        return $this->RadioactivityDetail;
     }
     
 

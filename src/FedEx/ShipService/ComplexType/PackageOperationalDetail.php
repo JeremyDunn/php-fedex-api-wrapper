@@ -25,7 +25,7 @@ class PackageOperationalDetail
      * Human-readable text for pre-January 2011 clients.
      *
      * @param string $astraHandlingText
-     * return PackageOperationalDetail
+     * @return PackageOperationalDetail
      */
     public function setAstraHandlingText($astraHandlingText)
     {
@@ -34,10 +34,20 @@ class PackageOperationalDetail
     }
     
     /**
+     * Returns Human-readable text for pre-January 2011 clients.
+     *
+     * @return string
+     */
+    public function getAstraHandlingText()
+    {
+        return $this->AstraHandlingText;
+    }
+    
+    /**
      * Human-readable content for use on a label.
      *
      * @param OperationalInstruction[] $operationalInstructions
-     * return PackageOperationalDetail
+     * @return PackageOperationalDetail
      */
     public function setOperationalInstructions(array $operationalInstructions)
     {
@@ -46,10 +56,20 @@ class PackageOperationalDetail
     }
     
     /**
+     * Returns Human-readable content for use on a label.
+     *
+     * @return OperationalInstruction[]
+     */
+    public function getOperationalInstructions()
+    {
+        return $this->OperationalInstructions;
+    }
+    
+    /**
      * The operational barcodes pertaining to the current package.
      *
      * @param PackageBarcodes $barcodes
-     * return PackageOperationalDetail
+     * @return PackageOperationalDetail
      */
     public function setBarcodes(PackageBarcodes $barcodes)
     {
@@ -58,15 +78,35 @@ class PackageOperationalDetail
     }
     
     /**
+     * Returns The operational barcodes pertaining to the current package.
+     *
+     * @return PackageBarcodes
+     */
+    public function getBarcodes()
+    {
+        return $this->Barcodes;
+    }
+    
+    /**
      * The FedEx internal code that represents the service and/or features of service for the current package moving under a FedEx Ground service.
      *
      * @param string $groundServiceCode
-     * return PackageOperationalDetail
+     * @return PackageOperationalDetail
      */
     public function setGroundServiceCode($groundServiceCode)
     {
         $this->GroundServiceCode = $groundServiceCode;
         return $this;
+    }
+    
+    /**
+     * Returns The FedEx internal code that represents the service and/or features of service for the current package moving under a FedEx Ground service.
+     *
+     * @return string
+     */
+    public function getGroundServiceCode()
+    {
+        return $this->GroundServiceCode;
     }
     
 

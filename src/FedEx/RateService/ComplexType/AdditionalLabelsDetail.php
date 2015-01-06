@@ -25,7 +25,7 @@ class AdditionalLabelsDetail
      * The type of additional labels to return.
      *
      * @param \FedEx\RateService\SimpleType\AdditionalLabelsType|string $type
-     * return AdditionalLabelsDetail
+     * @return AdditionalLabelsDetail
      */
     public function setType($type)
     {
@@ -34,15 +34,35 @@ class AdditionalLabelsDetail
     }
     
     /**
+     * Returns The type of additional labels to return.
+     *
+     * @return \FedEx\RateService\SimpleType\AdditionalLabelsType|string
+     */
+    public function getType()
+    {
+        return $this->Type;
+    }
+    
+    /**
      * The number of this type label to return
      *
      * @param nonNegativeInteger $count
-     * return AdditionalLabelsDetail
+     * @return AdditionalLabelsDetail
      */
     public function setCount($count)
     {
         $this->Count = $count;
         return $this;
+    }
+    
+    /**
+     * Returns The number of this type label to return
+     *
+     * @return nonNegativeInteger
+     */
+    public function getCount()
+    {
+        return $this->Count;
     }
     
 

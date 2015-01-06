@@ -25,7 +25,7 @@ class Rebate
      * Set RebateType
      *
      * @param \FedEx\RateService\SimpleType\RebateType|string $rebateType
-     * return Rebate
+     * @return Rebate
      */
     public function setRebateType($rebateType)
     {
@@ -34,10 +34,20 @@ class Rebate
     }
     
     /**
+     * Returns Set RebateType
+     *
+     * @return \FedEx\RateService\SimpleType\RebateType|string
+     */
+    public function getRebateType()
+    {
+        return $this->RebateType;
+    }
+    
+    /**
      * Set Description
      *
      * @param string $description
-     * return Rebate
+     * @return Rebate
      */
     public function setDescription($description)
     {
@@ -46,10 +56,20 @@ class Rebate
     }
     
     /**
+     * Returns Set Description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->Description;
+    }
+    
+    /**
      * The amount of the discount applied to the shipment.
      *
      * @param Money $amount
-     * return Rebate
+     * @return Rebate
      */
     public function setAmount(Money $amount)
     {
@@ -58,15 +78,35 @@ class Rebate
     }
     
     /**
+     * Returns The amount of the discount applied to the shipment.
+     *
+     * @return Money
+     */
+    public function getAmount()
+    {
+        return $this->Amount;
+    }
+    
+    /**
      * The percentage of the discount applied to the shipment.
      *
      * @param decimal $percent
-     * return Rebate
+     * @return Rebate
      */
     public function setPercent($percent)
     {
         $this->Percent = $percent;
         return $this;
+    }
+    
+    /**
+     * Returns The percentage of the discount applied to the shipment.
+     *
+     * @return decimal
+     */
+    public function getPercent()
+    {
+        return $this->Percent;
     }
     
 

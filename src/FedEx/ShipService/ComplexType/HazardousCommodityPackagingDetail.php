@@ -25,7 +25,7 @@ class HazardousCommodityPackagingDetail
      * Number of units of the type below.
      *
      * @param nonNegativeInteger $count
-     * return HazardousCommodityPackagingDetail
+     * @return HazardousCommodityPackagingDetail
      */
     public function setCount($count)
     {
@@ -34,15 +34,35 @@ class HazardousCommodityPackagingDetail
     }
     
     /**
+     * Returns Number of units of the type below.
+     *
+     * @return nonNegativeInteger
+     */
+    public function getCount()
+    {
+        return $this->Count;
+    }
+    
+    /**
      * Units in which the hazardous commodity is packaged.
      *
      * @param string $units
-     * return HazardousCommodityPackagingDetail
+     * @return HazardousCommodityPackagingDetail
      */
     public function setUnits($units)
     {
         $this->Units = $units;
         return $this;
+    }
+    
+    /**
+     * Returns Units in which the hazardous commodity is packaged.
+     *
+     * @return string
+     */
+    public function getUnits()
+    {
+        return $this->Units;
     }
     
 

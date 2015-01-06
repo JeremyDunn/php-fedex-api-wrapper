@@ -25,7 +25,7 @@ class AddressValidationResult
      * Set AddressId
      *
      * @param string $addressId
-     * return AddressValidationResult
+     * @return AddressValidationResult
      */
     public function setAddressId($addressId)
     {
@@ -34,15 +34,35 @@ class AddressValidationResult
     }
     
     /**
+     * Returns Set AddressId
+     *
+     * @return string
+     */
+    public function getAddressId()
+    {
+        return $this->AddressId;
+    }
+    
+    /**
      * Set ProposedAddressDetails
      *
      * @param ProposedAddressDetail[] $proposedAddressDetails
-     * return AddressValidationResult
+     * @return AddressValidationResult
      */
     public function setProposedAddressDetails(array $proposedAddressDetails)
     {
         $this->ProposedAddressDetails = $proposedAddressDetails;
         return $this;
+    }
+    
+    /**
+     * Returns Set ProposedAddressDetails
+     *
+     * @return ProposedAddressDetail[]
+     */
+    public function getProposedAddressDetails()
+    {
+        return $this->ProposedAddressDetails;
     }
     
 

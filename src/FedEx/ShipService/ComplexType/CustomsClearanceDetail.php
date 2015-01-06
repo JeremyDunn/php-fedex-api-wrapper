@@ -25,7 +25,7 @@ class CustomsClearanceDetail
      * Set Brokers
      *
      * @param BrokerDetail[] $brokers
-     * return CustomsClearanceDetail
+     * @return CustomsClearanceDetail
      */
     public function setBrokers(array $brokers)
     {
@@ -34,10 +34,20 @@ class CustomsClearanceDetail
     }
     
     /**
+     * Returns Set Brokers
+     *
+     * @return BrokerDetail[]
+     */
+    public function getBrokers()
+    {
+        return $this->Brokers;
+    }
+    
+    /**
      * Interacts both with properties of the shipment and contractual relationship with the shipper.
      *
      * @param \FedEx\ShipService\SimpleType\ClearanceBrokerageType|string $clearanceBrokerage
-     * return CustomsClearanceDetail
+     * @return CustomsClearanceDetail
      */
     public function setClearanceBrokerage($clearanceBrokerage)
     {
@@ -46,10 +56,20 @@ class CustomsClearanceDetail
     }
     
     /**
+     * Returns Interacts both with properties of the shipment and contractual relationship with the shipper.
+     *
+     * @return \FedEx\ShipService\SimpleType\ClearanceBrokerageType|string
+     */
+    public function getClearanceBrokerage()
+    {
+        return $this->ClearanceBrokerage;
+    }
+    
+    /**
      * Set CustomsOptions
      *
      * @param CustomsOptionDetail $customsOptions
-     * return CustomsClearanceDetail
+     * @return CustomsClearanceDetail
      */
     public function setCustomsOptions(CustomsOptionDetail $customsOptions)
     {
@@ -58,10 +78,20 @@ class CustomsClearanceDetail
     }
     
     /**
+     * Returns Set CustomsOptions
+     *
+     * @return CustomsOptionDetail
+     */
+    public function getCustomsOptions()
+    {
+        return $this->CustomsOptions;
+    }
+    
+    /**
      * Set ImporterOfRecord
      *
      * @param Party $importerOfRecord
-     * return CustomsClearanceDetail
+     * @return CustomsClearanceDetail
      */
     public function setImporterOfRecord(Party $importerOfRecord)
     {
@@ -70,10 +100,20 @@ class CustomsClearanceDetail
     }
     
     /**
+     * Returns Set ImporterOfRecord
+     *
+     * @return Party
+     */
+    public function getImporterOfRecord()
+    {
+        return $this->ImporterOfRecord;
+    }
+    
+    /**
      * Specifies how the recipient is identified for customs purposes; the requirements on this information vary with destination country.
      *
      * @param RecipientCustomsId $recipientCustomsId
-     * return CustomsClearanceDetail
+     * @return CustomsClearanceDetail
      */
     public function setRecipientCustomsId(RecipientCustomsId $recipientCustomsId)
     {
@@ -82,10 +122,20 @@ class CustomsClearanceDetail
     }
     
     /**
+     * Returns Specifies how the recipient is identified for customs purposes; the requirements on this information vary with destination country.
+     *
+     * @return RecipientCustomsId
+     */
+    public function getRecipientCustomsId()
+    {
+        return $this->RecipientCustomsId;
+    }
+    
+    /**
      * Set DutiesPayment
      *
      * @param Payment $dutiesPayment
-     * return CustomsClearanceDetail
+     * @return CustomsClearanceDetail
      */
     public function setDutiesPayment(Payment $dutiesPayment)
     {
@@ -94,10 +144,20 @@ class CustomsClearanceDetail
     }
     
     /**
+     * Returns Set DutiesPayment
+     *
+     * @return Payment
+     */
+    public function getDutiesPayment()
+    {
+        return $this->DutiesPayment;
+    }
+    
+    /**
      * Set DocumentContent
      *
      * @param \FedEx\ShipService\SimpleType\InternationalDocumentContentType|string $documentContent
-     * return CustomsClearanceDetail
+     * @return CustomsClearanceDetail
      */
     public function setDocumentContent($documentContent)
     {
@@ -106,10 +166,20 @@ class CustomsClearanceDetail
     }
     
     /**
+     * Returns Set DocumentContent
+     *
+     * @return \FedEx\ShipService\SimpleType\InternationalDocumentContentType|string
+     */
+    public function getDocumentContent()
+    {
+        return $this->DocumentContent;
+    }
+    
+    /**
      * Set CustomsValue
      *
      * @param Money $customsValue
-     * return CustomsClearanceDetail
+     * @return CustomsClearanceDetail
      */
     public function setCustomsValue(Money $customsValue)
     {
@@ -118,10 +188,20 @@ class CustomsClearanceDetail
     }
     
     /**
+     * Returns Set CustomsValue
+     *
+     * @return Money
+     */
+    public function getCustomsValue()
+    {
+        return $this->CustomsValue;
+    }
+    
+    /**
      * Identifies responsibilities with respect to loss, damage, etc.
      *
      * @param \FedEx\ShipService\SimpleType\FreightOnValueType|string $freightOnValue
-     * return CustomsClearanceDetail
+     * @return CustomsClearanceDetail
      */
     public function setFreightOnValue($freightOnValue)
     {
@@ -130,10 +210,20 @@ class CustomsClearanceDetail
     }
     
     /**
+     * Returns Identifies responsibilities with respect to loss, damage, etc.
+     *
+     * @return \FedEx\ShipService\SimpleType\FreightOnValueType|string
+     */
+    public function getFreightOnValue()
+    {
+        return $this->FreightOnValue;
+    }
+    
+    /**
      * Documents amount paid to third party for coverage of shipment content.
      *
      * @param Money $insuranceCharges
-     * return CustomsClearanceDetail
+     * @return CustomsClearanceDetail
      */
     public function setInsuranceCharges(Money $insuranceCharges)
     {
@@ -142,10 +232,20 @@ class CustomsClearanceDetail
     }
     
     /**
+     * Returns Documents amount paid to third party for coverage of shipment content.
+     *
+     * @return Money
+     */
+    public function getInsuranceCharges()
+    {
+        return $this->InsuranceCharges;
+    }
+    
+    /**
      * Set PartiesToTransactionAreRelated
      *
      * @param boolean $partiesToTransactionAreRelated
-     * return CustomsClearanceDetail
+     * @return CustomsClearanceDetail
      */
     public function setPartiesToTransactionAreRelated($partiesToTransactionAreRelated)
     {
@@ -154,10 +254,20 @@ class CustomsClearanceDetail
     }
     
     /**
+     * Returns Set PartiesToTransactionAreRelated
+     *
+     * @return boolean
+     */
+    public function getPartiesToTransactionAreRelated()
+    {
+        return $this->PartiesToTransactionAreRelated;
+    }
+    
+    /**
      * Set CommercialInvoice
      *
      * @param CommercialInvoice $commercialInvoice
-     * return CustomsClearanceDetail
+     * @return CustomsClearanceDetail
      */
     public function setCommercialInvoice(CommercialInvoice $commercialInvoice)
     {
@@ -166,10 +276,20 @@ class CustomsClearanceDetail
     }
     
     /**
+     * Returns Set CommercialInvoice
+     *
+     * @return CommercialInvoice
+     */
+    public function getCommercialInvoice()
+    {
+        return $this->CommercialInvoice;
+    }
+    
+    /**
      * Set Commodities
      *
      * @param Commodity[] $commodities
-     * return CustomsClearanceDetail
+     * @return CustomsClearanceDetail
      */
     public function setCommodities(array $commodities)
     {
@@ -178,10 +298,20 @@ class CustomsClearanceDetail
     }
     
     /**
+     * Returns Set Commodities
+     *
+     * @return Commodity[]
+     */
+    public function getCommodities()
+    {
+        return $this->Commodities;
+    }
+    
+    /**
      * Set ExportDetail
      *
      * @param ExportDetail $exportDetail
-     * return CustomsClearanceDetail
+     * @return CustomsClearanceDetail
      */
     public function setExportDetail(ExportDetail $exportDetail)
     {
@@ -190,15 +320,35 @@ class CustomsClearanceDetail
     }
     
     /**
+     * Returns Set ExportDetail
+     *
+     * @return ExportDetail
+     */
+    public function getExportDetail()
+    {
+        return $this->ExportDetail;
+    }
+    
+    /**
      * Set RegulatoryControls
      *
      * @param RegulatoryControlType[] $regulatoryControls
-     * return CustomsClearanceDetail
+     * @return CustomsClearanceDetail
      */
     public function setRegulatoryControls(array $regulatoryControls)
     {
         $this->RegulatoryControls = $regulatoryControls;
         return $this;
+    }
+    
+    /**
+     * Returns Set RegulatoryControls
+     *
+     * @return RegulatoryControlType[]
+     */
+    public function getRegulatoryControls()
+    {
+        return $this->RegulatoryControls;
     }
     
 

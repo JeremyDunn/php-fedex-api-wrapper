@@ -25,7 +25,7 @@ class PendingShipmentDetail
      * Identifies the type of FedEx pending shipment
      *
      * @param \FedEx\Pickup\SimpleType\PendingShipmentType|string $type
-     * return PendingShipmentDetail
+     * @return PendingShipmentDetail
      */
     public function setType($type)
     {
@@ -34,10 +34,20 @@ class PendingShipmentDetail
     }
     
     /**
+     * Returns Identifies the type of FedEx pending shipment
+     *
+     * @return \FedEx\Pickup\SimpleType\PendingShipmentType|string
+     */
+    public function getType()
+    {
+        return $this->Type;
+    }
+    
+    /**
      * Date after which the pending shipment will no longer be available for completion.
      *
      * @param date $expirationDate
-     * return PendingShipmentDetail
+     * @return PendingShipmentDetail
      */
     public function setExpirationDate($expirationDate)
     {
@@ -46,15 +56,35 @@ class PendingShipmentDetail
     }
     
     /**
+     * Returns Date after which the pending shipment will no longer be available for completion.
+     *
+     * @return date
+     */
+    public function getExpirationDate()
+    {
+        return $this->ExpirationDate;
+    }
+    
+    /**
      * Only used with type of EMAIL.
      *
      * @param EMailLabelDetail $emailLabelDetail
-     * return PendingShipmentDetail
+     * @return PendingShipmentDetail
      */
     public function setEmailLabelDetail(EMailLabelDetail $emailLabelDetail)
     {
         $this->EmailLabelDetail = $emailLabelDetail;
         return $this;
+    }
+    
+    /**
+     * Returns Only used with type of EMAIL.
+     *
+     * @return EMailLabelDetail
+     */
+    public function getEmailLabelDetail()
+    {
+        return $this->EmailLabelDetail;
     }
     
 

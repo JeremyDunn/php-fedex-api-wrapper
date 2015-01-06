@@ -25,7 +25,7 @@ class DeliveryOnInvoiceAcceptanceDetail
      * Set Recipient
      *
      * @param Party $recipient
-     * return DeliveryOnInvoiceAcceptanceDetail
+     * @return DeliveryOnInvoiceAcceptanceDetail
      */
     public function setRecipient(Party $recipient)
     {
@@ -34,15 +34,35 @@ class DeliveryOnInvoiceAcceptanceDetail
     }
     
     /**
+     * Returns Set Recipient
+     *
+     * @return Party
+     */
+    public function getRecipient()
+    {
+        return $this->Recipient;
+    }
+    
+    /**
      * Specifies the tracking id for the return, if preassigned.
      *
      * @param TrackingId $trackingId
-     * return DeliveryOnInvoiceAcceptanceDetail
+     * @return DeliveryOnInvoiceAcceptanceDetail
      */
     public function setTrackingId(TrackingId $trackingId)
     {
         $this->TrackingId = $trackingId;
         return $this;
+    }
+    
+    /**
+     * Returns Specifies the tracking id for the return, if preassigned.
+     *
+     * @return TrackingId
+     */
+    public function getTrackingId()
+    {
+        return $this->TrackingId;
     }
     
 

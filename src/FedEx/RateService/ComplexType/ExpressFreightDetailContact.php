@@ -25,7 +25,7 @@ class ExpressFreightDetailContact
      * Set Name
      *
      * @param string $name
-     * return ExpressFreightDetailContact
+     * @return ExpressFreightDetailContact
      */
     public function setName($name)
     {
@@ -34,15 +34,35 @@ class ExpressFreightDetailContact
     }
     
     /**
+     * Returns Set Name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->Name;
+    }
+    
+    /**
      * Set Phone
      *
      * @param string $phone
-     * return ExpressFreightDetailContact
+     * @return ExpressFreightDetailContact
      */
     public function setPhone($phone)
     {
         $this->Phone = $phone;
         return $this;
+    }
+    
+    /**
+     * Returns Set Phone
+     *
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->Phone;
     }
     
 

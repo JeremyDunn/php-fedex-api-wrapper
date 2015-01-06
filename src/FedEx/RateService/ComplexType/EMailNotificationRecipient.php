@@ -25,7 +25,7 @@ class EMailNotificationRecipient
      * Identifies the relationship this email recipient has to the shipment.
      *
      * @param \FedEx\RateService\SimpleType\EMailNotificationRecipientType|string $eMailNotificationRecipientType
-     * return EMailNotificationRecipient
+     * @return EMailNotificationRecipient
      */
     public function setEMailNotificationRecipientType($eMailNotificationRecipientType)
     {
@@ -34,10 +34,20 @@ class EMailNotificationRecipient
     }
     
     /**
+     * Returns Identifies the relationship this email recipient has to the shipment.
+     *
+     * @return \FedEx\RateService\SimpleType\EMailNotificationRecipientType|string
+     */
+    public function getEMailNotificationRecipientType()
+    {
+        return $this->EMailNotificationRecipientType;
+    }
+    
+    /**
      * The email address to send the notification to
      *
      * @param string $eMailAddress
-     * return EMailNotificationRecipient
+     * @return EMailNotificationRecipient
      */
     public function setEMailAddress($eMailAddress)
     {
@@ -46,10 +56,20 @@ class EMailNotificationRecipient
     }
     
     /**
+     * Returns The email address to send the notification to
+     *
+     * @return string
+     */
+    public function getEMailAddress()
+    {
+        return $this->EMailAddress;
+    }
+    
+    /**
      * The types of email notifications being requested for this recipient.
      *
      * @param EMailNotificationEventType[] $notificationEventsRequested
-     * return EMailNotificationRecipient
+     * @return EMailNotificationRecipient
      */
     public function setNotificationEventsRequested(array $notificationEventsRequested)
     {
@@ -58,10 +78,20 @@ class EMailNotificationRecipient
     }
     
     /**
+     * Returns The types of email notifications being requested for this recipient.
+     *
+     * @return EMailNotificationEventType[]
+     */
+    public function getNotificationEventsRequested()
+    {
+        return $this->NotificationEventsRequested;
+    }
+    
+    /**
      * The format of the email notification.
      *
      * @param \FedEx\RateService\SimpleType\EMailNotificationFormatType|string $format
-     * return EMailNotificationRecipient
+     * @return EMailNotificationRecipient
      */
     public function setFormat($format)
     {
@@ -70,15 +100,35 @@ class EMailNotificationRecipient
     }
     
     /**
+     * Returns The format of the email notification.
+     *
+     * @return \FedEx\RateService\SimpleType\EMailNotificationFormatType|string
+     */
+    public function getFormat()
+    {
+        return $this->Format;
+    }
+    
+    /**
      * The language/locale to be used in this email notification.
      *
      * @param Localization $localization
-     * return EMailNotificationRecipient
+     * @return EMailNotificationRecipient
      */
     public function setLocalization(Localization $localization)
     {
         $this->Localization = $localization;
         return $this;
+    }
+    
+    /**
+     * Returns The language/locale to be used in this email notification.
+     *
+     * @return Localization
+     */
+    public function getLocalization()
+    {
+        return $this->Localization;
     }
     
 

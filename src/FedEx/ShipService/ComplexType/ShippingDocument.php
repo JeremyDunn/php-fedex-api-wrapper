@@ -25,7 +25,7 @@ class ShippingDocument
      * Shipping Document Type
      *
      * @param \FedEx\ShipService\SimpleType\ReturnedShippingDocumentType|string $type
-     * return ShippingDocument
+     * @return ShippingDocument
      */
     public function setType($type)
     {
@@ -34,10 +34,20 @@ class ShippingDocument
     }
     
     /**
+     * Returns Shipping Document Type
+     *
+     * @return \FedEx\ShipService\SimpleType\ReturnedShippingDocumentType|string
+     */
+    public function getType()
+    {
+        return $this->Type;
+    }
+    
+    /**
      * Specifies how this document image/file is organized.
      *
      * @param \FedEx\ShipService\SimpleType\ShippingDocumentGroupingType|string $grouping
-     * return ShippingDocument
+     * @return ShippingDocument
      */
     public function setGrouping($grouping)
     {
@@ -46,10 +56,20 @@ class ShippingDocument
     }
     
     /**
+     * Returns Specifies how this document image/file is organized.
+     *
+     * @return \FedEx\ShipService\SimpleType\ShippingDocumentGroupingType|string
+     */
+    public function getGrouping()
+    {
+        return $this->Grouping;
+    }
+    
+    /**
      * Set ShippingDocumentDisposition
      *
      * @param \FedEx\ShipService\SimpleType\ShippingDocumentDispositionType|string $shippingDocumentDisposition
-     * return ShippingDocument
+     * @return ShippingDocument
      */
     public function setShippingDocumentDisposition($shippingDocumentDisposition)
     {
@@ -58,10 +78,20 @@ class ShippingDocument
     }
     
     /**
+     * Returns Set ShippingDocumentDisposition
+     *
+     * @return \FedEx\ShipService\SimpleType\ShippingDocumentDispositionType|string
+     */
+    public function getShippingDocumentDisposition()
+    {
+        return $this->ShippingDocumentDisposition;
+    }
+    
+    /**
      * The name under which a STORED or DEFERRED document is written.
      *
      * @param string $accessReference
-     * return ShippingDocument
+     * @return ShippingDocument
      */
     public function setAccessReference($accessReference)
     {
@@ -70,10 +100,20 @@ class ShippingDocument
     }
     
     /**
+     * Returns The name under which a STORED or DEFERRED document is written.
+     *
+     * @return string
+     */
+    public function getAccessReference()
+    {
+        return $this->AccessReference;
+    }
+    
+    /**
      * Specifies the image type of this shipping document.
      *
      * @param \FedEx\ShipService\SimpleType\ShippingDocumentImageType|string $imageType
-     * return ShippingDocument
+     * @return ShippingDocument
      */
     public function setImageType($imageType)
     {
@@ -82,10 +122,20 @@ class ShippingDocument
     }
     
     /**
+     * Returns Specifies the image type of this shipping document.
+     *
+     * @return \FedEx\ShipService\SimpleType\ShippingDocumentImageType|string
+     */
+    public function getImageType()
+    {
+        return $this->ImageType;
+    }
+    
+    /**
      * Specifies the image resolution in DPI (dots per inch).
      *
      * @param nonNegativeInteger $resolution
-     * return ShippingDocument
+     * @return ShippingDocument
      */
     public function setResolution($resolution)
     {
@@ -94,10 +144,20 @@ class ShippingDocument
     }
     
     /**
+     * Returns Specifies the image resolution in DPI (dots per inch).
+     *
+     * @return nonNegativeInteger
+     */
+    public function getResolution()
+    {
+        return $this->Resolution;
+    }
+    
+    /**
      * Can be zero for documents whose disposition implies that no content is included.
      *
      * @param nonNegativeInteger $copiesToPrint
-     * return ShippingDocument
+     * @return ShippingDocument
      */
     public function setCopiesToPrint($copiesToPrint)
     {
@@ -106,15 +166,35 @@ class ShippingDocument
     }
     
     /**
+     * Returns Can be zero for documents whose disposition implies that no content is included.
+     *
+     * @return nonNegativeInteger
+     */
+    public function getCopiesToPrint()
+    {
+        return $this->CopiesToPrint;
+    }
+    
+    /**
      * One or more document parts which make up a single logical document, such as multiple pages of a single form.
      *
      * @param ShippingDocumentPart[] $parts
-     * return ShippingDocument
+     * @return ShippingDocument
      */
     public function setParts(array $parts)
     {
         $this->Parts = $parts;
         return $this;
+    }
+    
+    /**
+     * Returns One or more document parts which make up a single logical document, such as multiple pages of a single form.
+     *
+     * @return ShippingDocumentPart[]
+     */
+    public function getParts()
+    {
+        return $this->Parts;
     }
     
 

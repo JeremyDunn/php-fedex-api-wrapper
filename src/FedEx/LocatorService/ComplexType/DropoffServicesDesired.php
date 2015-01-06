@@ -25,7 +25,7 @@ class DropoffServicesDesired
      * Locations that accept FedEx Express shipments.
      *
      * @param boolean $express
-     * return DropoffServicesDesired
+     * @return DropoffServicesDesired
      */
     public function setExpress($express)
     {
@@ -34,10 +34,20 @@ class DropoffServicesDesired
     }
     
     /**
+     * Returns Locations that accept FedEx Express shipments.
+     *
+     * @return boolean
+     */
+    public function getExpress()
+    {
+        return $this->Express;
+    }
+    
+    /**
      * Locations that accept FedEx Ground shipments.
      *
      * @param boolean $ground
-     * return DropoffServicesDesired
+     * @return DropoffServicesDesired
      */
     public function setGround($ground)
     {
@@ -46,10 +56,20 @@ class DropoffServicesDesired
     }
     
     /**
+     * Returns Locations that accept FedEx Ground shipments.
+     *
+     * @return boolean
+     */
+    public function getGround()
+    {
+        return $this->Ground;
+    }
+    
+    /**
      * Locations that are FedEx staffed.
      *
      * @param boolean $fedExStaffed
-     * return DropoffServicesDesired
+     * @return DropoffServicesDesired
      */
     public function setFedExStaffed($fedExStaffed)
     {
@@ -58,10 +78,20 @@ class DropoffServicesDesired
     }
     
     /**
+     * Returns Locations that are FedEx staffed.
+     *
+     * @return boolean
+     */
+    public function getFedExStaffed()
+    {
+        return $this->FedExStaffed;
+    }
+    
+    /**
      * Locations that are FedEx self-service.
      *
      * @param boolean $fedExSelfService
-     * return DropoffServicesDesired
+     * @return DropoffServicesDesired
      */
     public function setFedExSelfService($fedExSelfService)
     {
@@ -70,10 +100,20 @@ class DropoffServicesDesired
     }
     
     /**
+     * Returns Locations that are FedEx self-service.
+     *
+     * @return boolean
+     */
+    public function getFedExSelfService()
+    {
+        return $this->FedExSelfService;
+    }
+    
+    /**
      * Locations that are FedEx Authorized Shipping Centers.
      *
      * @param boolean $fedExAuthorizedShippingCenter
-     * return DropoffServicesDesired
+     * @return DropoffServicesDesired
      */
     public function setFedExAuthorizedShippingCenter($fedExAuthorizedShippingCenter)
     {
@@ -82,10 +122,20 @@ class DropoffServicesDesired
     }
     
     /**
+     * Returns Locations that are FedEx Authorized Shipping Centers.
+     *
+     * @return boolean
+     */
+    public function getFedExAuthorizedShippingCenter()
+    {
+        return $this->FedExAuthorizedShippingCenter;
+    }
+    
+    /**
      * Locations with the latest Express drop-off time.
      *
      * @param boolean $latestExpressDropoff
-     * return DropoffServicesDesired
+     * @return DropoffServicesDesired
      */
     public function setLatestExpressDropoff($latestExpressDropoff)
     {
@@ -94,10 +144,20 @@ class DropoffServicesDesired
     }
     
     /**
+     * Returns Locations with the latest Express drop-off time.
+     *
+     * @return boolean
+     */
+    public function getLatestExpressDropoff()
+    {
+        return $this->LatestExpressDropoff;
+    }
+    
+    /**
      * Locations that are open after this local time.
      *
      * @param time $expressDropoffAfterTime
-     * return DropoffServicesDesired
+     * @return DropoffServicesDesired
      */
     public function setExpressDropoffAfterTime(time $expressDropoffAfterTime)
     {
@@ -106,10 +166,20 @@ class DropoffServicesDesired
     }
     
     /**
+     * Returns Locations that are open after this local time.
+     *
+     * @return time
+     */
+    public function getExpressDropoffAfterTime()
+    {
+        return $this->ExpressDropoffAfterTime;
+    }
+    
+    /**
      * Locations that support Express Hold at Location.
      *
      * @param boolean $holdAtLocation
-     * return DropoffServicesDesired
+     * @return DropoffServicesDesired
      */
     public function setHoldAtLocation($holdAtLocation)
     {
@@ -118,10 +188,20 @@ class DropoffServicesDesired
     }
     
     /**
+     * Returns Locations that support Express Hold at Location.
+     *
+     * @return boolean
+     */
+    public function getHoldAtLocation()
+    {
+        return $this->HoldAtLocation;
+    }
+    
+    /**
      * Locations that support Ground Hold at Location.
      *
      * @param boolean $groundHoldAtLocation
-     * return DropoffServicesDesired
+     * @return DropoffServicesDesired
      */
     public function setGroundHoldAtLocation($groundHoldAtLocation)
     {
@@ -130,10 +210,20 @@ class DropoffServicesDesired
     }
     
     /**
+     * Returns Locations that support Ground Hold at Location.
+     *
+     * @return boolean
+     */
+    public function getGroundHoldAtLocation()
+    {
+        return $this->GroundHoldAtLocation;
+    }
+    
+    /**
      * Locations that accept FedEx Express shipments containing hazardous materials.
      *
      * @param boolean $dangerousGoods
-     * return DropoffServicesDesired
+     * @return DropoffServicesDesired
      */
     public function setDangerousGoods($dangerousGoods)
     {
@@ -142,10 +232,20 @@ class DropoffServicesDesired
     }
     
     /**
+     * Returns Locations that accept FedEx Express shipments containing hazardous materials.
+     *
+     * @return boolean
+     */
+    public function getDangerousGoods()
+    {
+        return $this->DangerousGoods;
+    }
+    
+    /**
      * Locations open on Saturdays.
      *
      * @param boolean $saturdayService
-     * return DropoffServicesDesired
+     * @return DropoffServicesDesired
      */
     public function setSaturdayService($saturdayService)
     {
@@ -154,10 +254,20 @@ class DropoffServicesDesired
     }
     
     /**
+     * Returns Locations open on Saturdays.
+     *
+     * @return boolean
+     */
+    public function getSaturdayService()
+    {
+        return $this->SaturdayService;
+    }
+    
+    /**
      * Locations that make packaging supplies available.
      *
      * @param boolean $packingSupplies
-     * return DropoffServicesDesired
+     * @return DropoffServicesDesired
      */
     public function setPackingSupplies($packingSupplies)
     {
@@ -166,10 +276,20 @@ class DropoffServicesDesired
     }
     
     /**
+     * Returns Locations that make packaging supplies available.
+     *
+     * @return boolean
+     */
+    public function getPackingSupplies()
+    {
+        return $this->PackingSupplies;
+    }
+    
+    /**
      * Locations that provide Pack and Ship services.
      *
      * @param boolean $packingServices
-     * return DropoffServicesDesired
+     * @return DropoffServicesDesired
      */
     public function setPackingServices($packingServices)
     {
@@ -178,10 +298,20 @@ class DropoffServicesDesired
     }
     
     /**
+     * Returns Locations that provide Pack and Ship services.
+     *
+     * @return boolean
+     */
+    public function getPackingServices()
+    {
+        return $this->PackingServices;
+    }
+    
+    /**
      * Locations that support FedEx	Return System.
      *
      * @param boolean $returnSystem
-     * return DropoffServicesDesired
+     * @return DropoffServicesDesired
      */
     public function setReturnSystem($returnSystem)
     {
@@ -190,10 +320,20 @@ class DropoffServicesDesired
     }
     
     /**
+     * Returns Locations that support FedEx	Return System.
+     *
+     * @return boolean
+     */
+    public function getReturnSystem()
+    {
+        return $this->ReturnSystem;
+    }
+    
+    /**
      * Locations that support Redirect to Hold of shipments.
      *
      * @param \FedEx\LocatorService\SimpleType\RedirectToHoldLocationType|string $redirectToHoldLocation
-     * return DropoffServicesDesired
+     * @return DropoffServicesDesired
      */
     public function setRedirectToHoldLocation($redirectToHoldLocation)
     {
@@ -202,15 +342,35 @@ class DropoffServicesDesired
     }
     
     /**
+     * Returns Locations that support Redirect to Hold of shipments.
+     *
+     * @return \FedEx\LocatorService\SimpleType\RedirectToHoldLocationType|string
+     */
+    public function getRedirectToHoldLocation()
+    {
+        return $this->RedirectToHoldLocation;
+    }
+    
+    /**
      * Locations in the same state that support Redirect to Hold of shipments.
      *
      * @param boolean $searchSameStateOnly
-     * return DropoffServicesDesired
+     * @return DropoffServicesDesired
      */
     public function setSearchSameStateOnly($searchSameStateOnly)
     {
         $this->SearchSameStateOnly = $searchSameStateOnly;
         return $this;
+    }
+    
+    /**
+     * Returns Locations in the same state that support Redirect to Hold of shipments.
+     *
+     * @return boolean
+     */
+    public function getSearchSameStateOnly()
+    {
+        return $this->SearchSameStateOnly;
     }
     
 

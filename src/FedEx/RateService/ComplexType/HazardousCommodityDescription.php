@@ -25,7 +25,7 @@ class HazardousCommodityDescription
      * Regulatory identifier for a commodity (e.g. "UN ID" value).
      *
      * @param string $id
-     * return HazardousCommodityDescription
+     * @return HazardousCommodityDescription
      */
     public function setId($id)
     {
@@ -34,10 +34,20 @@ class HazardousCommodityDescription
     }
     
     /**
+     * Returns Regulatory identifier for a commodity (e.g. "UN ID" value).
+     *
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->Id;
+    }
+    
+    /**
      * Set PackingGroup
      *
      * @param \FedEx\RateService\SimpleType\HazardousCommodityPackingGroupType|string $packingGroup
-     * return HazardousCommodityDescription
+     * @return HazardousCommodityDescription
      */
     public function setPackingGroup($packingGroup)
     {
@@ -46,10 +56,20 @@ class HazardousCommodityDescription
     }
     
     /**
+     * Returns Set PackingGroup
+     *
+     * @return \FedEx\RateService\SimpleType\HazardousCommodityPackingGroupType|string
+     */
+    public function getPackingGroup()
+    {
+        return $this->PackingGroup;
+    }
+    
+    /**
      * Set ProperShippingName
      *
      * @param string $properShippingName
-     * return HazardousCommodityDescription
+     * @return HazardousCommodityDescription
      */
     public function setProperShippingName($properShippingName)
     {
@@ -58,10 +78,20 @@ class HazardousCommodityDescription
     }
     
     /**
+     * Returns Set ProperShippingName
+     *
+     * @return string
+     */
+    public function getProperShippingName()
+    {
+        return $this->ProperShippingName;
+    }
+    
+    /**
      * Set TechnicalName
      *
      * @param string $technicalName
-     * return HazardousCommodityDescription
+     * @return HazardousCommodityDescription
      */
     public function setTechnicalName($technicalName)
     {
@@ -70,10 +100,20 @@ class HazardousCommodityDescription
     }
     
     /**
+     * Returns Set TechnicalName
+     *
+     * @return string
+     */
+    public function getTechnicalName()
+    {
+        return $this->TechnicalName;
+    }
+    
+    /**
      * Set HazardClass
      *
      * @param string $hazardClass
-     * return HazardousCommodityDescription
+     * @return HazardousCommodityDescription
      */
     public function setHazardClass($hazardClass)
     {
@@ -82,10 +122,20 @@ class HazardousCommodityDescription
     }
     
     /**
+     * Returns Set HazardClass
+     *
+     * @return string
+     */
+    public function getHazardClass()
+    {
+        return $this->HazardClass;
+    }
+    
+    /**
      * Set SubsidiaryClasses
      *
      * @param string[] $subsidiaryClasses
-     * return HazardousCommodityDescription
+     * @return HazardousCommodityDescription
      */
     public function setSubsidiaryClasses(array $subsidiaryClasses)
     {
@@ -94,15 +144,35 @@ class HazardousCommodityDescription
     }
     
     /**
+     * Returns Set SubsidiaryClasses
+     *
+     * @return string[]
+     */
+    public function getSubsidiaryClasses()
+    {
+        return $this->SubsidiaryClasses;
+    }
+    
+    /**
      * Set LabelText
      *
      * @param string $labelText
-     * return HazardousCommodityDescription
+     * @return HazardousCommodityDescription
      */
     public function setLabelText($labelText)
     {
         $this->LabelText = $labelText;
         return $this;
+    }
+    
+    /**
+     * Returns Set LabelText
+     *
+     * @return string
+     */
+    public function getLabelText()
+    {
+        return $this->LabelText;
     }
     
 

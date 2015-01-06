@@ -25,7 +25,7 @@ class ReturnAssociationDetail
      * Specifies the tracking number of the master associated with the return shipment.
      *
      * @param string $trackingNumber
-     * return ReturnAssociationDetail
+     * @return ReturnAssociationDetail
      */
     public function setTrackingNumber($trackingNumber)
     {
@@ -34,15 +34,35 @@ class ReturnAssociationDetail
     }
     
     /**
+     * Returns Specifies the tracking number of the master associated with the return shipment.
+     *
+     * @return string
+     */
+    public function getTrackingNumber()
+    {
+        return $this->TrackingNumber;
+    }
+    
+    /**
      * Set ShipDate
      *
      * @param date $shipDate
-     * return ReturnAssociationDetail
+     * @return ReturnAssociationDetail
      */
     public function setShipDate($shipDate)
     {
         $this->ShipDate = $shipDate;
         return $this;
+    }
+    
+    /**
+     * Returns Set ShipDate
+     *
+     * @return date
+     */
+    public function getShipDate()
+    {
+        return $this->ShipDate;
     }
     
 

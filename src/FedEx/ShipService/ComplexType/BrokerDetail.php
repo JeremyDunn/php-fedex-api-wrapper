@@ -25,7 +25,7 @@ class BrokerDetail
      * Set Type
      *
      * @param \FedEx\ShipService\SimpleType\BrokerType|string $type
-     * return BrokerDetail
+     * @return BrokerDetail
      */
     public function setType($type)
     {
@@ -34,15 +34,35 @@ class BrokerDetail
     }
     
     /**
+     * Returns Set Type
+     *
+     * @return \FedEx\ShipService\SimpleType\BrokerType|string
+     */
+    public function getType()
+    {
+        return $this->Type;
+    }
+    
+    /**
      * Set Broker
      *
      * @param Party $broker
-     * return BrokerDetail
+     * @return BrokerDetail
      */
     public function setBroker(Party $broker)
     {
         $this->Broker = $broker;
         return $this;
+    }
+    
+    /**
+     * Returns Set Broker
+     *
+     * @return Party
+     */
+    public function getBroker()
+    {
+        return $this->Broker;
     }
     
 

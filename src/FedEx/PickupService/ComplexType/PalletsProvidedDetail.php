@@ -25,12 +25,22 @@ class PalletsProvidedDetail
      * Number of pallets to be provided.
      *
      * @param positiveInteger $palletCount
-     * return PalletsProvidedDetail
+     * @return PalletsProvidedDetail
      */
     public function setPalletCount($palletCount)
     {
         $this->PalletCount = $palletCount;
         return $this;
+    }
+    
+    /**
+     * Returns Number of pallets to be provided.
+     *
+     * @return positiveInteger
+     */
+    public function getPalletCount()
+    {
+        return $this->PalletCount;
     }
     
 

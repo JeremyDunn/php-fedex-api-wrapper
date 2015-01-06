@@ -25,7 +25,7 @@ class Weight
      * Identifies the unit of measure associated with a weight value.
      *
      * @param \FedEx\ShipService\SimpleType\WeightUnits|string $units
-     * return Weight
+     * @return Weight
      */
     public function setUnits($units)
     {
@@ -34,15 +34,35 @@ class Weight
     }
     
     /**
+     * Returns Identifies the unit of measure associated with a weight value.
+     *
+     * @return \FedEx\ShipService\SimpleType\WeightUnits|string
+     */
+    public function getUnits()
+    {
+        return $this->Units;
+    }
+    
+    /**
      * Identifies the weight value of a package/shipment.
      *
      * @param decimal $value
-     * return Weight
+     * @return Weight
      */
     public function setValue($value)
     {
         $this->Value = $value;
         return $this;
+    }
+    
+    /**
+     * Returns Identifies the weight value of a package/shipment.
+     *
+     * @return decimal
+     */
+    public function getValue()
+    {
+        return $this->Value;
     }
     
 

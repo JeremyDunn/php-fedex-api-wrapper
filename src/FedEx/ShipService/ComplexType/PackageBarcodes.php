@@ -25,7 +25,7 @@ class PackageBarcodes
      * Binary-style barcodes for this package.
      *
      * @param BinaryBarcode[] $binaryBarcodes
-     * return PackageBarcodes
+     * @return PackageBarcodes
      */
     public function setBinaryBarcodes(array $binaryBarcodes)
     {
@@ -34,15 +34,35 @@ class PackageBarcodes
     }
     
     /**
+     * Returns Binary-style barcodes for this package.
+     *
+     * @return BinaryBarcode[]
+     */
+    public function getBinaryBarcodes()
+    {
+        return $this->BinaryBarcodes;
+    }
+    
+    /**
      * String-style barcodes for this package.
      *
      * @param StringBarcode[] $stringBarcodes
-     * return PackageBarcodes
+     * @return PackageBarcodes
      */
     public function setStringBarcodes(array $stringBarcodes)
     {
         $this->StringBarcodes = $stringBarcodes;
         return $this;
+    }
+    
+    /**
+     * Returns String-style barcodes for this package.
+     *
+     * @return StringBarcode[]
+     */
+    public function getStringBarcodes()
+    {
+        return $this->StringBarcodes;
     }
     
 

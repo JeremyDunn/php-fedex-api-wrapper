@@ -25,7 +25,7 @@ class BinaryBarcode
      * The kind of barcode data in this instance.
      *
      * @param \FedEx\ShipService\SimpleType\BinaryBarcodeType|string $type
-     * return BinaryBarcode
+     * @return BinaryBarcode
      */
     public function setType($type)
     {
@@ -34,15 +34,35 @@ class BinaryBarcode
     }
     
     /**
+     * Returns The kind of barcode data in this instance.
+     *
+     * @return \FedEx\ShipService\SimpleType\BinaryBarcodeType|string
+     */
+    public function getType()
+    {
+        return $this->Type;
+    }
+    
+    /**
      * The data content of this instance.
      *
      * @param base64Binary $value
-     * return BinaryBarcode
+     * @return BinaryBarcode
      */
     public function setValue($value)
     {
         $this->Value = $value;
         return $this;
+    }
+    
+    /**
+     * Returns The data content of this instance.
+     *
+     * @return base64Binary
+     */
+    public function getValue()
+    {
+        return $this->Value;
     }
     
 

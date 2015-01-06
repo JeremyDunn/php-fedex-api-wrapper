@@ -25,7 +25,7 @@ class CompletedHazardousPackageDetail
      * A unique reference id that matches the package to a package configuration. This is populated if the client provided a package configuration for several packages that have the exact same dangerous goods content.
      *
      * @param string $referenceId
-     * return CompletedHazardousPackageDetail
+     * @return CompletedHazardousPackageDetail
      */
     public function setReferenceId($referenceId)
     {
@@ -34,10 +34,20 @@ class CompletedHazardousPackageDetail
     }
     
     /**
+     * Returns A unique reference id that matches the package to a package configuration. This is populated if the client provided a package configuration for several packages that have the exact same dangerous goods content.
+     *
+     * @return string
+     */
+    public function getReferenceId()
+    {
+        return $this->ReferenceId;
+    }
+    
+    /**
      * Set Accessibility
      *
      * @param \FedEx\ShipService\SimpleType\DangerousGoodsAccessibilityType|string $accessibility
-     * return CompletedHazardousPackageDetail
+     * @return CompletedHazardousPackageDetail
      */
     public function setAccessibility($accessibility)
     {
@@ -46,10 +56,20 @@ class CompletedHazardousPackageDetail
     }
     
     /**
+     * Returns Set Accessibility
+     *
+     * @return \FedEx\ShipService\SimpleType\DangerousGoodsAccessibilityType|string
+     */
+    public function getAccessibility()
+    {
+        return $this->Accessibility;
+    }
+    
+    /**
      * When true indicates that the package can be transported only on a cargo aircraft.
      *
      * @param boolean $cargoAircraftOnly
-     * return CompletedHazardousPackageDetail
+     * @return CompletedHazardousPackageDetail
      */
     public function setCargoAircraftOnly($cargoAircraftOnly)
     {
@@ -58,10 +78,20 @@ class CompletedHazardousPackageDetail
     }
     
     /**
+     * Returns When true indicates that the package can be transported only on a cargo aircraft.
+     *
+     * @return boolean
+     */
+    public function getCargoAircraftOnly()
+    {
+        return $this->CargoAircraftOnly;
+    }
+    
+    /**
      * Specifies the maximum radiation level from the package (measured in microSieverts per hour at a distance of one meter from the external surface of the package, divided by 10).
      *
      * @param decimal $radioactiveTransportIndex
-     * return CompletedHazardousPackageDetail
+     * @return CompletedHazardousPackageDetail
      */
     public function setRadioactiveTransportIndex($radioactiveTransportIndex)
     {
@@ -70,10 +100,20 @@ class CompletedHazardousPackageDetail
     }
     
     /**
+     * Returns Specifies the maximum radiation level from the package (measured in microSieverts per hour at a distance of one meter from the external surface of the package, divided by 10).
+     *
+     * @return decimal
+     */
+    public function getRadioactiveTransportIndex()
+    {
+        return $this->RadioactiveTransportIndex;
+    }
+    
+    /**
      * Specifies the label that is to be put on a package containing radioactive material. The label type is determined in accordance with the Transportation of Dangerous Goods Act and indicates the type of radioactive material being handled as well as the relative risk.
      *
      * @param \FedEx\ShipService\SimpleType\RadioactiveLabelType|string $labelType
-     * return CompletedHazardousPackageDetail
+     * @return CompletedHazardousPackageDetail
      */
     public function setLabelType($labelType)
     {
@@ -82,15 +122,35 @@ class CompletedHazardousPackageDetail
     }
     
     /**
+     * Returns Specifies the label that is to be put on a package containing radioactive material. The label type is determined in accordance with the Transportation of Dangerous Goods Act and indicates the type of radioactive material being handled as well as the relative risk.
+     *
+     * @return \FedEx\ShipService\SimpleType\RadioactiveLabelType|string
+     */
+    public function getLabelType()
+    {
+        return $this->LabelType;
+    }
+    
+    /**
      * Documents the kinds and quantities of all hazardous commodities in the current package.
      *
      * @param ValidatedHazardousContainer[] $containers
-     * return CompletedHazardousPackageDetail
+     * @return CompletedHazardousPackageDetail
      */
     public function setContainers(array $containers)
     {
         $this->Containers = $containers;
         return $this;
+    }
+    
+    /**
+     * Returns Documents the kinds and quantities of all hazardous commodities in the current package.
+     *
+     * @return ValidatedHazardousContainer[]
+     */
+    public function getContainers()
+    {
+        return $this->Containers;
     }
     
 

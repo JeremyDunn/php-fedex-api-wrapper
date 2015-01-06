@@ -25,7 +25,7 @@ class RecipientCustomsId
      * Specifies the kind of identification being used.
      *
      * @param \FedEx\RateService\SimpleType\RecipientCustomsIdType|string $type
-     * return RecipientCustomsId
+     * @return RecipientCustomsId
      */
     public function setType($type)
     {
@@ -34,15 +34,35 @@ class RecipientCustomsId
     }
     
     /**
+     * Returns Specifies the kind of identification being used.
+     *
+     * @return \FedEx\RateService\SimpleType\RecipientCustomsIdType|string
+     */
+    public function getType()
+    {
+        return $this->Type;
+    }
+    
+    /**
      * Contains the actual ID value, of the type specified above.
      *
      * @param string $value
-     * return RecipientCustomsId
+     * @return RecipientCustomsId
      */
     public function setValue($value)
     {
         $this->Value = $value;
         return $this;
+    }
+    
+    /**
+     * Returns Contains the actual ID value, of the type specified above.
+     *
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->Value;
     }
     
 

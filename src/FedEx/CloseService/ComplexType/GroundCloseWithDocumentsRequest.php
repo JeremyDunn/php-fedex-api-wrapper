@@ -25,7 +25,7 @@ class GroundCloseWithDocumentsRequest
      * The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
      * @param WebAuthenticationDetail $webAuthenticationDetail
-     * return GroundCloseWithDocumentsRequest
+     * @return GroundCloseWithDocumentsRequest
      */
     public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
     {
@@ -34,10 +34,20 @@ class GroundCloseWithDocumentsRequest
     }
     
     /**
+     * Returns The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
+     *
+     * @return WebAuthenticationDetail
+     */
+    public function getWebAuthenticationDetail()
+    {
+        return $this->WebAuthenticationDetail;
+    }
+    
+    /**
      * Descriptive data identifying the client submitting the transaction.
      *
      * @param ClientDetail $clientDetail
-     * return GroundCloseWithDocumentsRequest
+     * @return GroundCloseWithDocumentsRequest
      */
     public function setClientDetail(ClientDetail $clientDetail)
     {
@@ -46,10 +56,20 @@ class GroundCloseWithDocumentsRequest
     }
     
     /**
+     * Returns Descriptive data identifying the client submitting the transaction.
+     *
+     * @return ClientDetail
+     */
+    public function getClientDetail()
+    {
+        return $this->ClientDetail;
+    }
+    
+    /**
      * Descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
      * @param TransactionDetail $transactionDetail
-     * return GroundCloseWithDocumentsRequest
+     * @return GroundCloseWithDocumentsRequest
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
@@ -58,10 +78,20 @@ class GroundCloseWithDocumentsRequest
     }
     
     /**
+     * Returns Descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
+     *
+     * @return TransactionDetail
+     */
+    public function getTransactionDetail()
+    {
+        return $this->TransactionDetail;
+    }
+    
+    /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
      * @param VersionId $version
-     * return GroundCloseWithDocumentsRequest
+     * @return GroundCloseWithDocumentsRequest
      */
     public function setVersion(VersionId $version)
     {
@@ -70,10 +100,20 @@ class GroundCloseWithDocumentsRequest
     }
     
     /**
+     * Returns Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
+     *
+     * @return VersionId
+     */
+    public function getVersion()
+    {
+        return $this->Version;
+    }
+    
+    /**
      * Date on which shipments were closed.
      *
      * @param date $closeDate
-     * return GroundCloseWithDocumentsRequest
+     * @return GroundCloseWithDocumentsRequest
      */
     public function setCloseDate($closeDate)
     {
@@ -82,15 +122,35 @@ class GroundCloseWithDocumentsRequest
     }
     
     /**
+     * Returns Date on which shipments were closed.
+     *
+     * @return date
+     */
+    public function getCloseDate()
+    {
+        return $this->CloseDate;
+    }
+    
+    /**
      * Specifies characteristics of document(s) to be returned for this request.
      *
      * @param CloseDocumentSpecification $closeDocumentSpecification
-     * return GroundCloseWithDocumentsRequest
+     * @return GroundCloseWithDocumentsRequest
      */
     public function setCloseDocumentSpecification(CloseDocumentSpecification $closeDocumentSpecification)
     {
         $this->CloseDocumentSpecification = $closeDocumentSpecification;
         return $this;
+    }
+    
+    /**
+     * Returns Specifies characteristics of document(s) to be returned for this request.
+     *
+     * @return CloseDocumentSpecification
+     */
+    public function getCloseDocumentSpecification()
+    {
+        return $this->CloseDocumentSpecification;
     }
     
 

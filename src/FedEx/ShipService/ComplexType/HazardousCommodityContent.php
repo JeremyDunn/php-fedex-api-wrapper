@@ -25,7 +25,7 @@ class HazardousCommodityContent
      * Identifies and describes an individual hazardous commodity.
      *
      * @param HazardousCommodityDescription $description
-     * return HazardousCommodityContent
+     * @return HazardousCommodityContent
      */
     public function setDescription(HazardousCommodityDescription $description)
     {
@@ -34,10 +34,20 @@ class HazardousCommodityContent
     }
     
     /**
+     * Returns Identifies and describes an individual hazardous commodity.
+     *
+     * @return HazardousCommodityDescription
+     */
+    public function getDescription()
+    {
+        return $this->Description;
+    }
+    
+    /**
      * Specifies the amount of the commodity in alternate units.
      *
      * @param HazardousCommodityQuantityDetail $quantity
-     * return HazardousCommodityContent
+     * @return HazardousCommodityContent
      */
     public function setQuantity(HazardousCommodityQuantityDetail $quantity)
     {
@@ -46,10 +56,20 @@ class HazardousCommodityContent
     }
     
     /**
+     * Returns Specifies the amount of the commodity in alternate units.
+     *
+     * @return HazardousCommodityQuantityDetail
+     */
+    public function getQuantity()
+    {
+        return $this->Quantity;
+    }
+    
+    /**
      * Customer-provided specifications for handling individual commodities.
      *
      * @param HazardousCommodityOptionDetail $options
-     * return HazardousCommodityContent
+     * @return HazardousCommodityContent
      */
     public function setOptions(HazardousCommodityOptionDetail $options)
     {
@@ -58,15 +78,35 @@ class HazardousCommodityContent
     }
     
     /**
+     * Returns Customer-provided specifications for handling individual commodities.
+     *
+     * @return HazardousCommodityOptionDetail
+     */
+    public function getOptions()
+    {
+        return $this->Options;
+    }
+    
+    /**
      * Specifies the details of any radio active materials within the commodity.
      *
      * @param RadionuclideDetail $radionuclideDetail
-     * return HazardousCommodityContent
+     * @return HazardousCommodityContent
      */
     public function setRadionuclideDetail(RadionuclideDetail $radionuclideDetail)
     {
         $this->RadionuclideDetail = $radionuclideDetail;
         return $this;
+    }
+    
+    /**
+     * Returns Specifies the details of any radio active materials within the commodity.
+     *
+     * @return RadionuclideDetail
+     */
+    public function getRadionuclideDetail()
+    {
+        return $this->RadionuclideDetail;
     }
     
 

@@ -25,7 +25,7 @@ class Localization
      * Identifies the language to use for human-readable messages.
      *
      * @param string $languageCode
-     * return Localization
+     * @return Localization
      */
     public function setLanguageCode($languageCode)
     {
@@ -34,15 +34,35 @@ class Localization
     }
     
     /**
+     * Returns Identifies the language to use for human-readable messages.
+     *
+     * @return string
+     */
+    public function getLanguageCode()
+    {
+        return $this->LanguageCode;
+    }
+    
+    /**
      * Identifies the locale (i.e. country code) associated with the language.
      *
      * @param string $localeCode
-     * return Localization
+     * @return Localization
      */
     public function setLocaleCode($localeCode)
     {
         $this->LocaleCode = $localeCode;
         return $this;
+    }
+    
+    /**
+     * Returns Identifies the locale (i.e. country code) associated with the language.
+     *
+     * @return string
+     */
+    public function getLocaleCode()
+    {
+        return $this->LocaleCode;
     }
     
 

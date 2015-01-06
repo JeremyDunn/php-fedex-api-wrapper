@@ -25,12 +25,22 @@ class FlatbedTrailerDetail
      * Set Options
      *
      * @param FlatbedTrailerOption[] $options
-     * return FlatbedTrailerDetail
+     * @return FlatbedTrailerDetail
      */
     public function setOptions(array $options)
     {
         $this->Options = $options;
         return $this;
+    }
+    
+    /**
+     * Returns Set Options
+     *
+     * @return FlatbedTrailerOption[]
+     */
+    public function getOptions()
+    {
+        return $this->Options;
     }
     
 

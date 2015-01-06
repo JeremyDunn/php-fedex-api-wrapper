@@ -25,7 +25,7 @@ class RequestedPackageLineItem
      * Used only with INDIVIDUAL_PACKAGE, as a unique identifier of each requested package.
      *
      * @param positiveInteger $sequenceNumber
-     * return RequestedPackageLineItem
+     * @return RequestedPackageLineItem
      */
     public function setSequenceNumber($sequenceNumber)
     {
@@ -34,10 +34,20 @@ class RequestedPackageLineItem
     }
     
     /**
+     * Returns Used only with INDIVIDUAL_PACKAGE, as a unique identifier of each requested package.
+     *
+     * @return positiveInteger
+     */
+    public function getSequenceNumber()
+    {
+        return $this->SequenceNumber;
+    }
+    
+    /**
      * Used only with PACKAGE_GROUPS, as a unique identifier of each group of identical packages.
      *
      * @param nonNegativeInteger $groupNumber
-     * return RequestedPackageLineItem
+     * @return RequestedPackageLineItem
      */
     public function setGroupNumber($groupNumber)
     {
@@ -46,10 +56,20 @@ class RequestedPackageLineItem
     }
     
     /**
+     * Returns Used only with PACKAGE_GROUPS, as a unique identifier of each group of identical packages.
+     *
+     * @return nonNegativeInteger
+     */
+    public function getGroupNumber()
+    {
+        return $this->GroupNumber;
+    }
+    
+    /**
      * Used only with PACKAGE_GROUPS, as a count of packages within a group of identical packages.
      *
      * @param nonNegativeInteger $groupPackageCount
-     * return RequestedPackageLineItem
+     * @return RequestedPackageLineItem
      */
     public function setGroupPackageCount($groupPackageCount)
     {
@@ -58,10 +78,20 @@ class RequestedPackageLineItem
     }
     
     /**
+     * Returns Used only with PACKAGE_GROUPS, as a count of packages within a group of identical packages.
+     *
+     * @return nonNegativeInteger
+     */
+    public function getGroupPackageCount()
+    {
+        return $this->GroupPackageCount;
+    }
+    
+    /**
      * Set VariableHandlingChargeDetail
      *
      * @param VariableHandlingChargeDetail $variableHandlingChargeDetail
-     * return RequestedPackageLineItem
+     * @return RequestedPackageLineItem
      */
     public function setVariableHandlingChargeDetail(VariableHandlingChargeDetail $variableHandlingChargeDetail)
     {
@@ -70,10 +100,20 @@ class RequestedPackageLineItem
     }
     
     /**
+     * Returns Set VariableHandlingChargeDetail
+     *
+     * @return VariableHandlingChargeDetail
+     */
+    public function getVariableHandlingChargeDetail()
+    {
+        return $this->VariableHandlingChargeDetail;
+    }
+    
+    /**
      * Only used for INDIVIDUAL_PACKAGES and PACKAGE_GROUPS. Ignored for PACKAGE_SUMMARY, in which case totalInsuredValue and packageCount on the shipment will be used to determine this value.
      *
      * @param Money $insuredValue
-     * return RequestedPackageLineItem
+     * @return RequestedPackageLineItem
      */
     public function setInsuredValue(Money $insuredValue)
     {
@@ -82,10 +122,20 @@ class RequestedPackageLineItem
     }
     
     /**
+     * Returns Only used for INDIVIDUAL_PACKAGES and PACKAGE_GROUPS. Ignored for PACKAGE_SUMMARY, in which case totalInsuredValue and packageCount on the shipment will be used to determine this value.
+     *
+     * @return Money
+     */
+    public function getInsuredValue()
+    {
+        return $this->InsuredValue;
+    }
+    
+    /**
      * Only used for INDIVIDUAL_PACKAGES and PACKAGE_GROUPS. Ignored for PACKAGE_SUMMARY, in which case totalweight and packageCount on the shipment will be used to determine this value.
      *
      * @param Weight $weight
-     * return RequestedPackageLineItem
+     * @return RequestedPackageLineItem
      */
     public function setWeight(Weight $weight)
     {
@@ -94,10 +144,20 @@ class RequestedPackageLineItem
     }
     
     /**
+     * Returns Only used for INDIVIDUAL_PACKAGES and PACKAGE_GROUPS. Ignored for PACKAGE_SUMMARY, in which case totalweight and packageCount on the shipment will be used to determine this value.
+     *
+     * @return Weight
+     */
+    public function getWeight()
+    {
+        return $this->Weight;
+    }
+    
+    /**
      * Set Dimensions
      *
      * @param Dimensions $dimensions
-     * return RequestedPackageLineItem
+     * @return RequestedPackageLineItem
      */
     public function setDimensions(Dimensions $dimensions)
     {
@@ -106,10 +166,20 @@ class RequestedPackageLineItem
     }
     
     /**
+     * Returns Set Dimensions
+     *
+     * @return Dimensions
+     */
+    public function getDimensions()
+    {
+        return $this->Dimensions;
+    }
+    
+    /**
      * Provides additional detail on how the customer has physically packaged this item. As of June 2009, required for packages moving under international and SmartPost services.
      *
      * @param \FedEx\RateService\SimpleType\PhysicalPackagingType|string $physicalPackaging
-     * return RequestedPackageLineItem
+     * @return RequestedPackageLineItem
      */
     public function setPhysicalPackaging($physicalPackaging)
     {
@@ -118,10 +188,20 @@ class RequestedPackageLineItem
     }
     
     /**
+     * Returns Provides additional detail on how the customer has physically packaged this item. As of June 2009, required for packages moving under international and SmartPost services.
+     *
+     * @return \FedEx\RateService\SimpleType\PhysicalPackagingType|string
+     */
+    public function getPhysicalPackaging()
+    {
+        return $this->PhysicalPackaging;
+    }
+    
+    /**
      * Human-readable text describing the package.
      *
      * @param string $itemDescription
-     * return RequestedPackageLineItem
+     * @return RequestedPackageLineItem
      */
     public function setItemDescription($itemDescription)
     {
@@ -130,10 +210,20 @@ class RequestedPackageLineItem
     }
     
     /**
+     * Returns Human-readable text describing the package.
+     *
+     * @return string
+     */
+    public function getItemDescription()
+    {
+        return $this->ItemDescription;
+    }
+    
+    /**
      * Set CustomerReferences
      *
      * @param CustomerReference[] $customerReferences
-     * return RequestedPackageLineItem
+     * @return RequestedPackageLineItem
      */
     public function setCustomerReferences(array $customerReferences)
     {
@@ -142,10 +232,20 @@ class RequestedPackageLineItem
     }
     
     /**
+     * Returns Set CustomerReferences
+     *
+     * @return CustomerReference[]
+     */
+    public function getCustomerReferences()
+    {
+        return $this->CustomerReferences;
+    }
+    
+    /**
      * Set SpecialServicesRequested
      *
      * @param PackageSpecialServicesRequested $specialServicesRequested
-     * return RequestedPackageLineItem
+     * @return RequestedPackageLineItem
      */
     public function setSpecialServicesRequested(PackageSpecialServicesRequested $specialServicesRequested)
     {
@@ -154,15 +254,35 @@ class RequestedPackageLineItem
     }
     
     /**
+     * Returns Set SpecialServicesRequested
+     *
+     * @return PackageSpecialServicesRequested
+     */
+    public function getSpecialServicesRequested()
+    {
+        return $this->SpecialServicesRequested;
+    }
+    
+    /**
      * Only used for INDIVIDUAL_PACKAGES and PACKAGE_GROUPS.
      *
      * @param ContentRecord[] $contentRecords
-     * return RequestedPackageLineItem
+     * @return RequestedPackageLineItem
      */
     public function setContentRecords(array $contentRecords)
     {
         $this->ContentRecords = $contentRecords;
         return $this;
+    }
+    
+    /**
+     * Returns Only used for INDIVIDUAL_PACKAGES and PACKAGE_GROUPS.
+     *
+     * @return ContentRecord[]
+     */
+    public function getContentRecords()
+    {
+        return $this->ContentRecords;
     }
     
 

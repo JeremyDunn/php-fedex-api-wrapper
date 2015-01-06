@@ -25,12 +25,22 @@ class ShippingDocumentPrintDetail
      * Provides environment-specific printer identification.
      *
      * @param string $printerId
-     * return ShippingDocumentPrintDetail
+     * @return ShippingDocumentPrintDetail
      */
     public function setPrinterId($printerId)
     {
         $this->PrinterId = $printerId;
         return $this;
+    }
+    
+    /**
+     * Returns Provides environment-specific printer identification.
+     *
+     * @return string
+     */
+    public function getPrinterId()
+    {
+        return $this->PrinterId;
     }
     
 

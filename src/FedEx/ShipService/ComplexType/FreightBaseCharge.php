@@ -25,7 +25,7 @@ class FreightBaseCharge
      * Freight class for this line item.
      *
      * @param \FedEx\ShipService\SimpleType\FreightClassType|string $freightClass
-     * return FreightBaseCharge
+     * @return FreightBaseCharge
      */
     public function setFreightClass($freightClass)
     {
@@ -34,10 +34,20 @@ class FreightBaseCharge
     }
     
     /**
+     * Returns Freight class for this line item.
+     *
+     * @return \FedEx\ShipService\SimpleType\FreightClassType|string
+     */
+    public function getFreightClass()
+    {
+        return $this->FreightClass;
+    }
+    
+    /**
      * Effective freight class used for rating this line item.
      *
      * @param \FedEx\ShipService\SimpleType\FreightClassType|string $ratedAsClass
-     * return FreightBaseCharge
+     * @return FreightBaseCharge
      */
     public function setRatedAsClass($ratedAsClass)
     {
@@ -46,10 +56,20 @@ class FreightBaseCharge
     }
     
     /**
+     * Returns Effective freight class used for rating this line item.
+     *
+     * @return \FedEx\ShipService\SimpleType\FreightClassType|string
+     */
+    public function getRatedAsClass()
+    {
+        return $this->RatedAsClass;
+    }
+    
+    /**
      * NMFC Code for commodity.
      *
      * @param string $nmfcCode
-     * return FreightBaseCharge
+     * @return FreightBaseCharge
      */
     public function setNmfcCode($nmfcCode)
     {
@@ -58,10 +78,20 @@ class FreightBaseCharge
     }
     
     /**
+     * Returns NMFC Code for commodity.
+     *
+     * @return string
+     */
+    public function getNmfcCode()
+    {
+        return $this->NmfcCode;
+    }
+    
+    /**
      * Customer-provided description for this commodity or class line.
      *
      * @param string $description
-     * return FreightBaseCharge
+     * @return FreightBaseCharge
      */
     public function setDescription($description)
     {
@@ -70,10 +100,20 @@ class FreightBaseCharge
     }
     
     /**
+     * Returns Customer-provided description for this commodity or class line.
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->Description;
+    }
+    
+    /**
      * Weight for this commodity or class line.
      *
      * @param Weight $weight
-     * return FreightBaseCharge
+     * @return FreightBaseCharge
      */
     public function setWeight(Weight $weight)
     {
@@ -82,10 +122,20 @@ class FreightBaseCharge
     }
     
     /**
+     * Returns Weight for this commodity or class line.
+     *
+     * @return Weight
+     */
+    public function getWeight()
+    {
+        return $this->Weight;
+    }
+    
+    /**
      * Rate or factor applied to this line item.
      *
      * @param Money $chargeRate
-     * return FreightBaseCharge
+     * @return FreightBaseCharge
      */
     public function setChargeRate(Money $chargeRate)
     {
@@ -94,10 +144,20 @@ class FreightBaseCharge
     }
     
     /**
+     * Returns Rate or factor applied to this line item.
+     *
+     * @return Money
+     */
+    public function getChargeRate()
+    {
+        return $this->ChargeRate;
+    }
+    
+    /**
      * Identifies the manner in which the chargeRate for this line item was applied.
      *
      * @param \FedEx\ShipService\SimpleType\FreightChargeBasisType|string $chargeBasis
-     * return FreightBaseCharge
+     * @return FreightBaseCharge
      */
     public function setChargeBasis($chargeBasis)
     {
@@ -106,15 +166,35 @@ class FreightBaseCharge
     }
     
     /**
+     * Returns Identifies the manner in which the chargeRate for this line item was applied.
+     *
+     * @return \FedEx\ShipService\SimpleType\FreightChargeBasisType|string
+     */
+    public function getChargeBasis()
+    {
+        return $this->ChargeBasis;
+    }
+    
+    /**
      * The net or extended charge for this line item.
      *
      * @param Money $extendedAmount
-     * return FreightBaseCharge
+     * @return FreightBaseCharge
      */
     public function setExtendedAmount(Money $extendedAmount)
     {
         $this->ExtendedAmount = $extendedAmount;
         return $this;
+    }
+    
+    /**
+     * Returns The net or extended charge for this line item.
+     *
+     * @return Money
+     */
+    public function getExtendedAmount()
+    {
+        return $this->ExtendedAmount;
     }
     
 

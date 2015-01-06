@@ -25,7 +25,7 @@ class EMailLabelDetail
      * Email address to send the URL to.
      *
      * @param string $notificationEMailAddress
-     * return EMailLabelDetail
+     * @return EMailLabelDetail
      */
     public function setNotificationEMailAddress($notificationEMailAddress)
     {
@@ -34,15 +34,35 @@ class EMailLabelDetail
     }
     
     /**
+     * Returns Email address to send the URL to.
+     *
+     * @return string
+     */
+    public function getNotificationEMailAddress()
+    {
+        return $this->NotificationEMailAddress;
+    }
+    
+    /**
      * A message to be inserted into the email.
      *
      * @param string $notificationMessage
-     * return EMailLabelDetail
+     * @return EMailLabelDetail
      */
     public function setNotificationMessage($notificationMessage)
     {
         $this->NotificationMessage = $notificationMessage;
         return $this;
+    }
+    
+    /**
+     * Returns A message to be inserted into the email.
+     *
+     * @return string
+     */
+    public function getNotificationMessage()
+    {
+        return $this->NotificationMessage;
     }
     
 

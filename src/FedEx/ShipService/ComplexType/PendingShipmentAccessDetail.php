@@ -25,7 +25,7 @@ class PendingShipmentAccessDetail
      * Only for pending shipment type of "EMAIL"
      *
      * @param string $emailLabelUrl
-     * return PendingShipmentAccessDetail
+     * @return PendingShipmentAccessDetail
      */
     public function setEmailLabelUrl($emailLabelUrl)
     {
@@ -34,10 +34,20 @@ class PendingShipmentAccessDetail
     }
     
     /**
+     * Returns Only for pending shipment type of "EMAIL"
+     *
+     * @return string
+     */
+    public function getEmailLabelUrl()
+    {
+        return $this->EmailLabelUrl;
+    }
+    
+    /**
      * Only for pending shipment type of "EMAIL"
      *
      * @param string $userId
-     * return PendingShipmentAccessDetail
+     * @return PendingShipmentAccessDetail
      */
     public function setUserId($userId)
     {
@@ -46,10 +56,20 @@ class PendingShipmentAccessDetail
     }
     
     /**
+     * Returns Only for pending shipment type of "EMAIL"
+     *
+     * @return string
+     */
+    public function getUserId()
+    {
+        return $this->UserId;
+    }
+    
+    /**
      * Only for pending shipment type of "EMAIL"
      *
      * @param string $password
-     * return PendingShipmentAccessDetail
+     * @return PendingShipmentAccessDetail
      */
     public function setPassword($password)
     {
@@ -58,15 +78,35 @@ class PendingShipmentAccessDetail
     }
     
     /**
+     * Returns Only for pending shipment type of "EMAIL"
+     *
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->Password;
+    }
+    
+    /**
      * This element is currently not supported and is for the future use.
      *
      * @param dateTime $expirationTimestamp
-     * return PendingShipmentAccessDetail
+     * @return PendingShipmentAccessDetail
      */
     public function setExpirationTimestamp($expirationTimestamp)
     {
         $this->ExpirationTimestamp = $expirationTimestamp;
         return $this;
+    }
+    
+    /**
+     * Returns This element is currently not supported and is for the future use.
+     *
+     * @return dateTime
+     */
+    public function getExpirationTimestamp()
+    {
+        return $this->ExpirationTimestamp;
     }
     
 

@@ -25,7 +25,7 @@ class SmartPostCloseRequest
      * The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
      * @param WebAuthenticationDetail $webAuthenticationDetail
-     * return SmartPostCloseRequest
+     * @return SmartPostCloseRequest
      */
     public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
     {
@@ -34,10 +34,20 @@ class SmartPostCloseRequest
     }
     
     /**
+     * Returns The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
+     *
+     * @return WebAuthenticationDetail
+     */
+    public function getWebAuthenticationDetail()
+    {
+        return $this->WebAuthenticationDetail;
+    }
+    
+    /**
      * Set ClientDetail
      *
      * @param ClientDetail $clientDetail
-     * return SmartPostCloseRequest
+     * @return SmartPostCloseRequest
      */
     public function setClientDetail(ClientDetail $clientDetail)
     {
@@ -46,10 +56,20 @@ class SmartPostCloseRequest
     }
     
     /**
+     * Returns Set ClientDetail
+     *
+     * @return ClientDetail
+     */
+    public function getClientDetail()
+    {
+        return $this->ClientDetail;
+    }
+    
+    /**
      * Set TransactionDetail
      *
      * @param TransactionDetail $transactionDetail
-     * return SmartPostCloseRequest
+     * @return SmartPostCloseRequest
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
@@ -58,10 +78,20 @@ class SmartPostCloseRequest
     }
     
     /**
+     * Returns Set TransactionDetail
+     *
+     * @return TransactionDetail
+     */
+    public function getTransactionDetail()
+    {
+        return $this->TransactionDetail;
+    }
+    
+    /**
      * Set Version
      *
      * @param VersionId $version
-     * return SmartPostCloseRequest
+     * @return SmartPostCloseRequest
      */
     public function setVersion(VersionId $version)
     {
@@ -70,10 +100,20 @@ class SmartPostCloseRequest
     }
     
     /**
+     * Returns Set Version
+     *
+     * @return VersionId
+     */
+    public function getVersion()
+    {
+        return $this->Version;
+    }
+    
+    /**
      * Set HubId
      *
      * @param string $hubId
-     * return SmartPostCloseRequest
+     * @return SmartPostCloseRequest
      */
     public function setHubId($hubId)
     {
@@ -82,10 +122,20 @@ class SmartPostCloseRequest
     }
     
     /**
+     * Returns Set HubId
+     *
+     * @return string
+     */
+    public function getHubId()
+    {
+        return $this->HubId;
+    }
+    
+    /**
      * Set CustomerManifestId
      *
      * @param string $customerManifestId
-     * return SmartPostCloseRequest
+     * @return SmartPostCloseRequest
      */
     public function setCustomerManifestId($customerManifestId)
     {
@@ -94,10 +144,20 @@ class SmartPostCloseRequest
     }
     
     /**
+     * Returns Set CustomerManifestId
+     *
+     * @return string
+     */
+    public function getCustomerManifestId()
+    {
+        return $this->CustomerManifestId;
+    }
+    
+    /**
      * Set DestinationCountryCode
      *
      * @param string $destinationCountryCode
-     * return SmartPostCloseRequest
+     * @return SmartPostCloseRequest
      */
     public function setDestinationCountryCode($destinationCountryCode)
     {
@@ -106,15 +166,35 @@ class SmartPostCloseRequest
     }
     
     /**
+     * Returns Set DestinationCountryCode
+     *
+     * @return string
+     */
+    public function getDestinationCountryCode()
+    {
+        return $this->DestinationCountryCode;
+    }
+    
+    /**
      * Set PickUpCarrier
      *
      * @param \FedEx\CloseService\SimpleType\CarrierCodeType|string $pickUpCarrier
-     * return SmartPostCloseRequest
+     * @return SmartPostCloseRequest
      */
     public function setPickUpCarrier($pickUpCarrier)
     {
         $this->PickUpCarrier = $pickUpCarrier;
         return $this;
+    }
+    
+    /**
+     * Returns Set PickUpCarrier
+     *
+     * @return \FedEx\CloseService\SimpleType\CarrierCodeType|string
+     */
+    public function getPickUpCarrier()
+    {
+        return $this->PickUpCarrier;
     }
     
 

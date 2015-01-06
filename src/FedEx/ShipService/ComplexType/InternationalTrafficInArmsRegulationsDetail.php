@@ -25,12 +25,22 @@ class InternationalTrafficInArmsRegulationsDetail
      * Set LicenseOrExemptionNumber
      *
      * @param string $licenseOrExemptionNumber
-     * return InternationalTrafficInArmsRegulationsDetail
+     * @return InternationalTrafficInArmsRegulationsDetail
      */
     public function setLicenseOrExemptionNumber($licenseOrExemptionNumber)
     {
         $this->LicenseOrExemptionNumber = $licenseOrExemptionNumber;
         return $this;
+    }
+    
+    /**
+     * Returns Set LicenseOrExemptionNumber
+     *
+     * @return string
+     */
+    public function getLicenseOrExemptionNumber()
+    {
+        return $this->LicenseOrExemptionNumber;
     }
     
 

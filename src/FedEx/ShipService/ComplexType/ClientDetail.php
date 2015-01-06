@@ -25,7 +25,7 @@ class ClientDetail
      * The FedEx account number associated with this transaction.
      *
      * @param string $accountNumber
-     * return ClientDetail
+     * @return ClientDetail
      */
     public function setAccountNumber($accountNumber)
     {
@@ -34,10 +34,20 @@ class ClientDetail
     }
     
     /**
+     * Returns The FedEx account number associated with this transaction.
+     *
+     * @return string
+     */
+    public function getAccountNumber()
+    {
+        return $this->AccountNumber;
+    }
+    
+    /**
      * This number is assigned by FedEx and identifies the unique device from which the request is originating
      *
      * @param string $meterNumber
-     * return ClientDetail
+     * @return ClientDetail
      */
     public function setMeterNumber($meterNumber)
     {
@@ -46,10 +56,20 @@ class ClientDetail
     }
     
     /**
+     * Returns This number is assigned by FedEx and identifies the unique device from which the request is originating
+     *
+     * @return string
+     */
+    public function getMeterNumber()
+    {
+        return $this->MeterNumber;
+    }
+    
+    /**
      * Only used in transactions which require identification of the Fed Ex Office integrator.
      *
      * @param string $integratorId
-     * return ClientDetail
+     * @return ClientDetail
      */
     public function setIntegratorId($integratorId)
     {
@@ -58,15 +78,35 @@ class ClientDetail
     }
     
     /**
+     * Returns Only used in transactions which require identification of the Fed Ex Office integrator.
+     *
+     * @return string
+     */
+    public function getIntegratorId()
+    {
+        return $this->IntegratorId;
+    }
+    
+    /**
      * The language to be used for human-readable Notification.localizedMessages in responses to the request containing this ClientDetail object. Different requests from the same client may contain different Localization data. (Contrast with TransactionDetail.localization, which governs data payload language/translation.)
      *
      * @param Localization $localization
-     * return ClientDetail
+     * @return ClientDetail
      */
     public function setLocalization(Localization $localization)
     {
         $this->Localization = $localization;
         return $this;
+    }
+    
+    /**
+     * Returns The language to be used for human-readable Notification.localizedMessages in responses to the request containing this ClientDetail object. Different requests from the same client may contain different Localization data. (Contrast with TransactionDetail.localization, which governs data payload language/translation.)
+     *
+     * @return Localization
+     */
+    public function getLocalization()
+    {
+        return $this->Localization;
     }
     
 

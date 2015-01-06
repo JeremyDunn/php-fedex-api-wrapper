@@ -25,7 +25,7 @@ class CompletedTagDetail
      * .
      *
      * @param string $confirmationNumber
-     * return CompletedTagDetail
+     * @return CompletedTagDetail
      */
     public function setConfirmationNumber($confirmationNumber)
     {
@@ -34,10 +34,20 @@ class CompletedTagDetail
     }
     
     /**
+     * Returns .
+     *
+     * @return string
+     */
+    public function getConfirmationNumber()
+    {
+        return $this->ConfirmationNumber;
+    }
+    
+    /**
      * As of June 2007, returned only for FedEx Express services.
      *
      * @param duration $accessTime
-     * return CompletedTagDetail
+     * @return CompletedTagDetail
      */
     public function setAccessTime(duration $accessTime)
     {
@@ -46,10 +56,20 @@ class CompletedTagDetail
     }
     
     /**
+     * Returns As of June 2007, returned only for FedEx Express services.
+     *
+     * @return duration
+     */
+    public function getAccessTime()
+    {
+        return $this->AccessTime;
+    }
+    
+    /**
      * As of June 2007, returned only for FedEx Express services.
      *
      * @param time $cutoffTime
-     * return CompletedTagDetail
+     * @return CompletedTagDetail
      */
     public function setCutoffTime(time $cutoffTime)
     {
@@ -58,10 +78,20 @@ class CompletedTagDetail
     }
     
     /**
+     * Returns As of June 2007, returned only for FedEx Express services.
+     *
+     * @return time
+     */
+    public function getCutoffTime()
+    {
+        return $this->CutoffTime;
+    }
+    
+    /**
      * As of June 2007, returned only for FedEx Express services.
      *
      * @param string $location
-     * return CompletedTagDetail
+     * @return CompletedTagDetail
      */
     public function setLocation($location)
     {
@@ -70,10 +100,20 @@ class CompletedTagDetail
     }
     
     /**
+     * Returns As of June 2007, returned only for FedEx Express services.
+     *
+     * @return string
+     */
+    public function getLocation()
+    {
+        return $this->Location;
+    }
+    
+    /**
      * As of June 2007, returned only for FedEx Express services.
      *
      * @param dateTime $deliveryCommitment
-     * return CompletedTagDetail
+     * @return CompletedTagDetail
      */
     public function setDeliveryCommitment($deliveryCommitment)
     {
@@ -82,15 +122,35 @@ class CompletedTagDetail
     }
     
     /**
+     * Returns As of June 2007, returned only for FedEx Express services.
+     *
+     * @return dateTime
+     */
+    public function getDeliveryCommitment()
+    {
+        return $this->DeliveryCommitment;
+    }
+    
+    /**
      * FEDEX INTERNAL USE ONLY: for use by INET.
      *
      * @param date $dispatchDate
-     * return CompletedTagDetail
+     * @return CompletedTagDetail
      */
     public function setDispatchDate($dispatchDate)
     {
         $this->DispatchDate = $dispatchDate;
         return $this;
+    }
+    
+    /**
+     * Returns FEDEX INTERNAL USE ONLY: for use by INET.
+     *
+     * @return date
+     */
+    public function getDispatchDate()
+    {
+        return $this->DispatchDate;
     }
     
 

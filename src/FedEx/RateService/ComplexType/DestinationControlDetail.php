@@ -25,7 +25,7 @@ class DestinationControlDetail
      * Set StatementTypes
      *
      * @param DestinationControlStatementType[] $statementTypes
-     * return DestinationControlDetail
+     * @return DestinationControlDetail
      */
     public function setStatementTypes(array $statementTypes)
     {
@@ -34,10 +34,20 @@ class DestinationControlDetail
     }
     
     /**
+     * Returns Set StatementTypes
+     *
+     * @return DestinationControlStatementType[]
+     */
+    public function getStatementTypes()
+    {
+        return $this->StatementTypes;
+    }
+    
+    /**
      * Comma-separated list of up to four country codes, required for DEPARTMENT_OF_STATE statement.
      *
      * @param string $destinationCountries
-     * return DestinationControlDetail
+     * @return DestinationControlDetail
      */
     public function setDestinationCountries($destinationCountries)
     {
@@ -46,15 +56,35 @@ class DestinationControlDetail
     }
     
     /**
+     * Returns Comma-separated list of up to four country codes, required for DEPARTMENT_OF_STATE statement.
+     *
+     * @return string
+     */
+    public function getDestinationCountries()
+    {
+        return $this->DestinationCountries;
+    }
+    
+    /**
      * Name of end user, required for DEPARTMENT_OF_STATE statement.
      *
      * @param string $endUser
-     * return DestinationControlDetail
+     * @return DestinationControlDetail
      */
     public function setEndUser($endUser)
     {
         $this->EndUser = $endUser;
         return $this;
+    }
+    
+    /**
+     * Returns Name of end user, required for DEPARTMENT_OF_STATE statement.
+     *
+     * @return string
+     */
+    public function getEndUser()
+    {
+        return $this->EndUser;
     }
     
 

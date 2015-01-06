@@ -25,7 +25,7 @@ class CustomLabelPosition
      * Horizontal position, relative to left edge of custom area.
      *
      * @param nonNegativeInteger $x
-     * return CustomLabelPosition
+     * @return CustomLabelPosition
      */
     public function setX($x)
     {
@@ -34,15 +34,35 @@ class CustomLabelPosition
     }
     
     /**
+     * Returns Horizontal position, relative to left edge of custom area.
+     *
+     * @return nonNegativeInteger
+     */
+    public function getX()
+    {
+        return $this->X;
+    }
+    
+    /**
      * Vertical position, relative to top edge of custom area.
      *
      * @param nonNegativeInteger $y
-     * return CustomLabelPosition
+     * @return CustomLabelPosition
      */
     public function setY($y)
     {
         $this->Y = $y;
         return $this;
+    }
+    
+    /**
+     * Returns Vertical position, relative to top edge of custom area.
+     *
+     * @return nonNegativeInteger
+     */
+    public function getY()
+    {
+        return $this->Y;
     }
     
 

@@ -25,7 +25,7 @@ class AssociatedShipmentDetail
      * Set Type
      *
      * @param \FedEx\ShipService\SimpleType\AssociatedShipmentType|string $type
-     * return AssociatedShipmentDetail
+     * @return AssociatedShipmentDetail
      */
     public function setType($type)
     {
@@ -34,10 +34,20 @@ class AssociatedShipmentDetail
     }
     
     /**
+     * Returns Set Type
+     *
+     * @return \FedEx\ShipService\SimpleType\AssociatedShipmentType|string
+     */
+    public function getType()
+    {
+        return $this->Type;
+    }
+    
+    /**
      * Set Sender
      *
      * @param Party $sender
-     * return AssociatedShipmentDetail
+     * @return AssociatedShipmentDetail
      */
     public function setSender(Party $sender)
     {
@@ -46,10 +56,20 @@ class AssociatedShipmentDetail
     }
     
     /**
+     * Returns Set Sender
+     *
+     * @return Party
+     */
+    public function getSender()
+    {
+        return $this->Sender;
+    }
+    
+    /**
      * Set Recipient
      *
      * @param Party $recipient
-     * return AssociatedShipmentDetail
+     * @return AssociatedShipmentDetail
      */
     public function setRecipient(Party $recipient)
     {
@@ -58,10 +78,20 @@ class AssociatedShipmentDetail
     }
     
     /**
+     * Returns Set Recipient
+     *
+     * @return Party
+     */
+    public function getRecipient()
+    {
+        return $this->Recipient;
+    }
+    
+    /**
      * Set ServiceType
      *
      * @param \FedEx\ShipService\SimpleType\ServiceType|string $serviceType
-     * return AssociatedShipmentDetail
+     * @return AssociatedShipmentDetail
      */
     public function setServiceType($serviceType)
     {
@@ -70,10 +100,20 @@ class AssociatedShipmentDetail
     }
     
     /**
+     * Returns Set ServiceType
+     *
+     * @return \FedEx\ShipService\SimpleType\ServiceType|string
+     */
+    public function getServiceType()
+    {
+        return $this->ServiceType;
+    }
+    
+    /**
      * Set PackagingType
      *
      * @param \FedEx\ShipService\SimpleType\PackagingType|string $packagingType
-     * return AssociatedShipmentDetail
+     * @return AssociatedShipmentDetail
      */
     public function setPackagingType($packagingType)
     {
@@ -82,10 +122,20 @@ class AssociatedShipmentDetail
     }
     
     /**
+     * Returns Set PackagingType
+     *
+     * @return \FedEx\ShipService\SimpleType\PackagingType|string
+     */
+    public function getPackagingType()
+    {
+        return $this->PackagingType;
+    }
+    
+    /**
      * Specifies the tracking id for the payment on the return.
      *
      * @param TrackingId $trackingId
-     * return AssociatedShipmentDetail
+     * @return AssociatedShipmentDetail
      */
     public function setTrackingId(TrackingId $trackingId)
     {
@@ -94,10 +144,20 @@ class AssociatedShipmentDetail
     }
     
     /**
+     * Returns Specifies the tracking id for the payment on the return.
+     *
+     * @return TrackingId
+     */
+    public function getTrackingId()
+    {
+        return $this->TrackingId;
+    }
+    
+    /**
      * Specifies additional customer reference data about the associated shipment.
      *
      * @param CustomerReference[] $customerReferences
-     * return AssociatedShipmentDetail
+     * @return AssociatedShipmentDetail
      */
     public function setCustomerReferences(array $customerReferences)
     {
@@ -106,10 +166,20 @@ class AssociatedShipmentDetail
     }
     
     /**
+     * Returns Specifies additional customer reference data about the associated shipment.
+     *
+     * @return CustomerReference[]
+     */
+    public function getCustomerReferences()
+    {
+        return $this->CustomerReferences;
+    }
+    
+    /**
      * Specifies shipment level operational information.
      *
      * @param ShipmentOperationalDetail $shipmentOperationalDetail
-     * return AssociatedShipmentDetail
+     * @return AssociatedShipmentDetail
      */
     public function setShipmentOperationalDetail(ShipmentOperationalDetail $shipmentOperationalDetail)
     {
@@ -118,10 +188,20 @@ class AssociatedShipmentDetail
     }
     
     /**
+     * Returns Specifies shipment level operational information.
+     *
+     * @return ShipmentOperationalDetail
+     */
+    public function getShipmentOperationalDetail()
+    {
+        return $this->ShipmentOperationalDetail;
+    }
+    
+    /**
      * Specifies package level operational information on the associated shipment. This information is not tied to an individual outbound package.
      *
      * @param PackageOperationalDetail $packageOperationalDetail
-     * return AssociatedShipmentDetail
+     * @return AssociatedShipmentDetail
      */
     public function setPackageOperationalDetail(PackageOperationalDetail $packageOperationalDetail)
     {
@@ -130,15 +210,35 @@ class AssociatedShipmentDetail
     }
     
     /**
+     * Returns Specifies package level operational information on the associated shipment. This information is not tied to an individual outbound package.
+     *
+     * @return PackageOperationalDetail
+     */
+    public function getPackageOperationalDetail()
+    {
+        return $this->PackageOperationalDetail;
+    }
+    
+    /**
      * Set Label
      *
      * @param ShippingDocument $label
-     * return AssociatedShipmentDetail
+     * @return AssociatedShipmentDetail
      */
     public function setLabel(ShippingDocument $label)
     {
         $this->Label = $label;
         return $this;
+    }
+    
+    /**
+     * Returns Set Label
+     *
+     * @return ShippingDocument
+     */
+    public function getLabel()
+    {
+        return $this->Label;
     }
     
 

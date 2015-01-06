@@ -25,7 +25,7 @@ class CustomLabelTextEntry
      * Set Position
      *
      * @param CustomLabelPosition $position
-     * return CustomLabelTextEntry
+     * @return CustomLabelTextEntry
      */
     public function setPosition(CustomLabelPosition $position)
     {
@@ -34,10 +34,20 @@ class CustomLabelTextEntry
     }
     
     /**
+     * Returns Set Position
+     *
+     * @return CustomLabelPosition
+     */
+    public function getPosition()
+    {
+        return $this->Position;
+    }
+    
+    /**
      * Set Format
      *
      * @param string $format
-     * return CustomLabelTextEntry
+     * @return CustomLabelTextEntry
      */
     public function setFormat($format)
     {
@@ -46,10 +56,20 @@ class CustomLabelTextEntry
     }
     
     /**
+     * Returns Set Format
+     *
+     * @return string
+     */
+    public function getFormat()
+    {
+        return $this->Format;
+    }
+    
+    /**
      * Set DataFields
      *
      * @param string[] $dataFields
-     * return CustomLabelTextEntry
+     * @return CustomLabelTextEntry
      */
     public function setDataFields(array $dataFields)
     {
@@ -58,10 +78,20 @@ class CustomLabelTextEntry
     }
     
     /**
+     * Returns Set DataFields
+     *
+     * @return string[]
+     */
+    public function getDataFields()
+    {
+        return $this->DataFields;
+    }
+    
+    /**
      * Printer-specific font name for use with thermal printer labels.
      *
      * @param string $thermalFontId
-     * return CustomLabelTextEntry
+     * @return CustomLabelTextEntry
      */
     public function setThermalFontId($thermalFontId)
     {
@@ -70,10 +100,20 @@ class CustomLabelTextEntry
     }
     
     /**
+     * Returns Printer-specific font name for use with thermal printer labels.
+     *
+     * @return string
+     */
+    public function getThermalFontId()
+    {
+        return $this->ThermalFontId;
+    }
+    
+    /**
      * Generic font name for use with plain paper labels.
      *
      * @param string $fontName
-     * return CustomLabelTextEntry
+     * @return CustomLabelTextEntry
      */
     public function setFontName($fontName)
     {
@@ -82,15 +122,35 @@ class CustomLabelTextEntry
     }
     
     /**
+     * Returns Generic font name for use with plain paper labels.
+     *
+     * @return string
+     */
+    public function getFontName()
+    {
+        return $this->FontName;
+    }
+    
+    /**
      * Generic font size for use with plain paper labels.
      *
      * @param positiveInteger $fontSize
-     * return CustomLabelTextEntry
+     * @return CustomLabelTextEntry
      */
     public function setFontSize($fontSize)
     {
         $this->FontSize = $fontSize;
         return $this;
+    }
+    
+    /**
+     * Returns Generic font size for use with plain paper labels.
+     *
+     * @return positiveInteger
+     */
+    public function getFontSize()
+    {
+        return $this->FontSize;
     }
     
 

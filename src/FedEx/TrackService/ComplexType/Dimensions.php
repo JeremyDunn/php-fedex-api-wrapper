@@ -25,7 +25,7 @@ class Dimensions
      * Set Length
      *
      * @param nonNegativeInteger $length
-     * return Dimensions
+     * @return Dimensions
      */
     public function setLength($length)
     {
@@ -34,10 +34,20 @@ class Dimensions
     }
     
     /**
+     * Returns Set Length
+     *
+     * @return nonNegativeInteger
+     */
+    public function getLength()
+    {
+        return $this->Length;
+    }
+    
+    /**
      * Set Width
      *
      * @param nonNegativeInteger $width
-     * return Dimensions
+     * @return Dimensions
      */
     public function setWidth($width)
     {
@@ -46,10 +56,20 @@ class Dimensions
     }
     
     /**
+     * Returns Set Width
+     *
+     * @return nonNegativeInteger
+     */
+    public function getWidth()
+    {
+        return $this->Width;
+    }
+    
+    /**
      * Set Height
      *
      * @param nonNegativeInteger $height
-     * return Dimensions
+     * @return Dimensions
      */
     public function setHeight($height)
     {
@@ -58,15 +78,35 @@ class Dimensions
     }
     
     /**
+     * Returns Set Height
+     *
+     * @return nonNegativeInteger
+     */
+    public function getHeight()
+    {
+        return $this->Height;
+    }
+    
+    /**
      * Set Units
      *
      * @param \FedEx\TrackService\SimpleType\LinearUnits|string $units
-     * return Dimensions
+     * @return Dimensions
      */
     public function setUnits($units)
     {
         $this->Units = $units;
         return $this;
+    }
+    
+    /**
+     * Returns Set Units
+     *
+     * @return \FedEx\TrackService\SimpleType\LinearUnits|string
+     */
+    public function getUnits()
+    {
+        return $this->Units;
     }
     
 

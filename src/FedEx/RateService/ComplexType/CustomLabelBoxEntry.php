@@ -25,7 +25,7 @@ class CustomLabelBoxEntry
      * Set TopLeftCorner
      *
      * @param CustomLabelPosition $topLeftCorner
-     * return CustomLabelBoxEntry
+     * @return CustomLabelBoxEntry
      */
     public function setTopLeftCorner(CustomLabelPosition $topLeftCorner)
     {
@@ -34,15 +34,35 @@ class CustomLabelBoxEntry
     }
     
     /**
+     * Returns Set TopLeftCorner
+     *
+     * @return CustomLabelPosition
+     */
+    public function getTopLeftCorner()
+    {
+        return $this->TopLeftCorner;
+    }
+    
+    /**
      * Set BottomRightCorner
      *
      * @param CustomLabelPosition $bottomRightCorner
-     * return CustomLabelBoxEntry
+     * @return CustomLabelBoxEntry
      */
     public function setBottomRightCorner(CustomLabelPosition $bottomRightCorner)
     {
         $this->BottomRightCorner = $bottomRightCorner;
         return $this;
+    }
+    
+    /**
+     * Returns Set BottomRightCorner
+     *
+     * @return CustomLabelPosition
+     */
+    public function getBottomRightCorner()
+    {
+        return $this->BottomRightCorner;
     }
     
 

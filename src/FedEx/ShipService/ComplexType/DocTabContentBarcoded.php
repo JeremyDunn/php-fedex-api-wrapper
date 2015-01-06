@@ -25,7 +25,7 @@ class DocTabContentBarcoded
      * Set Symbology
      *
      * @param \FedEx\ShipService\SimpleType\BarcodeSymbologyType|string $symbology
-     * return DocTabContentBarcoded
+     * @return DocTabContentBarcoded
      */
     public function setSymbology($symbology)
     {
@@ -34,15 +34,35 @@ class DocTabContentBarcoded
     }
     
     /**
+     * Returns Set Symbology
+     *
+     * @return \FedEx\ShipService\SimpleType\BarcodeSymbologyType|string
+     */
+    public function getSymbology()
+    {
+        return $this->Symbology;
+    }
+    
+    /**
      * Set Specification
      *
      * @param DocTabZoneSpecification $specification
-     * return DocTabContentBarcoded
+     * @return DocTabContentBarcoded
      */
     public function setSpecification(DocTabZoneSpecification $specification)
     {
         $this->Specification = $specification;
         return $this;
+    }
+    
+    /**
+     * Returns Set Specification
+     *
+     * @return DocTabZoneSpecification
+     */
+    public function getSpecification()
+    {
+        return $this->Specification;
     }
     
 

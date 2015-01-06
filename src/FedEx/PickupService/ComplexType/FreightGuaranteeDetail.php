@@ -25,7 +25,7 @@ class FreightGuaranteeDetail
      * Description of Guarantee
      *
      * @param \FedEx\Pickup\SimpleType\FreightGuaranteeType|string $type
-     * return FreightGuaranteeDetail
+     * @return FreightGuaranteeDetail
      */
     public function setType($type)
     {
@@ -34,15 +34,35 @@ class FreightGuaranteeDetail
     }
     
     /**
+     * Returns Description of Guarantee
+     *
+     * @return \FedEx\Pickup\SimpleType\FreightGuaranteeType|string
+     */
+    public function getType()
+    {
+        return $this->Type;
+    }
+    
+    /**
      * Date for all Freight guarantee types.
      *
      * @param date $date
-     * return FreightGuaranteeDetail
+     * @return FreightGuaranteeDetail
      */
     public function setDate($date)
     {
         $this->Date = $date;
         return $this;
+    }
+    
+    /**
+     * Returns Date for all Freight guarantee types.
+     *
+     * @return date
+     */
+    public function getDate()
+    {
+        return $this->Date;
     }
     
 

@@ -25,7 +25,7 @@ class ImageUploadStatusDetail
      * Set Id
      *
      * @param \FedEx\UploadDocumentService\SimpleType\ImageId|string $id
-     * return ImageUploadStatusDetail
+     * @return ImageUploadStatusDetail
      */
     public function setId($id)
     {
@@ -34,10 +34,20 @@ class ImageUploadStatusDetail
     }
     
     /**
+     * Returns Set Id
+     *
+     * @return \FedEx\UploadDocumentService\SimpleType\ImageId|string
+     */
+    public function getId()
+    {
+        return $this->Id;
+    }
+    
+    /**
      * Set Status
      *
      * @param \FedEx\UploadDocumentService\SimpleType\UploadImageStatusType|string $status
-     * return ImageUploadStatusDetail
+     * @return ImageUploadStatusDetail
      */
     public function setStatus($status)
     {
@@ -46,10 +56,20 @@ class ImageUploadStatusDetail
     }
     
     /**
+     * Returns Set Status
+     *
+     * @return \FedEx\UploadDocumentService\SimpleType\UploadImageStatusType|string
+     */
+    public function getStatus()
+    {
+        return $this->Status;
+    }
+    
+    /**
      * Set StatusInfo
      *
      * @param \FedEx\UploadDocumentService\SimpleType\UploadImageStatusInfoType|string $statusInfo
-     * return ImageUploadStatusDetail
+     * @return ImageUploadStatusDetail
      */
     public function setStatusInfo($statusInfo)
     {
@@ -58,15 +78,35 @@ class ImageUploadStatusDetail
     }
     
     /**
+     * Returns Set StatusInfo
+     *
+     * @return \FedEx\UploadDocumentService\SimpleType\UploadImageStatusInfoType|string
+     */
+    public function getStatusInfo()
+    {
+        return $this->StatusInfo;
+    }
+    
+    /**
      * Set Message
      *
      * @param string $message
-     * return ImageUploadStatusDetail
+     * @return ImageUploadStatusDetail
      */
     public function setMessage($message)
     {
         $this->Message = $message;
         return $this;
+    }
+    
+    /**
+     * Returns Set Message
+     *
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->Message;
     }
     
 

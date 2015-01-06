@@ -25,7 +25,7 @@ class PackageRating
      * This rate type identifies which entry in the following array is considered as presenting the "actual" rates for the package.
      *
      * @param \FedEx\ShipService\SimpleType\ReturnedRateType|string $actualRateType
-     * return PackageRating
+     * @return PackageRating
      */
     public function setActualRateType($actualRateType)
     {
@@ -34,10 +34,20 @@ class PackageRating
     }
     
     /**
+     * Returns This rate type identifies which entry in the following array is considered as presenting the "actual" rates for the package.
+     *
+     * @return \FedEx\ShipService\SimpleType\ReturnedRateType|string
+     */
+    public function getActualRateType()
+    {
+        return $this->ActualRateType;
+    }
+    
+    /**
      * The "list" net charge minus "actual" net charge.
      *
      * @param Money $effectiveNetDiscount
-     * return PackageRating
+     * @return PackageRating
      */
     public function setEffectiveNetDiscount(Money $effectiveNetDiscount)
     {
@@ -46,15 +56,35 @@ class PackageRating
     }
     
     /**
+     * Returns The "list" net charge minus "actual" net charge.
+     *
+     * @return Money
+     */
+    public function getEffectiveNetDiscount()
+    {
+        return $this->EffectiveNetDiscount;
+    }
+    
+    /**
      * Each element of this field provides package-level rate data for a specific rate type.
      *
      * @param PackageRateDetail[] $packageRateDetails
-     * return PackageRating
+     * @return PackageRating
      */
     public function setPackageRateDetails(array $packageRateDetails)
     {
         $this->PackageRateDetails = $packageRateDetails;
         return $this;
+    }
+    
+    /**
+     * Returns Each element of this field provides package-level rate data for a specific rate type.
+     *
+     * @return PackageRateDetail[]
+     */
+    public function getPackageRateDetails()
+    {
+        return $this->PackageRateDetails;
     }
     
 

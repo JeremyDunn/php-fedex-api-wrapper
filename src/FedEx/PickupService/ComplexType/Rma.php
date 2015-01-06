@@ -25,7 +25,7 @@ class Rma
      * The RMA number.
      *
      * @param string $number
-     * return Rma
+     * @return Rma
      */
     public function setNumber($number)
     {
@@ -34,15 +34,35 @@ class Rma
     }
     
     /**
+     * Returns The RMA number.
+     *
+     * @return string
+     */
+    public function getNumber()
+    {
+        return $this->Number;
+    }
+    
+    /**
      * The reason for the return.
      *
      * @param string $reason
-     * return Rma
+     * @return Rma
      */
     public function setReason($reason)
     {
         $this->Reason = $reason;
         return $this;
+    }
+    
+    /**
+     * Returns The reason for the return.
+     *
+     * @return string
+     */
+    public function getReason()
+    {
+        return $this->Reason;
     }
     
 

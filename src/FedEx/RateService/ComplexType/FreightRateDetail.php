@@ -25,7 +25,7 @@ class FreightRateDetail
      * A unique identifier for a specific rate quotation.
      *
      * @param string $quoteNumber
-     * return FreightRateDetail
+     * @return FreightRateDetail
      */
     public function setQuoteNumber($quoteNumber)
     {
@@ -34,10 +34,20 @@ class FreightRateDetail
     }
     
     /**
+     * Returns A unique identifier for a specific rate quotation.
+     *
+     * @return string
+     */
+    public function getQuoteNumber()
+    {
+        return $this->QuoteNumber;
+    }
+    
+    /**
      * Specifies how total base charge is determined.
      *
      * @param \FedEx\RateService\SimpleType\FreightBaseChargeCalculationType|string $baseChargeCalculation
-     * return FreightRateDetail
+     * @return FreightRateDetail
      */
     public function setBaseChargeCalculation($baseChargeCalculation)
     {
@@ -46,10 +56,20 @@ class FreightRateDetail
     }
     
     /**
+     * Returns Specifies how total base charge is determined.
+     *
+     * @return \FedEx\RateService\SimpleType\FreightBaseChargeCalculationType|string
+     */
+    public function getBaseChargeCalculation()
+    {
+        return $this->BaseChargeCalculation;
+    }
+    
+    /**
      * Freight charges which accumulate to the total base charge for the shipment.
      *
      * @param FreightBaseCharge[] $baseCharges
-     * return FreightRateDetail
+     * @return FreightRateDetail
      */
     public function setBaseCharges(array $baseCharges)
     {
@@ -58,15 +78,35 @@ class FreightRateDetail
     }
     
     /**
+     * Returns Freight charges which accumulate to the total base charge for the shipment.
+     *
+     * @return FreightBaseCharge[]
+     */
+    public function getBaseCharges()
+    {
+        return $this->BaseCharges;
+    }
+    
+    /**
      * Human-readable descriptions of additional information on this shipment rating.
      *
      * @param FreightRateNotation[] $notations
-     * return FreightRateDetail
+     * @return FreightRateDetail
      */
     public function setNotations(array $notations)
     {
         $this->Notations = $notations;
         return $this;
+    }
+    
+    /**
+     * Returns Human-readable descriptions of additional information on this shipment rating.
+     *
+     * @return FreightRateNotation[]
+     */
+    public function getNotations()
+    {
+        return $this->Notations;
     }
     
 

@@ -25,7 +25,7 @@ class CustomLabelGraphicEntry
      * Set Position
      *
      * @param CustomLabelPosition $position
-     * return CustomLabelGraphicEntry
+     * @return CustomLabelGraphicEntry
      */
     public function setPosition(CustomLabelPosition $position)
     {
@@ -34,10 +34,20 @@ class CustomLabelGraphicEntry
     }
     
     /**
+     * Returns Set Position
+     *
+     * @return CustomLabelPosition
+     */
+    public function getPosition()
+    {
+        return $this->Position;
+    }
+    
+    /**
      * Printer-specific index of graphic image to be printed.
      *
      * @param string $printerGraphicId
-     * return CustomLabelGraphicEntry
+     * @return CustomLabelGraphicEntry
      */
     public function setPrinterGraphicId($printerGraphicId)
     {
@@ -46,15 +56,35 @@ class CustomLabelGraphicEntry
     }
     
     /**
+     * Returns Printer-specific index of graphic image to be printed.
+     *
+     * @return string
+     */
+    public function getPrinterGraphicId()
+    {
+        return $this->PrinterGraphicId;
+    }
+    
+    /**
      * Fully-qualified path and file name for graphic image to be printed.
      *
      * @param string $fileGraphicFullName
-     * return CustomLabelGraphicEntry
+     * @return CustomLabelGraphicEntry
      */
     public function setFileGraphicFullName($fileGraphicFullName)
     {
         $this->FileGraphicFullName = $fileGraphicFullName;
         return $this;
+    }
+    
+    /**
+     * Returns Fully-qualified path and file name for graphic image to be printed.
+     *
+     * @return string
+     */
+    public function getFileGraphicFullName()
+    {
+        return $this->FileGraphicFullName;
     }
     
 

@@ -25,7 +25,7 @@ class Distance
      * Identifies the value of distance from the point indicated by the search location (e.g. "12.5").
      *
      * @param decimal $value
-     * return Distance
+     * @return Distance
      */
     public function setValue($value)
     {
@@ -34,15 +34,35 @@ class Distance
     }
     
     /**
+     * Returns Identifies the value of distance from the point indicated by the search location (e.g. "12.5").
+     *
+     * @return decimal
+     */
+    public function getValue()
+    {
+        return $this->Value;
+    }
+    
+    /**
      * Identifies the unit of distance from the point indicated by the search location (e.g. "MI"). See DistanceUnits for list of returned values.
      *
      * @param \FedEx\LocatorService\SimpleType\DistanceUnits|string $units
-     * return Distance
+     * @return Distance
      */
     public function setUnits($units)
     {
         $this->Units = $units;
         return $this;
+    }
+    
+    /**
+     * Returns Identifies the unit of distance from the point indicated by the search location (e.g. "MI"). See DistanceUnits for list of returned values.
+     *
+     * @return \FedEx\LocatorService\SimpleType\DistanceUnits|string
+     */
+    public function getUnits()
+    {
+        return $this->Units;
     }
     
 

@@ -25,7 +25,7 @@ class LabelSpecification
      * Specifies how to create, organize, and return the document.
      *
      * @param ShippingDocumentDispositionDetail[] $dispositions
-     * return LabelSpecification
+     * @return LabelSpecification
      */
     public function setDispositions(array $dispositions)
     {
@@ -34,10 +34,20 @@ class LabelSpecification
     }
     
     /**
+     * Returns Specifies how to create, organize, and return the document.
+     *
+     * @return ShippingDocumentDispositionDetail[]
+     */
+    public function getDispositions()
+    {
+        return $this->Dispositions;
+    }
+    
+    /**
      * Specify type of label to be returned
      *
      * @param \FedEx\ShipService\SimpleType\LabelFormatType|string $labelFormatType
-     * return LabelSpecification
+     * @return LabelSpecification
      */
     public function setLabelFormatType($labelFormatType)
     {
@@ -46,10 +56,20 @@ class LabelSpecification
     }
     
     /**
+     * Returns Specify type of label to be returned
+     *
+     * @return \FedEx\ShipService\SimpleType\LabelFormatType|string
+     */
+    public function getLabelFormatType()
+    {
+        return $this->LabelFormatType;
+    }
+    
+    /**
      * Specifies the image format used for a shipping document.
      *
      * @param \FedEx\ShipService\SimpleType\ShippingDocumentImageType|string $imageType
-     * return LabelSpecification
+     * @return LabelSpecification
      */
     public function setImageType($imageType)
     {
@@ -58,10 +78,20 @@ class LabelSpecification
     }
     
     /**
+     * Returns Specifies the image format used for a shipping document.
+     *
+     * @return \FedEx\ShipService\SimpleType\ShippingDocumentImageType|string
+     */
+    public function getImageType()
+    {
+        return $this->ImageType;
+    }
+    
+    /**
      * For thermal printer lables this indicates the size of the label and the location of the doc tab if present.
      *
      * @param \FedEx\ShipService\SimpleType\LabelStockType|string $labelStockType
-     * return LabelSpecification
+     * @return LabelSpecification
      */
     public function setLabelStockType($labelStockType)
     {
@@ -70,10 +100,20 @@ class LabelSpecification
     }
     
     /**
+     * Returns For thermal printer lables this indicates the size of the label and the location of the doc tab if present.
+     *
+     * @return \FedEx\ShipService\SimpleType\LabelStockType|string
+     */
+    public function getLabelStockType()
+    {
+        return $this->LabelStockType;
+    }
+    
+    /**
      * This indicates if the top or bottom of the label comes out of the printer first.
      *
      * @param \FedEx\ShipService\SimpleType\LabelPrintingOrientationType|string $labelPrintingOrientation
-     * return LabelSpecification
+     * @return LabelSpecification
      */
     public function setLabelPrintingOrientation($labelPrintingOrientation)
     {
@@ -82,10 +122,20 @@ class LabelSpecification
     }
     
     /**
+     * Returns This indicates if the top or bottom of the label comes out of the printer first.
+     *
+     * @return \FedEx\ShipService\SimpleType\LabelPrintingOrientationType|string
+     */
+    public function getLabelPrintingOrientation()
+    {
+        return $this->LabelPrintingOrientation;
+    }
+    
+    /**
      * If present, this contact and address information will replace the return address information on the label.
      *
      * @param ContactAndAddress $printedLabelOrigin
-     * return LabelSpecification
+     * @return LabelSpecification
      */
     public function setPrintedLabelOrigin(ContactAndAddress $printedLabelOrigin)
     {
@@ -94,15 +144,35 @@ class LabelSpecification
     }
     
     /**
+     * Returns If present, this contact and address information will replace the return address information on the label.
+     *
+     * @return ContactAndAddress
+     */
+    public function getPrintedLabelOrigin()
+    {
+        return $this->PrintedLabelOrigin;
+    }
+    
+    /**
      * Allows customer-specified control of label content.
      *
      * @param CustomerSpecifiedLabelDetail $customerSpecifiedDetail
-     * return LabelSpecification
+     * @return LabelSpecification
      */
     public function setCustomerSpecifiedDetail(CustomerSpecifiedLabelDetail $customerSpecifiedDetail)
     {
         $this->CustomerSpecifiedDetail = $customerSpecifiedDetail;
         return $this;
+    }
+    
+    /**
+     * Returns Allows customer-specified control of label content.
+     *
+     * @return CustomerSpecifiedLabelDetail
+     */
+    public function getCustomerSpecifiedDetail()
+    {
+        return $this->CustomerSpecifiedDetail;
     }
     
 

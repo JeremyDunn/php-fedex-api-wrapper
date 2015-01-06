@@ -25,7 +25,7 @@ class PackageSpecialServicesRequested
      * The types of all special services requested for the enclosing shipment or package.
      *
      * @param PackageSpecialServiceType[] $specialServiceTypes
-     * return PackageSpecialServicesRequested
+     * @return PackageSpecialServicesRequested
      */
     public function setSpecialServiceTypes(array $specialServiceTypes)
     {
@@ -34,10 +34,20 @@ class PackageSpecialServicesRequested
     }
     
     /**
+     * Returns The types of all special services requested for the enclosing shipment or package.
+     *
+     * @return PackageSpecialServiceType[]
+     */
+    public function getSpecialServiceTypes()
+    {
+        return $this->SpecialServiceTypes;
+    }
+    
+    /**
      * For use with FedEx Ground services only; COD must be present in shipment's special services.
      *
      * @param CodDetail $codDetail
-     * return PackageSpecialServicesRequested
+     * @return PackageSpecialServicesRequested
      */
     public function setCodDetail(CodDetail $codDetail)
     {
@@ -46,10 +56,20 @@ class PackageSpecialServicesRequested
     }
     
     /**
+     * Returns For use with FedEx Ground services only; COD must be present in shipment's special services.
+     *
+     * @return CodDetail
+     */
+    public function getCodDetail()
+    {
+        return $this->CodDetail;
+    }
+    
+    /**
      * Descriptive data required for a FedEx shipment containing dangerous materials. This element is required when SpecialServiceType.DANGEROUS_GOODS or HAZARDOUS_MATERIAL is present in the SpecialServiceTypes collection.
      *
      * @param DangerousGoodsDetail $dangerousGoodsDetail
-     * return PackageSpecialServicesRequested
+     * @return PackageSpecialServicesRequested
      */
     public function setDangerousGoodsDetail(DangerousGoodsDetail $dangerousGoodsDetail)
     {
@@ -58,10 +78,20 @@ class PackageSpecialServicesRequested
     }
     
     /**
+     * Returns Descriptive data required for a FedEx shipment containing dangerous materials. This element is required when SpecialServiceType.DANGEROUS_GOODS or HAZARDOUS_MATERIAL is present in the SpecialServiceTypes collection.
+     *
+     * @return DangerousGoodsDetail
+     */
+    public function getDangerousGoodsDetail()
+    {
+        return $this->DangerousGoodsDetail;
+    }
+    
+    /**
      * Descriptive data required for a FedEx shipment containing dry ice. This element is required when SpecialServiceType.DRY_ICE is present in the SpecialServiceTypes collection.
      *
      * @param Weight $dryIceWeight
-     * return PackageSpecialServicesRequested
+     * @return PackageSpecialServicesRequested
      */
     public function setDryIceWeight(Weight $dryIceWeight)
     {
@@ -70,10 +100,20 @@ class PackageSpecialServicesRequested
     }
     
     /**
+     * Returns Descriptive data required for a FedEx shipment containing dry ice. This element is required when SpecialServiceType.DRY_ICE is present in the SpecialServiceTypes collection.
+     *
+     * @return Weight
+     */
+    public function getDryIceWeight()
+    {
+        return $this->DryIceWeight;
+    }
+    
+    /**
      * The descriptive data required for FedEx signature services. This element is required when SpecialServiceType.SIGNATURE_OPTION is present in the SpecialServiceTypes collection.
      *
      * @param SignatureOptionDetail $signatureOptionDetail
-     * return PackageSpecialServicesRequested
+     * @return PackageSpecialServicesRequested
      */
     public function setSignatureOptionDetail(SignatureOptionDetail $signatureOptionDetail)
     {
@@ -82,15 +122,35 @@ class PackageSpecialServicesRequested
     }
     
     /**
+     * Returns The descriptive data required for FedEx signature services. This element is required when SpecialServiceType.SIGNATURE_OPTION is present in the SpecialServiceTypes collection.
+     *
+     * @return SignatureOptionDetail
+     */
+    public function getSignatureOptionDetail()
+    {
+        return $this->SignatureOptionDetail;
+    }
+    
+    /**
      * The descriptive data required for FedEx Priority Alert service. This element is required when SpecialServiceType.PRIORITY_ALERT is present in the SpecialServiceTypes collection.
      *
      * @param PriorityAlertDetail $priorityAlertDetail
-     * return PackageSpecialServicesRequested
+     * @return PackageSpecialServicesRequested
      */
     public function setPriorityAlertDetail(PriorityAlertDetail $priorityAlertDetail)
     {
         $this->PriorityAlertDetail = $priorityAlertDetail;
         return $this;
+    }
+    
+    /**
+     * Returns The descriptive data required for FedEx Priority Alert service. This element is required when SpecialServiceType.PRIORITY_ALERT is present in the SpecialServiceTypes collection.
+     *
+     * @return PriorityAlertDetail
+     */
+    public function getPriorityAlertDetail()
+    {
+        return $this->PriorityAlertDetail;
     }
     
 

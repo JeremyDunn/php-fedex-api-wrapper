@@ -25,7 +25,7 @@ class HazardousCommodityQuantityDetail
      * Number of units of the type below.
      *
      * @param decimal $amount
-     * return HazardousCommodityQuantityDetail
+     * @return HazardousCommodityQuantityDetail
      */
     public function setAmount($amount)
     {
@@ -34,15 +34,35 @@ class HazardousCommodityQuantityDetail
     }
     
     /**
+     * Returns Number of units of the type below.
+     *
+     * @return decimal
+     */
+    public function getAmount()
+    {
+        return $this->Amount;
+    }
+    
+    /**
      * Units by which the hazardous commodity is measured.
      *
      * @param string $units
-     * return HazardousCommodityQuantityDetail
+     * @return HazardousCommodityQuantityDetail
      */
     public function setUnits($units)
     {
         $this->Units = $units;
         return $this;
+    }
+    
+    /**
+     * Returns Units by which the hazardous commodity is measured.
+     *
+     * @return string
+     */
+    public function getUnits()
+    {
+        return $this->Units;
     }
     
 

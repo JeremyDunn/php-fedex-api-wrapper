@@ -25,7 +25,7 @@ class SortAndSegregateDetail
      * Number of pieces or packages to be sorted/segregated
      *
      * @param nonNegativeInteger $pieceCount
-     * return SortAndSegregateDetail
+     * @return SortAndSegregateDetail
      */
     public function setPieceCount($pieceCount)
     {
@@ -34,15 +34,35 @@ class SortAndSegregateDetail
     }
     
     /**
+     * Returns Number of pieces or packages to be sorted/segregated
+     *
+     * @return nonNegativeInteger
+     */
+    public function getPieceCount()
+    {
+        return $this->PieceCount;
+    }
+    
+    /**
      * Total weight of pieces or packages to be sorted/segregated
      *
      * @param Weight $weight
-     * return SortAndSegregateDetail
+     * @return SortAndSegregateDetail
      */
     public function setWeight(Weight $weight)
     {
         $this->Weight = $weight;
         return $this;
+    }
+    
+    /**
+     * Returns Total weight of pieces or packages to be sorted/segregated
+     *
+     * @return Weight
+     */
+    public function getWeight()
+    {
+        return $this->Weight;
     }
     
 

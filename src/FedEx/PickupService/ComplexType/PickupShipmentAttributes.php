@@ -25,7 +25,7 @@ class PickupShipmentAttributes
      * Set ServiceType
      *
      * @param \FedEx\Pickup\SimpleType\ServiceType|string $serviceType
-     * return PickupShipmentAttributes
+     * @return PickupShipmentAttributes
      */
     public function setServiceType($serviceType)
     {
@@ -34,10 +34,20 @@ class PickupShipmentAttributes
     }
     
     /**
+     * Returns Set ServiceType
+     *
+     * @return \FedEx\Pickup\SimpleType\ServiceType|string
+     */
+    public function getServiceType()
+    {
+        return $this->ServiceType;
+    }
+    
+    /**
      * Set PackagingType
      *
      * @param \FedEx\Pickup\SimpleType\PackagingType|string $packagingType
-     * return PickupShipmentAttributes
+     * @return PickupShipmentAttributes
      */
     public function setPackagingType($packagingType)
     {
@@ -46,10 +56,20 @@ class PickupShipmentAttributes
     }
     
     /**
+     * Returns Set PackagingType
+     *
+     * @return \FedEx\Pickup\SimpleType\PackagingType|string
+     */
+    public function getPackagingType()
+    {
+        return $this->PackagingType;
+    }
+    
+    /**
      * Descriptive information about the dimensions of the package.
      *
      * @param Dimensions $dimensions
-     * return PickupShipmentAttributes
+     * @return PickupShipmentAttributes
      */
     public function setDimensions(Dimensions $dimensions)
     {
@@ -58,15 +78,35 @@ class PickupShipmentAttributes
     }
     
     /**
+     * Returns Descriptive information about the dimensions of the package.
+     *
+     * @return Dimensions
+     */
+    public function getDimensions()
+    {
+        return $this->Dimensions;
+    }
+    
+    /**
      * Descriptive information about the weight of the package.
      *
      * @param Weight $weight
-     * return PickupShipmentAttributes
+     * @return PickupShipmentAttributes
      */
     public function setWeight(Weight $weight)
     {
         $this->Weight = $weight;
         return $this;
+    }
+    
+    /**
+     * Returns Descriptive information about the weight of the package.
+     *
+     * @return Weight
+     */
+    public function getWeight()
+    {
+        return $this->Weight;
     }
     
 

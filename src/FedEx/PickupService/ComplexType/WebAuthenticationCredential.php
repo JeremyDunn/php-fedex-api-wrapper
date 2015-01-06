@@ -25,7 +25,7 @@ class WebAuthenticationCredential
      * Identifying part of authentication credential. This value is provided by FedEx after registration
      *
      * @param string $key
-     * return WebAuthenticationCredential
+     * @return WebAuthenticationCredential
      */
     public function setKey($key)
     {
@@ -34,15 +34,35 @@ class WebAuthenticationCredential
     }
     
     /**
+     * Returns Identifying part of authentication credential. This value is provided by FedEx after registration
+     *
+     * @return string
+     */
+    public function getKey()
+    {
+        return $this->Key;
+    }
+    
+    /**
      * Secret part of authentication key. This value is provided by FedEx after registration.
      *
      * @param string $password
-     * return WebAuthenticationCredential
+     * @return WebAuthenticationCredential
      */
     public function setPassword($password)
     {
         $this->Password = $password;
         return $this;
+    }
+    
+    /**
+     * Returns Secret part of authentication key. This value is provided by FedEx after registration.
+     *
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->Password;
     }
     
 

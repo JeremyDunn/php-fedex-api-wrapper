@@ -25,7 +25,7 @@ class ShippingDocumentDispositionDetail
      * Values in this field specify how to create and return the document.
      *
      * @param \FedEx\CloseService\SimpleType\ShippingDocumentDispositionType|string $dispositionType
-     * return ShippingDocumentDispositionDetail
+     * @return ShippingDocumentDispositionDetail
      */
     public function setDispositionType($dispositionType)
     {
@@ -34,10 +34,20 @@ class ShippingDocumentDispositionDetail
     }
     
     /**
+     * Returns Values in this field specify how to create and return the document.
+     *
+     * @return \FedEx\CloseService\SimpleType\ShippingDocumentDispositionType|string
+     */
+    public function getDispositionType()
+    {
+        return $this->DispositionType;
+    }
+    
+    /**
      * Specifies how to organize all documents of this type.
      *
      * @param \FedEx\CloseService\SimpleType\ShippingDocumentGroupingType|string $grouping
-     * return ShippingDocumentDispositionDetail
+     * @return ShippingDocumentDispositionDetail
      */
     public function setGrouping($grouping)
     {
@@ -46,10 +56,20 @@ class ShippingDocumentDispositionDetail
     }
     
     /**
+     * Returns Specifies how to organize all documents of this type.
+     *
+     * @return \FedEx\CloseService\SimpleType\ShippingDocumentGroupingType|string
+     */
+    public function getGrouping()
+    {
+        return $this->Grouping;
+    }
+    
+    /**
      * Specifies how to store document images.
      *
      * @param ShippingDocumentStorageDetail $storageDetail
-     * return ShippingDocumentDispositionDetail
+     * @return ShippingDocumentDispositionDetail
      */
     public function setStorageDetail(ShippingDocumentStorageDetail $storageDetail)
     {
@@ -58,10 +78,20 @@ class ShippingDocumentDispositionDetail
     }
     
     /**
+     * Returns Specifies how to store document images.
+     *
+     * @return ShippingDocumentStorageDetail
+     */
+    public function getStorageDetail()
+    {
+        return $this->StorageDetail;
+    }
+    
+    /**
      * Specifies how to e-mail document images.
      *
      * @param ShippingDocumentEMailDetail $eMailDetail
-     * return ShippingDocumentDispositionDetail
+     * @return ShippingDocumentDispositionDetail
      */
     public function setEMailDetail(ShippingDocumentEMailDetail $eMailDetail)
     {
@@ -70,15 +100,35 @@ class ShippingDocumentDispositionDetail
     }
     
     /**
+     * Returns Specifies how to e-mail document images.
+     *
+     * @return ShippingDocumentEMailDetail
+     */
+    public function getEMailDetail()
+    {
+        return $this->EMailDetail;
+    }
+    
+    /**
      * Specifies how a queued document is to be printed.
      *
      * @param ShippingDocumentPrintDetail $printDetail
-     * return ShippingDocumentDispositionDetail
+     * @return ShippingDocumentDispositionDetail
      */
     public function setPrintDetail(ShippingDocumentPrintDetail $printDetail)
     {
         $this->PrintDetail = $printDetail;
         return $this;
+    }
+    
+    /**
+     * Returns Specifies how a queued document is to be printed.
+     *
+     * @return ShippingDocumentPrintDetail
+     */
+    public function getPrintDetail()
+    {
+        return $this->PrintDetail;
     }
     
 

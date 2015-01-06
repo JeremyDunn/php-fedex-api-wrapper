@@ -25,7 +25,7 @@ class PostalCodeInquiryRequest
      * Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
      * @param WebAuthenticationDetail $webAuthenticationDetail
-     * return PostalCodeInquiryRequest
+     * @return PostalCodeInquiryRequest
      */
     public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
     {
@@ -34,10 +34,20 @@ class PostalCodeInquiryRequest
     }
     
     /**
+     * Returns Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
+     *
+     * @return WebAuthenticationDetail
+     */
+    public function getWebAuthenticationDetail()
+    {
+        return $this->WebAuthenticationDetail;
+    }
+    
+    /**
      * The descriptive data identifying the client submitting the transaction.
      *
      * @param ClientDetail $clientDetail
-     * return PostalCodeInquiryRequest
+     * @return PostalCodeInquiryRequest
      */
     public function setClientDetail(ClientDetail $clientDetail)
     {
@@ -46,10 +56,20 @@ class PostalCodeInquiryRequest
     }
     
     /**
+     * Returns The descriptive data identifying the client submitting the transaction.
+     *
+     * @return ClientDetail
+     */
+    public function getClientDetail()
+    {
+        return $this->ClientDetail;
+    }
+    
+    /**
      * The descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
      * @param TransactionDetail $transactionDetail
-     * return PostalCodeInquiryRequest
+     * @return PostalCodeInquiryRequest
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
@@ -58,10 +78,20 @@ class PostalCodeInquiryRequest
     }
     
     /**
+     * Returns The descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
+     *
+     * @return TransactionDetail
+     */
+    public function getTransactionDetail()
+    {
+        return $this->TransactionDetail;
+    }
+    
+    /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
      * @param VersionId $version
-     * return PostalCodeInquiryRequest
+     * @return PostalCodeInquiryRequest
      */
     public function setVersion(VersionId $version)
     {
@@ -70,10 +100,20 @@ class PostalCodeInquiryRequest
     }
     
     /**
+     * Returns Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
+     *
+     * @return VersionId
+     */
+    public function getVersion()
+    {
+        return $this->Version;
+    }
+    
+    /**
      * Only used with postal-aware countries.
      *
      * @param string $postalCode
-     * return PostalCodeInquiryRequest
+     * @return PostalCodeInquiryRequest
      */
     public function setPostalCode($postalCode)
     {
@@ -82,15 +122,35 @@ class PostalCodeInquiryRequest
     }
     
     /**
+     * Returns Only used with postal-aware countries.
+     *
+     * @return string
+     */
+    public function getPostalCode()
+    {
+        return $this->PostalCode;
+    }
+    
+    /**
      * Identifies the country code.
      *
      * @param string $countryCode
-     * return PostalCodeInquiryRequest
+     * @return PostalCodeInquiryRequest
      */
     public function setCountryCode($countryCode)
     {
         $this->CountryCode = $countryCode;
         return $this;
+    }
+    
+    /**
+     * Returns Identifies the country code.
+     *
+     * @return string
+     */
+    public function getCountryCode()
+    {
+        return $this->CountryCode;
     }
     
 

@@ -25,7 +25,7 @@ class Party
      * Identifies the FedEx account number assigned to the customer.
      *
      * @param string $accountNumber
-     * return Party
+     * @return Party
      */
     public function setAccountNumber($accountNumber)
     {
@@ -34,10 +34,20 @@ class Party
     }
     
     /**
+     * Returns Identifies the FedEx account number assigned to the customer.
+     *
+     * @return string
+     */
+    public function getAccountNumber()
+    {
+        return $this->AccountNumber;
+    }
+    
+    /**
      * Set Tins
      *
      * @param TaxpayerIdentification[] $tins
-     * return Party
+     * @return Party
      */
     public function setTins(array $tins)
     {
@@ -46,10 +56,20 @@ class Party
     }
     
     /**
+     * Returns Set Tins
+     *
+     * @return TaxpayerIdentification[]
+     */
+    public function getTins()
+    {
+        return $this->Tins;
+    }
+    
+    /**
      * Descriptive data identifying the point-of-contact person.
      *
      * @param Contact $contact
-     * return Party
+     * @return Party
      */
     public function setContact(Contact $contact)
     {
@@ -58,15 +78,35 @@ class Party
     }
     
     /**
+     * Returns Descriptive data identifying the point-of-contact person.
+     *
+     * @return Contact
+     */
+    public function getContact()
+    {
+        return $this->Contact;
+    }
+    
+    /**
      * The descriptive data for a physical location.
      *
      * @param Address $address
-     * return Party
+     * @return Party
      */
     public function setAddress(Address $address)
     {
         $this->Address = $address;
         return $this;
+    }
+    
+    /**
+     * Returns The descriptive data for a physical location.
+     *
+     * @return Address
+     */
+    public function getAddress()
+    {
+        return $this->Address;
     }
     
 

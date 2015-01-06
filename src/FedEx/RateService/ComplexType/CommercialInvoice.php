@@ -25,7 +25,7 @@ class CommercialInvoice
      * Any comments that need to be communicated about this shipment.
      *
      * @param string[] $comments
-     * return CommercialInvoice
+     * @return CommercialInvoice
      */
     public function setComments(array $comments)
     {
@@ -34,10 +34,20 @@ class CommercialInvoice
     }
     
     /**
+     * Returns Any comments that need to be communicated about this shipment.
+     *
+     * @return string[]
+     */
+    public function getComments()
+    {
+        return $this->Comments;
+    }
+    
+    /**
      * Any freight charges that are associated with this shipment.
      *
      * @param Money $freightCharge
-     * return CommercialInvoice
+     * @return CommercialInvoice
      */
     public function setFreightCharge(Money $freightCharge)
     {
@@ -46,10 +56,20 @@ class CommercialInvoice
     }
     
     /**
+     * Returns Any freight charges that are associated with this shipment.
+     *
+     * @return Money
+     */
+    public function getFreightCharge()
+    {
+        return $this->FreightCharge;
+    }
+    
+    /**
      * Any taxes or miscellaneous charges(other than Freight charges or Insurance charges) that are associated with this shipment.
      *
      * @param Money $taxesOrMiscellaneousCharge
-     * return CommercialInvoice
+     * @return CommercialInvoice
      */
     public function setTaxesOrMiscellaneousCharge(Money $taxesOrMiscellaneousCharge)
     {
@@ -58,10 +78,20 @@ class CommercialInvoice
     }
     
     /**
+     * Returns Any taxes or miscellaneous charges(other than Freight charges or Insurance charges) that are associated with this shipment.
+     *
+     * @return Money
+     */
+    public function getTaxesOrMiscellaneousCharge()
+    {
+        return $this->TaxesOrMiscellaneousCharge;
+    }
+    
+    /**
      * Specifies which kind of charge is being recorded in the preceding field.
      *
      * @param \FedEx\RateService\SimpleType\TaxesOrMiscellaneousChargeType|string $taxesOrMiscellaneousChargeType
-     * return CommercialInvoice
+     * @return CommercialInvoice
      */
     public function setTaxesOrMiscellaneousChargeType($taxesOrMiscellaneousChargeType)
     {
@@ -70,10 +100,20 @@ class CommercialInvoice
     }
     
     /**
+     * Returns Specifies which kind of charge is being recorded in the preceding field.
+     *
+     * @return \FedEx\RateService\SimpleType\TaxesOrMiscellaneousChargeType|string
+     */
+    public function getTaxesOrMiscellaneousChargeType()
+    {
+        return $this->TaxesOrMiscellaneousChargeType;
+    }
+    
+    /**
      * Any packing costs that are associated with this shipment.
      *
      * @param Money $packingCosts
-     * return CommercialInvoice
+     * @return CommercialInvoice
      */
     public function setPackingCosts(Money $packingCosts)
     {
@@ -82,10 +122,20 @@ class CommercialInvoice
     }
     
     /**
+     * Returns Any packing costs that are associated with this shipment.
+     *
+     * @return Money
+     */
+    public function getPackingCosts()
+    {
+        return $this->PackingCosts;
+    }
+    
+    /**
      * Any handling costs that are associated with this shipment.
      *
      * @param Money $handlingCosts
-     * return CommercialInvoice
+     * @return CommercialInvoice
      */
     public function setHandlingCosts(Money $handlingCosts)
     {
@@ -94,10 +144,20 @@ class CommercialInvoice
     }
     
     /**
+     * Returns Any handling costs that are associated with this shipment.
+     *
+     * @return Money
+     */
+    public function getHandlingCosts()
+    {
+        return $this->HandlingCosts;
+    }
+    
+    /**
      * Free-form text.
      *
      * @param string $specialInstructions
-     * return CommercialInvoice
+     * @return CommercialInvoice
      */
     public function setSpecialInstructions($specialInstructions)
     {
@@ -106,10 +166,20 @@ class CommercialInvoice
     }
     
     /**
+     * Returns Free-form text.
+     *
+     * @return string
+     */
+    public function getSpecialInstructions()
+    {
+        return $this->SpecialInstructions;
+    }
+    
+    /**
      * Free-form text.
      *
      * @param string $declarationStatment
-     * return CommercialInvoice
+     * @return CommercialInvoice
      */
     public function setDeclarationStatment($declarationStatment)
     {
@@ -118,10 +188,20 @@ class CommercialInvoice
     }
     
     /**
+     * Returns Free-form text.
+     *
+     * @return string
+     */
+    public function getDeclarationStatment()
+    {
+        return $this->DeclarationStatment;
+    }
+    
+    /**
      * Free-form text.
      *
      * @param string $paymentTerms
-     * return CommercialInvoice
+     * @return CommercialInvoice
      */
     public function setPaymentTerms($paymentTerms)
     {
@@ -130,10 +210,20 @@ class CommercialInvoice
     }
     
     /**
+     * Returns Free-form text.
+     *
+     * @return string
+     */
+    public function getPaymentTerms()
+    {
+        return $this->PaymentTerms;
+    }
+    
+    /**
      * The reason for the shipment. Note: SOLD is not a valid purpose for a Proforma Invoice.
      *
      * @param \FedEx\RateService\SimpleType\PurposeOfShipmentType|string $purpose
-     * return CommercialInvoice
+     * @return CommercialInvoice
      */
     public function setPurpose($purpose)
     {
@@ -142,10 +232,20 @@ class CommercialInvoice
     }
     
     /**
+     * Returns The reason for the shipment. Note: SOLD is not a valid purpose for a Proforma Invoice.
+     *
+     * @return \FedEx\RateService\SimpleType\PurposeOfShipmentType|string
+     */
+    public function getPurpose()
+    {
+        return $this->Purpose;
+    }
+    
+    /**
      * Customer assigned Invoice number
      *
      * @param string $customerInvoiceNumber
-     * return CommercialInvoice
+     * @return CommercialInvoice
      */
     public function setCustomerInvoiceNumber($customerInvoiceNumber)
     {
@@ -154,10 +254,20 @@ class CommercialInvoice
     }
     
     /**
+     * Returns Customer assigned Invoice number
+     *
+     * @return string
+     */
+    public function getCustomerInvoiceNumber()
+    {
+        return $this->CustomerInvoiceNumber;
+    }
+    
+    /**
      * Name of the International Expert that completed the Commercial Invoice different from Sender.
      *
      * @param string $originatorName
-     * return CommercialInvoice
+     * @return CommercialInvoice
      */
     public function setOriginatorName($originatorName)
     {
@@ -166,15 +276,35 @@ class CommercialInvoice
     }
     
     /**
+     * Returns Name of the International Expert that completed the Commercial Invoice different from Sender.
+     *
+     * @return string
+     */
+    public function getOriginatorName()
+    {
+        return $this->OriginatorName;
+    }
+    
+    /**
      * Required for dutiable international Express or Ground shipment. This field is not applicable to an international PIB(document) or a non-document which does not require a Commercial Invoice
      *
      * @param \FedEx\RateService\SimpleType\TermsOfSaleType|string $termsOfSale
-     * return CommercialInvoice
+     * @return CommercialInvoice
      */
     public function setTermsOfSale($termsOfSale)
     {
         $this->TermsOfSale = $termsOfSale;
         return $this;
+    }
+    
+    /**
+     * Returns Required for dutiable international Express or Ground shipment. This field is not applicable to an international PIB(document) or a non-document which does not require a Commercial Invoice
+     *
+     * @return \FedEx\RateService\SimpleType\TermsOfSaleType|string
+     */
+    public function getTermsOfSale()
+    {
+        return $this->TermsOfSale;
     }
     
 

@@ -25,7 +25,7 @@ class CreditFraudDetectionDetail
      * Set IpAddress
      *
      * @param string $ipAddress
-     * return CreditFraudDetectionDetail
+     * @return CreditFraudDetectionDetail
      */
     public function setIpAddress($ipAddress)
     {
@@ -34,10 +34,20 @@ class CreditFraudDetectionDetail
     }
     
     /**
+     * Returns Set IpAddress
+     *
+     * @return string
+     */
+    public function getIpAddress()
+    {
+        return $this->IpAddress;
+    }
+    
+    /**
      * Set ClientCookiesEnabled
      *
      * @param boolean $clientCookiesEnabled
-     * return CreditFraudDetectionDetail
+     * @return CreditFraudDetectionDetail
      */
     public function setClientCookiesEnabled($clientCookiesEnabled)
     {
@@ -46,15 +56,35 @@ class CreditFraudDetectionDetail
     }
     
     /**
+     * Returns Set ClientCookiesEnabled
+     *
+     * @return boolean
+     */
+    public function getClientCookiesEnabled()
+    {
+        return $this->ClientCookiesEnabled;
+    }
+    
+    /**
      * Set DevicePrint
      *
      * @param string $devicePrint
-     * return CreditFraudDetectionDetail
+     * @return CreditFraudDetectionDetail
      */
     public function setDevicePrint($devicePrint)
     {
         $this->DevicePrint = $devicePrint;
         return $this;
+    }
+    
+    /**
+     * Returns Set DevicePrint
+     *
+     * @return string
+     */
+    public function getDevicePrint()
+    {
+        return $this->DevicePrint;
     }
     
 

@@ -25,7 +25,7 @@ class RatedPackageDetail
      * Echoed from the corresponding package in the rate request (if provided).
      *
      * @param TrackingId[] $trackingIds
-     * return RatedPackageDetail
+     * @return RatedPackageDetail
      */
     public function setTrackingIds(array $trackingIds)
     {
@@ -34,10 +34,20 @@ class RatedPackageDetail
     }
     
     /**
+     * Returns Echoed from the corresponding package in the rate request (if provided).
+     *
+     * @return TrackingId[]
+     */
+    public function getTrackingIds()
+    {
+        return $this->TrackingIds;
+    }
+    
+    /**
      * Used with request containing PACKAGE_GROUPS, to identify which group of identical packages was used to produce a reply item.
      *
      * @param nonNegativeInteger $groupNumber
-     * return RatedPackageDetail
+     * @return RatedPackageDetail
      */
     public function setGroupNumber($groupNumber)
     {
@@ -46,10 +56,20 @@ class RatedPackageDetail
     }
     
     /**
+     * Returns Used with request containing PACKAGE_GROUPS, to identify which group of identical packages was used to produce a reply item.
+     *
+     * @return nonNegativeInteger
+     */
+    public function getGroupNumber()
+    {
+        return $this->GroupNumber;
+    }
+    
+    /**
      * The difference between "list" and "account" net charge.
      *
      * @param Money $effectiveNetDiscount
-     * return RatedPackageDetail
+     * @return RatedPackageDetail
      */
     public function setEffectiveNetDiscount(Money $effectiveNetDiscount)
     {
@@ -58,10 +78,20 @@ class RatedPackageDetail
     }
     
     /**
+     * Returns The difference between "list" and "account" net charge.
+     *
+     * @return Money
+     */
+    public function getEffectiveNetDiscount()
+    {
+        return $this->EffectiveNetDiscount;
+    }
+    
+    /**
      * Ground COD is shipment level.
      *
      * @param Money $adjustedCodCollectionAmount
-     * return RatedPackageDetail
+     * @return RatedPackageDetail
      */
     public function setAdjustedCodCollectionAmount(Money $adjustedCodCollectionAmount)
     {
@@ -70,10 +100,20 @@ class RatedPackageDetail
     }
     
     /**
+     * Returns Ground COD is shipment level.
+     *
+     * @return Money
+     */
+    public function getAdjustedCodCollectionAmount()
+    {
+        return $this->AdjustedCodCollectionAmount;
+    }
+    
+    /**
      * Set OversizeClass
      *
      * @param \FedEx\RateService\SimpleType\OversizeClassType|string $oversizeClass
-     * return RatedPackageDetail
+     * @return RatedPackageDetail
      */
     public function setOversizeClass($oversizeClass)
     {
@@ -82,15 +122,35 @@ class RatedPackageDetail
     }
     
     /**
+     * Returns Set OversizeClass
+     *
+     * @return \FedEx\RateService\SimpleType\OversizeClassType|string
+     */
+    public function getOversizeClass()
+    {
+        return $this->OversizeClass;
+    }
+    
+    /**
      * Rate data that are tied to a specific package and rate type combination.
      *
      * @param PackageRateDetail $packageRateDetail
-     * return RatedPackageDetail
+     * @return RatedPackageDetail
      */
     public function setPackageRateDetail(PackageRateDetail $packageRateDetail)
     {
         $this->PackageRateDetail = $packageRateDetail;
         return $this;
+    }
+    
+    /**
+     * Returns Rate data that are tied to a specific package and rate type combination.
+     *
+     * @return PackageRateDetail
+     */
+    public function getPackageRateDetail()
+    {
+        return $this->PackageRateDetail;
     }
     
 

@@ -28,7 +28,7 @@ class PickupScheduleOption
      * the carrier to which this PickupScheduleOption applies
      *
      * @param \FedEx\Pickup\SimpleType\CarrierCodeType|string $carrier
-     * return PickupScheduleOption
+     * @return PickupScheduleOption
      */
     public function setCarrier($carrier)
     {
@@ -37,10 +37,20 @@ class PickupScheduleOption
     }
     
     /**
+     * Returns the carrier to which this PickupScheduleOption applies
+     *
+     * @return \FedEx\Pickup\SimpleType\CarrierCodeType|string
+     */
+    public function getCarrier()
+    {
+        return $this->Carrier;
+    }
+    
+    /**
      * Descriptive information about the shipment.
      *
      * @param string $description
-     * return PickupScheduleOption
+     * @return PickupScheduleOption
      */
     public function setDescription($description)
     {
@@ -49,10 +59,20 @@ class PickupScheduleOption
     }
     
     /**
+     * Returns Descriptive information about the shipment.
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->Description;
+    }
+    
+    /**
      * Tells whether this option describes a dispatch created on the dispatch date (SAME_DAY), or on a prior date (FUTURE_DAY)
      *
      * @param \FedEx\Pickup\SimpleType\PickupRequestType|string $scheduleDay
-     * return PickupScheduleOption
+     * @return PickupScheduleOption
      */
     public function setScheduleDay($scheduleDay)
     {
@@ -61,10 +81,20 @@ class PickupScheduleOption
     }
     
     /**
+     * Returns Tells whether this option describes a dispatch created on the dispatch date (SAME_DAY), or on a prior date (FUTURE_DAY)
+     *
+     * @return \FedEx\Pickup\SimpleType\PickupRequestType|string
+     */
+    public function getScheduleDay()
+    {
+        return $this->ScheduleDay;
+    }
+    
+    /**
      * True if this pickup option is available.
      *
      * @param boolean $available
-     * return PickupScheduleOption
+     * @return PickupScheduleOption
      */
     public function setAvailable($available)
     {
@@ -73,10 +103,20 @@ class PickupScheduleOption
     }
     
     /**
+     * Returns True if this pickup option is available.
+     *
+     * @return boolean
+     */
+    public function getAvailable()
+    {
+        return $this->Available;
+    }
+    
+    /**
      * Identifies the date (in the postal code's time zone) to which this PickupScheduleOption refers.
      *
      * @param date $pickupDate
-     * return PickupScheduleOption
+     * @return PickupScheduleOption
      */
     public function setPickupDate($pickupDate)
     {
@@ -85,10 +125,20 @@ class PickupScheduleOption
     }
     
     /**
+     * Returns Identifies the date (in the postal code's time zone) to which this PickupScheduleOption refers.
+     *
+     * @return date
+     */
+    public function getPickupDate()
+    {
+        return $this->PickupDate;
+    }
+    
+    /**
      * Identifies the latest allowed ready time (in the postal code's time zone) for a postal code. As a local time, it will not include a Time Zone Designator
      *
      * @param time $cutOffTime
-     * return PickupScheduleOption
+     * @return PickupScheduleOption
      */
     public function setCutOffTime(time $cutOffTime)
     {
@@ -97,10 +147,20 @@ class PickupScheduleOption
     }
     
     /**
+     * Returns Identifies the latest allowed ready time (in the postal code's time zone) for a postal code. As a local time, it will not include a Time Zone Designator
+     *
+     * @return time
+     */
+    public function getCutOffTime()
+    {
+        return $this->CutOffTime;
+    }
+    
+    /**
      * Identifies the minimum required length of the window of time between the ReadyTime and the CustomerCloseTime.
      *
      * @param duration $accessTime
-     * return PickupScheduleOption
+     * @return PickupScheduleOption
      */
     public function setAccessTime(duration $accessTime)
     {
@@ -109,10 +169,20 @@ class PickupScheduleOption
     }
     
     /**
+     * Returns Identifies the minimum required length of the window of time between the ReadyTime and the CustomerCloseTime.
+     *
+     * @return duration
+     */
+    public function getAccessTime()
+    {
+        return $this->AccessTime;
+    }
+    
+    /**
      * Indicates whether residential pickup is available for the requested postal code.
      *
      * @param boolean $residentialAvailable
-     * return PickupScheduleOption
+     * @return PickupScheduleOption
      */
     public function setResidentialAvailable($residentialAvailable)
     {
@@ -121,15 +191,35 @@ class PickupScheduleOption
     }
     
     /**
+     * Returns Indicates whether residential pickup is available for the requested postal code.
+     *
+     * @return boolean
+     */
+    public function getResidentialAvailable()
+    {
+        return $this->ResidentialAvailable;
+    }
+    
+    /**
      * Describes the country relationship (domestic and/or international) among the shipments being picked up.
      *
      * @param \FedEx\Pickup\SimpleType\CountryRelationshipType|string $countryRelationship
-     * return PickupScheduleOption
+     * @return PickupScheduleOption
      */
     public function setCountryRelationship($countryRelationship)
     {
         $this->CountryRelationship = $countryRelationship;
         return $this;
+    }
+    
+    /**
+     * Returns Describes the country relationship (domestic and/or international) among the shipments being picked up.
+     *
+     * @return \FedEx\Pickup\SimpleType\CountryRelationshipType|string
+     */
+    public function getCountryRelationship()
+    {
+        return $this->CountryRelationship;
     }
     
 

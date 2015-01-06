@@ -25,7 +25,7 @@ class Payor
      * Identifies the FedEx account number assigned to the payor.
      *
      * @param string $accountNumber
-     * return Payor
+     * @return Payor
      */
     public function setAccountNumber($accountNumber)
     {
@@ -34,10 +34,20 @@ class Payor
     }
     
     /**
+     * Returns Identifies the FedEx account number assigned to the payor.
+     *
+     * @return string
+     */
+    public function getAccountNumber()
+    {
+        return $this->AccountNumber;
+    }
+    
+    /**
      * Identifies the country of the payor.
      *
      * @param string $countryCode
-     * return Payor
+     * @return Payor
      */
     public function setCountryCode($countryCode)
     {
@@ -46,15 +56,35 @@ class Payor
     }
     
     /**
+     * Returns Identifies the country of the payor.
+     *
+     * @return string
+     */
+    public function getCountryCode()
+    {
+        return $this->CountryCode;
+    }
+    
+    /**
      * Set AssociatedAccounts
      *
      * @param AssociatedAccount[] $associatedAccounts
-     * return Payor
+     * @return Payor
      */
     public function setAssociatedAccounts(array $associatedAccounts)
     {
         $this->AssociatedAccounts = $associatedAccounts;
         return $this;
+    }
+    
+    /**
+     * Returns Set AssociatedAccounts
+     *
+     * @return AssociatedAccount[]
+     */
+    public function getAssociatedAccounts()
+    {
+        return $this->AssociatedAccounts;
     }
     
 

@@ -25,7 +25,7 @@ class ContactAndAddress
      * Descriptive data identifying the point-of-contact person.
      *
      * @param Contact $contact
-     * return ContactAndAddress
+     * @return ContactAndAddress
      */
     public function setContact(Contact $contact)
     {
@@ -34,15 +34,35 @@ class ContactAndAddress
     }
     
     /**
+     * Returns Descriptive data identifying the point-of-contact person.
+     *
+     * @return Contact
+     */
+    public function getContact()
+    {
+        return $this->Contact;
+    }
+    
+    /**
      * The descriptive data for a physical location.
      *
      * @param Address $address
-     * return ContactAndAddress
+     * @return ContactAndAddress
      */
     public function setAddress(Address $address)
     {
         $this->Address = $address;
         return $this;
+    }
+    
+    /**
+     * Returns The descriptive data for a physical location.
+     *
+     * @return Address
+     */
+    public function getAddress()
+    {
+        return $this->Address;
     }
     
 

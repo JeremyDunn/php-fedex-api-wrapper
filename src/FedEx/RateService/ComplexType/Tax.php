@@ -25,7 +25,7 @@ class Tax
      * Set TaxType
      *
      * @param \FedEx\RateService\SimpleType\TaxType|string $taxType
-     * return Tax
+     * @return Tax
      */
     public function setTaxType($taxType)
     {
@@ -34,10 +34,20 @@ class Tax
     }
     
     /**
+     * Returns Set TaxType
+     *
+     * @return \FedEx\RateService\SimpleType\TaxType|string
+     */
+    public function getTaxType()
+    {
+        return $this->TaxType;
+    }
+    
+    /**
      * Set Description
      *
      * @param string $description
-     * return Tax
+     * @return Tax
      */
     public function setDescription($description)
     {
@@ -46,15 +56,35 @@ class Tax
     }
     
     /**
+     * Returns Set Description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->Description;
+    }
+    
+    /**
      * Set Amount
      *
      * @param Money $amount
-     * return Tax
+     * @return Tax
      */
     public function setAmount(Money $amount)
     {
         $this->Amount = $amount;
         return $this;
+    }
+    
+    /**
+     * Returns Set Amount
+     *
+     * @return Money
+     */
+    public function getAmount()
+    {
+        return $this->Amount;
     }
     
 

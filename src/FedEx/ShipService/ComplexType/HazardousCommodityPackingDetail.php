@@ -25,7 +25,7 @@ class HazardousCommodityPackingDetail
      * Set CargoAircraftOnly
      *
      * @param boolean $cargoAircraftOnly
-     * return HazardousCommodityPackingDetail
+     * @return HazardousCommodityPackingDetail
      */
     public function setCargoAircraftOnly($cargoAircraftOnly)
     {
@@ -34,15 +34,35 @@ class HazardousCommodityPackingDetail
     }
     
     /**
+     * Returns Set CargoAircraftOnly
+     *
+     * @return boolean
+     */
+    public function getCargoAircraftOnly()
+    {
+        return $this->CargoAircraftOnly;
+    }
+    
+    /**
      * Coded specification for how commodity is to be packed.
      *
      * @param string $packingInstructions
-     * return HazardousCommodityPackingDetail
+     * @return HazardousCommodityPackingDetail
      */
     public function setPackingInstructions($packingInstructions)
     {
         $this->PackingInstructions = $packingInstructions;
         return $this;
+    }
+    
+    /**
+     * Returns Coded specification for how commodity is to be packed.
+     *
+     * @return string
+     */
+    public function getPackingInstructions()
+    {
+        return $this->PackingInstructions;
     }
     
 
