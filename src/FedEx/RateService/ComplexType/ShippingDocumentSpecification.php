@@ -132,7 +132,29 @@ class ShippingDocumentSpecification
     }
     
     /**
-     * Details pertaining to the GAA.
+     * Set ExportDeclarationDetail
+     *
+     * @param ExportDeclarationDetail $exportDeclarationDetail
+     * @return ShippingDocumentSpecification
+     */
+    public function setExportDeclarationDetail(ExportDeclarationDetail $exportDeclarationDetail)
+    {
+        $this->ExportDeclarationDetail = $exportDeclarationDetail;
+        return $this;
+    }
+    
+    /**
+     * Returns Set ExportDeclarationDetail
+     *
+     * @return ExportDeclarationDetail
+     */
+    public function getExportDeclarationDetail()
+    {
+        return $this->ExportDeclarationDetail;
+    }
+    
+    /**
+     * Set GeneralAgencyAgreementDetail
      *
      * @param GeneralAgencyAgreementDetail $generalAgencyAgreementDetail
      * @return ShippingDocumentSpecification
@@ -144,7 +166,7 @@ class ShippingDocumentSpecification
     }
     
     /**
-     * Returns Details pertaining to the GAA.
+     * Returns Set GeneralAgencyAgreementDetail
      *
      * @return GeneralAgencyAgreementDetail
      */
@@ -154,7 +176,7 @@ class ShippingDocumentSpecification
     }
     
     /**
-     * Details pertaining to NAFTA COO.
+     * Set NaftaCertificateOfOriginDetail
      *
      * @param NaftaCertificateOfOriginDetail $naftaCertificateOfOriginDetail
      * @return ShippingDocumentSpecification
@@ -166,7 +188,7 @@ class ShippingDocumentSpecification
     }
     
     /**
-     * Returns Details pertaining to NAFTA COO.
+     * Returns Set NaftaCertificateOfOriginDetail
      *
      * @return NaftaCertificateOfOriginDetail
      */
@@ -195,6 +217,72 @@ class ShippingDocumentSpecification
     public function getOp900Detail()
     {
         return $this->Op900Detail;
+    }
+    
+    /**
+     * Specifies the production of the 1421c document for dangerous goods shipment.
+     *
+     * @param DangerousGoodsShippersDeclarationDetail $dangerousGoodsShippersDeclarationDetail
+     * @return ShippingDocumentSpecification
+     */
+    public function setDangerousGoodsShippersDeclarationDetail(DangerousGoodsShippersDeclarationDetail $dangerousGoodsShippersDeclarationDetail)
+    {
+        $this->DangerousGoodsShippersDeclarationDetail = $dangerousGoodsShippersDeclarationDetail;
+        return $this;
+    }
+    
+    /**
+     * Returns Specifies the production of the 1421c document for dangerous goods shipment.
+     *
+     * @return DangerousGoodsShippersDeclarationDetail
+     */
+    public function getDangerousGoodsShippersDeclarationDetail()
+    {
+        return $this->DangerousGoodsShippersDeclarationDetail;
+    }
+    
+    /**
+     * Specifies the production of the OP-900 document for hazardous materials.
+     *
+     * @param FreightAddressLabelDetail $freightAddressLabelDetail
+     * @return ShippingDocumentSpecification
+     */
+    public function setFreightAddressLabelDetail(FreightAddressLabelDetail $freightAddressLabelDetail)
+    {
+        $this->FreightAddressLabelDetail = $freightAddressLabelDetail;
+        return $this;
+    }
+    
+    /**
+     * Returns Specifies the production of the OP-900 document for hazardous materials.
+     *
+     * @return FreightAddressLabelDetail
+     */
+    public function getFreightAddressLabelDetail()
+    {
+        return $this->FreightAddressLabelDetail;
+    }
+    
+    /**
+     * Specifies the production of the return instructions document.
+     *
+     * @param ReturnInstructionsDetail $returnInstructionsDetail
+     * @return ShippingDocumentSpecification
+     */
+    public function setReturnInstructionsDetail(ReturnInstructionsDetail $returnInstructionsDetail)
+    {
+        $this->ReturnInstructionsDetail = $returnInstructionsDetail;
+        return $this;
+    }
+    
+    /**
+     * Returns Specifies the production of the return instructions document.
+     *
+     * @return ReturnInstructionsDetail
+     */
+    public function getReturnInstructionsDetail()
+    {
+        return $this->ReturnInstructionsDetail;
     }
     
 

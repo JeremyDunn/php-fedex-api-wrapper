@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Data applicable to shipments using FEDEX_FREIGHT and FEDEX_NATIONAL_FREIGHT services.
+ * Data applicable to shipments using FEDEX_FREIGHT_ECONOMY and FEDEX_FREIGHT_PRIORITY services.
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -66,47 +66,25 @@ class FreightShipmentDetail
     }
     
     /**
-     * Account number used with FEDEX_NATIONAL_FREIGHT service.
+     * Used in connection with "Send Bill To" (SBT) identification of customer's account used for billing.
      *
-     * @param string $fedExNationalFreightAccountNumber
+     * @param Party $alternateBilling
      * @return FreightShipmentDetail
      */
-    public function setFedExNationalFreightAccountNumber($fedExNationalFreightAccountNumber)
+    public function setAlternateBilling(Party $alternateBilling)
     {
-        $this->FedExNationalFreightAccountNumber = $fedExNationalFreightAccountNumber;
+        $this->AlternateBilling = $alternateBilling;
         return $this;
     }
     
     /**
-     * Returns Account number used with FEDEX_NATIONAL_FREIGHT service.
+     * Returns Used in connection with "Send Bill To" (SBT) identification of customer's account used for billing.
      *
-     * @return string
+     * @return Party
      */
-    public function getFedExNationalFreightAccountNumber()
+    public function getAlternateBilling()
     {
-        return $this->FedExNationalFreightAccountNumber;
-    }
-    
-    /**
-     * Used for validating FedEx National Freight account number and (optionally) identifying third party payment on the bill of lading.
-     *
-     * @param ContactAndAddress $fedExNationalFreightBillingContactAndAddress
-     * @return FreightShipmentDetail
-     */
-    public function setFedExNationalFreightBillingContactAndAddress(ContactAndAddress $fedExNationalFreightBillingContactAndAddress)
-    {
-        $this->FedExNationalFreightBillingContactAndAddress = $fedExNationalFreightBillingContactAndAddress;
-        return $this;
-    }
-    
-    /**
-     * Returns Used for validating FedEx National Freight account number and (optionally) identifying third party payment on the bill of lading.
-     *
-     * @return ContactAndAddress
-     */
-    public function getFedExNationalFreightBillingContactAndAddress()
-    {
-        return $this->FedExNationalFreightBillingContactAndAddress;
+        return $this->AlternateBilling;
     }
     
     /**
@@ -132,25 +110,25 @@ class FreightShipmentDetail
     }
     
     /**
-     * Designates which of the requester's tariffs will be used for rating.
+     * Designates the terms of the "collect" payment for a Freight Shipment.
      *
-     * @param \FedEx\RateService\SimpleType\FreightAccountPaymentType|string $paymentType
+     * @param \FedEx\RateService\SimpleType\FreightCollectTermsType|string $collectTermsType
      * @return FreightShipmentDetail
      */
-    public function setPaymentType($paymentType)
+    public function setCollectTermsType($collectTermsType)
     {
-        $this->PaymentType = $paymentType;
+        $this->CollectTermsType = $collectTermsType;
         return $this;
     }
     
     /**
-     * Returns Designates which of the requester's tariffs will be used for rating.
+     * Returns Designates the terms of the "collect" payment for a Freight Shipment.
      *
-     * @return \FedEx\RateService\SimpleType\FreightAccountPaymentType|string
+     * @return \FedEx\RateService\SimpleType\FreightCollectTermsType|string
      */
-    public function getPaymentType()
+    public function getCollectTermsType()
     {
-        return $this->PaymentType;
+        return $this->CollectTermsType;
     }
     
     /**
@@ -371,6 +349,28 @@ class FreightShipmentDetail
     public function getSpecialServicePayments()
     {
         return $this->SpecialServicePayments;
+    }
+    
+    /**
+     * Set HazardousMaterialsOfferor
+     *
+     * @param string $hazardousMaterialsOfferor
+     * @return FreightShipmentDetail
+     */
+    public function setHazardousMaterialsOfferor($hazardousMaterialsOfferor)
+    {
+        $this->HazardousMaterialsOfferor = $hazardousMaterialsOfferor;
+        return $this;
+    }
+    
+    /**
+     * Returns Set HazardousMaterialsOfferor
+     *
+     * @return string
+     */
+    public function getHazardousMaterialsOfferor()
+    {
+        return $this->HazardousMaterialsOfferor;
     }
     
     /**

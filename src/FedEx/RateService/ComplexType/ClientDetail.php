@@ -66,7 +66,7 @@ class ClientDetail
     }
     
     /**
-     * Only used in transactions which require identification of the Fed Ex Office integrator.
+     * Only used in transactions which require identification of the FedEx Office integrator.
      *
      * @param string $integratorId
      * @return ClientDetail
@@ -78,7 +78,7 @@ class ClientDetail
     }
     
     /**
-     * Returns Only used in transactions which require identification of the Fed Ex Office integrator.
+     * Returns Only used in transactions which require identification of the FedEx Office integrator.
      *
      * @return string
      */

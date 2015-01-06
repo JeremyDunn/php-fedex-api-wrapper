@@ -22,7 +22,7 @@ class RateReplyDetail
     protected $_name = 'RateReplyDetail';
 
     /**
-     * Identifies the FedEx service to use in shipping the package. See ServiceType for list of valid enumerated values.
+     * Set ServiceType
      *
      * @param \FedEx\RateService\SimpleType\ServiceType|string $serviceType
      * @return RateReplyDetail
@@ -34,7 +34,7 @@ class RateReplyDetail
     }
     
     /**
-     * Returns Identifies the FedEx service to use in shipping the package. See ServiceType for list of valid enumerated values.
+     * Returns Set ServiceType
      *
      * @return \FedEx\RateService\SimpleType\ServiceType|string
      */
@@ -44,7 +44,7 @@ class RateReplyDetail
     }
     
     /**
-     * Identifies the packaging used by the requestor for the package. See PackagingType for list of valid enumerated values.
+     * Set PackagingType
      *
      * @param \FedEx\RateService\SimpleType\PackagingType|string $packagingType
      * @return RateReplyDetail
@@ -56,7 +56,7 @@ class RateReplyDetail
     }
     
     /**
-     * Returns Identifies the packaging used by the requestor for the package. See PackagingType for list of valid enumerated values.
+     * Returns Set PackagingType
      *
      * @return \FedEx\RateService\SimpleType\PackagingType|string
      */
@@ -198,7 +198,7 @@ class RateReplyDetail
     }
     
     /**
-     * Identification of an airport, using standard three-letter abbreviations.
+     * Set DestinationAirportId
      *
      * @param string $destinationAirportId
      * @return RateReplyDetail
@@ -210,7 +210,7 @@ class RateReplyDetail
     }
     
     /**
-     * Returns Identification of an airport, using standard three-letter abbreviations.
+     * Returns Set DestinationAirportId
      *
      * @return string
      */
@@ -220,7 +220,7 @@ class RateReplyDetail
     }
     
     /**
-     * Indicates whether or not this shipment is eligible for a money back guarantee.
+     * Set IneligibleForMoneyBackGuarantee
      *
      * @param boolean $ineligibleForMoneyBackGuarantee
      * @return RateReplyDetail
@@ -232,7 +232,7 @@ class RateReplyDetail
     }
     
     /**
-     * Returns Indicates whether or not this shipment is eligible for a money back guarantee.
+     * Returns Set IneligibleForMoneyBackGuarantee
      *
      * @return boolean
      */
@@ -242,7 +242,7 @@ class RateReplyDetail
     }
     
     /**
-     * Commitment code for the origin.
+     * Not populated by FAST service in Jan07.
      *
      * @param string $originServiceArea
      * @return RateReplyDetail
@@ -254,7 +254,7 @@ class RateReplyDetail
     }
     
     /**
-     * Returns Commitment code for the origin.
+     * Returns Not populated by FAST service in Jan07.
      *
      * @return string
      */
@@ -264,7 +264,7 @@ class RateReplyDetail
     }
     
     /**
-     * Commitment code for the destination.
+     * Not populated by FAST service in Jan07.
      *
      * @param string $destinationServiceArea
      * @return RateReplyDetail
@@ -276,7 +276,7 @@ class RateReplyDetail
     }
     
     /**
-     * Returns Commitment code for the destination.
+     * Returns Not populated by FAST service in Jan07.
      *
      * @return string
      */
@@ -286,7 +286,7 @@ class RateReplyDetail
     }
     
     /**
-     * Time in transit from pickup to delivery.
+     * Not populated by FAST service in Jan07.
      *
      * @param \FedEx\RateService\SimpleType\TransitTimeType|string $transitTime
      * @return RateReplyDetail
@@ -298,7 +298,7 @@ class RateReplyDetail
     }
     
     /**
-     * Returns Time in transit from pickup to delivery.
+     * Returns Not populated by FAST service in Jan07.
      *
      * @return \FedEx\RateService\SimpleType\TransitTimeType|string
      */
@@ -330,7 +330,7 @@ class RateReplyDetail
     }
     
     /**
-     * The signature option for this package.
+     * Not populated by FAST service in Jan07. Actual signature option applied, to allow for cases in wihch the original value conflicted with other service features in the shipment.
      *
      * @param \FedEx\RateService\SimpleType\SignatureOptionType|string $signatureOption
      * @return RateReplyDetail
@@ -342,7 +342,7 @@ class RateReplyDetail
     }
     
     /**
-     * Returns The signature option for this package.
+     * Returns Not populated by FAST service in Jan07. Actual signature option applied, to allow for cases in wihch the original value conflicted with other service features in the shipment.
      *
      * @return \FedEx\RateService\SimpleType\SignatureOptionType|string
      */
@@ -352,7 +352,7 @@ class RateReplyDetail
     }
     
     /**
-     * The actual rate type of the charges for this package.
+     * Set ActualRateType
      *
      * @param \FedEx\RateService\SimpleType\ReturnedRateType|string $actualRateType
      * @return RateReplyDetail
@@ -364,7 +364,7 @@ class RateReplyDetail
     }
     
     /**
-     * Returns The actual rate type of the charges for this package.
+     * Returns Set ActualRateType
      *
      * @return \FedEx\RateService\SimpleType\ReturnedRateType|string
      */

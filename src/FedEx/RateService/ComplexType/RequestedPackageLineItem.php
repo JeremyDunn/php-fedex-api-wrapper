@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * This class rationalizes RequestedPackage and RequestedPackageSummary from previous interfaces. The way in which it is uses within a RequestedShipment depends on the RequestedPackageDetailType value specified for that shipment.
+ * This class rationalizes RequestedPackage and RequestedPackageSummary from previous interfaces.
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -110,7 +110,7 @@ class RequestedPackageLineItem
     }
     
     /**
-     * Only used for INDIVIDUAL_PACKAGES and PACKAGE_GROUPS. Ignored for PACKAGE_SUMMARY, in which case totalInsuredValue and packageCount on the shipment will be used to determine this value.
+     * Specifies the declared value for carriage of the package. The declared value for carriage represents the maximum liability of FedEx in connection with a shipment, including, but not limited to, any loss, damage, delay, mis-delivery, nondelivery, misinformation, any failure to provide information, or mis-delivery of information relating to the package. This field is only used for INDIVIDUAL_PACKAGES and PACKAGE_GROUPS. Ignored for PACKAGE_SUMMARY, in which case totalInsuredValue and packageCount on the shipment will be used to determine this value.
      *
      * @param Money $insuredValue
      * @return RequestedPackageLineItem
@@ -122,7 +122,7 @@ class RequestedPackageLineItem
     }
     
     /**
-     * Returns Only used for INDIVIDUAL_PACKAGES and PACKAGE_GROUPS. Ignored for PACKAGE_SUMMARY, in which case totalInsuredValue and packageCount on the shipment will be used to determine this value.
+     * Returns Specifies the declared value for carriage of the package. The declared value for carriage represents the maximum liability of FedEx in connection with a shipment, including, but not limited to, any loss, damage, delay, mis-delivery, nondelivery, misinformation, any failure to provide information, or mis-delivery of information relating to the package. This field is only used for INDIVIDUAL_PACKAGES and PACKAGE_GROUPS. Ignored for PACKAGE_SUMMARY, in which case totalInsuredValue and packageCount on the shipment will be used to determine this value.
      *
      * @return Money
      */
@@ -132,7 +132,7 @@ class RequestedPackageLineItem
     }
     
     /**
-     * Only used for INDIVIDUAL_PACKAGES and PACKAGE_GROUPS. Ignored for PACKAGE_SUMMARY, in which case totalweight and packageCount on the shipment will be used to determine this value.
+     * Only used for INDIVIDUAL_PACKAGES and PACKAGE_GROUPS. Ignored for PACKAGE_SUMMARY, in which case total weight and packageCount on the shipment will be used to determine this value.
      *
      * @param Weight $weight
      * @return RequestedPackageLineItem
@@ -144,7 +144,7 @@ class RequestedPackageLineItem
     }
     
     /**
-     * Returns Only used for INDIVIDUAL_PACKAGES and PACKAGE_GROUPS. Ignored for PACKAGE_SUMMARY, in which case totalweight and packageCount on the shipment will be used to determine this value.
+     * Returns Only used for INDIVIDUAL_PACKAGES and PACKAGE_GROUPS. Ignored for PACKAGE_SUMMARY, in which case total weight and packageCount on the shipment will be used to determine this value.
      *
      * @return Weight
      */
@@ -217,6 +217,28 @@ class RequestedPackageLineItem
     public function getItemDescription()
     {
         return $this->ItemDescription;
+    }
+    
+    /**
+     * Human-readable text describing the contents of the package to be used for clearance purposes.
+     *
+     * @param string $itemDescriptionForClearance
+     * @return RequestedPackageLineItem
+     */
+    public function setItemDescriptionForClearance($itemDescriptionForClearance)
+    {
+        $this->ItemDescriptionForClearance = $itemDescriptionForClearance;
+        return $this;
+    }
+    
+    /**
+     * Returns Human-readable text describing the contents of the package to be used for clearance purposes.
+     *
+     * @return string
+     */
+    public function getItemDescriptionForClearance()
+    {
+        return $this->ItemDescriptionForClearance;
     }
     
     /**

@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Identifies a discount applied to the shipment.
+ * Rebate
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -66,7 +66,7 @@ class Rebate
     }
     
     /**
-     * The amount of the discount applied to the shipment.
+     * Set Amount
      *
      * @param Money $amount
      * @return Rebate
@@ -78,7 +78,7 @@ class Rebate
     }
     
     /**
-     * Returns The amount of the discount applied to the shipment.
+     * Returns Set Amount
      *
      * @return Money
      */
@@ -88,7 +88,7 @@ class Rebate
     }
     
     /**
-     * The percentage of the discount applied to the shipment.
+     * Set Percent
      *
      * @param decimal $percent
      * @return Rebate
@@ -100,7 +100,7 @@ class Rebate
     }
     
     /**
-     * Returns The percentage of the discount applied to the shipment.
+     * Returns Set Percent
      *
      * @return decimal
      */

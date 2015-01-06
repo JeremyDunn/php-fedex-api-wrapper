@@ -44,6 +44,28 @@ class FreightRateDetail
     }
     
     /**
+     * Specifies whether the rate quote was automated or manual.
+     *
+     * @param \FedEx\RateService\SimpleType\FreightRateQuoteType|string $quoteType
+     * @return FreightRateDetail
+     */
+    public function setQuoteType($quoteType)
+    {
+        $this->QuoteType = $quoteType;
+        return $this;
+    }
+    
+    /**
+     * Returns Specifies whether the rate quote was automated or manual.
+     *
+     * @return \FedEx\RateService\SimpleType\FreightRateQuoteType|string
+     */
+    public function getQuoteType()
+    {
+        return $this->QuoteType;
+    }
+    
+    /**
      * Specifies how total base charge is determined.
      *
      * @param \FedEx\RateService\SimpleType\FreightBaseChargeCalculationType|string $baseChargeCalculation

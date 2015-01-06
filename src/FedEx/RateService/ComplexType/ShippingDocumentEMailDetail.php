@@ -65,6 +65,28 @@ class ShippingDocumentEMailDetail
         return $this->Grouping;
     }
     
+    /**
+     * Specifies the language in which the email containing the document is requested to be composed.
+     *
+     * @param Localization $localization
+     * @return ShippingDocumentEMailDetail
+     */
+    public function setLocalization(Localization $localization)
+    {
+        $this->Localization = $localization;
+        return $this;
+    }
+    
+    /**
+     * Returns Specifies the language in which the email containing the document is requested to be composed.
+     *
+     * @return Localization
+     */
+    public function getLocalization()
+    {
+        return $this->Localization;
+    }
+    
 
     
 }

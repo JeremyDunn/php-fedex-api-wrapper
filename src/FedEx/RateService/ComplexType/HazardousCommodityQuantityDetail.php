@@ -44,7 +44,7 @@ class HazardousCommodityQuantityDetail
     }
     
     /**
-     * Units by which the hazardous commodity is measured.
+     * Units by which the hazardous commodity is measured. For IATA commodity, the units values are restricted based on regulation type.
      *
      * @param string $units
      * @return HazardousCommodityQuantityDetail
@@ -56,13 +56,35 @@ class HazardousCommodityQuantityDetail
     }
     
     /**
-     * Returns Units by which the hazardous commodity is measured.
+     * Returns Units by which the hazardous commodity is measured. For IATA commodity, the units values are restricted based on regulation type.
      *
      * @return string
      */
     public function getUnits()
     {
         return $this->Units;
+    }
+    
+    /**
+     * Specifies which measure of quantity is to be validated.
+     *
+     * @param \FedEx\RateService\SimpleType\HazardousCommodityQuantityType|string $quantityType
+     * @return HazardousCommodityQuantityDetail
+     */
+    public function setQuantityType($quantityType)
+    {
+        $this->QuantityType = $quantityType;
+        return $this;
+    }
+    
+    /**
+     * Returns Specifies which measure of quantity is to be validated.
+     *
+     * @return \FedEx\RateService\SimpleType\HazardousCommodityQuantityType|string
+     */
+    public function getQuantityType()
+    {
+        return $this->QuantityType;
     }
     
 

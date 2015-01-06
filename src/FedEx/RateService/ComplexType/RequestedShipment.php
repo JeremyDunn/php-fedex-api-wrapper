@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * The descriptive data for the shipment being tendered to FedEx.
+ * RequestedShipment
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -22,7 +22,7 @@ class RequestedShipment
     protected $_name = 'RequestedShipment';
 
     /**
-     * Identifies the date and time the package is tendered to FedEx. Both the date and time portions of the string are expected to be used. The date should not be a past date or a date more than 10 days in the future. The time is the local time of the shipment based on the shipper's time zone. The date component must be in the format: YYYY-MM-DD (e.g. 2006-06-26). The time component must be in the format: HH:MM:SS using a 24 hour clock (e.g. 11:00 a.m. is 11:00:00, whereas 5:00 p.m. is 17:00:00). The date and time parts are separated by the letter T (e.g. 2006-06-26T17:00:00). There is also a UTC offset component indicating the number of hours/mainutes from UTC (e.g 2006-06-26T17:00:00-0400 is defined form June 26, 2006 5:00 pm Eastern Time).
+     * Set ShipTimestamp
      *
      * @param dateTime $shipTimestamp
      * @return RequestedShipment
@@ -34,7 +34,7 @@ class RequestedShipment
     }
     
     /**
-     * Returns Identifies the date and time the package is tendered to FedEx. Both the date and time portions of the string are expected to be used. The date should not be a past date or a date more than 10 days in the future. The time is the local time of the shipment based on the shipper's time zone. The date component must be in the format: YYYY-MM-DD (e.g. 2006-06-26). The time component must be in the format: HH:MM:SS using a 24 hour clock (e.g. 11:00 a.m. is 11:00:00, whereas 5:00 p.m. is 17:00:00). The date and time parts are separated by the letter T (e.g. 2006-06-26T17:00:00). There is also a UTC offset component indicating the number of hours/mainutes from UTC (e.g 2006-06-26T17:00:00-0400 is defined form June 26, 2006 5:00 pm Eastern Time).
+     * Returns Set ShipTimestamp
      *
      * @return dateTime
      */
@@ -44,7 +44,7 @@ class RequestedShipment
     }
     
     /**
-     * Identifies the method by which the package is to be tendered to FedEx. This element does not dispatch a courier for package pickup. See DropoffType for list of valid enumerated values.
+     * Set DropoffType
      *
      * @param \FedEx\RateService\SimpleType\DropoffType|string $dropoffType
      * @return RequestedShipment
@@ -56,7 +56,7 @@ class RequestedShipment
     }
     
     /**
-     * Returns Identifies the method by which the package is to be tendered to FedEx. This element does not dispatch a courier for package pickup. See DropoffType for list of valid enumerated values.
+     * Returns Set DropoffType
      *
      * @return \FedEx\RateService\SimpleType\DropoffType|string
      */
@@ -66,7 +66,7 @@ class RequestedShipment
     }
     
     /**
-     * Identifies the FedEx service to use in shipping the package. See ServiceType for list of valid enumerated values.
+     * Set ServiceType
      *
      * @param \FedEx\RateService\SimpleType\ServiceType|string $serviceType
      * @return RequestedShipment
@@ -78,7 +78,7 @@ class RequestedShipment
     }
     
     /**
-     * Returns Identifies the FedEx service to use in shipping the package. See ServiceType for list of valid enumerated values.
+     * Returns Set ServiceType
      *
      * @return \FedEx\RateService\SimpleType\ServiceType|string
      */
@@ -88,7 +88,7 @@ class RequestedShipment
     }
     
     /**
-     * Identifies the packaging used by the requestor for the package. See PackagingType for list of valid enumerated values.
+     * Set PackagingType
      *
      * @param \FedEx\RateService\SimpleType\PackagingType|string $packagingType
      * @return RequestedShipment
@@ -100,7 +100,7 @@ class RequestedShipment
     }
     
     /**
-     * Returns Identifies the packaging used by the requestor for the package. See PackagingType for list of valid enumerated values.
+     * Returns Set PackagingType
      *
      * @return \FedEx\RateService\SimpleType\PackagingType|string
      */
@@ -110,7 +110,7 @@ class RequestedShipment
     }
     
     /**
-     * Identifies the total weight of the shipment being conveyed to FedEx.This is only applicable to International shipments and should only be used on the first package of a mutiple piece shipment.This value contains 1 explicit decimal position
+     * Set TotalWeight
      *
      * @param Weight $totalWeight
      * @return RequestedShipment
@@ -122,7 +122,7 @@ class RequestedShipment
     }
     
     /**
-     * Returns Identifies the total weight of the shipment being conveyed to FedEx.This is only applicable to International shipments and should only be used on the first package of a mutiple piece shipment.This value contains 1 explicit decimal position
+     * Returns Set TotalWeight
      *
      * @return Weight
      */
@@ -132,7 +132,7 @@ class RequestedShipment
     }
     
     /**
-     * Total insured amount.
+     * Specifies the total declared value for carriage of the shipment. The declared value for carriage represents the maximum liability of FedEx in connection with a shipment, including, but not limited to, any loss, damage, delay, mis-delivery, nondelivery, misinformation, any failure to provide information, or mis-delivery of information relating to the shipment.
      *
      * @param Money $totalInsuredValue
      * @return RequestedShipment
@@ -144,7 +144,7 @@ class RequestedShipment
     }
     
     /**
-     * Returns Total insured amount.
+     * Returns Specifies the total declared value for carriage of the shipment. The declared value for carriage represents the maximum liability of FedEx in connection with a shipment, including, but not limited to, any loss, damage, delay, mis-delivery, nondelivery, misinformation, any failure to provide information, or mis-delivery of information relating to the shipment.
      *
      * @return Money
      */
@@ -154,7 +154,29 @@ class RequestedShipment
     }
     
     /**
-     * Descriptive data identifying the party responsible for shipping the package. Shipper and Origin should have the same address.
+     * This attribute indicates the currency the caller requests to have used in all returned monetary values (when a choice is possible).
+     *
+     * @param string $preferredCurrency
+     * @return RequestedShipment
+     */
+    public function setPreferredCurrency($preferredCurrency)
+    {
+        $this->PreferredCurrency = $preferredCurrency;
+        return $this;
+    }
+    
+    /**
+     * Returns This attribute indicates the currency the caller requests to have used in all returned monetary values (when a choice is possible).
+     *
+     * @return string
+     */
+    public function getPreferredCurrency()
+    {
+        return $this->PreferredCurrency;
+    }
+    
+    /**
+     * Set Shipper
      *
      * @param Party $shipper
      * @return RequestedShipment
@@ -166,7 +188,7 @@ class RequestedShipment
     }
     
     /**
-     * Returns Descriptive data identifying the party responsible for shipping the package. Shipper and Origin should have the same address.
+     * Returns Set Shipper
      *
      * @return Party
      */
@@ -176,7 +198,7 @@ class RequestedShipment
     }
     
     /**
-     * Descriptive data identifying the party receiving the package.
+     * Set Recipient
      *
      * @param Party $recipient
      * @return RequestedShipment
@@ -188,7 +210,7 @@ class RequestedShipment
     }
     
     /**
-     * Returns Descriptive data identifying the party receiving the package.
+     * Returns Set Recipient
      *
      * @return Party
      */
@@ -198,7 +220,7 @@ class RequestedShipment
     }
     
     /**
-     * A unique identifier for a recipient location
+     * Set RecipientLocationNumber
      *
      * @param string $recipientLocationNumber
      * @return RequestedShipment
@@ -210,7 +232,7 @@ class RequestedShipment
     }
     
     /**
-     * Returns A unique identifier for a recipient location
+     * Returns Set RecipientLocationNumber
      *
      * @return string
      */
@@ -242,7 +264,29 @@ class RequestedShipment
     }
     
     /**
-     * Descriptive data indicating the method and means of payment to FedEx for providing shipping services.
+     * Set SoldTo
+     *
+     * @param Party $soldTo
+     * @return RequestedShipment
+     */
+    public function setSoldTo(Party $soldTo)
+    {
+        $this->SoldTo = $soldTo;
+        return $this;
+    }
+    
+    /**
+     * Returns Set SoldTo
+     *
+     * @return Party
+     */
+    public function getSoldTo()
+    {
+        return $this->SoldTo;
+    }
+    
+    /**
+     * Set ShippingChargesPayment
      *
      * @param Payment $shippingChargesPayment
      * @return RequestedShipment
@@ -254,7 +298,7 @@ class RequestedShipment
     }
     
     /**
-     * Returns Descriptive data indicating the method and means of payment to FedEx for providing shipping services.
+     * Returns Set ShippingChargesPayment
      *
      * @return Payment
      */
@@ -264,7 +308,7 @@ class RequestedShipment
     }
     
     /**
-     * Descriptive data regarding special services requested by the shipper for this shipment. If the shipper is requesting a special service which requires additional data (e.g. COD), the special service type must be present in the specialServiceTypes collection, and the supporting detail must be provided in the appropriate sub-object. For example, to request COD, "COD" must be included in the SpecialServiceTypes collection and the CodDetail object must contain the required data.
+     * Set SpecialServicesRequested
      *
      * @param ShipmentSpecialServicesRequested $specialServicesRequested
      * @return RequestedShipment
@@ -276,7 +320,7 @@ class RequestedShipment
     }
     
     /**
-     * Returns Descriptive data regarding special services requested by the shipper for this shipment. If the shipper is requesting a special service which requires additional data (e.g. COD), the special service type must be present in the specialServiceTypes collection, and the supporting detail must be provided in the appropriate sub-object. For example, to request COD, "COD" must be included in the SpecialServiceTypes collection and the CodDetail object must contain the required data.
+     * Returns Set SpecialServicesRequested
      *
      * @return ShipmentSpecialServicesRequested
      */
@@ -286,7 +330,7 @@ class RequestedShipment
     }
     
     /**
-     * Details specific to an Express freight shipment.
+     * Set ExpressFreightDetail
      *
      * @param ExpressFreightDetail $expressFreightDetail
      * @return RequestedShipment
@@ -298,7 +342,7 @@ class RequestedShipment
     }
     
     /**
-     * Returns Details specific to an Express freight shipment.
+     * Returns Set ExpressFreightDetail
      *
      * @return ExpressFreightDetail
      */
@@ -308,7 +352,7 @@ class RequestedShipment
     }
     
     /**
-     * Data applicable to shipments using FEDEX_FREIGHT and FEDEX_NATIONAL_FREIGHT services.
+     * Data applicable to shipments using FEDEX_FREIGHT_ECONOMY and FEDEX_FREIGHT_PRIORITY services.
      *
      * @param FreightShipmentDetail $freightShipmentDetail
      * @return RequestedShipment
@@ -320,7 +364,7 @@ class RequestedShipment
     }
     
     /**
-     * Returns Data applicable to shipments using FEDEX_FREIGHT and FEDEX_NATIONAL_FREIGHT services.
+     * Returns Data applicable to shipments using FEDEX_FREIGHT_ECONOMY and FEDEX_FREIGHT_PRIORITY services.
      *
      * @return FreightShipmentDetail
      */
@@ -352,7 +396,7 @@ class RequestedShipment
     }
     
     /**
-     * Details about how to calculate variable handling charges at the shipment level.
+     * Set VariableHandlingChargeDetail
      *
      * @param VariableHandlingChargeDetail $variableHandlingChargeDetail
      * @return RequestedShipment
@@ -364,7 +408,7 @@ class RequestedShipment
     }
     
     /**
-     * Returns Details about how to calculate variable handling charges at the shipment level.
+     * Returns Set VariableHandlingChargeDetail
      *
      * @return VariableHandlingChargeDetail
      */
@@ -462,7 +506,7 @@ class RequestedShipment
     }
     
     /**
-     * Details about the image format and printer type the label is to returned in.
+     * Set LabelSpecification
      *
      * @param LabelSpecification $labelSpecification
      * @return RequestedShipment
@@ -474,7 +518,7 @@ class RequestedShipment
     }
     
     /**
-     * Returns Details about the image format and printer type the label is to returned in.
+     * Returns Set LabelSpecification
      *
      * @return LabelSpecification
      */
@@ -591,6 +635,28 @@ class RequestedShipment
     public function getShipmentOnlyFields()
     {
         return $this->ShipmentOnlyFields;
+    }
+    
+    /**
+     * Specifies data structures that may be re-used multiple times with s single shipment.
+     *
+     * @param ShipmentConfigurationData $configurationData
+     * @return RequestedShipment
+     */
+    public function setConfigurationData(ShipmentConfigurationData $configurationData)
+    {
+        $this->ConfigurationData = $configurationData;
+        return $this;
+    }
+    
+    /**
+     * Returns Specifies data structures that may be re-used multiple times with s single shipment.
+     *
+     * @return ShipmentConfigurationData
+     */
+    public function getConfigurationData()
+    {
+        return $this->ConfigurationData;
     }
     
     /**

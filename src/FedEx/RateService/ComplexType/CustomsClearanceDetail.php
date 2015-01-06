@@ -22,31 +22,25 @@ class CustomsClearanceDetail
     protected $_name = 'CustomsClearanceDetail';
 
     /**
-     * 
-                Descriptive data identifying the Broker responsible for the shipmet.
-                Required if BROKER_SELECT_OPTION is requested in Special Services.
-              
+     * Set Brokers
      *
-     * @param Party $broker
+     * @param BrokerDetail[] $brokers
      * @return CustomsClearanceDetail
      */
-    public function setBroker(Party $broker)
+    public function setBrokers(array $brokers)
     {
-        $this->Broker = $broker;
+        $this->Brokers = $brokers;
         return $this;
     }
     
     /**
-     * Returns 
-                Descriptive data identifying the Broker responsible for the shipmet.
-                Required if BROKER_SELECT_OPTION is requested in Special Services.
-              
+     * Returns Set Brokers
      *
-     * @return Party
+     * @return BrokerDetail[]
      */
-    public function getBroker()
+    public function getBrokers()
     {
-        return $this->Broker;
+        return $this->Brokers;
     }
     
     /**
@@ -72,17 +66,29 @@ class CustomsClearanceDetail
     }
     
     /**
-     * 
-                Applicable only for Commercial Invoice. If the consignee and importer are not the same, the Following importer fields are required.
-                Importer/Contact/PersonName
-                Importer/Contact/CompanyName
-                Importer/Contact/PhoneNumber
-                Importer/Address/StreetLine[0]
-                Importer/Address/City
-                Importer/Address/StateOrProvinceCode - if Importer Country Code is US or CA
-                Importer/Address/PostalCode - if Importer Country Code is US or CA
-                Importer/Address/CountryCode
-              
+     * Set CustomsOptions
+     *
+     * @param CustomsOptionDetail $customsOptions
+     * @return CustomsClearanceDetail
+     */
+    public function setCustomsOptions(CustomsOptionDetail $customsOptions)
+    {
+        $this->CustomsOptions = $customsOptions;
+        return $this;
+    }
+    
+    /**
+     * Returns Set CustomsOptions
+     *
+     * @return CustomsOptionDetail
+     */
+    public function getCustomsOptions()
+    {
+        return $this->CustomsOptions;
+    }
+    
+    /**
+     * Set ImporterOfRecord
      *
      * @param Party $importerOfRecord
      * @return CustomsClearanceDetail
@@ -94,17 +100,7 @@ class CustomsClearanceDetail
     }
     
     /**
-     * Returns 
-                Applicable only for Commercial Invoice. If the consignee and importer are not the same, the Following importer fields are required.
-                Importer/Contact/PersonName
-                Importer/Contact/CompanyName
-                Importer/Contact/PhoneNumber
-                Importer/Address/StreetLine[0]
-                Importer/Address/City
-                Importer/Address/StateOrProvinceCode - if Importer Country Code is US or CA
-                Importer/Address/PostalCode - if Importer Country Code is US or CA
-                Importer/Address/CountryCode
-              
+     * Returns Set ImporterOfRecord
      *
      * @return Party
      */
@@ -136,7 +132,7 @@ class CustomsClearanceDetail
     }
     
     /**
-     * Indicates how payment of duties for the shipment will be made.
+     * Set DutiesPayment
      *
      * @param Payment $dutiesPayment
      * @return CustomsClearanceDetail
@@ -148,7 +144,7 @@ class CustomsClearanceDetail
     }
     
     /**
-     * Returns Indicates how payment of duties for the shipment will be made.
+     * Returns Set DutiesPayment
      *
      * @return Payment
      */
@@ -158,7 +154,7 @@ class CustomsClearanceDetail
     }
     
     /**
-     * Indicates whether this shipment contains documents only or non-documents.
+     * Set DocumentContent
      *
      * @param \FedEx\RateService\SimpleType\InternationalDocumentContentType|string $documentContent
      * @return CustomsClearanceDetail
@@ -170,7 +166,7 @@ class CustomsClearanceDetail
     }
     
     /**
-     * Returns Indicates whether this shipment contains documents only or non-documents.
+     * Returns Set DocumentContent
      *
      * @return \FedEx\RateService\SimpleType\InternationalDocumentContentType|string
      */
@@ -180,7 +176,7 @@ class CustomsClearanceDetail
     }
     
     /**
-     * The total customs value for the shipment. This total will rrepresent th esum of the values of all commodities, and may include freight, miscellaneous, and insurance charges. Must contain 2 explicit decimal positions with a max length of 17 including the decimal. For Express International MPS, the Total Customs Value is in the master transaction and all child transactions
+     * Set CustomsValue
      *
      * @param Money $customsValue
      * @return CustomsClearanceDetail
@@ -192,7 +188,7 @@ class CustomsClearanceDetail
     }
     
     /**
-     * Returns The total customs value for the shipment. This total will rrepresent th esum of the values of all commodities, and may include freight, miscellaneous, and insurance charges. Must contain 2 explicit decimal positions with a max length of 17 including the decimal. For Express International MPS, the Total Customs Value is in the master transaction and all child transactions
+     * Returns Set CustomsValue
      *
      * @return Money
      */
@@ -268,7 +264,7 @@ class CustomsClearanceDetail
     }
     
     /**
-     * CommercialInvoice element is required for electronic upload of CI data. It will serve to create/transmit an Electronic Commercial Invoice through FedEx System. Customers are responsible for printing their own Commercial Invoice. Commercial Invoice support consists of a maximum of 20 commodity line items.
+     * Set CommercialInvoice
      *
      * @param CommercialInvoice $commercialInvoice
      * @return CustomsClearanceDetail
@@ -280,7 +276,7 @@ class CustomsClearanceDetail
     }
     
     /**
-     * Returns CommercialInvoice element is required for electronic upload of CI data. It will serve to create/transmit an Electronic Commercial Invoice through FedEx System. Customers are responsible for printing their own Commercial Invoice. Commercial Invoice support consists of a maximum of 20 commodity line items.
+     * Returns Set CommercialInvoice
      *
      * @return CommercialInvoice
      */
@@ -290,10 +286,7 @@ class CustomsClearanceDetail
     }
     
     /**
-     * 
-                For international multiple piece shipments, commodity information must be passed in the Master and on each child transaction.
-                If this shipment cotains more than four commodities line items, the four highest valued should be included in the first 4 occurances for this request.
-              
+     * Set Commodities
      *
      * @param Commodity[] $commodities
      * @return CustomsClearanceDetail
@@ -305,10 +298,7 @@ class CustomsClearanceDetail
     }
     
     /**
-     * Returns 
-                For international multiple piece shipments, commodity information must be passed in the Master and on each child transaction.
-                If this shipment cotains more than four commodities line items, the four highest valued should be included in the first 4 occurances for this request.
-              
+     * Returns Set Commodities
      *
      * @return Commodity[]
      */
@@ -318,7 +308,7 @@ class CustomsClearanceDetail
     }
     
     /**
-     * Country specific details of an International shipment.
+     * Set ExportDetail
      *
      * @param ExportDetail $exportDetail
      * @return CustomsClearanceDetail
@@ -330,7 +320,7 @@ class CustomsClearanceDetail
     }
     
     /**
-     * Returns Country specific details of an International shipment.
+     * Returns Set ExportDetail
      *
      * @return ExportDetail
      */
@@ -340,7 +330,7 @@ class CustomsClearanceDetail
     }
     
     /**
-     * FOOD_OR_PERISHABLE is required by FDA/BTA; must be true for food/perishable items coming to US or PR from non-US/non-PR origin.
+     * Set RegulatoryControls
      *
      * @param RegulatoryControlType[] $regulatoryControls
      * @return CustomsClearanceDetail
@@ -352,7 +342,7 @@ class CustomsClearanceDetail
     }
     
     /**
-     * Returns FOOD_OR_PERISHABLE is required by FDA/BTA; must be true for food/perishable items coming to US or PR from non-US/non-PR origin.
+     * Returns Set RegulatoryControls
      *
      * @return RegulatoryControlType[]
      */

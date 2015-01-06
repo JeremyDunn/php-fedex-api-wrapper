@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Descriptive data identifying the party responsible for payment for a service.
+ * Payor
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -22,47 +22,25 @@ class Payor
     protected $_name = 'Payor';
 
     /**
-     * Identifies the FedEx account number assigned to the payor.
+     * Set ResponsibleParty
      *
-     * @param string $accountNumber
+     * @param Party $responsibleParty
      * @return Payor
      */
-    public function setAccountNumber($accountNumber)
+    public function setResponsibleParty(Party $responsibleParty)
     {
-        $this->AccountNumber = $accountNumber;
+        $this->ResponsibleParty = $responsibleParty;
         return $this;
     }
     
     /**
-     * Returns Identifies the FedEx account number assigned to the payor.
+     * Returns Set ResponsibleParty
      *
-     * @return string
+     * @return Party
      */
-    public function getAccountNumber()
+    public function getResponsibleParty()
     {
-        return $this->AccountNumber;
-    }
-    
-    /**
-     * Identifies the country of the payor.
-     *
-     * @param string $countryCode
-     * @return Payor
-     */
-    public function setCountryCode($countryCode)
-    {
-        $this->CountryCode = $countryCode;
-        return $this;
-    }
-    
-    /**
-     * Returns Identifies the country of the payor.
-     *
-     * @return string
-     */
-    public function getCountryCode()
-    {
-        return $this->CountryCode;
+        return $this->ResponsibleParty;
     }
     
 

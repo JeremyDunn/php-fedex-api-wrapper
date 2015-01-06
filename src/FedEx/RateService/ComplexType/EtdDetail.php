@@ -44,7 +44,7 @@ class EtdDetail
     }
     
     /**
-     * Currently not supported.
+     * Set Documents
      *
      * @param UploadDocumentDetail[] $documents
      * @return EtdDetail
@@ -56,7 +56,7 @@ class EtdDetail
     }
     
     /**
-     * Returns Currently not supported.
+     * Returns Set Documents
      *
      * @return UploadDocumentDetail[]
      */

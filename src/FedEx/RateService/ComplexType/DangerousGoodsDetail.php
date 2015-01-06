@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * The descriptive data required for a FedEx shipment containing dangerous goods (hazardous materials).
+ * DangerousGoodsDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -22,7 +22,29 @@ class DangerousGoodsDetail
     protected $_name = 'DangerousGoodsDetail';
 
     /**
-     * Identifies whether or not the products being shipped are required to be accessible during delivery.
+     * Set Regulation
+     *
+     * @param \FedEx\RateService\SimpleType\HazardousCommodityRegulationType|string $regulation
+     * @return DangerousGoodsDetail
+     */
+    public function setRegulation($regulation)
+    {
+        $this->Regulation = $regulation;
+        return $this;
+    }
+    
+    /**
+     * Returns Set Regulation
+     *
+     * @return \FedEx\RateService\SimpleType\HazardousCommodityRegulationType|string
+     */
+    public function getRegulation()
+    {
+        return $this->Regulation;
+    }
+    
+    /**
+     * Set Accessibility
      *
      * @param \FedEx\RateService\SimpleType\DangerousGoodsAccessibilityType|string $accessibility
      * @return DangerousGoodsDetail
@@ -34,7 +56,7 @@ class DangerousGoodsDetail
     }
     
     /**
-     * Returns Identifies whether or not the products being shipped are required to be accessible during delivery.
+     * Returns Set Accessibility
      *
      * @return \FedEx\RateService\SimpleType\DangerousGoodsAccessibilityType|string
      */
@@ -88,25 +110,69 @@ class DangerousGoodsDetail
     }
     
     /**
-     * Documents the kinds and quantities of all hazardous commodities in the current package.
+     * Indicates whether there is additional customer provided packaging enclosing the approved dangerous goods containers.
      *
-     * @param HazardousCommodityContent[] $hazardousCommodities
+     * @param \FedEx\RateService\SimpleType\DangerousGoodsPackingOptionType|string $packingOption
      * @return DangerousGoodsDetail
      */
-    public function setHazardousCommodities(array $hazardousCommodities)
+    public function setPackingOption($packingOption)
     {
-        $this->HazardousCommodities = $hazardousCommodities;
+        $this->PackingOption = $packingOption;
         return $this;
     }
     
     /**
-     * Returns Documents the kinds and quantities of all hazardous commodities in the current package.
+     * Returns Indicates whether there is additional customer provided packaging enclosing the approved dangerous goods containers.
      *
-     * @return HazardousCommodityContent[]
+     * @return \FedEx\RateService\SimpleType\DangerousGoodsPackingOptionType|string
      */
-    public function getHazardousCommodities()
+    public function getPackingOption()
     {
-        return $this->HazardousCommodities;
+        return $this->PackingOption;
+    }
+    
+    /**
+     * Identifies the configuration of this dangerous goods package. The common configuration is represented at the shipment level.
+     *
+     * @param string $referenceId
+     * @return DangerousGoodsDetail
+     */
+    public function setReferenceId($referenceId)
+    {
+        $this->ReferenceId = $referenceId;
+        return $this;
+    }
+    
+    /**
+     * Returns Identifies the configuration of this dangerous goods package. The common configuration is represented at the shipment level.
+     *
+     * @return string
+     */
+    public function getReferenceId()
+    {
+        return $this->ReferenceId;
+    }
+    
+    /**
+     * Indicates one or more containers used to pack dangerous goods commodities.
+     *
+     * @param DangerousGoodsContainer[] $containers
+     * @return DangerousGoodsDetail
+     */
+    public function setContainers(array $containers)
+    {
+        $this->Containers = $containers;
+        return $this;
+    }
+    
+    /**
+     * Returns Indicates one or more containers used to pack dangerous goods commodities.
+     *
+     * @return DangerousGoodsContainer[]
+     */
+    public function getContainers()
+    {
+        return $this->Containers;
     }
     
     /**
@@ -129,6 +195,28 @@ class DangerousGoodsDetail
     public function getPackaging()
     {
         return $this->Packaging;
+    }
+    
+    /**
+     * Name, title and place of the signatory for this shipment.
+     *
+     * @param DangerousGoodsSignatory $signatory
+     * @return DangerousGoodsDetail
+     */
+    public function setSignatory(DangerousGoodsSignatory $signatory)
+    {
+        $this->Signatory = $signatory;
+        return $this;
+    }
+    
+    /**
+     * Returns Name, title and place of the signatory for this shipment.
+     *
+     * @return DangerousGoodsSignatory
+     */
+    public function getSignatory()
+    {
+        return $this->Signatory;
     }
     
     /**
@@ -173,6 +261,72 @@ class DangerousGoodsDetail
     public function getOfferor()
     {
         return $this->Offeror;
+    }
+    
+    /**
+     * Specifies the contact of the party responsible for handling the infectious substances, if any, in the dangerous goods shipment.
+     *
+     * @param Contact $infectiousSubstanceResponsibleContact
+     * @return DangerousGoodsDetail
+     */
+    public function setInfectiousSubstanceResponsibleContact(Contact $infectiousSubstanceResponsibleContact)
+    {
+        $this->InfectiousSubstanceResponsibleContact = $infectiousSubstanceResponsibleContact;
+        return $this;
+    }
+    
+    /**
+     * Returns Specifies the contact of the party responsible for handling the infectious substances, if any, in the dangerous goods shipment.
+     *
+     * @return Contact
+     */
+    public function getInfectiousSubstanceResponsibleContact()
+    {
+        return $this->InfectiousSubstanceResponsibleContact;
+    }
+    
+    /**
+     * Specifies additional handling information for the current package.
+     *
+     * @param string $additionalHandling
+     * @return DangerousGoodsDetail
+     */
+    public function setAdditionalHandling($additionalHandling)
+    {
+        $this->AdditionalHandling = $additionalHandling;
+        return $this;
+    }
+    
+    /**
+     * Returns Specifies additional handling information for the current package.
+     *
+     * @return string
+     */
+    public function getAdditionalHandling()
+    {
+        return $this->AdditionalHandling;
+    }
+    
+    /**
+     * Specifies the radioactivity detail for the current package, if the package contains radioactive materials.
+     *
+     * @param RadioactivityDetail $radioactivityDetail
+     * @return DangerousGoodsDetail
+     */
+    public function setRadioactivityDetail(RadioactivityDetail $radioactivityDetail)
+    {
+        $this->RadioactivityDetail = $radioactivityDetail;
+        return $this;
+    }
+    
+    /**
+     * Returns Specifies the radioactivity detail for the current package, if the package contains radioactive materials.
+     *
+     * @return RadioactivityDetail
+     */
+    public function getRadioactivityDetail()
+    {
+        return $this->RadioactivityDetail;
     }
     
 

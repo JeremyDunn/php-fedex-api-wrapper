@@ -87,6 +87,50 @@ class PendingShipmentDetail
         return $this->EmailLabelDetail;
     }
     
+    /**
+     * Set ProcessingOptions
+     *
+     * @param PendingShipmentProcessingOptionsRequested $processingOptions
+     * @return PendingShipmentDetail
+     */
+    public function setProcessingOptions(PendingShipmentProcessingOptionsRequested $processingOptions)
+    {
+        $this->ProcessingOptions = $processingOptions;
+        return $this;
+    }
+    
+    /**
+     * Returns Set ProcessingOptions
+     *
+     * @return PendingShipmentProcessingOptionsRequested
+     */
+    public function getProcessingOptions()
+    {
+        return $this->ProcessingOptions;
+    }
+    
+    /**
+     * These are documents that are recommended to be included with the shipment.
+     *
+     * @param RecommendedDocumentSpecification $recommendedDocumentSpecification
+     * @return PendingShipmentDetail
+     */
+    public function setRecommendedDocumentSpecification(RecommendedDocumentSpecification $recommendedDocumentSpecification)
+    {
+        $this->RecommendedDocumentSpecification = $recommendedDocumentSpecification;
+        return $this;
+    }
+    
+    /**
+     * Returns These are documents that are recommended to be included with the shipment.
+     *
+     * @return RecommendedDocumentSpecification
+     */
+    public function getRecommendedDocumentSpecification()
+    {
+        return $this->RecommendedDocumentSpecification;
+    }
+    
 
     
 }

@@ -44,7 +44,7 @@ class ShipmentSpecialServicesRequested
     }
     
     /**
-     * Descriptive data required for a FedEx COD (Collect-On-Delivery) shipment. This element is required when SpecialServiceType.COD is present in the SpecialServiceTypes collection.
+     * Set CodDetail
      *
      * @param CodDetail $codDetail
      * @return ShipmentSpecialServicesRequested
@@ -56,7 +56,7 @@ class ShipmentSpecialServicesRequested
     }
     
     /**
-     * Returns Descriptive data required for a FedEx COD (Collect-On-Delivery) shipment. This element is required when SpecialServiceType.COD is present in the SpecialServiceTypes collection.
+     * Returns Set CodDetail
      *
      * @return CodDetail
      */
@@ -66,7 +66,29 @@ class ShipmentSpecialServicesRequested
     }
     
     /**
-     * Descriptive data required for a FedEx shipment that is to be held at the destination FedEx location for pickup by the recipient. This element is required when SpecialServiceType.HOLD_AT_LOCATION is present in the SpecialServiceTypes collection.
+     * Set DeliveryOnInvoiceAcceptanceDetail
+     *
+     * @param DeliveryOnInvoiceAcceptanceDetail $deliveryOnInvoiceAcceptanceDetail
+     * @return ShipmentSpecialServicesRequested
+     */
+    public function setDeliveryOnInvoiceAcceptanceDetail(DeliveryOnInvoiceAcceptanceDetail $deliveryOnInvoiceAcceptanceDetail)
+    {
+        $this->DeliveryOnInvoiceAcceptanceDetail = $deliveryOnInvoiceAcceptanceDetail;
+        return $this;
+    }
+    
+    /**
+     * Returns Set DeliveryOnInvoiceAcceptanceDetail
+     *
+     * @return DeliveryOnInvoiceAcceptanceDetail
+     */
+    public function getDeliveryOnInvoiceAcceptanceDetail()
+    {
+        return $this->DeliveryOnInvoiceAcceptanceDetail;
+    }
+    
+    /**
+     * Set HoldAtLocationDetail
      *
      * @param HoldAtLocationDetail $holdAtLocationDetail
      * @return ShipmentSpecialServicesRequested
@@ -78,7 +100,7 @@ class ShipmentSpecialServicesRequested
     }
     
     /**
-     * Returns Descriptive data required for a FedEx shipment that is to be held at the destination FedEx location for pickup by the recipient. This element is required when SpecialServiceType.HOLD_AT_LOCATION is present in the SpecialServiceTypes collection.
+     * Returns Set HoldAtLocationDetail
      *
      * @return HoldAtLocationDetail
      */
@@ -88,7 +110,7 @@ class ShipmentSpecialServicesRequested
     }
     
     /**
-     * Descriptive data required for FedEx to provide email notification to the customer regarding the shipment. This element is required when SpecialServiceType.EMAIL_NOTIFICATION is present in the SpecialServiceTypes collection.
+     * Set EMailNotificationDetail
      *
      * @param EMailNotificationDetail $eMailNotificationDetail
      * @return ShipmentSpecialServicesRequested
@@ -100,7 +122,7 @@ class ShipmentSpecialServicesRequested
     }
     
     /**
-     * Returns Descriptive data required for FedEx to provide email notification to the customer regarding the shipment. This element is required when SpecialServiceType.EMAIL_NOTIFICATION is present in the SpecialServiceTypes collection.
+     * Returns Set EMailNotificationDetail
      *
      * @return EMailNotificationDetail
      */
@@ -110,7 +132,7 @@ class ShipmentSpecialServicesRequested
     }
     
     /**
-     * The descriptive data required for FedEx Printed Return Label. This element is required when SpecialServiceType.PRINTED_RETURN_LABEL is present in the SpecialServiceTypes collection
+     * Set ReturnShipmentDetail
      *
      * @param ReturnShipmentDetail $returnShipmentDetail
      * @return ShipmentSpecialServicesRequested
@@ -122,7 +144,7 @@ class ShipmentSpecialServicesRequested
     }
     
     /**
-     * Returns The descriptive data required for FedEx Printed Return Label. This element is required when SpecialServiceType.PRINTED_RETURN_LABEL is present in the SpecialServiceTypes collection
+     * Returns Set ReturnShipmentDetail
      *
      * @return ReturnShipmentDetail
      */
@@ -154,7 +176,51 @@ class ShipmentSpecialServicesRequested
     }
     
     /**
-     * The number of packages with dry ice and the total weight of the dry ice.
+     * Set InternationalControlledExportDetail
+     *
+     * @param InternationalControlledExportDetail $internationalControlledExportDetail
+     * @return ShipmentSpecialServicesRequested
+     */
+    public function setInternationalControlledExportDetail(InternationalControlledExportDetail $internationalControlledExportDetail)
+    {
+        $this->InternationalControlledExportDetail = $internationalControlledExportDetail;
+        return $this;
+    }
+    
+    /**
+     * Returns Set InternationalControlledExportDetail
+     *
+     * @return InternationalControlledExportDetail
+     */
+    public function getInternationalControlledExportDetail()
+    {
+        return $this->InternationalControlledExportDetail;
+    }
+    
+    /**
+     * Set InternationalTrafficInArmsRegulationsDetail
+     *
+     * @param InternationalTrafficInArmsRegulationsDetail $internationalTrafficInArmsRegulationsDetail
+     * @return ShipmentSpecialServicesRequested
+     */
+    public function setInternationalTrafficInArmsRegulationsDetail(InternationalTrafficInArmsRegulationsDetail $internationalTrafficInArmsRegulationsDetail)
+    {
+        $this->InternationalTrafficInArmsRegulationsDetail = $internationalTrafficInArmsRegulationsDetail;
+        return $this;
+    }
+    
+    /**
+     * Returns Set InternationalTrafficInArmsRegulationsDetail
+     *
+     * @return InternationalTrafficInArmsRegulationsDetail
+     */
+    public function getInternationalTrafficInArmsRegulationsDetail()
+    {
+        return $this->InternationalTrafficInArmsRegulationsDetail;
+    }
+    
+    /**
+     * Set ShipmentDryIceDetail
      *
      * @param ShipmentDryIceDetail $shipmentDryIceDetail
      * @return ShipmentSpecialServicesRequested
@@ -166,7 +232,7 @@ class ShipmentSpecialServicesRequested
     }
     
     /**
-     * Returns The number of packages with dry ice and the total weight of the dry ice.
+     * Returns Set ShipmentDryIceDetail
      *
      * @return ShipmentDryIceDetail
      */
@@ -176,7 +242,7 @@ class ShipmentSpecialServicesRequested
     }
     
     /**
-     * The descriptive data required for FedEx Home Delivery options. This element is required when SpecialServiceType.HOME_DELIVERY_PREMIUM is present in the SpecialServiceTypes collection
+     * Set HomeDeliveryPremiumDetail
      *
      * @param HomeDeliveryPremiumDetail $homeDeliveryPremiumDetail
      * @return ShipmentSpecialServicesRequested
@@ -188,7 +254,7 @@ class ShipmentSpecialServicesRequested
     }
     
     /**
-     * Returns The descriptive data required for FedEx Home Delivery options. This element is required when SpecialServiceType.HOME_DELIVERY_PREMIUM is present in the SpecialServiceTypes collection
+     * Returns Set HomeDeliveryPremiumDetail
      *
      * @return HomeDeliveryPremiumDetail
      */

@@ -66,6 +66,28 @@ class HazardousCommodityContent
     }
     
     /**
+     * This describes the inner receptacle details for a hazardous commodity within the dangerous goods container.
+     *
+     * @param HazardousCommodityInnerReceptacleDetail[] $innerReceptacles
+     * @return HazardousCommodityContent
+     */
+    public function setInnerReceptacles(array $innerReceptacles)
+    {
+        $this->InnerReceptacles = $innerReceptacles;
+        return $this;
+    }
+    
+    /**
+     * Returns This describes the inner receptacle details for a hazardous commodity within the dangerous goods container.
+     *
+     * @return HazardousCommodityInnerReceptacleDetail[]
+     */
+    public function getInnerReceptacles()
+    {
+        return $this->InnerReceptacles;
+    }
+    
+    /**
      * Customer-provided specifications for handling individual commodities.
      *
      * @param HazardousCommodityOptionDetail $options
@@ -85,6 +107,28 @@ class HazardousCommodityContent
     public function getOptions()
     {
         return $this->Options;
+    }
+    
+    /**
+     * Specifies the details of any radio active materials within the commodity.
+     *
+     * @param RadionuclideDetail $radionuclideDetail
+     * @return HazardousCommodityContent
+     */
+    public function setRadionuclideDetail(RadionuclideDetail $radionuclideDetail)
+    {
+        $this->RadionuclideDetail = $radionuclideDetail;
+        return $this;
+    }
+    
+    /**
+     * Returns Specifies the details of any radio active materials within the commodity.
+     *
+     * @return RadionuclideDetail
+     */
+    public function getRadionuclideDetail()
+    {
+        return $this->RadionuclideDetail;
     }
     
 

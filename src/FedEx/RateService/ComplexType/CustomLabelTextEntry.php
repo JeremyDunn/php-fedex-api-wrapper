@@ -153,6 +153,28 @@ class CustomLabelTextEntry
         return $this->FontSize;
     }
     
+    /**
+     * Set Rotation
+     *
+     * @param \FedEx\RateService\SimpleType\RotationType|string $rotation
+     * @return CustomLabelTextEntry
+     */
+    public function setRotation($rotation)
+    {
+        $this->Rotation = $rotation;
+        return $this;
+    }
+    
+    /**
+     * Returns Set Rotation
+     *
+     * @return \FedEx\RateService\SimpleType\RotationType|string
+     */
+    public function getRotation()
+    {
+        return $this->Rotation;
+    }
+    
 
     
 }

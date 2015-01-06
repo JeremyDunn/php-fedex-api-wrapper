@@ -132,6 +132,28 @@ class ShippingDocumentFormat
     }
     
     /**
+     * Set OptionsRequested
+     *
+     * @param DocumentFormatOptionsRequested $optionsRequested
+     * @return ShippingDocumentFormat
+     */
+    public function setOptionsRequested(DocumentFormatOptionsRequested $optionsRequested)
+    {
+        $this->OptionsRequested = $optionsRequested;
+        return $this;
+    }
+    
+    /**
+     * Returns Set OptionsRequested
+     *
+     * @return DocumentFormatOptionsRequested
+     */
+    public function getOptionsRequested()
+    {
+        return $this->OptionsRequested;
+    }
+    
+    /**
      * Governs the language to be used for this individual document, independently from other content returned for the same shipment.
      *
      * @param Localization $localization

@@ -154,6 +154,28 @@ class Address
     }
     
     /**
+     * The fully spelt out name of a country.
+     *
+     * @param string $countryName
+     * @return Address
+     */
+    public function setCountryName($countryName)
+    {
+        $this->CountryName = $countryName;
+        return $this;
+    }
+    
+    /**
+     * Returns The fully spelt out name of a country.
+     *
+     * @return string
+     */
+    public function getCountryName()
+    {
+        return $this->CountryName;
+    }
+    
+    /**
      * Indicates whether this address residential (as opposed to commercial).
      *
      * @param boolean $residential

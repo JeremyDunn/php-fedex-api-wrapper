@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * The descriptive data required by FedEx for home delivery services.
+ * HomeDeliveryPremiumDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -44,7 +44,7 @@ class HomeDeliveryPremiumDetail
     }
     
     /**
-     * Required for Date Certain Home Delivery.
+     * Set Date
      *
      * @param date $date
      * @return HomeDeliveryPremiumDetail
@@ -56,7 +56,7 @@ class HomeDeliveryPremiumDetail
     }
     
     /**
-     * Returns Required for Date Certain Home Delivery.
+     * Returns Set Date
      *
      * @return date
      */
@@ -66,7 +66,7 @@ class HomeDeliveryPremiumDetail
     }
     
     /**
-     * Required for Date Certain and Appointment Home Delivery.
+     * Set PhoneNumber
      *
      * @param string $phoneNumber
      * @return HomeDeliveryPremiumDetail
@@ -78,7 +78,7 @@ class HomeDeliveryPremiumDetail
     }
     
     /**
-     * Returns Required for Date Certain and Appointment Home Delivery.
+     * Returns Set PhoneNumber
      *
      * @return string
      */

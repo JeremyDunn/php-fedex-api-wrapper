@@ -22,7 +22,7 @@ class CustomerSpecifiedLabelDetail
     protected $_name = 'CustomerSpecifiedLabelDetail';
 
     /**
-     * If omitted, no doc tab will be produced (i.e. default = former NONE type).
+     * If omitted, no doc tab will be produced (i.e. default is former NONE type).
      *
      * @param DocTabContent $docTabContent
      * @return CustomerSpecifiedLabelDetail
@@ -34,7 +34,7 @@ class CustomerSpecifiedLabelDetail
     }
     
     /**
-     * Returns If omitted, no doc tab will be produced (i.e. default = former NONE type).
+     * Returns If omitted, no doc tab will be produced (i.e. default is former NONE type).
      *
      * @return DocTabContent
      */
@@ -44,7 +44,29 @@ class CustomerSpecifiedLabelDetail
     }
     
     /**
-     * Defines any custom content to print on the label.
+     * Controls the position of the customer specified content relative to the FedEx portion.
+     *
+     * @param \FedEx\RateService\SimpleType\RelativeVerticalPositionType|string $customContentPosition
+     * @return CustomerSpecifiedLabelDetail
+     */
+    public function setCustomContentPosition($customContentPosition)
+    {
+        $this->CustomContentPosition = $customContentPosition;
+        return $this;
+    }
+    
+    /**
+     * Returns Controls the position of the customer specified content relative to the FedEx portion.
+     *
+     * @return \FedEx\RateService\SimpleType\RelativeVerticalPositionType|string
+     */
+    public function getCustomContentPosition()
+    {
+        return $this->CustomContentPosition;
+    }
+    
+    /**
+     * Set CustomContent
      *
      * @param CustomLabelDetail $customContent
      * @return CustomerSpecifiedLabelDetail
@@ -56,7 +78,7 @@ class CustomerSpecifiedLabelDetail
     }
     
     /**
-     * Returns Defines any custom content to print on the label.
+     * Returns Set CustomContent
      *
      * @return CustomLabelDetail
      */
@@ -66,7 +88,7 @@ class CustomerSpecifiedLabelDetail
     }
     
     /**
-     * Defines additional data to print in the Configurable portion of the label, this allows you to print the same type information on the label that can also be printed on the doc tab.
+     * Set ConfigurableReferenceEntries
      *
      * @param ConfigurableLabelReferenceEntry[] $configurableReferenceEntries
      * @return CustomerSpecifiedLabelDetail
@@ -78,7 +100,7 @@ class CustomerSpecifiedLabelDetail
     }
     
     /**
-     * Returns Defines additional data to print in the Configurable portion of the label, this allows you to print the same type information on the label that can also be printed on the doc tab.
+     * Returns Set ConfigurableReferenceEntries
      *
      * @return ConfigurableLabelReferenceEntry[]
      */
@@ -110,7 +132,7 @@ class CustomerSpecifiedLabelDetail
     }
     
     /**
-     * For customers producing their own Ground labels, this field specifies which secondary barcode will be printed on the label; so that the primary barcode produced by FedEx has the corect SCNC.
+     * For customers producing their own Ground labels, this field specifies which secondary barcode will be printed on the label; so that the primary barcode produced by FedEx has the correct SCNC.
      *
      * @param \FedEx\RateService\SimpleType\SecondaryBarcodeType|string $secondaryBarcode
      * @return CustomerSpecifiedLabelDetail
@@ -122,7 +144,7 @@ class CustomerSpecifiedLabelDetail
     }
     
     /**
-     * Returns For customers producing their own Ground labels, this field specifies which secondary barcode will be printed on the label; so that the primary barcode produced by FedEx has the corect SCNC.
+     * Returns For customers producing their own Ground labels, this field specifies which secondary barcode will be printed on the label; so that the primary barcode produced by FedEx has the correct SCNC.
      *
      * @return \FedEx\RateService\SimpleType\SecondaryBarcodeType|string
      */
@@ -132,7 +154,7 @@ class CustomerSpecifiedLabelDetail
     }
     
     /**
-     * The language to use when printing the terms and conditions on the label.
+     * Set TermsAndConditionsLocalization
      *
      * @param Localization $termsAndConditionsLocalization
      * @return CustomerSpecifiedLabelDetail
@@ -144,13 +166,35 @@ class CustomerSpecifiedLabelDetail
     }
     
     /**
-     * Returns The language to use when printing the terms and conditions on the label.
+     * Returns Set TermsAndConditionsLocalization
      *
      * @return Localization
      */
     public function getTermsAndConditionsLocalization()
     {
         return $this->TermsAndConditionsLocalization;
+    }
+    
+    /**
+     * Set RegulatoryLabels
+     *
+     * @param RegulatoryLabelContentDetail[] $regulatoryLabels
+     * @return CustomerSpecifiedLabelDetail
+     */
+    public function setRegulatoryLabels(array $regulatoryLabels)
+    {
+        $this->RegulatoryLabels = $regulatoryLabels;
+        return $this;
+    }
+    
+    /**
+     * Returns Set RegulatoryLabels
+     *
+     * @return RegulatoryLabelContentDetail[]
+     */
+    public function getRegulatoryLabels()
+    {
+        return $this->RegulatoryLabels;
     }
     
     /**

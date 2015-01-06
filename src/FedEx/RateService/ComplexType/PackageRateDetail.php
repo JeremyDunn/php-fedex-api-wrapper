@@ -88,7 +88,7 @@ class PackageRateDetail
     }
     
     /**
-     * The weight that was used to calculate the rate.
+     * Set BillingWeight
      *
      * @param Weight $billingWeight
      * @return PackageRateDetail
@@ -100,7 +100,7 @@ class PackageRateDetail
     }
     
     /**
-     * Returns The weight that was used to calculate the rate.
+     * Returns Set BillingWeight
      *
      * @return Weight
      */
@@ -308,7 +308,7 @@ class PackageRateDetail
     }
     
     /**
-     * The total sum of all rebates applied to this package.
+     * Set TotalRebates
      *
      * @param Money $totalRebates
      * @return PackageRateDetail
@@ -320,7 +320,7 @@ class PackageRateDetail
     }
     
     /**
-     * Returns The total sum of all rebates applied to this package.
+     * Returns Set TotalRebates
      *
      * @return Money
      */
@@ -418,7 +418,7 @@ class PackageRateDetail
     }
     
     /**
-     * The variable handling charges calculated based on the type variable handling charges requested.
+     * Set VariableHandlingCharges
      *
      * @param VariableHandlingCharges $variableHandlingCharges
      * @return PackageRateDetail
@@ -430,7 +430,7 @@ class PackageRateDetail
     }
     
     /**
-     * Returns The variable handling charges calculated based on the type variable handling charges requested.
+     * Returns Set VariableHandlingCharges
      *
      * @return VariableHandlingCharges
      */

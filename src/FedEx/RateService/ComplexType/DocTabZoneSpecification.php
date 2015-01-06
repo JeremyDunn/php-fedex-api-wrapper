@@ -22,7 +22,7 @@ class DocTabZoneSpecification
     protected $_name = 'DocTabZoneSpecification';
 
     /**
-     * Zone number can be between 1 and 12.
+     * Set ZoneNumber
      *
      * @param positiveInteger $zoneNumber
      * @return DocTabZoneSpecification
@@ -34,7 +34,7 @@ class DocTabZoneSpecification
     }
     
     /**
-     * Returns Zone number can be between 1 and 12.
+     * Returns Set ZoneNumber
      *
      * @return positiveInteger
      */
@@ -44,7 +44,7 @@ class DocTabZoneSpecification
     }
     
     /**
-     * Header value on this zone.
+     * Set Header
      *
      * @param string $header
      * @return DocTabZoneSpecification
@@ -56,7 +56,7 @@ class DocTabZoneSpecification
     }
     
     /**
-     * Returns Header value on this zone.
+     * Returns Set Header
      *
      * @return string
      */
@@ -66,7 +66,7 @@ class DocTabZoneSpecification
     }
     
     /**
-     * Reference path to the element in the request/reply whose value should be printed on this zone.
+     * Set DataField
      *
      * @param string $dataField
      * @return DocTabZoneSpecification
@@ -78,7 +78,7 @@ class DocTabZoneSpecification
     }
     
     /**
-     * Returns Reference path to the element in the request/reply whose value should be printed on this zone.
+     * Returns Set DataField
      *
      * @return string
      */
@@ -88,7 +88,7 @@ class DocTabZoneSpecification
     }
     
     /**
-     * Free form-text to be printed in this zone.
+     * Set LiteralValue
      *
      * @param string $literalValue
      * @return DocTabZoneSpecification
@@ -100,7 +100,7 @@ class DocTabZoneSpecification
     }
     
     /**
-     * Returns Free form-text to be printed in this zone.
+     * Returns Set LiteralValue
      *
      * @return string
      */
@@ -110,7 +110,7 @@ class DocTabZoneSpecification
     }
     
     /**
-     * Justification for the text printed on this zone.
+     * Set Justification
      *
      * @param \FedEx\RateService\SimpleType\DocTabZoneJustificationType|string $justification
      * @return DocTabZoneSpecification
@@ -122,7 +122,7 @@ class DocTabZoneSpecification
     }
     
     /**
-     * Returns Justification for the text printed on this zone.
+     * Returns Set Justification
      *
      * @return \FedEx\RateService\SimpleType\DocTabZoneJustificationType|string
      */

@@ -154,6 +154,28 @@ class Contact
     }
     
     /**
+     * Identifies a toll free number, if any, associated with this contact.
+     *
+     * @param string $tollFreePhoneNumber
+     * @return Contact
+     */
+    public function setTollFreePhoneNumber($tollFreePhoneNumber)
+    {
+        $this->TollFreePhoneNumber = $tollFreePhoneNumber;
+        return $this;
+    }
+    
+    /**
+     * Returns Identifies a toll free number, if any, associated with this contact.
+     *
+     * @return string
+     */
+    public function getTollFreePhoneNumber()
+    {
+        return $this->TollFreePhoneNumber;
+    }
+    
+    /**
      * Identifies the pager number associated with this contact.
      *
      * @param string $pagerNumber

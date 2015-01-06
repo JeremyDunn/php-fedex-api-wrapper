@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Identifies each surcharge applied to the shipment.
+ * Surcharge
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -22,7 +22,7 @@ class Surcharge
     protected $_name = 'Surcharge';
 
     /**
-     * The type of surcharge applied to the shipment.
+     * Set SurchargeType
      *
      * @param \FedEx\RateService\SimpleType\SurchargeType|string $surchargeType
      * @return Surcharge
@@ -34,7 +34,7 @@ class Surcharge
     }
     
     /**
-     * Returns The type of surcharge applied to the shipment.
+     * Returns Set SurchargeType
      *
      * @return \FedEx\RateService\SimpleType\SurchargeType|string
      */
@@ -88,7 +88,7 @@ class Surcharge
     }
     
     /**
-     * The amount of the surcharge applied to the shipment.
+     * Set Amount
      *
      * @param Money $amount
      * @return Surcharge
@@ -100,7 +100,7 @@ class Surcharge
     }
     
     /**
-     * Returns The amount of the surcharge applied to the shipment.
+     * Returns Set Amount
      *
      * @return Money
      */

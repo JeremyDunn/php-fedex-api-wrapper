@@ -66,7 +66,7 @@ class PackageSpecialServicesRequested
     }
     
     /**
-     * Descriptive data required for a FedEx shipment containing dangerous materials. This element is required when SpecialServiceType.DANGEROUS_GOODS or HAZARDOUS_MATERIAL is present in the SpecialServiceTypes collection.
+     * Set DangerousGoodsDetail
      *
      * @param DangerousGoodsDetail $dangerousGoodsDetail
      * @return PackageSpecialServicesRequested
@@ -78,7 +78,7 @@ class PackageSpecialServicesRequested
     }
     
     /**
-     * Returns Descriptive data required for a FedEx shipment containing dangerous materials. This element is required when SpecialServiceType.DANGEROUS_GOODS or HAZARDOUS_MATERIAL is present in the SpecialServiceTypes collection.
+     * Returns Set DangerousGoodsDetail
      *
      * @return DangerousGoodsDetail
      */
@@ -88,7 +88,7 @@ class PackageSpecialServicesRequested
     }
     
     /**
-     * Descriptive data required for a FedEx shipment containing dry ice. This element is required when SpecialServiceType.DRY_ICE is present in the SpecialServiceTypes collection.
+     * Set DryIceWeight
      *
      * @param Weight $dryIceWeight
      * @return PackageSpecialServicesRequested
@@ -100,7 +100,7 @@ class PackageSpecialServicesRequested
     }
     
     /**
-     * Returns Descriptive data required for a FedEx shipment containing dry ice. This element is required when SpecialServiceType.DRY_ICE is present in the SpecialServiceTypes collection.
+     * Returns Set DryIceWeight
      *
      * @return Weight
      */
@@ -110,7 +110,7 @@ class PackageSpecialServicesRequested
     }
     
     /**
-     * The descriptive data required for FedEx signature services. This element is required when SpecialServiceType.SIGNATURE_OPTION is present in the SpecialServiceTypes collection.
+     * Set SignatureOptionDetail
      *
      * @param SignatureOptionDetail $signatureOptionDetail
      * @return PackageSpecialServicesRequested
@@ -122,7 +122,7 @@ class PackageSpecialServicesRequested
     }
     
     /**
-     * Returns The descriptive data required for FedEx signature services. This element is required when SpecialServiceType.SIGNATURE_OPTION is present in the SpecialServiceTypes collection.
+     * Returns Set SignatureOptionDetail
      *
      * @return SignatureOptionDetail
      */
@@ -132,7 +132,7 @@ class PackageSpecialServicesRequested
     }
     
     /**
-     * To be filled.
+     * Set PriorityAlertDetail
      *
      * @param PriorityAlertDetail $priorityAlertDetail
      * @return PackageSpecialServicesRequested
@@ -144,13 +144,35 @@ class PackageSpecialServicesRequested
     }
     
     /**
-     * Returns To be filled.
+     * Returns Set PriorityAlertDetail
      *
      * @return PriorityAlertDetail
      */
     public function getPriorityAlertDetail()
     {
         return $this->PriorityAlertDetail;
+    }
+    
+    /**
+     * Set AlcoholDetail
+     *
+     * @param AlcoholDetail $alcoholDetail
+     * @return PackageSpecialServicesRequested
+     */
+    public function setAlcoholDetail(AlcoholDetail $alcoholDetail)
+    {
+        $this->AlcoholDetail = $alcoholDetail;
+        return $this;
+    }
+    
+    /**
+     * Returns Set AlcoholDetail
+     *
+     * @return AlcoholDetail
+     */
+    public function getAlcoholDetail()
+    {
+        return $this->AlcoholDetail;
     }
     
 

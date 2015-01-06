@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Descriptive data sent to FedEx by a customer in order to rate a package/shipment.
+ * RateRequest
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -44,7 +44,7 @@ class RateRequest
     }
     
     /**
-     * Descriptive data identifying the client submitting the transaction.
+     * Set ClientDetail
      *
      * @param ClientDetail $clientDetail
      * @return RateRequest
@@ -56,7 +56,7 @@ class RateRequest
     }
     
     /**
-     * Returns Descriptive data identifying the client submitting the transaction.
+     * Returns Set ClientDetail
      *
      * @return ClientDetail
      */
@@ -66,7 +66,7 @@ class RateRequest
     }
     
     /**
-     * Descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
+     * Set TransactionDetail
      *
      * @param TransactionDetail $transactionDetail
      * @return RateRequest
@@ -78,7 +78,7 @@ class RateRequest
     }
     
     /**
-     * Returns Descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
+     * Returns Set TransactionDetail
      *
      * @return TransactionDetail
      */
@@ -88,7 +88,7 @@ class RateRequest
     }
     
     /**
-     * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
+     * Set Version
      *
      * @param VersionId $version
      * @return RateRequest
@@ -100,7 +100,7 @@ class RateRequest
     }
     
     /**
-     * Returns Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
+     * Returns Set Version
      *
      * @return VersionId
      */
@@ -173,6 +173,28 @@ class RateRequest
     public function getVariableOptions()
     {
         return $this->VariableOptions;
+    }
+    
+    /**
+     * If provided, identifies the consolidation to which this open shipment should be added after successful creation.
+     *
+     * @param ConsolidationKey $consolidationKey
+     * @return RateRequest
+     */
+    public function setConsolidationKey(ConsolidationKey $consolidationKey)
+    {
+        $this->ConsolidationKey = $consolidationKey;
+        return $this;
+    }
+    
+    /**
+     * Returns If provided, identifies the consolidation to which this open shipment should be added after successful creation.
+     *
+     * @return ConsolidationKey
+     */
+    public function getConsolidationKey()
+    {
+        return $this->ConsolidationKey;
     }
     
     /**

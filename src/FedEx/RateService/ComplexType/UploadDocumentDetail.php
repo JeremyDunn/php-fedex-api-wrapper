@@ -153,6 +153,28 @@ class UploadDocumentDetail
         return $this->DocumentContent;
     }
     
+    /**
+     * Specifies the date until which the document is available
+     *
+     * @param date $expirationDate
+     * @return UploadDocumentDetail
+     */
+    public function setExpirationDate($expirationDate)
+    {
+        $this->ExpirationDate = $expirationDate;
+        return $this;
+    }
+    
+    /**
+     * Returns Specifies the date until which the document is available
+     *
+     * @return date
+     */
+    public function getExpirationDate()
+    {
+        return $this->ExpirationDate;
+    }
+    
 
     
 }

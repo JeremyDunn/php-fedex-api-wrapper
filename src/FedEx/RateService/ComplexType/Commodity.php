@@ -4,10 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
-            For international multiple piece shipments, commodity information must be passed in the Master and on each child transaction.
-            If this shipment cotains more than four commodities line items, the four highest valued should be included in the first 4 occurances for this request.
-          
+ * Commodity
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -25,7 +22,7 @@ class Commodity
     protected $_name = 'Commodity';
 
     /**
-     * total number of pieces of this commodity
+     * Set Name
      *
      * @param string $name
      * @return Commodity
@@ -37,7 +34,7 @@ class Commodity
     }
     
     /**
-     * Returns total number of pieces of this commodity
+     * Returns Set Name
      *
      * @return string
      */
@@ -47,7 +44,7 @@ class Commodity
     }
     
     /**
-     * total number of pieces of this commodity
+     * Set NumberOfPieces
      *
      * @param nonNegativeInteger $numberOfPieces
      * @return Commodity
@@ -59,7 +56,7 @@ class Commodity
     }
     
     /**
-     * Returns total number of pieces of this commodity
+     * Returns Set NumberOfPieces
      *
      * @return nonNegativeInteger
      */
@@ -69,7 +66,7 @@ class Commodity
     }
     
     /**
-     * Complete and accurate description of this commodity.
+     * Set Description
      *
      * @param string $description
      * @return Commodity
@@ -81,7 +78,7 @@ class Commodity
     }
     
     /**
-     * Returns Complete and accurate description of this commodity.
+     * Returns Set Description
      *
      * @return string
      */
@@ -91,7 +88,7 @@ class Commodity
     }
     
     /**
-     * Country code where commodity contents were produced or manufactured in their final form.
+     * Set CountryOfManufacture
      *
      * @param string $countryOfManufacture
      * @return Commodity
@@ -103,7 +100,7 @@ class Commodity
     }
     
     /**
-     * Returns Country code where commodity contents were produced or manufactured in their final form.
+     * Returns Set CountryOfManufacture
      *
      * @return string
      */
@@ -113,10 +110,7 @@ class Commodity
     }
     
     /**
-     * 
-                Unique alpha/numeric representing commodity item.
-                At least one occurrence is required for US Export shipments if the Customs Value is greater than $2500 or if a valid US Export license is required.
-              
+     * Set HarmonizedCode
      *
      * @param string $harmonizedCode
      * @return Commodity
@@ -128,10 +122,7 @@ class Commodity
     }
     
     /**
-     * Returns 
-                Unique alpha/numeric representing commodity item.
-                At least one occurrence is required for US Export shipments if the Customs Value is greater than $2500 or if a valid US Export license is required.
-              
+     * Returns Set HarmonizedCode
      *
      * @return string
      */
@@ -141,7 +132,7 @@ class Commodity
     }
     
     /**
-     * Total weight of this commodity. 1 explicit decimal position. Max length 11 including decimal.
+     * Set Weight
      *
      * @param Weight $weight
      * @return Commodity
@@ -153,7 +144,7 @@ class Commodity
     }
     
     /**
-     * Returns Total weight of this commodity. 1 explicit decimal position. Max length 11 including decimal.
+     * Returns Set Weight
      *
      * @return Weight
      */
@@ -163,9 +154,9 @@ class Commodity
     }
     
     /**
-     * Number of units of a commodity in total number of pieces for this line item. Max length is 9
+     * This field is used for enterprise transactions.
      *
-     * @param nonNegativeInteger $quantity
+     * @param decimal $quantity
      * @return Commodity
      */
     public function setQuantity($quantity)
@@ -175,9 +166,9 @@ class Commodity
     }
     
     /**
-     * Returns Number of units of a commodity in total number of pieces for this line item. Max length is 9
+     * Returns This field is used for enterprise transactions.
      *
-     * @return nonNegativeInteger
+     * @return decimal
      */
     public function getQuantity()
     {
@@ -185,7 +176,7 @@ class Commodity
     }
     
     /**
-     * Unit of measure used to express the quantity of this commodity line item.
+     * Set QuantityUnits
      *
      * @param string $quantityUnits
      * @return Commodity
@@ -197,7 +188,7 @@ class Commodity
     }
     
     /**
-     * Returns Unit of measure used to express the quantity of this commodity line item.
+     * Returns Set QuantityUnits
      *
      * @return string
      */
@@ -229,7 +220,7 @@ class Commodity
     }
     
     /**
-     * Value of each unit in Quantity. Six explicit decimal positions, Max length 18 including decimal.
+     * Set UnitPrice
      *
      * @param Money $unitPrice
      * @return Commodity
@@ -241,7 +232,7 @@ class Commodity
     }
     
     /**
-     * Returns Value of each unit in Quantity. Six explicit decimal positions, Max length 18 including decimal.
+     * Returns Set UnitPrice
      *
      * @return Money
      */
@@ -251,11 +242,7 @@ class Commodity
     }
     
     /**
-     * 
-                Total customs value for this line item.
-                It should equal the commodity unit quantity times commodity unit value.
-                Six explicit decimal positions, max length 18 including decimal.
-              
+     * Set CustomsValue
      *
      * @param Money $customsValue
      * @return Commodity
@@ -267,11 +254,7 @@ class Commodity
     }
     
     /**
-     * Returns 
-                Total customs value for this line item.
-                It should equal the commodity unit quantity times commodity unit value.
-                Six explicit decimal positions, max length 18 including decimal.
-              
+     * Returns Set CustomsValue
      *
      * @return Money
      */
@@ -303,7 +286,7 @@ class Commodity
     }
     
     /**
-     * Applicable to US export shipping only.
+     * Set ExportLicenseNumber
      *
      * @param string $exportLicenseNumber
      * @return Commodity
@@ -315,7 +298,7 @@ class Commodity
     }
     
     /**
-     * Returns Applicable to US export shipping only.
+     * Returns Set ExportLicenseNumber
      *
      * @return string
      */
@@ -347,9 +330,7 @@ class Commodity
     }
     
     /**
-     * 
-                An identifying mark or number used on the packaging of a shipment to help customers identify a particular shipment.
-              
+     * Set CIMarksAndNumbers
      *
      * @param string $cIMarksAndNumbers
      * @return Commodity
@@ -361,15 +342,35 @@ class Commodity
     }
     
     /**
-     * Returns 
-                An identifying mark or number used on the packaging of a shipment to help customers identify a particular shipment.
-              
+     * Returns Set CIMarksAndNumbers
      *
      * @return string
      */
     public function getCIMarksAndNumbers()
     {
         return $this->CIMarksAndNumbers;
+    }
+    
+    /**
+     * Set PartNumber
+     *
+     * @param string $partNumber
+     * @return Commodity
+     */
+    public function setPartNumber($partNumber)
+    {
+        $this->PartNumber = $partNumber;
+        return $this;
+    }
+    
+    /**
+     * Returns Set PartNumber
+     *
+     * @return string
+     */
+    public function getPartNumber()
+    {
+        return $this->PartNumber;
     }
     
     /**

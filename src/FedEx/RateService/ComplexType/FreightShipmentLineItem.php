@@ -110,7 +110,7 @@ class FreightShipmentLineItem
     }
     
     /**
-     * FED EX INTERNAL USE ONLY - Individual line item dimensions.
+     * Set Dimensions
      *
      * @param Dimensions $dimensions
      * @return FreightShipmentLineItem
@@ -122,7 +122,7 @@ class FreightShipmentLineItem
     }
     
     /**
-     * Returns FED EX INTERNAL USE ONLY - Individual line item dimensions.
+     * Returns Set Dimensions
      *
      * @return Dimensions
      */

@@ -178,12 +178,12 @@ class CommercialInvoice
     /**
      * Free-form text.
      *
-     * @param string $declarationStatment
+     * @param string $declarationStatement
      * @return CommercialInvoice
      */
-    public function setDeclarationStatment($declarationStatment)
+    public function setDeclarationStatement($declarationStatement)
     {
-        $this->DeclarationStatment = $declarationStatment;
+        $this->DeclarationStatement = $declarationStatement;
         return $this;
     }
     
@@ -192,9 +192,9 @@ class CommercialInvoice
      *
      * @return string
      */
-    public function getDeclarationStatment()
+    public function getDeclarationStatement()
     {
-        return $this->DeclarationStatment;
+        return $this->DeclarationStatement;
     }
     
     /**
@@ -242,28 +242,6 @@ class CommercialInvoice
     }
     
     /**
-     * Customer assigned Invoice number
-     *
-     * @param string $customerInvoiceNumber
-     * @return CommercialInvoice
-     */
-    public function setCustomerInvoiceNumber($customerInvoiceNumber)
-    {
-        $this->CustomerInvoiceNumber = $customerInvoiceNumber;
-        return $this;
-    }
-    
-    /**
-     * Returns Customer assigned Invoice number
-     *
-     * @return string
-     */
-    public function getCustomerInvoiceNumber()
-    {
-        return $this->CustomerInvoiceNumber;
-    }
-    
-    /**
      * Name of the International Expert that completed the Commercial Invoice different from Sender.
      *
      * @param string $originatorName
@@ -286,9 +264,9 @@ class CommercialInvoice
     }
     
     /**
-     * Required for dutiable international Express or Ground shipment. This field is not applicable to an international PIB(document) or a non-document which does not require a Commercial Invoice
+     * Required for dutiable international Express or Ground shipments. This field is not applicable to an international PIB(document) or a non-document which does not require a Commercial Invoice.
      *
-     * @param \FedEx\RateService\SimpleType\TermsOfSaleType|string $termsOfSale
+     * @param string $termsOfSale
      * @return CommercialInvoice
      */
     public function setTermsOfSale($termsOfSale)
@@ -298,9 +276,9 @@ class CommercialInvoice
     }
     
     /**
-     * Returns Required for dutiable international Express or Ground shipment. This field is not applicable to an international PIB(document) or a non-document which does not require a Commercial Invoice
+     * Returns Required for dutiable international Express or Ground shipments. This field is not applicable to an international PIB(document) or a non-document which does not require a Commercial Invoice.
      *
-     * @return \FedEx\RateService\SimpleType\TermsOfSaleType|string
+     * @return string
      */
     public function getTermsOfSale()
     {

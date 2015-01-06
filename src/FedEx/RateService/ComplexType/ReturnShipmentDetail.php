@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Information relating to a return shipment.
+ * ReturnShipmentDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -22,7 +22,7 @@ class ReturnShipmentDetail
     protected $_name = 'ReturnShipmentDetail';
 
     /**
-     * The type of return shipment that is being requested. At present the only type of retrun shipment that is supported is PRINT_RETURN_LABEL. With this option you can print a return label to insert into the box of an outbound shipment. This option can not be used to print an outbound label.
+     * Set ReturnType
      *
      * @param \FedEx\RateService\SimpleType\ReturnType|string $returnType
      * @return ReturnShipmentDetail
@@ -34,7 +34,7 @@ class ReturnShipmentDetail
     }
     
     /**
-     * Returns The type of return shipment that is being requested. At present the only type of retrun shipment that is supported is PRINT_RETURN_LABEL. With this option you can print a return label to insert into the box of an outbound shipment. This option can not be used to print an outbound label.
+     * Returns Set ReturnType
      *
      * @return \FedEx\RateService\SimpleType\ReturnType|string
      */
@@ -44,7 +44,7 @@ class ReturnShipmentDetail
     }
     
     /**
-     * Return Merchant Authorization
+     * Set Rma
      *
      * @param Rma $rma
      * @return ReturnShipmentDetail
@@ -56,7 +56,7 @@ class ReturnShipmentDetail
     }
     
     /**
-     * Returns Return Merchant Authorization
+     * Returns Set Rma
      *
      * @return Rma
      */
@@ -66,7 +66,7 @@ class ReturnShipmentDetail
     }
     
     /**
-     * Specific information about the delivery of the email and options for the shipment.
+     * Set ReturnEMailDetail
      *
      * @param ReturnEMailDetail $returnEMailDetail
      * @return ReturnShipmentDetail
@@ -78,13 +78,35 @@ class ReturnShipmentDetail
     }
     
     /**
-     * Returns Specific information about the delivery of the email and options for the shipment.
+     * Returns Set ReturnEMailDetail
      *
      * @return ReturnEMailDetail
      */
     public function getReturnEMailDetail()
     {
         return $this->ReturnEMailDetail;
+    }
+    
+    /**
+     * Set ReturnAssociation
+     *
+     * @param ReturnAssociationDetail $returnAssociation
+     * @return ReturnShipmentDetail
+     */
+    public function setReturnAssociation(ReturnAssociationDetail $returnAssociation)
+    {
+        $this->ReturnAssociation = $returnAssociation;
+        return $this;
+    }
+    
+    /**
+     * Returns Set ReturnAssociation
+     *
+     * @return ReturnAssociationDetail
+     */
+    public function getReturnAssociation()
+    {
+        return $this->ReturnAssociation;
     }
     
 

@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * The descriptive data for taxpayer identification information.
+ * TaxpayerIdentification
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -22,7 +22,7 @@ class TaxpayerIdentification
     protected $_name = 'TaxpayerIdentification';
 
     /**
-     * Identifies the category of the taxpayer identification number. See TinType for the list of values.
+     * Set TinType
      *
      * @param \FedEx\RateService\SimpleType\TinType|string $tinType
      * @return TaxpayerIdentification
@@ -34,7 +34,7 @@ class TaxpayerIdentification
     }
     
     /**
-     * Returns Identifies the category of the taxpayer identification number. See TinType for the list of values.
+     * Returns Set TinType
      *
      * @return \FedEx\RateService\SimpleType\TinType|string
      */
@@ -44,7 +44,7 @@ class TaxpayerIdentification
     }
     
     /**
-     * Identifies the taxpayer identification number.
+     * Set Number
      *
      * @param string $number
      * @return TaxpayerIdentification
@@ -56,7 +56,7 @@ class TaxpayerIdentification
     }
     
     /**
-     * Returns Identifies the taxpayer identification number.
+     * Returns Set Number
      *
      * @return string
      */
@@ -85,6 +85,50 @@ class TaxpayerIdentification
     public function getUsage()
     {
         return $this->Usage;
+    }
+    
+    /**
+     * Set EffectiveDate
+     *
+     * @param dateTime $effectiveDate
+     * @return TaxpayerIdentification
+     */
+    public function setEffectiveDate($effectiveDate)
+    {
+        $this->EffectiveDate = $effectiveDate;
+        return $this;
+    }
+    
+    /**
+     * Returns Set EffectiveDate
+     *
+     * @return dateTime
+     */
+    public function getEffectiveDate()
+    {
+        return $this->EffectiveDate;
+    }
+    
+    /**
+     * Set ExpirationDate
+     *
+     * @param dateTime $expirationDate
+     * @return TaxpayerIdentification
+     */
+    public function setExpirationDate($expirationDate)
+    {
+        $this->ExpirationDate = $expirationDate;
+        return $this;
+    }
+    
+    /**
+     * Returns Set ExpirationDate
+     *
+     * @return dateTime
+     */
+    public function getExpirationDate()
+    {
+        return $this->ExpirationDate;
     }
     
 
