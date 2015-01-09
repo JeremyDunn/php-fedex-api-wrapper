@@ -25,7 +25,7 @@ class VersionId
      * Identifies a system or sub-system which performs an operation.
      *
      * @param string $serviceId
-     * return VersionId
+     * @return VersionId
      */
     public function setServiceId($serviceId)
     {
@@ -34,10 +34,20 @@ class VersionId
     }
     
     /**
+     * Returns Identifies a system or sub-system which performs an operation.
+     *
+     * @return string
+     */
+    public function getServiceId()
+    {
+        return $this->ServiceId;
+    }
+    
+    /**
      * Identifies the service business level. For the initial FedEx Web Service release this value should be set to 1.
      *
      * @param int $major
-     * return VersionId
+     * @return VersionId
      */
     public function setMajor($major)
     {
@@ -46,10 +56,20 @@ class VersionId
     }
     
     /**
+     * Returns Identifies the service business level. For the initial FedEx Web Service release this value should be set to 1.
+     *
+     * @return int
+     */
+    public function getMajor()
+    {
+        return $this->Major;
+    }
+    
+    /**
      * Identifies the service interface level. For the initial FedEx Web Service release this value should be set to 0.
      *
      * @param int $intermediate
-     * return VersionId
+     * @return VersionId
      */
     public function setIntermediate($intermediate)
     {
@@ -58,15 +78,35 @@ class VersionId
     }
     
     /**
+     * Returns Identifies the service interface level. For the initial FedEx Web Service release this value should be set to 0.
+     *
+     * @return int
+     */
+    public function getIntermediate()
+    {
+        return $this->Intermediate;
+    }
+    
+    /**
      * Identifies the service code level. For the initial FedEx Web Service release this value should be set to 0.
      *
      * @param int $minor
-     * return VersionId
+     * @return VersionId
      */
     public function setMinor($minor)
     {
         $this->Minor = $minor;
         return $this;
+    }
+    
+    /**
+     * Returns Identifies the service code level. For the initial FedEx Web Service release this value should be set to 0.
+     *
+     * @return int
+     */
+    public function getMinor()
+    {
+        return $this->Minor;
     }
     
 

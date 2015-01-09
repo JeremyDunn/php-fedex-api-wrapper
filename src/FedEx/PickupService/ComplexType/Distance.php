@@ -25,7 +25,7 @@ class Distance
      * Identifies the distance quantity.
      *
      * @param decimal $value
-     * return Distance
+     * @return Distance
      */
     public function setValue($value)
     {
@@ -34,15 +34,35 @@ class Distance
     }
     
     /**
+     * Returns Identifies the distance quantity.
+     *
+     * @return decimal
+     */
+    public function getValue()
+    {
+        return $this->Value;
+    }
+    
+    /**
      * Identifies the unit of measure for the distance value.
      *
      * @param \FedEx\Pickup\SimpleType\DistanceUnits|string $units
-     * return Distance
+     * @return Distance
      */
     public function setUnits($units)
     {
         $this->Units = $units;
         return $this;
+    }
+    
+    /**
+     * Returns Identifies the unit of measure for the distance value.
+     *
+     * @return \FedEx\Pickup\SimpleType\DistanceUnits|string
+     */
+    public function getUnits()
+    {
+        return $this->Units;
     }
     
 

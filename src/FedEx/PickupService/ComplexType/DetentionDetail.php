@@ -25,12 +25,22 @@ class DetentionDetail
      * Amount of time involved in the detention.
      *
      * @param duration $duration
-     * return DetentionDetail
+     * @return DetentionDetail
      */
     public function setDuration(duration $duration)
     {
         $this->Duration = $duration;
         return $this;
+    }
+    
+    /**
+     * Returns Amount of time involved in the detention.
+     *
+     * @return duration
+     */
+    public function getDuration()
+    {
+        return $this->Duration;
     }
     
 

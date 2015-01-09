@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Description of shipping label to be returned in the reply
+ * LabelSpecification
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -22,10 +22,10 @@ class LabelSpecification
     protected $_name = 'LabelSpecification';
 
     /**
-     * Specify type of label to be returned
+     * Set LabelFormatType
      *
      * @param \FedEx\RateService\SimpleType\LabelFormatType|string $labelFormatType
-     * return LabelSpecification
+     * @return LabelSpecification
      */
     public function setLabelFormatType($labelFormatType)
     {
@@ -34,17 +34,20 @@ class LabelSpecification
     }
     
     /**
-     * 
-                The type of image or printer commands the label is to be formatted in.
-                DPL = Unimark thermal printer language
-                EPL2 = Eltron thermal printer language
-                PDF = a label returned as a pdf image
-                PNG = a label returned as a png image
-                ZPLII = Zebra thermal printer language
-              
+     * Returns Set LabelFormatType
+     *
+     * @return \FedEx\RateService\SimpleType\LabelFormatType|string
+     */
+    public function getLabelFormatType()
+    {
+        return $this->LabelFormatType;
+    }
+    
+    /**
+     * Set ImageType
      *
      * @param \FedEx\RateService\SimpleType\ShippingDocumentImageType|string $imageType
-     * return LabelSpecification
+     * @return LabelSpecification
      */
     public function setImageType($imageType)
     {
@@ -53,10 +56,20 @@ class LabelSpecification
     }
     
     /**
-     * For thermal printer lables this indicates the size of the label and the location of the doc tab if present.
+     * Returns Set ImageType
+     *
+     * @return \FedEx\RateService\SimpleType\ShippingDocumentImageType|string
+     */
+    public function getImageType()
+    {
+        return $this->ImageType;
+    }
+    
+    /**
+     * Set LabelStockType
      *
      * @param \FedEx\RateService\SimpleType\LabelStockType|string $labelStockType
-     * return LabelSpecification
+     * @return LabelSpecification
      */
     public function setLabelStockType($labelStockType)
     {
@@ -65,10 +78,20 @@ class LabelSpecification
     }
     
     /**
-     * This indicates if the top or bottom of the label comes out of the printer first.
+     * Returns Set LabelStockType
+     *
+     * @return \FedEx\RateService\SimpleType\LabelStockType|string
+     */
+    public function getLabelStockType()
+    {
+        return $this->LabelStockType;
+    }
+    
+    /**
+     * Set LabelPrintingOrientation
      *
      * @param \FedEx\RateService\SimpleType\LabelPrintingOrientationType|string $labelPrintingOrientation
-     * return LabelSpecification
+     * @return LabelSpecification
      */
     public function setLabelPrintingOrientation($labelPrintingOrientation)
     {
@@ -77,10 +100,20 @@ class LabelSpecification
     }
     
     /**
-     * Relative to normal orientation for the printer. RIGHT=90 degrees clockwise, UPSIDE_DOWN=180 degrees, LEFT=90 degrees counterclockwise.
+     * Returns Set LabelPrintingOrientation
+     *
+     * @return \FedEx\RateService\SimpleType\LabelPrintingOrientationType|string
+     */
+    public function getLabelPrintingOrientation()
+    {
+        return $this->LabelPrintingOrientation;
+    }
+    
+    /**
+     * Set LabelRotation
      *
      * @param \FedEx\RateService\SimpleType\LabelRotationType|string $labelRotation
-     * return LabelSpecification
+     * @return LabelSpecification
      */
     public function setLabelRotation($labelRotation)
     {
@@ -89,10 +122,42 @@ class LabelSpecification
     }
     
     /**
-     * If present, this contact and address information will replace the return address information on the label.
+     * Returns Set LabelRotation
+     *
+     * @return \FedEx\RateService\SimpleType\LabelRotationType|string
+     */
+    public function getLabelRotation()
+    {
+        return $this->LabelRotation;
+    }
+    
+    /**
+     * Specifies the order in which the labels are requested to be returned
+     *
+     * @param \FedEx\RateService\SimpleType\LabelOrderType|string $labelOrder
+     * @return LabelSpecification
+     */
+    public function setLabelOrder($labelOrder)
+    {
+        $this->LabelOrder = $labelOrder;
+        return $this;
+    }
+    
+    /**
+     * Returns Specifies the order in which the labels are requested to be returned
+     *
+     * @return \FedEx\RateService\SimpleType\LabelOrderType|string
+     */
+    public function getLabelOrder()
+    {
+        return $this->LabelOrder;
+    }
+    
+    /**
+     * Set PrintedLabelOrigin
      *
      * @param ContactAndAddress $printedLabelOrigin
-     * return LabelSpecification
+     * @return LabelSpecification
      */
     public function setPrintedLabelOrigin(ContactAndAddress $printedLabelOrigin)
     {
@@ -101,15 +166,35 @@ class LabelSpecification
     }
     
     /**
-     * Allows customer-specified control of label content.
+     * Returns Set PrintedLabelOrigin
+     *
+     * @return ContactAndAddress
+     */
+    public function getPrintedLabelOrigin()
+    {
+        return $this->PrintedLabelOrigin;
+    }
+    
+    /**
+     * Set CustomerSpecifiedDetail
      *
      * @param CustomerSpecifiedLabelDetail $customerSpecifiedDetail
-     * return LabelSpecification
+     * @return LabelSpecification
      */
     public function setCustomerSpecifiedDetail(CustomerSpecifiedLabelDetail $customerSpecifiedDetail)
     {
         $this->CustomerSpecifiedDetail = $customerSpecifiedDetail;
         return $this;
+    }
+    
+    /**
+     * Returns Set CustomerSpecifiedDetail
+     *
+     * @return CustomerSpecifiedLabelDetail
+     */
+    public function getCustomerSpecifiedDetail()
+    {
+        return $this->CustomerSpecifiedDetail;
     }
     
 

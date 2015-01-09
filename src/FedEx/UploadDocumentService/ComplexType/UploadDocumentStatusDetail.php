@@ -25,7 +25,7 @@ class UploadDocumentStatusDetail
      * Set LineNumber
      *
      * @param nonNegativeInteger $lineNumber
-     * return UploadDocumentStatusDetail
+     * @return UploadDocumentStatusDetail
      */
     public function setLineNumber($lineNumber)
     {
@@ -34,10 +34,20 @@ class UploadDocumentStatusDetail
     }
     
     /**
+     * Returns Set LineNumber
+     *
+     * @return nonNegativeInteger
+     */
+    public function getLineNumber()
+    {
+        return $this->LineNumber;
+    }
+    
+    /**
      * Set CustomerReference
      *
      * @param string $customerReference
-     * return UploadDocumentStatusDetail
+     * @return UploadDocumentStatusDetail
      */
     public function setCustomerReference($customerReference)
     {
@@ -46,10 +56,20 @@ class UploadDocumentStatusDetail
     }
     
     /**
+     * Returns Set CustomerReference
+     *
+     * @return string
+     */
+    public function getCustomerReference()
+    {
+        return $this->CustomerReference;
+    }
+    
+    /**
      * Set DocumentProducer
      *
      * @param \FedEx\UploadDocumentService\SimpleType\UploadDocumentProducerType|string $documentProducer
-     * return UploadDocumentStatusDetail
+     * @return UploadDocumentStatusDetail
      */
     public function setDocumentProducer($documentProducer)
     {
@@ -58,10 +78,20 @@ class UploadDocumentStatusDetail
     }
     
     /**
+     * Returns Set DocumentProducer
+     *
+     * @return \FedEx\UploadDocumentService\SimpleType\UploadDocumentProducerType|string
+     */
+    public function getDocumentProducer()
+    {
+        return $this->DocumentProducer;
+    }
+    
+    /**
      * Set DocumentType
      *
      * @param \FedEx\UploadDocumentService\SimpleType\UploadDocumentType|string $documentType
-     * return UploadDocumentStatusDetail
+     * @return UploadDocumentStatusDetail
      */
     public function setDocumentType($documentType)
     {
@@ -70,10 +100,20 @@ class UploadDocumentStatusDetail
     }
     
     /**
+     * Returns Set DocumentType
+     *
+     * @return \FedEx\UploadDocumentService\SimpleType\UploadDocumentType|string
+     */
+    public function getDocumentType()
+    {
+        return $this->DocumentType;
+    }
+    
+    /**
      * Set FileName
      *
      * @param string $fileName
-     * return UploadDocumentStatusDetail
+     * @return UploadDocumentStatusDetail
      */
     public function setFileName($fileName)
     {
@@ -82,10 +122,20 @@ class UploadDocumentStatusDetail
     }
     
     /**
+     * Returns Set FileName
+     *
+     * @return string
+     */
+    public function getFileName()
+    {
+        return $this->FileName;
+    }
+    
+    /**
      * Set Status
      *
      * @param \FedEx\UploadDocumentService\SimpleType\UploadDocumentStatusType|string $status
-     * return UploadDocumentStatusDetail
+     * @return UploadDocumentStatusDetail
      */
     public function setStatus($status)
     {
@@ -94,10 +144,20 @@ class UploadDocumentStatusDetail
     }
     
     /**
+     * Returns Set Status
+     *
+     * @return \FedEx\UploadDocumentService\SimpleType\UploadDocumentStatusType|string
+     */
+    public function getStatus()
+    {
+        return $this->Status;
+    }
+    
+    /**
      * Distinct value for reason status was assigned.
      *
      * @param \FedEx\UploadDocumentService\SimpleType\UploadDocumentStatusInfoType|string $statusInfo
-     * return UploadDocumentStatusDetail
+     * @return UploadDocumentStatusDetail
      */
     public function setStatusInfo($statusInfo)
     {
@@ -106,10 +166,20 @@ class UploadDocumentStatusDetail
     }
     
     /**
+     * Returns Distinct value for reason status was assigned.
+     *
+     * @return \FedEx\UploadDocumentService\SimpleType\UploadDocumentStatusInfoType|string
+     */
+    public function getStatusInfo()
+    {
+        return $this->StatusInfo;
+    }
+    
+    /**
      * Human-readable explanation of document status.
      *
      * @param string $message
-     * return UploadDocumentStatusDetail
+     * @return UploadDocumentStatusDetail
      */
     public function setMessage($message)
     {
@@ -118,10 +188,20 @@ class UploadDocumentStatusDetail
     }
     
     /**
+     * Returns Human-readable explanation of document status.
+     *
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->Message;
+    }
+    
+    /**
      * Set DocumentId
      *
      * @param string $documentId
-     * return UploadDocumentStatusDetail
+     * @return UploadDocumentStatusDetail
      */
     public function setDocumentId($documentId)
     {
@@ -130,15 +210,35 @@ class UploadDocumentStatusDetail
     }
     
     /**
+     * Returns Set DocumentId
+     *
+     * @return string
+     */
+    public function getDocumentId()
+    {
+        return $this->DocumentId;
+    }
+    
+    /**
      * Set DocumentIdProducer
      *
      * @param \FedEx\UploadDocumentService\SimpleType\UploadDocumentIdProducer|string $documentIdProducer
-     * return UploadDocumentStatusDetail
+     * @return UploadDocumentStatusDetail
      */
     public function setDocumentIdProducer($documentIdProducer)
     {
         $this->DocumentIdProducer = $documentIdProducer;
         return $this;
+    }
+    
+    /**
+     * Returns Set DocumentIdProducer
+     *
+     * @return \FedEx\UploadDocumentService\SimpleType\UploadDocumentIdProducer|string
+     */
+    public function getDocumentIdProducer()
+    {
+        return $this->DocumentIdProducer;
     }
     
 

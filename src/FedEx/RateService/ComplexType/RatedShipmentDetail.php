@@ -25,7 +25,7 @@ class RatedShipmentDetail
      * The difference between "list" and "account" total net charge.
      *
      * @param Money $effectiveNetDiscount
-     * return RatedShipmentDetail
+     * @return RatedShipmentDetail
      */
     public function setEffectiveNetDiscount(Money $effectiveNetDiscount)
     {
@@ -34,10 +34,20 @@ class RatedShipmentDetail
     }
     
     /**
+     * Returns The difference between "list" and "account" total net charge.
+     *
+     * @return Money
+     */
+    public function getEffectiveNetDiscount()
+    {
+        return $this->EffectiveNetDiscount;
+    }
+    
+    /**
      * Express COD is shipment level.
      *
      * @param Money $adjustedCodCollectionAmount
-     * return RatedShipmentDetail
+     * @return RatedShipmentDetail
      */
     public function setAdjustedCodCollectionAmount(Money $adjustedCodCollectionAmount)
     {
@@ -46,10 +56,20 @@ class RatedShipmentDetail
     }
     
     /**
+     * Returns Express COD is shipment level.
+     *
+     * @return Money
+     */
+    public function getAdjustedCodCollectionAmount()
+    {
+        return $this->AdjustedCodCollectionAmount;
+    }
+    
+    /**
      * The shipment-level totals for this rate type.
      *
      * @param ShipmentRateDetail $shipmentRateDetail
-     * return RatedShipmentDetail
+     * @return RatedShipmentDetail
      */
     public function setShipmentRateDetail(ShipmentRateDetail $shipmentRateDetail)
     {
@@ -58,15 +78,35 @@ class RatedShipmentDetail
     }
     
     /**
+     * Returns The shipment-level totals for this rate type.
+     *
+     * @return ShipmentRateDetail
+     */
+    public function getShipmentRateDetail()
+    {
+        return $this->ShipmentRateDetail;
+    }
+    
+    /**
      * The package-level data for this rate type.
      *
      * @param RatedPackageDetail[] $ratedPackages
-     * return RatedShipmentDetail
+     * @return RatedShipmentDetail
      */
     public function setRatedPackages(array $ratedPackages)
     {
         $this->RatedPackages = $ratedPackages;
         return $this;
+    }
+    
+    /**
+     * Returns The package-level data for this rate type.
+     *
+     * @return RatedPackageDetail[]
+     */
+    public function getRatedPackages()
+    {
+        return $this->RatedPackages;
     }
     
 

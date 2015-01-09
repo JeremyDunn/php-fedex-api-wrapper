@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Country specific details of an International shipment.
+ * ExportDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -22,13 +22,10 @@ class ExportDetail
     protected $_name = 'ExportDetail';
 
     /**
-     * 
-                Specifies which filing option is being exercised by the customer.
-                Required for non-document shipments originating in Canada destined for any country other than Canada, the United States, Puerto Rico or the U.S. Virgin Islands.
-              
+     * Set B13AFilingOption
      *
      * @param \FedEx\RateService\SimpleType\B13AFilingOptionType|string $b13AFilingOption
-     * return ExportDetail
+     * @return ExportDetail
      */
     public function setB13AFilingOption($b13AFilingOption)
     {
@@ -37,10 +34,20 @@ class ExportDetail
     }
     
     /**
+     * Returns Set B13AFilingOption
+     *
+     * @return \FedEx\RateService\SimpleType\B13AFilingOptionType|string
+     */
+    public function getB13AFilingOption()
+    {
+        return $this->B13AFilingOption;
+    }
+    
+    /**
      * General field for exporting-country-specific export data (e.g. B13A for CA, FTSR Exemption or AES Citation for US).
      *
      * @param string $exportComplianceStatement
-     * return ExportDetail
+     * @return ExportDetail
      */
     public function setExportComplianceStatement($exportComplianceStatement)
     {
@@ -49,10 +56,20 @@ class ExportDetail
     }
     
     /**
-     * This field is applicable only to Canada export non-document shipments of any value to any destination. No special characters allowed. 
+     * Returns General field for exporting-country-specific export data (e.g. B13A for CA, FTSR Exemption or AES Citation for US).
+     *
+     * @return string
+     */
+    public function getExportComplianceStatement()
+    {
+        return $this->ExportComplianceStatement;
+    }
+    
+    /**
+     * Set PermitNumber
      *
      * @param string $permitNumber
-     * return ExportDetail
+     * @return ExportDetail
      */
     public function setPermitNumber($permitNumber)
     {
@@ -61,15 +78,35 @@ class ExportDetail
     }
     
     /**
-     * Department of Commerce/Department of State information about this shipment.
+     * Returns Set PermitNumber
+     *
+     * @return string
+     */
+    public function getPermitNumber()
+    {
+        return $this->PermitNumber;
+    }
+    
+    /**
+     * Set DestinationControlDetail
      *
      * @param DestinationControlDetail $destinationControlDetail
-     * return ExportDetail
+     * @return ExportDetail
      */
     public function setDestinationControlDetail(DestinationControlDetail $destinationControlDetail)
     {
         $this->DestinationControlDetail = $destinationControlDetail;
         return $this;
+    }
+    
+    /**
+     * Returns Set DestinationControlDetail
+     *
+     * @return DestinationControlDetail
+     */
+    public function getDestinationControlDetail()
+    {
+        return $this->DestinationControlDetail;
     }
     
 

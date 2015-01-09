@@ -25,7 +25,7 @@ class DangerousGoodsContainer
      * Indicates whether there are additional inner receptacles within this container.
      *
      * @param \FedEx\ShipService\SimpleType\HazardousContainerPackingType|string $packingType
-     * return DangerousGoodsContainer
+     * @return DangerousGoodsContainer
      */
     public function setPackingType($packingType)
     {
@@ -34,10 +34,20 @@ class DangerousGoodsContainer
     }
     
     /**
+     * Returns Indicates whether there are additional inner receptacles within this container.
+     *
+     * @return \FedEx\ShipService\SimpleType\HazardousContainerPackingType|string
+     */
+    public function getPackingType()
+    {
+        return $this->PackingType;
+    }
+    
+    /**
      * Indicates the type of this dangerous goods container, as specified by the IATA packing instructions. For example, steel cylinder, fiberboard box, plastic jerrican and steel drum.
      *
      * @param string $containerType
-     * return DangerousGoodsContainer
+     * @return DangerousGoodsContainer
      */
     public function setContainerType($containerType)
     {
@@ -46,10 +56,20 @@ class DangerousGoodsContainer
     }
     
     /**
+     * Returns Indicates the type of this dangerous goods container, as specified by the IATA packing instructions. For example, steel cylinder, fiberboard box, plastic jerrican and steel drum.
+     *
+     * @return string
+     */
+    public function getContainerType()
+    {
+        return $this->ContainerType;
+    }
+    
+    /**
      * Indicates the packaging type of the container used to package the radioactive materials.
      *
      * @param \FedEx\ShipService\SimpleType\RadioactiveContainerClassType|string $radioactiveContainerClass
-     * return DangerousGoodsContainer
+     * @return DangerousGoodsContainer
      */
     public function setRadioactiveContainerClass($radioactiveContainerClass)
     {
@@ -58,10 +78,20 @@ class DangerousGoodsContainer
     }
     
     /**
+     * Returns Indicates the packaging type of the container used to package the radioactive materials.
+     *
+     * @return \FedEx\ShipService\SimpleType\RadioactiveContainerClassType|string
+     */
+    public function getRadioactiveContainerClass()
+    {
+        return $this->RadioactiveContainerClass;
+    }
+    
+    /**
      * Indicates the number of occurrences of this container with identical dangerous goods configuration.
      *
      * @param nonNegativeInteger $numberOfContainers
-     * return DangerousGoodsContainer
+     * @return DangerousGoodsContainer
      */
     public function setNumberOfContainers($numberOfContainers)
     {
@@ -70,15 +100,35 @@ class DangerousGoodsContainer
     }
     
     /**
+     * Returns Indicates the number of occurrences of this container with identical dangerous goods configuration.
+     *
+     * @return nonNegativeInteger
+     */
+    public function getNumberOfContainers()
+    {
+        return $this->NumberOfContainers;
+    }
+    
+    /**
      * Documents the kinds and quantities of all hazardous commodities in the current container.
      *
      * @param HazardousCommodityContent[] $hazardousCommodities
-     * return DangerousGoodsContainer
+     * @return DangerousGoodsContainer
      */
     public function setHazardousCommodities(array $hazardousCommodities)
     {
         $this->HazardousCommodities = $hazardousCommodities;
         return $this;
+    }
+    
+    /**
+     * Returns Documents the kinds and quantities of all hazardous commodities in the current container.
+     *
+     * @return HazardousCommodityContent[]
+     */
+    public function getHazardousCommodities()
+    {
+        return $this->HazardousCommodities;
     }
     
 

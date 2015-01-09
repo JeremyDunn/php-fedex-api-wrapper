@@ -25,7 +25,7 @@ class FreightAddressLabelDetail
      * Set Format
      *
      * @param ShippingDocumentFormat $format
-     * return FreightAddressLabelDetail
+     * @return FreightAddressLabelDetail
      */
     public function setFormat(ShippingDocumentFormat $format)
     {
@@ -34,10 +34,20 @@ class FreightAddressLabelDetail
     }
     
     /**
+     * Returns Set Format
+     *
+     * @return ShippingDocumentFormat
+     */
+    public function getFormat()
+    {
+        return $this->Format;
+    }
+    
+    /**
      * Indicates the number of copies to be produced for each unique label.
      *
      * @param nonNegativeInteger $copies
-     * return FreightAddressLabelDetail
+     * @return FreightAddressLabelDetail
      */
     public function setCopies($copies)
     {
@@ -46,10 +56,20 @@ class FreightAddressLabelDetail
     }
     
     /**
+     * Returns Indicates the number of copies to be produced for each unique label.
+     *
+     * @return nonNegativeInteger
+     */
+    public function getCopies()
+    {
+        return $this->Copies;
+    }
+    
+    /**
      * Specifies the quadrant of the page on which the label printing will start.
      *
      * @param \FedEx\ShipService\SimpleType\PageQuadrantType|string $startingPosition
-     * return FreightAddressLabelDetail
+     * @return FreightAddressLabelDetail
      */
     public function setStartingPosition($startingPosition)
     {
@@ -58,15 +78,35 @@ class FreightAddressLabelDetail
     }
     
     /**
+     * Returns Specifies the quadrant of the page on which the label printing will start.
+     *
+     * @return \FedEx\ShipService\SimpleType\PageQuadrantType|string
+     */
+    public function getStartingPosition()
+    {
+        return $this->StartingPosition;
+    }
+    
+    /**
      * If omitted, no doc tab will be produced (i.e. default = former NONE type).
      *
      * @param DocTabContent $docTabContent
-     * return FreightAddressLabelDetail
+     * @return FreightAddressLabelDetail
      */
     public function setDocTabContent(DocTabContent $docTabContent)
     {
         $this->DocTabContent = $docTabContent;
         return $this;
+    }
+    
+    /**
+     * Returns If omitted, no doc tab will be produced (i.e. default = former NONE type).
+     *
+     * @return DocTabContent
+     */
+    public function getDocTabContent()
+    {
+        return $this->DocTabContent;
     }
     
 

@@ -25,7 +25,7 @@ class ShippingDocumentStorageDetail
      * Provides the path to be used for STORED or DEFERRED documents.
      *
      * @param string $filePath
-     * return ShippingDocumentStorageDetail
+     * @return ShippingDocumentStorageDetail
      */
     public function setFilePath($filePath)
     {
@@ -34,10 +34,20 @@ class ShippingDocumentStorageDetail
     }
     
     /**
+     * Returns Provides the path to be used for STORED or DEFERRED documents.
+     *
+     * @return string
+     */
+    public function getFilePath()
+    {
+        return $this->FilePath;
+    }
+    
+    /**
      * Identifies the convention by which file names are constructed for STORED or DEFERRED documents.
      *
      * @param \FedEx\CloseService\SimpleType\ShippingDocumentNamingType|string $fileNaming
-     * return ShippingDocumentStorageDetail
+     * @return ShippingDocumentStorageDetail
      */
     public function setFileNaming($fileNaming)
     {
@@ -46,15 +56,35 @@ class ShippingDocumentStorageDetail
     }
     
     /**
+     * Returns Identifies the convention by which file names are constructed for STORED or DEFERRED documents.
+     *
+     * @return \FedEx\CloseService\SimpleType\ShippingDocumentNamingType|string
+     */
+    public function getFileNaming()
+    {
+        return $this->FileNaming;
+    }
+    
+    /**
      * Suffix to be placed at the end of the file name; required on some platforms to determine file type.
      *
      * @param string $fileSuffix
-     * return ShippingDocumentStorageDetail
+     * @return ShippingDocumentStorageDetail
      */
     public function setFileSuffix($fileSuffix)
     {
         $this->FileSuffix = $fileSuffix;
         return $this;
+    }
+    
+    /**
+     * Returns Suffix to be placed at the end of the file name; required on some platforms to determine file type.
+     *
+     * @return string
+     */
+    public function getFileSuffix()
+    {
+        return $this->FileSuffix;
     }
     
 

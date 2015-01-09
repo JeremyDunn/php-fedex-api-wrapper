@@ -25,7 +25,7 @@ class DropoffLocation
      * Name of the business at this location.
      *
      * @param string $businessName
-     * return DropoffLocation
+     * @return DropoffLocation
      */
     public function setBusinessName($businessName)
     {
@@ -34,10 +34,20 @@ class DropoffLocation
     }
     
     /**
+     * Returns Name of the business at this location.
+     *
+     * @return string
+     */
+    public function getBusinessName()
+    {
+        return $this->BusinessName;
+    }
+    
+    /**
      * Identifier that can be used by IVR Attendant to look up directions to this location.
      *
      * @param string $businessId
-     * return DropoffLocation
+     * @return DropoffLocation
      */
     public function setBusinessId($businessId)
     {
@@ -46,10 +56,20 @@ class DropoffLocation
     }
     
     /**
+     * Returns Identifier that can be used by IVR Attendant to look up directions to this location.
+     *
+     * @return string
+     */
+    public function getBusinessId()
+    {
+        return $this->BusinessId;
+    }
+    
+    /**
      * A textual description of the type of business, such as "FedEx Authorized Ship Center".
      *
      * @param string $businessDescription
-     * return DropoffLocation
+     * @return DropoffLocation
      */
     public function setBusinessDescription($businessDescription)
     {
@@ -58,10 +78,20 @@ class DropoffLocation
     }
     
     /**
+     * Returns A textual description of the type of business, such as "FedEx Authorized Ship Center".
+     *
+     * @return string
+     */
+    public function getBusinessDescription()
+    {
+        return $this->BusinessDescription;
+    }
+    
+    /**
      * The descriptive data of the physical location.
      *
      * @param Address $businessAddress
-     * return DropoffLocation
+     * @return DropoffLocation
      */
     public function setBusinessAddress(Address $businessAddress)
     {
@@ -70,10 +100,20 @@ class DropoffLocation
     }
     
     /**
+     * Returns The descriptive data of the physical location.
+     *
+     * @return Address
+     */
+    public function getBusinessAddress()
+    {
+        return $this->BusinessAddress;
+    }
+    
+    /**
      * The descriptive data of the distance.
      *
      * @param Distance $distance
-     * return DropoffLocation
+     * @return DropoffLocation
      */
     public function setDistance(Distance $distance)
     {
@@ -82,10 +122,20 @@ class DropoffLocation
     }
     
     /**
+     * Returns The descriptive data of the distance.
+     *
+     * @return Distance
+     */
+    public function getDistance()
+    {
+        return $this->Distance;
+    }
+    
+    /**
      * The descriptive data of the services offered at this location.
      *
      * @param DropoffLocationProfile $serviceProfile
-     * return DropoffLocation
+     * @return DropoffLocation
      */
     public function setServiceProfile(DropoffLocationProfile $serviceProfile)
     {
@@ -94,15 +144,35 @@ class DropoffLocation
     }
     
     /**
+     * Returns The descriptive data of the services offered at this location.
+     *
+     * @return DropoffLocationProfile
+     */
+    public function getServiceProfile()
+    {
+        return $this->ServiceProfile;
+    }
+    
+    /**
      * Of the Total locations available this is the individual location identifier.
      *
      * @param  $recordIndex
-     * return DropoffLocation
+     * @return DropoffLocation
      */
     public function setRecordIndex( $recordIndex)
     {
         $this->RecordIndex = $recordIndex;
         return $this;
+    }
+    
+    /**
+     * Returns Of the Total locations available this is the individual location identifier.
+     *
+     * @return 
+     */
+    public function getRecordIndex()
+    {
+        return $this->RecordIndex;
     }
     
 

@@ -50,7 +50,7 @@ class GenerateCode extends Console\Command\Command
         }
         
         //RateRequest
-        $wsdlPath = $fedexSrcDir . '/_wsdl/RateService_v10.wsdl';
+        $wsdlPath = $fedexSrcDir . '/_wsdl/RateService_v16.wsdl';
 
         $baseNamespace = 'FedEx\RateService';
         $subpackageName = 'Rate Service';

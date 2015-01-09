@@ -25,12 +25,22 @@ class WebAuthenticationDetail
      * Credential used to authenticate a specific software application. This value is provided by FedEx after registration.
      *
      * @param WebAuthenticationCredential $userCredential
-     * return WebAuthenticationDetail
+     * @return WebAuthenticationDetail
      */
     public function setUserCredential(WebAuthenticationCredential $userCredential)
     {
         $this->UserCredential = $userCredential;
         return $this;
+    }
+    
+    /**
+     * Returns Credential used to authenticate a specific software application. This value is provided by FedEx after registration.
+     *
+     * @return WebAuthenticationCredential
+     */
+    public function getUserCredential()
+    {
+        return $this->UserCredential;
     }
     
 

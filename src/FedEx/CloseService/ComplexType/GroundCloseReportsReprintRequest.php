@@ -25,7 +25,7 @@ class GroundCloseReportsReprintRequest
      * The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
      * @param WebAuthenticationDetail $webAuthenticationDetail
-     * return GroundCloseReportsReprintRequest
+     * @return GroundCloseReportsReprintRequest
      */
     public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
     {
@@ -34,10 +34,20 @@ class GroundCloseReportsReprintRequest
     }
     
     /**
+     * Returns The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
+     *
+     * @return WebAuthenticationDetail
+     */
+    public function getWebAuthenticationDetail()
+    {
+        return $this->WebAuthenticationDetail;
+    }
+    
+    /**
      * Set ClientDetail
      *
      * @param ClientDetail $clientDetail
-     * return GroundCloseReportsReprintRequest
+     * @return GroundCloseReportsReprintRequest
      */
     public function setClientDetail(ClientDetail $clientDetail)
     {
@@ -46,10 +56,20 @@ class GroundCloseReportsReprintRequest
     }
     
     /**
+     * Returns Set ClientDetail
+     *
+     * @return ClientDetail
+     */
+    public function getClientDetail()
+    {
+        return $this->ClientDetail;
+    }
+    
+    /**
      * Set TransactionDetail
      *
      * @param TransactionDetail $transactionDetail
-     * return GroundCloseReportsReprintRequest
+     * @return GroundCloseReportsReprintRequest
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
@@ -58,10 +78,20 @@ class GroundCloseReportsReprintRequest
     }
     
     /**
+     * Returns Set TransactionDetail
+     *
+     * @return TransactionDetail
+     */
+    public function getTransactionDetail()
+    {
+        return $this->TransactionDetail;
+    }
+    
+    /**
      * Set Version
      *
      * @param VersionId $version
-     * return GroundCloseReportsReprintRequest
+     * @return GroundCloseReportsReprintRequest
      */
     public function setVersion(VersionId $version)
     {
@@ -70,10 +100,20 @@ class GroundCloseReportsReprintRequest
     }
     
     /**
+     * Returns Set Version
+     *
+     * @return VersionId
+     */
+    public function getVersion()
+    {
+        return $this->Version;
+    }
+    
+    /**
      * Set ReportDate
      *
      * @param date $reportDate
-     * return GroundCloseReportsReprintRequest
+     * @return GroundCloseReportsReprintRequest
      */
     public function setReportDate($reportDate)
     {
@@ -82,10 +122,20 @@ class GroundCloseReportsReprintRequest
     }
     
     /**
+     * Returns Set ReportDate
+     *
+     * @return date
+     */
+    public function getReportDate()
+    {
+        return $this->ReportDate;
+    }
+    
+    /**
      * Set TrackingNumber
      *
      * @param string $trackingNumber
-     * return GroundCloseReportsReprintRequest
+     * @return GroundCloseReportsReprintRequest
      */
     public function setTrackingNumber($trackingNumber)
     {
@@ -94,15 +144,35 @@ class GroundCloseReportsReprintRequest
     }
     
     /**
+     * Returns Set TrackingNumber
+     *
+     * @return string
+     */
+    public function getTrackingNumber()
+    {
+        return $this->TrackingNumber;
+    }
+    
+    /**
      * Set CloseReportType
      *
      * @param \FedEx\CloseService\SimpleType\CloseReportType|string $closeReportType
-     * return GroundCloseReportsReprintRequest
+     * @return GroundCloseReportsReprintRequest
      */
     public function setCloseReportType($closeReportType)
     {
         $this->CloseReportType = $closeReportType;
         return $this;
+    }
+    
+    /**
+     * Returns Set CloseReportType
+     *
+     * @return \FedEx\CloseService\SimpleType\CloseReportType|string
+     */
+    public function getCloseReportType()
+    {
+        return $this->CloseReportType;
     }
     
 

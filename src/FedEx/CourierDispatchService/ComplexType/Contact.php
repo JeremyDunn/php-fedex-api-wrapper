@@ -25,7 +25,7 @@ class Contact
      * Identifies the contact person's name.
      *
      * @param string $personName
-     * return Contact
+     * @return Contact
      */
     public function setPersonName($personName)
     {
@@ -34,10 +34,20 @@ class Contact
     }
     
     /**
+     * Returns Identifies the contact person's name.
+     *
+     * @return string
+     */
+    public function getPersonName()
+    {
+        return $this->PersonName;
+    }
+    
+    /**
      * Identifies the contact person's title.
      *
      * @param string $title
-     * return Contact
+     * @return Contact
      */
     public function setTitle($title)
     {
@@ -46,10 +56,20 @@ class Contact
     }
     
     /**
+     * Returns Identifies the contact person's title.
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->Title;
+    }
+    
+    /**
      * Identifies the contact person's company name.
      *
      * @param string $companyName
-     * return Contact
+     * @return Contact
      */
     public function setCompanyName($companyName)
     {
@@ -58,10 +78,20 @@ class Contact
     }
     
     /**
+     * Returns Identifies the contact person's company name.
+     *
+     * @return string
+     */
+    public function getCompanyName()
+    {
+        return $this->CompanyName;
+    }
+    
+    /**
      * Identifies the contact person's phone number.
      *
      * @param string $phoneNumber
-     * return Contact
+     * @return Contact
      */
     public function setPhoneNumber($phoneNumber)
     {
@@ -70,10 +100,20 @@ class Contact
     }
     
     /**
+     * Returns Identifies the contact person's phone number.
+     *
+     * @return string
+     */
+    public function getPhoneNumber()
+    {
+        return $this->PhoneNumber;
+    }
+    
+    /**
      * Identifies the contact person's phone number extension.
      *
      * @param string $phoneExtension
-     * return Contact
+     * @return Contact
      */
     public function setPhoneExtension($phoneExtension)
     {
@@ -82,10 +122,20 @@ class Contact
     }
     
     /**
+     * Returns Identifies the contact person's phone number extension.
+     *
+     * @return string
+     */
+    public function getPhoneExtension()
+    {
+        return $this->PhoneExtension;
+    }
+    
+    /**
      * Identifies the contact person's pager number.
      *
      * @param string $pagerNumber
-     * return Contact
+     * @return Contact
      */
     public function setPagerNumber($pagerNumber)
     {
@@ -94,10 +144,20 @@ class Contact
     }
     
     /**
+     * Returns Identifies the contact person's pager number.
+     *
+     * @return string
+     */
+    public function getPagerNumber()
+    {
+        return $this->PagerNumber;
+    }
+    
+    /**
      * Identifies the contact person's fax machine phone number.
      *
      * @param string $faxNumber
-     * return Contact
+     * @return Contact
      */
     public function setFaxNumber($faxNumber)
     {
@@ -106,15 +166,35 @@ class Contact
     }
     
     /**
+     * Returns Identifies the contact person's fax machine phone number.
+     *
+     * @return string
+     */
+    public function getFaxNumber()
+    {
+        return $this->FaxNumber;
+    }
+    
+    /**
      * Identifies the contact person's email address.
      *
      * @param string $eMailAddress
-     * return Contact
+     * @return Contact
      */
     public function setEMailAddress($eMailAddress)
     {
         $this->EMailAddress = $eMailAddress;
         return $this;
+    }
+    
+    /**
+     * Returns Identifies the contact person's email address.
+     *
+     * @return string
+     */
+    public function getEMailAddress()
+    {
+        return $this->EMailAddress;
     }
     
 

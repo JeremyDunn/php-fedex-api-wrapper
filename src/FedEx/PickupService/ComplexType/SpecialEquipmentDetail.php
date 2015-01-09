@@ -25,12 +25,22 @@ class SpecialEquipmentDetail
      * Contains an entry for each type of special equipment used with shipment
      *
      * @param SpecialEquipmentLineItem[] $lineItems
-     * return SpecialEquipmentDetail
+     * @return SpecialEquipmentDetail
      */
     public function setLineItems(array $lineItems)
     {
         $this->LineItems = $lineItems;
         return $this;
+    }
+    
+    /**
+     * Returns Contains an entry for each type of special equipment used with shipment
+     *
+     * @return SpecialEquipmentLineItem[]
+     */
+    public function getLineItems()
+    {
+        return $this->LineItems;
     }
     
 

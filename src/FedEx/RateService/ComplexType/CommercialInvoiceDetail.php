@@ -25,7 +25,7 @@ class CommercialInvoiceDetail
      * Set Format
      *
      * @param ShippingDocumentFormat $format
-     * return CommercialInvoiceDetail
+     * @return CommercialInvoiceDetail
      */
     public function setFormat(ShippingDocumentFormat $format)
     {
@@ -34,15 +34,35 @@ class CommercialInvoiceDetail
     }
     
     /**
+     * Returns Set Format
+     *
+     * @return ShippingDocumentFormat
+     */
+    public function getFormat()
+    {
+        return $this->Format;
+    }
+    
+    /**
      * Specifies the usage and identification of a customer supplied image to be used on this document.
      *
      * @param CustomerImageUsage[] $customerImageUsages
-     * return CommercialInvoiceDetail
+     * @return CommercialInvoiceDetail
      */
     public function setCustomerImageUsages(array $customerImageUsages)
     {
         $this->CustomerImageUsages = $customerImageUsages;
         return $this;
+    }
+    
+    /**
+     * Returns Specifies the usage and identification of a customer supplied image to be used on this document.
+     *
+     * @return CustomerImageUsage[]
+     */
+    public function getCustomerImageUsages()
+    {
+        return $this->CustomerImageUsages;
     }
     
 

@@ -25,7 +25,7 @@ class PickupShipmentAttributes
      * Descriptive information about the dimensions of the package.
      *
      * @param Dimensions $dimensions
-     * return PickupShipmentAttributes
+     * @return PickupShipmentAttributes
      */
     public function setDimensions(Dimensions $dimensions)
     {
@@ -34,15 +34,35 @@ class PickupShipmentAttributes
     }
     
     /**
+     * Returns Descriptive information about the dimensions of the package.
+     *
+     * @return Dimensions
+     */
+    public function getDimensions()
+    {
+        return $this->Dimensions;
+    }
+    
+    /**
      * Descriptive information about the weight of the package.
      *
      * @param Weight $weight
-     * return PickupShipmentAttributes
+     * @return PickupShipmentAttributes
      */
     public function setWeight(Weight $weight)
     {
         $this->Weight = $weight;
         return $this;
+    }
+    
+    /**
+     * Returns Descriptive information about the weight of the package.
+     *
+     * @return Weight
+     */
+    public function getWeight()
+    {
+        return $this->Weight;
     }
     
 

@@ -25,7 +25,7 @@ class EMailNotificationDetail
      * Specifies whether/how email notifications are grouped.
      *
      * @param \FedEx\ShipService\SimpleType\EMailNotificationAggregationType|string $aggregationType
-     * return EMailNotificationDetail
+     * @return EMailNotificationDetail
      */
     public function setAggregationType($aggregationType)
     {
@@ -34,10 +34,20 @@ class EMailNotificationDetail
     }
     
     /**
+     * Returns Specifies whether/how email notifications are grouped.
+     *
+     * @return \FedEx\ShipService\SimpleType\EMailNotificationAggregationType|string
+     */
+    public function getAggregationType()
+    {
+        return $this->AggregationType;
+    }
+    
+    /**
      * A message that will be included in the email notifications
      *
      * @param string $personalMessage
-     * return EMailNotificationDetail
+     * @return EMailNotificationDetail
      */
     public function setPersonalMessage($personalMessage)
     {
@@ -46,15 +56,35 @@ class EMailNotificationDetail
     }
     
     /**
+     * Returns A message that will be included in the email notifications
+     *
+     * @return string
+     */
+    public function getPersonalMessage()
+    {
+        return $this->PersonalMessage;
+    }
+    
+    /**
      * Information describing the destination of the email, format of the email and events to be notified on
      *
      * @param EMailNotificationRecipient[] $recipients
-     * return EMailNotificationDetail
+     * @return EMailNotificationDetail
      */
     public function setRecipients(array $recipients)
     {
         $this->Recipients = $recipients;
         return $this;
+    }
+    
+    /**
+     * Returns Information describing the destination of the email, format of the email and events to be notified on
+     *
+     * @return EMailNotificationRecipient[]
+     */
+    public function getRecipients()
+    {
+        return $this->Recipients;
     }
     
 

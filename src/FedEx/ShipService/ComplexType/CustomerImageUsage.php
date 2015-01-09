@@ -25,7 +25,7 @@ class CustomerImageUsage
      * Set Type
      *
      * @param \FedEx\ShipService\SimpleType\CustomerImageUsageType|string $type
-     * return CustomerImageUsage
+     * @return CustomerImageUsage
      */
     public function setType($type)
     {
@@ -34,15 +34,35 @@ class CustomerImageUsage
     }
     
     /**
+     * Returns Set Type
+     *
+     * @return \FedEx\ShipService\SimpleType\CustomerImageUsageType|string
+     */
+    public function getType()
+    {
+        return $this->Type;
+    }
+    
+    /**
      * Set Id
      *
      * @param \FedEx\ShipService\SimpleType\ImageId|string $id
-     * return CustomerImageUsage
+     * @return CustomerImageUsage
      */
     public function setId($id)
     {
         $this->Id = $id;
         return $this;
+    }
+    
+    /**
+     * Returns Set Id
+     *
+     * @return \FedEx\ShipService\SimpleType\ImageId|string
+     */
+    public function getId()
+    {
+        return $this->Id;
     }
     
 

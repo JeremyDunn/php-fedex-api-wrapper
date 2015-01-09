@@ -25,12 +25,22 @@ class ExtraLaborDetail
      * Total labor time.
      *
      * @param duration $duration
-     * return ExtraLaborDetail
+     * @return ExtraLaborDetail
      */
     public function setDuration(duration $duration)
     {
         $this->Duration = $duration;
         return $this;
+    }
+    
+    /**
+     * Returns Total labor time.
+     *
+     * @return duration
+     */
+    public function getDuration()
+    {
+        return $this->Duration;
     }
     
 

@@ -25,7 +25,7 @@ class ParsedContactAndAddress
      * Set Contact
      *
      * @param ParsedContact $contact
-     * return ParsedContactAndAddress
+     * @return ParsedContactAndAddress
      */
     public function setContact(ParsedContact $contact)
     {
@@ -34,15 +34,35 @@ class ParsedContactAndAddress
     }
     
     /**
+     * Returns Set Contact
+     *
+     * @return ParsedContact
+     */
+    public function getContact()
+    {
+        return $this->Contact;
+    }
+    
+    /**
      * Set Address
      *
      * @param Address $address
-     * return ParsedContactAndAddress
+     * @return ParsedContactAndAddress
      */
     public function setAddress(Address $address)
     {
         $this->Address = $address;
         return $this;
+    }
+    
+    /**
+     * Returns Set Address
+     *
+     * @return Address
+     */
+    public function getAddress()
+    {
+        return $this->Address;
     }
     
 

@@ -25,12 +25,22 @@ class MarkingOrTaggingDetail
      * Number of pieces to be marked or tagged by FedEx.
      *
      * @param positiveInteger $count
-     * return MarkingOrTaggingDetail
+     * @return MarkingOrTaggingDetail
      */
     public function setCount($count)
     {
         $this->Count = $count;
         return $this;
+    }
+    
+    /**
+     * Returns Number of pieces to be marked or tagged by FedEx.
+     *
+     * @return positiveInteger
+     */
+    public function getCount()
+    {
+        return $this->Count;
     }
     
 

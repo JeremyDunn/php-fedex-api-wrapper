@@ -25,7 +25,7 @@ class DangerousGoodsShippersDeclarationDetail
      * Specifies characteristics of a shipping document to be produced.
      *
      * @param ShippingDocumentFormat $format
-     * return DangerousGoodsShippersDeclarationDetail
+     * @return DangerousGoodsShippersDeclarationDetail
      */
     public function setFormat(ShippingDocumentFormat $format)
     {
@@ -34,15 +34,35 @@ class DangerousGoodsShippersDeclarationDetail
     }
     
     /**
+     * Returns Specifies characteristics of a shipping document to be produced.
+     *
+     * @return ShippingDocumentFormat
+     */
+    public function getFormat()
+    {
+        return $this->Format;
+    }
+    
+    /**
      * Specifies the usage and identification of customer supplied images to be used on this document.
      *
      * @param CustomerImageUsage[] $customerImageUsages
-     * return DangerousGoodsShippersDeclarationDetail
+     * @return DangerousGoodsShippersDeclarationDetail
      */
     public function setCustomerImageUsages(array $customerImageUsages)
     {
         $this->CustomerImageUsages = $customerImageUsages;
         return $this;
+    }
+    
+    /**
+     * Returns Specifies the usage and identification of customer supplied images to be used on this document.
+     *
+     * @return CustomerImageUsage[]
+     */
+    public function getCustomerImageUsages()
+    {
+        return $this->CustomerImageUsages;
     }
     
 

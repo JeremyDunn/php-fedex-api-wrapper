@@ -25,7 +25,7 @@ class RadionuclideDetail
      * Set Radionuclide
      *
      * @param string $radionuclide
-     * return RadionuclideDetail
+     * @return RadionuclideDetail
      */
     public function setRadionuclide($radionuclide)
     {
@@ -34,10 +34,20 @@ class RadionuclideDetail
     }
     
     /**
+     * Returns Set Radionuclide
+     *
+     * @return string
+     */
+    public function getRadionuclide()
+    {
+        return $this->Radionuclide;
+    }
+    
+    /**
      * Set Activity
      *
      * @param RadionuclideActivity $activity
-     * return RadionuclideDetail
+     * @return RadionuclideDetail
      */
     public function setActivity(RadionuclideActivity $activity)
     {
@@ -46,10 +56,20 @@ class RadionuclideDetail
     }
     
     /**
+     * Returns Set Activity
+     *
+     * @return RadionuclideActivity
+     */
+    public function getActivity()
+    {
+        return $this->Activity;
+    }
+    
+    /**
      * Indicates whether packaging type "EXCEPTED" or "EXCEPTED_PACKAGE" is for radioactive material in reportable quantity.
      *
      * @param boolean $exceptedPackagingIsReportableQuantity
-     * return RadionuclideDetail
+     * @return RadionuclideDetail
      */
     public function setExceptedPackagingIsReportableQuantity($exceptedPackagingIsReportableQuantity)
     {
@@ -58,10 +78,20 @@ class RadionuclideDetail
     }
     
     /**
+     * Returns Indicates whether packaging type "EXCEPTED" or "EXCEPTED_PACKAGE" is for radioactive material in reportable quantity.
+     *
+     * @return boolean
+     */
+    public function getExceptedPackagingIsReportableQuantity()
+    {
+        return $this->ExceptedPackagingIsReportableQuantity;
+    }
+    
+    /**
      * Set PhysicalForm
      *
      * @param \FedEx\ShipService\SimpleType\PhysicalFormType|string $physicalForm
-     * return RadionuclideDetail
+     * @return RadionuclideDetail
      */
     public function setPhysicalForm($physicalForm)
     {
@@ -70,15 +100,35 @@ class RadionuclideDetail
     }
     
     /**
+     * Returns Set PhysicalForm
+     *
+     * @return \FedEx\ShipService\SimpleType\PhysicalFormType|string
+     */
+    public function getPhysicalForm()
+    {
+        return $this->PhysicalForm;
+    }
+    
+    /**
      * Set ChemicalForm
      *
      * @param string $chemicalForm
-     * return RadionuclideDetail
+     * @return RadionuclideDetail
      */
     public function setChemicalForm($chemicalForm)
     {
         $this->ChemicalForm = $chemicalForm;
         return $this;
+    }
+    
+    /**
+     * Returns Set ChemicalForm
+     *
+     * @return string
+     */
+    public function getChemicalForm()
+    {
+        return $this->ChemicalForm;
     }
     
 

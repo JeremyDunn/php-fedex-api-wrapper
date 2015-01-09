@@ -25,12 +25,22 @@ class DocTabContentZone001
      * Set DocTabZoneSpecifications
      *
      * @param DocTabZoneSpecification[] $docTabZoneSpecifications
-     * return DocTabContentZone001
+     * @return DocTabContentZone001
      */
     public function setDocTabZoneSpecifications(array $docTabZoneSpecifications)
     {
         $this->DocTabZoneSpecifications = $docTabZoneSpecifications;
         return $this;
+    }
+    
+    /**
+     * Returns Set DocTabZoneSpecifications
+     *
+     * @return DocTabZoneSpecification[]
+     */
+    public function getDocTabZoneSpecifications()
+    {
+        return $this->DocTabZoneSpecifications;
     }
     
 

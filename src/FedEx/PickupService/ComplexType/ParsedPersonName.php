@@ -25,7 +25,7 @@ class ParsedPersonName
      * The First name of the person.
      *
      * @param string $firstName
-     * return ParsedPersonName
+     * @return ParsedPersonName
      */
     public function setFirstName($firstName)
     {
@@ -34,10 +34,20 @@ class ParsedPersonName
     }
     
     /**
+     * Returns The First name of the person.
+     *
+     * @return string
+     */
+    public function getFirstName()
+    {
+        return $this->FirstName;
+    }
+    
+    /**
      * The middle name of the person.
      *
      * @param string $middleName
-     * return ParsedPersonName
+     * @return ParsedPersonName
      */
     public function setMiddleName($middleName)
     {
@@ -46,15 +56,35 @@ class ParsedPersonName
     }
     
     /**
+     * Returns The middle name of the person.
+     *
+     * @return string
+     */
+    public function getMiddleName()
+    {
+        return $this->MiddleName;
+    }
+    
+    /**
      * The last name of the person.
      *
      * @param string $lastName
-     * return ParsedPersonName
+     * @return ParsedPersonName
      */
     public function setLastName($lastName)
     {
         $this->LastName = $lastName;
         return $this;
+    }
+    
+    /**
+     * Returns The last name of the person.
+     *
+     * @return string
+     */
+    public function getLastName()
+    {
+        return $this->LastName;
     }
     
 

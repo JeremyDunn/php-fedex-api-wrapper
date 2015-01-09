@@ -25,7 +25,7 @@ class DelayDetail
      * The date of the delay
      *
      * @param date $date
-     * return DelayDetail
+     * @return DelayDetail
      */
     public function setDate($date)
     {
@@ -34,10 +34,20 @@ class DelayDetail
     }
     
     /**
+     * Returns The date of the delay
+     *
+     * @return date
+     */
+    public function getDate()
+    {
+        return $this->Date;
+    }
+    
+    /**
      * Set DayOfWeek
      *
      * @param \FedEx\RateService\SimpleType\DayOfWeekType|string $dayOfWeek
-     * return DelayDetail
+     * @return DelayDetail
      */
     public function setDayOfWeek($dayOfWeek)
     {
@@ -46,10 +56,20 @@ class DelayDetail
     }
     
     /**
+     * Returns Set DayOfWeek
+     *
+     * @return \FedEx\RateService\SimpleType\DayOfWeekType|string
+     */
+    public function getDayOfWeek()
+    {
+        return $this->DayOfWeek;
+    }
+    
+    /**
      * The attribute of the shipment that caused the delay(e.g. Country, City, LocationId, Zip, service area, special handling )
      *
      * @param \FedEx\RateService\SimpleType\DelayLevelType|string $level
-     * return DelayDetail
+     * @return DelayDetail
      */
     public function setLevel($level)
     {
@@ -58,10 +78,20 @@ class DelayDetail
     }
     
     /**
+     * Returns The attribute of the shipment that caused the delay(e.g. Country, City, LocationId, Zip, service area, special handling )
+     *
+     * @return \FedEx\RateService\SimpleType\DelayLevelType|string
+     */
+    public function getLevel()
+    {
+        return $this->Level;
+    }
+    
+    /**
      * The point where the delay is occurring (e.g. Origin, Destination, Broker location)
      *
      * @param \FedEx\RateService\SimpleType\DelayPointType|string $point
-     * return DelayDetail
+     * @return DelayDetail
      */
     public function setPoint($point)
     {
@@ -70,10 +100,20 @@ class DelayDetail
     }
     
     /**
+     * Returns The point where the delay is occurring (e.g. Origin, Destination, Broker location)
+     *
+     * @return \FedEx\RateService\SimpleType\DelayPointType|string
+     */
+    public function getPoint()
+    {
+        return $this->Point;
+    }
+    
+    /**
      * The reason for the delay (e.g. holiday, weekend, etc.).
      *
      * @param \FedEx\RateService\SimpleType\CommitmentDelayType|string $type
-     * return DelayDetail
+     * @return DelayDetail
      */
     public function setType($type)
     {
@@ -82,15 +122,35 @@ class DelayDetail
     }
     
     /**
+     * Returns The reason for the delay (e.g. holiday, weekend, etc.).
+     *
+     * @return \FedEx\RateService\SimpleType\CommitmentDelayType|string
+     */
+    public function getType()
+    {
+        return $this->Type;
+    }
+    
+    /**
      * The name of the holiday in that country that is causing the delay.
      *
      * @param string $description
-     * return DelayDetail
+     * @return DelayDetail
      */
     public function setDescription($description)
     {
         $this->Description = $description;
         return $this;
+    }
+    
+    /**
+     * Returns The name of the holiday in that country that is causing the delay.
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->Description;
     }
     
 

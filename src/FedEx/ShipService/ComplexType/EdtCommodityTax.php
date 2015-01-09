@@ -25,7 +25,7 @@ class EdtCommodityTax
      * Set HarmonizedCode
      *
      * @param string $harmonizedCode
-     * return EdtCommodityTax
+     * @return EdtCommodityTax
      */
     public function setHarmonizedCode($harmonizedCode)
     {
@@ -34,15 +34,35 @@ class EdtCommodityTax
     }
     
     /**
+     * Returns Set HarmonizedCode
+     *
+     * @return string
+     */
+    public function getHarmonizedCode()
+    {
+        return $this->HarmonizedCode;
+    }
+    
+    /**
      * Set Taxes
      *
      * @param EdtTaxDetail[] $taxes
-     * return EdtCommodityTax
+     * @return EdtCommodityTax
      */
     public function setTaxes(array $taxes)
     {
         $this->Taxes = $taxes;
         return $this;
+    }
+    
+    /**
+     * Returns Set Taxes
+     *
+     * @return EdtTaxDetail[]
+     */
+    public function getTaxes()
+    {
+        return $this->Taxes;
     }
     
 

@@ -25,7 +25,7 @@ class ServiceSubOptionDetail
      * Identifies the type of Freight Guarantee applied, if FREIGHT_GUARANTEE is applied to the rate quote.
      *
      * @param \FedEx\RateService\SimpleType\FreightGuaranteeType|string $freightGuarantee
-     * return ServiceSubOptionDetail
+     * @return ServiceSubOptionDetail
      */
     public function setFreightGuarantee($freightGuarantee)
     {
@@ -34,10 +34,20 @@ class ServiceSubOptionDetail
     }
     
     /**
+     * Returns Identifies the type of Freight Guarantee applied, if FREIGHT_GUARANTEE is applied to the rate quote.
+     *
+     * @return \FedEx\RateService\SimpleType\FreightGuaranteeType|string
+     */
+    public function getFreightGuarantee()
+    {
+        return $this->FreightGuarantee;
+    }
+    
+    /**
      * Identifies the smartPostHubId used during rate quote, if SMART_POST_HUB_ID is a variable option on the rate request.
      *
      * @param string $smartPostHubId
-     * return ServiceSubOptionDetail
+     * @return ServiceSubOptionDetail
      */
     public function setSmartPostHubId($smartPostHubId)
     {
@@ -46,15 +56,35 @@ class ServiceSubOptionDetail
     }
     
     /**
+     * Returns Identifies the smartPostHubId used during rate quote, if SMART_POST_HUB_ID is a variable option on the rate request.
+     *
+     * @return string
+     */
+    public function getSmartPostHubId()
+    {
+        return $this->SmartPostHubId;
+    }
+    
+    /**
      * Identifies the indicia used during rate quote, if SMART_POST_ALLOWED_INDICIA is a variable option on the rate request.
      *
      * @param \FedEx\RateService\SimpleType\SmartPostIndiciaType|string $smartPostIndicia
-     * return ServiceSubOptionDetail
+     * @return ServiceSubOptionDetail
      */
     public function setSmartPostIndicia($smartPostIndicia)
     {
         $this->SmartPostIndicia = $smartPostIndicia;
         return $this;
+    }
+    
+    /**
+     * Returns Identifies the indicia used during rate quote, if SMART_POST_ALLOWED_INDICIA is a variable option on the rate request.
+     *
+     * @return \FedEx\RateService\SimpleType\SmartPostIndiciaType|string
+     */
+    public function getSmartPostIndicia()
+    {
+        return $this->SmartPostIndicia;
     }
     
 

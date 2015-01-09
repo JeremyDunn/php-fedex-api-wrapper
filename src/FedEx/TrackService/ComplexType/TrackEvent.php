@@ -25,7 +25,7 @@ class TrackEvent
      * The time this event occurred.
      *
      * @param dateTime $timestamp
-     * return TrackEvent
+     * @return TrackEvent
      */
     public function setTimestamp($timestamp)
     {
@@ -34,10 +34,20 @@ class TrackEvent
     }
     
     /**
+     * Returns The time this event occurred.
+     *
+     * @return dateTime
+     */
+    public function getTimestamp()
+    {
+        return $this->Timestamp;
+    }
+    
+    /**
      * Carrier's scan code. Pairs with EventDescription.
      *
      * @param string $eventType
-     * return TrackEvent
+     * @return TrackEvent
      */
     public function setEventType($eventType)
     {
@@ -46,10 +56,20 @@ class TrackEvent
     }
     
     /**
+     * Returns Carrier's scan code. Pairs with EventDescription.
+     *
+     * @return string
+     */
+    public function getEventType()
+    {
+        return $this->EventType;
+    }
+    
+    /**
      * Literal description that pairs with the EventType.
      *
      * @param string $eventDescription
-     * return TrackEvent
+     * @return TrackEvent
      */
     public function setEventDescription($eventDescription)
     {
@@ -58,10 +78,20 @@ class TrackEvent
     }
     
     /**
+     * Returns Literal description that pairs with the EventType.
+     *
+     * @return string
+     */
+    public function getEventDescription()
+    {
+        return $this->EventDescription;
+    }
+    
+    /**
      * Further defines the Scan Type code's specific type (e.g., DEX08 business closed). Pairs with StatusExceptionDescription.
      *
      * @param string $statusExceptionCode
-     * return TrackEvent
+     * @return TrackEvent
      */
     public function setStatusExceptionCode($statusExceptionCode)
     {
@@ -70,10 +100,20 @@ class TrackEvent
     }
     
     /**
+     * Returns Further defines the Scan Type code's specific type (e.g., DEX08 business closed). Pairs with StatusExceptionDescription.
+     *
+     * @return string
+     */
+    public function getStatusExceptionCode()
+    {
+        return $this->StatusExceptionCode;
+    }
+    
+    /**
      * Literal description that pairs with the StatusExceptionCode.
      *
      * @param string $statusExceptionDescription
-     * return TrackEvent
+     * @return TrackEvent
      */
     public function setStatusExceptionDescription($statusExceptionDescription)
     {
@@ -82,10 +122,20 @@ class TrackEvent
     }
     
     /**
+     * Returns Literal description that pairs with the StatusExceptionCode.
+     *
+     * @return string
+     */
+    public function getStatusExceptionDescription()
+    {
+        return $this->StatusExceptionDescription;
+    }
+    
+    /**
      * Address information of the station that is responsible for the scan.
      *
      * @param Address $address
-     * return TrackEvent
+     * @return TrackEvent
      */
     public function setAddress(Address $address)
     {
@@ -94,15 +144,35 @@ class TrackEvent
     }
     
     /**
+     * Returns Address information of the station that is responsible for the scan.
+     *
+     * @return Address
+     */
+    public function getAddress()
+    {
+        return $this->Address;
+    }
+    
+    /**
      * Indicates where the arrival actually occurred.
      *
      * @param \FedEx\TrackService\SimpleType\ArrivalLocationType|string $arrivalLocation
-     * return TrackEvent
+     * @return TrackEvent
      */
     public function setArrivalLocation($arrivalLocation)
     {
         $this->ArrivalLocation = $arrivalLocation;
         return $this;
+    }
+    
+    /**
+     * Returns Indicates where the arrival actually occurred.
+     *
+     * @return \FedEx\TrackService\SimpleType\ArrivalLocationType|string
+     */
+    public function getArrivalLocation()
+    {
+        return $this->ArrivalLocation;
     }
     
 

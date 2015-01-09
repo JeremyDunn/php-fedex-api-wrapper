@@ -25,7 +25,7 @@ class VariableHandlingCharges
      * The variable handling charge amount calculated based on the requested variable handling charge detail.
      *
      * @param Money $variableHandlingCharge
-     * return VariableHandlingCharges
+     * @return VariableHandlingCharges
      */
     public function setVariableHandlingCharge(Money $variableHandlingCharge)
     {
@@ -34,10 +34,20 @@ class VariableHandlingCharges
     }
     
     /**
+     * Returns The variable handling charge amount calculated based on the requested variable handling charge detail.
+     *
+     * @return Money
+     */
+    public function getVariableHandlingCharge()
+    {
+        return $this->VariableHandlingCharge;
+    }
+    
+    /**
      * Set FixedVariableHandlingCharge
      *
      * @param Money $fixedVariableHandlingCharge
-     * return VariableHandlingCharges
+     * @return VariableHandlingCharges
      */
     public function setFixedVariableHandlingCharge(Money $fixedVariableHandlingCharge)
     {
@@ -46,10 +56,20 @@ class VariableHandlingCharges
     }
     
     /**
+     * Returns Set FixedVariableHandlingCharge
+     *
+     * @return Money
+     */
+    public function getFixedVariableHandlingCharge()
+    {
+        return $this->FixedVariableHandlingCharge;
+    }
+    
+    /**
      * Set PercentVariableHandlingCharge
      *
      * @param Money $percentVariableHandlingCharge
-     * return VariableHandlingCharges
+     * @return VariableHandlingCharges
      */
     public function setPercentVariableHandlingCharge(Money $percentVariableHandlingCharge)
     {
@@ -58,15 +78,35 @@ class VariableHandlingCharges
     }
     
     /**
+     * Returns Set PercentVariableHandlingCharge
+     *
+     * @return Money
+     */
+    public function getPercentVariableHandlingCharge()
+    {
+        return $this->PercentVariableHandlingCharge;
+    }
+    
+    /**
      * The calculated varibale handling charge plus the net charge.
      *
      * @param Money $totalCustomerCharge
-     * return VariableHandlingCharges
+     * @return VariableHandlingCharges
      */
     public function setTotalCustomerCharge(Money $totalCustomerCharge)
     {
         $this->TotalCustomerCharge = $totalCustomerCharge;
         return $this;
+    }
+    
+    /**
+     * Returns The calculated varibale handling charge plus the net charge.
+     *
+     * @return Money
+     */
+    public function getTotalCustomerCharge()
+    {
+        return $this->TotalCustomerCharge;
     }
     
 

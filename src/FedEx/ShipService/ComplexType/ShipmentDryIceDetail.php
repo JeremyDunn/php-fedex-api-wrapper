@@ -25,7 +25,7 @@ class ShipmentDryIceDetail
      * Total number of packages in the shipment that contain dry ice.
      *
      * @param nonNegativeInteger $packageCount
-     * return ShipmentDryIceDetail
+     * @return ShipmentDryIceDetail
      */
     public function setPackageCount($packageCount)
     {
@@ -34,15 +34,35 @@ class ShipmentDryIceDetail
     }
     
     /**
+     * Returns Total number of packages in the shipment that contain dry ice.
+     *
+     * @return nonNegativeInteger
+     */
+    public function getPackageCount()
+    {
+        return $this->PackageCount;
+    }
+    
+    /**
      * Total shipment dry ice weight for all packages.
      *
      * @param Weight $totalWeight
-     * return ShipmentDryIceDetail
+     * @return ShipmentDryIceDetail
      */
     public function setTotalWeight(Weight $totalWeight)
     {
         $this->TotalWeight = $totalWeight;
         return $this;
+    }
+    
+    /**
+     * Returns Total shipment dry ice weight for all packages.
+     *
+     * @return Weight
+     */
+    public function getTotalWeight()
+    {
+        return $this->TotalWeight;
     }
     
 

@@ -25,7 +25,7 @@ class CustomsOptionDetail
      * Set Type
      *
      * @param \FedEx\ShipService\SimpleType\CustomsOptionType|string $type
-     * return CustomsOptionDetail
+     * @return CustomsOptionDetail
      */
     public function setType($type)
     {
@@ -34,15 +34,35 @@ class CustomsOptionDetail
     }
     
     /**
+     * Returns Set Type
+     *
+     * @return \FedEx\ShipService\SimpleType\CustomsOptionType|string
+     */
+    public function getType()
+    {
+        return $this->Type;
+    }
+    
+    /**
      * Specifies additional description about customs options. This is a required field when the customs options type is "OTHER".
      *
      * @param string $description
-     * return CustomsOptionDetail
+     * @return CustomsOptionDetail
      */
     public function setDescription($description)
     {
         $this->Description = $description;
         return $this;
+    }
+    
+    /**
+     * Returns Specifies additional description about customs options. This is a required field when the customs options type is "OTHER".
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->Description;
     }
     
 

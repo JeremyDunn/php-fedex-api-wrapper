@@ -25,7 +25,7 @@ class HomeDeliveryPremiumDetail
      * The type of Home Delivery Premium service being requested.
      *
      * @param \FedEx\ShipService\SimpleType\HomeDeliveryPremiumType|string $homeDeliveryPremiumType
-     * return HomeDeliveryPremiumDetail
+     * @return HomeDeliveryPremiumDetail
      */
     public function setHomeDeliveryPremiumType($homeDeliveryPremiumType)
     {
@@ -34,10 +34,20 @@ class HomeDeliveryPremiumDetail
     }
     
     /**
+     * Returns The type of Home Delivery Premium service being requested.
+     *
+     * @return \FedEx\ShipService\SimpleType\HomeDeliveryPremiumType|string
+     */
+    public function getHomeDeliveryPremiumType()
+    {
+        return $this->HomeDeliveryPremiumType;
+    }
+    
+    /**
      * Required for Date Certain Home Delivery.
      *
      * @param date $date
-     * return HomeDeliveryPremiumDetail
+     * @return HomeDeliveryPremiumDetail
      */
     public function setDate($date)
     {
@@ -46,15 +56,35 @@ class HomeDeliveryPremiumDetail
     }
     
     /**
+     * Returns Required for Date Certain Home Delivery.
+     *
+     * @return date
+     */
+    public function getDate()
+    {
+        return $this->Date;
+    }
+    
+    /**
      * Required for Date Certain and Appointment Home Delivery.
      *
      * @param string $phoneNumber
-     * return HomeDeliveryPremiumDetail
+     * @return HomeDeliveryPremiumDetail
      */
     public function setPhoneNumber($phoneNumber)
     {
         $this->PhoneNumber = $phoneNumber;
         return $this;
+    }
+    
+    /**
+     * Returns Required for Date Certain and Appointment Home Delivery.
+     *
+     * @return string
+     */
+    public function getPhoneNumber()
+    {
+        return $this->PhoneNumber;
     }
     
 

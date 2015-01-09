@@ -25,7 +25,7 @@ class AddressValidationReply
      * Set HighestSeverity
      *
      * @param \FedEx\AddressValidationService\SimpleType\NotificationSeverityType|string $highestSeverity
-     * return AddressValidationReply
+     * @return AddressValidationReply
      */
     public function setHighestSeverity($highestSeverity)
     {
@@ -34,10 +34,20 @@ class AddressValidationReply
     }
     
     /**
+     * Returns Set HighestSeverity
+     *
+     * @return \FedEx\AddressValidationService\SimpleType\NotificationSeverityType|string
+     */
+    public function getHighestSeverity()
+    {
+        return $this->HighestSeverity;
+    }
+    
+    /**
      * Set Notifications
      *
      * @param Notification[] $notifications
-     * return AddressValidationReply
+     * @return AddressValidationReply
      */
     public function setNotifications(array $notifications)
     {
@@ -46,10 +56,20 @@ class AddressValidationReply
     }
     
     /**
+     * Returns Set Notifications
+     *
+     * @return Notification[]
+     */
+    public function getNotifications()
+    {
+        return $this->Notifications;
+    }
+    
+    /**
      * Set TransactionDetail
      *
      * @param TransactionDetail $transactionDetail
-     * return AddressValidationReply
+     * @return AddressValidationReply
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
@@ -58,10 +78,20 @@ class AddressValidationReply
     }
     
     /**
+     * Returns Set TransactionDetail
+     *
+     * @return TransactionDetail
+     */
+    public function getTransactionDetail()
+    {
+        return $this->TransactionDetail;
+    }
+    
+    /**
      * Set Version
      *
      * @param VersionId $version
-     * return AddressValidationReply
+     * @return AddressValidationReply
      */
     public function setVersion(VersionId $version)
     {
@@ -70,10 +100,20 @@ class AddressValidationReply
     }
     
     /**
+     * Returns Set Version
+     *
+     * @return VersionId
+     */
+    public function getVersion()
+    {
+        return $this->Version;
+    }
+    
+    /**
      * Set ReplyTimestamp
      *
      * @param dateTime $replyTimestamp
-     * return AddressValidationReply
+     * @return AddressValidationReply
      */
     public function setReplyTimestamp($replyTimestamp)
     {
@@ -82,15 +122,35 @@ class AddressValidationReply
     }
     
     /**
+     * Returns Set ReplyTimestamp
+     *
+     * @return dateTime
+     */
+    public function getReplyTimestamp()
+    {
+        return $this->ReplyTimestamp;
+    }
+    
+    /**
      * Set AddressResults
      *
      * @param AddressValidationResult[] $addressResults
-     * return AddressValidationReply
+     * @return AddressValidationReply
      */
     public function setAddressResults(array $addressResults)
     {
         $this->AddressResults = $addressResults;
         return $this;
+    }
+    
+    /**
+     * Returns Set AddressResults
+     *
+     * @return AddressValidationResult[]
+     */
+    public function getAddressResults()
+    {
+        return $this->AddressResults;
     }
     
 

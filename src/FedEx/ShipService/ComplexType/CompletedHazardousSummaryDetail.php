@@ -25,12 +25,22 @@ class CompletedHazardousSummaryDetail
      * Specifies the total number of packages containing hazardous commodities in small exceptions.
      *
      * @param nonNegativeInteger $smallQuantityExceptionPackageCount
-     * return CompletedHazardousSummaryDetail
+     * @return CompletedHazardousSummaryDetail
      */
     public function setSmallQuantityExceptionPackageCount($smallQuantityExceptionPackageCount)
     {
         $this->SmallQuantityExceptionPackageCount = $smallQuantityExceptionPackageCount;
         return $this;
+    }
+    
+    /**
+     * Returns Specifies the total number of packages containing hazardous commodities in small exceptions.
+     *
+     * @return nonNegativeInteger
+     */
+    public function getSmallQuantityExceptionPackageCount()
+    {
+        return $this->SmallQuantityExceptionPackageCount;
     }
     
 

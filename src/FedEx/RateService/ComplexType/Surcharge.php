@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Identifies each surcharge applied to the shipment.
+ * Surcharge
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -22,10 +22,10 @@ class Surcharge
     protected $_name = 'Surcharge';
 
     /**
-     * The type of surcharge applied to the shipment.
+     * Set SurchargeType
      *
      * @param \FedEx\RateService\SimpleType\SurchargeType|string $surchargeType
-     * return Surcharge
+     * @return Surcharge
      */
     public function setSurchargeType($surchargeType)
     {
@@ -34,10 +34,20 @@ class Surcharge
     }
     
     /**
+     * Returns Set SurchargeType
+     *
+     * @return \FedEx\RateService\SimpleType\SurchargeType|string
+     */
+    public function getSurchargeType()
+    {
+        return $this->SurchargeType;
+    }
+    
+    /**
      * Set Level
      *
      * @param \FedEx\RateService\SimpleType\SurchargeLevelType|string $level
-     * return Surcharge
+     * @return Surcharge
      */
     public function setLevel($level)
     {
@@ -46,10 +56,20 @@ class Surcharge
     }
     
     /**
+     * Returns Set Level
+     *
+     * @return \FedEx\RateService\SimpleType\SurchargeLevelType|string
+     */
+    public function getLevel()
+    {
+        return $this->Level;
+    }
+    
+    /**
      * Set Description
      *
      * @param string $description
-     * return Surcharge
+     * @return Surcharge
      */
     public function setDescription($description)
     {
@@ -58,15 +78,35 @@ class Surcharge
     }
     
     /**
-     * The amount of the surcharge applied to the shipment.
+     * Returns Set Description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->Description;
+    }
+    
+    /**
+     * Set Amount
      *
      * @param Money $amount
-     * return Surcharge
+     * @return Surcharge
      */
     public function setAmount(Money $amount)
     {
         $this->Amount = $amount;
         return $this;
+    }
+    
+    /**
+     * Returns Set Amount
+     *
+     * @return Money
+     */
+    public function getAmount()
+    {
+        return $this->Amount;
     }
     
 

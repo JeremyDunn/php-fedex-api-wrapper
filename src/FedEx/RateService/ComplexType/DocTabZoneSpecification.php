@@ -22,10 +22,10 @@ class DocTabZoneSpecification
     protected $_name = 'DocTabZoneSpecification';
 
     /**
-     * Zone number can be between 1 and 12.
+     * Set ZoneNumber
      *
      * @param positiveInteger $zoneNumber
-     * return DocTabZoneSpecification
+     * @return DocTabZoneSpecification
      */
     public function setZoneNumber($zoneNumber)
     {
@@ -34,10 +34,20 @@ class DocTabZoneSpecification
     }
     
     /**
-     * Header value on this zone.
+     * Returns Set ZoneNumber
+     *
+     * @return positiveInteger
+     */
+    public function getZoneNumber()
+    {
+        return $this->ZoneNumber;
+    }
+    
+    /**
+     * Set Header
      *
      * @param string $header
-     * return DocTabZoneSpecification
+     * @return DocTabZoneSpecification
      */
     public function setHeader($header)
     {
@@ -46,10 +56,20 @@ class DocTabZoneSpecification
     }
     
     /**
-     * Reference path to the element in the request/reply whose value should be printed on this zone.
+     * Returns Set Header
+     *
+     * @return string
+     */
+    public function getHeader()
+    {
+        return $this->Header;
+    }
+    
+    /**
+     * Set DataField
      *
      * @param string $dataField
-     * return DocTabZoneSpecification
+     * @return DocTabZoneSpecification
      */
     public function setDataField($dataField)
     {
@@ -58,10 +78,20 @@ class DocTabZoneSpecification
     }
     
     /**
-     * Free form-text to be printed in this zone.
+     * Returns Set DataField
+     *
+     * @return string
+     */
+    public function getDataField()
+    {
+        return $this->DataField;
+    }
+    
+    /**
+     * Set LiteralValue
      *
      * @param string $literalValue
-     * return DocTabZoneSpecification
+     * @return DocTabZoneSpecification
      */
     public function setLiteralValue($literalValue)
     {
@@ -70,15 +100,35 @@ class DocTabZoneSpecification
     }
     
     /**
-     * Justification for the text printed on this zone.
+     * Returns Set LiteralValue
+     *
+     * @return string
+     */
+    public function getLiteralValue()
+    {
+        return $this->LiteralValue;
+    }
+    
+    /**
+     * Set Justification
      *
      * @param \FedEx\RateService\SimpleType\DocTabZoneJustificationType|string $justification
-     * return DocTabZoneSpecification
+     * @return DocTabZoneSpecification
      */
     public function setJustification($justification)
     {
         $this->Justification = $justification;
         return $this;
+    }
+    
+    /**
+     * Returns Set Justification
+     *
+     * @return \FedEx\RateService\SimpleType\DocTabZoneJustificationType|string
+     */
+    public function getJustification()
+    {
+        return $this->Justification;
     }
     
 

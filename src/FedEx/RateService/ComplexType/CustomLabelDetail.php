@@ -25,7 +25,7 @@ class CustomLabelDetail
      * Set CoordinateUnits
      *
      * @param \FedEx\RateService\SimpleType\CustomLabelCoordinateUnits|string $coordinateUnits
-     * return CustomLabelDetail
+     * @return CustomLabelDetail
      */
     public function setCoordinateUnits($coordinateUnits)
     {
@@ -34,10 +34,20 @@ class CustomLabelDetail
     }
     
     /**
+     * Returns Set CoordinateUnits
+     *
+     * @return \FedEx\RateService\SimpleType\CustomLabelCoordinateUnits|string
+     */
+    public function getCoordinateUnits()
+    {
+        return $this->CoordinateUnits;
+    }
+    
+    /**
      * Set TextEntries
      *
      * @param CustomLabelTextEntry[] $textEntries
-     * return CustomLabelDetail
+     * @return CustomLabelDetail
      */
     public function setTextEntries(array $textEntries)
     {
@@ -46,10 +56,20 @@ class CustomLabelDetail
     }
     
     /**
+     * Returns Set TextEntries
+     *
+     * @return CustomLabelTextEntry[]
+     */
+    public function getTextEntries()
+    {
+        return $this->TextEntries;
+    }
+    
+    /**
      * Set GraphicEntries
      *
      * @param CustomLabelGraphicEntry[] $graphicEntries
-     * return CustomLabelDetail
+     * @return CustomLabelDetail
      */
     public function setGraphicEntries(array $graphicEntries)
     {
@@ -58,10 +78,20 @@ class CustomLabelDetail
     }
     
     /**
+     * Returns Set GraphicEntries
+     *
+     * @return CustomLabelGraphicEntry[]
+     */
+    public function getGraphicEntries()
+    {
+        return $this->GraphicEntries;
+    }
+    
+    /**
      * Set BoxEntries
      *
      * @param CustomLabelBoxEntry[] $boxEntries
-     * return CustomLabelDetail
+     * @return CustomLabelDetail
      */
     public function setBoxEntries(array $boxEntries)
     {
@@ -70,15 +100,35 @@ class CustomLabelDetail
     }
     
     /**
+     * Returns Set BoxEntries
+     *
+     * @return CustomLabelBoxEntry[]
+     */
+    public function getBoxEntries()
+    {
+        return $this->BoxEntries;
+    }
+    
+    /**
      * Set BarcodeEntries
      *
      * @param CustomLabelBarcodeEntry[] $barcodeEntries
-     * return CustomLabelDetail
+     * @return CustomLabelDetail
      */
     public function setBarcodeEntries(array $barcodeEntries)
     {
         $this->BarcodeEntries = $barcodeEntries;
         return $this;
+    }
+    
+    /**
+     * Returns Set BarcodeEntries
+     *
+     * @return CustomLabelBarcodeEntry[]
+     */
+    public function getBarcodeEntries()
+    {
+        return $this->BarcodeEntries;
     }
     
 

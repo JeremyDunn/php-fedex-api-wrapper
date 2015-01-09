@@ -25,7 +25,7 @@ class PrintedReference
      * Set Type
      *
      * @param \FedEx\ShipService\SimpleType\PrintedReferenceType|string $type
-     * return PrintedReference
+     * @return PrintedReference
      */
     public function setType($type)
     {
@@ -34,15 +34,35 @@ class PrintedReference
     }
     
     /**
+     * Returns Set Type
+     *
+     * @return \FedEx\ShipService\SimpleType\PrintedReferenceType|string
+     */
+    public function getType()
+    {
+        return $this->Type;
+    }
+    
+    /**
      * Set Value
      *
      * @param string $value
-     * return PrintedReference
+     * @return PrintedReference
      */
     public function setValue($value)
     {
         $this->Value = $value;
         return $this;
+    }
+    
+    /**
+     * Returns Set Value
+     *
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->Value;
     }
     
 

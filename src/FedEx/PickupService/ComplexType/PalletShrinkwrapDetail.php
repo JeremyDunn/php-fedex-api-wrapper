@@ -25,12 +25,22 @@ class PalletShrinkwrapDetail
      * Number of pallets to be shrinkwrapped.
      *
      * @param positiveInteger $palletCount
-     * return PalletShrinkwrapDetail
+     * @return PalletShrinkwrapDetail
      */
     public function setPalletCount($palletCount)
     {
         $this->PalletCount = $palletCount;
         return $this;
+    }
+    
+    /**
+     * Returns Number of pallets to be shrinkwrapped.
+     *
+     * @return positiveInteger
+     */
+    public function getPalletCount()
+    {
+        return $this->PalletCount;
     }
     
 

@@ -25,12 +25,22 @@ class ExpressFreightDetail
      * Indicates whether or nor a packing list is enclosed.
      *
      * @param boolean $packingListEnclosed
-     * return ExpressFreightDetail
+     * @return ExpressFreightDetail
      */
     public function setPackingListEnclosed($packingListEnclosed)
     {
         $this->PackingListEnclosed = $packingListEnclosed;
         return $this;
+    }
+    
+    /**
+     * Returns Indicates whether or nor a packing list is enclosed.
+     *
+     * @return boolean
+     */
+    public function getPackingListEnclosed()
+    {
+        return $this->PackingListEnclosed;
     }
     
     /**
@@ -42,7 +52,7 @@ class ExpressFreightDetail
               
      *
      * @param positiveInteger $shippersLoadAndCount
-     * return ExpressFreightDetail
+     * @return ExpressFreightDetail
      */
     public function setShippersLoadAndCount($shippersLoadAndCount)
     {
@@ -51,15 +61,40 @@ class ExpressFreightDetail
     }
     
     /**
+     * Returns 
+                Total shipment pieces.
+                e.g. 3 boxes and 3 pallets of 100 pieces each = Shippers Load and Count of 303.
+                Applicable to International Priority Freight and International Economy Freight.
+                Values must be in the range of 1 - 99999
+              
+     *
+     * @return positiveInteger
+     */
+    public function getShippersLoadAndCount()
+    {
+        return $this->ShippersLoadAndCount;
+    }
+    
+    /**
      * Required for International Freight shipping. Values must be 8- 12 characters in length.
      *
      * @param string $bookingConfirmationNumber
-     * return ExpressFreightDetail
+     * @return ExpressFreightDetail
      */
     public function setBookingConfirmationNumber($bookingConfirmationNumber)
     {
         $this->BookingConfirmationNumber = $bookingConfirmationNumber;
         return $this;
+    }
+    
+    /**
+     * Returns Required for International Freight shipping. Values must be 8- 12 characters in length.
+     *
+     * @return string
+     */
+    public function getBookingConfirmationNumber()
+    {
+        return $this->BookingConfirmationNumber;
     }
     
 

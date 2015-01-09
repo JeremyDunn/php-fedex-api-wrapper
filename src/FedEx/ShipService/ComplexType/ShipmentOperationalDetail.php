@@ -25,7 +25,7 @@ class ShipmentOperationalDetail
      * Set UrsaPrefixCode
      *
      * @param string $ursaPrefixCode
-     * return ShipmentOperationalDetail
+     * @return ShipmentOperationalDetail
      */
     public function setUrsaPrefixCode($ursaPrefixCode)
     {
@@ -34,10 +34,20 @@ class ShipmentOperationalDetail
     }
     
     /**
+     * Returns Set UrsaPrefixCode
+     *
+     * @return string
+     */
+    public function getUrsaPrefixCode()
+    {
+        return $this->UrsaPrefixCode;
+    }
+    
+    /**
      * Set UrsaSuffixCode
      *
      * @param string $ursaSuffixCode
-     * return ShipmentOperationalDetail
+     * @return ShipmentOperationalDetail
      */
     public function setUrsaSuffixCode($ursaSuffixCode)
     {
@@ -46,10 +56,20 @@ class ShipmentOperationalDetail
     }
     
     /**
+     * Returns Set UrsaSuffixCode
+     *
+     * @return string
+     */
+    public function getUrsaSuffixCode()
+    {
+        return $this->UrsaSuffixCode;
+    }
+    
+    /**
      * Set OriginLocationId
      *
      * @param string $originLocationId
-     * return ShipmentOperationalDetail
+     * @return ShipmentOperationalDetail
      */
     public function setOriginLocationId($originLocationId)
     {
@@ -58,10 +78,20 @@ class ShipmentOperationalDetail
     }
     
     /**
+     * Returns Set OriginLocationId
+     *
+     * @return string
+     */
+    public function getOriginLocationId()
+    {
+        return $this->OriginLocationId;
+    }
+    
+    /**
      * Set OriginLocationNumber
      *
      * @param int $originLocationNumber
-     * return ShipmentOperationalDetail
+     * @return ShipmentOperationalDetail
      */
     public function setOriginLocationNumber($originLocationNumber)
     {
@@ -70,10 +100,20 @@ class ShipmentOperationalDetail
     }
     
     /**
+     * Returns Set OriginLocationNumber
+     *
+     * @return int
+     */
+    public function getOriginLocationNumber()
+    {
+        return $this->OriginLocationNumber;
+    }
+    
+    /**
      * Set OriginServiceArea
      *
      * @param string $originServiceArea
-     * return ShipmentOperationalDetail
+     * @return ShipmentOperationalDetail
      */
     public function setOriginServiceArea($originServiceArea)
     {
@@ -82,10 +122,20 @@ class ShipmentOperationalDetail
     }
     
     /**
+     * Returns Set OriginServiceArea
+     *
+     * @return string
+     */
+    public function getOriginServiceArea()
+    {
+        return $this->OriginServiceArea;
+    }
+    
+    /**
      * Set DestinationLocationId
      *
      * @param string $destinationLocationId
-     * return ShipmentOperationalDetail
+     * @return ShipmentOperationalDetail
      */
     public function setDestinationLocationId($destinationLocationId)
     {
@@ -94,10 +144,20 @@ class ShipmentOperationalDetail
     }
     
     /**
+     * Returns Set DestinationLocationId
+     *
+     * @return string
+     */
+    public function getDestinationLocationId()
+    {
+        return $this->DestinationLocationId;
+    }
+    
+    /**
      * Set DestinationLocationNumber
      *
      * @param int $destinationLocationNumber
-     * return ShipmentOperationalDetail
+     * @return ShipmentOperationalDetail
      */
     public function setDestinationLocationNumber($destinationLocationNumber)
     {
@@ -106,10 +166,20 @@ class ShipmentOperationalDetail
     }
     
     /**
+     * Returns Set DestinationLocationNumber
+     *
+     * @return int
+     */
+    public function getDestinationLocationNumber()
+    {
+        return $this->DestinationLocationNumber;
+    }
+    
+    /**
      * Set DestinationServiceArea
      *
      * @param string $destinationServiceArea
-     * return ShipmentOperationalDetail
+     * @return ShipmentOperationalDetail
      */
     public function setDestinationServiceArea($destinationServiceArea)
     {
@@ -118,10 +188,20 @@ class ShipmentOperationalDetail
     }
     
     /**
+     * Returns Set DestinationServiceArea
+     *
+     * @return string
+     */
+    public function getDestinationServiceArea()
+    {
+        return $this->DestinationServiceArea;
+    }
+    
+    /**
      * This is the state of the destination location ID, and is not necessarily the same as the postal state.
      *
      * @param string $destinationLocationStateOrProvinceCode
-     * return ShipmentOperationalDetail
+     * @return ShipmentOperationalDetail
      */
     public function setDestinationLocationStateOrProvinceCode($destinationLocationStateOrProvinceCode)
     {
@@ -130,10 +210,20 @@ class ShipmentOperationalDetail
     }
     
     /**
+     * Returns This is the state of the destination location ID, and is not necessarily the same as the postal state.
+     *
+     * @return string
+     */
+    public function getDestinationLocationStateOrProvinceCode()
+    {
+        return $this->DestinationLocationStateOrProvinceCode;
+    }
+    
+    /**
      * Expected/estimated date of delivery.
      *
      * @param date $deliveryDate
-     * return ShipmentOperationalDetail
+     * @return ShipmentOperationalDetail
      */
     public function setDeliveryDate($deliveryDate)
     {
@@ -142,10 +232,20 @@ class ShipmentOperationalDetail
     }
     
     /**
+     * Returns Expected/estimated date of delivery.
+     *
+     * @return date
+     */
+    public function getDeliveryDate()
+    {
+        return $this->DeliveryDate;
+    }
+    
+    /**
      * Expected/estimated day of week of delivery.
      *
      * @param \FedEx\ShipService\SimpleType\DayOfWeekType|string $deliveryDay
-     * return ShipmentOperationalDetail
+     * @return ShipmentOperationalDetail
      */
     public function setDeliveryDay($deliveryDay)
     {
@@ -154,10 +254,20 @@ class ShipmentOperationalDetail
     }
     
     /**
+     * Returns Expected/estimated day of week of delivery.
+     *
+     * @return \FedEx\ShipService\SimpleType\DayOfWeekType|string
+     */
+    public function getDeliveryDay()
+    {
+        return $this->DeliveryDay;
+    }
+    
+    /**
      * Delivery time, as published in Service Guide.
      *
      * @param time $publishedDeliveryTime
-     * return ShipmentOperationalDetail
+     * @return ShipmentOperationalDetail
      */
     public function setPublishedDeliveryTime(time $publishedDeliveryTime)
     {
@@ -166,10 +276,20 @@ class ShipmentOperationalDetail
     }
     
     /**
+     * Returns Delivery time, as published in Service Guide.
+     *
+     * @return time
+     */
+    public function getPublishedDeliveryTime()
+    {
+        return $this->PublishedDeliveryTime;
+    }
+    
+    /**
      * Committed date of delivery.
      *
      * @param date $commitDate
-     * return ShipmentOperationalDetail
+     * @return ShipmentOperationalDetail
      */
     public function setCommitDate($commitDate)
     {
@@ -178,10 +298,20 @@ class ShipmentOperationalDetail
     }
     
     /**
+     * Returns Committed date of delivery.
+     *
+     * @return date
+     */
+    public function getCommitDate()
+    {
+        return $this->CommitDate;
+    }
+    
+    /**
      * Committed day of week of delivery.
      *
      * @param \FedEx\ShipService\SimpleType\DayOfWeekType|string $commitDay
-     * return ShipmentOperationalDetail
+     * @return ShipmentOperationalDetail
      */
     public function setCommitDay($commitDay)
     {
@@ -190,10 +320,20 @@ class ShipmentOperationalDetail
     }
     
     /**
+     * Returns Committed day of week of delivery.
+     *
+     * @return \FedEx\ShipService\SimpleType\DayOfWeekType|string
+     */
+    public function getCommitDay()
+    {
+        return $this->CommitDay;
+    }
+    
+    /**
      * Standard transit time per origin, destination, and service.
      *
      * @param \FedEx\ShipService\SimpleType\TransitTimeType|string $transitTime
-     * return ShipmentOperationalDetail
+     * @return ShipmentOperationalDetail
      */
     public function setTransitTime($transitTime)
     {
@@ -202,10 +342,20 @@ class ShipmentOperationalDetail
     }
     
     /**
+     * Returns Standard transit time per origin, destination, and service.
+     *
+     * @return \FedEx\ShipService\SimpleType\TransitTimeType|string
+     */
+    public function getTransitTime()
+    {
+        return $this->TransitTime;
+    }
+    
+    /**
      * Maximum expected transit time
      *
      * @param \FedEx\ShipService\SimpleType\TransitTimeType|string $maximumTransitTime
-     * return ShipmentOperationalDetail
+     * @return ShipmentOperationalDetail
      */
     public function setMaximumTransitTime($maximumTransitTime)
     {
@@ -214,10 +364,20 @@ class ShipmentOperationalDetail
     }
     
     /**
+     * Returns Maximum expected transit time
+     *
+     * @return \FedEx\ShipService\SimpleType\TransitTimeType|string
+     */
+    public function getMaximumTransitTime()
+    {
+        return $this->MaximumTransitTime;
+    }
+    
+    /**
      * Transit time based on customer eligibility.
      *
      * @param \FedEx\ShipService\SimpleType\TransitTimeType|string $customTransitTime
-     * return ShipmentOperationalDetail
+     * @return ShipmentOperationalDetail
      */
     public function setCustomTransitTime($customTransitTime)
     {
@@ -226,10 +386,20 @@ class ShipmentOperationalDetail
     }
     
     /**
+     * Returns Transit time based on customer eligibility.
+     *
+     * @return \FedEx\ShipService\SimpleType\TransitTimeType|string
+     */
+    public function getCustomTransitTime()
+    {
+        return $this->CustomTransitTime;
+    }
+    
+    /**
      * Indicates that this shipment is not eligible for money back guarantee.
      *
      * @param boolean $ineligibleForMoneyBackGuarantee
-     * return ShipmentOperationalDetail
+     * @return ShipmentOperationalDetail
      */
     public function setIneligibleForMoneyBackGuarantee($ineligibleForMoneyBackGuarantee)
     {
@@ -238,10 +408,20 @@ class ShipmentOperationalDetail
     }
     
     /**
+     * Returns Indicates that this shipment is not eligible for money back guarantee.
+     *
+     * @return boolean
+     */
+    public function getIneligibleForMoneyBackGuarantee()
+    {
+        return $this->IneligibleForMoneyBackGuarantee;
+    }
+    
+    /**
      * FedEx Ground delivery features for which this shipment may be eligible.
      *
      * @param GroundDeliveryEligibilityType[] $deliveryEligibilities
-     * return ShipmentOperationalDetail
+     * @return ShipmentOperationalDetail
      */
     public function setDeliveryEligibilities(array $deliveryEligibilities)
     {
@@ -250,10 +430,20 @@ class ShipmentOperationalDetail
     }
     
     /**
+     * Returns FedEx Ground delivery features for which this shipment may be eligible.
+     *
+     * @return GroundDeliveryEligibilityType[]
+     */
+    public function getDeliveryEligibilities()
+    {
+        return $this->DeliveryEligibilities;
+    }
+    
+    /**
      * Text describing planned delivery.
      *
      * @param string $astraPlannedServiceLevel
-     * return ShipmentOperationalDetail
+     * @return ShipmentOperationalDetail
      */
     public function setAstraPlannedServiceLevel($astraPlannedServiceLevel)
     {
@@ -262,10 +452,20 @@ class ShipmentOperationalDetail
     }
     
     /**
+     * Returns Text describing planned delivery.
+     *
+     * @return string
+     */
+    public function getAstraPlannedServiceLevel()
+    {
+        return $this->AstraPlannedServiceLevel;
+    }
+    
+    /**
      * Set AstraDescription
      *
      * @param string $astraDescription
-     * return ShipmentOperationalDetail
+     * @return ShipmentOperationalDetail
      */
     public function setAstraDescription($astraDescription)
     {
@@ -274,10 +474,20 @@ class ShipmentOperationalDetail
     }
     
     /**
+     * Returns Set AstraDescription
+     *
+     * @return string
+     */
+    public function getAstraDescription()
+    {
+        return $this->AstraDescription;
+    }
+    
+    /**
      * Set PostalCode
      *
      * @param string $postalCode
-     * return ShipmentOperationalDetail
+     * @return ShipmentOperationalDetail
      */
     public function setPostalCode($postalCode)
     {
@@ -286,10 +496,20 @@ class ShipmentOperationalDetail
     }
     
     /**
+     * Returns Set PostalCode
+     *
+     * @return string
+     */
+    public function getPostalCode()
+    {
+        return $this->PostalCode;
+    }
+    
+    /**
      * Set StateOrProvinceCode
      *
      * @param string $stateOrProvinceCode
-     * return ShipmentOperationalDetail
+     * @return ShipmentOperationalDetail
      */
     public function setStateOrProvinceCode($stateOrProvinceCode)
     {
@@ -298,10 +518,20 @@ class ShipmentOperationalDetail
     }
     
     /**
+     * Returns Set StateOrProvinceCode
+     *
+     * @return string
+     */
+    public function getStateOrProvinceCode()
+    {
+        return $this->StateOrProvinceCode;
+    }
+    
+    /**
      * Set CountryCode
      *
      * @param string $countryCode
-     * return ShipmentOperationalDetail
+     * @return ShipmentOperationalDetail
      */
     public function setCountryCode($countryCode)
     {
@@ -310,10 +540,20 @@ class ShipmentOperationalDetail
     }
     
     /**
+     * Returns Set CountryCode
+     *
+     * @return string
+     */
+    public function getCountryCode()
+    {
+        return $this->CountryCode;
+    }
+    
+    /**
      * Set AirportId
      *
      * @param string $airportId
-     * return ShipmentOperationalDetail
+     * @return ShipmentOperationalDetail
      */
     public function setAirportId($airportId)
     {
@@ -322,10 +562,20 @@ class ShipmentOperationalDetail
     }
     
     /**
+     * Returns Set AirportId
+     *
+     * @return string
+     */
+    public function getAirportId()
+    {
+        return $this->AirportId;
+    }
+    
+    /**
      * Set ServiceCode
      *
      * @param string $serviceCode
-     * return ShipmentOperationalDetail
+     * @return ShipmentOperationalDetail
      */
     public function setServiceCode($serviceCode)
     {
@@ -334,15 +584,35 @@ class ShipmentOperationalDetail
     }
     
     /**
+     * Returns Set ServiceCode
+     *
+     * @return string
+     */
+    public function getServiceCode()
+    {
+        return $this->ServiceCode;
+    }
+    
+    /**
      * Set Scac
      *
      * @param string $scac
-     * return ShipmentOperationalDetail
+     * @return ShipmentOperationalDetail
      */
     public function setScac($scac)
     {
         $this->Scac = $scac;
         return $this;
+    }
+    
+    /**
+     * Returns Set Scac
+     *
+     * @return string
+     */
+    public function getScac()
+    {
+        return $this->Scac;
     }
     
 

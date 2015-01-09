@@ -25,7 +25,7 @@ class CompletedEtdDetail
      * The identifier for all clearance documents associated with this shipment.
      *
      * @param string $folderId
-     * return CompletedEtdDetail
+     * @return CompletedEtdDetail
      */
     public function setFolderId($folderId)
     {
@@ -34,15 +34,35 @@ class CompletedEtdDetail
     }
     
     /**
+     * Returns The identifier for all clearance documents associated with this shipment.
+     *
+     * @return string
+     */
+    public function getFolderId()
+    {
+        return $this->FolderId;
+    }
+    
+    /**
      * Set UploadDocumentReferenceDetails
      *
      * @param UploadDocumentReferenceDetail[] $uploadDocumentReferenceDetails
-     * return CompletedEtdDetail
+     * @return CompletedEtdDetail
      */
     public function setUploadDocumentReferenceDetails(array $uploadDocumentReferenceDetails)
     {
         $this->UploadDocumentReferenceDetails = $uploadDocumentReferenceDetails;
         return $this;
+    }
+    
+    /**
+     * Returns Set UploadDocumentReferenceDetails
+     *
+     * @return UploadDocumentReferenceDetail[]
+     */
+    public function getUploadDocumentReferenceDetails()
+    {
+        return $this->UploadDocumentReferenceDetails;
     }
     
 

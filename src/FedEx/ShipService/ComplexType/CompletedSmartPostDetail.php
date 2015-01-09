@@ -25,7 +25,7 @@ class CompletedSmartPostDetail
      * Identifies the carrier that will pick up the SmartPost shipment.
      *
      * @param \FedEx\ShipService\SimpleType\CarrierCodeType|string $pickUpCarrier
-     * return CompletedSmartPostDetail
+     * @return CompletedSmartPostDetail
      */
     public function setPickUpCarrier($pickUpCarrier)
     {
@@ -34,15 +34,35 @@ class CompletedSmartPostDetail
     }
     
     /**
+     * Returns Identifies the carrier that will pick up the SmartPost shipment.
+     *
+     * @return \FedEx\ShipService\SimpleType\CarrierCodeType|string
+     */
+    public function getPickUpCarrier()
+    {
+        return $this->PickUpCarrier;
+    }
+    
+    /**
      * Indicates whether the shipment is deemed to be machineable, based on dimensions, weight, and packaging.
      *
      * @param boolean $machinable
-     * return CompletedSmartPostDetail
+     * @return CompletedSmartPostDetail
      */
     public function setMachinable($machinable)
     {
         $this->Machinable = $machinable;
         return $this;
+    }
+    
+    /**
+     * Returns Indicates whether the shipment is deemed to be machineable, based on dimensions, weight, and packaging.
+     *
+     * @return boolean
+     */
+    public function getMachinable()
+    {
+        return $this->Machinable;
     }
     
 

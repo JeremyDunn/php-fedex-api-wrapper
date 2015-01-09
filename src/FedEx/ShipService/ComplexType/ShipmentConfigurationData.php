@@ -25,12 +25,22 @@ class ShipmentConfigurationData
      * Specifies the data that is common to dangerous goods packages in the shipment. This is populated when the shipment contains packages with identical dangerous goods commodities.
      *
      * @param DangerousGoodsDetail[] $dangerousGoodsPackageConfigurations
-     * return ShipmentConfigurationData
+     * @return ShipmentConfigurationData
      */
     public function setDangerousGoodsPackageConfigurations(array $dangerousGoodsPackageConfigurations)
     {
         $this->DangerousGoodsPackageConfigurations = $dangerousGoodsPackageConfigurations;
         return $this;
+    }
+    
+    /**
+     * Returns Specifies the data that is common to dangerous goods packages in the shipment. This is populated when the shipment contains packages with identical dangerous goods commodities.
+     *
+     * @return DangerousGoodsDetail[]
+     */
+    public function getDangerousGoodsPackageConfigurations()
+    {
+        return $this->DangerousGoodsPackageConfigurations;
     }
     
 

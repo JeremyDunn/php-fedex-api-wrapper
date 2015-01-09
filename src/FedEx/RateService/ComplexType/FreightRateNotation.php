@@ -25,7 +25,7 @@ class FreightRateNotation
      * Unique identifier for notation.
      *
      * @param string $code
-     * return FreightRateNotation
+     * @return FreightRateNotation
      */
     public function setCode($code)
     {
@@ -34,15 +34,35 @@ class FreightRateNotation
     }
     
     /**
+     * Returns Unique identifier for notation.
+     *
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->Code;
+    }
+    
+    /**
      * Human-readable explanation of notation.
      *
      * @param string $description
-     * return FreightRateNotation
+     * @return FreightRateNotation
      */
     public function setDescription($description)
     {
         $this->Description = $description;
         return $this;
+    }
+    
+    /**
+     * Returns Human-readable explanation of notation.
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->Description;
     }
     
 

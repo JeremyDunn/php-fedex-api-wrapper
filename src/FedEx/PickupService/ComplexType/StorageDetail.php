@@ -25,12 +25,22 @@ class StorageDetail
      * Total time shipment is held by carrier.
      *
      * @param duration $duration
-     * return StorageDetail
+     * @return StorageDetail
      */
     public function setDuration(duration $duration)
     {
         $this->Duration = $duration;
         return $this;
+    }
+    
+    /**
+     * Returns Total time shipment is held by carrier.
+     *
+     * @return duration
+     */
+    public function getDuration()
+    {
+        return $this->Duration;
     }
     
 

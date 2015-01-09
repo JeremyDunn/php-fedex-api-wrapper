@@ -25,12 +25,22 @@ class GeneralAgencyAgreementDetail
      * Set Format
      *
      * @param ShippingDocumentFormat $format
-     * return GeneralAgencyAgreementDetail
+     * @return GeneralAgencyAgreementDetail
      */
     public function setFormat(ShippingDocumentFormat $format)
     {
         $this->Format = $format;
         return $this;
+    }
+    
+    /**
+     * Returns Set Format
+     *
+     * @return ShippingDocumentFormat
+     */
+    public function getFormat()
+    {
+        return $this->Format;
     }
     
 

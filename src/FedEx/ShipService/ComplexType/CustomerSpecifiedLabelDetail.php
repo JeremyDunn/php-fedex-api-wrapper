@@ -25,7 +25,7 @@ class CustomerSpecifiedLabelDetail
      * If omitted, no doc tab will be produced (i.e. default is former NONE type).
      *
      * @param DocTabContent $docTabContent
-     * return CustomerSpecifiedLabelDetail
+     * @return CustomerSpecifiedLabelDetail
      */
     public function setDocTabContent(DocTabContent $docTabContent)
     {
@@ -34,10 +34,20 @@ class CustomerSpecifiedLabelDetail
     }
     
     /**
+     * Returns If omitted, no doc tab will be produced (i.e. default is former NONE type).
+     *
+     * @return DocTabContent
+     */
+    public function getDocTabContent()
+    {
+        return $this->DocTabContent;
+    }
+    
+    /**
      * Defines any custom content to print on the label.
      *
      * @param CustomLabelDetail $customContent
-     * return CustomerSpecifiedLabelDetail
+     * @return CustomerSpecifiedLabelDetail
      */
     public function setCustomContent(CustomLabelDetail $customContent)
     {
@@ -46,10 +56,20 @@ class CustomerSpecifiedLabelDetail
     }
     
     /**
+     * Returns Defines any custom content to print on the label.
+     *
+     * @return CustomLabelDetail
+     */
+    public function getCustomContent()
+    {
+        return $this->CustomContent;
+    }
+    
+    /**
      * Defines additional data to print in the Configurable portion of the label, this allows you to print the same type information on the label that can also be printed on the doc tab.
      *
      * @param ConfigurableLabelReferenceEntry[] $configurableReferenceEntries
-     * return CustomerSpecifiedLabelDetail
+     * @return CustomerSpecifiedLabelDetail
      */
     public function setConfigurableReferenceEntries(array $configurableReferenceEntries)
     {
@@ -58,10 +78,20 @@ class CustomerSpecifiedLabelDetail
     }
     
     /**
+     * Returns Defines additional data to print in the Configurable portion of the label, this allows you to print the same type information on the label that can also be printed on the doc tab.
+     *
+     * @return ConfigurableLabelReferenceEntry[]
+     */
+    public function getConfigurableReferenceEntries()
+    {
+        return $this->ConfigurableReferenceEntries;
+    }
+    
+    /**
      * Controls which data/sections will be suppressed.
      *
      * @param LabelMaskableDataType[] $maskedData
-     * return CustomerSpecifiedLabelDetail
+     * @return CustomerSpecifiedLabelDetail
      */
     public function setMaskedData(array $maskedData)
     {
@@ -70,10 +100,20 @@ class CustomerSpecifiedLabelDetail
     }
     
     /**
+     * Returns Controls which data/sections will be suppressed.
+     *
+     * @return LabelMaskableDataType[]
+     */
+    public function getMaskedData()
+    {
+        return $this->MaskedData;
+    }
+    
+    /**
      * For customers producing their own Ground labels, this field specifies which secondary barcode will be printed on the label; so that the primary barcode produced by FedEx has the correct SCNC.
      *
      * @param \FedEx\ShipService\SimpleType\SecondaryBarcodeType|string $secondaryBarcode
-     * return CustomerSpecifiedLabelDetail
+     * @return CustomerSpecifiedLabelDetail
      */
     public function setSecondaryBarcode($secondaryBarcode)
     {
@@ -82,10 +122,20 @@ class CustomerSpecifiedLabelDetail
     }
     
     /**
+     * Returns For customers producing their own Ground labels, this field specifies which secondary barcode will be printed on the label; so that the primary barcode produced by FedEx has the correct SCNC.
+     *
+     * @return \FedEx\ShipService\SimpleType\SecondaryBarcodeType|string
+     */
+    public function getSecondaryBarcode()
+    {
+        return $this->SecondaryBarcode;
+    }
+    
+    /**
      * Set TermsAndConditionsLocalization
      *
      * @param Localization $termsAndConditionsLocalization
-     * return CustomerSpecifiedLabelDetail
+     * @return CustomerSpecifiedLabelDetail
      */
     public function setTermsAndConditionsLocalization(Localization $termsAndConditionsLocalization)
     {
@@ -94,10 +144,20 @@ class CustomerSpecifiedLabelDetail
     }
     
     /**
+     * Returns Set TermsAndConditionsLocalization
+     *
+     * @return Localization
+     */
+    public function getTermsAndConditionsLocalization()
+    {
+        return $this->TermsAndConditionsLocalization;
+    }
+    
+    /**
      * Controls the number of additional copies of supplemental labels.
      *
      * @param AdditionalLabelsDetail[] $additionalLabels
-     * return CustomerSpecifiedLabelDetail
+     * @return CustomerSpecifiedLabelDetail
      */
     public function setAdditionalLabels(array $additionalLabels)
     {
@@ -106,15 +166,35 @@ class CustomerSpecifiedLabelDetail
     }
     
     /**
+     * Returns Controls the number of additional copies of supplemental labels.
+     *
+     * @return AdditionalLabelsDetail[]
+     */
+    public function getAdditionalLabels()
+    {
+        return $this->AdditionalLabels;
+    }
+    
+    /**
      * This value reduces the default quantity of destination/consignee air waybill labels. A value of zero indicates no change to default. A minimum of one copy will always be produced.
      *
      * @param nonNegativeInteger $airWaybillSuppressionCount
-     * return CustomerSpecifiedLabelDetail
+     * @return CustomerSpecifiedLabelDetail
      */
     public function setAirWaybillSuppressionCount($airWaybillSuppressionCount)
     {
         $this->AirWaybillSuppressionCount = $airWaybillSuppressionCount;
         return $this;
+    }
+    
+    /**
+     * Returns This value reduces the default quantity of destination/consignee air waybill labels. A value of zero indicates no change to default. A minimum of one copy will always be produced.
+     *
+     * @return nonNegativeInteger
+     */
+    public function getAirWaybillSuppressionCount()
+    {
+        return $this->AirWaybillSuppressionCount;
     }
     
 

@@ -25,7 +25,7 @@ class UploadDocumentDetail
      * Set LineNumber
      *
      * @param nonNegativeInteger $lineNumber
-     * return UploadDocumentDetail
+     * @return UploadDocumentDetail
      */
     public function setLineNumber($lineNumber)
     {
@@ -34,10 +34,20 @@ class UploadDocumentDetail
     }
     
     /**
+     * Returns Set LineNumber
+     *
+     * @return nonNegativeInteger
+     */
+    public function getLineNumber()
+    {
+        return $this->LineNumber;
+    }
+    
+    /**
      * Set CustomerReference
      *
      * @param string $customerReference
-     * return UploadDocumentDetail
+     * @return UploadDocumentDetail
      */
     public function setCustomerReference($customerReference)
     {
@@ -46,10 +56,20 @@ class UploadDocumentDetail
     }
     
     /**
+     * Returns Set CustomerReference
+     *
+     * @return string
+     */
+    public function getCustomerReference()
+    {
+        return $this->CustomerReference;
+    }
+    
+    /**
      * Set DocumentType
      *
      * @param \FedEx\UploadDocumentService\SimpleType\UploadDocumentType|string $documentType
-     * return UploadDocumentDetail
+     * @return UploadDocumentDetail
      */
     public function setDocumentType($documentType)
     {
@@ -58,10 +78,20 @@ class UploadDocumentDetail
     }
     
     /**
+     * Returns Set DocumentType
+     *
+     * @return \FedEx\UploadDocumentService\SimpleType\UploadDocumentType|string
+     */
+    public function getDocumentType()
+    {
+        return $this->DocumentType;
+    }
+    
+    /**
      * Set FileName
      *
      * @param string $fileName
-     * return UploadDocumentDetail
+     * @return UploadDocumentDetail
      */
     public function setFileName($fileName)
     {
@@ -70,15 +100,35 @@ class UploadDocumentDetail
     }
     
     /**
+     * Returns Set FileName
+     *
+     * @return string
+     */
+    public function getFileName()
+    {
+        return $this->FileName;
+    }
+    
+    /**
      * Set DocumentContent
      *
      * @param base64Binary $documentContent
-     * return UploadDocumentDetail
+     * @return UploadDocumentDetail
      */
     public function setDocumentContent($documentContent)
     {
         $this->DocumentContent = $documentContent;
         return $this;
+    }
+    
+    /**
+     * Returns Set DocumentContent
+     *
+     * @return base64Binary
+     */
+    public function getDocumentContent()
+    {
+        return $this->DocumentContent;
     }
     
 

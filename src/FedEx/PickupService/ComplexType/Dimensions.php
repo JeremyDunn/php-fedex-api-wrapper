@@ -25,7 +25,7 @@ class Dimensions
      * Identifies the length of the package.
      *
      * @param nonNegativeInteger $length
-     * return Dimensions
+     * @return Dimensions
      */
     public function setLength($length)
     {
@@ -34,10 +34,20 @@ class Dimensions
     }
     
     /**
+     * Returns Identifies the length of the package.
+     *
+     * @return nonNegativeInteger
+     */
+    public function getLength()
+    {
+        return $this->Length;
+    }
+    
+    /**
      * Identifies the width of the package.
      *
      * @param nonNegativeInteger $width
-     * return Dimensions
+     * @return Dimensions
      */
     public function setWidth($width)
     {
@@ -46,10 +56,20 @@ class Dimensions
     }
     
     /**
+     * Returns Identifies the width of the package.
+     *
+     * @return nonNegativeInteger
+     */
+    public function getWidth()
+    {
+        return $this->Width;
+    }
+    
+    /**
      * Identifies the height of the package.
      *
      * @param nonNegativeInteger $height
-     * return Dimensions
+     * @return Dimensions
      */
     public function setHeight($height)
     {
@@ -58,15 +78,35 @@ class Dimensions
     }
     
     /**
+     * Returns Identifies the height of the package.
+     *
+     * @return nonNegativeInteger
+     */
+    public function getHeight()
+    {
+        return $this->Height;
+    }
+    
+    /**
      * Identifies the unit of measure associated with a dimensional values. See LinearUnits for valid values.
      *
      * @param \FedEx\Pickup\SimpleType\LinearUnits|string $units
-     * return Dimensions
+     * @return Dimensions
      */
     public function setUnits($units)
     {
         $this->Units = $units;
         return $this;
+    }
+    
+    /**
+     * Returns Identifies the unit of measure associated with a dimensional values. See LinearUnits for valid values.
+     *
+     * @return \FedEx\Pickup\SimpleType\LinearUnits|string
+     */
+    public function getUnits()
+    {
+        return $this->Units;
     }
     
 

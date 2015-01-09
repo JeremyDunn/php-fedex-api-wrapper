@@ -25,7 +25,7 @@ class ParsedElement
      * Set Name
      *
      * @param string $name
-     * return ParsedElement
+     * @return ParsedElement
      */
     public function setName($name)
     {
@@ -34,10 +34,20 @@ class ParsedElement
     }
     
     /**
+     * Returns Set Name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->Name;
+    }
+    
+    /**
      * Set Value
      *
      * @param string $value
-     * return ParsedElement
+     * @return ParsedElement
      */
     public function setValue($value)
     {
@@ -46,15 +56,35 @@ class ParsedElement
     }
     
     /**
+     * Returns Set Value
+     *
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->Value;
+    }
+    
+    /**
      * Set Changes
      *
      * @param AddressValidationChangeType[] $changes
-     * return ParsedElement
+     * @return ParsedElement
      */
     public function setChanges(array $changes)
     {
         $this->Changes = $changes;
         return $this;
+    }
+    
+    /**
+     * Returns Set Changes
+     *
+     * @return AddressValidationChangeType[]
+     */
+    public function getChanges()
+    {
+        return $this->Changes;
     }
     
 

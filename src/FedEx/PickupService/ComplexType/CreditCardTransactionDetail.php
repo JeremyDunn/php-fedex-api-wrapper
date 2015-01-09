@@ -25,7 +25,7 @@ class CreditCardTransactionDetail
      * Set AuthorizationId
      *
      * @param string $authorizationId
-     * return CreditCardTransactionDetail
+     * @return CreditCardTransactionDetail
      */
     public function setAuthorizationId($authorizationId)
     {
@@ -34,10 +34,20 @@ class CreditCardTransactionDetail
     }
     
     /**
+     * Returns Set AuthorizationId
+     *
+     * @return string
+     */
+    public function getAuthorizationId()
+    {
+        return $this->AuthorizationId;
+    }
+    
+    /**
      * Set AuthorizationType
      *
      * @param \FedEx\Pickup\SimpleType\CreditCardAuthorizationType|string $authorizationType
-     * return CreditCardTransactionDetail
+     * @return CreditCardTransactionDetail
      */
     public function setAuthorizationType($authorizationType)
     {
@@ -46,15 +56,35 @@ class CreditCardTransactionDetail
     }
     
     /**
+     * Returns Set AuthorizationType
+     *
+     * @return \FedEx\Pickup\SimpleType\CreditCardAuthorizationType|string
+     */
+    public function getAuthorizationType()
+    {
+        return $this->AuthorizationType;
+    }
+    
+    /**
      * Set FraudDetectionDetail
      *
      * @param CreditFraudDetectionDetail $fraudDetectionDetail
-     * return CreditCardTransactionDetail
+     * @return CreditCardTransactionDetail
      */
     public function setFraudDetectionDetail(CreditFraudDetectionDetail $fraudDetectionDetail)
     {
         $this->FraudDetectionDetail = $fraudDetectionDetail;
         return $this;
+    }
+    
+    /**
+     * Returns Set FraudDetectionDetail
+     *
+     * @return CreditFraudDetectionDetail
+     */
+    public function getFraudDetectionDetail()
+    {
+        return $this->FraudDetectionDetail;
     }
     
 

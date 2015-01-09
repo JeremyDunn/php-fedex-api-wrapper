@@ -25,7 +25,7 @@ class ShippingDocumentPart
      * The one-origin position of this part within a document.
      *
      * @param positiveInteger $documentPartSequenceNumber
-     * return ShippingDocumentPart
+     * @return ShippingDocumentPart
      */
     public function setDocumentPartSequenceNumber($documentPartSequenceNumber)
     {
@@ -34,15 +34,35 @@ class ShippingDocumentPart
     }
     
     /**
+     * Returns The one-origin position of this part within a document.
+     *
+     * @return positiveInteger
+     */
+    public function getDocumentPartSequenceNumber()
+    {
+        return $this->DocumentPartSequenceNumber;
+    }
+    
+    /**
      * Graphic or printer commands for this image within a document.
      *
      * @param base64Binary $image
-     * return ShippingDocumentPart
+     * @return ShippingDocumentPart
      */
     public function setImage($image)
     {
         $this->Image = $image;
         return $this;
+    }
+    
+    /**
+     * Returns Graphic or printer commands for this image within a document.
+     *
+     * @return base64Binary
+     */
+    public function getImage()
+    {
+        return $this->Image;
     }
     
 

@@ -25,7 +25,7 @@ class Payment
      * Identifies the method of payment for a service. See PaymentType for list of valid enumerated values.
      *
      * @param \FedEx\Pickup\SimpleType\PaymentType|string $paymentType
-     * return Payment
+     * @return Payment
      */
     public function setPaymentType($paymentType)
     {
@@ -34,10 +34,20 @@ class Payment
     }
     
     /**
+     * Returns Identifies the method of payment for a service. See PaymentType for list of valid enumerated values.
+     *
+     * @return \FedEx\Pickup\SimpleType\PaymentType|string
+     */
+    public function getPaymentType()
+    {
+        return $this->PaymentType;
+    }
+    
+    /**
      * Descriptive data identifying the party responsible for payment for a service.
      *
      * @param Payor $payor
-     * return Payment
+     * @return Payment
      */
     public function setPayor(Payor $payor)
     {
@@ -46,10 +56,20 @@ class Payment
     }
     
     /**
+     * Returns Descriptive data identifying the party responsible for payment for a service.
+     *
+     * @return Payor
+     */
+    public function getPayor()
+    {
+        return $this->Payor;
+    }
+    
+    /**
      * Set CreditCard
      *
      * @param CreditCard $creditCard
-     * return Payment
+     * @return Payment
      */
     public function setCreditCard(CreditCard $creditCard)
     {
@@ -58,10 +78,20 @@ class Payment
     }
     
     /**
+     * Returns Set CreditCard
+     *
+     * @return CreditCard
+     */
+    public function getCreditCard()
+    {
+        return $this->CreditCard;
+    }
+    
+    /**
      * Set CreditCardTransactionDetail
      *
      * @param CreditCardTransactionDetail $creditCardTransactionDetail
-     * return Payment
+     * @return Payment
      */
     public function setCreditCardTransactionDetail(CreditCardTransactionDetail $creditCardTransactionDetail)
     {
@@ -70,15 +100,35 @@ class Payment
     }
     
     /**
+     * Returns Set CreditCardTransactionDetail
+     *
+     * @return CreditCardTransactionDetail
+     */
+    public function getCreditCardTransactionDetail()
+    {
+        return $this->CreditCardTransactionDetail;
+    }
+    
+    /**
      * Descriptive data for the payor's cash payment.
      *
      * @param Money $amount
-     * return Payment
+     * @return Payment
      */
     public function setAmount(Money $amount)
     {
         $this->Amount = $amount;
         return $this;
+    }
+    
+    /**
+     * Returns Descriptive data for the payor's cash payment.
+     *
+     * @return Money
+     */
+    public function getAmount()
+    {
+        return $this->Amount;
     }
     
 

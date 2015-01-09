@@ -25,7 +25,7 @@ class VersionId
      * Fixed value.
      *
      * @param string $serviceId
-     * return VersionId
+     * @return VersionId
      */
     public function setServiceId($serviceId)
     {
@@ -34,10 +34,20 @@ class VersionId
     }
     
     /**
+     * Returns Fixed value.
+     *
+     * @return string
+     */
+    public function getServiceId()
+    {
+        return $this->ServiceId;
+    }
+    
+    /**
      * Fixed value.
      *
      * @param int $major
-     * return VersionId
+     * @return VersionId
      */
     public function setMajor($major)
     {
@@ -46,10 +56,20 @@ class VersionId
     }
     
     /**
+     * Returns Fixed value.
+     *
+     * @return int
+     */
+    public function getMajor()
+    {
+        return $this->Major;
+    }
+    
+    /**
      * Fixed value.
      *
      * @param int $intermediate
-     * return VersionId
+     * @return VersionId
      */
     public function setIntermediate($intermediate)
     {
@@ -58,15 +78,35 @@ class VersionId
     }
     
     /**
+     * Returns Fixed value.
+     *
+     * @return int
+     */
+    public function getIntermediate()
+    {
+        return $this->Intermediate;
+    }
+    
+    /**
      * Fixed value.
      *
      * @param int $minor
-     * return VersionId
+     * @return VersionId
      */
     public function setMinor($minor)
     {
         $this->Minor = $minor;
         return $this;
+    }
+    
+    /**
+     * Returns Fixed value.
+     *
+     * @return int
+     */
+    public function getMinor()
+    {
+        return $this->Minor;
     }
     
 

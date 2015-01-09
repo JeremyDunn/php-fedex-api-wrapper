@@ -25,7 +25,7 @@ class LinearMeasure
      * The numerical quantity of this measurement.
      *
      * @param decimal $value
-     * return LinearMeasure
+     * @return LinearMeasure
      */
     public function setValue($value)
     {
@@ -34,15 +34,35 @@ class LinearMeasure
     }
     
     /**
+     * Returns The numerical quantity of this measurement.
+     *
+     * @return decimal
+     */
+    public function getValue()
+    {
+        return $this->Value;
+    }
+    
+    /**
      * The units for this measurement.
      *
      * @param \FedEx\ShipService\SimpleType\LinearUnits|string $units
-     * return LinearMeasure
+     * @return LinearMeasure
      */
     public function setUnits($units)
     {
         $this->Units = $units;
         return $this;
+    }
+    
+    /**
+     * Returns The units for this measurement.
+     *
+     * @return \FedEx\ShipService\SimpleType\LinearUnits|string
+     */
+    public function getUnits()
+    {
+        return $this->Units;
     }
     
 

@@ -25,7 +25,7 @@ class ValidatedHazardousCommodityContent
      * Identifies and describes an individual hazardous commodity.
      *
      * @param ValidatedHazardousCommodityDescription $description
-     * return ValidatedHazardousCommodityContent
+     * @return ValidatedHazardousCommodityContent
      */
     public function setDescription(ValidatedHazardousCommodityDescription $description)
     {
@@ -34,10 +34,20 @@ class ValidatedHazardousCommodityContent
     }
     
     /**
+     * Returns Identifies and describes an individual hazardous commodity.
+     *
+     * @return ValidatedHazardousCommodityDescription
+     */
+    public function getDescription()
+    {
+        return $this->Description;
+    }
+    
+    /**
      * Specifies the amount of the commodity in alternate units.
      *
      * @param HazardousCommodityQuantityDetail $quantity
-     * return ValidatedHazardousCommodityContent
+     * @return ValidatedHazardousCommodityContent
      */
     public function setQuantity(HazardousCommodityQuantityDetail $quantity)
     {
@@ -46,15 +56,35 @@ class ValidatedHazardousCommodityContent
     }
     
     /**
+     * Returns Specifies the amount of the commodity in alternate units.
+     *
+     * @return HazardousCommodityQuantityDetail
+     */
+    public function getQuantity()
+    {
+        return $this->Quantity;
+    }
+    
+    /**
      * Customer-provided specifications for handling individual commodities.
      *
      * @param HazardousCommodityOptionDetail $options
-     * return ValidatedHazardousCommodityContent
+     * @return ValidatedHazardousCommodityContent
      */
     public function setOptions(HazardousCommodityOptionDetail $options)
     {
         $this->Options = $options;
         return $this;
+    }
+    
+    /**
+     * Returns Customer-provided specifications for handling individual commodities.
+     *
+     * @return HazardousCommodityOptionDetail
+     */
+    public function getOptions()
+    {
+        return $this->Options;
     }
     
 

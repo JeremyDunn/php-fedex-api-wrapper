@@ -25,7 +25,7 @@ class ConfigurableLabelReferenceEntry
      * 1 of 12 possible zones to position data.
      *
      * @param positiveInteger $zoneNumber
-     * return ConfigurableLabelReferenceEntry
+     * @return ConfigurableLabelReferenceEntry
      */
     public function setZoneNumber($zoneNumber)
     {
@@ -34,10 +34,20 @@ class ConfigurableLabelReferenceEntry
     }
     
     /**
+     * Returns 1 of 12 possible zones to position data.
+     *
+     * @return positiveInteger
+     */
+    public function getZoneNumber()
+    {
+        return $this->ZoneNumber;
+    }
+    
+    /**
      * The identifiying text for the data in this zone.
      *
      * @param string $header
-     * return ConfigurableLabelReferenceEntry
+     * @return ConfigurableLabelReferenceEntry
      */
     public function setHeader($header)
     {
@@ -46,10 +56,20 @@ class ConfigurableLabelReferenceEntry
     }
     
     /**
+     * Returns The identifiying text for the data in this zone.
+     *
+     * @return string
+     */
+    public function getHeader()
+    {
+        return $this->Header;
+    }
+    
+    /**
      * A reference to a field in either the request or reply to print in this zone following the header.
      *
      * @param string $dataField
-     * return ConfigurableLabelReferenceEntry
+     * @return ConfigurableLabelReferenceEntry
      */
     public function setDataField($dataField)
     {
@@ -58,15 +78,35 @@ class ConfigurableLabelReferenceEntry
     }
     
     /**
+     * Returns A reference to a field in either the request or reply to print in this zone following the header.
+     *
+     * @return string
+     */
+    public function getDataField()
+    {
+        return $this->DataField;
+    }
+    
+    /**
      * A literal value to print after the header in this zone.
      *
      * @param string $literalValue
-     * return ConfigurableLabelReferenceEntry
+     * @return ConfigurableLabelReferenceEntry
      */
     public function setLiteralValue($literalValue)
     {
         $this->LiteralValue = $literalValue;
         return $this;
+    }
+    
+    /**
+     * Returns A literal value to print after the header in this zone.
+     *
+     * @return string
+     */
+    public function getLiteralValue()
+    {
+        return $this->LiteralValue;
     }
     
 

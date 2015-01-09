@@ -25,7 +25,7 @@ class OperationalInstruction
      * Position of operational instruction element.
      *
      * @param int $number
-     * return OperationalInstruction
+     * @return OperationalInstruction
      */
     public function setNumber($number)
     {
@@ -34,15 +34,35 @@ class OperationalInstruction
     }
     
     /**
+     * Returns Position of operational instruction element.
+     *
+     * @return int
+     */
+    public function getNumber()
+    {
+        return $this->Number;
+    }
+    
+    /**
      * Content corresponding to the operational instruction.
      *
      * @param string $content
-     * return OperationalInstruction
+     * @return OperationalInstruction
      */
     public function setContent($content)
     {
         $this->Content = $content;
         return $this;
+    }
+    
+    /**
+     * Returns Content corresponding to the operational instruction.
+     *
+     * @return string
+     */
+    public function getContent()
+    {
+        return $this->Content;
     }
     
 

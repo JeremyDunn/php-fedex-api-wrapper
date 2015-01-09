@@ -25,7 +25,7 @@ class CodReturnPackageDetail
      * The COD amount (after any accumulations) that must be collected upon delivery of a package shipped using the COD special service.
      *
      * @param Money $collectionAmount
-     * return CodReturnPackageDetail
+     * @return CodReturnPackageDetail
      */
     public function setCollectionAmount(Money $collectionAmount)
     {
@@ -34,10 +34,20 @@ class CodReturnPackageDetail
     }
     
     /**
+     * Returns The COD amount (after any accumulations) that must be collected upon delivery of a package shipped using the COD special service.
+     *
+     * @return Money
+     */
+    public function getCollectionAmount()
+    {
+        return $this->CollectionAmount;
+    }
+    
+    /**
      * Set AdjustmentType
      *
      * @param \FedEx\ShipService\SimpleType\CodAdjustmentType|string $adjustmentType
-     * return CodReturnPackageDetail
+     * @return CodReturnPackageDetail
      */
     public function setAdjustmentType($adjustmentType)
     {
@@ -46,10 +56,20 @@ class CodReturnPackageDetail
     }
     
     /**
+     * Returns Set AdjustmentType
+     *
+     * @return \FedEx\ShipService\SimpleType\CodAdjustmentType|string
+     */
+    public function getAdjustmentType()
+    {
+        return $this->AdjustmentType;
+    }
+    
+    /**
      * Set Electronic
      *
      * @param boolean $electronic
-     * return CodReturnPackageDetail
+     * @return CodReturnPackageDetail
      */
     public function setElectronic($electronic)
     {
@@ -58,10 +78,20 @@ class CodReturnPackageDetail
     }
     
     /**
+     * Returns Set Electronic
+     *
+     * @return boolean
+     */
+    public function getElectronic()
+    {
+        return $this->Electronic;
+    }
+    
+    /**
      * Contains the data which form the Astra and 2DCommon barcodes that print on the COD return label.
      *
      * @param PackageBarcodes $barcodes
-     * return CodReturnPackageDetail
+     * @return CodReturnPackageDetail
      */
     public function setBarcodes(PackageBarcodes $barcodes)
     {
@@ -70,15 +100,35 @@ class CodReturnPackageDetail
     }
     
     /**
+     * Returns Contains the data which form the Astra and 2DCommon barcodes that print on the COD return label.
+     *
+     * @return PackageBarcodes
+     */
+    public function getBarcodes()
+    {
+        return $this->Barcodes;
+    }
+    
+    /**
      * The label image or printer commands to print the label.
      *
      * @param ShippingDocument $label
-     * return CodReturnPackageDetail
+     * @return CodReturnPackageDetail
      */
     public function setLabel(ShippingDocument $label)
     {
         $this->Label = $label;
         return $this;
+    }
+    
+    /**
+     * Returns The label image or printer commands to print the label.
+     *
+     * @return ShippingDocument
+     */
+    public function getLabel()
+    {
+        return $this->Label;
     }
     
 

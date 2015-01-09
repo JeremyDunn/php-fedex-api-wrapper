@@ -25,7 +25,7 @@ class SignatureProofOfDeliveryLetterReply
      * This contains the severity type of the most severe Notification in the Notifications array.
      *
      * @param \FedEx\TrackService\SimpleType\NotificationSeverityType|string $highestSeverity
-     * return SignatureProofOfDeliveryLetterReply
+     * @return SignatureProofOfDeliveryLetterReply
      */
     public function setHighestSeverity($highestSeverity)
     {
@@ -34,10 +34,20 @@ class SignatureProofOfDeliveryLetterReply
     }
     
     /**
+     * Returns This contains the severity type of the most severe Notification in the Notifications array.
+     *
+     * @return \FedEx\TrackService\SimpleType\NotificationSeverityType|string
+     */
+    public function getHighestSeverity()
+    {
+        return $this->HighestSeverity;
+    }
+    
+    /**
      * Information about the request/reply such was the transaction successful or not, and any additional information relevant to the request and/or reply. There may be multiple Notifications in a reply.
      *
      * @param Notification[] $notifications
-     * return SignatureProofOfDeliveryLetterReply
+     * @return SignatureProofOfDeliveryLetterReply
      */
     public function setNotifications(array $notifications)
     {
@@ -46,10 +56,20 @@ class SignatureProofOfDeliveryLetterReply
     }
     
     /**
+     * Returns Information about the request/reply such was the transaction successful or not, and any additional information relevant to the request and/or reply. There may be multiple Notifications in a reply.
+     *
+     * @return Notification[]
+     */
+    public function getNotifications()
+    {
+        return $this->Notifications;
+    }
+    
+    /**
      * Contains the CustomerTransactionDetail that is echoed back to the caller for matching requests and replies and a Localization element for defining the language/translation used in the reply data.
      *
      * @param TransactionDetail $transactionDetail
-     * return SignatureProofOfDeliveryLetterReply
+     * @return SignatureProofOfDeliveryLetterReply
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
@@ -58,10 +78,20 @@ class SignatureProofOfDeliveryLetterReply
     }
     
     /**
+     * Returns Contains the CustomerTransactionDetail that is echoed back to the caller for matching requests and replies and a Localization element for defining the language/translation used in the reply data.
+     *
+     * @return TransactionDetail
+     */
+    public function getTransactionDetail()
+    {
+        return $this->TransactionDetail;
+    }
+    
+    /**
      * Image of letter encoded in Base64 format.
      *
      * @param VersionId $version
-     * return SignatureProofOfDeliveryLetterReply
+     * @return SignatureProofOfDeliveryLetterReply
      */
     public function setVersion(VersionId $version)
     {
@@ -70,15 +100,35 @@ class SignatureProofOfDeliveryLetterReply
     }
     
     /**
+     * Returns Image of letter encoded in Base64 format.
+     *
+     * @return VersionId
+     */
+    public function getVersion()
+    {
+        return $this->Version;
+    }
+    
+    /**
      * Image of letter encoded in Base64 format.
      *
      * @param base64Binary $letter
-     * return SignatureProofOfDeliveryLetterReply
+     * @return SignatureProofOfDeliveryLetterReply
      */
     public function setLetter($letter)
     {
         $this->Letter = $letter;
         return $this;
+    }
+    
+    /**
+     * Returns Image of letter encoded in Base64 format.
+     *
+     * @return base64Binary
+     */
+    public function getLetter()
+    {
+        return $this->Letter;
     }
     
 

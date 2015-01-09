@@ -25,7 +25,7 @@ class ProcessTagReply
      * Set HighestSeverity
      *
      * @param \FedEx\ShipService\SimpleType\NotificationSeverityType|string $highestSeverity
-     * return ProcessTagReply
+     * @return ProcessTagReply
      */
     public function setHighestSeverity($highestSeverity)
     {
@@ -34,10 +34,20 @@ class ProcessTagReply
     }
     
     /**
+     * Returns Set HighestSeverity
+     *
+     * @return \FedEx\ShipService\SimpleType\NotificationSeverityType|string
+     */
+    public function getHighestSeverity()
+    {
+        return $this->HighestSeverity;
+    }
+    
+    /**
      * Set Notifications
      *
      * @param Notification[] $notifications
-     * return ProcessTagReply
+     * @return ProcessTagReply
      */
     public function setNotifications(array $notifications)
     {
@@ -46,10 +56,20 @@ class ProcessTagReply
     }
     
     /**
+     * Returns Set Notifications
+     *
+     * @return Notification[]
+     */
+    public function getNotifications()
+    {
+        return $this->Notifications;
+    }
+    
+    /**
      * Set TransactionDetail
      *
      * @param TransactionDetail $transactionDetail
-     * return ProcessTagReply
+     * @return ProcessTagReply
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
@@ -58,10 +78,20 @@ class ProcessTagReply
     }
     
     /**
+     * Returns Set TransactionDetail
+     *
+     * @return TransactionDetail
+     */
+    public function getTransactionDetail()
+    {
+        return $this->TransactionDetail;
+    }
+    
+    /**
      * Set Version
      *
      * @param VersionId $version
-     * return ProcessTagReply
+     * @return ProcessTagReply
      */
     public function setVersion(VersionId $version)
     {
@@ -70,15 +100,35 @@ class ProcessTagReply
     }
     
     /**
+     * Returns Set Version
+     *
+     * @return VersionId
+     */
+    public function getVersion()
+    {
+        return $this->Version;
+    }
+    
+    /**
      * Set CompletedShipmentDetail
      *
      * @param CompletedShipmentDetail $completedShipmentDetail
-     * return ProcessTagReply
+     * @return ProcessTagReply
      */
     public function setCompletedShipmentDetail(CompletedShipmentDetail $completedShipmentDetail)
     {
         $this->CompletedShipmentDetail = $completedShipmentDetail;
         return $this;
+    }
+    
+    /**
+     * Returns Set CompletedShipmentDetail
+     *
+     * @return CompletedShipmentDetail
+     */
+    public function getCompletedShipmentDetail()
+    {
+        return $this->CompletedShipmentDetail;
     }
     
 
