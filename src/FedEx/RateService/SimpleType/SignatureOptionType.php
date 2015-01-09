@@ -4,7 +4,7 @@ namespace FedEx\RateService\SimpleType;
 use FedEx\AbstractSimpleType;
 
 /**
- * Identifies the delivery signature services options offered by FedEx.
+ * SignatureOptionType
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper

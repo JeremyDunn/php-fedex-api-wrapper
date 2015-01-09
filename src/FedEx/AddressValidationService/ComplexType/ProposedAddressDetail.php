@@ -25,7 +25,7 @@ class ProposedAddressDetail
      * Set Score
      *
      * @param integer $score
-     * return ProposedAddressDetail
+     * @return ProposedAddressDetail
      */
     public function setScore(integer $score)
     {
@@ -34,10 +34,20 @@ class ProposedAddressDetail
     }
     
     /**
+     * Returns Set Score
+     *
+     * @return integer
+     */
+    public function getScore()
+    {
+        return $this->Score;
+    }
+    
+    /**
      * Set Changes
      *
      * @param AddressValidationChangeType[] $changes
-     * return ProposedAddressDetail
+     * @return ProposedAddressDetail
      */
     public function setChanges(array $changes)
     {
@@ -46,10 +56,20 @@ class ProposedAddressDetail
     }
     
     /**
+     * Returns Set Changes
+     *
+     * @return AddressValidationChangeType[]
+     */
+    public function getChanges()
+    {
+        return $this->Changes;
+    }
+    
+    /**
      * Set ResidentialStatus
      *
      * @param \FedEx\AddressValidationService\SimpleType\ResidentialStatusType|string $residentialStatus
-     * return ProposedAddressDetail
+     * @return ProposedAddressDetail
      */
     public function setResidentialStatus($residentialStatus)
     {
@@ -58,10 +78,20 @@ class ProposedAddressDetail
     }
     
     /**
+     * Returns Set ResidentialStatus
+     *
+     * @return \FedEx\AddressValidationService\SimpleType\ResidentialStatusType|string
+     */
+    public function getResidentialStatus()
+    {
+        return $this->ResidentialStatus;
+    }
+    
+    /**
      * Set DeliveryPointValidation
      *
      * @param \FedEx\AddressValidationService\SimpleType\DeliveryPointValidationType|string $deliveryPointValidation
-     * return ProposedAddressDetail
+     * @return ProposedAddressDetail
      */
     public function setDeliveryPointValidation($deliveryPointValidation)
     {
@@ -70,10 +100,20 @@ class ProposedAddressDetail
     }
     
     /**
+     * Returns Set DeliveryPointValidation
+     *
+     * @return \FedEx\AddressValidationService\SimpleType\DeliveryPointValidationType|string
+     */
+    public function getDeliveryPointValidation()
+    {
+        return $this->DeliveryPointValidation;
+    }
+    
+    /**
      * Set CompanyName
      *
      * @param string $companyName
-     * return ProposedAddressDetail
+     * @return ProposedAddressDetail
      */
     public function setCompanyName($companyName)
     {
@@ -82,10 +122,20 @@ class ProposedAddressDetail
     }
     
     /**
+     * Returns Set CompanyName
+     *
+     * @return string
+     */
+    public function getCompanyName()
+    {
+        return $this->CompanyName;
+    }
+    
+    /**
      * Set Address
      *
      * @param Address $address
-     * return ProposedAddressDetail
+     * @return ProposedAddressDetail
      */
     public function setAddress(Address $address)
     {
@@ -94,10 +144,20 @@ class ProposedAddressDetail
     }
     
     /**
+     * Returns Set Address
+     *
+     * @return Address
+     */
+    public function getAddress()
+    {
+        return $this->Address;
+    }
+    
+    /**
      * Set ParsedCompanyName
      *
      * @param ParsedAddressPart $parsedCompanyName
-     * return ProposedAddressDetail
+     * @return ProposedAddressDetail
      */
     public function setParsedCompanyName(ParsedAddressPart $parsedCompanyName)
     {
@@ -106,10 +166,20 @@ class ProposedAddressDetail
     }
     
     /**
+     * Returns Set ParsedCompanyName
+     *
+     * @return ParsedAddressPart
+     */
+    public function getParsedCompanyName()
+    {
+        return $this->ParsedCompanyName;
+    }
+    
+    /**
      * Set ParsedAddress
      *
      * @param ParsedAddress $parsedAddress
-     * return ProposedAddressDetail
+     * @return ProposedAddressDetail
      */
     public function setParsedAddress(ParsedAddress $parsedAddress)
     {
@@ -118,15 +188,35 @@ class ProposedAddressDetail
     }
     
     /**
+     * Returns Set ParsedAddress
+     *
+     * @return ParsedAddress
+     */
+    public function getParsedAddress()
+    {
+        return $this->ParsedAddress;
+    }
+    
+    /**
      * Set RemovedNonAddressData
      *
      * @param string $removedNonAddressData
-     * return ProposedAddressDetail
+     * @return ProposedAddressDetail
      */
     public function setRemovedNonAddressData($removedNonAddressData)
     {
         $this->RemovedNonAddressData = $removedNonAddressData;
         return $this;
+    }
+    
+    /**
+     * Returns Set RemovedNonAddressData
+     *
+     * @return string
+     */
+    public function getRemovedNonAddressData()
+    {
+        return $this->RemovedNonAddressData;
     }
     
 

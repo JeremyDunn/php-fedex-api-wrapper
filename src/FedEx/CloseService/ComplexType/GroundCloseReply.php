@@ -25,7 +25,7 @@ class GroundCloseReply
      * Set HighestSeverity
      *
      * @param \FedEx\CloseService\SimpleType\NotificationSeverityType|string $highestSeverity
-     * return GroundCloseReply
+     * @return GroundCloseReply
      */
     public function setHighestSeverity($highestSeverity)
     {
@@ -34,10 +34,20 @@ class GroundCloseReply
     }
     
     /**
+     * Returns Set HighestSeverity
+     *
+     * @return \FedEx\CloseService\SimpleType\NotificationSeverityType|string
+     */
+    public function getHighestSeverity()
+    {
+        return $this->HighestSeverity;
+    }
+    
+    /**
      * Set Notifications
      *
      * @param Notification[] $notifications
-     * return GroundCloseReply
+     * @return GroundCloseReply
      */
     public function setNotifications(array $notifications)
     {
@@ -46,10 +56,20 @@ class GroundCloseReply
     }
     
     /**
+     * Returns Set Notifications
+     *
+     * @return Notification[]
+     */
+    public function getNotifications()
+    {
+        return $this->Notifications;
+    }
+    
+    /**
      * Set TransactionDetail
      *
      * @param TransactionDetail $transactionDetail
-     * return GroundCloseReply
+     * @return GroundCloseReply
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
@@ -58,10 +78,20 @@ class GroundCloseReply
     }
     
     /**
+     * Returns Set TransactionDetail
+     *
+     * @return TransactionDetail
+     */
+    public function getTransactionDetail()
+    {
+        return $this->TransactionDetail;
+    }
+    
+    /**
      * Set Version
      *
      * @param VersionId $version
-     * return GroundCloseReply
+     * @return GroundCloseReply
      */
     public function setVersion(VersionId $version)
     {
@@ -70,10 +100,20 @@ class GroundCloseReply
     }
     
     /**
+     * Returns Set Version
+     *
+     * @return VersionId
+     */
+    public function getVersion()
+    {
+        return $this->Version;
+    }
+    
+    /**
      * Set CodReport
      *
      * @param base64Binary $codReport
-     * return GroundCloseReply
+     * @return GroundCloseReply
      */
     public function setCodReport($codReport)
     {
@@ -82,10 +122,20 @@ class GroundCloseReply
     }
     
     /**
+     * Returns Set CodReport
+     *
+     * @return base64Binary
+     */
+    public function getCodReport()
+    {
+        return $this->CodReport;
+    }
+    
+    /**
      * Set HazMatCertificate
      *
      * @param base64Binary $hazMatCertificate
-     * return GroundCloseReply
+     * @return GroundCloseReply
      */
     public function setHazMatCertificate($hazMatCertificate)
     {
@@ -94,10 +144,20 @@ class GroundCloseReply
     }
     
     /**
+     * Returns Set HazMatCertificate
+     *
+     * @return base64Binary
+     */
+    public function getHazMatCertificate()
+    {
+        return $this->HazMatCertificate;
+    }
+    
+    /**
      * Set Manifest
      *
      * @param ManifestFile $manifest
-     * return GroundCloseReply
+     * @return GroundCloseReply
      */
     public function setManifest(ManifestFile $manifest)
     {
@@ -106,15 +166,35 @@ class GroundCloseReply
     }
     
     /**
+     * Returns Set Manifest
+     *
+     * @return ManifestFile
+     */
+    public function getManifest()
+    {
+        return $this->Manifest;
+    }
+    
+    /**
      * Set MultiweightReport
      *
      * @param base64Binary $multiweightReport
-     * return GroundCloseReply
+     * @return GroundCloseReply
      */
     public function setMultiweightReport($multiweightReport)
     {
         $this->MultiweightReport = $multiweightReport;
         return $this;
+    }
+    
+    /**
+     * Returns Set MultiweightReport
+     *
+     * @return base64Binary
+     */
+    public function getMultiweightReport()
+    {
+        return $this->MultiweightReport;
     }
     
 

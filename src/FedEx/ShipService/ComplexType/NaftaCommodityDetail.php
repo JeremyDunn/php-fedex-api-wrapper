@@ -25,7 +25,7 @@ class NaftaCommodityDetail
      * Defined by NAFTA regulations.
      *
      * @param \FedEx\ShipService\SimpleType\NaftaPreferenceCriterionCode|string $preferenceCriterion
-     * return NaftaCommodityDetail
+     * @return NaftaCommodityDetail
      */
     public function setPreferenceCriterion($preferenceCriterion)
     {
@@ -34,10 +34,20 @@ class NaftaCommodityDetail
     }
     
     /**
+     * Returns Defined by NAFTA regulations.
+     *
+     * @return \FedEx\ShipService\SimpleType\NaftaPreferenceCriterionCode|string
+     */
+    public function getPreferenceCriterion()
+    {
+        return $this->PreferenceCriterion;
+    }
+    
+    /**
      * Defined by NAFTA regulations.
      *
      * @param \FedEx\ShipService\SimpleType\NaftaProducerDeterminationCode|string $producerDetermination
-     * return NaftaCommodityDetail
+     * @return NaftaCommodityDetail
      */
     public function setProducerDetermination($producerDetermination)
     {
@@ -46,10 +56,20 @@ class NaftaCommodityDetail
     }
     
     /**
+     * Returns Defined by NAFTA regulations.
+     *
+     * @return \FedEx\ShipService\SimpleType\NaftaProducerDeterminationCode|string
+     */
+    public function getProducerDetermination()
+    {
+        return $this->ProducerDetermination;
+    }
+    
+    /**
      * Identification of which producer is associated with this commodity (if multiple producers are used in a single shipment).
      *
      * @param string $producerId
-     * return NaftaCommodityDetail
+     * @return NaftaCommodityDetail
      */
     public function setProducerId($producerId)
     {
@@ -58,10 +78,20 @@ class NaftaCommodityDetail
     }
     
     /**
+     * Returns Identification of which producer is associated with this commodity (if multiple producers are used in a single shipment).
+     *
+     * @return string
+     */
+    public function getProducerId()
+    {
+        return $this->ProducerId;
+    }
+    
+    /**
      * Set NetCostMethod
      *
      * @param \FedEx\ShipService\SimpleType\NaftaNetCostMethodCode|string $netCostMethod
-     * return NaftaCommodityDetail
+     * @return NaftaCommodityDetail
      */
     public function setNetCostMethod($netCostMethod)
     {
@@ -70,15 +100,35 @@ class NaftaCommodityDetail
     }
     
     /**
+     * Returns Set NetCostMethod
+     *
+     * @return \FedEx\ShipService\SimpleType\NaftaNetCostMethodCode|string
+     */
+    public function getNetCostMethod()
+    {
+        return $this->NetCostMethod;
+    }
+    
+    /**
      * Date range over which RVC net cost was calculated.
      *
      * @param DateRange $netCostDateRange
-     * return NaftaCommodityDetail
+     * @return NaftaCommodityDetail
      */
     public function setNetCostDateRange(DateRange $netCostDateRange)
     {
         $this->NetCostDateRange = $netCostDateRange;
         return $this;
+    }
+    
+    /**
+     * Returns Date range over which RVC net cost was calculated.
+     *
+     * @return DateRange
+     */
+    public function getNetCostDateRange()
+    {
+        return $this->NetCostDateRange;
     }
     
 

@@ -25,7 +25,7 @@ class CreatePickupRequest
      * Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
      * @param WebAuthenticationDetail $webAuthenticationDetail
-     * return CreatePickupRequest
+     * @return CreatePickupRequest
      */
     public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
     {
@@ -34,10 +34,20 @@ class CreatePickupRequest
     }
     
     /**
+     * Returns Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
+     *
+     * @return WebAuthenticationDetail
+     */
+    public function getWebAuthenticationDetail()
+    {
+        return $this->WebAuthenticationDetail;
+    }
+    
+    /**
      * The descriptive data identifying the client submitting the transaction.
      *
      * @param ClientDetail $clientDetail
-     * return CreatePickupRequest
+     * @return CreatePickupRequest
      */
     public function setClientDetail(ClientDetail $clientDetail)
     {
@@ -46,10 +56,20 @@ class CreatePickupRequest
     }
     
     /**
+     * Returns The descriptive data identifying the client submitting the transaction.
+     *
+     * @return ClientDetail
+     */
+    public function getClientDetail()
+    {
+        return $this->ClientDetail;
+    }
+    
+    /**
      * The descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
      * @param TransactionDetail $transactionDetail
-     * return CreatePickupRequest
+     * @return CreatePickupRequest
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
@@ -58,10 +78,20 @@ class CreatePickupRequest
     }
     
     /**
+     * Returns The descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
+     *
+     * @return TransactionDetail
+     */
+    public function getTransactionDetail()
+    {
+        return $this->TransactionDetail;
+    }
+    
+    /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
      * @param VersionId $version
-     * return CreatePickupRequest
+     * @return CreatePickupRequest
      */
     public function setVersion(VersionId $version)
     {
@@ -70,10 +100,20 @@ class CreatePickupRequest
     }
     
     /**
+     * Returns Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
+     *
+     * @return VersionId
+     */
+    public function getVersion()
+    {
+        return $this->Version;
+    }
+    
+    /**
      * Set AssociatedAccountNumber
      *
      * @param AssociatedAccount $associatedAccountNumber
-     * return CreatePickupRequest
+     * @return CreatePickupRequest
      */
     public function setAssociatedAccountNumber(AssociatedAccount $associatedAccountNumber)
     {
@@ -82,10 +122,20 @@ class CreatePickupRequest
     }
     
     /**
+     * Returns Set AssociatedAccountNumber
+     *
+     * @return AssociatedAccount
+     */
+    public function getAssociatedAccountNumber()
+    {
+        return $this->AssociatedAccountNumber;
+    }
+    
+    /**
      * Descriptive data about the origin of the shipment being picked up by FedEx.
      *
      * @param PickupOriginDetail $originDetail
-     * return CreatePickupRequest
+     * @return CreatePickupRequest
      */
     public function setOriginDetail(PickupOriginDetail $originDetail)
     {
@@ -94,10 +144,20 @@ class CreatePickupRequest
     }
     
     /**
+     * Returns Descriptive data about the origin of the shipment being picked up by FedEx.
+     *
+     * @return PickupOriginDetail
+     */
+    public function getOriginDetail()
+    {
+        return $this->OriginDetail;
+    }
+    
+    /**
      * Descriptive data for a freight shipment being picked up by FedEx. This is element is only required when requesting a freight service pickup and should not be used for other types of pickups including express freight pickups.
      *
      * @param FreightPickupDetail $freightPickupDetail
-     * return CreatePickupRequest
+     * @return CreatePickupRequest
      */
     public function setFreightPickupDetail(FreightPickupDetail $freightPickupDetail)
     {
@@ -106,10 +166,20 @@ class CreatePickupRequest
     }
     
     /**
+     * Returns Descriptive data for a freight shipment being picked up by FedEx. This is element is only required when requesting a freight service pickup and should not be used for other types of pickups including express freight pickups.
+     *
+     * @return FreightPickupDetail
+     */
+    public function getFreightPickupDetail()
+    {
+        return $this->FreightPickupDetail;
+    }
+    
+    /**
      * Descriptive data for an express freight shipment being picked up by FedEx. This is element is only required when requesting a express freight service pickup and should not be used for other types of pickups.
      *
      * @param ExpressFreightPickupDetail $expressFreightDetail
-     * return CreatePickupRequest
+     * @return CreatePickupRequest
      */
     public function setExpressFreightDetail(ExpressFreightPickupDetail $expressFreightDetail)
     {
@@ -118,10 +188,20 @@ class CreatePickupRequest
     }
     
     /**
+     * Returns Descriptive data for an express freight shipment being picked up by FedEx. This is element is only required when requesting a express freight service pickup and should not be used for other types of pickups.
+     *
+     * @return ExpressFreightPickupDetail
+     */
+    public function getExpressFreightDetail()
+    {
+        return $this->ExpressFreightDetail;
+    }
+    
+    /**
      * Identifies the number of packages that are being tendered to FedEx for this pickup request.
      *
      * @param positiveInteger $packageCount
-     * return CreatePickupRequest
+     * @return CreatePickupRequest
      */
     public function setPackageCount($packageCount)
     {
@@ -130,10 +210,20 @@ class CreatePickupRequest
     }
     
     /**
+     * Returns Identifies the number of packages that are being tendered to FedEx for this pickup request.
+     *
+     * @return positiveInteger
+     */
+    public function getPackageCount()
+    {
+        return $this->PackageCount;
+    }
+    
+    /**
      * Identifies the total weight of the package or packages being tendered to FedEx for this pickup request.
      *
      * @param Weight $totalWeight
-     * return CreatePickupRequest
+     * @return CreatePickupRequest
      */
     public function setTotalWeight(Weight $totalWeight)
     {
@@ -142,10 +232,20 @@ class CreatePickupRequest
     }
     
     /**
+     * Returns Identifies the total weight of the package or packages being tendered to FedEx for this pickup request.
+     *
+     * @return Weight
+     */
+    public function getTotalWeight()
+    {
+        return $this->TotalWeight;
+    }
+    
+    /**
      * Identifies the FedEx operating company (transportation) that is being sent the package pickup request.
      *
      * @param \FedEx\Pickup\SimpleType\CarrierCodeType|string $carrierCode
-     * return CreatePickupRequest
+     * @return CreatePickupRequest
      */
     public function setCarrierCode($carrierCode)
     {
@@ -154,10 +254,20 @@ class CreatePickupRequest
     }
     
     /**
+     * Returns Identifies the FedEx operating company (transportation) that is being sent the package pickup request.
+     *
+     * @return \FedEx\Pickup\SimpleType\CarrierCodeType|string
+     */
+    public function getCarrierCode()
+    {
+        return $this->CarrierCode;
+    }
+    
+    /**
      * Identifies the number of oversize packages that are being tendered to FedEx for this pickup request. Please refer to the FedEx Service Guide for package size limits to determine if a package is oversized for the service being shipped.
      *
      * @param positiveInteger $oversizePackageCount
-     * return CreatePickupRequest
+     * @return CreatePickupRequest
      */
     public function setOversizePackageCount($oversizePackageCount)
     {
@@ -166,10 +276,20 @@ class CreatePickupRequest
     }
     
     /**
+     * Returns Identifies the number of oversize packages that are being tendered to FedEx for this pickup request. Please refer to the FedEx Service Guide for package size limits to determine if a package is oversized for the service being shipped.
+     *
+     * @return positiveInteger
+     */
+    public function getOversizePackageCount()
+    {
+        return $this->OversizePackageCount;
+    }
+    
+    /**
      * Identifies any remarks or comments to be passed to the FedEx courier picking up the shipment.
      *
      * @param string $remarks
-     * return CreatePickupRequest
+     * @return CreatePickupRequest
      */
     public function setRemarks($remarks)
     {
@@ -178,10 +298,20 @@ class CreatePickupRequest
     }
     
     /**
+     * Returns Identifies any remarks or comments to be passed to the FedEx courier picking up the shipment.
+     *
+     * @return string
+     */
+    public function getRemarks()
+    {
+        return $this->Remarks;
+    }
+    
+    /**
      * Identifies the type of commodity being shipped. This element is required for an international shipment.
      *
      * @param string $commodityDescription
-     * return CreatePickupRequest
+     * @return CreatePickupRequest
      */
     public function setCommodityDescription($commodityDescription)
     {
@@ -190,15 +320,35 @@ class CreatePickupRequest
     }
     
     /**
+     * Returns Identifies the type of commodity being shipped. This element is required for an international shipment.
+     *
+     * @return string
+     */
+    public function getCommodityDescription()
+    {
+        return $this->CommodityDescription;
+    }
+    
+    /**
      * Describes the country relationship (domestic and/or international) among the shipments being picked up.
      *
      * @param \FedEx\Pickup\SimpleType\CountryRelationshipType|string $countryRelationship
-     * return CreatePickupRequest
+     * @return CreatePickupRequest
      */
     public function setCountryRelationship($countryRelationship)
     {
         $this->CountryRelationship = $countryRelationship;
         return $this;
+    }
+    
+    /**
+     * Returns Describes the country relationship (domestic and/or international) among the shipments being picked up.
+     *
+     * @return \FedEx\Pickup\SimpleType\CountryRelationshipType|string
+     */
+    public function getCountryRelationship()
+    {
+        return $this->CountryRelationship;
     }
     
 

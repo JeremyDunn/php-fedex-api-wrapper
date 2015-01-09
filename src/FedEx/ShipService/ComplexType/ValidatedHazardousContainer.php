@@ -25,7 +25,7 @@ class ValidatedHazardousContainer
      * Indicates that the quantity of the dangerous goods packaged is permissible for shipping. This is used to ensure that the dangerous goods commodities do not exceed the net quantity per package restrictions.
      *
      * @param decimal $qValue
-     * return ValidatedHazardousContainer
+     * @return ValidatedHazardousContainer
      */
     public function setQValue($qValue)
     {
@@ -34,15 +34,35 @@ class ValidatedHazardousContainer
     }
     
     /**
+     * Returns Indicates that the quantity of the dangerous goods packaged is permissible for shipping. This is used to ensure that the dangerous goods commodities do not exceed the net quantity per package restrictions.
+     *
+     * @return decimal
+     */
+    public function getQValue()
+    {
+        return $this->QValue;
+    }
+    
+    /**
      * Documents the kinds and quantities of all hazardous commodities in the current package.
      *
      * @param ValidatedHazardousCommodityContent[] $hazardousCommodities
-     * return ValidatedHazardousContainer
+     * @return ValidatedHazardousContainer
      */
     public function setHazardousCommodities(array $hazardousCommodities)
     {
         $this->HazardousCommodities = $hazardousCommodities;
         return $this;
+    }
+    
+    /**
+     * Returns Documents the kinds and quantities of all hazardous commodities in the current package.
+     *
+     * @return ValidatedHazardousCommodityContent[]
+     */
+    public function getHazardousCommodities()
+    {
+        return $this->HazardousCommodities;
     }
     
 

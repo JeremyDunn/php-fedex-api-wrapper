@@ -25,7 +25,7 @@ class ShippingDocumentEMailDetail
      * Provides the roles and email addresses for e-mail recipients.
      *
      * @param ShippingDocumentEMailRecipient[] $eMailRecipients
-     * return ShippingDocumentEMailDetail
+     * @return ShippingDocumentEMailDetail
      */
     public function setEMailRecipients(array $eMailRecipients)
     {
@@ -34,15 +34,57 @@ class ShippingDocumentEMailDetail
     }
     
     /**
+     * Returns Provides the roles and email addresses for e-mail recipients.
+     *
+     * @return ShippingDocumentEMailRecipient[]
+     */
+    public function getEMailRecipients()
+    {
+        return $this->EMailRecipients;
+    }
+    
+    /**
      * Identifies the convention by which documents are to be grouped as e-mail attachments.
      *
      * @param \FedEx\RateService\SimpleType\ShippingDocumentEMailGroupingType|string $grouping
-     * return ShippingDocumentEMailDetail
+     * @return ShippingDocumentEMailDetail
      */
     public function setGrouping($grouping)
     {
         $this->Grouping = $grouping;
         return $this;
+    }
+    
+    /**
+     * Returns Identifies the convention by which documents are to be grouped as e-mail attachments.
+     *
+     * @return \FedEx\RateService\SimpleType\ShippingDocumentEMailGroupingType|string
+     */
+    public function getGrouping()
+    {
+        return $this->Grouping;
+    }
+    
+    /**
+     * Specifies the language in which the email containing the document is requested to be composed.
+     *
+     * @param Localization $localization
+     * @return ShippingDocumentEMailDetail
+     */
+    public function setLocalization(Localization $localization)
+    {
+        $this->Localization = $localization;
+        return $this;
+    }
+    
+    /**
+     * Returns Specifies the language in which the email containing the document is requested to be composed.
+     *
+     * @return Localization
+     */
+    public function getLocalization()
+    {
+        return $this->Localization;
     }
     
 

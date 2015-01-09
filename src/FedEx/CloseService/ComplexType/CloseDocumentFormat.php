@@ -25,7 +25,7 @@ class CloseDocumentFormat
      * Specifies how to create, organize, and return the document.
      *
      * @param ShippingDocumentDispositionDetail[] $dispositions
-     * return CloseDocumentFormat
+     * @return CloseDocumentFormat
      */
     public function setDispositions(array $dispositions)
     {
@@ -34,10 +34,20 @@ class CloseDocumentFormat
     }
     
     /**
+     * Returns Specifies how to create, organize, and return the document.
+     *
+     * @return ShippingDocumentDispositionDetail[]
+     */
+    public function getDispositions()
+    {
+        return $this->Dispositions;
+    }
+    
+    /**
      * Specifies how far down the page to move the beginning of the image; allows for printing on letterhead and other pre-printed stock.
      *
      * @param LinearMeasure $topOfPageOffset
-     * return CloseDocumentFormat
+     * @return CloseDocumentFormat
      */
     public function setTopOfPageOffset(LinearMeasure $topOfPageOffset)
     {
@@ -46,10 +56,20 @@ class CloseDocumentFormat
     }
     
     /**
+     * Returns Specifies how far down the page to move the beginning of the image; allows for printing on letterhead and other pre-printed stock.
+     *
+     * @return LinearMeasure
+     */
+    public function getTopOfPageOffset()
+    {
+        return $this->TopOfPageOffset;
+    }
+    
+    /**
      * The type of image or printer commands the image is to be formatted in.
      *
      * @param \FedEx\CloseService\SimpleType\ShippingDocumentImageType|string $imageType
-     * return CloseDocumentFormat
+     * @return CloseDocumentFormat
      */
     public function setImageType($imageType)
     {
@@ -58,10 +78,20 @@ class CloseDocumentFormat
     }
     
     /**
+     * Returns The type of image or printer commands the image is to be formatted in.
+     *
+     * @return \FedEx\CloseService\SimpleType\ShippingDocumentImageType|string
+     */
+    public function getImageType()
+    {
+        return $this->ImageType;
+    }
+    
+    /**
      * Set StockType
      *
      * @param \FedEx\CloseService\SimpleType\ShippingDocumentStockType|string $stockType
-     * return CloseDocumentFormat
+     * @return CloseDocumentFormat
      */
     public function setStockType($stockType)
     {
@@ -70,10 +100,20 @@ class CloseDocumentFormat
     }
     
     /**
+     * Returns Set StockType
+     *
+     * @return \FedEx\CloseService\SimpleType\ShippingDocumentStockType|string
+     */
+    public function getStockType()
+    {
+        return $this->StockType;
+    }
+    
+    /**
      * For those shipping document types which have both a "form" and "instructions" component (e.g. NAFTA Certificate of Origin and General Agency Agreement), this field indicates whether to provide the instructions.
      *
      * @param boolean $provideInstructions
-     * return CloseDocumentFormat
+     * @return CloseDocumentFormat
      */
     public function setProvideInstructions($provideInstructions)
     {
@@ -82,15 +122,35 @@ class CloseDocumentFormat
     }
     
     /**
+     * Returns For those shipping document types which have both a "form" and "instructions" component (e.g. NAFTA Certificate of Origin and General Agency Agreement), this field indicates whether to provide the instructions.
+     *
+     * @return boolean
+     */
+    public function getProvideInstructions()
+    {
+        return $this->ProvideInstructions;
+    }
+    
+    /**
      * Governs the language to be used for this individual document, independently from other content returned for the same shipment.
      *
      * @param Localization $localization
-     * return CloseDocumentFormat
+     * @return CloseDocumentFormat
      */
     public function setLocalization(Localization $localization)
     {
         $this->Localization = $localization;
         return $this;
+    }
+    
+    /**
+     * Returns Governs the language to be used for this individual document, independently from other content returned for the same shipment.
+     *
+     * @return Localization
+     */
+    public function getLocalization()
+    {
+        return $this->Localization;
     }
     
 

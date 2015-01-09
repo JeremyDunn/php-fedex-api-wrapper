@@ -25,7 +25,7 @@ class Money
      * Set Currency
      *
      * @param string $currency
-     * return Money
+     * @return Money
      */
     public function setCurrency($currency)
     {
@@ -34,15 +34,35 @@ class Money
     }
     
     /**
+     * Returns Set Currency
+     *
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->Currency;
+    }
+    
+    /**
      * Set Amount
      *
      * @param decimal $amount
-     * return Money
+     * @return Money
      */
     public function setAmount($amount)
     {
         $this->Amount = $amount;
         return $this;
+    }
+    
+    /**
+     * Returns Set Amount
+     *
+     * @return decimal
+     */
+    public function getAmount()
+    {
+        return $this->Amount;
     }
     
 

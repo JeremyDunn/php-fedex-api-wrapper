@@ -25,7 +25,7 @@ class Volume
      * Set Units
      *
      * @param \FedEx\RateService\SimpleType\VolumeUnits|string $units
-     * return Volume
+     * @return Volume
      */
     public function setUnits($units)
     {
@@ -34,15 +34,35 @@ class Volume
     }
     
     /**
+     * Returns Set Units
+     *
+     * @return \FedEx\RateService\SimpleType\VolumeUnits|string
+     */
+    public function getUnits()
+    {
+        return $this->Units;
+    }
+    
+    /**
      * Set Value
      *
      * @param decimal $value
-     * return Volume
+     * @return Volume
      */
     public function setValue($value)
     {
         $this->Value = $value;
         return $this;
+    }
+    
+    /**
+     * Returns Set Value
+     *
+     * @return decimal
+     */
+    public function getValue()
+    {
+        return $this->Value;
     }
     
 

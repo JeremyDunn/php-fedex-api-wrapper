@@ -25,7 +25,7 @@ class TrackingId
      * Set TrackingIdType
      *
      * @param \FedEx\ShipService\SimpleType\TrackingIdType|string $trackingIdType
-     * return TrackingId
+     * @return TrackingId
      */
     public function setTrackingIdType($trackingIdType)
     {
@@ -34,10 +34,20 @@ class TrackingId
     }
     
     /**
+     * Returns Set TrackingIdType
+     *
+     * @return \FedEx\ShipService\SimpleType\TrackingIdType|string
+     */
+    public function getTrackingIdType()
+    {
+        return $this->TrackingIdType;
+    }
+    
+    /**
      * Set FormId
      *
      * @param string $formId
-     * return TrackingId
+     * @return TrackingId
      */
     public function setFormId($formId)
     {
@@ -46,10 +56,20 @@ class TrackingId
     }
     
     /**
+     * Returns Set FormId
+     *
+     * @return string
+     */
+    public function getFormId()
+    {
+        return $this->FormId;
+    }
+    
+    /**
      * For use with SmartPost tracking IDs only
      *
      * @param string $uspsApplicationId
-     * return TrackingId
+     * @return TrackingId
      */
     public function setUspsApplicationId($uspsApplicationId)
     {
@@ -58,15 +78,35 @@ class TrackingId
     }
     
     /**
+     * Returns For use with SmartPost tracking IDs only
+     *
+     * @return string
+     */
+    public function getUspsApplicationId()
+    {
+        return $this->UspsApplicationId;
+    }
+    
+    /**
      * Set TrackingNumber
      *
      * @param string $trackingNumber
-     * return TrackingId
+     * @return TrackingId
      */
     public function setTrackingNumber($trackingNumber)
     {
         $this->TrackingNumber = $trackingNumber;
         return $this;
+    }
+    
+    /**
+     * Returns Set TrackingNumber
+     *
+     * @return string
+     */
+    public function getTrackingNumber()
+    {
+        return $this->TrackingNumber;
     }
     
 

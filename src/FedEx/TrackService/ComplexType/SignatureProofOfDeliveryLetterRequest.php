@@ -25,7 +25,7 @@ class SignatureProofOfDeliveryLetterRequest
      * Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
      * @param WebAuthenticationDetail $webAuthenticationDetail
-     * return SignatureProofOfDeliveryLetterRequest
+     * @return SignatureProofOfDeliveryLetterRequest
      */
     public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
     {
@@ -34,10 +34,20 @@ class SignatureProofOfDeliveryLetterRequest
     }
     
     /**
+     * Returns Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
+     *
+     * @return WebAuthenticationDetail
+     */
+    public function getWebAuthenticationDetail()
+    {
+        return $this->WebAuthenticationDetail;
+    }
+    
+    /**
      * Descriptive data identifying the client submitting the transaction.
      *
      * @param ClientDetail $clientDetail
-     * return SignatureProofOfDeliveryLetterRequest
+     * @return SignatureProofOfDeliveryLetterRequest
      */
     public function setClientDetail(ClientDetail $clientDetail)
     {
@@ -46,10 +56,20 @@ class SignatureProofOfDeliveryLetterRequest
     }
     
     /**
+     * Returns Descriptive data identifying the client submitting the transaction.
+     *
+     * @return ClientDetail
+     */
+    public function getClientDetail()
+    {
+        return $this->ClientDetail;
+    }
+    
+    /**
      * Contains a free form field that is echoed back in the reply to match requests with replies and data that governs the data payload language/translations.
      *
      * @param TransactionDetail $transactionDetail
-     * return SignatureProofOfDeliveryLetterRequest
+     * @return SignatureProofOfDeliveryLetterRequest
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
@@ -58,10 +78,20 @@ class SignatureProofOfDeliveryLetterRequest
     }
     
     /**
+     * Returns Contains a free form field that is echoed back in the reply to match requests with replies and data that governs the data payload language/translations.
+     *
+     * @return TransactionDetail
+     */
+    public function getTransactionDetail()
+    {
+        return $this->TransactionDetail;
+    }
+    
+    /**
      * The version of the request being used.
      *
      * @param VersionId $version
-     * return SignatureProofOfDeliveryLetterRequest
+     * @return SignatureProofOfDeliveryLetterRequest
      */
     public function setVersion(VersionId $version)
     {
@@ -70,10 +100,20 @@ class SignatureProofOfDeliveryLetterRequest
     }
     
     /**
+     * Returns The version of the request being used.
+     *
+     * @return VersionId
+     */
+    public function getVersion()
+    {
+        return $this->Version;
+    }
+    
+    /**
      * Tracking number and additional shipment data used to identify a unique shipment for proof of delivery.
      *
      * @param QualifiedTrackingNumber $qualifiedTrackingNumber
-     * return SignatureProofOfDeliveryLetterRequest
+     * @return SignatureProofOfDeliveryLetterRequest
      */
     public function setQualifiedTrackingNumber(QualifiedTrackingNumber $qualifiedTrackingNumber)
     {
@@ -82,10 +122,20 @@ class SignatureProofOfDeliveryLetterRequest
     }
     
     /**
+     * Returns Tracking number and additional shipment data used to identify a unique shipment for proof of delivery.
+     *
+     * @return QualifiedTrackingNumber
+     */
+    public function getQualifiedTrackingNumber()
+    {
+        return $this->QualifiedTrackingNumber;
+    }
+    
+    /**
      * Additional customer-supplied text to be added to the body of the letter.
      *
      * @param string $additionalComments
-     * return SignatureProofOfDeliveryLetterRequest
+     * @return SignatureProofOfDeliveryLetterRequest
      */
     public function setAdditionalComments($additionalComments)
     {
@@ -94,10 +144,20 @@ class SignatureProofOfDeliveryLetterRequest
     }
     
     /**
+     * Returns Additional customer-supplied text to be added to the body of the letter.
+     *
+     * @return string
+     */
+    public function getAdditionalComments()
+    {
+        return $this->AdditionalComments;
+    }
+    
+    /**
      * Identifies the set of SPOD image types.
      *
      * @param \FedEx\TrackService\SimpleType\SignatureProofOfDeliveryImageType|string $letterFormat
-     * return SignatureProofOfDeliveryLetterRequest
+     * @return SignatureProofOfDeliveryLetterRequest
      */
     public function setLetterFormat($letterFormat)
     {
@@ -106,15 +166,35 @@ class SignatureProofOfDeliveryLetterRequest
     }
     
     /**
+     * Returns Identifies the set of SPOD image types.
+     *
+     * @return \FedEx\TrackService\SimpleType\SignatureProofOfDeliveryImageType|string
+     */
+    public function getLetterFormat()
+    {
+        return $this->LetterFormat;
+    }
+    
+    /**
      * If provided this information will be print on the letter.
      *
      * @param ContactAndAddress $consignee
-     * return SignatureProofOfDeliveryLetterRequest
+     * @return SignatureProofOfDeliveryLetterRequest
      */
     public function setConsignee(ContactAndAddress $consignee)
     {
         $this->Consignee = $consignee;
         return $this;
+    }
+    
+    /**
+     * Returns If provided this information will be print on the letter.
+     *
+     * @return ContactAndAddress
+     */
+    public function getConsignee()
+    {
+        return $this->Consignee;
     }
     
 

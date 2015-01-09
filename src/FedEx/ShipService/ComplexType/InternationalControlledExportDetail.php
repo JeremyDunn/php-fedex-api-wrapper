@@ -25,7 +25,7 @@ class InternationalControlledExportDetail
      * Set Type
      *
      * @param \FedEx\ShipService\SimpleType\InternationalControlledExportType|string $type
-     * return InternationalControlledExportDetail
+     * @return InternationalControlledExportDetail
      */
     public function setType($type)
     {
@@ -34,10 +34,20 @@ class InternationalControlledExportDetail
     }
     
     /**
+     * Returns Set Type
+     *
+     * @return \FedEx\ShipService\SimpleType\InternationalControlledExportType|string
+     */
+    public function getType()
+    {
+        return $this->Type;
+    }
+    
+    /**
      * Set ForeignTradeZoneCode
      *
      * @param string $foreignTradeZoneCode
-     * return InternationalControlledExportDetail
+     * @return InternationalControlledExportDetail
      */
     public function setForeignTradeZoneCode($foreignTradeZoneCode)
     {
@@ -46,10 +56,20 @@ class InternationalControlledExportDetail
     }
     
     /**
+     * Returns Set ForeignTradeZoneCode
+     *
+     * @return string
+     */
+    public function getForeignTradeZoneCode()
+    {
+        return $this->ForeignTradeZoneCode;
+    }
+    
+    /**
      * Set EntryNumber
      *
      * @param string $entryNumber
-     * return InternationalControlledExportDetail
+     * @return InternationalControlledExportDetail
      */
     public function setEntryNumber($entryNumber)
     {
@@ -58,10 +78,20 @@ class InternationalControlledExportDetail
     }
     
     /**
+     * Returns Set EntryNumber
+     *
+     * @return string
+     */
+    public function getEntryNumber()
+    {
+        return $this->EntryNumber;
+    }
+    
+    /**
      * Set LicenseOrPermitNumber
      *
      * @param string $licenseOrPermitNumber
-     * return InternationalControlledExportDetail
+     * @return InternationalControlledExportDetail
      */
     public function setLicenseOrPermitNumber($licenseOrPermitNumber)
     {
@@ -70,15 +100,35 @@ class InternationalControlledExportDetail
     }
     
     /**
+     * Returns Set LicenseOrPermitNumber
+     *
+     * @return string
+     */
+    public function getLicenseOrPermitNumber()
+    {
+        return $this->LicenseOrPermitNumber;
+    }
+    
+    /**
      * Set LicenseOrPermitExpirationDate
      *
      * @param date $licenseOrPermitExpirationDate
-     * return InternationalControlledExportDetail
+     * @return InternationalControlledExportDetail
      */
     public function setLicenseOrPermitExpirationDate($licenseOrPermitExpirationDate)
     {
         $this->LicenseOrPermitExpirationDate = $licenseOrPermitExpirationDate;
         return $this;
+    }
+    
+    /**
+     * Returns Set LicenseOrPermitExpirationDate
+     *
+     * @return date
+     */
+    public function getLicenseOrPermitExpirationDate()
+    {
+        return $this->LicenseOrPermitExpirationDate;
     }
     
 

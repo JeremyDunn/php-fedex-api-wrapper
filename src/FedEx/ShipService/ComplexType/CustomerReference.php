@@ -25,7 +25,7 @@ class CustomerReference
      * The reference type to be associated with this reference data.
      *
      * @param \FedEx\ShipService\SimpleType\CustomerReferenceType|string $customerReferenceType
-     * return CustomerReference
+     * @return CustomerReference
      */
     public function setCustomerReferenceType($customerReferenceType)
     {
@@ -34,15 +34,35 @@ class CustomerReference
     }
     
     /**
+     * Returns The reference type to be associated with this reference data.
+     *
+     * @return \FedEx\ShipService\SimpleType\CustomerReferenceType|string
+     */
+    public function getCustomerReferenceType()
+    {
+        return $this->CustomerReferenceType;
+    }
+    
+    /**
      * Set Value
      *
      * @param string $value
-     * return CustomerReference
+     * @return CustomerReference
      */
     public function setValue($value)
     {
         $this->Value = $value;
         return $this;
+    }
+    
+    /**
+     * Returns Set Value
+     *
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->Value;
     }
     
 

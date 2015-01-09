@@ -25,7 +25,7 @@ class ReturnShipmentDetail
      * The type of return shipment that is being requested.
      *
      * @param \FedEx\ShipService\SimpleType\ReturnType|string $returnType
-     * return ReturnShipmentDetail
+     * @return ReturnShipmentDetail
      */
     public function setReturnType($returnType)
     {
@@ -34,10 +34,20 @@ class ReturnShipmentDetail
     }
     
     /**
+     * Returns The type of return shipment that is being requested.
+     *
+     * @return \FedEx\ShipService\SimpleType\ReturnType|string
+     */
+    public function getReturnType()
+    {
+        return $this->ReturnType;
+    }
+    
+    /**
      * Return Merchant Authorization
      *
      * @param Rma $rma
-     * return ReturnShipmentDetail
+     * @return ReturnShipmentDetail
      */
     public function setRma(Rma $rma)
     {
@@ -46,10 +56,20 @@ class ReturnShipmentDetail
     }
     
     /**
+     * Returns Return Merchant Authorization
+     *
+     * @return Rma
+     */
+    public function getRma()
+    {
+        return $this->Rma;
+    }
+    
+    /**
      * Describes specific information about the email label for return shipment.
      *
      * @param ReturnEMailDetail $returnEMailDetail
-     * return ReturnShipmentDetail
+     * @return ReturnShipmentDetail
      */
     public function setReturnEMailDetail(ReturnEMailDetail $returnEMailDetail)
     {
@@ -58,15 +78,35 @@ class ReturnShipmentDetail
     }
     
     /**
+     * Returns Describes specific information about the email label for return shipment.
+     *
+     * @return ReturnEMailDetail
+     */
+    public function getReturnEMailDetail()
+    {
+        return $this->ReturnEMailDetail;
+    }
+    
+    /**
      * Set ReturnAssociation
      *
      * @param ReturnAssociationDetail $returnAssociation
-     * return ReturnShipmentDetail
+     * @return ReturnShipmentDetail
      */
     public function setReturnAssociation(ReturnAssociationDetail $returnAssociation)
     {
         $this->ReturnAssociation = $returnAssociation;
         return $this;
+    }
+    
+    /**
+     * Returns Set ReturnAssociation
+     *
+     * @return ReturnAssociationDetail
+     */
+    public function getReturnAssociation()
+    {
+        return $this->ReturnAssociation;
     }
     
 

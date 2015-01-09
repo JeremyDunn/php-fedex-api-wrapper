@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * The descriptive data for the monetary compensation given to FedEx for services rendered to the customer.
+ * Payment
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -22,10 +22,10 @@ class Payment
     protected $_name = 'Payment';
 
     /**
-     * Identifies the method of payment for a service. See PaymentType for list of valid enumerated values.
+     * Set PaymentType
      *
      * @param \FedEx\RateService\SimpleType\PaymentType|string $paymentType
-     * return Payment
+     * @return Payment
      */
     public function setPaymentType($paymentType)
     {
@@ -34,15 +34,35 @@ class Payment
     }
     
     /**
-     * Descriptive data identifying the party responsible for payment for a service.
+     * Returns Set PaymentType
+     *
+     * @return \FedEx\RateService\SimpleType\PaymentType|string
+     */
+    public function getPaymentType()
+    {
+        return $this->PaymentType;
+    }
+    
+    /**
+     * Set Payor
      *
      * @param Payor $payor
-     * return Payment
+     * @return Payment
      */
     public function setPayor(Payor $payor)
     {
         $this->Payor = $payor;
         return $this;
+    }
+    
+    /**
+     * Returns Set Payor
+     *
+     * @return Payor
+     */
+    public function getPayor()
+    {
+        return $this->Payor;
     }
     
 

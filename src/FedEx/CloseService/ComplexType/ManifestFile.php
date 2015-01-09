@@ -25,7 +25,7 @@ class ManifestFile
      * Set FileName
      *
      * @param string $fileName
-     * return ManifestFile
+     * @return ManifestFile
      */
     public function setFileName($fileName)
     {
@@ -34,15 +34,35 @@ class ManifestFile
     }
     
     /**
+     * Returns Set FileName
+     *
+     * @return string
+     */
+    public function getFileName()
+    {
+        return $this->FileName;
+    }
+    
+    /**
      * Set File
      *
      * @param base64Binary $file
-     * return ManifestFile
+     * @return ManifestFile
      */
     public function setFile($file)
     {
         $this->File = $file;
         return $this;
+    }
+    
+    /**
+     * Returns Set File
+     *
+     * @return base64Binary
+     */
+    public function getFile()
+    {
+        return $this->File;
     }
     
 

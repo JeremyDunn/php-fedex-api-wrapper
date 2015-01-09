@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Details specific to an Express freight shipment.
+ * ExpressFreightDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -22,10 +22,10 @@ class ExpressFreightDetail
     protected $_name = 'ExpressFreightDetail';
 
     /**
-     * Indicates whether or nor a packing list is enclosed.
+     * Set PackingListEnclosed
      *
      * @param boolean $packingListEnclosed
-     * return ExpressFreightDetail
+     * @return ExpressFreightDetail
      */
     public function setPackingListEnclosed($packingListEnclosed)
     {
@@ -34,15 +34,20 @@ class ExpressFreightDetail
     }
     
     /**
-     * 
-                Total shipment pieces.
-                ie. 3 boxes and 3 pallets of 100 pieces each = Shippers Load and Count of 303.
-                Applicable to International Priority Freight and International Economy Freight.
-                Values must be in the range of 1 - 99999
-              
+     * Returns Set PackingListEnclosed
+     *
+     * @return boolean
+     */
+    public function getPackingListEnclosed()
+    {
+        return $this->PackingListEnclosed;
+    }
+    
+    /**
+     * Set ShippersLoadAndCount
      *
      * @param positiveInteger $shippersLoadAndCount
-     * return ExpressFreightDetail
+     * @return ExpressFreightDetail
      */
     public function setShippersLoadAndCount($shippersLoadAndCount)
     {
@@ -51,10 +56,20 @@ class ExpressFreightDetail
     }
     
     /**
-     * Required for International Freight shipping. Values must be 8- 12 characters in length.
+     * Returns Set ShippersLoadAndCount
+     *
+     * @return positiveInteger
+     */
+    public function getShippersLoadAndCount()
+    {
+        return $this->ShippersLoadAndCount;
+    }
+    
+    /**
+     * Set BookingConfirmationNumber
      *
      * @param string $bookingConfirmationNumber
-     * return ExpressFreightDetail
+     * @return ExpressFreightDetail
      */
     public function setBookingConfirmationNumber($bookingConfirmationNumber)
     {
@@ -63,10 +78,20 @@ class ExpressFreightDetail
     }
     
     /**
-     * Currently not supported.
+     * Returns Set BookingConfirmationNumber
+     *
+     * @return string
+     */
+    public function getBookingConfirmationNumber()
+    {
+        return $this->BookingConfirmationNumber;
+    }
+    
+    /**
+     * Set ReferenceLabelRequested
      *
      * @param boolean $referenceLabelRequested
-     * return ExpressFreightDetail
+     * @return ExpressFreightDetail
      */
     public function setReferenceLabelRequested($referenceLabelRequested)
     {
@@ -75,10 +100,20 @@ class ExpressFreightDetail
     }
     
     /**
-     * Currently not supported.
+     * Returns Set ReferenceLabelRequested
+     *
+     * @return boolean
+     */
+    public function getReferenceLabelRequested()
+    {
+        return $this->ReferenceLabelRequested;
+    }
+    
+    /**
+     * Set BeforeDeliveryContact
      *
      * @param ExpressFreightDetailContact $beforeDeliveryContact
-     * return ExpressFreightDetail
+     * @return ExpressFreightDetail
      */
     public function setBeforeDeliveryContact(ExpressFreightDetailContact $beforeDeliveryContact)
     {
@@ -87,15 +122,35 @@ class ExpressFreightDetail
     }
     
     /**
-     * Currently not supported.
+     * Returns Set BeforeDeliveryContact
+     *
+     * @return ExpressFreightDetailContact
+     */
+    public function getBeforeDeliveryContact()
+    {
+        return $this->BeforeDeliveryContact;
+    }
+    
+    /**
+     * Set UndeliverableContact
      *
      * @param ExpressFreightDetailContact $undeliverableContact
-     * return ExpressFreightDetail
+     * @return ExpressFreightDetail
      */
     public function setUndeliverableContact(ExpressFreightDetailContact $undeliverableContact)
     {
         $this->UndeliverableContact = $undeliverableContact;
         return $this;
+    }
+    
+    /**
+     * Returns Set UndeliverableContact
+     *
+     * @return ExpressFreightDetailContact
+     */
+    public function getUndeliverableContact()
+    {
+        return $this->UndeliverableContact;
     }
     
 

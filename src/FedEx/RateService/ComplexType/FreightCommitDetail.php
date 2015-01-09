@@ -25,7 +25,7 @@ class FreightCommitDetail
      * Information about the origin Freight Service Center.
      *
      * @param FreightServiceCenterDetail $originDetail
-     * return FreightCommitDetail
+     * @return FreightCommitDetail
      */
     public function setOriginDetail(FreightServiceCenterDetail $originDetail)
     {
@@ -34,10 +34,20 @@ class FreightCommitDetail
     }
     
     /**
+     * Returns Information about the origin Freight Service Center.
+     *
+     * @return FreightServiceCenterDetail
+     */
+    public function getOriginDetail()
+    {
+        return $this->OriginDetail;
+    }
+    
+    /**
      * Information about the destination Freight Service Center.
      *
      * @param FreightServiceCenterDetail $destinationDetail
-     * return FreightCommitDetail
+     * @return FreightCommitDetail
      */
     public function setDestinationDetail(FreightServiceCenterDetail $destinationDetail)
     {
@@ -46,15 +56,35 @@ class FreightCommitDetail
     }
     
     /**
+     * Returns Information about the destination Freight Service Center.
+     *
+     * @return FreightServiceCenterDetail
+     */
+    public function getDestinationDetail()
+    {
+        return $this->DestinationDetail;
+    }
+    
+    /**
      * The distance between the origin and destination FreightService Centers
      *
      * @param Distance $totalDistance
-     * return FreightCommitDetail
+     * @return FreightCommitDetail
      */
     public function setTotalDistance(Distance $totalDistance)
     {
         $this->TotalDistance = $totalDistance;
         return $this;
+    }
+    
+    /**
+     * Returns The distance between the origin and destination FreightService Centers
+     *
+     * @return Distance
+     */
+    public function getTotalDistance()
+    {
+        return $this->TotalDistance;
     }
     
 

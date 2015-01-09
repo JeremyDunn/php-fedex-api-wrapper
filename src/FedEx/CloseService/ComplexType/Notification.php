@@ -25,7 +25,7 @@ class Notification
      * Set Severity
      *
      * @param \FedEx\CloseService\SimpleType\NotificationSeverityType|string $severity
-     * return Notification
+     * @return Notification
      */
     public function setSeverity($severity)
     {
@@ -34,10 +34,20 @@ class Notification
     }
     
     /**
+     * Returns Set Severity
+     *
+     * @return \FedEx\CloseService\SimpleType\NotificationSeverityType|string
+     */
+    public function getSeverity()
+    {
+        return $this->Severity;
+    }
+    
+    /**
      * Set Source
      *
      * @param string $source
-     * return Notification
+     * @return Notification
      */
     public function setSource($source)
     {
@@ -46,10 +56,20 @@ class Notification
     }
     
     /**
+     * Returns Set Source
+     *
+     * @return string
+     */
+    public function getSource()
+    {
+        return $this->Source;
+    }
+    
+    /**
      * Set Code
      *
      * @param string $code
-     * return Notification
+     * @return Notification
      */
     public function setCode($code)
     {
@@ -58,10 +78,20 @@ class Notification
     }
     
     /**
+     * Returns Set Code
+     *
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->Code;
+    }
+    
+    /**
      * Set Message
      *
      * @param string $message
-     * return Notification
+     * @return Notification
      */
     public function setMessage($message)
     {
@@ -70,10 +100,20 @@ class Notification
     }
     
     /**
+     * Returns Set Message
+     *
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->Message;
+    }
+    
+    /**
      * Set LocalizedMessage
      *
      * @param string $localizedMessage
-     * return Notification
+     * @return Notification
      */
     public function setLocalizedMessage($localizedMessage)
     {
@@ -82,15 +122,35 @@ class Notification
     }
     
     /**
+     * Returns Set LocalizedMessage
+     *
+     * @return string
+     */
+    public function getLocalizedMessage()
+    {
+        return $this->LocalizedMessage;
+    }
+    
+    /**
      * A collection of name/value pairs that provide specific data to help the client determine the nature of an error (or warning, etc.) witout having to parse the message string.
      *
      * @param NotificationParameter[] $messageParameters
-     * return Notification
+     * @return Notification
      */
     public function setMessageParameters(array $messageParameters)
     {
         $this->MessageParameters = $messageParameters;
         return $this;
+    }
+    
+    /**
+     * Returns A collection of name/value pairs that provide specific data to help the client determine the nature of an error (or warning, etc.) witout having to parse the message string.
+     *
+     * @return NotificationParameter[]
+     */
+    public function getMessageParameters()
+    {
+        return $this->MessageParameters;
     }
     
 

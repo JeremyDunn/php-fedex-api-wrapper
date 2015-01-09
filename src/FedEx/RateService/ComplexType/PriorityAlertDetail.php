@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Currently not supported.
+ * PriorityAlertDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -22,15 +22,47 @@ class PriorityAlertDetail
     protected $_name = 'PriorityAlertDetail';
 
     /**
+     * Set EnhancementTypes
+     *
+     * @param PriorityAlertEnhancementType[] $enhancementTypes
+     * @return PriorityAlertDetail
+     */
+    public function setEnhancementTypes(array $enhancementTypes)
+    {
+        $this->EnhancementTypes = $enhancementTypes;
+        return $this;
+    }
+    
+    /**
+     * Returns Set EnhancementTypes
+     *
+     * @return PriorityAlertEnhancementType[]
+     */
+    public function getEnhancementTypes()
+    {
+        return $this->EnhancementTypes;
+    }
+    
+    /**
      * Set Content
      *
      * @param string[] $content
-     * return PriorityAlertDetail
+     * @return PriorityAlertDetail
      */
     public function setContent(array $content)
     {
         $this->Content = $content;
         return $this;
+    }
+    
+    /**
+     * Returns Set Content
+     *
+     * @return string[]
+     */
+    public function getContent()
+    {
+        return $this->Content;
     }
     
 

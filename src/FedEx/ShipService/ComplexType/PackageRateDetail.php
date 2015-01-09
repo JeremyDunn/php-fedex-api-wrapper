@@ -25,7 +25,7 @@ class PackageRateDetail
      * Type used for this specific set of rate data.
      *
      * @param \FedEx\ShipService\SimpleType\ReturnedRateType|string $rateType
-     * return PackageRateDetail
+     * @return PackageRateDetail
      */
     public function setRateType($rateType)
     {
@@ -34,10 +34,20 @@ class PackageRateDetail
     }
     
     /**
+     * Returns Type used for this specific set of rate data.
+     *
+     * @return \FedEx\ShipService\SimpleType\ReturnedRateType|string
+     */
+    public function getRateType()
+    {
+        return $this->RateType;
+    }
+    
+    /**
      * Indicates which weight was used.
      *
      * @param \FedEx\ShipService\SimpleType\RatedWeightMethod|string $ratedWeightMethod
-     * return PackageRateDetail
+     * @return PackageRateDetail
      */
     public function setRatedWeightMethod($ratedWeightMethod)
     {
@@ -46,10 +56,20 @@ class PackageRateDetail
     }
     
     /**
+     * Returns Indicates which weight was used.
+     *
+     * @return \FedEx\ShipService\SimpleType\RatedWeightMethod|string
+     */
+    public function getRatedWeightMethod()
+    {
+        return $this->RatedWeightMethod;
+    }
+    
+    /**
      * INTERNAL FEDEX USE ONLY.
      *
      * @param \FedEx\ShipService\SimpleType\MinimumChargeType|string $minimumChargeType
-     * return PackageRateDetail
+     * @return PackageRateDetail
      */
     public function setMinimumChargeType($minimumChargeType)
     {
@@ -58,10 +78,20 @@ class PackageRateDetail
     }
     
     /**
+     * Returns INTERNAL FEDEX USE ONLY.
+     *
+     * @return \FedEx\ShipService\SimpleType\MinimumChargeType|string
+     */
+    public function getMinimumChargeType()
+    {
+        return $this->MinimumChargeType;
+    }
+    
+    /**
      * The weight that was used to calculate the rate.
      *
      * @param Weight $billingWeight
-     * return PackageRateDetail
+     * @return PackageRateDetail
      */
     public function setBillingWeight(Weight $billingWeight)
     {
@@ -70,10 +100,20 @@ class PackageRateDetail
     }
     
     /**
+     * Returns The weight that was used to calculate the rate.
+     *
+     * @return Weight
+     */
+    public function getBillingWeight()
+    {
+        return $this->BillingWeight;
+    }
+    
+    /**
      * The dimensional weight of this package (if greater than actual).
      *
      * @param Weight $dimWeight
-     * return PackageRateDetail
+     * @return PackageRateDetail
      */
     public function setDimWeight(Weight $dimWeight)
     {
@@ -82,10 +122,20 @@ class PackageRateDetail
     }
     
     /**
+     * Returns The dimensional weight of this package (if greater than actual).
+     *
+     * @return Weight
+     */
+    public function getDimWeight()
+    {
+        return $this->DimWeight;
+    }
+    
+    /**
      * The oversize weight of this package (if the package is oversize).
      *
      * @param Weight $oversizeWeight
-     * return PackageRateDetail
+     * @return PackageRateDetail
      */
     public function setOversizeWeight(Weight $oversizeWeight)
     {
@@ -94,10 +144,20 @@ class PackageRateDetail
     }
     
     /**
+     * Returns The oversize weight of this package (if the package is oversize).
+     *
+     * @return Weight
+     */
+    public function getOversizeWeight()
+    {
+        return $this->OversizeWeight;
+    }
+    
+    /**
      * The transportation charge only (prior to any discounts applied) for this package.
      *
      * @param Money $baseCharge
-     * return PackageRateDetail
+     * @return PackageRateDetail
      */
     public function setBaseCharge(Money $baseCharge)
     {
@@ -106,10 +166,20 @@ class PackageRateDetail
     }
     
     /**
+     * Returns The transportation charge only (prior to any discounts applied) for this package.
+     *
+     * @return Money
+     */
+    public function getBaseCharge()
+    {
+        return $this->BaseCharge;
+    }
+    
+    /**
      * The sum of all discounts on this package.
      *
      * @param Money $totalFreightDiscounts
-     * return PackageRateDetail
+     * @return PackageRateDetail
      */
     public function setTotalFreightDiscounts(Money $totalFreightDiscounts)
     {
@@ -118,10 +188,20 @@ class PackageRateDetail
     }
     
     /**
+     * Returns The sum of all discounts on this package.
+     *
+     * @return Money
+     */
+    public function getTotalFreightDiscounts()
+    {
+        return $this->TotalFreightDiscounts;
+    }
+    
+    /**
      * This package's baseCharge - totalFreightDiscounts.
      *
      * @param Money $netFreight
-     * return PackageRateDetail
+     * @return PackageRateDetail
      */
     public function setNetFreight(Money $netFreight)
     {
@@ -130,10 +210,20 @@ class PackageRateDetail
     }
     
     /**
+     * Returns This package's baseCharge - totalFreightDiscounts.
+     *
+     * @return Money
+     */
+    public function getNetFreight()
+    {
+        return $this->NetFreight;
+    }
+    
+    /**
      * The sum of all surcharges on this package.
      *
      * @param Money $totalSurcharges
-     * return PackageRateDetail
+     * @return PackageRateDetail
      */
     public function setTotalSurcharges(Money $totalSurcharges)
     {
@@ -142,10 +232,20 @@ class PackageRateDetail
     }
     
     /**
+     * Returns The sum of all surcharges on this package.
+     *
+     * @return Money
+     */
+    public function getTotalSurcharges()
+    {
+        return $this->TotalSurcharges;
+    }
+    
+    /**
      * This package's netFreight + totalSurcharges (not including totalTaxes).
      *
      * @param Money $netFedExCharge
-     * return PackageRateDetail
+     * @return PackageRateDetail
      */
     public function setNetFedExCharge(Money $netFedExCharge)
     {
@@ -154,10 +254,20 @@ class PackageRateDetail
     }
     
     /**
+     * Returns This package's netFreight + totalSurcharges (not including totalTaxes).
+     *
+     * @return Money
+     */
+    public function getNetFedExCharge()
+    {
+        return $this->NetFedExCharge;
+    }
+    
+    /**
      * The sum of all taxes on this package.
      *
      * @param Money $totalTaxes
-     * return PackageRateDetail
+     * @return PackageRateDetail
      */
     public function setTotalTaxes(Money $totalTaxes)
     {
@@ -166,10 +276,20 @@ class PackageRateDetail
     }
     
     /**
+     * Returns The sum of all taxes on this package.
+     *
+     * @return Money
+     */
+    public function getTotalTaxes()
+    {
+        return $this->TotalTaxes;
+    }
+    
+    /**
      * This package's netFreight + totalSurcharges + totalTaxes.
      *
      * @param Money $netCharge
-     * return PackageRateDetail
+     * @return PackageRateDetail
      */
     public function setNetCharge(Money $netCharge)
     {
@@ -178,10 +298,20 @@ class PackageRateDetail
     }
     
     /**
+     * Returns This package's netFreight + totalSurcharges + totalTaxes.
+     *
+     * @return Money
+     */
+    public function getNetCharge()
+    {
+        return $this->NetCharge;
+    }
+    
+    /**
      * The total sum of all rebates applied to this package.
      *
      * @param Money $totalRebates
-     * return PackageRateDetail
+     * @return PackageRateDetail
      */
     public function setTotalRebates(Money $totalRebates)
     {
@@ -190,10 +320,20 @@ class PackageRateDetail
     }
     
     /**
+     * Returns The total sum of all rebates applied to this package.
+     *
+     * @return Money
+     */
+    public function getTotalRebates()
+    {
+        return $this->TotalRebates;
+    }
+    
+    /**
      * All rate discounts that apply to this package.
      *
      * @param RateDiscount[] $freightDiscounts
-     * return PackageRateDetail
+     * @return PackageRateDetail
      */
     public function setFreightDiscounts(array $freightDiscounts)
     {
@@ -202,10 +342,20 @@ class PackageRateDetail
     }
     
     /**
+     * Returns All rate discounts that apply to this package.
+     *
+     * @return RateDiscount[]
+     */
+    public function getFreightDiscounts()
+    {
+        return $this->FreightDiscounts;
+    }
+    
+    /**
      * All rebates that apply to this package.
      *
      * @param Rebate[] $rebates
-     * return PackageRateDetail
+     * @return PackageRateDetail
      */
     public function setRebates(array $rebates)
     {
@@ -214,10 +364,20 @@ class PackageRateDetail
     }
     
     /**
+     * Returns All rebates that apply to this package.
+     *
+     * @return Rebate[]
+     */
+    public function getRebates()
+    {
+        return $this->Rebates;
+    }
+    
+    /**
      * All surcharges that apply to this package (either because of characteristics of the package itself, or because it is carrying per-shipment surcharges for the shipment of which it is a part).
      *
      * @param Surcharge[] $surcharges
-     * return PackageRateDetail
+     * @return PackageRateDetail
      */
     public function setSurcharges(array $surcharges)
     {
@@ -226,10 +386,20 @@ class PackageRateDetail
     }
     
     /**
+     * Returns All surcharges that apply to this package (either because of characteristics of the package itself, or because it is carrying per-shipment surcharges for the shipment of which it is a part).
+     *
+     * @return Surcharge[]
+     */
+    public function getSurcharges()
+    {
+        return $this->Surcharges;
+    }
+    
+    /**
      * All taxes applicable (or distributed to) this package.
      *
      * @param Tax[] $taxes
-     * return PackageRateDetail
+     * @return PackageRateDetail
      */
     public function setTaxes(array $taxes)
     {
@@ -238,15 +408,35 @@ class PackageRateDetail
     }
     
     /**
+     * Returns All taxes applicable (or distributed to) this package.
+     *
+     * @return Tax[]
+     */
+    public function getTaxes()
+    {
+        return $this->Taxes;
+    }
+    
+    /**
      * The variable handling charges calculated based on the type variable handling charges requested.
      *
      * @param VariableHandlingCharges $variableHandlingCharges
-     * return PackageRateDetail
+     * @return PackageRateDetail
      */
     public function setVariableHandlingCharges(VariableHandlingCharges $variableHandlingCharges)
     {
         $this->VariableHandlingCharges = $variableHandlingCharges;
         return $this;
+    }
+    
+    /**
+     * Returns The variable handling charges calculated based on the type variable handling charges requested.
+     *
+     * @return VariableHandlingCharges
+     */
+    public function getVariableHandlingCharges()
+    {
+        return $this->VariableHandlingCharges;
     }
     
 

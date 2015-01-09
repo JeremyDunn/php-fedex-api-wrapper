@@ -25,7 +25,7 @@ class ReturnInstructionsDetail
      * Set Format
      *
      * @param ShippingDocumentFormat $format
-     * return ReturnInstructionsDetail
+     * @return ReturnInstructionsDetail
      */
     public function setFormat(ShippingDocumentFormat $format)
     {
@@ -34,15 +34,35 @@ class ReturnInstructionsDetail
     }
     
     /**
+     * Returns Set Format
+     *
+     * @return ShippingDocumentFormat
+     */
+    public function getFormat()
+    {
+        return $this->Format;
+    }
+    
+    /**
      * Specifies additional customer provided text to be inserted into the return document.
      *
      * @param string $customText
-     * return ReturnInstructionsDetail
+     * @return ReturnInstructionsDetail
      */
     public function setCustomText($customText)
     {
         $this->CustomText = $customText;
         return $this;
+    }
+    
+    /**
+     * Returns Specifies additional customer provided text to be inserted into the return document.
+     *
+     * @return string
+     */
+    public function getCustomText()
+    {
+        return $this->CustomText;
     }
     
 

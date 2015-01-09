@@ -25,7 +25,7 @@ class Measure
      * Set Quantity
      *
      * @param decimal $quantity
-     * return Measure
+     * @return Measure
      */
     public function setQuantity($quantity)
     {
@@ -34,15 +34,35 @@ class Measure
     }
     
     /**
+     * Returns Set Quantity
+     *
+     * @return decimal
+     */
+    public function getQuantity()
+    {
+        return $this->Quantity;
+    }
+    
+    /**
      * Set Units
      *
      * @param string $units
-     * return Measure
+     * @return Measure
      */
     public function setUnits($units)
     {
         $this->Units = $units;
         return $this;
+    }
+    
+    /**
+     * Returns Set Units
+     *
+     * @return string
+     */
+    public function getUnits()
+    {
+        return $this->Units;
     }
     
 

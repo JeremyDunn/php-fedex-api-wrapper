@@ -25,7 +25,7 @@ class CancelPickupReply
      * Identifies the highest severity encountered when executing the request; in order from high to low: FAILURE, ERROR, WARNING, NOTE, SUCCESS.
      *
      * @param \FedEx\Pickup\SimpleType\NotificationSeverityType|string $highestSeverity
-     * return CancelPickupReply
+     * @return CancelPickupReply
      */
     public function setHighestSeverity($highestSeverity)
     {
@@ -34,10 +34,20 @@ class CancelPickupReply
     }
     
     /**
+     * Returns Identifies the highest severity encountered when executing the request; in order from high to low: FAILURE, ERROR, WARNING, NOTE, SUCCESS.
+     *
+     * @return \FedEx\Pickup\SimpleType\NotificationSeverityType|string
+     */
+    public function getHighestSeverity()
+    {
+        return $this->HighestSeverity;
+    }
+    
+    /**
      * The descriptive data detailing the status of a sumbitted transaction.
      *
      * @param Notification[] $notifications
-     * return CancelPickupReply
+     * @return CancelPickupReply
      */
     public function setNotifications(array $notifications)
     {
@@ -46,10 +56,20 @@ class CancelPickupReply
     }
     
     /**
+     * Returns The descriptive data detailing the status of a sumbitted transaction.
+     *
+     * @return Notification[]
+     */
+    public function getNotifications()
+    {
+        return $this->Notifications;
+    }
+    
+    /**
      * Descriptive data that governs data payload language/translations. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
      * @param TransactionDetail $transactionDetail
-     * return CancelPickupReply
+     * @return CancelPickupReply
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
@@ -58,10 +78,20 @@ class CancelPickupReply
     }
     
     /**
+     * Returns Descriptive data that governs data payload language/translations. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
+     *
+     * @return TransactionDetail
+     */
+    public function getTransactionDetail()
+    {
+        return $this->TransactionDetail;
+    }
+    
+    /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
      * @param VersionId $version
-     * return CancelPickupReply
+     * @return CancelPickupReply
      */
     public function setVersion(VersionId $version)
     {
@@ -70,15 +100,35 @@ class CancelPickupReply
     }
     
     /**
+     * Returns Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
+     *
+     * @return VersionId
+     */
+    public function getVersion()
+    {
+        return $this->Version;
+    }
+    
+    /**
      * Human readable message from dispatch system.
      *
      * @param string $message
-     * return CancelPickupReply
+     * @return CancelPickupReply
      */
     public function setMessage($message)
     {
         $this->Message = $message;
         return $this;
+    }
+    
+    /**
+     * Returns Human readable message from dispatch system.
+     *
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->Message;
     }
     
 

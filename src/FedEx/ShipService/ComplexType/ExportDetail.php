@@ -28,7 +28,7 @@ class ExportDetail
               
      *
      * @param \FedEx\ShipService\SimpleType\B13AFilingOptionType|string $b13AFilingOption
-     * return ExportDetail
+     * @return ExportDetail
      */
     public function setB13AFilingOption($b13AFilingOption)
     {
@@ -37,10 +37,23 @@ class ExportDetail
     }
     
     /**
+     * Returns 
+                Specifies which filing option is being exercised by the customer.
+                Required for non-document shipments originating in Canada destined for any country other than Canada, the United States, Puerto Rico or the U.S. Virgin Islands.
+              
+     *
+     * @return \FedEx\ShipService\SimpleType\B13AFilingOptionType|string
+     */
+    public function getB13AFilingOption()
+    {
+        return $this->B13AFilingOption;
+    }
+    
+    /**
      * General field for exporting-country-specific export data (e.g. B13A for CA, FTSR Exemption or AES Citation for US).
      *
      * @param string $exportComplianceStatement
-     * return ExportDetail
+     * @return ExportDetail
      */
     public function setExportComplianceStatement($exportComplianceStatement)
     {
@@ -49,10 +62,20 @@ class ExportDetail
     }
     
     /**
+     * Returns General field for exporting-country-specific export data (e.g. B13A for CA, FTSR Exemption or AES Citation for US).
+     *
+     * @return string
+     */
+    public function getExportComplianceStatement()
+    {
+        return $this->ExportComplianceStatement;
+    }
+    
+    /**
      * This field is applicable only to Canada export non-document shipments of any value to any destination. No special characters allowed. 
      *
      * @param string $permitNumber
-     * return ExportDetail
+     * @return ExportDetail
      */
     public function setPermitNumber($permitNumber)
     {
@@ -61,15 +84,35 @@ class ExportDetail
     }
     
     /**
+     * Returns This field is applicable only to Canada export non-document shipments of any value to any destination. No special characters allowed. 
+     *
+     * @return string
+     */
+    public function getPermitNumber()
+    {
+        return $this->PermitNumber;
+    }
+    
+    /**
      * Department of Commerce/Department of State information about this shipment.
      *
      * @param DestinationControlDetail $destinationControlDetail
-     * return ExportDetail
+     * @return ExportDetail
      */
     public function setDestinationControlDetail(DestinationControlDetail $destinationControlDetail)
     {
         $this->DestinationControlDetail = $destinationControlDetail;
         return $this;
+    }
+    
+    /**
+     * Returns Department of Commerce/Department of State information about this shipment.
+     *
+     * @return DestinationControlDetail
+     */
+    public function getDestinationControlDetail()
+    {
+        return $this->DestinationControlDetail;
     }
     
 

@@ -25,7 +25,7 @@ class ReturnShipmentDetail
      * The type of return shipment that is being requested.
      *
      * @param \FedEx\Pickup\SimpleType\ReturnType|string $returnType
-     * return ReturnShipmentDetail
+     * @return ReturnShipmentDetail
      */
     public function setReturnType($returnType)
     {
@@ -34,10 +34,20 @@ class ReturnShipmentDetail
     }
     
     /**
+     * Returns The type of return shipment that is being requested.
+     *
+     * @return \FedEx\Pickup\SimpleType\ReturnType|string
+     */
+    public function getReturnType()
+    {
+        return $this->ReturnType;
+    }
+    
+    /**
      * Return Merchant Authorization
      *
      * @param Rma $rma
-     * return ReturnShipmentDetail
+     * @return ReturnShipmentDetail
      */
     public function setRma(Rma $rma)
     {
@@ -46,15 +56,35 @@ class ReturnShipmentDetail
     }
     
     /**
+     * Returns Return Merchant Authorization
+     *
+     * @return Rma
+     */
+    public function getRma()
+    {
+        return $this->Rma;
+    }
+    
+    /**
      * Describes specific information about the email label shipment.
      *
      * @param ReturnEMailDetail $returnEMailDetail
-     * return ReturnShipmentDetail
+     * @return ReturnShipmentDetail
      */
     public function setReturnEMailDetail(ReturnEMailDetail $returnEMailDetail)
     {
         $this->ReturnEMailDetail = $returnEMailDetail;
         return $this;
+    }
+    
+    /**
+     * Returns Describes specific information about the email label shipment.
+     *
+     * @return ReturnEMailDetail
+     */
+    public function getReturnEMailDetail()
+    {
+        return $this->ReturnEMailDetail;
     }
     
 

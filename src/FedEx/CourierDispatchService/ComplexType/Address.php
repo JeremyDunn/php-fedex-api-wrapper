@@ -25,7 +25,7 @@ class Address
      * Combination of number, street name, etc. At least one line is required for a valid physical address; empty lines should not be included.
      *
      * @param string[] $streetLines
-     * return Address
+     * @return Address
      */
     public function setStreetLines(array $streetLines)
     {
@@ -34,10 +34,20 @@ class Address
     }
     
     /**
+     * Returns Combination of number, street name, etc. At least one line is required for a valid physical address; empty lines should not be included.
+     *
+     * @return string[]
+     */
+    public function getStreetLines()
+    {
+        return $this->StreetLines;
+    }
+    
+    /**
      * Name of city, town, etc.
      *
      * @param string $city
-     * return Address
+     * @return Address
      */
     public function setCity($city)
     {
@@ -46,10 +56,20 @@ class Address
     }
     
     /**
+     * Returns Name of city, town, etc.
+     *
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->City;
+    }
+    
+    /**
      * Identifying abbreviation for US state, Canada province, etc. Format and presence of this field will vary, depending on country.
      *
      * @param string $stateOrProvinceCode
-     * return Address
+     * @return Address
      */
     public function setStateOrProvinceCode($stateOrProvinceCode)
     {
@@ -58,10 +78,20 @@ class Address
     }
     
     /**
+     * Returns Identifying abbreviation for US state, Canada province, etc. Format and presence of this field will vary, depending on country.
+     *
+     * @return string
+     */
+    public function getStateOrProvinceCode()
+    {
+        return $this->StateOrProvinceCode;
+    }
+    
+    /**
      * Identification of a region (usually small) for mail/package delivery. Format and presence of this field will vary, depending on country. This element is required if both the City and StateOrProvinceCode are not present.
      *
      * @param string $postalCode
-     * return Address
+     * @return Address
      */
     public function setPostalCode($postalCode)
     {
@@ -70,10 +100,20 @@ class Address
     }
     
     /**
+     * Returns Identification of a region (usually small) for mail/package delivery. Format and presence of this field will vary, depending on country. This element is required if both the City and StateOrProvinceCode are not present.
+     *
+     * @return string
+     */
+    public function getPostalCode()
+    {
+        return $this->PostalCode;
+    }
+    
+    /**
      * Relevant only to addresses in Puerto Rico. In Puerto Rico, multiple addresses within the same ZIP code can have the same house number and street name. When this is the case, the urbanization code is needed to distinguish them.
      *
      * @param string $urbanizationCode
-     * return Address
+     * @return Address
      */
     public function setUrbanizationCode($urbanizationCode)
     {
@@ -82,10 +122,20 @@ class Address
     }
     
     /**
+     * Returns Relevant only to addresses in Puerto Rico. In Puerto Rico, multiple addresses within the same ZIP code can have the same house number and street name. When this is the case, the urbanization code is needed to distinguish them.
+     *
+     * @return string
+     */
+    public function getUrbanizationCode()
+    {
+        return $this->UrbanizationCode;
+    }
+    
+    /**
      * Identification of a country.
      *
      * @param string $countryCode
-     * return Address
+     * @return Address
      */
     public function setCountryCode($countryCode)
     {
@@ -94,15 +144,35 @@ class Address
     }
     
     /**
+     * Returns Identification of a country.
+     *
+     * @return string
+     */
+    public function getCountryCode()
+    {
+        return $this->CountryCode;
+    }
+    
+    /**
      * Indicates whether this address is residential (as opposed to commercial).
      *
      * @param boolean $residential
-     * return Address
+     * @return Address
      */
     public function setResidential($residential)
     {
         $this->Residential = $residential;
         return $this;
+    }
+    
+    /**
+     * Returns Indicates whether this address is residential (as opposed to commercial).
+     *
+     * @return boolean
+     */
+    public function getResidential()
+    {
+        return $this->Residential;
     }
     
 

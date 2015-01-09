@@ -25,7 +25,7 @@ class ContentRecord
      * Part Number.
      *
      * @param string $partNumber
-     * return ContentRecord
+     * @return ContentRecord
      */
     public function setPartNumber($partNumber)
     {
@@ -34,10 +34,20 @@ class ContentRecord
     }
     
     /**
+     * Returns Part Number.
+     *
+     * @return string
+     */
+    public function getPartNumber()
+    {
+        return $this->PartNumber;
+    }
+    
+    /**
      * Item Number.
      *
      * @param string $itemNumber
-     * return ContentRecord
+     * @return ContentRecord
      */
     public function setItemNumber($itemNumber)
     {
@@ -46,10 +56,20 @@ class ContentRecord
     }
     
     /**
+     * Returns Item Number.
+     *
+     * @return string
+     */
+    public function getItemNumber()
+    {
+        return $this->ItemNumber;
+    }
+    
+    /**
      * Received Quantity.
      *
      * @param nonNegativeInteger $receivedQuantity
-     * return ContentRecord
+     * @return ContentRecord
      */
     public function setReceivedQuantity($receivedQuantity)
     {
@@ -58,15 +78,35 @@ class ContentRecord
     }
     
     /**
+     * Returns Received Quantity.
+     *
+     * @return nonNegativeInteger
+     */
+    public function getReceivedQuantity()
+    {
+        return $this->ReceivedQuantity;
+    }
+    
+    /**
      * Description.
      *
      * @param string $description
-     * return ContentRecord
+     * @return ContentRecord
      */
     public function setDescription($description)
     {
         $this->Description = $description;
         return $this;
+    }
+    
+    /**
+     * Returns Description.
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->Description;
     }
     
 

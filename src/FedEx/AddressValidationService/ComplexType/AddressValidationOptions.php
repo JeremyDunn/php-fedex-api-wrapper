@@ -25,7 +25,7 @@ class AddressValidationOptions
      * Set VerifyAddresses
      *
      * @param boolean $verifyAddresses
-     * return AddressValidationOptions
+     * @return AddressValidationOptions
      */
     public function setVerifyAddresses($verifyAddresses)
     {
@@ -34,10 +34,20 @@ class AddressValidationOptions
     }
     
     /**
+     * Returns Set VerifyAddresses
+     *
+     * @return boolean
+     */
+    public function getVerifyAddresses()
+    {
+        return $this->VerifyAddresses;
+    }
+    
+    /**
      * Set CheckResidentialStatus
      *
      * @param boolean $checkResidentialStatus
-     * return AddressValidationOptions
+     * @return AddressValidationOptions
      */
     public function setCheckResidentialStatus($checkResidentialStatus)
     {
@@ -46,10 +56,20 @@ class AddressValidationOptions
     }
     
     /**
+     * Returns Set CheckResidentialStatus
+     *
+     * @return boolean
+     */
+    public function getCheckResidentialStatus()
+    {
+        return $this->CheckResidentialStatus;
+    }
+    
+    /**
      * Set MaximumNumberOfMatches
      *
      * @param  $maximumNumberOfMatches
-     * return AddressValidationOptions
+     * @return AddressValidationOptions
      */
     public function setMaximumNumberOfMatches( $maximumNumberOfMatches)
     {
@@ -58,10 +78,20 @@ class AddressValidationOptions
     }
     
     /**
+     * Returns Set MaximumNumberOfMatches
+     *
+     * @return 
+     */
+    public function getMaximumNumberOfMatches()
+    {
+        return $this->MaximumNumberOfMatches;
+    }
+    
+    /**
      * Set StreetAccuracy
      *
      * @param \FedEx\AddressValidationService\SimpleType\AddressValidationAccuracyType|string $streetAccuracy
-     * return AddressValidationOptions
+     * @return AddressValidationOptions
      */
     public function setStreetAccuracy($streetAccuracy)
     {
@@ -70,10 +100,20 @@ class AddressValidationOptions
     }
     
     /**
+     * Returns Set StreetAccuracy
+     *
+     * @return \FedEx\AddressValidationService\SimpleType\AddressValidationAccuracyType|string
+     */
+    public function getStreetAccuracy()
+    {
+        return $this->StreetAccuracy;
+    }
+    
+    /**
      * Set DirectionalAccuracy
      *
      * @param \FedEx\AddressValidationService\SimpleType\AddressValidationAccuracyType|string $directionalAccuracy
-     * return AddressValidationOptions
+     * @return AddressValidationOptions
      */
     public function setDirectionalAccuracy($directionalAccuracy)
     {
@@ -82,10 +122,20 @@ class AddressValidationOptions
     }
     
     /**
+     * Returns Set DirectionalAccuracy
+     *
+     * @return \FedEx\AddressValidationService\SimpleType\AddressValidationAccuracyType|string
+     */
+    public function getDirectionalAccuracy()
+    {
+        return $this->DirectionalAccuracy;
+    }
+    
+    /**
      * Set CompanyNameAccuracy
      *
      * @param \FedEx\AddressValidationService\SimpleType\AddressValidationAccuracyType|string $companyNameAccuracy
-     * return AddressValidationOptions
+     * @return AddressValidationOptions
      */
     public function setCompanyNameAccuracy($companyNameAccuracy)
     {
@@ -94,10 +144,20 @@ class AddressValidationOptions
     }
     
     /**
+     * Returns Set CompanyNameAccuracy
+     *
+     * @return \FedEx\AddressValidationService\SimpleType\AddressValidationAccuracyType|string
+     */
+    public function getCompanyNameAccuracy()
+    {
+        return $this->CompanyNameAccuracy;
+    }
+    
+    /**
      * Set ConvertToUpperCase
      *
      * @param boolean $convertToUpperCase
-     * return AddressValidationOptions
+     * @return AddressValidationOptions
      */
     public function setConvertToUpperCase($convertToUpperCase)
     {
@@ -106,10 +166,20 @@ class AddressValidationOptions
     }
     
     /**
+     * Returns Set ConvertToUpperCase
+     *
+     * @return boolean
+     */
+    public function getConvertToUpperCase()
+    {
+        return $this->ConvertToUpperCase;
+    }
+    
+    /**
      * Set RecognizeAlternateCityNames
      *
      * @param boolean $recognizeAlternateCityNames
-     * return AddressValidationOptions
+     * @return AddressValidationOptions
      */
     public function setRecognizeAlternateCityNames($recognizeAlternateCityNames)
     {
@@ -118,15 +188,35 @@ class AddressValidationOptions
     }
     
     /**
+     * Returns Set RecognizeAlternateCityNames
+     *
+     * @return boolean
+     */
+    public function getRecognizeAlternateCityNames()
+    {
+        return $this->RecognizeAlternateCityNames;
+    }
+    
+    /**
      * Set ReturnParsedElements
      *
      * @param boolean $returnParsedElements
-     * return AddressValidationOptions
+     * @return AddressValidationOptions
      */
     public function setReturnParsedElements($returnParsedElements)
     {
         $this->ReturnParsedElements = $returnParsedElements;
         return $this;
+    }
+    
+    /**
+     * Returns Set ReturnParsedElements
+     *
+     * @return boolean
+     */
+    public function getReturnParsedElements()
+    {
+        return $this->ReturnParsedElements;
     }
     
 

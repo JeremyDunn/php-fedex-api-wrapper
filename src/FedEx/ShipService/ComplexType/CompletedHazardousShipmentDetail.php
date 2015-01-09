@@ -25,7 +25,7 @@ class CompletedHazardousShipmentDetail
      * Set HazardousSummaryDetail
      *
      * @param CompletedHazardousSummaryDetail $hazardousSummaryDetail
-     * return CompletedHazardousShipmentDetail
+     * @return CompletedHazardousShipmentDetail
      */
     public function setHazardousSummaryDetail(CompletedHazardousSummaryDetail $hazardousSummaryDetail)
     {
@@ -34,15 +34,35 @@ class CompletedHazardousShipmentDetail
     }
     
     /**
+     * Returns Set HazardousSummaryDetail
+     *
+     * @return CompletedHazardousSummaryDetail
+     */
+    public function getHazardousSummaryDetail()
+    {
+        return $this->HazardousSummaryDetail;
+    }
+    
+    /**
      * Set DryIceDetail
      *
      * @param ShipmentDryIceDetail $dryIceDetail
-     * return CompletedHazardousShipmentDetail
+     * @return CompletedHazardousShipmentDetail
      */
     public function setDryIceDetail(ShipmentDryIceDetail $dryIceDetail)
     {
         $this->DryIceDetail = $dryIceDetail;
         return $this;
+    }
+    
+    /**
+     * Returns Set DryIceDetail
+     *
+     * @return ShipmentDryIceDetail
+     */
+    public function getDryIceDetail()
+    {
+        return $this->DryIceDetail;
     }
     
 

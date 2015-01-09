@@ -25,7 +25,7 @@ class Money
      * Identifies the currency of the monetary amount.
      *
      * @param string $currency
-     * return Money
+     * @return Money
      */
     public function setCurrency($currency)
     {
@@ -34,15 +34,35 @@ class Money
     }
     
     /**
+     * Returns Identifies the currency of the monetary amount.
+     *
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->Currency;
+    }
+    
+    /**
      * Identifies the monetary amount.
      *
      * @param decimal $amount
-     * return Money
+     * @return Money
      */
     public function setAmount($amount)
     {
         $this->Amount = $amount;
         return $this;
+    }
+    
+    /**
+     * Returns Identifies the monetary amount.
+     *
+     * @return decimal
+     */
+    public function getAmount()
+    {
+        return $this->Amount;
     }
     
 

@@ -25,7 +25,7 @@ class Payment
      * Identifies the method of payment for a service. See PaymentType for list of valid enumerated values.
      *
      * @param \FedEx\ShipService\SimpleType\PaymentType|string $paymentType
-     * return Payment
+     * @return Payment
      */
     public function setPaymentType($paymentType)
     {
@@ -34,15 +34,35 @@ class Payment
     }
     
     /**
+     * Returns Identifies the method of payment for a service. See PaymentType for list of valid enumerated values.
+     *
+     * @return \FedEx\ShipService\SimpleType\PaymentType|string
+     */
+    public function getPaymentType()
+    {
+        return $this->PaymentType;
+    }
+    
+    /**
      * Descriptive data identifying the party responsible for payment for a service.
      *
      * @param Payor $payor
-     * return Payment
+     * @return Payment
      */
     public function setPayor(Payor $payor)
     {
         $this->Payor = $payor;
         return $this;
+    }
+    
+    /**
+     * Returns Descriptive data identifying the party responsible for payment for a service.
+     *
+     * @return Payor
+     */
+    public function getPayor()
+    {
+        return $this->Payor;
     }
     
 

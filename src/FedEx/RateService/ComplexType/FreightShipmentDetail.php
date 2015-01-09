@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Data applicable to shipments using FEDEX_FREIGHT and FEDEX_NATIONAL_FREIGHT services.
+ * Data applicable to shipments using FEDEX_FREIGHT_ECONOMY and FEDEX_FREIGHT_PRIORITY services.
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -25,7 +25,7 @@ class FreightShipmentDetail
      * Account number used with FEDEX_FREIGHT service.
      *
      * @param string $fedExFreightAccountNumber
-     * return FreightShipmentDetail
+     * @return FreightShipmentDetail
      */
     public function setFedExFreightAccountNumber($fedExFreightAccountNumber)
     {
@@ -34,10 +34,20 @@ class FreightShipmentDetail
     }
     
     /**
+     * Returns Account number used with FEDEX_FREIGHT service.
+     *
+     * @return string
+     */
+    public function getFedExFreightAccountNumber()
+    {
+        return $this->FedExFreightAccountNumber;
+    }
+    
+    /**
      * Used for validating FedEx Freight account number and (optionally) identifying third party payment on the bill of lading.
      *
      * @param ContactAndAddress $fedExFreightBillingContactAndAddress
-     * return FreightShipmentDetail
+     * @return FreightShipmentDetail
      */
     public function setFedExFreightBillingContactAndAddress(ContactAndAddress $fedExFreightBillingContactAndAddress)
     {
@@ -46,34 +56,42 @@ class FreightShipmentDetail
     }
     
     /**
-     * Account number used with FEDEX_NATIONAL_FREIGHT service.
+     * Returns Used for validating FedEx Freight account number and (optionally) identifying third party payment on the bill of lading.
      *
-     * @param string $fedExNationalFreightAccountNumber
-     * return FreightShipmentDetail
+     * @return ContactAndAddress
      */
-    public function setFedExNationalFreightAccountNumber($fedExNationalFreightAccountNumber)
+    public function getFedExFreightBillingContactAndAddress()
     {
-        $this->FedExNationalFreightAccountNumber = $fedExNationalFreightAccountNumber;
+        return $this->FedExFreightBillingContactAndAddress;
+    }
+    
+    /**
+     * Used in connection with "Send Bill To" (SBT) identification of customer's account used for billing.
+     *
+     * @param Party $alternateBilling
+     * @return FreightShipmentDetail
+     */
+    public function setAlternateBilling(Party $alternateBilling)
+    {
+        $this->AlternateBilling = $alternateBilling;
         return $this;
     }
     
     /**
-     * Used for validating FedEx National Freight account number and (optionally) identifying third party payment on the bill of lading.
+     * Returns Used in connection with "Send Bill To" (SBT) identification of customer's account used for billing.
      *
-     * @param ContactAndAddress $fedExNationalFreightBillingContactAndAddress
-     * return FreightShipmentDetail
+     * @return Party
      */
-    public function setFedExNationalFreightBillingContactAndAddress(ContactAndAddress $fedExNationalFreightBillingContactAndAddress)
+    public function getAlternateBilling()
     {
-        $this->FedExNationalFreightBillingContactAndAddress = $fedExNationalFreightBillingContactAndAddress;
-        return $this;
+        return $this->AlternateBilling;
     }
     
     /**
      * Indicates the role of the party submitting the transaction.
      *
      * @param \FedEx\RateService\SimpleType\FreightShipmentRoleType|string $role
-     * return FreightShipmentDetail
+     * @return FreightShipmentDetail
      */
     public function setRole($role)
     {
@@ -82,22 +100,42 @@ class FreightShipmentDetail
     }
     
     /**
-     * Designates which of the requester's tariffs will be used for rating.
+     * Returns Indicates the role of the party submitting the transaction.
      *
-     * @param \FedEx\RateService\SimpleType\FreightAccountPaymentType|string $paymentType
-     * return FreightShipmentDetail
+     * @return \FedEx\RateService\SimpleType\FreightShipmentRoleType|string
      */
-    public function setPaymentType($paymentType)
+    public function getRole()
     {
-        $this->PaymentType = $paymentType;
+        return $this->Role;
+    }
+    
+    /**
+     * Designates the terms of the "collect" payment for a Freight Shipment.
+     *
+     * @param \FedEx\RateService\SimpleType\FreightCollectTermsType|string $collectTermsType
+     * @return FreightShipmentDetail
+     */
+    public function setCollectTermsType($collectTermsType)
+    {
+        $this->CollectTermsType = $collectTermsType;
         return $this;
+    }
+    
+    /**
+     * Returns Designates the terms of the "collect" payment for a Freight Shipment.
+     *
+     * @return \FedEx\RateService\SimpleType\FreightCollectTermsType|string
+     */
+    public function getCollectTermsType()
+    {
+        return $this->CollectTermsType;
     }
     
     /**
      * Identifies the declared value for the shipment
      *
      * @param Money $declaredValuePerUnit
-     * return FreightShipmentDetail
+     * @return FreightShipmentDetail
      */
     public function setDeclaredValuePerUnit(Money $declaredValuePerUnit)
     {
@@ -106,10 +144,20 @@ class FreightShipmentDetail
     }
     
     /**
+     * Returns Identifies the declared value for the shipment
+     *
+     * @return Money
+     */
+    public function getDeclaredValuePerUnit()
+    {
+        return $this->DeclaredValuePerUnit;
+    }
+    
+    /**
      * Identifies the declared value units corresponding to the above defined declared value
      *
      * @param string $declaredValueUnits
-     * return FreightShipmentDetail
+     * @return FreightShipmentDetail
      */
     public function setDeclaredValueUnits($declaredValueUnits)
     {
@@ -118,10 +166,20 @@ class FreightShipmentDetail
     }
     
     /**
+     * Returns Identifies the declared value units corresponding to the above defined declared value
+     *
+     * @return string
+     */
+    public function getDeclaredValueUnits()
+    {
+        return $this->DeclaredValueUnits;
+    }
+    
+    /**
      * Set LiabilityCoverageDetail
      *
      * @param LiabilityCoverageDetail $liabilityCoverageDetail
-     * return FreightShipmentDetail
+     * @return FreightShipmentDetail
      */
     public function setLiabilityCoverageDetail(LiabilityCoverageDetail $liabilityCoverageDetail)
     {
@@ -130,10 +188,20 @@ class FreightShipmentDetail
     }
     
     /**
+     * Returns Set LiabilityCoverageDetail
+     *
+     * @return LiabilityCoverageDetail
+     */
+    public function getLiabilityCoverageDetail()
+    {
+        return $this->LiabilityCoverageDetail;
+    }
+    
+    /**
      * Identifiers for promotional discounts offered to customers.
      *
      * @param string[] $coupons
-     * return FreightShipmentDetail
+     * @return FreightShipmentDetail
      */
     public function setCoupons(array $coupons)
     {
@@ -142,10 +210,20 @@ class FreightShipmentDetail
     }
     
     /**
+     * Returns Identifiers for promotional discounts offered to customers.
+     *
+     * @return string[]
+     */
+    public function getCoupons()
+    {
+        return $this->Coupons;
+    }
+    
+    /**
      * Total number of individual handling units in the entire shipment (for unit pricing).
      *
      * @param nonNegativeInteger $totalHandlingUnits
-     * return FreightShipmentDetail
+     * @return FreightShipmentDetail
      */
     public function setTotalHandlingUnits($totalHandlingUnits)
     {
@@ -154,10 +232,20 @@ class FreightShipmentDetail
     }
     
     /**
+     * Returns Total number of individual handling units in the entire shipment (for unit pricing).
+     *
+     * @return nonNegativeInteger
+     */
+    public function getTotalHandlingUnits()
+    {
+        return $this->TotalHandlingUnits;
+    }
+    
+    /**
      * Estimated discount rate provided by client for unsecured rate quote.
      *
      * @param decimal $clientDiscountPercent
-     * return FreightShipmentDetail
+     * @return FreightShipmentDetail
      */
     public function setClientDiscountPercent($clientDiscountPercent)
     {
@@ -166,10 +254,20 @@ class FreightShipmentDetail
     }
     
     /**
+     * Returns Estimated discount rate provided by client for unsecured rate quote.
+     *
+     * @return decimal
+     */
+    public function getClientDiscountPercent()
+    {
+        return $this->ClientDiscountPercent;
+    }
+    
+    /**
      * Total weight of pallets used in shipment.
      *
      * @param Weight $palletWeight
-     * return FreightShipmentDetail
+     * @return FreightShipmentDetail
      */
     public function setPalletWeight(Weight $palletWeight)
     {
@@ -178,10 +276,20 @@ class FreightShipmentDetail
     }
     
     /**
+     * Returns Total weight of pallets used in shipment.
+     *
+     * @return Weight
+     */
+    public function getPalletWeight()
+    {
+        return $this->PalletWeight;
+    }
+    
+    /**
      * Overall shipment dimensions.
      *
      * @param Dimensions $shipmentDimensions
-     * return FreightShipmentDetail
+     * @return FreightShipmentDetail
      */
     public function setShipmentDimensions(Dimensions $shipmentDimensions)
     {
@@ -190,10 +298,20 @@ class FreightShipmentDetail
     }
     
     /**
+     * Returns Overall shipment dimensions.
+     *
+     * @return Dimensions
+     */
+    public function getShipmentDimensions()
+    {
+        return $this->ShipmentDimensions;
+    }
+    
+    /**
      * Description for the shipment.
      *
      * @param string $comment
-     * return FreightShipmentDetail
+     * @return FreightShipmentDetail
      */
     public function setComment($comment)
     {
@@ -202,10 +320,20 @@ class FreightShipmentDetail
     }
     
     /**
+     * Returns Description for the shipment.
+     *
+     * @return string
+     */
+    public function getComment()
+    {
+        return $this->Comment;
+    }
+    
+    /**
      * Specifies which party will pay surcharges for any special services which support split billing.
      *
      * @param FreightSpecialServicePayment[] $specialServicePayments
-     * return FreightShipmentDetail
+     * @return FreightShipmentDetail
      */
     public function setSpecialServicePayments(array $specialServicePayments)
     {
@@ -214,15 +342,57 @@ class FreightShipmentDetail
     }
     
     /**
+     * Returns Specifies which party will pay surcharges for any special services which support split billing.
+     *
+     * @return FreightSpecialServicePayment[]
+     */
+    public function getSpecialServicePayments()
+    {
+        return $this->SpecialServicePayments;
+    }
+    
+    /**
+     * Set HazardousMaterialsOfferor
+     *
+     * @param string $hazardousMaterialsOfferor
+     * @return FreightShipmentDetail
+     */
+    public function setHazardousMaterialsOfferor($hazardousMaterialsOfferor)
+    {
+        $this->HazardousMaterialsOfferor = $hazardousMaterialsOfferor;
+        return $this;
+    }
+    
+    /**
+     * Returns Set HazardousMaterialsOfferor
+     *
+     * @return string
+     */
+    public function getHazardousMaterialsOfferor()
+    {
+        return $this->HazardousMaterialsOfferor;
+    }
+    
+    /**
      * Details of the commodities in the shipment.
      *
      * @param FreightShipmentLineItem[] $lineItems
-     * return FreightShipmentDetail
+     * @return FreightShipmentDetail
      */
     public function setLineItems(array $lineItems)
     {
         $this->LineItems = $lineItems;
         return $this;
+    }
+    
+    /**
+     * Returns Details of the commodities in the shipment.
+     *
+     * @return FreightShipmentLineItem[]
+     */
+    public function getLineItems()
+    {
+        return $this->LineItems;
     }
     
 

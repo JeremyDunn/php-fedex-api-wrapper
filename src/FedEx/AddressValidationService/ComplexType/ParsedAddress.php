@@ -25,7 +25,7 @@ class ParsedAddress
      * Set ParsedUrbanizationCode
      *
      * @param ParsedAddressPart $parsedUrbanizationCode
-     * return ParsedAddress
+     * @return ParsedAddress
      */
     public function setParsedUrbanizationCode(ParsedAddressPart $parsedUrbanizationCode)
     {
@@ -34,10 +34,20 @@ class ParsedAddress
     }
     
     /**
+     * Returns Set ParsedUrbanizationCode
+     *
+     * @return ParsedAddressPart
+     */
+    public function getParsedUrbanizationCode()
+    {
+        return $this->ParsedUrbanizationCode;
+    }
+    
+    /**
      * Set ParsedStreetLine
      *
      * @param ParsedAddressPart[] $parsedStreetLine
-     * return ParsedAddress
+     * @return ParsedAddress
      */
     public function setParsedStreetLine(array $parsedStreetLine)
     {
@@ -46,10 +56,20 @@ class ParsedAddress
     }
     
     /**
+     * Returns Set ParsedStreetLine
+     *
+     * @return ParsedAddressPart[]
+     */
+    public function getParsedStreetLine()
+    {
+        return $this->ParsedStreetLine;
+    }
+    
+    /**
      * Set ParsedCity
      *
      * @param ParsedAddressPart $parsedCity
-     * return ParsedAddress
+     * @return ParsedAddress
      */
     public function setParsedCity(ParsedAddressPart $parsedCity)
     {
@@ -58,10 +78,20 @@ class ParsedAddress
     }
     
     /**
+     * Returns Set ParsedCity
+     *
+     * @return ParsedAddressPart
+     */
+    public function getParsedCity()
+    {
+        return $this->ParsedCity;
+    }
+    
+    /**
      * Set ParsedStateOrProvinceCode
      *
      * @param ParsedAddressPart $parsedStateOrProvinceCode
-     * return ParsedAddress
+     * @return ParsedAddress
      */
     public function setParsedStateOrProvinceCode(ParsedAddressPart $parsedStateOrProvinceCode)
     {
@@ -70,10 +100,20 @@ class ParsedAddress
     }
     
     /**
+     * Returns Set ParsedStateOrProvinceCode
+     *
+     * @return ParsedAddressPart
+     */
+    public function getParsedStateOrProvinceCode()
+    {
+        return $this->ParsedStateOrProvinceCode;
+    }
+    
+    /**
      * Set ParsedPostalCode
      *
      * @param ParsedAddressPart $parsedPostalCode
-     * return ParsedAddress
+     * @return ParsedAddress
      */
     public function setParsedPostalCode(ParsedAddressPart $parsedPostalCode)
     {
@@ -82,15 +122,35 @@ class ParsedAddress
     }
     
     /**
+     * Returns Set ParsedPostalCode
+     *
+     * @return ParsedAddressPart
+     */
+    public function getParsedPostalCode()
+    {
+        return $this->ParsedPostalCode;
+    }
+    
+    /**
      * Set ParsedCountryCode
      *
      * @param ParsedAddressPart $parsedCountryCode
-     * return ParsedAddress
+     * @return ParsedAddress
      */
     public function setParsedCountryCode(ParsedAddressPart $parsedCountryCode)
     {
         $this->ParsedCountryCode = $parsedCountryCode;
         return $this;
+    }
+    
+    /**
+     * Returns Set ParsedCountryCode
+     *
+     * @return ParsedAddressPart
+     */
+    public function getParsedCountryCode()
+    {
+        return $this->ParsedCountryCode;
     }
     
 

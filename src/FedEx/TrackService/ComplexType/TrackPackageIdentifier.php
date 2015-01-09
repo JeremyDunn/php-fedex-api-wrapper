@@ -25,7 +25,7 @@ class TrackPackageIdentifier
      * The value to be used to retrieve tracking information for a package.
      *
      * @param string $value
-     * return TrackPackageIdentifier
+     * @return TrackPackageIdentifier
      */
     public function setValue($value)
     {
@@ -34,15 +34,35 @@ class TrackPackageIdentifier
     }
     
     /**
+     * Returns The value to be used to retrieve tracking information for a package.
+     *
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->Value;
+    }
+    
+    /**
      * The type of the Value to be used to retrieve tracking information for a package (e.g. SHIPPER_REFERENCE, PURCHASE_ORDER, TRACKING_NUMBER_OR_DOORTAG, etc..) .
      *
      * @param \FedEx\TrackService\SimpleType\TrackIdentifierType|string $type
-     * return TrackPackageIdentifier
+     * @return TrackPackageIdentifier
      */
     public function setType($type)
     {
         $this->Type = $type;
         return $this;
+    }
+    
+    /**
+     * Returns The type of the Value to be used to retrieve tracking information for a package (e.g. SHIPPER_REFERENCE, PURCHASE_ORDER, TRACKING_NUMBER_OR_DOORTAG, etc..) .
+     *
+     * @return \FedEx\TrackService\SimpleType\TrackIdentifierType|string
+     */
+    public function getType()
+    {
+        return $this->Type;
     }
     
 

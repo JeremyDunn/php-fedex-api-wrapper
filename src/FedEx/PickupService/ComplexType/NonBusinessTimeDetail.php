@@ -25,7 +25,7 @@ class NonBusinessTimeDetail
      * Total number of person days for full non-business days.
      *
      * @param nonNegativeInteger $personDays
-     * return NonBusinessTimeDetail
+     * @return NonBusinessTimeDetail
      */
     public function setPersonDays($personDays)
     {
@@ -34,15 +34,35 @@ class NonBusinessTimeDetail
     }
     
     /**
+     * Returns Total number of person days for full non-business days.
+     *
+     * @return nonNegativeInteger
+     */
+    public function getPersonDays()
+    {
+        return $this->PersonDays;
+    }
+    
+    /**
      * Total number of person hours (whole or partial hours) for non-business hours.
      *
      * @param nonNegativeInteger $personHours
-     * return NonBusinessTimeDetail
+     * @return NonBusinessTimeDetail
      */
     public function setPersonHours($personHours)
     {
         $this->PersonHours = $personHours;
         return $this;
+    }
+    
+    /**
+     * Returns Total number of person hours (whole or partial hours) for non-business hours.
+     *
+     * @return nonNegativeInteger
+     */
+    public function getPersonHours()
+    {
+        return $this->PersonHours;
     }
     
 

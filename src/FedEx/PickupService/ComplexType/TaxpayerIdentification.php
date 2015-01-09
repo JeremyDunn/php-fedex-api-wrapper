@@ -25,7 +25,7 @@ class TaxpayerIdentification
      * Identifies the category of the taxpayer identification number. See TinType for the list of values.
      *
      * @param \FedEx\Pickup\SimpleType\TinType|string $tinType
-     * return TaxpayerIdentification
+     * @return TaxpayerIdentification
      */
     public function setTinType($tinType)
     {
@@ -34,10 +34,20 @@ class TaxpayerIdentification
     }
     
     /**
+     * Returns Identifies the category of the taxpayer identification number. See TinType for the list of values.
+     *
+     * @return \FedEx\Pickup\SimpleType\TinType|string
+     */
+    public function getTinType()
+    {
+        return $this->TinType;
+    }
+    
+    /**
      * Identifies the taxpayer identification number.
      *
      * @param string $number
-     * return TaxpayerIdentification
+     * @return TaxpayerIdentification
      */
     public function setNumber($number)
     {
@@ -46,15 +56,35 @@ class TaxpayerIdentification
     }
     
     /**
+     * Returns Identifies the taxpayer identification number.
+     *
+     * @return string
+     */
+    public function getNumber()
+    {
+        return $this->Number;
+    }
+    
+    /**
      * Identifies the usage of Tax Identification Number in Shipment processing
      *
      * @param string $usage
-     * return TaxpayerIdentification
+     * @return TaxpayerIdentification
      */
     public function setUsage($usage)
     {
         $this->Usage = $usage;
         return $this;
+    }
+    
+    /**
+     * Returns Identifies the usage of Tax Identification Number in Shipment processing
+     *
+     * @return string
+     */
+    public function getUsage()
+    {
+        return $this->Usage;
     }
     
 

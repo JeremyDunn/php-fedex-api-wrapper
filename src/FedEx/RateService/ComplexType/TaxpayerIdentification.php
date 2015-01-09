@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * The descriptive data for taxpayer identification information.
+ * TaxpayerIdentification
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -22,10 +22,10 @@ class TaxpayerIdentification
     protected $_name = 'TaxpayerIdentification';
 
     /**
-     * Identifies the category of the taxpayer identification number. See TinType for the list of values.
+     * Set TinType
      *
      * @param \FedEx\RateService\SimpleType\TinType|string $tinType
-     * return TaxpayerIdentification
+     * @return TaxpayerIdentification
      */
     public function setTinType($tinType)
     {
@@ -34,10 +34,20 @@ class TaxpayerIdentification
     }
     
     /**
-     * Identifies the taxpayer identification number.
+     * Returns Set TinType
+     *
+     * @return \FedEx\RateService\SimpleType\TinType|string
+     */
+    public function getTinType()
+    {
+        return $this->TinType;
+    }
+    
+    /**
+     * Set Number
      *
      * @param string $number
-     * return TaxpayerIdentification
+     * @return TaxpayerIdentification
      */
     public function setNumber($number)
     {
@@ -46,15 +56,79 @@ class TaxpayerIdentification
     }
     
     /**
+     * Returns Set Number
+     *
+     * @return string
+     */
+    public function getNumber()
+    {
+        return $this->Number;
+    }
+    
+    /**
      * Identifies the usage of Tax Identification Number in Shipment processing
      *
      * @param string $usage
-     * return TaxpayerIdentification
+     * @return TaxpayerIdentification
      */
     public function setUsage($usage)
     {
         $this->Usage = $usage;
         return $this;
+    }
+    
+    /**
+     * Returns Identifies the usage of Tax Identification Number in Shipment processing
+     *
+     * @return string
+     */
+    public function getUsage()
+    {
+        return $this->Usage;
+    }
+    
+    /**
+     * Set EffectiveDate
+     *
+     * @param dateTime $effectiveDate
+     * @return TaxpayerIdentification
+     */
+    public function setEffectiveDate($effectiveDate)
+    {
+        $this->EffectiveDate = $effectiveDate;
+        return $this;
+    }
+    
+    /**
+     * Returns Set EffectiveDate
+     *
+     * @return dateTime
+     */
+    public function getEffectiveDate()
+    {
+        return $this->EffectiveDate;
+    }
+    
+    /**
+     * Set ExpirationDate
+     *
+     * @param dateTime $expirationDate
+     * @return TaxpayerIdentification
+     */
+    public function setExpirationDate($expirationDate)
+    {
+        $this->ExpirationDate = $expirationDate;
+        return $this;
+    }
+    
+    /**
+     * Returns Set ExpirationDate
+     *
+     * @return dateTime
+     */
+    public function getExpirationDate()
+    {
+        return $this->ExpirationDate;
     }
     
 

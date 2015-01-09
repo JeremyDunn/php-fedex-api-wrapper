@@ -25,7 +25,7 @@ class NotificationParameter
      * Name identifiying the type of the data in the element 'Value'
      *
      * @param string $id
-     * return NotificationParameter
+     * @return NotificationParameter
      */
     public function setId($id)
     {
@@ -34,15 +34,35 @@ class NotificationParameter
     }
     
     /**
+     * Returns Name identifiying the type of the data in the element 'Value'
+     *
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->Id;
+    }
+    
+    /**
      * The value that was used as the replacement parameter.
      *
      * @param string $value
-     * return NotificationParameter
+     * @return NotificationParameter
      */
     public function setValue($value)
     {
         $this->Value = $value;
         return $this;
+    }
+    
+    /**
+     * Returns The value that was used as the replacement parameter.
+     *
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->Value;
     }
     
 

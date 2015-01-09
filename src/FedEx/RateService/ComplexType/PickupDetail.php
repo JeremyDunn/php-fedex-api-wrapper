@@ -25,7 +25,7 @@ class PickupDetail
      * Set ReadyDateTime
      *
      * @param dateTime $readyDateTime
-     * return PickupDetail
+     * @return PickupDetail
      */
     public function setReadyDateTime($readyDateTime)
     {
@@ -34,10 +34,20 @@ class PickupDetail
     }
     
     /**
+     * Returns Set ReadyDateTime
+     *
+     * @return dateTime
+     */
+    public function getReadyDateTime()
+    {
+        return $this->ReadyDateTime;
+    }
+    
+    /**
      * Set LatestPickupDateTime
      *
      * @param dateTime $latestPickupDateTime
-     * return PickupDetail
+     * @return PickupDetail
      */
     public function setLatestPickupDateTime($latestPickupDateTime)
     {
@@ -46,10 +56,20 @@ class PickupDetail
     }
     
     /**
+     * Returns Set LatestPickupDateTime
+     *
+     * @return dateTime
+     */
+    public function getLatestPickupDateTime()
+    {
+        return $this->LatestPickupDateTime;
+    }
+    
+    /**
      * Set CourierInstructions
      *
      * @param string $courierInstructions
-     * return PickupDetail
+     * @return PickupDetail
      */
     public function setCourierInstructions($courierInstructions)
     {
@@ -58,10 +78,20 @@ class PickupDetail
     }
     
     /**
+     * Returns Set CourierInstructions
+     *
+     * @return string
+     */
+    public function getCourierInstructions()
+    {
+        return $this->CourierInstructions;
+    }
+    
+    /**
      * Set RequestType
      *
      * @param \FedEx\RateService\SimpleType\PickupRequestType|string $requestType
-     * return PickupDetail
+     * @return PickupDetail
      */
     public function setRequestType($requestType)
     {
@@ -70,15 +100,35 @@ class PickupDetail
     }
     
     /**
+     * Returns Set RequestType
+     *
+     * @return \FedEx\RateService\SimpleType\PickupRequestType|string
+     */
+    public function getRequestType()
+    {
+        return $this->RequestType;
+    }
+    
+    /**
      * Set RequestSource
      *
      * @param \FedEx\RateService\SimpleType\PickupRequestSourceType|string $requestSource
-     * return PickupDetail
+     * @return PickupDetail
      */
     public function setRequestSource($requestSource)
     {
         $this->RequestSource = $requestSource;
         return $this;
+    }
+    
+    /**
+     * Returns Set RequestSource
+     *
+     * @return \FedEx\RateService\SimpleType\PickupRequestSourceType|string
+     */
+    public function getRequestSource()
+    {
+        return $this->RequestSource;
     }
     
 

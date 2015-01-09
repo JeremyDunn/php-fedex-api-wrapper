@@ -25,7 +25,7 @@ class CustomerImageUsage
      * Set Type
      *
      * @param \FedEx\CloseService\SimpleType\CustomerImageUsageType|string $type
-     * return CustomerImageUsage
+     * @return CustomerImageUsage
      */
     public function setType($type)
     {
@@ -34,10 +34,20 @@ class CustomerImageUsage
     }
     
     /**
+     * Returns Set Type
+     *
+     * @return \FedEx\CloseService\SimpleType\CustomerImageUsageType|string
+     */
+    public function getType()
+    {
+        return $this->Type;
+    }
+    
+    /**
      * Set Id
      *
      * @param \FedEx\CloseService\SimpleType\ImageId|string $id
-     * return CustomerImageUsage
+     * @return CustomerImageUsage
      */
     public function setId($id)
     {
@@ -46,10 +56,20 @@ class CustomerImageUsage
     }
     
     /**
+     * Returns Set Id
+     *
+     * @return \FedEx\CloseService\SimpleType\ImageId|string
+     */
+    public function getId()
+    {
+        return $this->Id;
+    }
+    
+    /**
      * Internal Id used by INET to identify customer provided images during documents generation. Ex COO etc ...
      *
      * @param string $internalId
-     * return CustomerImageUsage
+     * @return CustomerImageUsage
      */
     public function setInternalId($internalId)
     {
@@ -58,15 +78,35 @@ class CustomerImageUsage
     }
     
     /**
+     * Returns Internal Id used by INET to identify customer provided images during documents generation. Ex COO etc ...
+     *
+     * @return string
+     */
+    public function getInternalId()
+    {
+        return $this->InternalId;
+    }
+    
+    /**
      * Internal image type used by INET to identify customer provided images during documents generation. Ex COO etc ..
      *
      * @param \FedEx\CloseService\SimpleType\InternalImageType|string $internalImageType
-     * return CustomerImageUsage
+     * @return CustomerImageUsage
      */
     public function setInternalImageType($internalImageType)
     {
         $this->InternalImageType = $internalImageType;
         return $this;
+    }
+    
+    /**
+     * Returns Internal image type used by INET to identify customer provided images during documents generation. Ex COO etc ..
+     *
+     * @return \FedEx\CloseService\SimpleType\InternalImageType|string
+     */
+    public function getInternalImageType()
+    {
+        return $this->InternalImageType;
     }
     
 

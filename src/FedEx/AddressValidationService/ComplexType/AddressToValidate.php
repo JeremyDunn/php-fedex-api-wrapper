@@ -25,7 +25,7 @@ class AddressToValidate
      * Set AddressId
      *
      * @param string $addressId
-     * return AddressToValidate
+     * @return AddressToValidate
      */
     public function setAddressId($addressId)
     {
@@ -34,10 +34,20 @@ class AddressToValidate
     }
     
     /**
+     * Returns Set AddressId
+     *
+     * @return string
+     */
+    public function getAddressId()
+    {
+        return $this->AddressId;
+    }
+    
+    /**
      * Set CompanyName
      *
      * @param string $companyName
-     * return AddressToValidate
+     * @return AddressToValidate
      */
     public function setCompanyName($companyName)
     {
@@ -46,15 +56,35 @@ class AddressToValidate
     }
     
     /**
+     * Returns Set CompanyName
+     *
+     * @return string
+     */
+    public function getCompanyName()
+    {
+        return $this->CompanyName;
+    }
+    
+    /**
      * Set Address
      *
      * @param Address $address
-     * return AddressToValidate
+     * @return AddressToValidate
      */
     public function setAddress(Address $address)
     {
         $this->Address = $address;
         return $this;
+    }
+    
+    /**
+     * Returns Set Address
+     *
+     * @return Address
+     */
+    public function getAddress()
+    {
+        return $this->Address;
     }
     
 

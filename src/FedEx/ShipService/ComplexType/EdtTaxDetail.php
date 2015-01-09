@@ -25,7 +25,7 @@ class EdtTaxDetail
      * Set TaxType
      *
      * @param \FedEx\ShipService\SimpleType\EdtTaxType|string $taxType
-     * return EdtTaxDetail
+     * @return EdtTaxDetail
      */
     public function setTaxType($taxType)
     {
@@ -34,10 +34,20 @@ class EdtTaxDetail
     }
     
     /**
+     * Returns Set TaxType
+     *
+     * @return \FedEx\ShipService\SimpleType\EdtTaxType|string
+     */
+    public function getTaxType()
+    {
+        return $this->TaxType;
+    }
+    
+    /**
      * Set EffectiveDate
      *
      * @param date $effectiveDate
-     * return EdtTaxDetail
+     * @return EdtTaxDetail
      */
     public function setEffectiveDate($effectiveDate)
     {
@@ -46,10 +56,20 @@ class EdtTaxDetail
     }
     
     /**
+     * Returns Set EffectiveDate
+     *
+     * @return date
+     */
+    public function getEffectiveDate()
+    {
+        return $this->EffectiveDate;
+    }
+    
+    /**
      * Set Name
      *
      * @param string $name
-     * return EdtTaxDetail
+     * @return EdtTaxDetail
      */
     public function setName($name)
     {
@@ -58,10 +78,20 @@ class EdtTaxDetail
     }
     
     /**
+     * Returns Set Name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->Name;
+    }
+    
+    /**
      * Set TaxableValue
      *
      * @param Money $taxableValue
-     * return EdtTaxDetail
+     * @return EdtTaxDetail
      */
     public function setTaxableValue(Money $taxableValue)
     {
@@ -70,10 +100,20 @@ class EdtTaxDetail
     }
     
     /**
+     * Returns Set TaxableValue
+     *
+     * @return Money
+     */
+    public function getTaxableValue()
+    {
+        return $this->TaxableValue;
+    }
+    
+    /**
      * Set Description
      *
      * @param string $description
-     * return EdtTaxDetail
+     * @return EdtTaxDetail
      */
     public function setDescription($description)
     {
@@ -82,10 +122,20 @@ class EdtTaxDetail
     }
     
     /**
+     * Returns Set Description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->Description;
+    }
+    
+    /**
      * Set Formula
      *
      * @param string $formula
-     * return EdtTaxDetail
+     * @return EdtTaxDetail
      */
     public function setFormula($formula)
     {
@@ -94,15 +144,35 @@ class EdtTaxDetail
     }
     
     /**
+     * Returns Set Formula
+     *
+     * @return string
+     */
+    public function getFormula()
+    {
+        return $this->Formula;
+    }
+    
+    /**
      * Set Amount
      *
      * @param Money $amount
-     * return EdtTaxDetail
+     * @return EdtTaxDetail
      */
     public function setAmount(Money $amount)
     {
         $this->Amount = $amount;
         return $this;
+    }
+    
+    /**
+     * Returns Set Amount
+     *
+     * @return Money
+     */
+    public function getAmount()
+    {
+        return $this->Amount;
     }
     
 

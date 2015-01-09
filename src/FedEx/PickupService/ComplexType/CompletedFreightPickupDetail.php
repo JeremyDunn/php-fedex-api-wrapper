@@ -25,7 +25,7 @@ class CompletedFreightPickupDetail
      * Describes the origin service center handling the pickup.
      *
      * @param FreightServiceCenterDetail $origin
-     * return CompletedFreightPickupDetail
+     * @return CompletedFreightPickupDetail
      */
     public function setOrigin(FreightServiceCenterDetail $origin)
     {
@@ -34,10 +34,20 @@ class CompletedFreightPickupDetail
     }
     
     /**
+     * Returns Describes the origin service center handling the pickup.
+     *
+     * @return FreightServiceCenterDetail
+     */
+    public function getOrigin()
+    {
+        return $this->Origin;
+    }
+    
+    /**
      * Describes the results for each line item in the original request.
      *
      * @param CompletedFreightPickupLineItem[] $lineItems
-     * return CompletedFreightPickupDetail
+     * @return CompletedFreightPickupDetail
      */
     public function setLineItems(array $lineItems)
     {
@@ -46,10 +56,20 @@ class CompletedFreightPickupDetail
     }
     
     /**
+     * Returns Describes the results for each line item in the original request.
+     *
+     * @return CompletedFreightPickupLineItem[]
+     */
+    public function getLineItems()
+    {
+        return $this->LineItems;
+    }
+    
+    /**
      * Total number of pieces from all line items from request.
      *
      * @param nonNegativeInteger $totalPieces
-     * return CompletedFreightPickupDetail
+     * @return CompletedFreightPickupDetail
      */
     public function setTotalPieces($totalPieces)
     {
@@ -58,10 +78,20 @@ class CompletedFreightPickupDetail
     }
     
     /**
+     * Returns Total number of pieces from all line items from request.
+     *
+     * @return nonNegativeInteger
+     */
+    public function getTotalPieces()
+    {
+        return $this->TotalPieces;
+    }
+    
+    /**
      * Total weight from all line items from request.
      *
      * @param Weight $totalWeight
-     * return CompletedFreightPickupDetail
+     * @return CompletedFreightPickupDetail
      */
     public function setTotalWeight(Weight $totalWeight)
     {
@@ -70,10 +100,20 @@ class CompletedFreightPickupDetail
     }
     
     /**
+     * Returns Total weight from all line items from request.
+     *
+     * @return Weight
+     */
+    public function getTotalWeight()
+    {
+        return $this->TotalWeight;
+    }
+    
+    /**
      * Total handling units from all line items from request.
      *
      * @param nonNegativeInteger $totalHandlingUnits
-     * return CompletedFreightPickupDetail
+     * @return CompletedFreightPickupDetail
      */
     public function setTotalHandlingUnits($totalHandlingUnits)
     {
@@ -82,15 +122,35 @@ class CompletedFreightPickupDetail
     }
     
     /**
+     * Returns Total handling units from all line items from request.
+     *
+     * @return nonNegativeInteger
+     */
+    public function getTotalHandlingUnits()
+    {
+        return $this->TotalHandlingUnits;
+    }
+    
+    /**
      * Resulting status of pickup.
      *
      * @param \FedEx\Pickup\SimpleType\PickupEventType|string $status
-     * return CompletedFreightPickupDetail
+     * @return CompletedFreightPickupDetail
      */
     public function setStatus($status)
     {
         $this->Status = $status;
         return $this;
+    }
+    
+    /**
+     * Returns Resulting status of pickup.
+     *
+     * @return \FedEx\Pickup\SimpleType\PickupEventType|string
+     */
+    public function getStatus()
+    {
+        return $this->Status;
     }
     
 

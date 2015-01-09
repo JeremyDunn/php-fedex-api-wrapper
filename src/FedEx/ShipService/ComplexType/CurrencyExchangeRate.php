@@ -25,7 +25,7 @@ class CurrencyExchangeRate
      * The currency code for the original (converted FROM) currency.
      *
      * @param string $fromCurrency
-     * return CurrencyExchangeRate
+     * @return CurrencyExchangeRate
      */
     public function setFromCurrency($fromCurrency)
     {
@@ -34,10 +34,20 @@ class CurrencyExchangeRate
     }
     
     /**
+     * Returns The currency code for the original (converted FROM) currency.
+     *
+     * @return string
+     */
+    public function getFromCurrency()
+    {
+        return $this->FromCurrency;
+    }
+    
+    /**
      * The currency code for the final (converted INTO) currency.
      *
      * @param string $intoCurrency
-     * return CurrencyExchangeRate
+     * @return CurrencyExchangeRate
      */
     public function setIntoCurrency($intoCurrency)
     {
@@ -46,15 +56,35 @@ class CurrencyExchangeRate
     }
     
     /**
+     * Returns The currency code for the final (converted INTO) currency.
+     *
+     * @return string
+     */
+    public function getIntoCurrency()
+    {
+        return $this->IntoCurrency;
+    }
+    
+    /**
      * Multiplier used to convert fromCurrency units to intoCurrency units.
      *
      * @param decimal $rate
-     * return CurrencyExchangeRate
+     * @return CurrencyExchangeRate
      */
     public function setRate($rate)
     {
         $this->Rate = $rate;
         return $this;
+    }
+    
+    /**
+     * Returns Multiplier used to convert fromCurrency units to intoCurrency units.
+     *
+     * @return decimal
+     */
+    public function getRate()
+    {
+        return $this->Rate;
     }
     
 

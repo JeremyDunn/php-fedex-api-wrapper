@@ -25,7 +25,7 @@ class TrackSplitShipmentPart
      * The number of pieces in this part.
      *
      * @param positiveInteger $pieceCount
-     * return TrackSplitShipmentPart
+     * @return TrackSplitShipmentPart
      */
     public function setPieceCount($pieceCount)
     {
@@ -34,10 +34,20 @@ class TrackSplitShipmentPart
     }
     
     /**
+     * Returns The number of pieces in this part.
+     *
+     * @return positiveInteger
+     */
+    public function getPieceCount()
+    {
+        return $this->PieceCount;
+    }
+    
+    /**
      * The date and time this status began.
      *
      * @param dateTime $timestamp
-     * return TrackSplitShipmentPart
+     * @return TrackSplitShipmentPart
      */
     public function setTimestamp($timestamp)
     {
@@ -46,10 +56,20 @@ class TrackSplitShipmentPart
     }
     
     /**
+     * Returns The date and time this status began.
+     *
+     * @return dateTime
+     */
+    public function getTimestamp()
+    {
+        return $this->Timestamp;
+    }
+    
+    /**
      * A code that identifies this type of status.
      *
      * @param string $statusCode
-     * return TrackSplitShipmentPart
+     * @return TrackSplitShipmentPart
      */
     public function setStatusCode($statusCode)
     {
@@ -58,15 +78,35 @@ class TrackSplitShipmentPart
     }
     
     /**
+     * Returns A code that identifies this type of status.
+     *
+     * @return string
+     */
+    public function getStatusCode()
+    {
+        return $this->StatusCode;
+    }
+    
+    /**
      * A human-readable description of this status.
      *
      * @param string $statusDescription
-     * return TrackSplitShipmentPart
+     * @return TrackSplitShipmentPart
      */
     public function setStatusDescription($statusDescription)
     {
         $this->StatusDescription = $statusDescription;
         return $this;
+    }
+    
+    /**
+     * Returns A human-readable description of this status.
+     *
+     * @return string
+     */
+    public function getStatusDescription()
+    {
+        return $this->StatusDescription;
     }
     
 

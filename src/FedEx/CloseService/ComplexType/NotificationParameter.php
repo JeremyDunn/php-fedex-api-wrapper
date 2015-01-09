@@ -25,7 +25,7 @@ class NotificationParameter
      * Set Id
      *
      * @param string $id
-     * return NotificationParameter
+     * @return NotificationParameter
      */
     public function setId($id)
     {
@@ -34,15 +34,35 @@ class NotificationParameter
     }
     
     /**
+     * Returns Set Id
+     *
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->Id;
+    }
+    
+    /**
      * Set Value
      *
      * @param string $value
-     * return NotificationParameter
+     * @return NotificationParameter
      */
     public function setValue($value)
     {
         $this->Value = $value;
         return $this;
+    }
+    
+    /**
+     * Returns Set Value
+     *
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->Value;
     }
     
 

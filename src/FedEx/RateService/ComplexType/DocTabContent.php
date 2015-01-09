@@ -22,10 +22,10 @@ class DocTabContent
     protected $_name = 'DocTabContent';
 
     /**
-     * The DocTabContentType options available.
+     * Set DocTabContentType
      *
      * @param \FedEx\RateService\SimpleType\DocTabContentType|string $docTabContentType
-     * return DocTabContent
+     * @return DocTabContent
      */
     public function setDocTabContentType($docTabContentType)
     {
@@ -34,10 +34,20 @@ class DocTabContent
     }
     
     /**
-     * The DocTabContentType should be set to ZONE001 to specify additional Zone details.
+     * Returns Set DocTabContentType
+     *
+     * @return \FedEx\RateService\SimpleType\DocTabContentType|string
+     */
+    public function getDocTabContentType()
+    {
+        return $this->DocTabContentType;
+    }
+    
+    /**
+     * Set Zone001
      *
      * @param DocTabContentZone001 $zone001
-     * return DocTabContent
+     * @return DocTabContent
      */
     public function setZone001(DocTabContentZone001 $zone001)
     {
@@ -46,15 +56,35 @@ class DocTabContent
     }
     
     /**
-     * The DocTabContentType should be set to BARCODED to specify additional BarCoded details.
+     * Returns Set Zone001
+     *
+     * @return DocTabContentZone001
+     */
+    public function getZone001()
+    {
+        return $this->Zone001;
+    }
+    
+    /**
+     * Set Barcoded
      *
      * @param DocTabContentBarcoded $barcoded
-     * return DocTabContent
+     * @return DocTabContent
      */
     public function setBarcoded(DocTabContentBarcoded $barcoded)
     {
         $this->Barcoded = $barcoded;
         return $this;
+    }
+    
+    /**
+     * Returns Set Barcoded
+     *
+     * @return DocTabContentBarcoded
+     */
+    public function getBarcoded()
+    {
+        return $this->Barcoded;
     }
     
 

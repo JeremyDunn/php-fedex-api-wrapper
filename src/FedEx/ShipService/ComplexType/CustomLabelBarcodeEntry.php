@@ -25,7 +25,7 @@ class CustomLabelBarcodeEntry
      * Set Position
      *
      * @param CustomLabelPosition $position
-     * return CustomLabelBarcodeEntry
+     * @return CustomLabelBarcodeEntry
      */
     public function setPosition(CustomLabelPosition $position)
     {
@@ -34,10 +34,20 @@ class CustomLabelBarcodeEntry
     }
     
     /**
+     * Returns Set Position
+     *
+     * @return CustomLabelPosition
+     */
+    public function getPosition()
+    {
+        return $this->Position;
+    }
+    
+    /**
      * Set Format
      *
      * @param string $format
-     * return CustomLabelBarcodeEntry
+     * @return CustomLabelBarcodeEntry
      */
     public function setFormat($format)
     {
@@ -46,10 +56,20 @@ class CustomLabelBarcodeEntry
     }
     
     /**
+     * Returns Set Format
+     *
+     * @return string
+     */
+    public function getFormat()
+    {
+        return $this->Format;
+    }
+    
+    /**
      * Set DataFields
      *
      * @param string[] $dataFields
-     * return CustomLabelBarcodeEntry
+     * @return CustomLabelBarcodeEntry
      */
     public function setDataFields(array $dataFields)
     {
@@ -58,10 +78,20 @@ class CustomLabelBarcodeEntry
     }
     
     /**
+     * Returns Set DataFields
+     *
+     * @return string[]
+     */
+    public function getDataFields()
+    {
+        return $this->DataFields;
+    }
+    
+    /**
      * Set BarHeight
      *
      * @param int $barHeight
-     * return CustomLabelBarcodeEntry
+     * @return CustomLabelBarcodeEntry
      */
     public function setBarHeight($barHeight)
     {
@@ -70,10 +100,20 @@ class CustomLabelBarcodeEntry
     }
     
     /**
+     * Returns Set BarHeight
+     *
+     * @return int
+     */
+    public function getBarHeight()
+    {
+        return $this->BarHeight;
+    }
+    
+    /**
      * Width of thinnest bar/space element in the barcode.
      *
      * @param int $thinBarWidth
-     * return CustomLabelBarcodeEntry
+     * @return CustomLabelBarcodeEntry
      */
     public function setThinBarWidth($thinBarWidth)
     {
@@ -82,15 +122,35 @@ class CustomLabelBarcodeEntry
     }
     
     /**
+     * Returns Width of thinnest bar/space element in the barcode.
+     *
+     * @return int
+     */
+    public function getThinBarWidth()
+    {
+        return $this->ThinBarWidth;
+    }
+    
+    /**
      * Set BarcodeSymbology
      *
      * @param \FedEx\ShipService\SimpleType\BarcodeSymbologyType|string $barcodeSymbology
-     * return CustomLabelBarcodeEntry
+     * @return CustomLabelBarcodeEntry
      */
     public function setBarcodeSymbology($barcodeSymbology)
     {
         $this->BarcodeSymbology = $barcodeSymbology;
         return $this;
+    }
+    
+    /**
+     * Returns Set BarcodeSymbology
+     *
+     * @return \FedEx\ShipService\SimpleType\BarcodeSymbologyType|string
+     */
+    public function getBarcodeSymbology()
+    {
+        return $this->BarcodeSymbology;
     }
     
 

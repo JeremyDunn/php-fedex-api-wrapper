@@ -25,12 +25,22 @@ class ParsedAddressPart
      * Set Elements
      *
      * @param ParsedElement[] $elements
-     * return ParsedAddressPart
+     * @return ParsedAddressPart
      */
     public function setElements(array $elements)
     {
         $this->Elements = $elements;
         return $this;
+    }
+    
+    /**
+     * Returns Set Elements
+     *
+     * @return ParsedElement[]
+     */
+    public function getElements()
+    {
+        return $this->Elements;
     }
     
 

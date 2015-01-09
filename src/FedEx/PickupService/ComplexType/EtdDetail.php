@@ -25,7 +25,7 @@ class EtdDetail
      * Specifies client's intent for whether all documents must be confirmed before shipment processing.
      *
      * @param \FedEx\Pickup\SimpleType\EtdConfirmationType|string $confirmation
-     * return EtdDetail
+     * @return EtdDetail
      */
     public function setConfirmation($confirmation)
     {
@@ -34,10 +34,20 @@ class EtdDetail
     }
     
     /**
+     * Returns Specifies client's intent for whether all documents must be confirmed before shipment processing.
+     *
+     * @return \FedEx\Pickup\SimpleType\EtdConfirmationType|string
+     */
+    public function getConfirmation()
+    {
+        return $this->Confirmation;
+    }
+    
+    /**
      * Indicates the types of shipping documents produced for the shipper by FedEx (see ShippingDocumentSpecification) which should be copied back to the shipper in the shipment result data.
      *
      * @param RequestedShippingDocumentType[] $requestedDocumentCopies
-     * return EtdDetail
+     * @return EtdDetail
      */
     public function setRequestedDocumentCopies(array $requestedDocumentCopies)
     {
@@ -46,10 +56,20 @@ class EtdDetail
     }
     
     /**
+     * Returns Indicates the types of shipping documents produced for the shipper by FedEx (see ShippingDocumentSpecification) which should be copied back to the shipper in the shipment result data.
+     *
+     * @return RequestedShippingDocumentType[]
+     */
+    public function getRequestedDocumentCopies()
+    {
+        return $this->RequestedDocumentCopies;
+    }
+    
+    /**
      * Set Documents
      *
      * @param UploadDocumentDetail[] $documents
-     * return EtdDetail
+     * @return EtdDetail
      */
     public function setDocuments(array $documents)
     {
@@ -58,15 +78,35 @@ class EtdDetail
     }
     
     /**
+     * Returns Set Documents
+     *
+     * @return UploadDocumentDetail[]
+     */
+    public function getDocuments()
+    {
+        return $this->Documents;
+    }
+    
+    /**
      * Set DocumentReferences
      *
      * @param UploadDocumentReferenceDetail[] $documentReferences
-     * return EtdDetail
+     * @return EtdDetail
      */
     public function setDocumentReferences(array $documentReferences)
     {
         $this->DocumentReferences = $documentReferences;
         return $this;
+    }
+    
+    /**
+     * Returns Set DocumentReferences
+     *
+     * @return UploadDocumentReferenceDetail[]
+     */
+    public function getDocumentReferences()
+    {
+        return $this->DocumentReferences;
     }
     
 

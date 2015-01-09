@@ -25,7 +25,7 @@ class Address
      * Identification of a region (usually small) for mail/package delivery. Format and presence of this field will vary, depending on country.
      *
      * @param string $postalCode
-     * return Address
+     * @return Address
      */
     public function setPostalCode($postalCode)
     {
@@ -34,15 +34,35 @@ class Address
     }
     
     /**
+     * Returns Identification of a region (usually small) for mail/package delivery. Format and presence of this field will vary, depending on country.
+     *
+     * @return string
+     */
+    public function getPostalCode()
+    {
+        return $this->PostalCode;
+    }
+    
+    /**
      * The two-letter code used to identify a country.
      *
      * @param string $countryCode
-     * return Address
+     * @return Address
      */
     public function setCountryCode($countryCode)
     {
         $this->CountryCode = $countryCode;
         return $this;
+    }
+    
+    /**
+     * Returns The two-letter code used to identify a country.
+     *
+     * @return string
+     */
+    public function getCountryCode()
+    {
+        return $this->CountryCode;
     }
     
 

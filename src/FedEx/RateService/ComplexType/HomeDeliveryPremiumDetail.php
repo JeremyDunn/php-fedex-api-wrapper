@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * The descriptive data required by FedEx for home delivery services.
+ * HomeDeliveryPremiumDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -25,7 +25,7 @@ class HomeDeliveryPremiumDetail
      * Set HomeDeliveryPremiumType
      *
      * @param \FedEx\RateService\SimpleType\HomeDeliveryPremiumType|string $homeDeliveryPremiumType
-     * return HomeDeliveryPremiumDetail
+     * @return HomeDeliveryPremiumDetail
      */
     public function setHomeDeliveryPremiumType($homeDeliveryPremiumType)
     {
@@ -34,10 +34,20 @@ class HomeDeliveryPremiumDetail
     }
     
     /**
-     * Required for Date Certain Home Delivery.
+     * Returns Set HomeDeliveryPremiumType
+     *
+     * @return \FedEx\RateService\SimpleType\HomeDeliveryPremiumType|string
+     */
+    public function getHomeDeliveryPremiumType()
+    {
+        return $this->HomeDeliveryPremiumType;
+    }
+    
+    /**
+     * Set Date
      *
      * @param date $date
-     * return HomeDeliveryPremiumDetail
+     * @return HomeDeliveryPremiumDetail
      */
     public function setDate($date)
     {
@@ -46,15 +56,35 @@ class HomeDeliveryPremiumDetail
     }
     
     /**
-     * Required for Date Certain and Appointment Home Delivery.
+     * Returns Set Date
+     *
+     * @return date
+     */
+    public function getDate()
+    {
+        return $this->Date;
+    }
+    
+    /**
+     * Set PhoneNumber
      *
      * @param string $phoneNumber
-     * return HomeDeliveryPremiumDetail
+     * @return HomeDeliveryPremiumDetail
      */
     public function setPhoneNumber($phoneNumber)
     {
         $this->PhoneNumber = $phoneNumber;
         return $this;
+    }
+    
+    /**
+     * Returns Set PhoneNumber
+     *
+     * @return string
+     */
+    public function getPhoneNumber()
+    {
+        return $this->PhoneNumber;
     }
     
 

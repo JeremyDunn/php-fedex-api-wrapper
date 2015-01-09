@@ -25,7 +25,7 @@ class Localization
      * Set LanguageCode
      *
      * @param string $languageCode
-     * return Localization
+     * @return Localization
      */
     public function setLanguageCode($languageCode)
     {
@@ -34,15 +34,35 @@ class Localization
     }
     
     /**
+     * Returns Set LanguageCode
+     *
+     * @return string
+     */
+    public function getLanguageCode()
+    {
+        return $this->LanguageCode;
+    }
+    
+    /**
      * Set LocaleCode
      *
      * @param string $localeCode
-     * return Localization
+     * @return Localization
      */
     public function setLocaleCode($localeCode)
     {
         $this->LocaleCode = $localeCode;
         return $this;
+    }
+    
+    /**
+     * Returns Set LocaleCode
+     *
+     * @return string
+     */
+    public function getLocaleCode()
+    {
+        return $this->LocaleCode;
     }
     
 

@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Return Merchant Authorization
+ * June 2011 ITG 121203 IR-RMA number has been removed from this structure and added as a new customer reference type. The structure remains because of the reason field below.
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -22,27 +22,25 @@ class Rma
     protected $_name = 'Rma';
 
     /**
-     * Return Merchant Authorization Number
-     *
-     * @param string $number
-     * return Rma
-     */
-    public function setNumber($number)
-    {
-        $this->Number = $number;
-        return $this;
-    }
-    
-    /**
-     * The reason for the return.
+     * Set Reason
      *
      * @param string $reason
-     * return Rma
+     * @return Rma
      */
     public function setReason($reason)
     {
         $this->Reason = $reason;
         return $this;
+    }
+    
+    /**
+     * Returns Set Reason
+     *
+     * @return string
+     */
+    public function getReason()
+    {
+        return $this->Reason;
     }
     
 

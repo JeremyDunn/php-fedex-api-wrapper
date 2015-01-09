@@ -25,7 +25,7 @@ class RadionuclideActivity
      * Set Value
      *
      * @param decimal $value
-     * return RadionuclideActivity
+     * @return RadionuclideActivity
      */
     public function setValue($value)
     {
@@ -34,15 +34,35 @@ class RadionuclideActivity
     }
     
     /**
+     * Returns Set Value
+     *
+     * @return decimal
+     */
+    public function getValue()
+    {
+        return $this->Value;
+    }
+    
+    /**
      * Set UnitOfMeasure
      *
      * @param \FedEx\ShipService\SimpleType\RadioactivityUnitOfMeasure|string $unitOfMeasure
-     * return RadionuclideActivity
+     * @return RadionuclideActivity
      */
     public function setUnitOfMeasure($unitOfMeasure)
     {
         $this->UnitOfMeasure = $unitOfMeasure;
         return $this;
+    }
+    
+    /**
+     * Returns Set UnitOfMeasure
+     *
+     * @return \FedEx\ShipService\SimpleType\RadioactivityUnitOfMeasure|string
+     */
+    public function getUnitOfMeasure()
+    {
+        return $this->UnitOfMeasure;
     }
     
 

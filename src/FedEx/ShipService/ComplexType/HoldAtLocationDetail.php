@@ -25,7 +25,7 @@ class HoldAtLocationDetail
      * Contact phone number for recipient of shipment.
      *
      * @param string $phoneNumber
-     * return HoldAtLocationDetail
+     * @return HoldAtLocationDetail
      */
     public function setPhoneNumber($phoneNumber)
     {
@@ -34,10 +34,20 @@ class HoldAtLocationDetail
     }
     
     /**
+     * Returns Contact phone number for recipient of shipment.
+     *
+     * @return string
+     */
+    public function getPhoneNumber()
+    {
+        return $this->PhoneNumber;
+    }
+    
+    /**
      * Contact and address of FedEx facility at which shipment is to be held.
      *
      * @param ContactAndAddress $locationContactAndAddress
-     * return HoldAtLocationDetail
+     * @return HoldAtLocationDetail
      */
     public function setLocationContactAndAddress(ContactAndAddress $locationContactAndAddress)
     {
@@ -46,15 +56,35 @@ class HoldAtLocationDetail
     }
     
     /**
+     * Returns Contact and address of FedEx facility at which shipment is to be held.
+     *
+     * @return ContactAndAddress
+     */
+    public function getLocationContactAndAddress()
+    {
+        return $this->LocationContactAndAddress;
+    }
+    
+    /**
      * Type of facility at which package/shipment is to be held.
      *
      * @param \FedEx\ShipService\SimpleType\FedExLocationType|string $locationType
-     * return HoldAtLocationDetail
+     * @return HoldAtLocationDetail
      */
     public function setLocationType($locationType)
     {
         $this->LocationType = $locationType;
         return $this;
+    }
+    
+    /**
+     * Returns Type of facility at which package/shipment is to be held.
+     *
+     * @return \FedEx\ShipService\SimpleType\FedExLocationType|string
+     */
+    public function getLocationType()
+    {
+        return $this->LocationType;
     }
     
 

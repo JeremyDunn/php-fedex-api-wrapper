@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * The variable handling charges calculated based on the type variable handling charges requested.
+ * VariableHandlingCharges
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -22,10 +22,10 @@ class VariableHandlingCharges
     protected $_name = 'VariableHandlingCharges';
 
     /**
-     * The variable handling charge amount calculated based on the requested variable handling charge detail.
+     * Set VariableHandlingCharge
      *
      * @param Money $variableHandlingCharge
-     * return VariableHandlingCharges
+     * @return VariableHandlingCharges
      */
     public function setVariableHandlingCharge(Money $variableHandlingCharge)
     {
@@ -34,15 +34,79 @@ class VariableHandlingCharges
     }
     
     /**
-     * The calculated varibale handling charge plus the net charge.
+     * Returns Set VariableHandlingCharge
+     *
+     * @return Money
+     */
+    public function getVariableHandlingCharge()
+    {
+        return $this->VariableHandlingCharge;
+    }
+    
+    /**
+     * Set FixedVariableHandlingCharge
+     *
+     * @param Money $fixedVariableHandlingCharge
+     * @return VariableHandlingCharges
+     */
+    public function setFixedVariableHandlingCharge(Money $fixedVariableHandlingCharge)
+    {
+        $this->FixedVariableHandlingCharge = $fixedVariableHandlingCharge;
+        return $this;
+    }
+    
+    /**
+     * Returns Set FixedVariableHandlingCharge
+     *
+     * @return Money
+     */
+    public function getFixedVariableHandlingCharge()
+    {
+        return $this->FixedVariableHandlingCharge;
+    }
+    
+    /**
+     * Set PercentVariableHandlingCharge
+     *
+     * @param Money $percentVariableHandlingCharge
+     * @return VariableHandlingCharges
+     */
+    public function setPercentVariableHandlingCharge(Money $percentVariableHandlingCharge)
+    {
+        $this->PercentVariableHandlingCharge = $percentVariableHandlingCharge;
+        return $this;
+    }
+    
+    /**
+     * Returns Set PercentVariableHandlingCharge
+     *
+     * @return Money
+     */
+    public function getPercentVariableHandlingCharge()
+    {
+        return $this->PercentVariableHandlingCharge;
+    }
+    
+    /**
+     * Set TotalCustomerCharge
      *
      * @param Money $totalCustomerCharge
-     * return VariableHandlingCharges
+     * @return VariableHandlingCharges
      */
     public function setTotalCustomerCharge(Money $totalCustomerCharge)
     {
         $this->TotalCustomerCharge = $totalCustomerCharge;
         return $this;
+    }
+    
+    /**
+     * Returns Set TotalCustomerCharge
+     *
+     * @return Money
+     */
+    public function getTotalCustomerCharge()
+    {
+        return $this->TotalCustomerCharge;
     }
     
 

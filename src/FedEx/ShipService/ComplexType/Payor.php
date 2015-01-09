@@ -25,12 +25,22 @@ class Payor
      * Set ResponsibleParty
      *
      * @param Party $responsibleParty
-     * return Payor
+     * @return Payor
      */
     public function setResponsibleParty(Party $responsibleParty)
     {
         $this->ResponsibleParty = $responsibleParty;
         return $this;
+    }
+    
+    /**
+     * Returns Set ResponsibleParty
+     *
+     * @return Party
+     */
+    public function getResponsibleParty()
+    {
+        return $this->ResponsibleParty;
     }
     
 

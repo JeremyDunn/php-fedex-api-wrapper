@@ -25,7 +25,7 @@ class EdtExciseCondition
      * Set Category
      *
      * @param string $category
-     * return EdtExciseCondition
+     * @return EdtExciseCondition
      */
     public function setCategory($category)
     {
@@ -34,15 +34,35 @@ class EdtExciseCondition
     }
     
     /**
+     * Returns Set Category
+     *
+     * @return string
+     */
+    public function getCategory()
+    {
+        return $this->Category;
+    }
+    
+    /**
      * Customer-declared value, with data type and legal values depending on excise condition, used in defining the taxable value of the item.
      *
      * @param string $value
-     * return EdtExciseCondition
+     * @return EdtExciseCondition
      */
     public function setValue($value)
     {
         $this->Value = $value;
         return $this;
+    }
+    
+    /**
+     * Returns Customer-declared value, with data type and legal values depending on excise condition, used in defining the taxable value of the item.
+     *
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->Value;
     }
     
 

@@ -25,7 +25,7 @@ class NaftaProducer
      * Set Id
      *
      * @param string $id
-     * return NaftaProducer
+     * @return NaftaProducer
      */
     public function setId($id)
     {
@@ -34,15 +34,35 @@ class NaftaProducer
     }
     
     /**
+     * Returns Set Id
+     *
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->Id;
+    }
+    
+    /**
      * Set Producer
      *
      * @param Party $producer
-     * return NaftaProducer
+     * @return NaftaProducer
      */
     public function setProducer(Party $producer)
     {
         $this->Producer = $producer;
         return $this;
+    }
+    
+    /**
+     * Returns Set Producer
+     *
+     * @return Party
+     */
+    public function getProducer()
+    {
+        return $this->Producer;
     }
     
 

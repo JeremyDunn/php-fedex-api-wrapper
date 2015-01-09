@@ -4,7 +4,7 @@ namespace FedEx\RateService\SimpleType;
 use FedEx\AbstractSimpleType;
 
 /**
- * Identifies the method by which the package is to be tendered to FedEx. This element does not dispatch a courier for package pickup.
+ * DropoffType
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper

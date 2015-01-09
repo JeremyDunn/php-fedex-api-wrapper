@@ -25,7 +25,7 @@ class CompletedCodDetail
      * Set CollectionAmount
      *
      * @param Money $collectionAmount
-     * return CompletedCodDetail
+     * @return CompletedCodDetail
      */
     public function setCollectionAmount(Money $collectionAmount)
     {
@@ -34,15 +34,35 @@ class CompletedCodDetail
     }
     
     /**
+     * Returns Set CollectionAmount
+     *
+     * @return Money
+     */
+    public function getCollectionAmount()
+    {
+        return $this->CollectionAmount;
+    }
+    
+    /**
      * Set AdjustmentType
      *
      * @param \FedEx\ShipService\SimpleType\CodAdjustmentType|string $adjustmentType
-     * return CompletedCodDetail
+     * @return CompletedCodDetail
      */
     public function setAdjustmentType($adjustmentType)
     {
         $this->AdjustmentType = $adjustmentType;
         return $this;
+    }
+    
+    /**
+     * Returns Set AdjustmentType
+     *
+     * @return \FedEx\ShipService\SimpleType\CodAdjustmentType|string
+     */
+    public function getAdjustmentType()
+    {
+        return $this->AdjustmentType;
     }
     
 

@@ -25,7 +25,7 @@ class ShippingDocumentFormat
      * Specifies how to create, organize, and return the document.
      *
      * @param ShippingDocumentDispositionDetail[] $dispositions
-     * return ShippingDocumentFormat
+     * @return ShippingDocumentFormat
      */
     public function setDispositions(array $dispositions)
     {
@@ -34,10 +34,20 @@ class ShippingDocumentFormat
     }
     
     /**
+     * Returns Specifies how to create, organize, and return the document.
+     *
+     * @return ShippingDocumentDispositionDetail[]
+     */
+    public function getDispositions()
+    {
+        return $this->Dispositions;
+    }
+    
+    /**
      * Specifies how far down the page to move the beginning of the image; allows for printing on letterhead and other pre-printed stock.
      *
      * @param LinearMeasure $topOfPageOffset
-     * return ShippingDocumentFormat
+     * @return ShippingDocumentFormat
      */
     public function setTopOfPageOffset(LinearMeasure $topOfPageOffset)
     {
@@ -46,10 +56,20 @@ class ShippingDocumentFormat
     }
     
     /**
+     * Returns Specifies how far down the page to move the beginning of the image; allows for printing on letterhead and other pre-printed stock.
+     *
+     * @return LinearMeasure
+     */
+    public function getTopOfPageOffset()
+    {
+        return $this->TopOfPageOffset;
+    }
+    
+    /**
      * Set ImageType
      *
      * @param \FedEx\ShipService\SimpleType\ShippingDocumentImageType|string $imageType
-     * return ShippingDocumentFormat
+     * @return ShippingDocumentFormat
      */
     public function setImageType($imageType)
     {
@@ -58,10 +78,20 @@ class ShippingDocumentFormat
     }
     
     /**
+     * Returns Set ImageType
+     *
+     * @return \FedEx\ShipService\SimpleType\ShippingDocumentImageType|string
+     */
+    public function getImageType()
+    {
+        return $this->ImageType;
+    }
+    
+    /**
      * Set StockType
      *
      * @param \FedEx\ShipService\SimpleType\ShippingDocumentStockType|string $stockType
-     * return ShippingDocumentFormat
+     * @return ShippingDocumentFormat
      */
     public function setStockType($stockType)
     {
@@ -70,10 +100,20 @@ class ShippingDocumentFormat
     }
     
     /**
+     * Returns Set StockType
+     *
+     * @return \FedEx\ShipService\SimpleType\ShippingDocumentStockType|string
+     */
+    public function getStockType()
+    {
+        return $this->StockType;
+    }
+    
+    /**
      * For those shipping document types which have both a "form" and "instructions" component (e.g. NAFTA Certificate of Origin and General Agency Agreement), this field indicates whether to provide the instructions.
      *
      * @param boolean $provideInstructions
-     * return ShippingDocumentFormat
+     * @return ShippingDocumentFormat
      */
     public function setProvideInstructions($provideInstructions)
     {
@@ -82,10 +122,20 @@ class ShippingDocumentFormat
     }
     
     /**
+     * Returns For those shipping document types which have both a "form" and "instructions" component (e.g. NAFTA Certificate of Origin and General Agency Agreement), this field indicates whether to provide the instructions.
+     *
+     * @return boolean
+     */
+    public function getProvideInstructions()
+    {
+        return $this->ProvideInstructions;
+    }
+    
+    /**
      * Governs the language to be used for this individual document, independently from other content returned for the same shipment.
      *
      * @param Localization $localization
-     * return ShippingDocumentFormat
+     * @return ShippingDocumentFormat
      */
     public function setLocalization(Localization $localization)
     {
@@ -94,15 +144,35 @@ class ShippingDocumentFormat
     }
     
     /**
+     * Returns Governs the language to be used for this individual document, independently from other content returned for the same shipment.
+     *
+     * @return Localization
+     */
+    public function getLocalization()
+    {
+        return $this->Localization;
+    }
+    
+    /**
      * Identifies the individual document specified by the client.
      *
      * @param string $customDocumentIdentifier
-     * return ShippingDocumentFormat
+     * @return ShippingDocumentFormat
      */
     public function setCustomDocumentIdentifier($customDocumentIdentifier)
     {
         $this->CustomDocumentIdentifier = $customDocumentIdentifier;
         return $this;
+    }
+    
+    /**
+     * Returns Identifies the individual document specified by the client.
+     *
+     * @return string
+     */
+    public function getCustomDocumentIdentifier()
+    {
+        return $this->CustomDocumentIdentifier;
     }
     
 

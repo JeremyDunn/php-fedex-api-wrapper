@@ -25,7 +25,7 @@ class ValidatedHazardousCommodityDescription
      * Regulatory identifier for a commodity (e.g. "UN ID" value).
      *
      * @param string $id
-     * return ValidatedHazardousCommodityDescription
+     * @return ValidatedHazardousCommodityDescription
      */
     public function setId($id)
     {
@@ -34,10 +34,20 @@ class ValidatedHazardousCommodityDescription
     }
     
     /**
+     * Returns Regulatory identifier for a commodity (e.g. "UN ID" value).
+     *
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->Id;
+    }
+    
+    /**
      * In conjunction with the regulatory identifier, this field uniquely identifies a specific hazardous materials commodity.
      *
      * @param nonNegativeInteger $sequenceNumber
-     * return ValidatedHazardousCommodityDescription
+     * @return ValidatedHazardousCommodityDescription
      */
     public function setSequenceNumber($sequenceNumber)
     {
@@ -46,10 +56,20 @@ class ValidatedHazardousCommodityDescription
     }
     
     /**
+     * Returns In conjunction with the regulatory identifier, this field uniquely identifies a specific hazardous materials commodity.
+     *
+     * @return nonNegativeInteger
+     */
+    public function getSequenceNumber()
+    {
+        return $this->SequenceNumber;
+    }
+    
+    /**
      * Set PackingGroup
      *
      * @param \FedEx\ShipService\SimpleType\HazardousCommodityPackingGroupType|string $packingGroup
-     * return ValidatedHazardousCommodityDescription
+     * @return ValidatedHazardousCommodityDescription
      */
     public function setPackingGroup($packingGroup)
     {
@@ -58,10 +78,20 @@ class ValidatedHazardousCommodityDescription
     }
     
     /**
+     * Returns Set PackingGroup
+     *
+     * @return \FedEx\ShipService\SimpleType\HazardousCommodityPackingGroupType|string
+     */
+    public function getPackingGroup()
+    {
+        return $this->PackingGroup;
+    }
+    
+    /**
      * Set PackingInstructions
      *
      * @param string $packingInstructions
-     * return ValidatedHazardousCommodityDescription
+     * @return ValidatedHazardousCommodityDescription
      */
     public function setPackingInstructions($packingInstructions)
     {
@@ -70,10 +100,20 @@ class ValidatedHazardousCommodityDescription
     }
     
     /**
+     * Returns Set PackingInstructions
+     *
+     * @return string
+     */
+    public function getPackingInstructions()
+    {
+        return $this->PackingInstructions;
+    }
+    
+    /**
      * Set ProperShippingName
      *
      * @param string $properShippingName
-     * return ValidatedHazardousCommodityDescription
+     * @return ValidatedHazardousCommodityDescription
      */
     public function setProperShippingName($properShippingName)
     {
@@ -82,10 +122,20 @@ class ValidatedHazardousCommodityDescription
     }
     
     /**
+     * Returns Set ProperShippingName
+     *
+     * @return string
+     */
+    public function getProperShippingName()
+    {
+        return $this->ProperShippingName;
+    }
+    
+    /**
      * Fully-expanded descriptive text for a hazardous commodity.
      *
      * @param string $properShippingNameAndDescription
-     * return ValidatedHazardousCommodityDescription
+     * @return ValidatedHazardousCommodityDescription
      */
     public function setProperShippingNameAndDescription($properShippingNameAndDescription)
     {
@@ -94,10 +144,20 @@ class ValidatedHazardousCommodityDescription
     }
     
     /**
+     * Returns Fully-expanded descriptive text for a hazardous commodity.
+     *
+     * @return string
+     */
+    public function getProperShippingNameAndDescription()
+    {
+        return $this->ProperShippingNameAndDescription;
+    }
+    
+    /**
      * Set TechnicalName
      *
      * @param string $technicalName
-     * return ValidatedHazardousCommodityDescription
+     * @return ValidatedHazardousCommodityDescription
      */
     public function setTechnicalName($technicalName)
     {
@@ -106,10 +166,20 @@ class ValidatedHazardousCommodityDescription
     }
     
     /**
+     * Returns Set TechnicalName
+     *
+     * @return string
+     */
+    public function getTechnicalName()
+    {
+        return $this->TechnicalName;
+    }
+    
+    /**
      * Set HazardClass
      *
      * @param string $hazardClass
-     * return ValidatedHazardousCommodityDescription
+     * @return ValidatedHazardousCommodityDescription
      */
     public function setHazardClass($hazardClass)
     {
@@ -118,10 +188,20 @@ class ValidatedHazardousCommodityDescription
     }
     
     /**
+     * Returns Set HazardClass
+     *
+     * @return string
+     */
+    public function getHazardClass()
+    {
+        return $this->HazardClass;
+    }
+    
+    /**
      * Set SubsidiaryClasses
      *
      * @param string[] $subsidiaryClasses
-     * return ValidatedHazardousCommodityDescription
+     * @return ValidatedHazardousCommodityDescription
      */
     public function setSubsidiaryClasses(array $subsidiaryClasses)
     {
@@ -130,10 +210,20 @@ class ValidatedHazardousCommodityDescription
     }
     
     /**
+     * Returns Set SubsidiaryClasses
+     *
+     * @return string[]
+     */
+    public function getSubsidiaryClasses()
+    {
+        return $this->SubsidiaryClasses;
+    }
+    
+    /**
      * Coded indications for special requirements or constraints.
      *
      * @param string $symbols
-     * return ValidatedHazardousCommodityDescription
+     * @return ValidatedHazardousCommodityDescription
      */
     public function setSymbols($symbols)
     {
@@ -142,10 +232,20 @@ class ValidatedHazardousCommodityDescription
     }
     
     /**
+     * Returns Coded indications for special requirements or constraints.
+     *
+     * @return string
+     */
+    public function getSymbols()
+    {
+        return $this->Symbols;
+    }
+    
+    /**
      * Set SpecialProvisions
      *
      * @param string $specialProvisions
-     * return ValidatedHazardousCommodityDescription
+     * @return ValidatedHazardousCommodityDescription
      */
     public function setSpecialProvisions($specialProvisions)
     {
@@ -154,10 +254,20 @@ class ValidatedHazardousCommodityDescription
     }
     
     /**
+     * Returns Set SpecialProvisions
+     *
+     * @return string
+     */
+    public function getSpecialProvisions()
+    {
+        return $this->SpecialProvisions;
+    }
+    
+    /**
      * Set Authorization
      *
      * @param string $authorization
-     * return ValidatedHazardousCommodityDescription
+     * @return ValidatedHazardousCommodityDescription
      */
     public function setAuthorization($authorization)
     {
@@ -166,15 +276,35 @@ class ValidatedHazardousCommodityDescription
     }
     
     /**
+     * Returns Set Authorization
+     *
+     * @return string
+     */
+    public function getAuthorization()
+    {
+        return $this->Authorization;
+    }
+    
+    /**
      * Set LabelText
      *
      * @param string $labelText
-     * return ValidatedHazardousCommodityDescription
+     * @return ValidatedHazardousCommodityDescription
      */
     public function setLabelText($labelText)
     {
         $this->LabelText = $labelText;
         return $this;
+    }
+    
+    /**
+     * Returns Set LabelText
+     *
+     * @return string
+     */
+    public function getLabelText()
+    {
+        return $this->LabelText;
     }
     
 

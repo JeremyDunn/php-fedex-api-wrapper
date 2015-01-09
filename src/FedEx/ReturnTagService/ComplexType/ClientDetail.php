@@ -25,7 +25,7 @@ class ClientDetail
      * Identifies the FedEx account number assigned to the customer.
      *
      * @param string $accountNumber
-     * return ClientDetail
+     * @return ClientDetail
      */
     public function setAccountNumber($accountNumber)
     {
@@ -34,10 +34,20 @@ class ClientDetail
     }
     
     /**
+     * Returns Identifies the FedEx account number assigned to the customer.
+     *
+     * @return string
+     */
+    public function getAccountNumber()
+    {
+        return $this->AccountNumber;
+    }
+    
+    /**
      * Identifies the unique client device submitting the request. 
      *
      * @param string $meterNumber
-     * return ClientDetail
+     * @return ClientDetail
      */
     public function setMeterNumber($meterNumber)
     {
@@ -46,15 +56,35 @@ class ClientDetail
     }
     
     /**
+     * Returns Identifies the unique client device submitting the request. 
+     *
+     * @return string
+     */
+    public function getMeterNumber()
+    {
+        return $this->MeterNumber;
+    }
+    
+    /**
      * Governs any future language/translations used for human-readable Notification.localizedMessages in responses to the request containing this ClientDetail object. Different requests from the same client may contain different Localization data. (Contrast with TransactionDetail.localization, which governs data payload language/translation.)
      *
      * @param Localization $localization
-     * return ClientDetail
+     * @return ClientDetail
      */
     public function setLocalization(Localization $localization)
     {
         $this->Localization = $localization;
         return $this;
+    }
+    
+    /**
+     * Returns Governs any future language/translations used for human-readable Notification.localizedMessages in responses to the request containing this ClientDetail object. Different requests from the same client may contain different Localization data. (Contrast with TransactionDetail.localization, which governs data payload language/translation.)
+     *
+     * @return Localization
+     */
+    public function getLocalization()
+    {
+        return $this->Localization;
     }
     
 

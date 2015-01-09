@@ -25,7 +25,7 @@ class SpecialEquipmentLineItem
      * Type of equipment used
      *
      * @param \FedEx\Pickup\SimpleType\SpecialEquipmentType|string $type
-     * return SpecialEquipmentLineItem
+     * @return SpecialEquipmentLineItem
      */
     public function setType($type)
     {
@@ -34,15 +34,35 @@ class SpecialEquipmentLineItem
     }
     
     /**
+     * Returns Type of equipment used
+     *
+     * @return \FedEx\Pickup\SimpleType\SpecialEquipmentType|string
+     */
+    public function getType()
+    {
+        return $this->Type;
+    }
+    
+    /**
      * Total amount of time the equipment was used
      *
      * @param duration $duration
-     * return SpecialEquipmentLineItem
+     * @return SpecialEquipmentLineItem
      */
     public function setDuration(duration $duration)
     {
         $this->Duration = $duration;
         return $this;
+    }
+    
+    /**
+     * Returns Total amount of time the equipment was used
+     *
+     * @return duration
+     */
+    public function getDuration()
+    {
+        return $this->Duration;
     }
     
 

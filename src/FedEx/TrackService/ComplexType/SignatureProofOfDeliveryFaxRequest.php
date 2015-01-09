@@ -25,7 +25,7 @@ class SignatureProofOfDeliveryFaxRequest
      * Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
      * @param WebAuthenticationDetail $webAuthenticationDetail
-     * return SignatureProofOfDeliveryFaxRequest
+     * @return SignatureProofOfDeliveryFaxRequest
      */
     public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
     {
@@ -34,10 +34,20 @@ class SignatureProofOfDeliveryFaxRequest
     }
     
     /**
+     * Returns Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
+     *
+     * @return WebAuthenticationDetail
+     */
+    public function getWebAuthenticationDetail()
+    {
+        return $this->WebAuthenticationDetail;
+    }
+    
+    /**
      * Descriptive data identifying the client submitting the transaction.
      *
      * @param ClientDetail $clientDetail
-     * return SignatureProofOfDeliveryFaxRequest
+     * @return SignatureProofOfDeliveryFaxRequest
      */
     public function setClientDetail(ClientDetail $clientDetail)
     {
@@ -46,10 +56,20 @@ class SignatureProofOfDeliveryFaxRequest
     }
     
     /**
+     * Returns Descriptive data identifying the client submitting the transaction.
+     *
+     * @return ClientDetail
+     */
+    public function getClientDetail()
+    {
+        return $this->ClientDetail;
+    }
+    
+    /**
      * Contains a free form field that is echoed back in the reply to match requests with replies and data that governs the data payload language/translations.
      *
      * @param TransactionDetail $transactionDetail
-     * return SignatureProofOfDeliveryFaxRequest
+     * @return SignatureProofOfDeliveryFaxRequest
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
@@ -58,10 +78,20 @@ class SignatureProofOfDeliveryFaxRequest
     }
     
     /**
+     * Returns Contains a free form field that is echoed back in the reply to match requests with replies and data that governs the data payload language/translations.
+     *
+     * @return TransactionDetail
+     */
+    public function getTransactionDetail()
+    {
+        return $this->TransactionDetail;
+    }
+    
+    /**
      * The version of the request being used.
      *
      * @param VersionId $version
-     * return SignatureProofOfDeliveryFaxRequest
+     * @return SignatureProofOfDeliveryFaxRequest
      */
     public function setVersion(VersionId $version)
     {
@@ -70,10 +100,20 @@ class SignatureProofOfDeliveryFaxRequest
     }
     
     /**
+     * Returns The version of the request being used.
+     *
+     * @return VersionId
+     */
+    public function getVersion()
+    {
+        return $this->Version;
+    }
+    
+    /**
      * Tracking number and additional shipment data used to identify a unique shipment for proof of delivery.
      *
      * @param QualifiedTrackingNumber $qualifiedTrackingNumber
-     * return SignatureProofOfDeliveryFaxRequest
+     * @return SignatureProofOfDeliveryFaxRequest
      */
     public function setQualifiedTrackingNumber(QualifiedTrackingNumber $qualifiedTrackingNumber)
     {
@@ -82,10 +122,20 @@ class SignatureProofOfDeliveryFaxRequest
     }
     
     /**
+     * Returns Tracking number and additional shipment data used to identify a unique shipment for proof of delivery.
+     *
+     * @return QualifiedTrackingNumber
+     */
+    public function getQualifiedTrackingNumber()
+    {
+        return $this->QualifiedTrackingNumber;
+    }
+    
+    /**
      * Additional customer-supplied text to be added to the body of the letter.
      *
      * @param string $additionalComments
-     * return SignatureProofOfDeliveryFaxRequest
+     * @return SignatureProofOfDeliveryFaxRequest
      */
     public function setAdditionalComments($additionalComments)
     {
@@ -94,10 +144,20 @@ class SignatureProofOfDeliveryFaxRequest
     }
     
     /**
+     * Returns Additional customer-supplied text to be added to the body of the letter.
+     *
+     * @return string
+     */
+    public function getAdditionalComments()
+    {
+        return $this->AdditionalComments;
+    }
+    
+    /**
      * Contact and address information about the person requesting the fax to be sent.
      *
      * @param ContactAndAddress $faxSender
-     * return SignatureProofOfDeliveryFaxRequest
+     * @return SignatureProofOfDeliveryFaxRequest
      */
     public function setFaxSender(ContactAndAddress $faxSender)
     {
@@ -106,15 +166,35 @@ class SignatureProofOfDeliveryFaxRequest
     }
     
     /**
+     * Returns Contact and address information about the person requesting the fax to be sent.
+     *
+     * @return ContactAndAddress
+     */
+    public function getFaxSender()
+    {
+        return $this->FaxSender;
+    }
+    
+    /**
      * Contact and address information, including the fax number, about the person to receive the fax.
      *
      * @param ContactAndAddress $faxRecipient
-     * return SignatureProofOfDeliveryFaxRequest
+     * @return SignatureProofOfDeliveryFaxRequest
      */
     public function setFaxRecipient(ContactAndAddress $faxRecipient)
     {
         $this->FaxRecipient = $faxRecipient;
         return $this;
+    }
+    
+    /**
+     * Returns Contact and address information, including the fax number, about the person to receive the fax.
+     *
+     * @return ContactAndAddress
+     */
+    public function getFaxRecipient()
+    {
+        return $this->FaxRecipient;
     }
     
 

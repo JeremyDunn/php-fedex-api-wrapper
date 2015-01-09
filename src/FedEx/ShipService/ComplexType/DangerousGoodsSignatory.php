@@ -25,7 +25,7 @@ class DangerousGoodsSignatory
      * Set ContactName
      *
      * @param string $contactName
-     * return DangerousGoodsSignatory
+     * @return DangerousGoodsSignatory
      */
     public function setContactName($contactName)
     {
@@ -34,10 +34,20 @@ class DangerousGoodsSignatory
     }
     
     /**
+     * Returns Set ContactName
+     *
+     * @return string
+     */
+    public function getContactName()
+    {
+        return $this->ContactName;
+    }
+    
+    /**
      * Set Title
      *
      * @param string $title
-     * return DangerousGoodsSignatory
+     * @return DangerousGoodsSignatory
      */
     public function setTitle($title)
     {
@@ -46,15 +56,35 @@ class DangerousGoodsSignatory
     }
     
     /**
+     * Returns Set Title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->Title;
+    }
+    
+    /**
      * Indicates the place where the form is signed.
      *
      * @param string $place
-     * return DangerousGoodsSignatory
+     * @return DangerousGoodsSignatory
      */
     public function setPlace($place)
     {
         $this->Place = $place;
         return $this;
+    }
+    
+    /**
+     * Returns Indicates the place where the form is signed.
+     *
+     * @return string
+     */
+    public function getPlace()
+    {
+        return $this->Place;
     }
     
 

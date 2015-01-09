@@ -25,7 +25,7 @@ class NaftaCertificateOfOriginDetail
      * Set Format
      *
      * @param ShippingDocumentFormat $format
-     * return NaftaCertificateOfOriginDetail
+     * @return NaftaCertificateOfOriginDetail
      */
     public function setFormat(ShippingDocumentFormat $format)
     {
@@ -34,10 +34,20 @@ class NaftaCertificateOfOriginDetail
     }
     
     /**
+     * Returns Set Format
+     *
+     * @return ShippingDocumentFormat
+     */
+    public function getFormat()
+    {
+        return $this->Format;
+    }
+    
+    /**
      * Set BlanketPeriod
      *
      * @param DateRange $blanketPeriod
-     * return NaftaCertificateOfOriginDetail
+     * @return NaftaCertificateOfOriginDetail
      */
     public function setBlanketPeriod(DateRange $blanketPeriod)
     {
@@ -46,10 +56,20 @@ class NaftaCertificateOfOriginDetail
     }
     
     /**
+     * Returns Set BlanketPeriod
+     *
+     * @return DateRange
+     */
+    public function getBlanketPeriod()
+    {
+        return $this->BlanketPeriod;
+    }
+    
+    /**
      * Indicates which Party (if any) from the shipment is to be used as the source of importer data on the NAFTA COO form.
      *
      * @param \FedEx\RateService\SimpleType\NaftaImporterSpecificationType|string $importerSpecification
-     * return NaftaCertificateOfOriginDetail
+     * @return NaftaCertificateOfOriginDetail
      */
     public function setImporterSpecification($importerSpecification)
     {
@@ -58,10 +78,20 @@ class NaftaCertificateOfOriginDetail
     }
     
     /**
+     * Returns Indicates which Party (if any) from the shipment is to be used as the source of importer data on the NAFTA COO form.
+     *
+     * @return \FedEx\RateService\SimpleType\NaftaImporterSpecificationType|string
+     */
+    public function getImporterSpecification()
+    {
+        return $this->ImporterSpecification;
+    }
+    
+    /**
      * Contact information for "Authorized Signature" area of form.
      *
      * @param Contact $signatureContact
-     * return NaftaCertificateOfOriginDetail
+     * @return NaftaCertificateOfOriginDetail
      */
     public function setSignatureContact(Contact $signatureContact)
     {
@@ -70,10 +100,20 @@ class NaftaCertificateOfOriginDetail
     }
     
     /**
+     * Returns Contact information for "Authorized Signature" area of form.
+     *
+     * @return Contact
+     */
+    public function getSignatureContact()
+    {
+        return $this->SignatureContact;
+    }
+    
+    /**
      * Set ProducerSpecification
      *
      * @param \FedEx\RateService\SimpleType\NaftaProducerSpecificationType|string $producerSpecification
-     * return NaftaCertificateOfOriginDetail
+     * @return NaftaCertificateOfOriginDetail
      */
     public function setProducerSpecification($producerSpecification)
     {
@@ -82,10 +122,20 @@ class NaftaCertificateOfOriginDetail
     }
     
     /**
+     * Returns Set ProducerSpecification
+     *
+     * @return \FedEx\RateService\SimpleType\NaftaProducerSpecificationType|string
+     */
+    public function getProducerSpecification()
+    {
+        return $this->ProducerSpecification;
+    }
+    
+    /**
      * Set Producers
      *
      * @param NaftaProducer[] $producers
-     * return NaftaCertificateOfOriginDetail
+     * @return NaftaCertificateOfOriginDetail
      */
     public function setProducers(array $producers)
     {
@@ -94,15 +144,35 @@ class NaftaCertificateOfOriginDetail
     }
     
     /**
+     * Returns Set Producers
+     *
+     * @return NaftaProducer[]
+     */
+    public function getProducers()
+    {
+        return $this->Producers;
+    }
+    
+    /**
      * Set CustomerImageUsages
      *
      * @param CustomerImageUsage[] $customerImageUsages
-     * return NaftaCertificateOfOriginDetail
+     * @return NaftaCertificateOfOriginDetail
      */
     public function setCustomerImageUsages(array $customerImageUsages)
     {
         $this->CustomerImageUsages = $customerImageUsages;
         return $this;
+    }
+    
+    /**
+     * Returns Set CustomerImageUsages
+     *
+     * @return CustomerImageUsage[]
+     */
+    public function getCustomerImageUsages()
+    {
+        return $this->CustomerImageUsages;
     }
     
 

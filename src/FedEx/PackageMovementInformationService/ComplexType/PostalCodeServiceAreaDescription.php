@@ -25,7 +25,7 @@ class PostalCodeServiceAreaDescription
      * Location ID
      *
      * @param string $locationId
-     * return PostalCodeServiceAreaDescription
+     * @return PostalCodeServiceAreaDescription
      */
     public function setLocationId($locationId)
     {
@@ -34,10 +34,20 @@ class PostalCodeServiceAreaDescription
     }
     
     /**
+     * Returns Location ID
+     *
+     * @return string
+     */
+    public function getLocationId()
+    {
+        return $this->LocationId;
+    }
+    
+    /**
      * State or Province code
      *
      * @param string $stateOrProvinceCode
-     * return PostalCodeServiceAreaDescription
+     * @return PostalCodeServiceAreaDescription
      */
     public function setStateOrProvinceCode($stateOrProvinceCode)
     {
@@ -46,10 +56,20 @@ class PostalCodeServiceAreaDescription
     }
     
     /**
+     * Returns State or Province code
+     *
+     * @return string
+     */
+    public function getStateOrProvinceCode()
+    {
+        return $this->StateOrProvinceCode;
+    }
+    
+    /**
      * Postal Code
      *
      * @param string $postalCode
-     * return PostalCodeServiceAreaDescription
+     * @return PostalCodeServiceAreaDescription
      */
     public function setPostalCode($postalCode)
     {
@@ -58,15 +78,35 @@ class PostalCodeServiceAreaDescription
     }
     
     /**
+     * Returns Postal Code
+     *
+     * @return string
+     */
+    public function getPostalCode()
+    {
+        return $this->PostalCode;
+    }
+    
+    /**
      * Service area code
      *
      * @param string $serviceArea
-     * return PostalCodeServiceAreaDescription
+     * @return PostalCodeServiceAreaDescription
      */
     public function setServiceArea($serviceArea)
     {
         $this->ServiceArea = $serviceArea;
         return $this;
+    }
+    
+    /**
+     * Returns Service area code
+     *
+     * @return string
+     */
+    public function getServiceArea()
+    {
+        return $this->ServiceArea;
     }
     
 

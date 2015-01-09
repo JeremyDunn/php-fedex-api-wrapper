@@ -25,7 +25,7 @@ class GroundCloseReportsReprintReply
      * Set HighestSeverity
      *
      * @param \FedEx\CloseService\SimpleType\NotificationSeverityType|string $highestSeverity
-     * return GroundCloseReportsReprintReply
+     * @return GroundCloseReportsReprintReply
      */
     public function setHighestSeverity($highestSeverity)
     {
@@ -34,10 +34,20 @@ class GroundCloseReportsReprintReply
     }
     
     /**
+     * Returns Set HighestSeverity
+     *
+     * @return \FedEx\CloseService\SimpleType\NotificationSeverityType|string
+     */
+    public function getHighestSeverity()
+    {
+        return $this->HighestSeverity;
+    }
+    
+    /**
      * Set Notifications
      *
      * @param Notification[] $notifications
-     * return GroundCloseReportsReprintReply
+     * @return GroundCloseReportsReprintReply
      */
     public function setNotifications(array $notifications)
     {
@@ -46,10 +56,20 @@ class GroundCloseReportsReprintReply
     }
     
     /**
+     * Returns Set Notifications
+     *
+     * @return Notification[]
+     */
+    public function getNotifications()
+    {
+        return $this->Notifications;
+    }
+    
+    /**
      * Set TransactionDetail
      *
      * @param TransactionDetail $transactionDetail
-     * return GroundCloseReportsReprintReply
+     * @return GroundCloseReportsReprintReply
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
@@ -58,10 +78,20 @@ class GroundCloseReportsReprintReply
     }
     
     /**
+     * Returns Set TransactionDetail
+     *
+     * @return TransactionDetail
+     */
+    public function getTransactionDetail()
+    {
+        return $this->TransactionDetail;
+    }
+    
+    /**
      * Set Version
      *
      * @param VersionId $version
-     * return GroundCloseReportsReprintReply
+     * @return GroundCloseReportsReprintReply
      */
     public function setVersion(VersionId $version)
     {
@@ -70,10 +100,20 @@ class GroundCloseReportsReprintReply
     }
     
     /**
+     * Returns Set Version
+     *
+     * @return VersionId
+     */
+    public function getVersion()
+    {
+        return $this->Version;
+    }
+    
+    /**
      * Set CodReport
      *
      * @param base64Binary $codReport
-     * return GroundCloseReportsReprintReply
+     * @return GroundCloseReportsReprintReply
      */
     public function setCodReport($codReport)
     {
@@ -82,10 +122,20 @@ class GroundCloseReportsReprintReply
     }
     
     /**
+     * Returns Set CodReport
+     *
+     * @return base64Binary
+     */
+    public function getCodReport()
+    {
+        return $this->CodReport;
+    }
+    
+    /**
      * Set HazMatCertificate
      *
      * @param base64Binary $hazMatCertificate
-     * return GroundCloseReportsReprintReply
+     * @return GroundCloseReportsReprintReply
      */
     public function setHazMatCertificate($hazMatCertificate)
     {
@@ -94,15 +144,35 @@ class GroundCloseReportsReprintReply
     }
     
     /**
+     * Returns Set HazMatCertificate
+     *
+     * @return base64Binary
+     */
+    public function getHazMatCertificate()
+    {
+        return $this->HazMatCertificate;
+    }
+    
+    /**
      * Set Manifests
      *
      * @param ManifestFile[] $manifests
-     * return GroundCloseReportsReprintReply
+     * @return GroundCloseReportsReprintReply
      */
     public function setManifests(array $manifests)
     {
         $this->Manifests = $manifests;
         return $this;
+    }
+    
+    /**
+     * Returns Set Manifests
+     *
+     * @return ManifestFile[]
+     */
+    public function getManifests()
+    {
+        return $this->Manifests;
     }
     
 

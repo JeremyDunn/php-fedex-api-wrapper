@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * The descriptive data for a person or company entitiy doing business with FedEx.
+ * Party
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -22,10 +22,10 @@ class Party
     protected $_name = 'Party';
 
     /**
-     * Identifies the FedEx account number assigned to the customer.
+     * Set AccountNumber
      *
      * @param string $accountNumber
-     * return Party
+     * @return Party
      */
     public function setAccountNumber($accountNumber)
     {
@@ -34,10 +34,20 @@ class Party
     }
     
     /**
-     * Descriptive data for taxpayer identification information.
+     * Returns Set AccountNumber
+     *
+     * @return string
+     */
+    public function getAccountNumber()
+    {
+        return $this->AccountNumber;
+    }
+    
+    /**
+     * Set Tins
      *
      * @param TaxpayerIdentification[] $tins
-     * return Party
+     * @return Party
      */
     public function setTins(array $tins)
     {
@@ -46,10 +56,20 @@ class Party
     }
     
     /**
-     * Descriptive data identifying the point-of-contact person.
+     * Returns Set Tins
+     *
+     * @return TaxpayerIdentification[]
+     */
+    public function getTins()
+    {
+        return $this->Tins;
+    }
+    
+    /**
+     * Set Contact
      *
      * @param Contact $contact
-     * return Party
+     * @return Party
      */
     public function setContact(Contact $contact)
     {
@@ -58,15 +78,35 @@ class Party
     }
     
     /**
-     * The descriptive data for a physical location.
+     * Returns Set Contact
+     *
+     * @return Contact
+     */
+    public function getContact()
+    {
+        return $this->Contact;
+    }
+    
+    /**
+     * Set Address
      *
      * @param Address $address
-     * return Party
+     * @return Party
      */
     public function setAddress(Address $address)
     {
         $this->Address = $address;
         return $this;
+    }
+    
+    /**
+     * Returns Set Address
+     *
+     * @return Address
+     */
+    public function getAddress()
+    {
+        return $this->Address;
     }
     
 

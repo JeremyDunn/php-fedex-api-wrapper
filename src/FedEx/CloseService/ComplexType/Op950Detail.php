@@ -25,7 +25,7 @@ class Op950Detail
      * Specifies characteristics of a shipping document to be produced.
      *
      * @param CloseDocumentFormat $format
-     * return Op950Detail
+     * @return Op950Detail
      */
     public function setFormat(CloseDocumentFormat $format)
     {
@@ -34,10 +34,20 @@ class Op950Detail
     }
     
     /**
+     * Returns Specifies characteristics of a shipping document to be produced.
+     *
+     * @return CloseDocumentFormat
+     */
+    public function getFormat()
+    {
+        return $this->Format;
+    }
+    
+    /**
      * Specifies the usage and identification of a customer supplied image to be used on this document.
      *
      * @param CustomerImageUsage[] $customerImageUsages
-     * return Op950Detail
+     * @return Op950Detail
      */
     public function setCustomerImageUsages(array $customerImageUsages)
     {
@@ -46,15 +56,35 @@ class Op950Detail
     }
     
     /**
+     * Returns Specifies the usage and identification of a customer supplied image to be used on this document.
+     *
+     * @return CustomerImageUsage[]
+     */
+    public function getCustomerImageUsages()
+    {
+        return $this->CustomerImageUsages;
+    }
+    
+    /**
      * Data field to be used when a name is to be printed in the document instead of (or in addition to) a signature image.
      *
      * @param string $signatureName
-     * return Op950Detail
+     * @return Op950Detail
      */
     public function setSignatureName($signatureName)
     {
         $this->SignatureName = $signatureName;
         return $this;
+    }
+    
+    /**
+     * Returns Data field to be used when a name is to be printed in the document instead of (or in addition to) a signature image.
+     *
+     * @return string
+     */
+    public function getSignatureName()
+    {
+        return $this->SignatureName;
     }
     
 

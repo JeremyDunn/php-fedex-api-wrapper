@@ -25,7 +25,7 @@ class RadioactivityDetail
      * Set TransportIndex
      *
      * @param decimal $transportIndex
-     * return RadioactivityDetail
+     * @return RadioactivityDetail
      */
     public function setTransportIndex($transportIndex)
     {
@@ -34,10 +34,20 @@ class RadioactivityDetail
     }
     
     /**
+     * Returns Set TransportIndex
+     *
+     * @return decimal
+     */
+    public function getTransportIndex()
+    {
+        return $this->TransportIndex;
+    }
+    
+    /**
      * Set SurfaceReading
      *
      * @param decimal $surfaceReading
-     * return RadioactivityDetail
+     * @return RadioactivityDetail
      */
     public function setSurfaceReading($surfaceReading)
     {
@@ -46,10 +56,20 @@ class RadioactivityDetail
     }
     
     /**
+     * Returns Set SurfaceReading
+     *
+     * @return decimal
+     */
+    public function getSurfaceReading()
+    {
+        return $this->SurfaceReading;
+    }
+    
+    /**
      * Set CriticalitySafetyIndex
      *
      * @param decimal $criticalitySafetyIndex
-     * return RadioactivityDetail
+     * @return RadioactivityDetail
      */
     public function setCriticalitySafetyIndex($criticalitySafetyIndex)
     {
@@ -58,15 +78,35 @@ class RadioactivityDetail
     }
     
     /**
+     * Returns Set CriticalitySafetyIndex
+     *
+     * @return decimal
+     */
+    public function getCriticalitySafetyIndex()
+    {
+        return $this->CriticalitySafetyIndex;
+    }
+    
+    /**
      * Set Dimensions
      *
      * @param Dimensions $dimensions
-     * return RadioactivityDetail
+     * @return RadioactivityDetail
      */
     public function setDimensions(Dimensions $dimensions)
     {
         $this->Dimensions = $dimensions;
         return $this;
+    }
+    
+    /**
+     * Returns Set Dimensions
+     *
+     * @return Dimensions
+     */
+    public function getDimensions()
+    {
+        return $this->Dimensions;
     }
     
 

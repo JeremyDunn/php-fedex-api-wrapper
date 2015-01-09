@@ -25,7 +25,7 @@ class AssociatedAccount
      * Set Type
      *
      * @param \FedEx\Pickup\SimpleType\AssociatedAccountNumberType|string $type
-     * return AssociatedAccount
+     * @return AssociatedAccount
      */
     public function setType($type)
     {
@@ -34,15 +34,35 @@ class AssociatedAccount
     }
     
     /**
+     * Returns Set Type
+     *
+     * @return \FedEx\Pickup\SimpleType\AssociatedAccountNumberType|string
+     */
+    public function getType()
+    {
+        return $this->Type;
+    }
+    
+    /**
      * Set AccountNumber
      *
      * @param string $accountNumber
-     * return AssociatedAccount
+     * @return AssociatedAccount
      */
     public function setAccountNumber($accountNumber)
     {
         $this->AccountNumber = $accountNumber;
         return $this;
+    }
+    
+    /**
+     * Returns Set AccountNumber
+     *
+     * @return string
+     */
+    public function getAccountNumber()
+    {
+        return $this->AccountNumber;
     }
     
 

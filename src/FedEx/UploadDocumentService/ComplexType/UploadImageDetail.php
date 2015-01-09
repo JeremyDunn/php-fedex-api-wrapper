@@ -25,7 +25,7 @@ class UploadImageDetail
      * Set Id
      *
      * @param \FedEx\UploadDocumentService\SimpleType\ImageId|string $id
-     * return UploadImageDetail
+     * @return UploadImageDetail
      */
     public function setId($id)
     {
@@ -34,15 +34,35 @@ class UploadImageDetail
     }
     
     /**
+     * Returns Set Id
+     *
+     * @return \FedEx\UploadDocumentService\SimpleType\ImageId|string
+     */
+    public function getId()
+    {
+        return $this->Id;
+    }
+    
+    /**
      * Set Image
      *
      * @param base64Binary $image
-     * return UploadImageDetail
+     * @return UploadImageDetail
      */
     public function setImage($image)
     {
         $this->Image = $image;
         return $this;
+    }
+    
+    /**
+     * Returns Set Image
+     *
+     * @return base64Binary
+     */
+    public function getImage()
+    {
+        return $this->Image;
     }
     
 

@@ -25,7 +25,7 @@ class PriorityAlertDetail
      * Set EnhancementTypes
      *
      * @param PriorityAlertEnhancementType[] $enhancementTypes
-     * return PriorityAlertDetail
+     * @return PriorityAlertDetail
      */
     public function setEnhancementTypes(array $enhancementTypes)
     {
@@ -34,15 +34,35 @@ class PriorityAlertDetail
     }
     
     /**
+     * Returns Set EnhancementTypes
+     *
+     * @return PriorityAlertEnhancementType[]
+     */
+    public function getEnhancementTypes()
+    {
+        return $this->EnhancementTypes;
+    }
+    
+    /**
      * Set Content
      *
      * @param string[] $content
-     * return PriorityAlertDetail
+     * @return PriorityAlertDetail
      */
     public function setContent(array $content)
     {
         $this->Content = $content;
         return $this;
+    }
+    
+    /**
+     * Returns Set Content
+     *
+     * @return string[]
+     */
+    public function getContent()
+    {
+        return $this->Content;
     }
     
 

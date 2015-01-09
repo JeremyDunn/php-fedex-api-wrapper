@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Defines additional data to print in the Configurable portion of the label, this allows you to print the same type information on the label that can also be printed on the doc tab.
+ * ConfigurableLabelReferenceEntry
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -22,10 +22,10 @@ class ConfigurableLabelReferenceEntry
     protected $_name = 'ConfigurableLabelReferenceEntry';
 
     /**
-     * 1 of 12 possible zones to  position data.
+     * Set ZoneNumber
      *
      * @param positiveInteger $zoneNumber
-     * return ConfigurableLabelReferenceEntry
+     * @return ConfigurableLabelReferenceEntry
      */
     public function setZoneNumber($zoneNumber)
     {
@@ -34,10 +34,20 @@ class ConfigurableLabelReferenceEntry
     }
     
     /**
-     * The identifiying text for the data in this zone.
+     * Returns Set ZoneNumber
+     *
+     * @return positiveInteger
+     */
+    public function getZoneNumber()
+    {
+        return $this->ZoneNumber;
+    }
+    
+    /**
+     * Set Header
      *
      * @param string $header
-     * return ConfigurableLabelReferenceEntry
+     * @return ConfigurableLabelReferenceEntry
      */
     public function setHeader($header)
     {
@@ -46,10 +56,20 @@ class ConfigurableLabelReferenceEntry
     }
     
     /**
-     * A reference to a field in either the request or reply to print in this zone following the header.
+     * Returns Set Header
+     *
+     * @return string
+     */
+    public function getHeader()
+    {
+        return $this->Header;
+    }
+    
+    /**
+     * Set DataField
      *
      * @param string $dataField
-     * return ConfigurableLabelReferenceEntry
+     * @return ConfigurableLabelReferenceEntry
      */
     public function setDataField($dataField)
     {
@@ -58,15 +78,35 @@ class ConfigurableLabelReferenceEntry
     }
     
     /**
-     * A literal value to print after the header in this zone.
+     * Returns Set DataField
+     *
+     * @return string
+     */
+    public function getDataField()
+    {
+        return $this->DataField;
+    }
+    
+    /**
+     * Set LiteralValue
      *
      * @param string $literalValue
-     * return ConfigurableLabelReferenceEntry
+     * @return ConfigurableLabelReferenceEntry
      */
     public function setLiteralValue($literalValue)
     {
         $this->LiteralValue = $literalValue;
         return $this;
+    }
+    
+    /**
+     * Returns Set LiteralValue
+     *
+     * @return string
+     */
+    public function getLiteralValue()
+    {
+        return $this->LiteralValue;
     }
     
 
