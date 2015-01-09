@@ -4860,7 +4860,7 @@
   </binding>
   <service name="RateService">
     <port name="RateServicePort" binding="ns:RateServiceSoapBinding">
-      <s1:address location="https://betaws.fedex.com:443/web-services/rate"/>
+      <s1:address location="https://wsbeta.fedex.com:443/web-services/rate"/>
     </port>
   </service>
 </definitions>
