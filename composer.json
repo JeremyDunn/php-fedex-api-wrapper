@@ -19,6 +19,9 @@
         "symfony/console": "2.*"
     },
     "autoload": {
-        "psr-0": {"FedEx": "src/"}
+        "psr-4": {
+            "FedEx\\": "src/FedEx/",
+            "FedEx\\Utility\\": "util/"
+        }
     }
 }
