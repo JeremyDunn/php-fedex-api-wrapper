@@ -1,10 +1,10 @@
 <?php
 //Change these values below.
 
-//define('FEDEX_ACCOUNT_NUMBER', '');
-//define('FEDEX_METER_NUMBER', '');
-//define('FEDEX_KEY', '');
-//define('FEDEX_PASSWORD', '');
+define('FEDEX_ACCOUNT_NUMBER', '');
+define('FEDEX_METER_NUMBER', '');
+define('FEDEX_KEY', '');
+define('FEDEX_PASSWORD', '');
 
 
 if (!defined('FEDEX_ACCOUNT_NUMBER') || !defined('FEDEX_METER_NUMBER') || !defined('FEDEX_KEY') || !defined('FEDEX_PASSWORD')) {
