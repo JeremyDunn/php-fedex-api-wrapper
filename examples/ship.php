@@ -28,20 +28,17 @@ $clientDetail
 
 $version = new ComplexType\VersionId();
 $version
-    ->setMajor(10)
-    ->setIntermediate(0)
+    ->setMajor(12)
+    ->setIntermediate(1)
     ->setMinor(0)
     ->setServiceId('ship');
 
 $shipperAddress = new ComplexType\Address();
 $shipperAddress
-    ->setStreetLines(array(
-        '12345 Main Street',
-        'STE 810'
-    ))
-    ->setCity('Anytown')
-    ->setStateOrProvinceCode('NY')
-    ->setPostalCode('12345')
+    ->setStreetLines(['Address Line 1'])
+    ->setCity('Austin')
+    ->setStateOrProvinceCode('TX')
+    ->setPostalCode('73301')
     ->setCountryCode('US');
 
 $shipperContact = new ComplexType\Contact();
@@ -59,15 +56,16 @@ $shipper
 
 $recipientAddress = new ComplexType\Address();
 $recipientAddress
-    ->setStreetLines(array('54312 1st Ave'))
-    ->setCity('Anytown')
-    ->setStateOrProvinceCode('NY')
-    ->setPostalCode('12345')
+    ->setStreetLines(['Address Line 1'])
+    ->setCity('Herndon')
+    ->setStateOrProvinceCode('VA')
+    ->setPostalCode('20171')
     ->setCountryCode('US');
 
 $recipientContact = new ComplexType\Contact();
 $recipientContact
-    ->setPersonName('Contact Name');
+    ->setPersonName('Contact Name')
+    ->setPhoneNumber('1234567890');
 
 $recipient = new ComplexType\Party();
 $recipient
@@ -80,6 +78,28 @@ $labelSpecification
     ->setImageType(new SimpleType\ShippingDocumentImageType(SimpleType\ShippingDocumentImageType::_PDF))
     ->setLabelFormatType(new SimpleType\LabelFormatType(SimpleType\LabelFormatType::_COMMON2D));
 
+$packageLineItem1 = new ComplexType\RequestedPackageLineItem();
+$packageLineItem1
+    ->setSequenceNumber(1)
+    ->setItemDescription('Product description')
+    ->setDimensions(new ComplexType\Dimensions(array(
+        'Width' => 10,
+        'Height' => 10,
+        'Length' => 25,
+        'Units' => SimpleType\LinearUnits::_IN
+    )))
+    ->setWeight(new ComplexType\Weight(array(
+        'Value' => 2,
+        'Units' => SimpleType\WeightUnits::_LB
+    )));
+
+$shippingChargesPayor = new ComplexType\Payor();
+$shippingChargesPayor->setResponsibleParty($shipper);
+
+$shippingChargesPayment = new ComplexType\Payment();
+$shippingChargesPayment
+    ->setPaymentType(SimpleType\PaymentType::_SENDER)
+    ->setPayor($shippingChargesPayor);
 
 $requestedShipment = new ComplexType\RequestedShipment();
 $requestedShipment->setShipTimestamp(date('c'));
@@ -91,21 +111,19 @@ $requestedShipment->setRecipient($recipient);
 $requestedShipment->setLabelSpecification($labelSpecification);
 $requestedShipment->setRateRequestTypes(array(new SimpleType\RateRequestType(SimpleType\RateRequestType::_ACCOUNT)));
 $requestedShipment->setPackageCount(1);
+$requestedShipment->setRequestedPackageLineItems([
+    $packageLineItem1
+]);
+$requestedShipment->setShippingChargesPayment($shippingChargesPayment);
 
-
-
-
-$createPendingShipmentRequest = new ComplexType\CreatePendingShipmentRequest();
-$createPendingShipmentRequest->setWebAuthenticationDetail($webAuthenticationDetail);
-$createPendingShipmentRequest->setClientDetail($clientDetail);
-$createPendingShipmentRequest->setVersion($version);
-$createPendingShipmentRequest->setRequestedShipment($requestedShipment);
-
-
-
+$processShipmentRequest = new ComplexType\ProcessShipmentRequest();
+$processShipmentRequest->setWebAuthenticationDetail($webAuthenticationDetail);
+$processShipmentRequest->setClientDetail($clientDetail);
+$processShipmentRequest->setVersion($version);
+$processShipmentRequest->setRequestedShipment($requestedShipment);
 
 $shipService = new ShipService\Request();
-$shipService->getSoapClient()->__setLocation('https://ws.fedex.com:443/web-services/ship');
-$result = $shipService->getCreatePendingShipmentReply($createPendingShipmentRequest);
+//$shipService->getSoapClient()->__setLocation('https://ws.fedex.com:443/web-services/ship');
+$result = $shipService->getProcessShipmentReply($processShipmentRequest);
 
 var_dump($result);
