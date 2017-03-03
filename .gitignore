@@ -1,20 +1,57 @@
-# OS generated files #
-######################
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-Icon?
-ehthumbs.db
-Thumbs.db
+# https://github.com/github/gitignore
+# https://www.gitignore.io/
+# http://git-scm.com/docs/gitignore
 
-# Project Specific #
-####################
+# phpstorm
+.idea/
+
+# sublime and other ide
+.project
+*.sublime-project
+*.sublime-workspace
+.brackets.json
+_notes
+
+# logs
+logs/
+*.log
+npm-debug.log*
+error_log
+
+# OS generated files
+[Tt]humbs.db
+ehthumbs.db
+*~
+.*~
+._*
+*.bak
+
+# Recycle bin folder used by different os
+.Trash-*
+.Trashes
+$RECYCLE.BIN/
+.Spotlight-V100
+
+# Windows shortcuts
+*.lnk
+
+# Folder config file
+[Dd]esktop.ini
+.DS_Store
+*.DS_Store
+.DS_Store?
+Icon?
+
+# composer
+vendor/
+composer.phar
+composer.lock
+
+# Security tokens
+*.pem
+*.pub
+*.crt
+
+# Project Specific
 nbproject
 examples/credentials.php
-composer.lock
-vendor
-
-
-
