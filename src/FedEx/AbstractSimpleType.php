@@ -13,7 +13,7 @@ abstract class AbstractSimpleType
      *
      * @var string
      */
-    protected $_value;
+    protected $value;
 
     /**
      * Constructor
@@ -22,7 +22,7 @@ abstract class AbstractSimpleType
      */
     public function __construct($value)
     {
-        $this->_value = $value;
+        $this->value = $value;
     }
 
     /**
@@ -32,6 +32,6 @@ abstract class AbstractSimpleType
      */
     public function __toString()
     {
-        return $this->_value;
+        return $this->value;
     }
 }

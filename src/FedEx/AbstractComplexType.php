@@ -15,21 +15,22 @@ abstract class AbstractComplexType
      *
      * @var array
      */
-    protected $_values = array();
+    protected $values = [];
 
     /**
      * The name of the extended class/data type
      *
      * @var string
      */
-    protected $_name;
+    protected $name;
 
     /**
      * Constructor
      *
      * @param array $options Data as key => value array
      */
-    public function __construct(array $options = null) {
+    public function __construct(array $options = null)
+    {
         if (is_array($options)) {
             foreach ($options as $name => $value) {
                 $this->$name = $value;
@@ -43,7 +44,8 @@ abstract class AbstractComplexType
      * @param string $name
      * @param string $value
      */
-    public function __set($name, $value) {
+    public function __set($name, $value)
+    {
         $this->_values[$name] = $value;
     }
 
@@ -53,18 +55,18 @@ abstract class AbstractComplexType
      * @param array $arrayValues
      * @return array
      */
-    protected function _convertToArray($arrayValues) {
+    protected function convertToArray($arrayValues)
+    {
         $returnArray = array();
 
         foreach ($arrayValues as $key => $value) {
-
             if ($value instanceof self) {
                 $returnArray[$key] = $value->toArray();
             } else if (is_array($value)) {
-                $returnArray[$key] = $this->_convertToArray($value);
+                $returnArray[$key] = $this->convertToArray($value);
             } else {
                 if ($value instanceof SimpleType\AbstractSimpleType) {
-                    $returnArray[$key] = (string) $value;
+                    $returnArray[$key] = (string)$value;
                 } else {
                     $returnArray[$key] = $value;
                 }
@@ -80,11 +82,12 @@ abstract class AbstractComplexType
      * @param boolean $renderTopKey
      * @return array
      */
-    public function toArray($renderTopKey = false) {
-        $returnArray = $this->_convertToArray($this->_values);
+    public function toArray($renderTopKey = false)
+    {
+        $returnArray = $this->convertToArray($this->values);
 
         if ($renderTopKey) {
-            return array($this->_name => $returnArray);
+            return array($this->name => $returnArray);
         } else {
             return $returnArray;
         }
