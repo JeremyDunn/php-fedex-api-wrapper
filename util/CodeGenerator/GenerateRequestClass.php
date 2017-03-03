@@ -11,56 +11,28 @@ namespace FedEx\Utility\CodeGenerator;
 class GenerateRequestClass extends AbstractGenerate
 {
     /**
-     * Path to WSDL file
-     *
-     * @var string
-     */
-    protected $_wsdlPath;
-
-    /**
-     * Path to Request class file
-     *
-     * @var string
-     */
-    protected $_pathToRequestClassFile;
-
-    /**
-     * Namespace name
-     *
-     * @var string
-     */
-    protected $_namespace;
-
-    /**
-     * Subpackage name
-     *
-     * @var string
-     */
-    protected $_subPackageName;
-
-    /**
      * Constructor
      *
-     * @param string $pathToRequestClassFile Path to Request.php file
+     * @param string $exportPath Path to Request.php file
      * @param string $wsdlPath Path to WSDL file
      * @param string $namespace base Namespace name (eg: FedEx\RateService).
      * @param string $subPackageName Sub package the generated class belongs to (used in DocBlock)
      * @throws \Exception
      */
-    public function __construct($pathToRequestClassFile, $wsdlPath, $namespace, $subPackageName)
+    public function __construct($exportPath, $wsdlPath, $namespace, $subPackageName)
     {
         if (file_exists($wsdlPath)) {
-            $this->_wsdlPath = $wsdlPath;
+            $this->wsdlPath = $wsdlPath;
         } else {
             throw new \Exception('path to wsdl file is invalid');
         }
 
-        $this->_pathToRequestClassFile = $pathToRequestClassFile;
+        $this->exportPath = $exportPath;
 
 
-        $this->_namespace = $namespace;
+        $this->namespace = $namespace;
 
-        $this->_subPackageName = $subPackageName;
+        $this->subPackageName = $subPackageName;
     }
 
     /**
@@ -68,7 +40,7 @@ class GenerateRequestClass extends AbstractGenerate
      */
     public function run()
     {
-        $soapClient = new \Soapclient($this->_wsdlPath, array('trace' => true));
+        $soapClient = new \Soapclient($this->wsdlPath, array('trace' => true));
 
         $soapFunctions = $soapClient->__getFunctions();
 
@@ -100,11 +72,11 @@ class GenerateRequestClass extends AbstractGenerate
             $requestFunctionDefinitions[] = $thisDefinition;
         }
 
-        echo "Writing file: {$this->_pathToRequestClassFile}\n";
+        echo "Writing file: {$this->exportPath}\n";
 
-        $fh = fopen($this->_pathToRequestClassFile, 'w');
+        $fh = fopen($this->exportPath, 'w');
 
-        $fileBody = $this->_getGeneratedFileBody($requestFunctionDefinitions);
+        $fileBody = $this->getGeneratedFileBody($requestFunctionDefinitions);
 
         fwrite($fh, $fileBody);
         fclose($fh);
@@ -116,9 +88,9 @@ class GenerateRequestClass extends AbstractGenerate
      * @param array $requestFunctionDefinitions Array contining the request function details
      * @return string
      */
-    protected function _getGeneratedFileBody(array $requestFunctionDefinitions)
+    protected function getGeneratedFileBody(array $requestFunctionDefinitions)
     {
-        $relativePathToWSDL = $this->getRelativePath($this->_pathToRequestClassFile, $this->_wsdlPath);
+        $relativePathToWSDL = $this->getRelativePath($this->exportPath, $this->wsdlPath);
 
         $requestFunctions = '';
 
@@ -140,7 +112,7 @@ TEXT;
 
         $fileBody = <<<TEXT
 <?php
-namespace {$this->_namespace};
+namespace {$this->namespace};
     
 use FedEx\AbstractRequest;
 
@@ -149,7 +121,7 @@ use FedEx\AbstractRequest;
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
- * @subpackage  {$this->_subPackageName}
+ * @subpackage  {$this->subPackageName}
  */
 class Request extends AbstractRequest
 {

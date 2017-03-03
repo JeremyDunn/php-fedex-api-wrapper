@@ -49,7 +49,7 @@ class GenerateSimpleTypeClasses extends AbstractGenerate
 
         $this->namespace = $namespace;
         $this->subPackageName = $subPackageName;
-        $this->loadXML();
+        $this->_loadXML();
     }
 
     /**

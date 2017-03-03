@@ -35,7 +35,7 @@ class GenerateComplexTypeClasses extends AbstractGenerate
 
         $this->baseNamespace = $baseNamespace;
         $this->subPackageName = $subPackageName;
-        $this->loadXML();
+        $this->_loadXML();
     }
 
     /**
@@ -109,7 +109,7 @@ class GenerateComplexTypeClasses extends AbstractGenerate
         $methodString = '';
 
         foreach ($properties as $property) {
-            $propertiesString .= " * @property {$property['type']} \${$property['name']}\n";
+            $propertiesString .= $this->getGeneratedClassProperty($property);
             $methodString .= $this->getGeneratedSetMethod($property) . "\n";
         }
 
@@ -201,6 +201,22 @@ TEXT;
 TEXT;
 
         return $returnString;
+    }
+
+    public function getGeneratedClassProperty(array $property)
+    {
+        $typePHPDoc = $property['type'];
+
+        $simpleTypeNamespace = "\\{$this->baseNamespace}\\SimpleType\\";
+        if ($this->isSimpleType($property['type'])) {
+            $typePHPDoc = $simpleTypeNamespace . $property['type'] . '|string';
+        }
+
+        if ($property['maxOccurs'] > 1 || $property['maxOccurs'] == 'unbounded') {
+            $typePHPDoc .= "[]";
+        }
+
+        return " * @property {$typePHPDoc} \${$property['name']}\n";
     }
 
     /**

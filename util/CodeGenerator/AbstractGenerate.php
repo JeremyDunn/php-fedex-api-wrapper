@@ -77,14 +77,14 @@ abstract class AbstractGenerate
 
         $this->namespace = $namespace;
         $this->subPackageName = $subPackageName;
-        $this->loadXML();
+        $this->_loadXML();
     }
 
     /**
      * Parses the xml file as a SimpleXMLElement
      *
      */
-    protected function loadXML()
+    protected function _loadXML()
     {
         $fileContents = file_get_contents($this->wsdlPath);
         $fileContents = str_replace('xs:', '', $fileContents);
