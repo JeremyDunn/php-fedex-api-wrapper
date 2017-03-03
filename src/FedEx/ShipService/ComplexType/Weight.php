@@ -36,7 +36,7 @@ class Weight
     /**
      * Identifies the weight value of a package/shipment.
      *
-     * @param decimal $value
+     * @param double $value
      * return Weight
      */
     public function setValue($value)
