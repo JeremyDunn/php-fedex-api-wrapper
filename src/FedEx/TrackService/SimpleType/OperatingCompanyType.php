@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class OperatingCompanyType
-    extends AbstractSimpleType
+class OperatingCompanyType extends AbstractSimpleType
 {
     const _FEDEX_OFFICE = 'FEDEX_OFFICE';
 }

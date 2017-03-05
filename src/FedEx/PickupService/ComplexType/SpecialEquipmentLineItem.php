@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
- */
-class SpecialEquipmentLineItem
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\Pickup\SimpleType\SpecialEquipmentType|string $Type
+ * @property duration $Duration
 
+ */
+class SpecialEquipmentLineItem extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'SpecialEquipmentLineItem';
+    protected $name = 'SpecialEquipmentLineItem';
 
     /**
      * Type of equipment used
      *
      * @param \FedEx\Pickup\SimpleType\SpecialEquipmentType|string $type
-     * return SpecialEquipmentLineItem
+     * @return $this
      */
     public function setType($type)
     {
-        $this->Type = $type;
+        $this->values['Type'] = $type;
         return $this;
     }
-    
+
     /**
      * Total amount of time the equipment was used
      *
      * @param duration $duration
-     * return SpecialEquipmentLineItem
+     * @return $this
      */
     public function setDuration(duration $duration)
     {
-        $this->Duration = $duration;
+        $this->values['Duration'] = $duration;
         return $this;
     }
-    
 
     
 }

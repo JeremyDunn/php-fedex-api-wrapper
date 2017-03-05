@@ -9,30 +9,30 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class DocTabContentZone001
-    extends AbstractComplexType
-{
+ *
+ * @property DocTabZoneSpecification[] $DocTabZoneSpecifications
 
+ */
+class DocTabContentZone001 extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'DocTabContentZone001';
+    protected $name = 'DocTabContentZone001';
 
     /**
      * Set DocTabZoneSpecifications
      *
      * @param DocTabZoneSpecification[] $docTabZoneSpecifications
-     * return DocTabContentZone001
+     * @return $this
      */
     public function setDocTabZoneSpecifications(array $docTabZoneSpecifications)
     {
-        $this->DocTabZoneSpecifications = $docTabZoneSpecifications;
+        $this->values['DocTabZoneSpecifications'] = $docTabZoneSpecifications;
         return $this;
     }
-    
 
     
 }

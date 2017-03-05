@@ -9,30 +9,30 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class InternationalTrafficInArmsRegulationsDetail
-    extends AbstractComplexType
-{
+ *
+ * @property string $LicenseOrExemptionNumber
 
+ */
+class InternationalTrafficInArmsRegulationsDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'InternationalTrafficInArmsRegulationsDetail';
+    protected $name = 'InternationalTrafficInArmsRegulationsDetail';
 
     /**
      * Set LicenseOrExemptionNumber
      *
      * @param string $licenseOrExemptionNumber
-     * return InternationalTrafficInArmsRegulationsDetail
+     * @return $this
      */
     public function setLicenseOrExemptionNumber($licenseOrExemptionNumber)
     {
-        $this->LicenseOrExemptionNumber = $licenseOrExemptionNumber;
+        $this->values['LicenseOrExemptionNumber'] = $licenseOrExemptionNumber;
         return $this;
     }
-    
 
     
 }

@@ -9,78 +9,82 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class DangerousGoodsContainer
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\ShipService\SimpleType\HazardousContainerPackingType|string $PackingType
+ * @property string $ContainerType
+ * @property \FedEx\ShipService\SimpleType\RadioactiveContainerClassType|string $RadioactiveContainerClass
+ * @property nonNegativeInteger $NumberOfContainers
+ * @property HazardousCommodityContent[] $HazardousCommodities
 
+ */
+class DangerousGoodsContainer extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'DangerousGoodsContainer';
+    protected $name = 'DangerousGoodsContainer';
 
     /**
      * Indicates whether there are additional inner receptacles within this container.
      *
      * @param \FedEx\ShipService\SimpleType\HazardousContainerPackingType|string $packingType
-     * return DangerousGoodsContainer
+     * @return $this
      */
     public function setPackingType($packingType)
     {
-        $this->PackingType = $packingType;
+        $this->values['PackingType'] = $packingType;
         return $this;
     }
-    
+
     /**
      * Indicates the type of this dangerous goods container, as specified by the IATA packing instructions. For example, steel cylinder, fiberboard box, plastic jerrican and steel drum.
      *
      * @param string $containerType
-     * return DangerousGoodsContainer
+     * @return $this
      */
     public function setContainerType($containerType)
     {
-        $this->ContainerType = $containerType;
+        $this->values['ContainerType'] = $containerType;
         return $this;
     }
-    
+
     /**
      * Indicates the packaging type of the container used to package the radioactive materials.
      *
      * @param \FedEx\ShipService\SimpleType\RadioactiveContainerClassType|string $radioactiveContainerClass
-     * return DangerousGoodsContainer
+     * @return $this
      */
     public function setRadioactiveContainerClass($radioactiveContainerClass)
     {
-        $this->RadioactiveContainerClass = $radioactiveContainerClass;
+        $this->values['RadioactiveContainerClass'] = $radioactiveContainerClass;
         return $this;
     }
-    
+
     /**
      * Indicates the number of occurrences of this container with identical dangerous goods configuration.
      *
      * @param nonNegativeInteger $numberOfContainers
-     * return DangerousGoodsContainer
+     * @return $this
      */
     public function setNumberOfContainers($numberOfContainers)
     {
-        $this->NumberOfContainers = $numberOfContainers;
+        $this->values['NumberOfContainers'] = $numberOfContainers;
         return $this;
     }
-    
+
     /**
      * Documents the kinds and quantities of all hazardous commodities in the current container.
      *
      * @param HazardousCommodityContent[] $hazardousCommodities
-     * return DangerousGoodsContainer
+     * @return $this
      */
     public function setHazardousCommodities(array $hazardousCommodities)
     {
-        $this->HazardousCommodities = $hazardousCommodities;
+        $this->values['HazardousCommodities'] = $hazardousCommodities;
         return $this;
     }
-    
 
     
 }

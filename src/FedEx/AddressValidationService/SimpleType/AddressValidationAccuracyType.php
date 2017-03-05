@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Address Validation Service
  */
-class AddressValidationAccuracyType
-    extends AbstractSimpleType
+class AddressValidationAccuracyType extends AbstractSimpleType
 {
     const _EXACT = 'EXACT';
     const _TIGHT = 'TIGHT';

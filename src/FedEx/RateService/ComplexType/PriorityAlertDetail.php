@@ -9,30 +9,30 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class PriorityAlertDetail
-    extends AbstractComplexType
-{
+ *
+ * @property string[] $Content
 
+ */
+class PriorityAlertDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'PriorityAlertDetail';
+    protected $name = 'PriorityAlertDetail';
 
     /**
      * Set Content
      *
      * @param string[] $content
-     * return PriorityAlertDetail
+     * @return $this
      */
     public function setContent(array $content)
     {
-        $this->Content = $content;
+        $this->values['Content'] = $content;
         return $this;
     }
-    
 
     
 }

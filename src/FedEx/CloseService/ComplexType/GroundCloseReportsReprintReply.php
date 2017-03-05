@@ -9,102 +9,108 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Close Service
- */
-class GroundCloseReportsReprintReply
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\CloseService\SimpleType\NotificationSeverityType|string $HighestSeverity
+ * @property Notification[] $Notifications
+ * @property TransactionDetail $TransactionDetail
+ * @property VersionId $Version
+ * @property base64Binary $CodReport
+ * @property base64Binary $HazMatCertificate
+ * @property ManifestFile[] $Manifests
 
+ */
+class GroundCloseReportsReprintReply extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'GroundCloseReportsReprintReply';
+    protected $name = 'GroundCloseReportsReprintReply';
 
     /**
      * Set HighestSeverity
      *
      * @param \FedEx\CloseService\SimpleType\NotificationSeverityType|string $highestSeverity
-     * return GroundCloseReportsReprintReply
+     * @return $this
      */
     public function setHighestSeverity($highestSeverity)
     {
-        $this->HighestSeverity = $highestSeverity;
+        $this->values['HighestSeverity'] = $highestSeverity;
         return $this;
     }
-    
+
     /**
      * Set Notifications
      *
      * @param Notification[] $notifications
-     * return GroundCloseReportsReprintReply
+     * @return $this
      */
     public function setNotifications(array $notifications)
     {
-        $this->Notifications = $notifications;
+        $this->values['Notifications'] = $notifications;
         return $this;
     }
-    
+
     /**
      * Set TransactionDetail
      *
      * @param TransactionDetail $transactionDetail
-     * return GroundCloseReportsReprintReply
+     * @return $this
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
-        $this->TransactionDetail = $transactionDetail;
+        $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
     }
-    
+
     /**
      * Set Version
      *
      * @param VersionId $version
-     * return GroundCloseReportsReprintReply
+     * @return $this
      */
     public function setVersion(VersionId $version)
     {
-        $this->Version = $version;
+        $this->values['Version'] = $version;
         return $this;
     }
-    
+
     /**
      * Set CodReport
      *
      * @param base64Binary $codReport
-     * return GroundCloseReportsReprintReply
+     * @return $this
      */
     public function setCodReport($codReport)
     {
-        $this->CodReport = $codReport;
+        $this->values['CodReport'] = $codReport;
         return $this;
     }
-    
+
     /**
      * Set HazMatCertificate
      *
      * @param base64Binary $hazMatCertificate
-     * return GroundCloseReportsReprintReply
+     * @return $this
      */
     public function setHazMatCertificate($hazMatCertificate)
     {
-        $this->HazMatCertificate = $hazMatCertificate;
+        $this->values['HazMatCertificate'] = $hazMatCertificate;
         return $this;
     }
-    
+
     /**
      * Set Manifests
      *
      * @param ManifestFile[] $manifests
-     * return GroundCloseReportsReprintReply
+     * @return $this
      */
     public function setManifests(array $manifests)
     {
-        $this->Manifests = $manifests;
+        $this->values['Manifests'] = $manifests;
         return $this;
     }
-    
 
     
 }

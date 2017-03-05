@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class ReturnAssociationDetail
-    extends AbstractComplexType
-{
+ *
+ * @property string $TrackingNumber
+ * @property date $ShipDate
 
+ */
+class ReturnAssociationDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'ReturnAssociationDetail';
+    protected $name = 'ReturnAssociationDetail';
 
     /**
      * Specifies the tracking number of the master associated with the return shipment.
      *
      * @param string $trackingNumber
-     * return ReturnAssociationDetail
+     * @return $this
      */
     public function setTrackingNumber($trackingNumber)
     {
-        $this->TrackingNumber = $trackingNumber;
+        $this->values['TrackingNumber'] = $trackingNumber;
         return $this;
     }
-    
+
     /**
      * Set ShipDate
      *
      * @param date $shipDate
-     * return ReturnAssociationDetail
+     * @return $this
      */
     public function setShipDate($shipDate)
     {
-        $this->ShipDate = $shipDate;
+        $this->values['ShipDate'] = $shipDate;
         return $this;
     }
-    
 
     
 }

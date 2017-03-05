@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class DangerousGoodsPackingOptionType
-    extends AbstractSimpleType
+class DangerousGoodsPackingOptionType extends AbstractSimpleType
 {
     const _OVERPACK = 'OVERPACK';
 }

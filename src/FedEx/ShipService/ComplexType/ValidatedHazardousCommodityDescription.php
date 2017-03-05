@@ -9,174 +9,186 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class ValidatedHazardousCommodityDescription
-    extends AbstractComplexType
-{
+ *
+ * @property string $Id
+ * @property nonNegativeInteger $SequenceNumber
+ * @property \FedEx\ShipService\SimpleType\HazardousCommodityPackingGroupType|string $PackingGroup
+ * @property string $PackingInstructions
+ * @property string $ProperShippingName
+ * @property string $ProperShippingNameAndDescription
+ * @property string $TechnicalName
+ * @property string $HazardClass
+ * @property string[] $SubsidiaryClasses
+ * @property string $Symbols
+ * @property string $SpecialProvisions
+ * @property string $Authorization
+ * @property string $LabelText
 
+ */
+class ValidatedHazardousCommodityDescription extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'ValidatedHazardousCommodityDescription';
+    protected $name = 'ValidatedHazardousCommodityDescription';
 
     /**
      * Regulatory identifier for a commodity (e.g. "UN ID" value).
      *
      * @param string $id
-     * return ValidatedHazardousCommodityDescription
+     * @return $this
      */
     public function setId($id)
     {
-        $this->Id = $id;
+        $this->values['Id'] = $id;
         return $this;
     }
-    
+
     /**
      * In conjunction with the regulatory identifier, this field uniquely identifies a specific hazardous materials commodity.
      *
      * @param nonNegativeInteger $sequenceNumber
-     * return ValidatedHazardousCommodityDescription
+     * @return $this
      */
     public function setSequenceNumber($sequenceNumber)
     {
-        $this->SequenceNumber = $sequenceNumber;
+        $this->values['SequenceNumber'] = $sequenceNumber;
         return $this;
     }
-    
+
     /**
      * Set PackingGroup
      *
      * @param \FedEx\ShipService\SimpleType\HazardousCommodityPackingGroupType|string $packingGroup
-     * return ValidatedHazardousCommodityDescription
+     * @return $this
      */
     public function setPackingGroup($packingGroup)
     {
-        $this->PackingGroup = $packingGroup;
+        $this->values['PackingGroup'] = $packingGroup;
         return $this;
     }
-    
+
     /**
      * Set PackingInstructions
      *
      * @param string $packingInstructions
-     * return ValidatedHazardousCommodityDescription
+     * @return $this
      */
     public function setPackingInstructions($packingInstructions)
     {
-        $this->PackingInstructions = $packingInstructions;
+        $this->values['PackingInstructions'] = $packingInstructions;
         return $this;
     }
-    
+
     /**
      * Set ProperShippingName
      *
      * @param string $properShippingName
-     * return ValidatedHazardousCommodityDescription
+     * @return $this
      */
     public function setProperShippingName($properShippingName)
     {
-        $this->ProperShippingName = $properShippingName;
+        $this->values['ProperShippingName'] = $properShippingName;
         return $this;
     }
-    
+
     /**
      * Fully-expanded descriptive text for a hazardous commodity.
      *
      * @param string $properShippingNameAndDescription
-     * return ValidatedHazardousCommodityDescription
+     * @return $this
      */
     public function setProperShippingNameAndDescription($properShippingNameAndDescription)
     {
-        $this->ProperShippingNameAndDescription = $properShippingNameAndDescription;
+        $this->values['ProperShippingNameAndDescription'] = $properShippingNameAndDescription;
         return $this;
     }
-    
+
     /**
      * Set TechnicalName
      *
      * @param string $technicalName
-     * return ValidatedHazardousCommodityDescription
+     * @return $this
      */
     public function setTechnicalName($technicalName)
     {
-        $this->TechnicalName = $technicalName;
+        $this->values['TechnicalName'] = $technicalName;
         return $this;
     }
-    
+
     /**
      * Set HazardClass
      *
      * @param string $hazardClass
-     * return ValidatedHazardousCommodityDescription
+     * @return $this
      */
     public function setHazardClass($hazardClass)
     {
-        $this->HazardClass = $hazardClass;
+        $this->values['HazardClass'] = $hazardClass;
         return $this;
     }
-    
+
     /**
      * Set SubsidiaryClasses
      *
      * @param string[] $subsidiaryClasses
-     * return ValidatedHazardousCommodityDescription
+     * @return $this
      */
     public function setSubsidiaryClasses(array $subsidiaryClasses)
     {
-        $this->SubsidiaryClasses = $subsidiaryClasses;
+        $this->values['SubsidiaryClasses'] = $subsidiaryClasses;
         return $this;
     }
-    
+
     /**
      * Coded indications for special requirements or constraints.
      *
      * @param string $symbols
-     * return ValidatedHazardousCommodityDescription
+     * @return $this
      */
     public function setSymbols($symbols)
     {
-        $this->Symbols = $symbols;
+        $this->values['Symbols'] = $symbols;
         return $this;
     }
-    
+
     /**
      * Set SpecialProvisions
      *
      * @param string $specialProvisions
-     * return ValidatedHazardousCommodityDescription
+     * @return $this
      */
     public function setSpecialProvisions($specialProvisions)
     {
-        $this->SpecialProvisions = $specialProvisions;
+        $this->values['SpecialProvisions'] = $specialProvisions;
         return $this;
     }
-    
+
     /**
      * Set Authorization
      *
      * @param string $authorization
-     * return ValidatedHazardousCommodityDescription
+     * @return $this
      */
     public function setAuthorization($authorization)
     {
-        $this->Authorization = $authorization;
+        $this->values['Authorization'] = $authorization;
         return $this;
     }
-    
+
     /**
      * Set LabelText
      *
      * @param string $labelText
-     * return ValidatedHazardousCommodityDescription
+     * @return $this
      */
     public function setLabelText($labelText)
     {
-        $this->LabelText = $labelText;
+        $this->values['LabelText'] = $labelText;
         return $this;
     }
-    
 
     
 }

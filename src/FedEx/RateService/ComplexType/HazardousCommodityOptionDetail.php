@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class HazardousCommodityOptionDetail
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\RateService\SimpleType\HazardousCommodityLabelTextOptionType|string $LabelTextOption
+ * @property string $CustomerSuppliedLabelText
 
+ */
+class HazardousCommodityOptionDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'HazardousCommodityOptionDetail';
+    protected $name = 'HazardousCommodityOptionDetail';
 
     /**
      * Specifies how the customer wishes the label text to be handled for this commodity in this package.
      *
      * @param \FedEx\RateService\SimpleType\HazardousCommodityLabelTextOptionType|string $labelTextOption
-     * return HazardousCommodityOptionDetail
+     * @return $this
      */
     public function setLabelTextOption($labelTextOption)
     {
-        $this->LabelTextOption = $labelTextOption;
+        $this->values['LabelTextOption'] = $labelTextOption;
         return $this;
     }
-    
+
     /**
      * Text used in labeling the commodity under control of the labelTextOption field.
      *
      * @param string $customerSuppliedLabelText
-     * return HazardousCommodityOptionDetail
+     * @return $this
      */
     public function setCustomerSuppliedLabelText($customerSuppliedLabelText)
     {
-        $this->CustomerSuppliedLabelText = $customerSuppliedLabelText;
+        $this->values['CustomerSuppliedLabelText'] = $customerSuppliedLabelText;
         return $this;
     }
-    
 
     
 }

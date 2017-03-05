@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class ServiceType
-    extends AbstractSimpleType
+class ServiceType extends AbstractSimpleType
 {
     const _EUROPE_FIRST_INTERNATIONAL_PRIORITY = 'EUROPE_FIRST_INTERNATIONAL_PRIORITY';
     const _FEDEX_1_DAY_FREIGHT = 'FEDEX_1_DAY_FREIGHT';

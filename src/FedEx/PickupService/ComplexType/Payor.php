@@ -9,54 +9,56 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
- */
-class Payor
-    extends AbstractComplexType
-{
+ *
+ * @property string $AccountNumber
+ * @property string $CountryCode
+ * @property AssociatedAccount[] $AssociatedAccounts
 
+ */
+class Payor extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'Payor';
+    protected $name = 'Payor';
 
     /**
      * Identifies the FedEx account number assigned to the payor.
      *
      * @param string $accountNumber
-     * return Payor
+     * @return $this
      */
     public function setAccountNumber($accountNumber)
     {
-        $this->AccountNumber = $accountNumber;
+        $this->values['AccountNumber'] = $accountNumber;
         return $this;
     }
-    
+
     /**
      * Identifies the country of the payor.
      *
      * @param string $countryCode
-     * return Payor
+     * @return $this
      */
     public function setCountryCode($countryCode)
     {
-        $this->CountryCode = $countryCode;
+        $this->values['CountryCode'] = $countryCode;
         return $this;
     }
-    
+
     /**
      * Set AssociatedAccounts
      *
      * @param AssociatedAccount[] $associatedAccounts
-     * return Payor
+     * @return $this
      */
     public function setAssociatedAccounts(array $associatedAccounts)
     {
-        $this->AssociatedAccounts = $associatedAccounts;
+        $this->values['AssociatedAccounts'] = $associatedAccounts;
         return $this;
     }
-    
 
     
 }

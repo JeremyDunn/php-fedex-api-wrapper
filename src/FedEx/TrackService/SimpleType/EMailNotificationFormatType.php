@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class EMailNotificationFormatType
-    extends AbstractSimpleType
+class EMailNotificationFormatType extends AbstractSimpleType
 {
     const _HTML = 'HTML';
     const _TEXT = 'TEXT';

@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class ExpressRegionCode
-    extends AbstractSimpleType
+class ExpressRegionCode extends AbstractSimpleType
 {
     const _APAC = 'APAC';
     const _CA = 'CA';

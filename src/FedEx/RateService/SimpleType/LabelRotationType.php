@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class LabelRotationType
-    extends AbstractSimpleType
+class LabelRotationType extends AbstractSimpleType
 {
     const _LEFT = 'LEFT';
     const _NONE = 'NONE';

@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class UploadDocumentIdProducer
-    extends AbstractSimpleType
+class UploadDocumentIdProducer extends AbstractSimpleType
 {
     const _CUSTOMER = 'CUSTOMER';
     const _FEDEX_CSHP = 'FEDEX_CSHP';

@@ -9,90 +9,95 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class UploadDocumentReferenceDetail
-    extends AbstractComplexType
-{
+ *
+ * @property nonNegativeInteger $LineNumber
+ * @property string $CustomerReference
+ * @property \FedEx\ShipService\SimpleType\UploadDocumentProducerType|string $DocumentProducer
+ * @property \FedEx\ShipService\SimpleType\UploadDocumentType|string $DocumentType
+ * @property string $DocumentId
+ * @property \FedEx\ShipService\SimpleType\UploadDocumentIdProducer|string $DocumentIdProducer
 
+ */
+class UploadDocumentReferenceDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'UploadDocumentReferenceDetail';
+    protected $name = 'UploadDocumentReferenceDetail';
 
     /**
      * Set LineNumber
      *
      * @param nonNegativeInteger $lineNumber
-     * return UploadDocumentReferenceDetail
+     * @return $this
      */
     public function setLineNumber($lineNumber)
     {
-        $this->LineNumber = $lineNumber;
+        $this->values['LineNumber'] = $lineNumber;
         return $this;
     }
-    
+
     /**
      * Set CustomerReference
      *
      * @param string $customerReference
-     * return UploadDocumentReferenceDetail
+     * @return $this
      */
     public function setCustomerReference($customerReference)
     {
-        $this->CustomerReference = $customerReference;
+        $this->values['CustomerReference'] = $customerReference;
         return $this;
     }
-    
+
     /**
      * Set DocumentProducer
      *
      * @param \FedEx\ShipService\SimpleType\UploadDocumentProducerType|string $documentProducer
-     * return UploadDocumentReferenceDetail
+     * @return $this
      */
     public function setDocumentProducer($documentProducer)
     {
-        $this->DocumentProducer = $documentProducer;
+        $this->values['DocumentProducer'] = $documentProducer;
         return $this;
     }
-    
+
     /**
      * Set DocumentType
      *
      * @param \FedEx\ShipService\SimpleType\UploadDocumentType|string $documentType
-     * return UploadDocumentReferenceDetail
+     * @return $this
      */
     public function setDocumentType($documentType)
     {
-        $this->DocumentType = $documentType;
+        $this->values['DocumentType'] = $documentType;
         return $this;
     }
-    
+
     /**
      * Set DocumentId
      *
      * @param string $documentId
-     * return UploadDocumentReferenceDetail
+     * @return $this
      */
     public function setDocumentId($documentId)
     {
-        $this->DocumentId = $documentId;
+        $this->values['DocumentId'] = $documentId;
         return $this;
     }
-    
+
     /**
      * Set DocumentIdProducer
      *
      * @param \FedEx\ShipService\SimpleType\UploadDocumentIdProducer|string $documentIdProducer
-     * return UploadDocumentReferenceDetail
+     * @return $this
      */
     public function setDocumentIdProducer($documentIdProducer)
     {
-        $this->DocumentIdProducer = $documentIdProducer;
+        $this->values['DocumentIdProducer'] = $documentIdProducer;
         return $this;
     }
-    
 
     
 }

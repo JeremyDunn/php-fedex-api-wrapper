@@ -9,90 +9,95 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class DelayDetail
-    extends AbstractComplexType
-{
+ *
+ * @property date $Date
+ * @property \FedEx\RateService\SimpleType\DayOfWeekType|string $DayOfWeek
+ * @property \FedEx\RateService\SimpleType\DelayLevelType|string $Level
+ * @property \FedEx\RateService\SimpleType\DelayPointType|string $Point
+ * @property \FedEx\RateService\SimpleType\CommitmentDelayType|string $Type
+ * @property string $Description
 
+ */
+class DelayDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'DelayDetail';
+    protected $name = 'DelayDetail';
 
     /**
      * The date of the delay
      *
      * @param date $date
-     * return DelayDetail
+     * @return $this
      */
     public function setDate($date)
     {
-        $this->Date = $date;
+        $this->values['Date'] = $date;
         return $this;
     }
-    
+
     /**
      * Set DayOfWeek
      *
      * @param \FedEx\RateService\SimpleType\DayOfWeekType|string $dayOfWeek
-     * return DelayDetail
+     * @return $this
      */
     public function setDayOfWeek($dayOfWeek)
     {
-        $this->DayOfWeek = $dayOfWeek;
+        $this->values['DayOfWeek'] = $dayOfWeek;
         return $this;
     }
-    
+
     /**
      * The attribute of the shipment that caused the delay(e.g. Country, City, LocationId, Zip, service area, special handling )
      *
      * @param \FedEx\RateService\SimpleType\DelayLevelType|string $level
-     * return DelayDetail
+     * @return $this
      */
     public function setLevel($level)
     {
-        $this->Level = $level;
+        $this->values['Level'] = $level;
         return $this;
     }
-    
+
     /**
      * The point where the delay is occurring (e.g. Origin, Destination, Broker location)
      *
      * @param \FedEx\RateService\SimpleType\DelayPointType|string $point
-     * return DelayDetail
+     * @return $this
      */
     public function setPoint($point)
     {
-        $this->Point = $point;
+        $this->values['Point'] = $point;
         return $this;
     }
-    
+
     /**
      * The reason for the delay (e.g. holiday, weekend, etc.).
      *
      * @param \FedEx\RateService\SimpleType\CommitmentDelayType|string $type
-     * return DelayDetail
+     * @return $this
      */
     public function setType($type)
     {
-        $this->Type = $type;
+        $this->values['Type'] = $type;
         return $this;
     }
-    
+
     /**
      * The name of the holiday in that country that is causing the delay.
      *
      * @param string $description
-     * return DelayDetail
+     * @return $this
      */
     public function setDescription($description)
     {
-        $this->Description = $description;
+        $this->values['Description'] = $description;
         return $this;
     }
-    
 
     
 }

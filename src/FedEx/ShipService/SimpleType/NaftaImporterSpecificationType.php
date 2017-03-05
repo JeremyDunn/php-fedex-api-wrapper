@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class NaftaImporterSpecificationType
-    extends AbstractSimpleType
+class NaftaImporterSpecificationType extends AbstractSimpleType
 {
     const _IMPORTER_OF_RECORD = 'IMPORTER_OF_RECORD';
     const _RECIPIENT = 'RECIPIENT';

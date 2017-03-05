@@ -9,66 +9,69 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
- */
-class TrackSplitShipmentPart
-    extends AbstractComplexType
-{
+ *
+ * @property positiveInteger $PieceCount
+ * @property dateTime $Timestamp
+ * @property string $StatusCode
+ * @property string $StatusDescription
 
+ */
+class TrackSplitShipmentPart extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'TrackSplitShipmentPart';
+    protected $name = 'TrackSplitShipmentPart';
 
     /**
      * The number of pieces in this part.
      *
      * @param positiveInteger $pieceCount
-     * return TrackSplitShipmentPart
+     * @return $this
      */
     public function setPieceCount($pieceCount)
     {
-        $this->PieceCount = $pieceCount;
+        $this->values['PieceCount'] = $pieceCount;
         return $this;
     }
-    
+
     /**
      * The date and time this status began.
      *
      * @param dateTime $timestamp
-     * return TrackSplitShipmentPart
+     * @return $this
      */
     public function setTimestamp($timestamp)
     {
-        $this->Timestamp = $timestamp;
+        $this->values['Timestamp'] = $timestamp;
         return $this;
     }
-    
+
     /**
      * A code that identifies this type of status.
      *
      * @param string $statusCode
-     * return TrackSplitShipmentPart
+     * @return $this
      */
     public function setStatusCode($statusCode)
     {
-        $this->StatusCode = $statusCode;
+        $this->values['StatusCode'] = $statusCode;
         return $this;
     }
-    
+
     /**
      * A human-readable description of this status.
      *
      * @param string $statusDescription
-     * return TrackSplitShipmentPart
+     * @return $this
      */
     public function setStatusDescription($statusDescription)
     {
-        $this->StatusDescription = $statusDescription;
+        $this->values['StatusDescription'] = $statusDescription;
         return $this;
     }
-    
 
     
 }

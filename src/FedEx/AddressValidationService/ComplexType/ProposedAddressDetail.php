@@ -9,126 +9,134 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Address Validation Service
- */
-class ProposedAddressDetail
-    extends AbstractComplexType
-{
+ *
+ * @property integer $Score
+ * @property \FedEx\AddressValidationService\SimpleType\AddressValidationChangeType|string[] $Changes
+ * @property \FedEx\AddressValidationService\SimpleType\ResidentialStatusType|string $ResidentialStatus
+ * @property \FedEx\AddressValidationService\SimpleType\DeliveryPointValidationType|string $DeliveryPointValidation
+ * @property string $CompanyName
+ * @property Address $Address
+ * @property ParsedAddressPart $ParsedCompanyName
+ * @property ParsedAddress $ParsedAddress
+ * @property string $RemovedNonAddressData
 
+ */
+class ProposedAddressDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'ProposedAddressDetail';
+    protected $name = 'ProposedAddressDetail';
 
     /**
      * Set Score
      *
      * @param integer $score
-     * return ProposedAddressDetail
+     * @return $this
      */
     public function setScore(integer $score)
     {
-        $this->Score = $score;
+        $this->values['Score'] = $score;
         return $this;
     }
-    
+
     /**
      * Set Changes
      *
      * @param AddressValidationChangeType[] $changes
-     * return ProposedAddressDetail
+     * @return $this
      */
     public function setChanges(array $changes)
     {
-        $this->Changes = $changes;
+        $this->values['Changes'] = $changes;
         return $this;
     }
-    
+
     /**
      * Set ResidentialStatus
      *
      * @param \FedEx\AddressValidationService\SimpleType\ResidentialStatusType|string $residentialStatus
-     * return ProposedAddressDetail
+     * @return $this
      */
     public function setResidentialStatus($residentialStatus)
     {
-        $this->ResidentialStatus = $residentialStatus;
+        $this->values['ResidentialStatus'] = $residentialStatus;
         return $this;
     }
-    
+
     /**
      * Set DeliveryPointValidation
      *
      * @param \FedEx\AddressValidationService\SimpleType\DeliveryPointValidationType|string $deliveryPointValidation
-     * return ProposedAddressDetail
+     * @return $this
      */
     public function setDeliveryPointValidation($deliveryPointValidation)
     {
-        $this->DeliveryPointValidation = $deliveryPointValidation;
+        $this->values['DeliveryPointValidation'] = $deliveryPointValidation;
         return $this;
     }
-    
+
     /**
      * Set CompanyName
      *
      * @param string $companyName
-     * return ProposedAddressDetail
+     * @return $this
      */
     public function setCompanyName($companyName)
     {
-        $this->CompanyName = $companyName;
+        $this->values['CompanyName'] = $companyName;
         return $this;
     }
-    
+
     /**
      * Set Address
      *
      * @param Address $address
-     * return ProposedAddressDetail
+     * @return $this
      */
     public function setAddress(Address $address)
     {
-        $this->Address = $address;
+        $this->values['Address'] = $address;
         return $this;
     }
-    
+
     /**
      * Set ParsedCompanyName
      *
      * @param ParsedAddressPart $parsedCompanyName
-     * return ProposedAddressDetail
+     * @return $this
      */
     public function setParsedCompanyName(ParsedAddressPart $parsedCompanyName)
     {
-        $this->ParsedCompanyName = $parsedCompanyName;
+        $this->values['ParsedCompanyName'] = $parsedCompanyName;
         return $this;
     }
-    
+
     /**
      * Set ParsedAddress
      *
      * @param ParsedAddress $parsedAddress
-     * return ProposedAddressDetail
+     * @return $this
      */
     public function setParsedAddress(ParsedAddress $parsedAddress)
     {
-        $this->ParsedAddress = $parsedAddress;
+        $this->values['ParsedAddress'] = $parsedAddress;
         return $this;
     }
-    
+
     /**
      * Set RemovedNonAddressData
      *
      * @param string $removedNonAddressData
-     * return ProposedAddressDetail
+     * @return $this
      */
     public function setRemovedNonAddressData($removedNonAddressData)
     {
-        $this->RemovedNonAddressData = $removedNonAddressData;
+        $this->values['RemovedNonAddressData'] = $removedNonAddressData;
         return $this;
     }
-    
 
     
 }

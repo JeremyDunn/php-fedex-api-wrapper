@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class PackageSpecialServiceType
-    extends AbstractSimpleType
+class PackageSpecialServiceType extends AbstractSimpleType
 {
     const _ALCOHOL = 'ALCOHOL';
     const _APPOINTMENT_DELIVERY = 'APPOINTMENT_DELIVERY';

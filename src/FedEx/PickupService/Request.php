@@ -17,14 +17,14 @@ class Request extends AbstractRequest
      *
      * @var string
      */
-    protected $_wsdlPath;
+    protected $wsdlPath;
 
     /**
      * SoapClient object
      *
      * @var SoapClient
      */
-    protected $_soapClient;
+    protected $soapClient;
 
     /**
      * Constructor
@@ -34,12 +34,12 @@ class Request extends AbstractRequest
     public function __construct($wsdlPath = null)
     {
         if (null != $wsdlPath) {
-            $this->_wsdlPath = $wsdlPath;
+            $this->wsdlPath = $wsdlPath;
         } else {
-            $this->_wsdlPath = realpath(dirname(__FILE__) . '/../_wsdl/PickupService_v3.wsdl');
+            $this->wsdlPath = realpath(dirname(__FILE__) . '/../_wsdl/PickupService_v3.wsdl');
         }
 
-        $this->_soapClient = new \SoapClient($this->_wsdlPath, array('trace' => true));
+        $this->soapClient = new \SoapClient($this->wsdlPath, array('trace' => true));
     }
 
     /**
@@ -49,41 +49,35 @@ class Request extends AbstractRequest
      */
     public function getSoapClient()
     {
-        return $this->_soapClient;
+        return $this->soapClient;
     }
 
     /**
      * Sends the PickupAvailabilityRequest and returns the response
      *
-     * @param ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest 
+     * @param ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest
      * @return stdClass
      */
     public function getGetPickupAvailabilityReply(ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest)
     {
-        return $this->_soapClient->getPickupAvailability($pickupAvailabilityRequest->toArray());
-    }
-       /**
+        return $this->soapClient->getPickupAvailability($pickupAvailabilityRequest->toArray());
+    }    /**
      * Sends the CreatePickupRequest and returns the response
      *
-     * @param ComplexType\CreatePickupRequest $createPickupRequest 
+     * @param ComplexType\CreatePickupRequest $createPickupRequest
      * @return stdClass
      */
     public function getCreatePickupReply(ComplexType\CreatePickupRequest $createPickupRequest)
     {
-        return $this->_soapClient->createPickup($createPickupRequest->toArray());
-    }
-       /**
+        return $this->soapClient->createPickup($createPickupRequest->toArray());
+    }    /**
      * Sends the CancelPickupRequest and returns the response
      *
-     * @param ComplexType\CancelPickupRequest $cancelPickupRequest 
+     * @param ComplexType\CancelPickupRequest $cancelPickupRequest
      * @return stdClass
      */
     public function getCancelPickupReply(ComplexType\CancelPickupRequest $cancelPickupRequest)
     {
-        return $this->_soapClient->cancelPickup($cancelPickupRequest->toArray());
+        return $this->soapClient->cancelPickup($cancelPickupRequest->toArray());
     }
-   
-
 }
-
-   

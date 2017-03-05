@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class TrackIdentifierType
-    extends AbstractSimpleType
+class TrackIdentifierType extends AbstractSimpleType
 {
     const _BILL_OF_LADING = 'BILL_OF_LADING';
     const _COD_RETURN_TRACKING_NUMBER = 'COD_RETURN_TRACKING_NUMBER';

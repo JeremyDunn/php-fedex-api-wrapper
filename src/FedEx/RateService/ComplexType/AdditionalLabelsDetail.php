@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class AdditionalLabelsDetail
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\RateService\SimpleType\AdditionalLabelsType|string $Type
+ * @property nonNegativeInteger $Count
 
+ */
+class AdditionalLabelsDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'AdditionalLabelsDetail';
+    protected $name = 'AdditionalLabelsDetail';
 
     /**
      * The type of additional labels to return.
      *
      * @param \FedEx\RateService\SimpleType\AdditionalLabelsType|string $type
-     * return AdditionalLabelsDetail
+     * @return $this
      */
     public function setType($type)
     {
-        $this->Type = $type;
+        $this->values['Type'] = $type;
         return $this;
     }
-    
+
     /**
      * The number of this type label to return
      *
      * @param nonNegativeInteger $count
-     * return AdditionalLabelsDetail
+     * @return $this
      */
     public function setCount($count)
     {
-        $this->Count = $count;
+        $this->values['Count'] = $count;
         return $this;
     }
-    
 
     
 }

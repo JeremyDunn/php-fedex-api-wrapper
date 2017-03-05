@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class CommitmentDelayType
-    extends AbstractSimpleType
+class CommitmentDelayType extends AbstractSimpleType
 {
     const _HOLIDAY = 'HOLIDAY';
     const _NON_WORKDAY = 'NON_WORKDAY';

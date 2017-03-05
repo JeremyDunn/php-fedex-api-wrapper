@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class FreightSpecialServicePayment
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\RateService\SimpleType\ShipmentSpecialServiceType|string $SpecialService
+ * @property \FedEx\RateService\SimpleType\FreightAccountPaymentType|string $PaymentType
 
+ */
+class FreightSpecialServicePayment extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'FreightSpecialServicePayment';
+    protected $name = 'FreightSpecialServicePayment';
 
     /**
      * Identifies the special service.
      *
      * @param \FedEx\RateService\SimpleType\ShipmentSpecialServiceType|string $specialService
-     * return FreightSpecialServicePayment
+     * @return $this
      */
     public function setSpecialService($specialService)
     {
-        $this->SpecialService = $specialService;
+        $this->values['SpecialService'] = $specialService;
         return $this;
     }
-    
+
     /**
      * Indicates who will pay for the special service.
      *
      * @param \FedEx\RateService\SimpleType\FreightAccountPaymentType|string $paymentType
-     * return FreightSpecialServicePayment
+     * @return $this
      */
     public function setPaymentType($paymentType)
     {
-        $this->PaymentType = $paymentType;
+        $this->values['PaymentType'] = $paymentType;
         return $this;
     }
-    
 
     
 }

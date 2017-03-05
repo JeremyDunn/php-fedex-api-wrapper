@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class BrokerType
-    extends AbstractSimpleType
+class BrokerType extends AbstractSimpleType
 {
     const _EXPORT = 'EXPORT';
     const _IMPORT = 'IMPORT';

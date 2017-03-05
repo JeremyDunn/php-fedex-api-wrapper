@@ -9,186 +9,199 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Locator Service
- */
-class DropoffLocationProfile
-    extends AbstractComplexType
-{
+ *
+ * @property boolean $ExpressService
+ * @property boolean $GroundService
+ * @property string $HoursWeekdays
+ * @property string $HoursSaturdays
+ * @property string $LastExpressDropoffTimeWeekdays
+ * @property string $LastExpressDropoffTimeSaturdays
+ * @property string $LastGroundDropoffTimeWeekdays
+ * @property string $LastGroundDropoffTimeSaturdays
+ * @property boolean $HoldAtLocation
+ * @property boolean $GroundHoldAtLocation
+ * @property boolean $DangerousGoods
+ * @property boolean $PackagingSupplies
+ * @property boolean $PackagingServices
+ * @property boolean $ReturnSystem
 
+ */
+class DropoffLocationProfile extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'DropoffLocationProfile';
+    protected $name = 'DropoffLocationProfile';
 
     /**
      * Identifies if this location offers FedEx Express services.
      *
      * @param boolean $expressService
-     * return DropoffLocationProfile
+     * @return $this
      */
     public function setExpressService($expressService)
     {
-        $this->ExpressService = $expressService;
+        $this->values['ExpressService'] = $expressService;
         return $this;
     }
-    
+
     /**
      * Identifies if this location offers FedEx Ground service.
      *
      * @param boolean $groundService
-     * return DropoffLocationProfile
+     * @return $this
      */
     public function setGroundService($groundService)
     {
-        $this->GroundService = $groundService;
+        $this->values['GroundService'] = $groundService;
         return $this;
     }
-    
+
     /**
      * This location's weekday (Monday-Friday) hours of operation.
      *
      * @param string $hoursWeekdays
-     * return DropoffLocationProfile
+     * @return $this
      */
     public function setHoursWeekdays($hoursWeekdays)
     {
-        $this->HoursWeekdays = $hoursWeekdays;
+        $this->values['HoursWeekdays'] = $hoursWeekdays;
         return $this;
     }
-    
+
     /**
      * This location's Saturday hours of operation.
      *
      * @param string $hoursSaturdays
-     * return DropoffLocationProfile
+     * @return $this
      */
     public function setHoursSaturdays($hoursSaturdays)
     {
-        $this->HoursSaturdays = $hoursSaturdays;
+        $this->values['HoursSaturdays'] = $hoursSaturdays;
         return $this;
     }
-    
+
     /**
      * The time of day on weekdays by which FedEx Express packages must be dropped off for shipment that day.
      *
      * @param string $lastExpressDropoffTimeWeekdays
-     * return DropoffLocationProfile
+     * @return $this
      */
     public function setLastExpressDropoffTimeWeekdays($lastExpressDropoffTimeWeekdays)
     {
-        $this->LastExpressDropoffTimeWeekdays = $lastExpressDropoffTimeWeekdays;
+        $this->values['LastExpressDropoffTimeWeekdays'] = $lastExpressDropoffTimeWeekdays;
         return $this;
     }
-    
+
     /**
      * The time of day on Saturdays by which FedEx Express packages must be dropped off for shipment that day.
      *
      * @param string $lastExpressDropoffTimeSaturdays
-     * return DropoffLocationProfile
+     * @return $this
      */
     public function setLastExpressDropoffTimeSaturdays($lastExpressDropoffTimeSaturdays)
     {
-        $this->LastExpressDropoffTimeSaturdays = $lastExpressDropoffTimeSaturdays;
+        $this->values['LastExpressDropoffTimeSaturdays'] = $lastExpressDropoffTimeSaturdays;
         return $this;
     }
-    
+
     /**
      * The time of day on weekdays by which FedEx Ground packages must be dropped off for shipment that day.
      *
      * @param string $lastGroundDropoffTimeWeekdays
-     * return DropoffLocationProfile
+     * @return $this
      */
     public function setLastGroundDropoffTimeWeekdays($lastGroundDropoffTimeWeekdays)
     {
-        $this->LastGroundDropoffTimeWeekdays = $lastGroundDropoffTimeWeekdays;
+        $this->values['LastGroundDropoffTimeWeekdays'] = $lastGroundDropoffTimeWeekdays;
         return $this;
     }
-    
+
     /**
      * The time of day on Saturdays by which FedEx Ground packages must be dropped off for shipment that day.
      *
      * @param string $lastGroundDropoffTimeSaturdays
-     * return DropoffLocationProfile
+     * @return $this
      */
     public function setLastGroundDropoffTimeSaturdays($lastGroundDropoffTimeSaturdays)
     {
-        $this->LastGroundDropoffTimeSaturdays = $lastGroundDropoffTimeSaturdays;
+        $this->values['LastGroundDropoffTimeSaturdays'] = $lastGroundDropoffTimeSaturdays;
         return $this;
     }
-    
+
     /**
      * Identifies if this location offers Express HAL (Hold at Location) service.
      *
      * @param boolean $holdAtLocation
-     * return DropoffLocationProfile
+     * @return $this
      */
     public function setHoldAtLocation($holdAtLocation)
     {
-        $this->HoldAtLocation = $holdAtLocation;
+        $this->values['HoldAtLocation'] = $holdAtLocation;
         return $this;
     }
-    
+
     /**
      * Identifies if this location offers Ground HAL (Hold at Location) service.
      *
      * @param boolean $groundHoldAtLocation
-     * return DropoffLocationProfile
+     * @return $this
      */
     public function setGroundHoldAtLocation($groundHoldAtLocation)
     {
-        $this->GroundHoldAtLocation = $groundHoldAtLocation;
+        $this->values['GroundHoldAtLocation'] = $groundHoldAtLocation;
         return $this;
     }
-    
+
     /**
      * Identifies if this location accepts Hazardous materials.
      *
      * @param boolean $dangerousGoods
-     * return DropoffLocationProfile
+     * @return $this
      */
     public function setDangerousGoods($dangerousGoods)
     {
-        $this->DangerousGoods = $dangerousGoods;
+        $this->values['DangerousGoods'] = $dangerousGoods;
         return $this;
     }
-    
+
     /**
      * Identifies if this location makes packaging supplies available.
      *
      * @param boolean $packagingSupplies
-     * return DropoffLocationProfile
+     * @return $this
      */
     public function setPackagingSupplies($packagingSupplies)
     {
-        $this->PackagingSupplies = $packagingSupplies;
+        $this->values['PackagingSupplies'] = $packagingSupplies;
         return $this;
     }
-    
+
     /**
      * Identifies if this location provides Pack and Ship services.
      *
      * @param boolean $packagingServices
-     * return DropoffLocationProfile
+     * @return $this
      */
     public function setPackagingServices($packagingServices)
     {
-        $this->PackagingServices = $packagingServices;
+        $this->values['PackagingServices'] = $packagingServices;
         return $this;
     }
-    
+
     /**
      * Identifies if this location supports FedEx Return System.
      *
      * @param boolean $returnSystem
-     * return DropoffLocationProfile
+     * @return $this
      */
     public function setReturnSystem($returnSystem)
     {
-        $this->ReturnSystem = $returnSystem;
+        $this->values['ReturnSystem'] = $returnSystem;
         return $this;
     }
-    
 
     
 }

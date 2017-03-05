@@ -9,30 +9,30 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Address Validation Service
- */
-class ParsedAddressPart
-    extends AbstractComplexType
-{
+ *
+ * @property ParsedElement[] $Elements
 
+ */
+class ParsedAddressPart extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'ParsedAddressPart';
+    protected $name = 'ParsedAddressPart';
 
     /**
      * Set Elements
      *
      * @param ParsedElement[] $elements
-     * return ParsedAddressPart
+     * @return $this
      */
     public function setElements(array $elements)
     {
-        $this->Elements = $elements;
+        $this->values['Elements'] = $elements;
         return $this;
     }
-    
 
     
 }

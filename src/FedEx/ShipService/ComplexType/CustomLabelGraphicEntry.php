@@ -9,54 +9,56 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class CustomLabelGraphicEntry
-    extends AbstractComplexType
-{
+ *
+ * @property CustomLabelPosition $Position
+ * @property string $PrinterGraphicId
+ * @property string $FileGraphicFullName
 
+ */
+class CustomLabelGraphicEntry extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'CustomLabelGraphicEntry';
+    protected $name = 'CustomLabelGraphicEntry';
 
     /**
      * Set Position
      *
      * @param CustomLabelPosition $position
-     * return CustomLabelGraphicEntry
+     * @return $this
      */
     public function setPosition(CustomLabelPosition $position)
     {
-        $this->Position = $position;
+        $this->values['Position'] = $position;
         return $this;
     }
-    
+
     /**
      * Printer-specific index of graphic image to be printed.
      *
      * @param string $printerGraphicId
-     * return CustomLabelGraphicEntry
+     * @return $this
      */
     public function setPrinterGraphicId($printerGraphicId)
     {
-        $this->PrinterGraphicId = $printerGraphicId;
+        $this->values['PrinterGraphicId'] = $printerGraphicId;
         return $this;
     }
-    
+
     /**
      * Fully-qualified path and file name for graphic image to be printed.
      *
      * @param string $fileGraphicFullName
-     * return CustomLabelGraphicEntry
+     * @return $this
      */
     public function setFileGraphicFullName($fileGraphicFullName)
     {
-        $this->FileGraphicFullName = $fileGraphicFullName;
+        $this->values['FileGraphicFullName'] = $fileGraphicFullName;
         return $this;
     }
-    
 
     
 }

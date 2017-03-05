@@ -17,14 +17,14 @@ class Request extends AbstractRequest
      *
      * @var string
      */
-    protected $_wsdlPath;
+    protected $wsdlPath;
 
     /**
      * SoapClient object
      *
      * @var SoapClient
      */
-    protected $_soapClient;
+    protected $soapClient;
 
     /**
      * Constructor
@@ -34,12 +34,12 @@ class Request extends AbstractRequest
     public function __construct($wsdlPath = null)
     {
         if (null != $wsdlPath) {
-            $this->_wsdlPath = $wsdlPath;
+            $this->wsdlPath = $wsdlPath;
         } else {
-            $this->_wsdlPath = realpath(dirname(__FILE__) . '/../_wsdl/UploadDocumentService_v1.wsdl');
+            $this->wsdlPath = realpath(dirname(__FILE__) . '/../_wsdl/UploadDocumentService_v1.wsdl');
         }
 
-        $this->_soapClient = new \SoapClient($this->_wsdlPath, array('trace' => true));
+        $this->soapClient = new \SoapClient($this->wsdlPath, array('trace' => true));
     }
 
     /**
@@ -49,31 +49,26 @@ class Request extends AbstractRequest
      */
     public function getSoapClient()
     {
-        return $this->_soapClient;
+        return $this->soapClient;
     }
 
     /**
      * Sends the UploadDocumentsRequest and returns the response
      *
-     * @param ComplexType\UploadDocumentsRequest $uploadDocumentsRequest 
+     * @param ComplexType\UploadDocumentsRequest $uploadDocumentsRequest
      * @return stdClass
      */
     public function getUploadDocumentsReply(ComplexType\UploadDocumentsRequest $uploadDocumentsRequest)
     {
-        return $this->_soapClient->uploadDocuments($uploadDocumentsRequest->toArray());
-    }
-       /**
+        return $this->soapClient->uploadDocuments($uploadDocumentsRequest->toArray());
+    }    /**
      * Sends the UploadImagesRequest and returns the response
      *
-     * @param ComplexType\UploadImagesRequest $uploadImagesRequest 
+     * @param ComplexType\UploadImagesRequest $uploadImagesRequest
      * @return stdClass
      */
     public function getUploadImagesReply(ComplexType\UploadImagesRequest $uploadImagesRequest)
     {
-        return $this->_soapClient->uploadImages($uploadImagesRequest->toArray());
+        return $this->soapClient->uploadImages($uploadImagesRequest->toArray());
     }
-   
-
 }
-
-   

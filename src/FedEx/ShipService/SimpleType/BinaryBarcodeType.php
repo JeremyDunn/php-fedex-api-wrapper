@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class BinaryBarcodeType
-    extends AbstractSimpleType
+class BinaryBarcodeType extends AbstractSimpleType
 {
     const _COMMON_2D = 'COMMON_2D';
 }

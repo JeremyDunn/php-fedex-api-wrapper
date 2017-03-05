@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class DropoffType
-    extends AbstractSimpleType
+class DropoffType extends AbstractSimpleType
 {
     const _BUSINESS_SERVICE_CENTER = 'BUSINESS_SERVICE_CENTER';
     const _DROP_BOX = 'DROP_BOX';

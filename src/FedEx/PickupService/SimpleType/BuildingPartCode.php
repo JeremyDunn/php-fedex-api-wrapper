@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class BuildingPartCode
-    extends AbstractSimpleType
+class BuildingPartCode extends AbstractSimpleType
 {
     const _APARTMENT = 'APARTMENT';
     const _BUILDING = 'BUILDING';

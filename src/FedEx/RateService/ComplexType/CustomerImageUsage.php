@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class CustomerImageUsage
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\RateService\SimpleType\CustomerImageUsageType|string $Type
+ * @property \FedEx\RateService\SimpleType\ImageId|string $Id
 
+ */
+class CustomerImageUsage extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'CustomerImageUsage';
+    protected $name = 'CustomerImageUsage';
 
     /**
      * Set Type
      *
      * @param \FedEx\RateService\SimpleType\CustomerImageUsageType|string $type
-     * return CustomerImageUsage
+     * @return $this
      */
     public function setType($type)
     {
-        $this->Type = $type;
+        $this->values['Type'] = $type;
         return $this;
     }
-    
+
     /**
      * Set Id
      *
      * @param \FedEx\RateService\SimpleType\ImageId|string $id
-     * return CustomerImageUsage
+     * @return $this
      */
     public function setId($id)
     {
-        $this->Id = $id;
+        $this->values['Id'] = $id;
         return $this;
     }
-    
 
     
 }

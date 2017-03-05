@@ -9,78 +9,82 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
- */
-class ServiceAvailabilityOption
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\PackageMovementInformationService\SimpleType\ServiceType|string $Service
+ * @property date $DeliveryDate
+ * @property \FedEx\PackageMovementInformationService\SimpleType\DayOfWeekType|string $DeliveryDay
+ * @property string $DestinationStationId
+ * @property string $DestinationAirportId
 
+ */
+class ServiceAvailabilityOption extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'ServiceAvailabilityOption';
+    protected $name = 'ServiceAvailabilityOption';
 
     /**
      * Identifies a FedEx Service that is available between the origin and destination provided in the request.
      *
      * @param \FedEx\PackageMovementInformationService\SimpleType\ServiceType|string $service
-     * return ServiceAvailabilityOption
+     * @return $this
      */
     public function setService($service)
     {
-        $this->Service = $service;
+        $this->values['Service'] = $service;
         return $this;
     }
-    
+
     /**
      * Identifies the delivery date of the available service.
      *
      * @param date $deliveryDate
-     * return ServiceAvailabilityOption
+     * @return $this
      */
     public function setDeliveryDate($deliveryDate)
     {
-        $this->DeliveryDate = $deliveryDate;
+        $this->values['DeliveryDate'] = $deliveryDate;
         return $this;
     }
-    
+
     /**
      * Identifies the delivery day of week of the available service. See DayOfWeekType for valid values.
      *
      * @param \FedEx\PackageMovementInformationService\SimpleType\DayOfWeekType|string $deliveryDay
-     * return ServiceAvailabilityOption
+     * @return $this
      */
     public function setDeliveryDay($deliveryDay)
     {
-        $this->DeliveryDay = $deliveryDay;
+        $this->values['DeliveryDay'] = $deliveryDay;
         return $this;
     }
-    
+
     /**
      * Identifies the FedEx location identifier of the package destination.
      *
      * @param string $destinationStationId
-     * return ServiceAvailabilityOption
+     * @return $this
      */
     public function setDestinationStationId($destinationStationId)
     {
-        $this->DestinationStationId = $destinationStationId;
+        $this->values['DestinationStationId'] = $destinationStationId;
         return $this;
     }
-    
+
     /**
      * Identification of an airport, using standard three-letter abbreviations.
      *
      * @param string $destinationAirportId
-     * return ServiceAvailabilityOption
+     * @return $this
      */
     public function setDestinationAirportId($destinationAirportId)
     {
-        $this->DestinationAirportId = $destinationAirportId;
+        $this->values['DestinationAirportId'] = $destinationAirportId;
         return $this;
     }
-    
 
     
 }

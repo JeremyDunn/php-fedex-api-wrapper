@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Courier Dispatch Service
  */
-class CourierDispatchBuildingLocationType
-    extends AbstractSimpleType
+class CourierDispatchBuildingLocationType extends AbstractSimpleType
 {
     const _FRONT = 'FRONT';
     const _NONE = 'NONE';

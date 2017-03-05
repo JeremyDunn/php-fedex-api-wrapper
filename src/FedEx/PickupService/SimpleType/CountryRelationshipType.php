@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class CountryRelationshipType
-    extends AbstractSimpleType
+class CountryRelationshipType extends AbstractSimpleType
 {
     const _DOMESTIC = 'DOMESTIC';
     const _INTERNATIONAL = 'INTERNATIONAL';

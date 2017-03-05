@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class HazardousCommodityPackingDetail
-    extends AbstractComplexType
-{
+ *
+ * @property boolean $CargoAircraftOnly
+ * @property string $PackingInstructions
 
+ */
+class HazardousCommodityPackingDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'HazardousCommodityPackingDetail';
+    protected $name = 'HazardousCommodityPackingDetail';
 
     /**
      * Set CargoAircraftOnly
      *
      * @param boolean $cargoAircraftOnly
-     * return HazardousCommodityPackingDetail
+     * @return $this
      */
     public function setCargoAircraftOnly($cargoAircraftOnly)
     {
-        $this->CargoAircraftOnly = $cargoAircraftOnly;
+        $this->values['CargoAircraftOnly'] = $cargoAircraftOnly;
         return $this;
     }
-    
+
     /**
      * Coded specification for how commodity is to be packed.
      *
      * @param string $packingInstructions
-     * return HazardousCommodityPackingDetail
+     * @return $this
      */
     public function setPackingInstructions($packingInstructions)
     {
-        $this->PackingInstructions = $packingInstructions;
+        $this->values['PackingInstructions'] = $packingInstructions;
         return $this;
     }
-    
 
     
 }

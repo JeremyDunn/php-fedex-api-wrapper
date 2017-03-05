@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class InternationalDocumentContentType
-    extends AbstractSimpleType
+class InternationalDocumentContentType extends AbstractSimpleType
 {
     const _DERIVED = 'DERIVED';
     const _DOCUMENTS_ONLY = 'DOCUMENTS_ONLY';

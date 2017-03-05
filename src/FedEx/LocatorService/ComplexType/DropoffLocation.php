@@ -9,102 +9,108 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Locator Service
- */
-class DropoffLocation
-    extends AbstractComplexType
-{
+ *
+ * @property string $BusinessName
+ * @property string $BusinessId
+ * @property string $BusinessDescription
+ * @property Address $BusinessAddress
+ * @property Distance $Distance
+ * @property DropoffLocationProfile $ServiceProfile
+ * @property  $RecordIndex
 
+ */
+class DropoffLocation extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'DropoffLocation';
+    protected $name = 'DropoffLocation';
 
     /**
      * Name of the business at this location.
      *
      * @param string $businessName
-     * return DropoffLocation
+     * @return $this
      */
     public function setBusinessName($businessName)
     {
-        $this->BusinessName = $businessName;
+        $this->values['BusinessName'] = $businessName;
         return $this;
     }
-    
+
     /**
      * Identifier that can be used by IVR Attendant to look up directions to this location.
      *
      * @param string $businessId
-     * return DropoffLocation
+     * @return $this
      */
     public function setBusinessId($businessId)
     {
-        $this->BusinessId = $businessId;
+        $this->values['BusinessId'] = $businessId;
         return $this;
     }
-    
+
     /**
      * A textual description of the type of business, such as "FedEx Authorized Ship Center".
      *
      * @param string $businessDescription
-     * return DropoffLocation
+     * @return $this
      */
     public function setBusinessDescription($businessDescription)
     {
-        $this->BusinessDescription = $businessDescription;
+        $this->values['BusinessDescription'] = $businessDescription;
         return $this;
     }
-    
+
     /**
      * The descriptive data of the physical location.
      *
      * @param Address $businessAddress
-     * return DropoffLocation
+     * @return $this
      */
     public function setBusinessAddress(Address $businessAddress)
     {
-        $this->BusinessAddress = $businessAddress;
+        $this->values['BusinessAddress'] = $businessAddress;
         return $this;
     }
-    
+
     /**
      * The descriptive data of the distance.
      *
      * @param Distance $distance
-     * return DropoffLocation
+     * @return $this
      */
     public function setDistance(Distance $distance)
     {
-        $this->Distance = $distance;
+        $this->values['Distance'] = $distance;
         return $this;
     }
-    
+
     /**
      * The descriptive data of the services offered at this location.
      *
      * @param DropoffLocationProfile $serviceProfile
-     * return DropoffLocation
+     * @return $this
      */
     public function setServiceProfile(DropoffLocationProfile $serviceProfile)
     {
-        $this->ServiceProfile = $serviceProfile;
+        $this->values['ServiceProfile'] = $serviceProfile;
         return $this;
     }
-    
+
     /**
      * Of the Total locations available this is the individual location identifier.
      *
      * @param  $recordIndex
-     * return DropoffLocation
+     * @return $this
      */
     public function setRecordIndex( $recordIndex)
     {
-        $this->RecordIndex = $recordIndex;
+        $this->values['RecordIndex'] = $recordIndex;
         return $this;
     }
-    
 
     
 }

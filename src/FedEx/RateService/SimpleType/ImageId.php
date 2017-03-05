@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class ImageId
-    extends AbstractSimpleType
+class ImageId extends AbstractSimpleType
 {
     const _IMAGE_1 = 'IMAGE_1';
     const _IMAGE_2 = 'IMAGE_2';

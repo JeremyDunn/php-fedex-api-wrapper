@@ -9,102 +9,108 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Address Validation Service
- */
-class AddressValidationRequest
-    extends AbstractComplexType
-{
+ *
+ * @property WebAuthenticationDetail $WebAuthenticationDetail
+ * @property ClientDetail $ClientDetail
+ * @property TransactionDetail $TransactionDetail
+ * @property VersionId $Version
+ * @property dateTime $RequestTimestamp
+ * @property AddressValidationOptions $Options
+ * @property AddressToValidate[] $AddressesToValidate
 
+ */
+class AddressValidationRequest extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'AddressValidationRequest';
+    protected $name = 'AddressValidationRequest';
 
     /**
      * The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
      * @param WebAuthenticationDetail $webAuthenticationDetail
-     * return AddressValidationRequest
+     * @return $this
      */
     public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
     {
-        $this->WebAuthenticationDetail = $webAuthenticationDetail;
+        $this->values['WebAuthenticationDetail'] = $webAuthenticationDetail;
         return $this;
     }
-    
+
     /**
      * Descriptive data identifying the client submitting the transaction.
      *
      * @param ClientDetail $clientDetail
-     * return AddressValidationRequest
+     * @return $this
      */
     public function setClientDetail(ClientDetail $clientDetail)
     {
-        $this->ClientDetail = $clientDetail;
+        $this->values['ClientDetail'] = $clientDetail;
         return $this;
     }
-    
+
     /**
      * Descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
      * @param TransactionDetail $transactionDetail
-     * return AddressValidationRequest
+     * @return $this
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
-        $this->TransactionDetail = $transactionDetail;
+        $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
     }
-    
+
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
      * @param VersionId $version
-     * return AddressValidationRequest
+     * @return $this
      */
     public function setVersion(VersionId $version)
     {
-        $this->Version = $version;
+        $this->values['Version'] = $version;
         return $this;
     }
-    
+
     /**
      * Set RequestTimestamp
      *
      * @param dateTime $requestTimestamp
-     * return AddressValidationRequest
+     * @return $this
      */
     public function setRequestTimestamp($requestTimestamp)
     {
-        $this->RequestTimestamp = $requestTimestamp;
+        $this->values['RequestTimestamp'] = $requestTimestamp;
         return $this;
     }
-    
+
     /**
      * Set Options
      *
      * @param AddressValidationOptions $options
-     * return AddressValidationRequest
+     * @return $this
      */
     public function setOptions(AddressValidationOptions $options)
     {
-        $this->Options = $options;
+        $this->values['Options'] = $options;
         return $this;
     }
-    
+
     /**
      * Set AddressesToValidate
      *
      * @param AddressToValidate[] $addressesToValidate
-     * return AddressValidationRequest
+     * @return $this
      */
     public function setAddressesToValidate(array $addressesToValidate)
     {
-        $this->AddressesToValidate = $addressesToValidate;
+        $this->values['AddressesToValidate'] = $addressesToValidate;
         return $this;
     }
-    
 
     
 }

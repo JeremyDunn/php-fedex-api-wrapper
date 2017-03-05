@@ -17,14 +17,14 @@ class Request extends AbstractRequest
      *
      * @var string
      */
-    protected $_wsdlPath;
+    protected $wsdlPath;
 
     /**
      * SoapClient object
      *
      * @var SoapClient
      */
-    protected $_soapClient;
+    protected $soapClient;
 
     /**
      * Constructor
@@ -34,12 +34,12 @@ class Request extends AbstractRequest
     public function __construct($wsdlPath = null)
     {
         if (null != $wsdlPath) {
-            $this->_wsdlPath = $wsdlPath;
+            $this->wsdlPath = $wsdlPath;
         } else {
-            $this->_wsdlPath = realpath(dirname(__FILE__) . '/../_wsdl/CourierDispatchService_v3.wsdl');
+            $this->wsdlPath = realpath(dirname(__FILE__) . '/../_wsdl/CourierDispatchService_v3.wsdl');
         }
 
-        $this->_soapClient = new \SoapClient($this->_wsdlPath, array('trace' => true));
+        $this->soapClient = new \SoapClient($this->wsdlPath, array('trace' => true));
     }
 
     /**
@@ -49,41 +49,35 @@ class Request extends AbstractRequest
      */
     public function getSoapClient()
     {
-        return $this->_soapClient;
+        return $this->soapClient;
     }
 
     /**
      * Sends the CourierDispatchRequest and returns the response
      *
-     * @param ComplexType\CourierDispatchRequest $courierDispatchRequest 
+     * @param ComplexType\CourierDispatchRequest $courierDispatchRequest
      * @return stdClass
      */
     public function getCreateCourierDispatchReply(ComplexType\CourierDispatchRequest $courierDispatchRequest)
     {
-        return $this->_soapClient->createCourierDispatch($courierDispatchRequest->toArray());
-    }
-       /**
+        return $this->soapClient->createCourierDispatch($courierDispatchRequest->toArray());
+    }    /**
      * Sends the CancelCourierDispatchRequest and returns the response
      *
-     * @param ComplexType\CancelCourierDispatchRequest $cancelCourierDispatchRequest 
+     * @param ComplexType\CancelCourierDispatchRequest $cancelCourierDispatchRequest
      * @return stdClass
      */
     public function getCancelCourierDispatchReply(ComplexType\CancelCourierDispatchRequest $cancelCourierDispatchRequest)
     {
-        return $this->_soapClient->cancelCourierDispatch($cancelCourierDispatchRequest->toArray());
-    }
-       /**
+        return $this->soapClient->cancelCourierDispatch($cancelCourierDispatchRequest->toArray());
+    }    /**
      * Sends the PickupAvailabilityRequest and returns the response
      *
-     * @param ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest 
+     * @param ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest
      * @return stdClass
      */
     public function getGetPickupAvailabilityReply(ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest)
     {
-        return $this->_soapClient->getPickupAvailability($pickupAvailabilityRequest->toArray());
+        return $this->soapClient->getPickupAvailability($pickupAvailabilityRequest->toArray());
     }
-   
-
 }
-
-   

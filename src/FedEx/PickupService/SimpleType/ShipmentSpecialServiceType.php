@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class ShipmentSpecialServiceType
-    extends AbstractSimpleType
+class ShipmentSpecialServiceType extends AbstractSimpleType
 {
     const _BLIND_SHIPMENT = 'BLIND_SHIPMENT';
     const _BROKER_SELECT_OPTION = 'BROKER_SELECT_OPTION';

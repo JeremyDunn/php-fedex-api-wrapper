@@ -9,30 +9,36 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class ExpressFreightDetail
-    extends AbstractComplexType
-{
+ *
+ * @property boolean $PackingListEnclosed
+ * @property positiveInteger $ShippersLoadAndCount
+ * @property string $BookingConfirmationNumber
+ * @property boolean $ReferenceLabelRequested
+ * @property ExpressFreightDetailContact $BeforeDeliveryContact
+ * @property ExpressFreightDetailContact $UndeliverableContact
 
+ */
+class ExpressFreightDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'ExpressFreightDetail';
+    protected $name = 'ExpressFreightDetail';
 
     /**
      * Indicates whether or nor a packing list is enclosed.
      *
      * @param boolean $packingListEnclosed
-     * return ExpressFreightDetail
+     * @return $this
      */
     public function setPackingListEnclosed($packingListEnclosed)
     {
-        $this->PackingListEnclosed = $packingListEnclosed;
+        $this->values['PackingListEnclosed'] = $packingListEnclosed;
         return $this;
     }
-    
+
     /**
      * 
                 Total shipment pieces.
@@ -42,62 +48,61 @@ class ExpressFreightDetail
               
      *
      * @param positiveInteger $shippersLoadAndCount
-     * return ExpressFreightDetail
+     * @return $this
      */
     public function setShippersLoadAndCount($shippersLoadAndCount)
     {
-        $this->ShippersLoadAndCount = $shippersLoadAndCount;
+        $this->values['ShippersLoadAndCount'] = $shippersLoadAndCount;
         return $this;
     }
-    
+
     /**
      * Required for International Freight shipping. Values must be 8- 12 characters in length.
      *
      * @param string $bookingConfirmationNumber
-     * return ExpressFreightDetail
+     * @return $this
      */
     public function setBookingConfirmationNumber($bookingConfirmationNumber)
     {
-        $this->BookingConfirmationNumber = $bookingConfirmationNumber;
+        $this->values['BookingConfirmationNumber'] = $bookingConfirmationNumber;
         return $this;
     }
-    
+
     /**
      * Currently not supported.
      *
      * @param boolean $referenceLabelRequested
-     * return ExpressFreightDetail
+     * @return $this
      */
     public function setReferenceLabelRequested($referenceLabelRequested)
     {
-        $this->ReferenceLabelRequested = $referenceLabelRequested;
+        $this->values['ReferenceLabelRequested'] = $referenceLabelRequested;
         return $this;
     }
-    
+
     /**
      * Currently not supported.
      *
      * @param ExpressFreightDetailContact $beforeDeliveryContact
-     * return ExpressFreightDetail
+     * @return $this
      */
     public function setBeforeDeliveryContact(ExpressFreightDetailContact $beforeDeliveryContact)
     {
-        $this->BeforeDeliveryContact = $beforeDeliveryContact;
+        $this->values['BeforeDeliveryContact'] = $beforeDeliveryContact;
         return $this;
     }
-    
+
     /**
      * Currently not supported.
      *
      * @param ExpressFreightDetailContact $undeliverableContact
-     * return ExpressFreightDetail
+     * @return $this
      */
     public function setUndeliverableContact(ExpressFreightDetailContact $undeliverableContact)
     {
-        $this->UndeliverableContact = $undeliverableContact;
+        $this->values['UndeliverableContact'] = $undeliverableContact;
         return $this;
     }
-    
 
     
 }

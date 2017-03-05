@@ -9,66 +9,69 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class CustomDeliveryWindowDetail
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\RateService\SimpleType\CustomDeliveryWindowType|string $Type
+ * @property time $RequestTime
+ * @property DateRange $RequestRange
+ * @property date $RequestDate
 
+ */
+class CustomDeliveryWindowDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'CustomDeliveryWindowDetail';
+    protected $name = 'CustomDeliveryWindowDetail';
 
     /**
      * Indicates the type of custom delivery being requested.
      *
      * @param \FedEx\RateService\SimpleType\CustomDeliveryWindowType|string $type
-     * return CustomDeliveryWindowDetail
+     * @return $this
      */
     public function setType($type)
     {
-        $this->Type = $type;
+        $this->values['Type'] = $type;
         return $this;
     }
-    
+
     /**
      * Time by which delivery is requested.
      *
      * @param time $requestTime
-     * return CustomDeliveryWindowDetail
+     * @return $this
      */
     public function setRequestTime(time $requestTime)
     {
-        $this->RequestTime = $requestTime;
+        $this->values['RequestTime'] = $requestTime;
         return $this;
     }
-    
+
     /**
      * Range of dates for custom delivery request; only used if type is BETWEEN.
      *
      * @param DateRange $requestRange
-     * return CustomDeliveryWindowDetail
+     * @return $this
      */
     public function setRequestRange(DateRange $requestRange)
     {
-        $this->RequestRange = $requestRange;
+        $this->values['RequestRange'] = $requestRange;
         return $this;
     }
-    
+
     /**
      * Date for custom delivery request; only used for types of ON, BETWEEN, or AFTER.
      *
      * @param date $requestDate
-     * return CustomDeliveryWindowDetail
+     * @return $this
      */
     public function setRequestDate($requestDate)
     {
-        $this->RequestDate = $requestDate;
+        $this->values['RequestDate'] = $requestDate;
         return $this;
     }
-    
 
     
 }

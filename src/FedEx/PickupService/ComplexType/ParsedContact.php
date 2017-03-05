@@ -9,102 +9,108 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
- */
-class ParsedContact
-    extends AbstractComplexType
-{
+ *
+ * @property ParsedPersonName $PersonName
+ * @property string $Title
+ * @property string $CompanyName
+ * @property string $PhoneNumber
+ * @property string $PagerNumber
+ * @property string $FaxNumber
+ * @property string $EMailAddress
 
+ */
+class ParsedContact extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'ParsedContact';
+    protected $name = 'ParsedContact';
 
     /**
      * The name of the person.
      *
      * @param ParsedPersonName $personName
-     * return ParsedContact
+     * @return $this
      */
     public function setPersonName(ParsedPersonName $personName)
     {
-        $this->PersonName = $personName;
+        $this->values['PersonName'] = $personName;
         return $this;
     }
-    
+
     /**
      * The title of the person.
      *
      * @param string $title
-     * return ParsedContact
+     * @return $this
      */
     public function setTitle($title)
     {
-        $this->Title = $title;
+        $this->values['Title'] = $title;
         return $this;
     }
-    
+
     /**
      * The name of the company, this person is working for.
      *
      * @param string $companyName
-     * return ParsedContact
+     * @return $this
      */
     public function setCompanyName($companyName)
     {
-        $this->CompanyName = $companyName;
+        $this->values['CompanyName'] = $companyName;
         return $this;
     }
-    
+
     /**
      * Phone number of the person.
      *
      * @param string $phoneNumber
-     * return ParsedContact
+     * @return $this
      */
     public function setPhoneNumber($phoneNumber)
     {
-        $this->PhoneNumber = $phoneNumber;
+        $this->values['PhoneNumber'] = $phoneNumber;
         return $this;
     }
-    
+
     /**
      * Pager number of the person.
      *
      * @param string $pagerNumber
-     * return ParsedContact
+     * @return $this
      */
     public function setPagerNumber($pagerNumber)
     {
-        $this->PagerNumber = $pagerNumber;
+        $this->values['PagerNumber'] = $pagerNumber;
         return $this;
     }
-    
+
     /**
      * Fax number of the person.
      *
      * @param string $faxNumber
-     * return ParsedContact
+     * @return $this
      */
     public function setFaxNumber($faxNumber)
     {
-        $this->FaxNumber = $faxNumber;
+        $this->values['FaxNumber'] = $faxNumber;
         return $this;
     }
-    
+
     /**
      * Email address information.
      *
      * @param string $eMailAddress
-     * return ParsedContact
+     * @return $this
      */
     public function setEMailAddress($eMailAddress)
     {
-        $this->EMailAddress = $eMailAddress;
+        $this->values['EMailAddress'] = $eMailAddress;
         return $this;
     }
-    
 
     
 }

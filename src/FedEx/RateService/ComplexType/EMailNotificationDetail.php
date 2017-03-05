@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class EMailNotificationDetail
-    extends AbstractComplexType
-{
+ *
+ * @property string $PersonalMessage
+ * @property EMailNotificationRecipient[] $Recipients
 
+ */
+class EMailNotificationDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'EMailNotificationDetail';
+    protected $name = 'EMailNotificationDetail';
 
     /**
      * A message that will be included in the email notifications
      *
      * @param string $personalMessage
-     * return EMailNotificationDetail
+     * @return $this
      */
     public function setPersonalMessage($personalMessage)
     {
-        $this->PersonalMessage = $personalMessage;
+        $this->values['PersonalMessage'] = $personalMessage;
         return $this;
     }
-    
+
     /**
      * Information describing the destination of the email, format of the email and events to be notified on
      *
      * @param EMailNotificationRecipient[] $recipients
-     * return EMailNotificationDetail
+     * @return $this
      */
     public function setRecipients(array $recipients)
     {
-        $this->Recipients = $recipients;
+        $this->values['Recipients'] = $recipients;
         return $this;
     }
-    
 
     
 }

@@ -9,54 +9,56 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class ServiceSubOptionDetail
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\RateService\SimpleType\FreightGuaranteeType|string $FreightGuarantee
+ * @property string $SmartPostHubId
+ * @property \FedEx\RateService\SimpleType\SmartPostIndiciaType|string $SmartPostIndicia
 
+ */
+class ServiceSubOptionDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'ServiceSubOptionDetail';
+    protected $name = 'ServiceSubOptionDetail';
 
     /**
      * Identifies the type of Freight Guarantee applied, if FREIGHT_GUARANTEE is applied to the rate quote.
      *
      * @param \FedEx\RateService\SimpleType\FreightGuaranteeType|string $freightGuarantee
-     * return ServiceSubOptionDetail
+     * @return $this
      */
     public function setFreightGuarantee($freightGuarantee)
     {
-        $this->FreightGuarantee = $freightGuarantee;
+        $this->values['FreightGuarantee'] = $freightGuarantee;
         return $this;
     }
-    
+
     /**
      * Identifies the smartPostHubId used during rate quote, if SMART_POST_HUB_ID is a variable option on the rate request.
      *
      * @param string $smartPostHubId
-     * return ServiceSubOptionDetail
+     * @return $this
      */
     public function setSmartPostHubId($smartPostHubId)
     {
-        $this->SmartPostHubId = $smartPostHubId;
+        $this->values['SmartPostHubId'] = $smartPostHubId;
         return $this;
     }
-    
+
     /**
      * Identifies the indicia used during rate quote, if SMART_POST_ALLOWED_INDICIA is a variable option on the rate request.
      *
      * @param \FedEx\RateService\SimpleType\SmartPostIndiciaType|string $smartPostIndicia
-     * return ServiceSubOptionDetail
+     * @return $this
      */
     public function setSmartPostIndicia($smartPostIndicia)
     {
-        $this->SmartPostIndicia = $smartPostIndicia;
+        $this->values['SmartPostIndicia'] = $smartPostIndicia;
         return $this;
     }
-    
 
     
 }

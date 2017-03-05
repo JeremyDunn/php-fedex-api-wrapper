@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class ReturnEMailAllowedSpecialServiceType
-    extends AbstractSimpleType
+class ReturnEMailAllowedSpecialServiceType extends AbstractSimpleType
 {
     const _SATURDAY_DELIVERY = 'SATURDAY_DELIVERY';
     const _SATURDAY_PICKUP = 'SATURDAY_PICKUP';

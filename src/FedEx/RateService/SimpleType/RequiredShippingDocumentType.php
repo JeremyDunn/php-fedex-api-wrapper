@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class RequiredShippingDocumentType
-    extends AbstractSimpleType
+class RequiredShippingDocumentType extends AbstractSimpleType
 {
     const _CANADIAN_B13A = 'CANADIAN_B13A';
     const _CERTIFICATE_OF_ORIGIN = 'CERTIFICATE_OF_ORIGIN';

@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class PageQuadrantType
-    extends AbstractSimpleType
+class PageQuadrantType extends AbstractSimpleType
 {
     const _BOTTOM_LEFT = 'BOTTOM_LEFT';
     const _BOTTOM_RIGHT = 'BOTTOM_RIGHT';

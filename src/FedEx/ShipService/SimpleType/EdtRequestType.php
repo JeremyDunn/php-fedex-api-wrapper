@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class EdtRequestType
-    extends AbstractSimpleType
+class EdtRequestType extends AbstractSimpleType
 {
     const _ALL = 'ALL';
     const _NONE = 'NONE';

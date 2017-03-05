@@ -9,66 +9,69 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class HazardousCommodityContent
-    extends AbstractComplexType
-{
+ *
+ * @property HazardousCommodityDescription $Description
+ * @property HazardousCommodityQuantityDetail $Quantity
+ * @property HazardousCommodityOptionDetail $Options
+ * @property RadionuclideDetail $RadionuclideDetail
 
+ */
+class HazardousCommodityContent extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'HazardousCommodityContent';
+    protected $name = 'HazardousCommodityContent';
 
     /**
      * Identifies and describes an individual hazardous commodity.
      *
      * @param HazardousCommodityDescription $description
-     * return HazardousCommodityContent
+     * @return $this
      */
     public function setDescription(HazardousCommodityDescription $description)
     {
-        $this->Description = $description;
+        $this->values['Description'] = $description;
         return $this;
     }
-    
+
     /**
      * Specifies the amount of the commodity in alternate units.
      *
      * @param HazardousCommodityQuantityDetail $quantity
-     * return HazardousCommodityContent
+     * @return $this
      */
     public function setQuantity(HazardousCommodityQuantityDetail $quantity)
     {
-        $this->Quantity = $quantity;
+        $this->values['Quantity'] = $quantity;
         return $this;
     }
-    
+
     /**
      * Customer-provided specifications for handling individual commodities.
      *
      * @param HazardousCommodityOptionDetail $options
-     * return HazardousCommodityContent
+     * @return $this
      */
     public function setOptions(HazardousCommodityOptionDetail $options)
     {
-        $this->Options = $options;
+        $this->values['Options'] = $options;
         return $this;
     }
-    
+
     /**
      * Specifies the details of any radio active materials within the commodity.
      *
      * @param RadionuclideDetail $radionuclideDetail
-     * return HazardousCommodityContent
+     * @return $this
      */
     public function setRadionuclideDetail(RadionuclideDetail $radionuclideDetail)
     {
-        $this->RadionuclideDetail = $radionuclideDetail;
+        $this->values['RadionuclideDetail'] = $radionuclideDetail;
         return $this;
     }
-    
 
     
 }

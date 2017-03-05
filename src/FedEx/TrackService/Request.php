@@ -17,14 +17,14 @@ class Request extends AbstractRequest
      *
      * @var string
      */
-    protected $_wsdlPath;
+    protected $wsdlPath;
 
     /**
      * SoapClient object
      *
      * @var SoapClient
      */
-    protected $_soapClient;
+    protected $soapClient;
 
     /**
      * Constructor
@@ -34,12 +34,12 @@ class Request extends AbstractRequest
     public function __construct($wsdlPath = null)
     {
         if (null != $wsdlPath) {
-            $this->_wsdlPath = $wsdlPath;
+            $this->wsdlPath = $wsdlPath;
         } else {
-            $this->_wsdlPath = realpath(dirname(__FILE__) . '/../_wsdl/TrackService_v5.wsdl');
+            $this->wsdlPath = realpath(dirname(__FILE__) . '/../_wsdl/TrackService_v5.wsdl');
         }
 
-        $this->_soapClient = new \SoapClient($this->_wsdlPath, array('trace' => true));
+        $this->soapClient = new \SoapClient($this->wsdlPath, array('trace' => true));
     }
 
     /**
@@ -49,51 +49,44 @@ class Request extends AbstractRequest
      */
     public function getSoapClient()
     {
-        return $this->_soapClient;
+        return $this->soapClient;
     }
 
     /**
      * Sends the TrackNotificationRequest and returns the response
      *
-     * @param ComplexType\TrackNotificationRequest $trackNotificationRequest 
+     * @param ComplexType\TrackNotificationRequest $trackNotificationRequest
      * @return stdClass
      */
     public function getGetTrackNotificationReply(ComplexType\TrackNotificationRequest $trackNotificationRequest)
     {
-        return $this->_soapClient->getTrackNotification($trackNotificationRequest->toArray());
-    }
-       /**
+        return $this->soapClient->getTrackNotification($trackNotificationRequest->toArray());
+    }    /**
      * Sends the SignatureProofOfDeliveryLetterRequest and returns the response
      *
-     * @param ComplexType\SignatureProofOfDeliveryLetterRequest $signatureProofOfDeliveryLetterRequest 
+     * @param ComplexType\SignatureProofOfDeliveryLetterRequest $signatureProofOfDeliveryLetterRequest
      * @return stdClass
      */
     public function getRetrieveSignatureProofOfDeliveryLetterReply(ComplexType\SignatureProofOfDeliveryLetterRequest $signatureProofOfDeliveryLetterRequest)
     {
-        return $this->_soapClient->retrieveSignatureProofOfDeliveryLetter($signatureProofOfDeliveryLetterRequest->toArray());
-    }
-       /**
+        return $this->soapClient->retrieveSignatureProofOfDeliveryLetter($signatureProofOfDeliveryLetterRequest->toArray());
+    }    /**
      * Sends the TrackRequest and returns the response
      *
-     * @param ComplexType\TrackRequest $trackRequest 
+     * @param ComplexType\TrackRequest $trackRequest
      * @return stdClass
      */
     public function getTrackReply(ComplexType\TrackRequest $trackRequest)
     {
-        return $this->_soapClient->track($trackRequest->toArray());
-    }
-       /**
+        return $this->soapClient->track($trackRequest->toArray());
+    }    /**
      * Sends the SignatureProofOfDeliveryFaxRequest and returns the response
      *
-     * @param ComplexType\SignatureProofOfDeliveryFaxRequest $signatureProofOfDeliveryFaxRequest 
+     * @param ComplexType\SignatureProofOfDeliveryFaxRequest $signatureProofOfDeliveryFaxRequest
      * @return stdClass
      */
     public function getSendSignatureProofOfDeliveryFaxReply(ComplexType\SignatureProofOfDeliveryFaxRequest $signatureProofOfDeliveryFaxRequest)
     {
-        return $this->_soapClient->sendSignatureProofOfDeliveryFax($signatureProofOfDeliveryFaxRequest->toArray());
+        return $this->soapClient->sendSignatureProofOfDeliveryFax($signatureProofOfDeliveryFaxRequest->toArray());
     }
-   
-
 }
-
-   

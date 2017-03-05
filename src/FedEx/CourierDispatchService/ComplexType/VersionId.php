@@ -9,66 +9,69 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Courier Dispatch Service
- */
-class VersionId
-    extends AbstractComplexType
-{
+ *
+ * @property string $ServiceId
+ * @property int $Major
+ * @property int $Intermediate
+ * @property int $Minor
 
+ */
+class VersionId extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'VersionId';
+    protected $name = 'VersionId';
 
     /**
      * Identifies a system or sub-system which performs an operation. Customers using the FedEx Web Services interface should set this element to "wsi".
      *
      * @param string $serviceId
-     * return VersionId
+     * @return $this
      */
     public function setServiceId($serviceId)
     {
-        $this->ServiceId = $serviceId;
+        $this->values['ServiceId'] = $serviceId;
         return $this;
     }
-    
+
     /**
      * Identifies the service business level.
      *
      * @param int $major
-     * return VersionId
+     * @return $this
      */
     public function setMajor($major)
     {
-        $this->Major = $major;
+        $this->values['Major'] = $major;
         return $this;
     }
-    
+
     /**
      * Identifies the service interface level.
      *
      * @param int $intermediate
-     * return VersionId
+     * @return $this
      */
     public function setIntermediate($intermediate)
     {
-        $this->Intermediate = $intermediate;
+        $this->values['Intermediate'] = $intermediate;
         return $this;
     }
-    
+
     /**
      * Identifies the service code level.
      *
      * @param int $minor
-     * return VersionId
+     * @return $this
      */
     public function setMinor($minor)
     {
-        $this->Minor = $minor;
+        $this->values['Minor'] = $minor;
         return $this;
     }
-    
 
     
 }

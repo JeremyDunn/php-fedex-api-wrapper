@@ -9,54 +9,56 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class CurrencyExchangeRate
-    extends AbstractComplexType
-{
+ *
+ * @property string $FromCurrency
+ * @property string $IntoCurrency
+ * @property decimal $Rate
 
+ */
+class CurrencyExchangeRate extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'CurrencyExchangeRate';
+    protected $name = 'CurrencyExchangeRate';
 
     /**
      * The currency code for the original (converted FROM) currency.
      *
      * @param string $fromCurrency
-     * return CurrencyExchangeRate
+     * @return $this
      */
     public function setFromCurrency($fromCurrency)
     {
-        $this->FromCurrency = $fromCurrency;
+        $this->values['FromCurrency'] = $fromCurrency;
         return $this;
     }
-    
+
     /**
      * The currency code for the final (converted INTO) currency.
      *
      * @param string $intoCurrency
-     * return CurrencyExchangeRate
+     * @return $this
      */
     public function setIntoCurrency($intoCurrency)
     {
-        $this->IntoCurrency = $intoCurrency;
+        $this->values['IntoCurrency'] = $intoCurrency;
         return $this;
     }
-    
+
     /**
      * Multiplier used to convert fromCurrency units to intoCurrency units.
      *
      * @param decimal $rate
-     * return CurrencyExchangeRate
+     * @return $this
      */
     public function setRate($rate)
     {
-        $this->Rate = $rate;
+        $this->values['Rate'] = $rate;
         return $this;
     }
-    
 
     
 }

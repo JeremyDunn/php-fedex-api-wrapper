@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class DayOfWeekType
-    extends AbstractSimpleType
+class DayOfWeekType extends AbstractSimpleType
 {
     const _FRI = 'FRI';
     const _MON = 'MON';

@@ -9,78 +9,82 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
- */
-class EMailNotificationRecipient
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\Pickup\SimpleType\EMailNotificationRecipientType|string $EMailNotificationRecipientType
+ * @property string $EMailAddress
+ * @property \FedEx\Pickup\SimpleType\EMailNotificationEventType|string[] $NotificationEventsRequested
+ * @property \FedEx\Pickup\SimpleType\EMailNotificationFormatType|string $Format
+ * @property Localization $Localization
 
+ */
+class EMailNotificationRecipient extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'EMailNotificationRecipient';
+    protected $name = 'EMailNotificationRecipient';
 
     /**
      * Identifies the relationship this email recipient has to the shipment.
      *
      * @param \FedEx\Pickup\SimpleType\EMailNotificationRecipientType|string $eMailNotificationRecipientType
-     * return EMailNotificationRecipient
+     * @return $this
      */
     public function setEMailNotificationRecipientType($eMailNotificationRecipientType)
     {
-        $this->EMailNotificationRecipientType = $eMailNotificationRecipientType;
+        $this->values['EMailNotificationRecipientType'] = $eMailNotificationRecipientType;
         return $this;
     }
-    
+
     /**
      * The email address to send the notification to
      *
      * @param string $eMailAddress
-     * return EMailNotificationRecipient
+     * @return $this
      */
     public function setEMailAddress($eMailAddress)
     {
-        $this->EMailAddress = $eMailAddress;
+        $this->values['EMailAddress'] = $eMailAddress;
         return $this;
     }
-    
+
     /**
      * The types of email notifications being requested for this recipient.
      *
      * @param EMailNotificationEventType[] $notificationEventsRequested
-     * return EMailNotificationRecipient
+     * @return $this
      */
     public function setNotificationEventsRequested(array $notificationEventsRequested)
     {
-        $this->NotificationEventsRequested = $notificationEventsRequested;
+        $this->values['NotificationEventsRequested'] = $notificationEventsRequested;
         return $this;
     }
-    
+
     /**
      * The format of the email notification.
      *
      * @param \FedEx\Pickup\SimpleType\EMailNotificationFormatType|string $format
-     * return EMailNotificationRecipient
+     * @return $this
      */
     public function setFormat($format)
     {
-        $this->Format = $format;
+        $this->values['Format'] = $format;
         return $this;
     }
-    
+
     /**
      * The language/locale to be used in this email notification.
      *
      * @param Localization $localization
-     * return EMailNotificationRecipient
+     * @return $this
      */
     public function setLocalization(Localization $localization)
     {
-        $this->Localization = $localization;
+        $this->values['Localization'] = $localization;
         return $this;
     }
-    
 
     
 }

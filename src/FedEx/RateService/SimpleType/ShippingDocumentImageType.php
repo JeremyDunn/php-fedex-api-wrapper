@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class ShippingDocumentImageType
-    extends AbstractSimpleType
+class ShippingDocumentImageType extends AbstractSimpleType
 {
     const _DPL = 'DPL';
     const _EPL2 = 'EPL2';

@@ -9,102 +9,108 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Close Service
- */
-class CloseDocument
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\CloseService\SimpleType\CloseDocumentType|string $Type
+ * @property string $ShippingCycle
+ * @property \FedEx\CloseService\SimpleType\ShippingDocumentDispositionType|string $ShippingDocumentDisposition
+ * @property string $AccessReference
+ * @property nonNegativeInteger $Resolution
+ * @property positiveInteger $CopiesToPrint
+ * @property ShippingDocumentPart[] $Parts
 
+ */
+class CloseDocument extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'CloseDocument';
+    protected $name = 'CloseDocument';
 
     /**
      * Set Type
      *
      * @param \FedEx\CloseService\SimpleType\CloseDocumentType|string $type
-     * return CloseDocument
+     * @return $this
      */
     public function setType($type)
     {
-        $this->Type = $type;
+        $this->values['Type'] = $type;
         return $this;
     }
-    
+
     /**
      * The client's shipping cycle to which this shipment belongs.
      *
      * @param string $shippingCycle
-     * return CloseDocument
+     * @return $this
      */
     public function setShippingCycle($shippingCycle)
     {
-        $this->ShippingCycle = $shippingCycle;
+        $this->values['ShippingCycle'] = $shippingCycle;
         return $this;
     }
-    
+
     /**
      * Set ShippingDocumentDisposition
      *
      * @param \FedEx\CloseService\SimpleType\ShippingDocumentDispositionType|string $shippingDocumentDisposition
-     * return CloseDocument
+     * @return $this
      */
     public function setShippingDocumentDisposition($shippingDocumentDisposition)
     {
-        $this->ShippingDocumentDisposition = $shippingDocumentDisposition;
+        $this->values['ShippingDocumentDisposition'] = $shippingDocumentDisposition;
         return $this;
     }
-    
+
     /**
      * The name under which a STORED or DEFERRED document is written.
      *
      * @param string $accessReference
-     * return CloseDocument
+     * @return $this
      */
     public function setAccessReference($accessReference)
     {
-        $this->AccessReference = $accessReference;
+        $this->values['AccessReference'] = $accessReference;
         return $this;
     }
-    
+
     /**
      * Specifies the image resolution in DPI (dots per inch).
      *
      * @param nonNegativeInteger $resolution
-     * return CloseDocument
+     * @return $this
      */
     public function setResolution($resolution)
     {
-        $this->Resolution = $resolution;
+        $this->values['Resolution'] = $resolution;
         return $this;
     }
-    
+
     /**
      * Number of copies to print.
      *
      * @param positiveInteger $copiesToPrint
-     * return CloseDocument
+     * @return $this
      */
     public function setCopiesToPrint($copiesToPrint)
     {
-        $this->CopiesToPrint = $copiesToPrint;
+        $this->values['CopiesToPrint'] = $copiesToPrint;
         return $this;
     }
-    
+
     /**
      * One or more document parts which make up a single logical document, such as multiple pages of a single form.
      *
      * @param ShippingDocumentPart[] $parts
-     * return CloseDocument
+     * @return $this
      */
     public function setParts(array $parts)
     {
-        $this->Parts = $parts;
+        $this->values['Parts'] = $parts;
         return $this;
     }
-    
 
     
 }

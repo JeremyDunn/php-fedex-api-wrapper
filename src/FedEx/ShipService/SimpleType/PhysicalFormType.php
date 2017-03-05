@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class PhysicalFormType
-    extends AbstractSimpleType
+class PhysicalFormType extends AbstractSimpleType
 {
     const _GAS = 'GAS';
     const _LIQUID = 'LIQUID';

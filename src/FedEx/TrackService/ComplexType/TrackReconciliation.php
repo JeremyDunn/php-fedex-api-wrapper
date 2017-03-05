@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
- */
-class TrackReconciliation
-    extends AbstractComplexType
-{
+ *
+ * @property string $Status
+ * @property string $Description
 
+ */
+class TrackReconciliation extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'TrackReconciliation';
+    protected $name = 'TrackReconciliation';
 
     /**
      * An identifier for this type of status.
      *
      * @param string $status
-     * return TrackReconciliation
+     * @return $this
      */
     public function setStatus($status)
     {
-        $this->Status = $status;
+        $this->values['Status'] = $status;
         return $this;
     }
-    
+
     /**
      * A human-readable description of this status.
      *
      * @param string $description
-     * return TrackReconciliation
+     * @return $this
      */
     public function setDescription($description)
     {
-        $this->Description = $description;
+        $this->values['Description'] = $description;
         return $this;
     }
-    
 
     
 }

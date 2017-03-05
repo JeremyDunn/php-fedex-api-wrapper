@@ -9,78 +9,82 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class PickupDetail
-    extends AbstractComplexType
-{
+ *
+ * @property dateTime $ReadyDateTime
+ * @property dateTime $LatestPickupDateTime
+ * @property string $CourierInstructions
+ * @property \FedEx\ShipService\SimpleType\PickupRequestType|string $RequestType
+ * @property \FedEx\ShipService\SimpleType\PickupRequestSourceType|string $RequestSource
 
+ */
+class PickupDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'PickupDetail';
+    protected $name = 'PickupDetail';
 
     /**
      * Set ReadyDateTime
      *
      * @param dateTime $readyDateTime
-     * return PickupDetail
+     * @return $this
      */
     public function setReadyDateTime($readyDateTime)
     {
-        $this->ReadyDateTime = $readyDateTime;
+        $this->values['ReadyDateTime'] = $readyDateTime;
         return $this;
     }
-    
+
     /**
      * Set LatestPickupDateTime
      *
      * @param dateTime $latestPickupDateTime
-     * return PickupDetail
+     * @return $this
      */
     public function setLatestPickupDateTime($latestPickupDateTime)
     {
-        $this->LatestPickupDateTime = $latestPickupDateTime;
+        $this->values['LatestPickupDateTime'] = $latestPickupDateTime;
         return $this;
     }
-    
+
     /**
      * Set CourierInstructions
      *
      * @param string $courierInstructions
-     * return PickupDetail
+     * @return $this
      */
     public function setCourierInstructions($courierInstructions)
     {
-        $this->CourierInstructions = $courierInstructions;
+        $this->values['CourierInstructions'] = $courierInstructions;
         return $this;
     }
-    
+
     /**
      * Identifies the type of Pickup request
      *
      * @param \FedEx\ShipService\SimpleType\PickupRequestType|string $requestType
-     * return PickupDetail
+     * @return $this
      */
     public function setRequestType($requestType)
     {
-        $this->RequestType = $requestType;
+        $this->values['RequestType'] = $requestType;
         return $this;
     }
-    
+
     /**
      * Identifies the type of source for Pickup request
      *
      * @param \FedEx\ShipService\SimpleType\PickupRequestSourceType|string $requestSource
-     * return PickupDetail
+     * @return $this
      */
     public function setRequestSource($requestSource)
     {
-        $this->RequestSource = $requestSource;
+        $this->values['RequestSource'] = $requestSource;
         return $this;
     }
-    
 
     
 }

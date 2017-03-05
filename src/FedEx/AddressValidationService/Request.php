@@ -17,14 +17,14 @@ class Request extends AbstractRequest
      *
      * @var string
      */
-    protected $_wsdlPath;
+    protected $wsdlPath;
 
     /**
      * SoapClient object
      *
      * @var SoapClient
      */
-    protected $_soapClient;
+    protected $soapClient;
 
     /**
      * Constructor
@@ -34,12 +34,12 @@ class Request extends AbstractRequest
     public function __construct($wsdlPath = null)
     {
         if (null != $wsdlPath) {
-            $this->_wsdlPath = $wsdlPath;
+            $this->wsdlPath = $wsdlPath;
         } else {
-            $this->_wsdlPath = realpath(dirname(__FILE__) . '/../_wsdl/AddressValidationService_v2.wsdl');
+            $this->wsdlPath = realpath(dirname(__FILE__) . '/../_wsdl/AddressValidationService_v2.wsdl');
         }
 
-        $this->_soapClient = new \SoapClient($this->_wsdlPath, array('trace' => true));
+        $this->soapClient = new \SoapClient($this->wsdlPath, array('trace' => true));
     }
 
     /**
@@ -49,21 +49,17 @@ class Request extends AbstractRequest
      */
     public function getSoapClient()
     {
-        return $this->_soapClient;
+        return $this->soapClient;
     }
 
     /**
      * Sends the AddressValidationRequest and returns the response
      *
-     * @param ComplexType\AddressValidationRequest $addressValidationRequest 
+     * @param ComplexType\AddressValidationRequest $addressValidationRequest
      * @return stdClass
      */
     public function getAddressValidationReply(ComplexType\AddressValidationRequest $addressValidationRequest)
     {
-        return $this->_soapClient->addressValidation($addressValidationRequest->toArray());
+        return $this->soapClient->addressValidation($addressValidationRequest->toArray());
     }
-   
-
 }
-
-   

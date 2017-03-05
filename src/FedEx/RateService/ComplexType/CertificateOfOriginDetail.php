@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class CertificateOfOriginDetail
-    extends AbstractComplexType
-{
+ *
+ * @property ShippingDocumentFormat $DocumentFormat
+ * @property CustomerImageUsage[] $CustomerImageUsages
 
+ */
+class CertificateOfOriginDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'CertificateOfOriginDetail';
+    protected $name = 'CertificateOfOriginDetail';
 
     /**
      * Specifies characteristics of a shipping document to be produced.
      *
      * @param ShippingDocumentFormat $documentFormat
-     * return CertificateOfOriginDetail
+     * @return $this
      */
     public function setDocumentFormat(ShippingDocumentFormat $documentFormat)
     {
-        $this->DocumentFormat = $documentFormat;
+        $this->values['DocumentFormat'] = $documentFormat;
         return $this;
     }
-    
+
     /**
      * Specifies the usage and identification of customer supplied images to be used on this document.
      *
      * @param CustomerImageUsage[] $customerImageUsages
-     * return CertificateOfOriginDetail
+     * @return $this
      */
     public function setCustomerImageUsages(array $customerImageUsages)
     {
-        $this->CustomerImageUsages = $customerImageUsages;
+        $this->values['CustomerImageUsages'] = $customerImageUsages;
         return $this;
     }
-    
 
     
 }

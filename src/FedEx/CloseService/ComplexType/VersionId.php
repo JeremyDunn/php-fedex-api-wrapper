@@ -9,66 +9,69 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Close Service
- */
-class VersionId
-    extends AbstractComplexType
-{
+ *
+ * @property string $ServiceId
+ * @property int $Major
+ * @property int $Intermediate
+ * @property int $Minor
 
+ */
+class VersionId extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'VersionId';
+    protected $name = 'VersionId';
 
     /**
      * Set ServiceId
      *
      * @param string $serviceId
-     * return VersionId
+     * @return $this
      */
     public function setServiceId($serviceId)
     {
-        $this->ServiceId = $serviceId;
+        $this->values['ServiceId'] = $serviceId;
         return $this;
     }
-    
+
     /**
      * Service business level.
      *
      * @param int $major
-     * return VersionId
+     * @return $this
      */
     public function setMajor($major)
     {
-        $this->Major = $major;
+        $this->values['Major'] = $major;
         return $this;
     }
-    
+
     /**
      * Service interface level.
      *
      * @param int $intermediate
-     * return VersionId
+     * @return $this
      */
     public function setIntermediate($intermediate)
     {
-        $this->Intermediate = $intermediate;
+        $this->values['Intermediate'] = $intermediate;
         return $this;
     }
-    
+
     /**
      * Service code level.
      *
      * @param int $minor
-     * return VersionId
+     * @return $this
      */
     public function setMinor($minor)
     {
-        $this->Minor = $minor;
+        $this->values['Minor'] = $minor;
         return $this;
     }
-    
 
     
 }

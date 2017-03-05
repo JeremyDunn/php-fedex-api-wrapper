@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class ReturnInstructionsDetail
-    extends AbstractComplexType
-{
+ *
+ * @property ShippingDocumentFormat $Format
+ * @property string $CustomText
 
+ */
+class ReturnInstructionsDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'ReturnInstructionsDetail';
+    protected $name = 'ReturnInstructionsDetail';
 
     /**
      * Set Format
      *
      * @param ShippingDocumentFormat $format
-     * return ReturnInstructionsDetail
+     * @return $this
      */
     public function setFormat(ShippingDocumentFormat $format)
     {
-        $this->Format = $format;
+        $this->values['Format'] = $format;
         return $this;
     }
-    
+
     /**
      * Specifies additional customer provided text to be inserted into the return document.
      *
      * @param string $customText
-     * return ReturnInstructionsDetail
+     * @return $this
      */
     public function setCustomText($customText)
     {
-        $this->CustomText = $customText;
+        $this->values['CustomText'] = $customText;
         return $this;
     }
-    
 
     
 }

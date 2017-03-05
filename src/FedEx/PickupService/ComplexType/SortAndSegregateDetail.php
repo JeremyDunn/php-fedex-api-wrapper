@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
- */
-class SortAndSegregateDetail
-    extends AbstractComplexType
-{
+ *
+ * @property nonNegativeInteger $PieceCount
+ * @property Weight $Weight
 
+ */
+class SortAndSegregateDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'SortAndSegregateDetail';
+    protected $name = 'SortAndSegregateDetail';
 
     /**
      * Number of pieces or packages to be sorted/segregated
      *
      * @param nonNegativeInteger $pieceCount
-     * return SortAndSegregateDetail
+     * @return $this
      */
     public function setPieceCount($pieceCount)
     {
-        $this->PieceCount = $pieceCount;
+        $this->values['PieceCount'] = $pieceCount;
         return $this;
     }
-    
+
     /**
      * Total weight of pieces or packages to be sorted/segregated
      *
      * @param Weight $weight
-     * return SortAndSegregateDetail
+     * @return $this
      */
     public function setWeight(Weight $weight)
     {
-        $this->Weight = $weight;
+        $this->values['Weight'] = $weight;
         return $this;
     }
-    
 
     
 }

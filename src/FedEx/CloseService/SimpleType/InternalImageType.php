@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Close Service
  */
-class InternalImageType
-    extends AbstractSimpleType
+class InternalImageType extends AbstractSimpleType
 {
     const _LETTER_HEAD = 'LETTER_HEAD';
     const _SIGNATURE = 'SIGNATURE';

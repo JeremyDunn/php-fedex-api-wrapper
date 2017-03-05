@@ -9,90 +9,95 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class CustomLabelTextEntry
-    extends AbstractComplexType
-{
+ *
+ * @property CustomLabelPosition $Position
+ * @property string $Format
+ * @property string[] $DataFields
+ * @property string $ThermalFontId
+ * @property string $FontName
+ * @property positiveInteger $FontSize
 
+ */
+class CustomLabelTextEntry extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'CustomLabelTextEntry';
+    protected $name = 'CustomLabelTextEntry';
 
     /**
      * Set Position
      *
      * @param CustomLabelPosition $position
-     * return CustomLabelTextEntry
+     * @return $this
      */
     public function setPosition(CustomLabelPosition $position)
     {
-        $this->Position = $position;
+        $this->values['Position'] = $position;
         return $this;
     }
-    
+
     /**
      * Set Format
      *
      * @param string $format
-     * return CustomLabelTextEntry
+     * @return $this
      */
     public function setFormat($format)
     {
-        $this->Format = $format;
+        $this->values['Format'] = $format;
         return $this;
     }
-    
+
     /**
      * Set DataFields
      *
      * @param string[] $dataFields
-     * return CustomLabelTextEntry
+     * @return $this
      */
     public function setDataFields(array $dataFields)
     {
-        $this->DataFields = $dataFields;
+        $this->values['DataFields'] = $dataFields;
         return $this;
     }
-    
+
     /**
      * Printer-specific font name for use with thermal printer labels.
      *
      * @param string $thermalFontId
-     * return CustomLabelTextEntry
+     * @return $this
      */
     public function setThermalFontId($thermalFontId)
     {
-        $this->ThermalFontId = $thermalFontId;
+        $this->values['ThermalFontId'] = $thermalFontId;
         return $this;
     }
-    
+
     /**
      * Generic font name for use with plain paper labels.
      *
      * @param string $fontName
-     * return CustomLabelTextEntry
+     * @return $this
      */
     public function setFontName($fontName)
     {
-        $this->FontName = $fontName;
+        $this->values['FontName'] = $fontName;
         return $this;
     }
-    
+
     /**
      * Generic font size for use with plain paper labels.
      *
      * @param positiveInteger $fontSize
-     * return CustomLabelTextEntry
+     * @return $this
      */
     public function setFontSize($fontSize)
     {
-        $this->FontSize = $fontSize;
+        $this->values['FontSize'] = $fontSize;
         return $this;
     }
-    
 
     
 }

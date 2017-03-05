@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class CustomDeliveryWindowType
-    extends AbstractSimpleType
+class CustomDeliveryWindowType extends AbstractSimpleType
 {
     const _AFTER = 'AFTER';
     const _BEFORE = 'BEFORE';

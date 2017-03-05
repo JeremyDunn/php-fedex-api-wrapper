@@ -9,54 +9,56 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
- */
-class ParsedPersonName
-    extends AbstractComplexType
-{
+ *
+ * @property string $FirstName
+ * @property string $MiddleName
+ * @property string $LastName
 
+ */
+class ParsedPersonName extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'ParsedPersonName';
+    protected $name = 'ParsedPersonName';
 
     /**
      * The First name of the person.
      *
      * @param string $firstName
-     * return ParsedPersonName
+     * @return $this
      */
     public function setFirstName($firstName)
     {
-        $this->FirstName = $firstName;
+        $this->values['FirstName'] = $firstName;
         return $this;
     }
-    
+
     /**
      * The middle name of the person.
      *
      * @param string $middleName
-     * return ParsedPersonName
+     * @return $this
      */
     public function setMiddleName($middleName)
     {
-        $this->MiddleName = $middleName;
+        $this->values['MiddleName'] = $middleName;
         return $this;
     }
-    
+
     /**
      * The last name of the person.
      *
      * @param string $lastName
-     * return ParsedPersonName
+     * @return $this
      */
     public function setLastName($lastName)
     {
-        $this->LastName = $lastName;
+        $this->values['LastName'] = $lastName;
         return $this;
     }
-    
 
     
 }

@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class PackagingType
-    extends AbstractSimpleType
+class PackagingType extends AbstractSimpleType
 {
     const _FEDEX_10KG_BOX = 'FEDEX_10KG_BOX';
     const _FEDEX_25KG_BOX = 'FEDEX_25KG_BOX';

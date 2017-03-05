@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class EMailNotificationAggregationType
-    extends AbstractSimpleType
+class EMailNotificationAggregationType extends AbstractSimpleType
 {
     const _PER_PACKAGE = 'PER_PACKAGE';
     const _PER_SHIPMENT = 'PER_SHIPMENT';

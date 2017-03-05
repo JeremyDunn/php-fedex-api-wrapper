@@ -9,78 +9,82 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
- */
-class InternationalControlledExportDetail
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\Pickup\SimpleType\InternationalControlledExportType|string $Type
+ * @property string $ForeignTradeZoneCode
+ * @property string $EntryNumber
+ * @property string $LicenseOrPermitNumber
+ * @property date $LicenseOrPermitExpirationDate
 
+ */
+class InternationalControlledExportDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'InternationalControlledExportDetail';
+    protected $name = 'InternationalControlledExportDetail';
 
     /**
      * Set Type
      *
      * @param \FedEx\Pickup\SimpleType\InternationalControlledExportType|string $type
-     * return InternationalControlledExportDetail
+     * @return $this
      */
     public function setType($type)
     {
-        $this->Type = $type;
+        $this->values['Type'] = $type;
         return $this;
     }
-    
+
     /**
      * Set ForeignTradeZoneCode
      *
      * @param string $foreignTradeZoneCode
-     * return InternationalControlledExportDetail
+     * @return $this
      */
     public function setForeignTradeZoneCode($foreignTradeZoneCode)
     {
-        $this->ForeignTradeZoneCode = $foreignTradeZoneCode;
+        $this->values['ForeignTradeZoneCode'] = $foreignTradeZoneCode;
         return $this;
     }
-    
+
     /**
      * Set EntryNumber
      *
      * @param string $entryNumber
-     * return InternationalControlledExportDetail
+     * @return $this
      */
     public function setEntryNumber($entryNumber)
     {
-        $this->EntryNumber = $entryNumber;
+        $this->values['EntryNumber'] = $entryNumber;
         return $this;
     }
-    
+
     /**
      * Set LicenseOrPermitNumber
      *
      * @param string $licenseOrPermitNumber
-     * return InternationalControlledExportDetail
+     * @return $this
      */
     public function setLicenseOrPermitNumber($licenseOrPermitNumber)
     {
-        $this->LicenseOrPermitNumber = $licenseOrPermitNumber;
+        $this->values['LicenseOrPermitNumber'] = $licenseOrPermitNumber;
         return $this;
     }
-    
+
     /**
      * Set LicenseOrPermitExpirationDate
      *
      * @param date $licenseOrPermitExpirationDate
-     * return InternationalControlledExportDetail
+     * @return $this
      */
     public function setLicenseOrPermitExpirationDate($licenseOrPermitExpirationDate)
     {
-        $this->LicenseOrPermitExpirationDate = $licenseOrPermitExpirationDate;
+        $this->values['LicenseOrPermitExpirationDate'] = $licenseOrPermitExpirationDate;
         return $this;
     }
-    
 
     
 }

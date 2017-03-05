@@ -9,66 +9,69 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class Dimensions
-    extends AbstractComplexType
-{
+ *
+ * @property nonNegativeInteger $Length
+ * @property nonNegativeInteger $Width
+ * @property nonNegativeInteger $Height
+ * @property \FedEx\RateService\SimpleType\LinearUnits|string $Units
 
+ */
+class Dimensions extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'Dimensions';
+    protected $name = 'Dimensions';
 
     /**
      * Set Length
      *
      * @param nonNegativeInteger $length
-     * return Dimensions
+     * @return $this
      */
     public function setLength($length)
     {
-        $this->Length = $length;
+        $this->values['Length'] = $length;
         return $this;
     }
-    
+
     /**
      * Set Width
      *
      * @param nonNegativeInteger $width
-     * return Dimensions
+     * @return $this
      */
     public function setWidth($width)
     {
-        $this->Width = $width;
+        $this->values['Width'] = $width;
         return $this;
     }
-    
+
     /**
      * Set Height
      *
      * @param nonNegativeInteger $height
-     * return Dimensions
+     * @return $this
      */
     public function setHeight($height)
     {
-        $this->Height = $height;
+        $this->values['Height'] = $height;
         return $this;
     }
-    
+
     /**
      * Set Units
      *
      * @param \FedEx\RateService\SimpleType\LinearUnits|string $units
-     * return Dimensions
+     * @return $this
      */
     public function setUnits($units)
     {
-        $this->Units = $units;
+        $this->values['Units'] = $units;
         return $this;
     }
-    
 
     
 }

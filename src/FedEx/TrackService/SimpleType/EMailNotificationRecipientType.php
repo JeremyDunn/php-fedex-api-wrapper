@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class EMailNotificationRecipientType
-    extends AbstractSimpleType
+class EMailNotificationRecipientType extends AbstractSimpleType
 {
     const _BROKER = 'BROKER';
     const _OTHER = 'OTHER';

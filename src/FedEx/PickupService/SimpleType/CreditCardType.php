@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class CreditCardType
-    extends AbstractSimpleType
+class CreditCardType extends AbstractSimpleType
 {
     const _AMEX = 'AMEX';
     const _DINERS = 'DINERS';

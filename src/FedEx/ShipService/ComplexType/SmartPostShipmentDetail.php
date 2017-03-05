@@ -9,54 +9,58 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class SmartPostShipmentDetail
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\ShipService\SimpleType\SmartPostIndiciaType|string $Indicia
+ * @property \FedEx\ShipService\SimpleType\SmartPostAncillaryEndorsementType|string $AncillaryEndorsement
+ * @property string $HubId
+ * @property string $CustomerManifestId
 
+ */
+class SmartPostShipmentDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'SmartPostShipmentDetail';
+    protected $name = 'SmartPostShipmentDetail';
 
     /**
      * Set Indicia
      *
      * @param \FedEx\ShipService\SimpleType\SmartPostIndiciaType|string $indicia
-     * return SmartPostShipmentDetail
+     * @return $this
      */
     public function setIndicia($indicia)
     {
-        $this->Indicia = $indicia;
+        $this->values['Indicia'] = $indicia;
         return $this;
     }
-    
+
     /**
      * Set AncillaryEndorsement
      *
      * @param \FedEx\ShipService\SimpleType\SmartPostAncillaryEndorsementType|string $ancillaryEndorsement
-     * return SmartPostShipmentDetail
+     * @return $this
      */
     public function setAncillaryEndorsement($ancillaryEndorsement)
     {
-        $this->AncillaryEndorsement = $ancillaryEndorsement;
+        $this->values['AncillaryEndorsement'] = $ancillaryEndorsement;
         return $this;
     }
-    
+
     /**
      * Set HubId
      *
      * @param string $hubId
-     * return SmartPostShipmentDetail
+     * @return $this
      */
     public function setHubId($hubId)
     {
-        $this->HubId = $hubId;
+        $this->values['HubId'] = $hubId;
         return $this;
     }
-    
+
     /**
      * 
                 The CustomerManifestId is used to group Smart Post packages onto a manifest for each trailer that is being prepared. If you do not have multiple trailers this field can be omitted. If you have multiple trailers, you
@@ -66,14 +70,13 @@ class SmartPostShipmentDetail
               
      *
      * @param string $customerManifestId
-     * return SmartPostShipmentDetail
+     * @return $this
      */
     public function setCustomerManifestId($customerManifestId)
     {
-        $this->CustomerManifestId = $customerManifestId;
+        $this->values['CustomerManifestId'] = $customerManifestId;
         return $this;
     }
-    
 
     
 }

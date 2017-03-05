@@ -9,66 +9,69 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class ConfigurableLabelReferenceEntry
-    extends AbstractComplexType
-{
+ *
+ * @property positiveInteger $ZoneNumber
+ * @property string $Header
+ * @property string $DataField
+ * @property string $LiteralValue
 
+ */
+class ConfigurableLabelReferenceEntry extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'ConfigurableLabelReferenceEntry';
+    protected $name = 'ConfigurableLabelReferenceEntry';
 
     /**
      * 1 of 12 possible zones to position data.
      *
      * @param positiveInteger $zoneNumber
-     * return ConfigurableLabelReferenceEntry
+     * @return $this
      */
     public function setZoneNumber($zoneNumber)
     {
-        $this->ZoneNumber = $zoneNumber;
+        $this->values['ZoneNumber'] = $zoneNumber;
         return $this;
     }
-    
+
     /**
      * The identifiying text for the data in this zone.
      *
      * @param string $header
-     * return ConfigurableLabelReferenceEntry
+     * @return $this
      */
     public function setHeader($header)
     {
-        $this->Header = $header;
+        $this->values['Header'] = $header;
         return $this;
     }
-    
+
     /**
      * A reference to a field in either the request or reply to print in this zone following the header.
      *
      * @param string $dataField
-     * return ConfigurableLabelReferenceEntry
+     * @return $this
      */
     public function setDataField($dataField)
     {
-        $this->DataField = $dataField;
+        $this->values['DataField'] = $dataField;
         return $this;
     }
-    
+
     /**
      * A literal value to print after the header in this zone.
      *
      * @param string $literalValue
-     * return ConfigurableLabelReferenceEntry
+     * @return $this
      */
     public function setLiteralValue($literalValue)
     {
-        $this->LiteralValue = $literalValue;
+        $this->values['LiteralValue'] = $literalValue;
         return $this;
     }
-    
 
     
 }

@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class EMailNotificationEventType
-    extends AbstractSimpleType
+class EMailNotificationEventType extends AbstractSimpleType
 {
     const _ON_DELIVERY = 'ON_DELIVERY';
     const _ON_EXCEPTION = 'ON_EXCEPTION';

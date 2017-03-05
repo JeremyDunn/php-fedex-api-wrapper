@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class InternationalControlledExportType
-    extends AbstractSimpleType
+class InternationalControlledExportType extends AbstractSimpleType
 {
     const _DEA_036 = 'DEA_036';
     const _DEA_236 = 'DEA_236';

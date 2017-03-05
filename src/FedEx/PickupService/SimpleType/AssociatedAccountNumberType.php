@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class AssociatedAccountNumberType
-    extends AbstractSimpleType
+class AssociatedAccountNumberType extends AbstractSimpleType
 {
     const _FEDEX_EXPRESS = 'FEDEX_EXPRESS';
     const _FEDEX_FREIGHT = 'FEDEX_FREIGHT';

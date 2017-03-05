@@ -9,198 +9,212 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
- */
-class CreatePickupRequest
-    extends AbstractComplexType
-{
+ *
+ * @property WebAuthenticationDetail $WebAuthenticationDetail
+ * @property ClientDetail $ClientDetail
+ * @property TransactionDetail $TransactionDetail
+ * @property VersionId $Version
+ * @property AssociatedAccount $AssociatedAccountNumber
+ * @property PickupOriginDetail $OriginDetail
+ * @property FreightPickupDetail $FreightPickupDetail
+ * @property ExpressFreightPickupDetail $ExpressFreightDetail
+ * @property positiveInteger $PackageCount
+ * @property Weight $TotalWeight
+ * @property \FedEx\Pickup\SimpleType\CarrierCodeType|string $CarrierCode
+ * @property positiveInteger $OversizePackageCount
+ * @property string $Remarks
+ * @property string $CommodityDescription
+ * @property \FedEx\Pickup\SimpleType\CountryRelationshipType|string $CountryRelationship
 
+ */
+class CreatePickupRequest extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'CreatePickupRequest';
+    protected $name = 'CreatePickupRequest';
 
     /**
      * Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
      * @param WebAuthenticationDetail $webAuthenticationDetail
-     * return CreatePickupRequest
+     * @return $this
      */
     public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
     {
-        $this->WebAuthenticationDetail = $webAuthenticationDetail;
+        $this->values['WebAuthenticationDetail'] = $webAuthenticationDetail;
         return $this;
     }
-    
+
     /**
      * The descriptive data identifying the client submitting the transaction.
      *
      * @param ClientDetail $clientDetail
-     * return CreatePickupRequest
+     * @return $this
      */
     public function setClientDetail(ClientDetail $clientDetail)
     {
-        $this->ClientDetail = $clientDetail;
+        $this->values['ClientDetail'] = $clientDetail;
         return $this;
     }
-    
+
     /**
      * The descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
      * @param TransactionDetail $transactionDetail
-     * return CreatePickupRequest
+     * @return $this
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
-        $this->TransactionDetail = $transactionDetail;
+        $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
     }
-    
+
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
      * @param VersionId $version
-     * return CreatePickupRequest
+     * @return $this
      */
     public function setVersion(VersionId $version)
     {
-        $this->Version = $version;
+        $this->values['Version'] = $version;
         return $this;
     }
-    
+
     /**
      * Set AssociatedAccountNumber
      *
      * @param AssociatedAccount $associatedAccountNumber
-     * return CreatePickupRequest
+     * @return $this
      */
     public function setAssociatedAccountNumber(AssociatedAccount $associatedAccountNumber)
     {
-        $this->AssociatedAccountNumber = $associatedAccountNumber;
+        $this->values['AssociatedAccountNumber'] = $associatedAccountNumber;
         return $this;
     }
-    
+
     /**
      * Descriptive data about the origin of the shipment being picked up by FedEx.
      *
      * @param PickupOriginDetail $originDetail
-     * return CreatePickupRequest
+     * @return $this
      */
     public function setOriginDetail(PickupOriginDetail $originDetail)
     {
-        $this->OriginDetail = $originDetail;
+        $this->values['OriginDetail'] = $originDetail;
         return $this;
     }
-    
+
     /**
      * Descriptive data for a freight shipment being picked up by FedEx. This is element is only required when requesting a freight service pickup and should not be used for other types of pickups including express freight pickups.
      *
      * @param FreightPickupDetail $freightPickupDetail
-     * return CreatePickupRequest
+     * @return $this
      */
     public function setFreightPickupDetail(FreightPickupDetail $freightPickupDetail)
     {
-        $this->FreightPickupDetail = $freightPickupDetail;
+        $this->values['FreightPickupDetail'] = $freightPickupDetail;
         return $this;
     }
-    
+
     /**
      * Descriptive data for an express freight shipment being picked up by FedEx. This is element is only required when requesting a express freight service pickup and should not be used for other types of pickups.
      *
      * @param ExpressFreightPickupDetail $expressFreightDetail
-     * return CreatePickupRequest
+     * @return $this
      */
     public function setExpressFreightDetail(ExpressFreightPickupDetail $expressFreightDetail)
     {
-        $this->ExpressFreightDetail = $expressFreightDetail;
+        $this->values['ExpressFreightDetail'] = $expressFreightDetail;
         return $this;
     }
-    
+
     /**
      * Identifies the number of packages that are being tendered to FedEx for this pickup request.
      *
      * @param positiveInteger $packageCount
-     * return CreatePickupRequest
+     * @return $this
      */
     public function setPackageCount($packageCount)
     {
-        $this->PackageCount = $packageCount;
+        $this->values['PackageCount'] = $packageCount;
         return $this;
     }
-    
+
     /**
      * Identifies the total weight of the package or packages being tendered to FedEx for this pickup request.
      *
      * @param Weight $totalWeight
-     * return CreatePickupRequest
+     * @return $this
      */
     public function setTotalWeight(Weight $totalWeight)
     {
-        $this->TotalWeight = $totalWeight;
+        $this->values['TotalWeight'] = $totalWeight;
         return $this;
     }
-    
+
     /**
      * Identifies the FedEx operating company (transportation) that is being sent the package pickup request.
      *
      * @param \FedEx\Pickup\SimpleType\CarrierCodeType|string $carrierCode
-     * return CreatePickupRequest
+     * @return $this
      */
     public function setCarrierCode($carrierCode)
     {
-        $this->CarrierCode = $carrierCode;
+        $this->values['CarrierCode'] = $carrierCode;
         return $this;
     }
-    
+
     /**
      * Identifies the number of oversize packages that are being tendered to FedEx for this pickup request. Please refer to the FedEx Service Guide for package size limits to determine if a package is oversized for the service being shipped.
      *
      * @param positiveInteger $oversizePackageCount
-     * return CreatePickupRequest
+     * @return $this
      */
     public function setOversizePackageCount($oversizePackageCount)
     {
-        $this->OversizePackageCount = $oversizePackageCount;
+        $this->values['OversizePackageCount'] = $oversizePackageCount;
         return $this;
     }
-    
+
     /**
      * Identifies any remarks or comments to be passed to the FedEx courier picking up the shipment.
      *
      * @param string $remarks
-     * return CreatePickupRequest
+     * @return $this
      */
     public function setRemarks($remarks)
     {
-        $this->Remarks = $remarks;
+        $this->values['Remarks'] = $remarks;
         return $this;
     }
-    
+
     /**
      * Identifies the type of commodity being shipped. This element is required for an international shipment.
      *
      * @param string $commodityDescription
-     * return CreatePickupRequest
+     * @return $this
      */
     public function setCommodityDescription($commodityDescription)
     {
-        $this->CommodityDescription = $commodityDescription;
+        $this->values['CommodityDescription'] = $commodityDescription;
         return $this;
     }
-    
+
     /**
      * Describes the country relationship (domestic and/or international) among the shipments being picked up.
      *
      * @param \FedEx\Pickup\SimpleType\CountryRelationshipType|string $countryRelationship
-     * return CreatePickupRequest
+     * @return $this
      */
     public function setCountryRelationship($countryRelationship)
     {
-        $this->CountryRelationship = $countryRelationship;
+        $this->values['CountryRelationship'] = $countryRelationship;
         return $this;
     }
-    
 
     
 }

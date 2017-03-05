@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class LinearMeasure
-    extends AbstractComplexType
-{
+ *
+ * @property decimal $Value
+ * @property \FedEx\RateService\SimpleType\LinearUnits|string $Units
 
+ */
+class LinearMeasure extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'LinearMeasure';
+    protected $name = 'LinearMeasure';
 
     /**
      * The numerical quantity of this measurement.
      *
      * @param decimal $value
-     * return LinearMeasure
+     * @return $this
      */
     public function setValue($value)
     {
-        $this->Value = $value;
+        $this->values['Value'] = $value;
         return $this;
     }
-    
+
     /**
      * The units for this measurement.
      *
      * @param \FedEx\RateService\SimpleType\LinearUnits|string $units
-     * return LinearMeasure
+     * @return $this
      */
     public function setUnits($units)
     {
-        $this->Units = $units;
+        $this->values['Units'] = $units;
         return $this;
     }
-    
 
     
 }

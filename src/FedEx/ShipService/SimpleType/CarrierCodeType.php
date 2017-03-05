@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class CarrierCodeType
-    extends AbstractSimpleType
+class CarrierCodeType extends AbstractSimpleType
 {
     const _FDXC = 'FDXC';
     const _FDXE = 'FDXE';

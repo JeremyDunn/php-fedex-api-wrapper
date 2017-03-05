@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class Money
-    extends AbstractComplexType
-{
+ *
+ * @property string $Currency
+ * @property decimal $Amount
 
+ */
+class Money extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'Money';
+    protected $name = 'Money';
 
     /**
      * Set Currency
      *
      * @param string $currency
-     * return Money
+     * @return $this
      */
     public function setCurrency($currency)
     {
-        $this->Currency = $currency;
+        $this->values['Currency'] = $currency;
         return $this;
     }
-    
+
     /**
      * Set Amount
      *
      * @param decimal $amount
-     * return Money
+     * @return $this
      */
     public function setAmount($amount)
     {
-        $this->Amount = $amount;
+        $this->values['Amount'] = $amount;
         return $this;
     }
-    
 
     
 }

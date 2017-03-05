@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Address Validation Service
  */
-class ResidentialStatusType
-    extends AbstractSimpleType
+class ResidentialStatusType extends AbstractSimpleType
 {
     const _UNDETERMINED = 'UNDETERMINED';
     const _BUSINESS = 'BUSINESS';

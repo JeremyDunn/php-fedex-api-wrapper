@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
- */
-class ParsedContactAndAddress
-    extends AbstractComplexType
-{
+ *
+ * @property ParsedContact $Contact
+ * @property Address $Address
 
+ */
+class ParsedContactAndAddress extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'ParsedContactAndAddress';
+    protected $name = 'ParsedContactAndAddress';
 
     /**
      * Set Contact
      *
      * @param ParsedContact $contact
-     * return ParsedContactAndAddress
+     * @return $this
      */
     public function setContact(ParsedContact $contact)
     {
-        $this->Contact = $contact;
+        $this->values['Contact'] = $contact;
         return $this;
     }
-    
+
     /**
      * Set Address
      *
      * @param Address $address
-     * return ParsedContactAndAddress
+     * @return $this
      */
     public function setAddress(Address $address)
     {
-        $this->Address = $address;
+        $this->values['Address'] = $address;
         return $this;
     }
-    
 
     
 }

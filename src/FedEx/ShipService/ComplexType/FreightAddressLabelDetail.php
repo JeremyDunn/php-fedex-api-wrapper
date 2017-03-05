@@ -9,66 +9,69 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class FreightAddressLabelDetail
-    extends AbstractComplexType
-{
+ *
+ * @property ShippingDocumentFormat $Format
+ * @property nonNegativeInteger $Copies
+ * @property \FedEx\ShipService\SimpleType\PageQuadrantType|string $StartingPosition
+ * @property DocTabContent $DocTabContent
 
+ */
+class FreightAddressLabelDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'FreightAddressLabelDetail';
+    protected $name = 'FreightAddressLabelDetail';
 
     /**
      * Set Format
      *
      * @param ShippingDocumentFormat $format
-     * return FreightAddressLabelDetail
+     * @return $this
      */
     public function setFormat(ShippingDocumentFormat $format)
     {
-        $this->Format = $format;
+        $this->values['Format'] = $format;
         return $this;
     }
-    
+
     /**
      * Indicates the number of copies to be produced for each unique label.
      *
      * @param nonNegativeInteger $copies
-     * return FreightAddressLabelDetail
+     * @return $this
      */
     public function setCopies($copies)
     {
-        $this->Copies = $copies;
+        $this->values['Copies'] = $copies;
         return $this;
     }
-    
+
     /**
      * Specifies the quadrant of the page on which the label printing will start.
      *
      * @param \FedEx\ShipService\SimpleType\PageQuadrantType|string $startingPosition
-     * return FreightAddressLabelDetail
+     * @return $this
      */
     public function setStartingPosition($startingPosition)
     {
-        $this->StartingPosition = $startingPosition;
+        $this->values['StartingPosition'] = $startingPosition;
         return $this;
     }
-    
+
     /**
      * If omitted, no doc tab will be produced (i.e. default = former NONE type).
      *
      * @param DocTabContent $docTabContent
-     * return FreightAddressLabelDetail
+     * @return $this
      */
     public function setDocTabContent(DocTabContent $docTabContent)
     {
-        $this->DocTabContent = $docTabContent;
+        $this->values['DocTabContent'] = $docTabContent;
         return $this;
     }
-    
 
     
 }

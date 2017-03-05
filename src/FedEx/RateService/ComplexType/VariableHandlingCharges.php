@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class VariableHandlingCharges
-    extends AbstractComplexType
-{
+ *
+ * @property Money $VariableHandlingCharge
+ * @property Money $TotalCustomerCharge
 
+ */
+class VariableHandlingCharges extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'VariableHandlingCharges';
+    protected $name = 'VariableHandlingCharges';
 
     /**
      * The variable handling charge amount calculated based on the requested variable handling charge detail.
      *
      * @param Money $variableHandlingCharge
-     * return VariableHandlingCharges
+     * @return $this
      */
     public function setVariableHandlingCharge(Money $variableHandlingCharge)
     {
-        $this->VariableHandlingCharge = $variableHandlingCharge;
+        $this->values['VariableHandlingCharge'] = $variableHandlingCharge;
         return $this;
     }
-    
+
     /**
      * The calculated varibale handling charge plus the net charge.
      *
      * @param Money $totalCustomerCharge
-     * return VariableHandlingCharges
+     * @return $this
      */
     public function setTotalCustomerCharge(Money $totalCustomerCharge)
     {
-        $this->TotalCustomerCharge = $totalCustomerCharge;
+        $this->values['TotalCustomerCharge'] = $totalCustomerCharge;
         return $this;
     }
-    
 
     
 }

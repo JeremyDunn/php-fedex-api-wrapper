@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class NaftaProducerSpecificationType
-    extends AbstractSimpleType
+class NaftaProducerSpecificationType extends AbstractSimpleType
 {
     const _AVAILABLE_UPON_REQUEST = 'AVAILABLE_UPON_REQUEST';
     const _MULTIPLE_SPECIFIED = 'MULTIPLE_SPECIFIED';

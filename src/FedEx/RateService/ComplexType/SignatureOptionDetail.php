@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class SignatureOptionDetail
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\RateService\SimpleType\SignatureOptionType|string $OptionType
+ * @property string $SignatureReleaseNumber
 
+ */
+class SignatureOptionDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'SignatureOptionDetail';
+    protected $name = 'SignatureOptionDetail';
 
     /**
      * Identifies the delivery signature services option selected by the customer for this shipment. See OptionType for the list of valid values.
      *
      * @param \FedEx\RateService\SimpleType\SignatureOptionType|string $optionType
-     * return SignatureOptionDetail
+     * @return $this
      */
     public function setOptionType($optionType)
     {
-        $this->OptionType = $optionType;
+        $this->values['OptionType'] = $optionType;
         return $this;
     }
-    
+
     /**
      * Identifies the delivery signature release authorization number.
      *
      * @param string $signatureReleaseNumber
-     * return SignatureOptionDetail
+     * @return $this
      */
     public function setSignatureReleaseNumber($signatureReleaseNumber)
     {
-        $this->SignatureReleaseNumber = $signatureReleaseNumber;
+        $this->values['SignatureReleaseNumber'] = $signatureReleaseNumber;
         return $this;
     }
-    
 
     
 }

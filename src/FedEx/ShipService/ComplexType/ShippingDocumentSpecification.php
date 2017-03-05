@@ -9,150 +9,160 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class ShippingDocumentSpecification
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\ShipService\SimpleType\RequestedShippingDocumentType|string[] $ShippingDocumentTypes
+ * @property CertificateOfOriginDetail $CertificateOfOrigin
+ * @property CommercialInvoiceDetail $CommercialInvoiceDetail
+ * @property CustomDocumentDetail[] $CustomPackageDocumentDetail
+ * @property CustomDocumentDetail[] $CustomShipmentDocumentDetail
+ * @property GeneralAgencyAgreementDetail $GeneralAgencyAgreementDetail
+ * @property NaftaCertificateOfOriginDetail $NaftaCertificateOfOriginDetail
+ * @property Op900Detail $Op900Detail
+ * @property DangerousGoodsShippersDeclarationDetail $DangerousGoodsShippersDeclarationDetail
+ * @property FreightAddressLabelDetail $FreightAddressLabelDetail
+ * @property ReturnInstructionsDetail $ReturnInstructionsDetail
 
+ */
+class ShippingDocumentSpecification extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'ShippingDocumentSpecification';
+    protected $name = 'ShippingDocumentSpecification';
 
     /**
      * Indicates the types of shipping documents requested by the shipper.
      *
      * @param RequestedShippingDocumentType[] $shippingDocumentTypes
-     * return ShippingDocumentSpecification
+     * @return $this
      */
     public function setShippingDocumentTypes(array $shippingDocumentTypes)
     {
-        $this->ShippingDocumentTypes = $shippingDocumentTypes;
+        $this->values['ShippingDocumentTypes'] = $shippingDocumentTypes;
         return $this;
     }
-    
+
     /**
      * Set CertificateOfOrigin
      *
      * @param CertificateOfOriginDetail $certificateOfOrigin
-     * return ShippingDocumentSpecification
+     * @return $this
      */
     public function setCertificateOfOrigin(CertificateOfOriginDetail $certificateOfOrigin)
     {
-        $this->CertificateOfOrigin = $certificateOfOrigin;
+        $this->values['CertificateOfOrigin'] = $certificateOfOrigin;
         return $this;
     }
-    
+
     /**
      * Set CommercialInvoiceDetail
      *
      * @param CommercialInvoiceDetail $commercialInvoiceDetail
-     * return ShippingDocumentSpecification
+     * @return $this
      */
     public function setCommercialInvoiceDetail(CommercialInvoiceDetail $commercialInvoiceDetail)
     {
-        $this->CommercialInvoiceDetail = $commercialInvoiceDetail;
+        $this->values['CommercialInvoiceDetail'] = $commercialInvoiceDetail;
         return $this;
     }
-    
+
     /**
      * Specifies the production of each package-level custom document (the same specification is used for all packages).
      *
      * @param CustomDocumentDetail[] $customPackageDocumentDetail
-     * return ShippingDocumentSpecification
+     * @return $this
      */
     public function setCustomPackageDocumentDetail(array $customPackageDocumentDetail)
     {
-        $this->CustomPackageDocumentDetail = $customPackageDocumentDetail;
+        $this->values['CustomPackageDocumentDetail'] = $customPackageDocumentDetail;
         return $this;
     }
-    
+
     /**
      * Specifies the production of a shipment-level custom document.
      *
      * @param CustomDocumentDetail[] $customShipmentDocumentDetail
-     * return ShippingDocumentSpecification
+     * @return $this
      */
     public function setCustomShipmentDocumentDetail(array $customShipmentDocumentDetail)
     {
-        $this->CustomShipmentDocumentDetail = $customShipmentDocumentDetail;
+        $this->values['CustomShipmentDocumentDetail'] = $customShipmentDocumentDetail;
         return $this;
     }
-    
+
     /**
      * This element is currently not supported and is for the future use. (Details pertaining to the GAA.)
      *
      * @param GeneralAgencyAgreementDetail $generalAgencyAgreementDetail
-     * return ShippingDocumentSpecification
+     * @return $this
      */
     public function setGeneralAgencyAgreementDetail(GeneralAgencyAgreementDetail $generalAgencyAgreementDetail)
     {
-        $this->GeneralAgencyAgreementDetail = $generalAgencyAgreementDetail;
+        $this->values['GeneralAgencyAgreementDetail'] = $generalAgencyAgreementDetail;
         return $this;
     }
-    
+
     /**
      * Set NaftaCertificateOfOriginDetail
      *
      * @param NaftaCertificateOfOriginDetail $naftaCertificateOfOriginDetail
-     * return ShippingDocumentSpecification
+     * @return $this
      */
     public function setNaftaCertificateOfOriginDetail(NaftaCertificateOfOriginDetail $naftaCertificateOfOriginDetail)
     {
-        $this->NaftaCertificateOfOriginDetail = $naftaCertificateOfOriginDetail;
+        $this->values['NaftaCertificateOfOriginDetail'] = $naftaCertificateOfOriginDetail;
         return $this;
     }
-    
+
     /**
      * Specifies the production of the OP-900 document for hazardous materials packages.
      *
      * @param Op900Detail $op900Detail
-     * return ShippingDocumentSpecification
+     * @return $this
      */
     public function setOp900Detail(Op900Detail $op900Detail)
     {
-        $this->Op900Detail = $op900Detail;
+        $this->values['Op900Detail'] = $op900Detail;
         return $this;
     }
-    
+
     /**
      * Specifies the production of the 1421c document for dangerous goods shipment.
      *
      * @param DangerousGoodsShippersDeclarationDetail $dangerousGoodsShippersDeclarationDetail
-     * return ShippingDocumentSpecification
+     * @return $this
      */
     public function setDangerousGoodsShippersDeclarationDetail(DangerousGoodsShippersDeclarationDetail $dangerousGoodsShippersDeclarationDetail)
     {
-        $this->DangerousGoodsShippersDeclarationDetail = $dangerousGoodsShippersDeclarationDetail;
+        $this->values['DangerousGoodsShippersDeclarationDetail'] = $dangerousGoodsShippersDeclarationDetail;
         return $this;
     }
-    
+
     /**
      * Specifies the production of the OP-900 document for hazardous materials.
      *
      * @param FreightAddressLabelDetail $freightAddressLabelDetail
-     * return ShippingDocumentSpecification
+     * @return $this
      */
     public function setFreightAddressLabelDetail(FreightAddressLabelDetail $freightAddressLabelDetail)
     {
-        $this->FreightAddressLabelDetail = $freightAddressLabelDetail;
+        $this->values['FreightAddressLabelDetail'] = $freightAddressLabelDetail;
         return $this;
     }
-    
+
     /**
      * Specifies the production of the return instructions document.
      *
      * @param ReturnInstructionsDetail $returnInstructionsDetail
-     * return ShippingDocumentSpecification
+     * @return $this
      */
     public function setReturnInstructionsDetail(ReturnInstructionsDetail $returnInstructionsDetail)
     {
-        $this->ReturnInstructionsDetail = $returnInstructionsDetail;
+        $this->values['ReturnInstructionsDetail'] = $returnInstructionsDetail;
         return $this;
     }
-    
 
     
 }

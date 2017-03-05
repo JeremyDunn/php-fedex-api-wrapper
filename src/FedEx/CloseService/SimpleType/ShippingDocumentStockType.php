@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Close Service
  */
-class ShippingDocumentStockType
-    extends AbstractSimpleType
+class ShippingDocumentStockType extends AbstractSimpleType
 {
     const _OP_900_LG = 'OP_900_LG';
     const _OP_900_LL = 'OP_900_LL';

@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class FlatbedTrailerOption
-    extends AbstractSimpleType
+class FlatbedTrailerOption extends AbstractSimpleType
 {
     const _OVER_DIMENSION = 'OVER_DIMENSION';
     const _TARP = 'TARP';

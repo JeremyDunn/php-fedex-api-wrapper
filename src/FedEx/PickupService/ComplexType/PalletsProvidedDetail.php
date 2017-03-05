@@ -9,30 +9,30 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
- */
-class PalletsProvidedDetail
-    extends AbstractComplexType
-{
+ *
+ * @property positiveInteger $PalletCount
 
+ */
+class PalletsProvidedDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'PalletsProvidedDetail';
+    protected $name = 'PalletsProvidedDetail';
 
     /**
      * Number of pallets to be provided.
      *
      * @param positiveInteger $palletCount
-     * return PalletsProvidedDetail
+     * @return $this
      */
     public function setPalletCount($palletCount)
     {
-        $this->PalletCount = $palletCount;
+        $this->values['PalletCount'] = $palletCount;
         return $this;
     }
-    
 
     
 }

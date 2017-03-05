@@ -9,17 +9,31 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class CustomsClearanceDetail
-    extends AbstractComplexType
-{
+ *
+ * @property Party $Broker
+ * @property \FedEx\RateService\SimpleType\ClearanceBrokerageType|string $ClearanceBrokerage
+ * @property Party $ImporterOfRecord
+ * @property RecipientCustomsId $RecipientCustomsId
+ * @property Payment $DutiesPayment
+ * @property \FedEx\RateService\SimpleType\InternationalDocumentContentType|string $DocumentContent
+ * @property Money $CustomsValue
+ * @property \FedEx\RateService\SimpleType\FreightOnValueType|string $FreightOnValue
+ * @property Money $InsuranceCharges
+ * @property boolean $PartiesToTransactionAreRelated
+ * @property CommercialInvoice $CommercialInvoice
+ * @property Commodity[] $Commodities
+ * @property ExportDetail $ExportDetail
+ * @property \FedEx\RateService\SimpleType\RegulatoryControlType|string[] $RegulatoryControls
 
+ */
+class CustomsClearanceDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'CustomsClearanceDetail';
+    protected $name = 'CustomsClearanceDetail';
 
     /**
      * 
@@ -28,26 +42,26 @@ class CustomsClearanceDetail
               
      *
      * @param Party $broker
-     * return CustomsClearanceDetail
+     * @return $this
      */
     public function setBroker(Party $broker)
     {
-        $this->Broker = $broker;
+        $this->values['Broker'] = $broker;
         return $this;
     }
-    
+
     /**
      * Interacts both with properties of the shipment and contractual relationship with the shipper.
      *
      * @param \FedEx\RateService\SimpleType\ClearanceBrokerageType|string $clearanceBrokerage
-     * return CustomsClearanceDetail
+     * @return $this
      */
     public function setClearanceBrokerage($clearanceBrokerage)
     {
-        $this->ClearanceBrokerage = $clearanceBrokerage;
+        $this->values['ClearanceBrokerage'] = $clearanceBrokerage;
         return $this;
     }
-    
+
     /**
      * 
                 Applicable only for Commercial Invoice. If the consignee and importer are not the same, the Following importer fields are required.
@@ -62,110 +76,110 @@ class CustomsClearanceDetail
               
      *
      * @param Party $importerOfRecord
-     * return CustomsClearanceDetail
+     * @return $this
      */
     public function setImporterOfRecord(Party $importerOfRecord)
     {
-        $this->ImporterOfRecord = $importerOfRecord;
+        $this->values['ImporterOfRecord'] = $importerOfRecord;
         return $this;
     }
-    
+
     /**
      * Specifies how the recipient is identified for customs purposes; the requirements on this information vary with destination country.
      *
      * @param RecipientCustomsId $recipientCustomsId
-     * return CustomsClearanceDetail
+     * @return $this
      */
     public function setRecipientCustomsId(RecipientCustomsId $recipientCustomsId)
     {
-        $this->RecipientCustomsId = $recipientCustomsId;
+        $this->values['RecipientCustomsId'] = $recipientCustomsId;
         return $this;
     }
-    
+
     /**
      * Indicates how payment of duties for the shipment will be made.
      *
      * @param Payment $dutiesPayment
-     * return CustomsClearanceDetail
+     * @return $this
      */
     public function setDutiesPayment(Payment $dutiesPayment)
     {
-        $this->DutiesPayment = $dutiesPayment;
+        $this->values['DutiesPayment'] = $dutiesPayment;
         return $this;
     }
-    
+
     /**
      * Indicates whether this shipment contains documents only or non-documents.
      *
      * @param \FedEx\RateService\SimpleType\InternationalDocumentContentType|string $documentContent
-     * return CustomsClearanceDetail
+     * @return $this
      */
     public function setDocumentContent($documentContent)
     {
-        $this->DocumentContent = $documentContent;
+        $this->values['DocumentContent'] = $documentContent;
         return $this;
     }
-    
+
     /**
      * The total customs value for the shipment. This total will rrepresent th esum of the values of all commodities, and may include freight, miscellaneous, and insurance charges. Must contain 2 explicit decimal positions with a max length of 17 including the decimal. For Express International MPS, the Total Customs Value is in the master transaction and all child transactions
      *
      * @param Money $customsValue
-     * return CustomsClearanceDetail
+     * @return $this
      */
     public function setCustomsValue(Money $customsValue)
     {
-        $this->CustomsValue = $customsValue;
+        $this->values['CustomsValue'] = $customsValue;
         return $this;
     }
-    
+
     /**
      * Identifies responsibilities with respect to loss, damage, etc.
      *
      * @param \FedEx\RateService\SimpleType\FreightOnValueType|string $freightOnValue
-     * return CustomsClearanceDetail
+     * @return $this
      */
     public function setFreightOnValue($freightOnValue)
     {
-        $this->FreightOnValue = $freightOnValue;
+        $this->values['FreightOnValue'] = $freightOnValue;
         return $this;
     }
-    
+
     /**
      * Documents amount paid to third party for coverage of shipment content.
      *
      * @param Money $insuranceCharges
-     * return CustomsClearanceDetail
+     * @return $this
      */
     public function setInsuranceCharges(Money $insuranceCharges)
     {
-        $this->InsuranceCharges = $insuranceCharges;
+        $this->values['InsuranceCharges'] = $insuranceCharges;
         return $this;
     }
-    
+
     /**
      * Set PartiesToTransactionAreRelated
      *
      * @param boolean $partiesToTransactionAreRelated
-     * return CustomsClearanceDetail
+     * @return $this
      */
     public function setPartiesToTransactionAreRelated($partiesToTransactionAreRelated)
     {
-        $this->PartiesToTransactionAreRelated = $partiesToTransactionAreRelated;
+        $this->values['PartiesToTransactionAreRelated'] = $partiesToTransactionAreRelated;
         return $this;
     }
-    
+
     /**
      * CommercialInvoice element is required for electronic upload of CI data. It will serve to create/transmit an Electronic Commercial Invoice through FedEx System. Customers are responsible for printing their own Commercial Invoice. Commercial Invoice support consists of a maximum of 20 commodity line items.
      *
      * @param CommercialInvoice $commercialInvoice
-     * return CustomsClearanceDetail
+     * @return $this
      */
     public function setCommercialInvoice(CommercialInvoice $commercialInvoice)
     {
-        $this->CommercialInvoice = $commercialInvoice;
+        $this->values['CommercialInvoice'] = $commercialInvoice;
         return $this;
     }
-    
+
     /**
      * 
                 For international multiple piece shipments, commodity information must be passed in the Master and on each child transaction.
@@ -173,38 +187,37 @@ class CustomsClearanceDetail
               
      *
      * @param Commodity[] $commodities
-     * return CustomsClearanceDetail
+     * @return $this
      */
     public function setCommodities(array $commodities)
     {
-        $this->Commodities = $commodities;
+        $this->values['Commodities'] = $commodities;
         return $this;
     }
-    
+
     /**
      * Country specific details of an International shipment.
      *
      * @param ExportDetail $exportDetail
-     * return CustomsClearanceDetail
+     * @return $this
      */
     public function setExportDetail(ExportDetail $exportDetail)
     {
-        $this->ExportDetail = $exportDetail;
+        $this->values['ExportDetail'] = $exportDetail;
         return $this;
     }
-    
+
     /**
      * FOOD_OR_PERISHABLE is required by FDA/BTA; must be true for food/perishable items coming to US or PR from non-US/non-PR origin.
      *
      * @param RegulatoryControlType[] $regulatoryControls
-     * return CustomsClearanceDetail
+     * @return $this
      */
     public function setRegulatoryControls(array $regulatoryControls)
     {
-        $this->RegulatoryControls = $regulatoryControls;
+        $this->values['RegulatoryControls'] = $regulatoryControls;
         return $this;
     }
-    
 
     
 }

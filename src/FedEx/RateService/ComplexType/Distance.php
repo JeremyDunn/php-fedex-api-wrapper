@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class Distance
-    extends AbstractComplexType
-{
+ *
+ * @property decimal $Value
+ * @property \FedEx\RateService\SimpleType\DistanceUnits|string $Units
 
+ */
+class Distance extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'Distance';
+    protected $name = 'Distance';
 
     /**
      * Identifies the distance quantity.
      *
      * @param decimal $value
-     * return Distance
+     * @return $this
      */
     public function setValue($value)
     {
-        $this->Value = $value;
+        $this->values['Value'] = $value;
         return $this;
     }
-    
+
     /**
      * Identifies the unit of measure for the distance value.
      *
      * @param \FedEx\RateService\SimpleType\DistanceUnits|string $units
-     * return Distance
+     * @return $this
      */
     public function setUnits($units)
     {
-        $this->Units = $units;
+        $this->values['Units'] = $units;
         return $this;
     }
-    
 
     
 }

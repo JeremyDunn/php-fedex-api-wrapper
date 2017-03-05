@@ -9,54 +9,56 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
- */
-class HomeDeliveryPremiumDetail
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\Pickup\SimpleType\HomeDeliveryPremiumType|string $HomeDeliveryPremiumType
+ * @property date $Date
+ * @property string $PhoneNumber
 
+ */
+class HomeDeliveryPremiumDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'HomeDeliveryPremiumDetail';
+    protected $name = 'HomeDeliveryPremiumDetail';
 
     /**
      * The type of Home Delivery Premium service being requested.
      *
      * @param \FedEx\Pickup\SimpleType\HomeDeliveryPremiumType|string $homeDeliveryPremiumType
-     * return HomeDeliveryPremiumDetail
+     * @return $this
      */
     public function setHomeDeliveryPremiumType($homeDeliveryPremiumType)
     {
-        $this->HomeDeliveryPremiumType = $homeDeliveryPremiumType;
+        $this->values['HomeDeliveryPremiumType'] = $homeDeliveryPremiumType;
         return $this;
     }
-    
+
     /**
      * Required for Date Certain Home Delivery.
      *
      * @param date $date
-     * return HomeDeliveryPremiumDetail
+     * @return $this
      */
     public function setDate($date)
     {
-        $this->Date = $date;
+        $this->values['Date'] = $date;
         return $this;
     }
-    
+
     /**
      * Required for Date Certain and Appointment Home Delivery.
      *
      * @param string $phoneNumber
-     * return HomeDeliveryPremiumDetail
+     * @return $this
      */
     public function setPhoneNumber($phoneNumber)
     {
-        $this->PhoneNumber = $phoneNumber;
+        $this->values['PhoneNumber'] = $phoneNumber;
         return $this;
     }
-    
 
     
 }

@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class ClearanceBrokerageType
-    extends AbstractSimpleType
+class ClearanceBrokerageType extends AbstractSimpleType
 {
     const _BROKER_INCLUSIVE = 'BROKER_INCLUSIVE';
     const _BROKER_INCLUSIVE_NON_RESIDENT_IMPORTER = 'BROKER_INCLUSIVE_NON_RESIDENT_IMPORTER';

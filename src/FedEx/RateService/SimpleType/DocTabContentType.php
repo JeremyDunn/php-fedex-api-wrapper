@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class DocTabContentType
-    extends AbstractSimpleType
+class DocTabContentType extends AbstractSimpleType
 {
     const _BARCODED = 'BARCODED';
     const _MINIMUM = 'MINIMUM';

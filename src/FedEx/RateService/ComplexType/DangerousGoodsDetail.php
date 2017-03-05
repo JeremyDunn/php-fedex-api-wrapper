@@ -9,102 +9,108 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class DangerousGoodsDetail
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\RateService\SimpleType\DangerousGoodsAccessibilityType|string $Accessibility
+ * @property boolean $CargoAircraftOnly
+ * @property \FedEx\RateService\SimpleType\HazardousCommodityOptionType|string[] $Options
+ * @property HazardousCommodityContent[] $HazardousCommodities
+ * @property HazardousCommodityPackagingDetail $Packaging
+ * @property string $EmergencyContactNumber
+ * @property string $Offeror
 
+ */
+class DangerousGoodsDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'DangerousGoodsDetail';
+    protected $name = 'DangerousGoodsDetail';
 
     /**
      * Identifies whether or not the products being shipped are required to be accessible during delivery.
      *
      * @param \FedEx\RateService\SimpleType\DangerousGoodsAccessibilityType|string $accessibility
-     * return DangerousGoodsDetail
+     * @return $this
      */
     public function setAccessibility($accessibility)
     {
-        $this->Accessibility = $accessibility;
+        $this->values['Accessibility'] = $accessibility;
         return $this;
     }
-    
+
     /**
      * Shipment is packaged/documented for movement ONLY on cargo aircraft.
      *
      * @param boolean $cargoAircraftOnly
-     * return DangerousGoodsDetail
+     * @return $this
      */
     public function setCargoAircraftOnly($cargoAircraftOnly)
     {
-        $this->CargoAircraftOnly = $cargoAircraftOnly;
+        $this->values['CargoAircraftOnly'] = $cargoAircraftOnly;
         return $this;
     }
-    
+
     /**
      * Indicates which kinds of hazardous content are in the current package.
      *
      * @param HazardousCommodityOptionType[] $options
-     * return DangerousGoodsDetail
+     * @return $this
      */
     public function setOptions(array $options)
     {
-        $this->Options = $options;
+        $this->values['Options'] = $options;
         return $this;
     }
-    
+
     /**
      * Documents the kinds and quantities of all hazardous commodities in the current package.
      *
      * @param HazardousCommodityContent[] $hazardousCommodities
-     * return DangerousGoodsDetail
+     * @return $this
      */
     public function setHazardousCommodities(array $hazardousCommodities)
     {
-        $this->HazardousCommodities = $hazardousCommodities;
+        $this->values['HazardousCommodities'] = $hazardousCommodities;
         return $this;
     }
-    
+
     /**
      * Description of the packaging of this commodity, suitable for use on OP-900 and OP-950 forms.
      *
      * @param HazardousCommodityPackagingDetail $packaging
-     * return DangerousGoodsDetail
+     * @return $this
      */
     public function setPackaging(HazardousCommodityPackagingDetail $packaging)
     {
-        $this->Packaging = $packaging;
+        $this->values['Packaging'] = $packaging;
         return $this;
     }
-    
+
     /**
      * Telephone number to use for contact in the event of an emergency.
      *
      * @param string $emergencyContactNumber
-     * return DangerousGoodsDetail
+     * @return $this
      */
     public function setEmergencyContactNumber($emergencyContactNumber)
     {
-        $this->EmergencyContactNumber = $emergencyContactNumber;
+        $this->values['EmergencyContactNumber'] = $emergencyContactNumber;
         return $this;
     }
-    
+
     /**
      * Offeror's name or contract number, per DOT regulation.
      *
      * @param string $offeror
-     * return DangerousGoodsDetail
+     * @return $this
      */
     public function setOfferor($offeror)
     {
-        $this->Offeror = $offeror;
+        $this->values['Offeror'] = $offeror;
         return $this;
     }
-    
 
     
 }

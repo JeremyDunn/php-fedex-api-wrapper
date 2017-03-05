@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class RadioactiveContainerClassType
-    extends AbstractSimpleType
+class RadioactiveContainerClassType extends AbstractSimpleType
 {
     const _EXCEPTED_PACKAGE = 'EXCEPTED_PACKAGE';
     const _INDUSTRIAL_IP1 = 'INDUSTRIAL_IP1';

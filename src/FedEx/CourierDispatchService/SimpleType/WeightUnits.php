@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Courier Dispatch Service
  */
-class WeightUnits
-    extends AbstractSimpleType
+class WeightUnits extends AbstractSimpleType
 {
     const _KG = 'KG';
     const _LB = 'LB';

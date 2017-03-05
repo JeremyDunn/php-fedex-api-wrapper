@@ -9,54 +9,56 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class DestinationControlDetail
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\RateService\SimpleType\DestinationControlStatementType|string[] $StatementTypes
+ * @property string $DestinationCountries
+ * @property string $EndUser
 
+ */
+class DestinationControlDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'DestinationControlDetail';
+    protected $name = 'DestinationControlDetail';
 
     /**
      * Set StatementTypes
      *
      * @param DestinationControlStatementType[] $statementTypes
-     * return DestinationControlDetail
+     * @return $this
      */
     public function setStatementTypes(array $statementTypes)
     {
-        $this->StatementTypes = $statementTypes;
+        $this->values['StatementTypes'] = $statementTypes;
         return $this;
     }
-    
+
     /**
      * Comma-separated list of up to four country codes, required for DEPARTMENT_OF_STATE statement.
      *
      * @param string $destinationCountries
-     * return DestinationControlDetail
+     * @return $this
      */
     public function setDestinationCountries($destinationCountries)
     {
-        $this->DestinationCountries = $destinationCountries;
+        $this->values['DestinationCountries'] = $destinationCountries;
         return $this;
     }
-    
+
     /**
      * Name of end user, required for DEPARTMENT_OF_STATE statement.
      *
      * @param string $endUser
-     * return DestinationControlDetail
+     * @return $this
      */
     public function setEndUser($endUser)
     {
-        $this->EndUser = $endUser;
+        $this->values['EndUser'] = $endUser;
         return $this;
     }
-    
 
     
 }

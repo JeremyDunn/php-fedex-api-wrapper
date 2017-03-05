@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
- */
-class Localization
-    extends AbstractComplexType
-{
+ *
+ * @property string $LanguageCode
+ * @property string $LocaleCode
 
+ */
+class Localization extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'Localization';
+    protected $name = 'Localization';
 
     /**
      * Identifies the language to use for human-readable messages.
      *
      * @param string $languageCode
-     * return Localization
+     * @return $this
      */
     public function setLanguageCode($languageCode)
     {
-        $this->LanguageCode = $languageCode;
+        $this->values['LanguageCode'] = $languageCode;
         return $this;
     }
-    
+
     /**
      * Identifies the locale (i.e. country code) associated with the language.
      *
      * @param string $localeCode
-     * return Localization
+     * @return $this
      */
     public function setLocaleCode($localeCode)
     {
-        $this->LocaleCode = $localeCode;
+        $this->values['LocaleCode'] = $localeCode;
         return $this;
     }
-    
 
     
 }

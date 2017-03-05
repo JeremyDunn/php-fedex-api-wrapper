@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Close Service
  */
-class ShippingDocumentNamingType
-    extends AbstractSimpleType
+class ShippingDocumentNamingType extends AbstractSimpleType
 {
     const _FAST = 'FAST';
     const _LEGACY_FXRS = 'LEGACY_FXRS';

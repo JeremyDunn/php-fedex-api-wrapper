@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class FreightChargeBasisType
-    extends AbstractSimpleType
+class FreightChargeBasisType extends AbstractSimpleType
 {
     const _CWT = 'CWT';
     const _FLAT = 'FLAT';

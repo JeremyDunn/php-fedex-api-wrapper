@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class EdtCommodityTax
-    extends AbstractComplexType
-{
+ *
+ * @property string $HarmonizedCode
+ * @property EdtTaxDetail[] $Taxes
 
+ */
+class EdtCommodityTax extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'EdtCommodityTax';
+    protected $name = 'EdtCommodityTax';
 
     /**
      * Set HarmonizedCode
      *
      * @param string $harmonizedCode
-     * return EdtCommodityTax
+     * @return $this
      */
     public function setHarmonizedCode($harmonizedCode)
     {
-        $this->HarmonizedCode = $harmonizedCode;
+        $this->values['HarmonizedCode'] = $harmonizedCode;
         return $this;
     }
-    
+
     /**
      * Set Taxes
      *
      * @param EdtTaxDetail[] $taxes
-     * return EdtCommodityTax
+     * @return $this
      */
     public function setTaxes(array $taxes)
     {
-        $this->Taxes = $taxes;
+        $this->values['Taxes'] = $taxes;
         return $this;
     }
-    
 
     
 }
