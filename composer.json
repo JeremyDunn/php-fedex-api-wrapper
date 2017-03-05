@@ -16,12 +16,17 @@
         "php": ">=5.3.0"
     },
     "require-dev": {
-        "symfony/console": "2.*"
+        "symfony/console": "2.*",
+        "apigen/apigen": "^4.1"
     },
     "autoload": {
         "psr-4": {
             "FedEx\\": "src/FedEx/",
             "FedEx\\Utility\\": "util/"
         }
+    },
+    "scripts": {
+        "generate-src": "@php ./util/generate-classes-from-wsdls.php generate",
+        "generate-documentation": "apigen generate -d ./doc -s ./src"
     }
 }
