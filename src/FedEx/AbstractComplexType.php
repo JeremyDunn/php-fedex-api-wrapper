@@ -46,7 +46,21 @@ abstract class AbstractComplexType
      */
     public function __set($name, $value)
     {
-        $this->_values[$name] = $value;
+        $setValueMethod = "set{$name}";
+        if (method_exists($this, $setValueMethod)) {
+            $this->$setValueMethod($value);
+        }
+    }
+
+    /**
+     * __get implementation
+     *
+     * @param $name
+     * @return mixed|null
+     */
+    public function __get($name)
+    {
+        return (isset($this->values[$name])) ? $this->values[$name] : null;
     }
 
     /**

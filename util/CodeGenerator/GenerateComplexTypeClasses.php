@@ -233,5 +233,4 @@ TEXT;
 
         return file_exists($classPath);
     }
-
 }
