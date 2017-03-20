@@ -86,6 +86,8 @@ class GenerateComplexTypeClasses extends AbstractGenerate
                         $property['minOccurs'] = null;
                     }
 
+                    //TODO set defaults for element with a "fixed" attribute
+
                     $properties[] = $property;
 
                 }
