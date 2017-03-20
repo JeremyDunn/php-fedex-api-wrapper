@@ -58,9 +58,23 @@ abstract class AbstractComplexType
      * @param $name
      * @return mixed|null
      */
-    public function __get($name)
+    public function &__get($name)
     {
-        return (isset($this->values[$name])) ? $this->values[$name] : null;
+        if (isset($this->values[$name])) {
+            return $this->values[$name];
+        }
+
+        $setterMethodName = "set{$name}";
+        $reflectionClass = new \ReflectionClass($this);
+        if ($reflectionClass->hasMethod($setterMethodName)) {
+            $parameterClass = $reflectionClass->getMethod($setterMethodName)->getParameters()[0]->getClass();
+            if (!empty($parameterClass)) {
+                $this->$setterMethodName(new $parameterClass->name());
+                return $this->values[$name];
+            }
+        }
+
+        return null;
     }
 
     /**
