@@ -10,6 +10,21 @@ namespace FedEx\Utility\CodeGenerator;
  */
 class GenerateComplexTypeClasses extends AbstractGenerate
 {
+    protected $simpleTypeMap = [
+        'string' => 'string',
+        'int' => 'int',
+        'datetime' => 'string',
+        'boolean' => 'boolean',
+        'nonnegativeinteger' => 'int',
+        'positiveinteger' => 'int',
+        'date' => 'string',
+        'decimal' => 'float',
+        'double' => 'float',
+        'base64binary' => 'string',
+        'time' => 'string',
+        'duration' => 'string'
+    ];
+
     /**
      * Constructor
      *
@@ -154,8 +169,6 @@ TEXT;
      */
     protected function getGeneratedSetMethod(array $property)
     {
-        $invalidTypes = array('string', 'int', 'dateTime', 'boolean', 'nonNegativeInteger', 'positiveInteger', 'date', 'weight', 'decimal', 'double', 'base64Binary');
-
         $simpleTypeNamespace = "\\{$this->baseNamespace}\\SimpleType\\";
 
         $varName = lcfirst($property['name']);
@@ -173,7 +186,8 @@ TEXT;
             $property['type'] = null;
         } else {
             //check for invalid types for parameter type hints
-            if (in_array($property['type'], $invalidTypes)) {
+            if (array_key_exists(strtolower($property['type']), $this->simpleTypeMap)) {
+                $property['typePHPDoc'] = $this->simpleTypeMap[strtolower($property['type'])];
                 $property['type'] = '';
             } else {
                 $property['type'] = $property['type'] . ' ';
@@ -210,6 +224,13 @@ TEXT;
         $simpleTypeNamespace = "\\{$this->baseNamespace}\\SimpleType\\";
         if ($this->isSimpleType($property['type'])) {
             $typePHPDoc = $simpleTypeNamespace . $property['type'] . '|string';
+        } else {
+            if (array_key_exists(strtolower($property['type']), $this->simpleTypeMap)) {
+                $typePHPDoc = $this->simpleTypeMap[strtolower($property['type'])];
+                $property['type'] = '';
+            } else {
+                $property['type'] = $property['type'] . ' ';
+            }
         }
 
         if ($property['maxOccurs'] > 1 || $property['maxOccurs'] == 'unbounded') {
