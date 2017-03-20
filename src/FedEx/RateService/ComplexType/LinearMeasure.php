@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  *
- * @property decimal $Value
+ * @property float $Value
  * @property \FedEx\RateService\SimpleType\LinearUnits|string $Units
 
  */
@@ -26,7 +26,7 @@ class LinearMeasure extends AbstractComplexType
     /**
      * The numerical quantity of this measurement.
      *
-     * @param decimal $value
+     * @param float $value
      * @return $this
      */
     public function setValue($value)

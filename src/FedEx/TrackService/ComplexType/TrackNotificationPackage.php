@@ -13,7 +13,7 @@ use FedEx\AbstractComplexType;
  * @property string $TrackingNumber
  * @property string $TrackingNumberUniqueIdentifiers
  * @property \FedEx\TrackService\SimpleType\CarrierCodeType|string $CarrierCode
- * @property date $ShipDate
+ * @property string $ShipDate
  * @property Address $Destination
  * @property TrackNotificationRecipientDetail[] $RecipientDetails
 
@@ -66,7 +66,7 @@ class TrackNotificationPackage extends AbstractComplexType
     /**
      * The date the package was shipped (tendered to FedEx).
      *
-     * @param date $shipDate
+     * @param string $shipDate
      * @return $this
      */
     public function setShipDate($shipDate)

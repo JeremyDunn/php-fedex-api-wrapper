@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *
- * @property nonNegativeInteger $PieceCount
+ * @property int $PieceCount
  * @property Weight $Weight
 
  */
@@ -26,7 +26,7 @@ class SortAndSegregateDetail extends AbstractComplexType
     /**
      * Number of pieces or packages to be sorted/segregated
      *
-     * @param nonNegativeInteger $pieceCount
+     * @param int $pieceCount
      * @return $this
      */
     public function setPieceCount($pieceCount)

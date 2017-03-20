@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  *
- * @property date $Date
+ * @property string $Date
  * @property \FedEx\RateService\SimpleType\DayOfWeekType|string $DayOfWeek
  * @property \FedEx\RateService\SimpleType\DelayLevelType|string $Level
  * @property \FedEx\RateService\SimpleType\DelayPointType|string $Point
@@ -30,7 +30,7 @@ class DelayDetail extends AbstractComplexType
     /**
      * The date of the delay
      *
-     * @param date $date
+     * @param string $date
      * @return $this
      */
     public function setDate($date)

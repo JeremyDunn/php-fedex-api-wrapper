@@ -20,8 +20,8 @@ use FedEx\AbstractComplexType;
  * @property string $DeclaredValueUnits
  * @property LiabilityCoverageDetail $LiabilityCoverageDetail
  * @property string[] $Coupons
- * @property nonNegativeInteger $TotalHandlingUnits
- * @property decimal $ClientDiscountPercent
+ * @property int $TotalHandlingUnits
+ * @property float $ClientDiscountPercent
  * @property Weight $PalletWeight
  * @property Dimensions $ShipmentDimensions
  * @property string $Comment
@@ -161,7 +161,7 @@ class FreightShipmentDetail extends AbstractComplexType
     /**
      * Total number of individual handling units in the entire shipment (for unit pricing).
      *
-     * @param nonNegativeInteger $totalHandlingUnits
+     * @param int $totalHandlingUnits
      * @return $this
      */
     public function setTotalHandlingUnits($totalHandlingUnits)
@@ -173,7 +173,7 @@ class FreightShipmentDetail extends AbstractComplexType
     /**
      * Estimated discount rate provided by client for unsecured rate quote.
      *
-     * @param decimal $clientDiscountPercent
+     * @param float $clientDiscountPercent
      * @return $this
      */
     public function setClientDiscountPercent($clientDiscountPercent)

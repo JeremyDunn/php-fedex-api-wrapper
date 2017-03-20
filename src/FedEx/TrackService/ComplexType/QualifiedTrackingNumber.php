@@ -11,7 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Package Movement Information Service
  *
  * @property string $TrackingNumber
- * @property date $ShipDate
+ * @property string $ShipDate
  * @property string $AccountNumber
  * @property \FedEx\TrackService\SimpleType\CarrierCodeType|string $Carrier
  * @property Address $Destination
@@ -41,7 +41,7 @@ class QualifiedTrackingNumber extends AbstractComplexType
     /**
      * The date the package was shipped.
      *
-     * @param date $shipDate
+     * @param string $shipDate
      * @return $this
      */
     public function setShipDate($shipDate)

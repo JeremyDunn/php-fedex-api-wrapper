@@ -10,8 +10,8 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  *
- * @property date $Begins
- * @property date $Ends
+ * @property string $Begins
+ * @property string $Ends
 
  */
 class DateRange extends AbstractComplexType
@@ -26,7 +26,7 @@ class DateRange extends AbstractComplexType
     /**
      * The beginning date in a date range.
      *
-     * @param date $begins
+     * @param string $begins
      * @return $this
      */
     public function setBegins($begins)
@@ -38,7 +38,7 @@ class DateRange extends AbstractComplexType
     /**
      * The end date in a date range.
      *
-     * @param date $ends
+     * @param string $ends
      * @return $this
      */
     public function setEnds($ends)

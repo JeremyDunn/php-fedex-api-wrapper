@@ -15,7 +15,7 @@ use FedEx\AbstractComplexType;
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
  * @property \FedEx\CloseService\SimpleType\ReprintGroundCloseDocumentsOptionType|string $ReprintOption
- * @property date $CloseDate
+ * @property string $CloseDate
  * @property string $TrackingNumber
  * @property CloseDocumentSpecification $CloseDocumentSpecification
 
@@ -92,7 +92,7 @@ class ReprintGroundCloseDocumentsRequest extends AbstractComplexType
     /**
      * Date on which shipments were closed.
      *
-     * @param date $closeDate
+     * @param string $closeDate
      * @return $this
      */
     public function setCloseDate($closeDate)

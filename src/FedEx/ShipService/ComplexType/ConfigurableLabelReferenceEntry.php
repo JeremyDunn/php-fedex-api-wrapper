@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  *
- * @property positiveInteger $ZoneNumber
+ * @property int $ZoneNumber
  * @property string $Header
  * @property string $DataField
  * @property string $LiteralValue
@@ -28,7 +28,7 @@ class ConfigurableLabelReferenceEntry extends AbstractComplexType
     /**
      * 1 of 12 possible zones to position data.
      *
-     * @param positiveInteger $zoneNumber
+     * @param int $zoneNumber
      * @return $this
      */
     public function setZoneNumber($zoneNumber)

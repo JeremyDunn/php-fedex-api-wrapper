@@ -10,8 +10,8 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  *
- * @property positiveInteger $DocumentPartSequenceNumber
- * @property base64Binary $Image
+ * @property int $DocumentPartSequenceNumber
+ * @property string $Image
 
  */
 class ShippingDocumentPart extends AbstractComplexType
@@ -26,7 +26,7 @@ class ShippingDocumentPart extends AbstractComplexType
     /**
      * The one-origin position of this part within a document.
      *
-     * @param positiveInteger $documentPartSequenceNumber
+     * @param int $documentPartSequenceNumber
      * @return $this
      */
     public function setDocumentPartSequenceNumber($documentPartSequenceNumber)
@@ -38,7 +38,7 @@ class ShippingDocumentPart extends AbstractComplexType
     /**
      * Graphic or printer commands for this image within a document.
      *
-     * @param base64Binary $image
+     * @param string $image
      * @return $this
      */
     public function setImage($image)

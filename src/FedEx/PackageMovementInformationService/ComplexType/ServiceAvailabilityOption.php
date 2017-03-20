@@ -11,7 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Package Movement Information Service
  *
  * @property \FedEx\PackageMovementInformationService\SimpleType\ServiceType|string $Service
- * @property date $DeliveryDate
+ * @property string $DeliveryDate
  * @property \FedEx\PackageMovementInformationService\SimpleType\DayOfWeekType|string $DeliveryDay
  * @property string $DestinationStationId
  * @property string $DestinationAirportId
@@ -41,7 +41,7 @@ class ServiceAvailabilityOption extends AbstractComplexType
     /**
      * Identifies the delivery date of the available service.
      *
-     * @param date $deliveryDate
+     * @param string $deliveryDate
      * @return $this
      */
     public function setDeliveryDate($deliveryDate)

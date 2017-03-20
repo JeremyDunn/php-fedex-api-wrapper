@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  *
- * @property nonNegativeInteger $Count
+ * @property int $Count
  * @property string $Units
 
  */
@@ -26,7 +26,7 @@ class HazardousCommodityPackagingDetail extends AbstractComplexType
     /**
      * Number of units of the type below.
      *
-     * @param nonNegativeInteger $count
+     * @param int $count
      * @return $this
      */
     public function setCount($count)

@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  *
- * @property decimal $QValue
+ * @property float $QValue
  * @property ValidatedHazardousCommodityContent[] $HazardousCommodities
 
  */
@@ -26,7 +26,7 @@ class ValidatedHazardousContainer extends AbstractComplexType
     /**
      * Indicates that the quantity of the dangerous goods packaged is permissible for shipping. This is used to ensure that the dangerous goods commodities do not exceed the net quantity per package restrictions.
      *
-     * @param decimal $qValue
+     * @param float $qValue
      * @return $this
      */
     public function setQValue($qValue)

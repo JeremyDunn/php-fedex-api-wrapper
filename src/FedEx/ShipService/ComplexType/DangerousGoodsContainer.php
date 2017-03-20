@@ -13,7 +13,7 @@ use FedEx\AbstractComplexType;
  * @property \FedEx\ShipService\SimpleType\HazardousContainerPackingType|string $PackingType
  * @property string $ContainerType
  * @property \FedEx\ShipService\SimpleType\RadioactiveContainerClassType|string $RadioactiveContainerClass
- * @property nonNegativeInteger $NumberOfContainers
+ * @property int $NumberOfContainers
  * @property HazardousCommodityContent[] $HazardousCommodities
 
  */
@@ -65,7 +65,7 @@ class DangerousGoodsContainer extends AbstractComplexType
     /**
      * Indicates the number of occurrences of this container with identical dangerous goods configuration.
      *
-     * @param nonNegativeInteger $numberOfContainers
+     * @param int $numberOfContainers
      * @return $this
      */
     public function setNumberOfContainers($numberOfContainers)

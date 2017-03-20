@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  *
- * @property dateTime $ShipTimestamp
+ * @property string $ShipTimestamp
  * @property \FedEx\ShipService\SimpleType\DropoffType|string $DropoffType
  * @property \FedEx\ShipService\SimpleType\ServiceType|string $ServiceType
  * @property \FedEx\ShipService\SimpleType\PackagingType|string $PackagingType
@@ -36,7 +36,7 @@ use FedEx\AbstractComplexType;
  * @property \FedEx\ShipService\SimpleType\RateRequestType|string[] $RateRequestTypes
  * @property \FedEx\ShipService\SimpleType\EdtRequestType|string $EdtRequestType
  * @property TrackingId $MasterTrackingId
- * @property nonNegativeInteger $PackageCount
+ * @property int $PackageCount
  * @property ShipmentConfigurationData $ConfigurationData
  * @property RequestedPackageLineItem[] $RequestedPackageLineItems
 
@@ -53,7 +53,7 @@ class RequestedShipment extends AbstractComplexType
     /**
      * Identifies the date and time the package is tendered to FedEx. Both the date and time portions of the string are expected to be used. The date should not be a past date or a date more than 10 days in the future. The time is the local time of the shipment based on the shipper's time zone. The date component must be in the format: YYYY-MM-DD (e.g. 2006-06-26). The time component must be in the format: HH:MM:SS using a 24 hour clock (e.g. 11:00 a.m. is 11:00:00, whereas 5:00 p.m. is 17:00:00). The date and time parts are separated by the letter T (e.g. 2006-06-26T17:00:00). There is also a UTC offset component indicating the number of hours/mainutes from UTC (e.g 2006-06-26T17:00:00-0400 is defined form June 26, 2006 5:00 pm Eastern Time).
      *
-     * @param dateTime $shipTimestamp
+     * @param string $shipTimestamp
      * @return $this
      */
     public function setShipTimestamp($shipTimestamp)
@@ -365,7 +365,7 @@ class RequestedShipment extends AbstractComplexType
     /**
      * The total number of packages in the entire shipment (even when the shipment spans multiple transactions.)
      *
-     * @param nonNegativeInteger $packageCount
+     * @param int $packageCount
      * @return $this
      */
     public function setPackageCount($packageCount)

@@ -12,7 +12,7 @@ use FedEx\AbstractComplexType;
  *
  * @property string $FromCurrency
  * @property string $IntoCurrency
- * @property decimal $Rate
+ * @property float $Rate
 
  */
 class CurrencyExchangeRate extends AbstractComplexType
@@ -51,7 +51,7 @@ class CurrencyExchangeRate extends AbstractComplexType
     /**
      * Multiplier used to convert fromCurrency units to intoCurrency units.
      *
-     * @param decimal $rate
+     * @param float $rate
      * @return $this
      */
     public function setRate($rate)

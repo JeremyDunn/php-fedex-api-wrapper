@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  *
- * @property dateTime $Timestamp
+ * @property string $Timestamp
  * @property string $EventType
  * @property string $EventDescription
  * @property string $StatusExceptionCode
@@ -31,7 +31,7 @@ class TrackEvent extends AbstractComplexType
     /**
      * The time this event occurred.
      *
-     * @param dateTime $timestamp
+     * @param string $timestamp
      * @return $this
      */
     public function setTimestamp($timestamp)

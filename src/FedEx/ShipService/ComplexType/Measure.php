@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  *
- * @property decimal $Quantity
+ * @property float $Quantity
  * @property string $Units
 
  */
@@ -26,7 +26,7 @@ class Measure extends AbstractComplexType
     /**
      * Set Quantity
      *
-     * @param decimal $quantity
+     * @param float $quantity
      * @return $this
      */
     public function setQuantity($quantity)

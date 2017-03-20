@@ -14,7 +14,7 @@ use FedEx\AbstractComplexType;
  * @property ClientDetail $ClientDetail
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
- * @property dateTime $ShipTimestamp
+ * @property string $ShipTimestamp
  * @property TrackingId $TrackingId
  * @property \FedEx\ShipService\SimpleType\DeletionControlType|string $DeletionControl
 
@@ -79,7 +79,7 @@ class DeleteShipmentRequest extends AbstractComplexType
     /**
      * The timestamp of the shipment request.
      *
-     * @param dateTime $shipTimestamp
+     * @param string $shipTimestamp
      * @return $this
      */
     public function setShipTimestamp($shipTimestamp)

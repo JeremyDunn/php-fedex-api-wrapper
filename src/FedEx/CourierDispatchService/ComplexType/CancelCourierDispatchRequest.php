@@ -16,7 +16,7 @@ use FedEx\AbstractComplexType;
  * @property VersionId $Version
  * @property \FedEx\CourierDispatchService\SimpleType\CarrierCodeType|string $CarrierCode
  * @property string $DispatchConfirmationNumber
- * @property date $ScheduledDate
+ * @property string $ScheduledDate
  * @property string $Location
  * @property string $CourierRemarks
 
@@ -105,7 +105,7 @@ class CancelCourierDispatchRequest extends AbstractComplexType
     /**
      * Identifies the scheduled date for the courier dispatch that is being canceled. The scheduled date was provided by the client when the courier dispatch was requested.
      *
-     * @param date $scheduledDate
+     * @param string $scheduledDate
      * @return $this
      */
     public function setScheduledDate($scheduledDate)

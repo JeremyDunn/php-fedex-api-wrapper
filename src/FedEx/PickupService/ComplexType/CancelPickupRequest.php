@@ -16,8 +16,8 @@ use FedEx\AbstractComplexType;
  * @property VersionId $Version
  * @property \FedEx\Pickup\SimpleType\CarrierCodeType|string $CarrierCode
  * @property string $PickupConfirmationNumber
- * @property date $ScheduledDate
- * @property date $EndDate
+ * @property string $ScheduledDate
+ * @property string $EndDate
  * @property string $Location
  * @property string $Remarks
  * @property Payment $ShippingChargesPayment
@@ -111,7 +111,7 @@ class CancelPickupRequest extends AbstractComplexType
     /**
      * Identifies the scheduled date for the pickup that is being canceled. The scheduled date was provided by the client when the pickup was requested.
      *
-     * @param date $scheduledDate
+     * @param string $scheduledDate
      * @return $this
      */
     public function setScheduledDate($scheduledDate)
@@ -123,7 +123,7 @@ class CancelPickupRequest extends AbstractComplexType
     /**
      * Set EndDate
      *
-     * @param date $endDate
+     * @param string $endDate
      * @return $this
      */
     public function setEndDate($endDate)

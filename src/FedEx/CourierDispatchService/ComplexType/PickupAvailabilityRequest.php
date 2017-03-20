@@ -16,9 +16,9 @@ use FedEx\AbstractComplexType;
  * @property VersionId $Version
  * @property Address $PickupAddress
  * @property \FedEx\CourierDispatchService\SimpleType\PickupRequestType|string[] $PickupRequestType
- * @property date $DispatchDate
- * @property time $PackageReadyTime
- * @property time $CustomerCloseTime
+ * @property string $DispatchDate
+ * @property string $PackageReadyTime
+ * @property string $CustomerCloseTime
  * @property \FedEx\CourierDispatchService\SimpleType\CarrierCodeType|string[] $Carriers
  * @property PickupShipmentAttributes $ShipmentAttributes
 
@@ -108,7 +108,7 @@ class PickupAvailabilityRequest extends AbstractComplexType
     /**
      * The dispatch date (in the local time zone) for the pickup whose availability is being requested.
      *
-     * @param date $dispatchDate
+     * @param string $dispatchDate
      * @return $this
      */
     public function setDispatchDate($dispatchDate)
@@ -120,10 +120,10 @@ class PickupAvailabilityRequest extends AbstractComplexType
     /**
      * The time when the package will be ready to be picked up. The time is local to the pickup postal code, in 24-hour form (e.g. 13:00:00). It should not contain a TZD. If a TZD is included, it will be ignored
      *
-     * @param time $packageReadyTime
+     * @param string $packageReadyTime
      * @return $this
      */
-    public function setPackageReadyTime(time $packageReadyTime)
+    public function setPackageReadyTime($packageReadyTime)
     {
         $this->values['PackageReadyTime'] = $packageReadyTime;
         return $this;
@@ -132,10 +132,10 @@ class PickupAvailabilityRequest extends AbstractComplexType
     /**
      * The lastest time at which the courier will be able to gain access to pick up the package(s). The time is local to the pickup postal code, in 24-hour form (e.g. 17:00:00). It should not contain a TZD. If a TZD is included, it will be ignored
      *
-     * @param time $customerCloseTime
+     * @param string $customerCloseTime
      * @return $this
      */
-    public function setCustomerCloseTime(time $customerCloseTime)
+    public function setCustomerCloseTime($customerCloseTime)
     {
         $this->values['CustomerCloseTime'] = $customerCloseTime;
         return $this;

@@ -11,7 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Ship Service
  *
  * @property \FedEx\ShipService\SimpleType\HomeDeliveryPremiumType|string $HomeDeliveryPremiumType
- * @property date $Date
+ * @property string $Date
  * @property string $PhoneNumber
 
  */
@@ -39,7 +39,7 @@ class HomeDeliveryPremiumDetail extends AbstractComplexType
     /**
      * Required for Date Certain Home Delivery.
      *
-     * @param date $date
+     * @param string $date
      * @return $this
      */
     public function setDate($date)

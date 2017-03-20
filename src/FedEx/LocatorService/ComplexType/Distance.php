@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Locator Service
  *
- * @property decimal $Value
+ * @property float $Value
  * @property \FedEx\LocatorService\SimpleType\DistanceUnits|string $Units
 
  */
@@ -26,7 +26,7 @@ class Distance extends AbstractComplexType
     /**
      * Identifies the value of distance from the point indicated by the search location (e.g. "12.5").
      *
-     * @param decimal $value
+     * @param float $value
      * @return $this
      */
     public function setValue($value)

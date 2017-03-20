@@ -14,7 +14,7 @@ use FedEx\AbstractComplexType;
  * @property Notification[] $Notifications
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
- * @property base64Binary $Letter
+ * @property string $Letter
 
  */
 class SignatureProofOfDeliveryLetterReply extends AbstractComplexType
@@ -77,7 +77,7 @@ class SignatureProofOfDeliveryLetterReply extends AbstractComplexType
     /**
      * Image of letter encoded in Base64 format.
      *
-     * @param base64Binary $letter
+     * @param string $letter
      * @return $this
      */
     public function setLetter($letter)

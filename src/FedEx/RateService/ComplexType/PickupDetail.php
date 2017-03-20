@@ -10,8 +10,8 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  *
- * @property dateTime $ReadyDateTime
- * @property dateTime $LatestPickupDateTime
+ * @property string $ReadyDateTime
+ * @property string $LatestPickupDateTime
  * @property string $CourierInstructions
  * @property \FedEx\RateService\SimpleType\PickupRequestType|string $RequestType
  * @property \FedEx\RateService\SimpleType\PickupRequestSourceType|string $RequestSource
@@ -29,7 +29,7 @@ class PickupDetail extends AbstractComplexType
     /**
      * Set ReadyDateTime
      *
-     * @param dateTime $readyDateTime
+     * @param string $readyDateTime
      * @return $this
      */
     public function setReadyDateTime($readyDateTime)
@@ -41,7 +41,7 @@ class PickupDetail extends AbstractComplexType
     /**
      * Set LatestPickupDateTime
      *
-     * @param dateTime $latestPickupDateTime
+     * @param string $latestPickupDateTime
      * @return $this
      */
     public function setLatestPickupDateTime($latestPickupDateTime)

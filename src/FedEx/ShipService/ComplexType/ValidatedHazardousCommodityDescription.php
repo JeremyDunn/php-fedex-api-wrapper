@@ -11,7 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Ship Service
  *
  * @property string $Id
- * @property nonNegativeInteger $SequenceNumber
+ * @property int $SequenceNumber
  * @property \FedEx\ShipService\SimpleType\HazardousCommodityPackingGroupType|string $PackingGroup
  * @property string $PackingInstructions
  * @property string $ProperShippingName
@@ -49,7 +49,7 @@ class ValidatedHazardousCommodityDescription extends AbstractComplexType
     /**
      * In conjunction with the regulatory identifier, this field uniquely identifies a specific hazardous materials commodity.
      *
-     * @param nonNegativeInteger $sequenceNumber
+     * @param int $sequenceNumber
      * @return $this
      */
     public function setSequenceNumber($sequenceNumber)

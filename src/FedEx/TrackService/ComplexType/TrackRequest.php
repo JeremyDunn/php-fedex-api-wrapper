@@ -18,8 +18,8 @@ use FedEx\AbstractComplexType;
  * @property \FedEx\TrackService\SimpleType\OperatingCompanyType|string $OperatingCompany
  * @property TrackPackageIdentifier $PackageIdentifier
  * @property string $TrackingNumberUniqueIdentifier
- * @property date $ShipDateRangeBegin
- * @property date $ShipDateRangeEnd
+ * @property string $ShipDateRangeBegin
+ * @property string $ShipDateRangeEnd
  * @property string $ShipmentAccountNumber
  * @property Address $Destination
  * @property boolean $IncludeDetailedScans
@@ -134,7 +134,7 @@ class TrackRequest extends AbstractComplexType
     /**
      * To narrow the search to a period in time the ShipDateRangeBegin and ShipDateRangeEnd can be used to help eliminate duplicates.
      *
-     * @param date $shipDateRangeBegin
+     * @param string $shipDateRangeBegin
      * @return $this
      */
     public function setShipDateRangeBegin($shipDateRangeBegin)
@@ -146,7 +146,7 @@ class TrackRequest extends AbstractComplexType
     /**
      * To narrow the search to a period in time the ShipDateRangeBegin and ShipDateRangeEnd can be used to help eliminate duplicates.
      *
-     * @param date $shipDateRangeEnd
+     * @param string $shipDateRangeEnd
      * @return $this
      */
     public function setShipDateRangeEnd($shipDateRangeEnd)

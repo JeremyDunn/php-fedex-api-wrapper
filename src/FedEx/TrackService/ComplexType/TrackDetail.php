@@ -30,20 +30,20 @@ use FedEx\AbstractComplexType;
  * @property Weight $ShipmentWeight
  * @property string $Packaging
  * @property \FedEx\TrackService\SimpleType\PackagingType|string $PackagingType
- * @property nonNegativeInteger $PackageSequenceNumber
- * @property nonNegativeInteger $PackageCount
+ * @property int $PackageSequenceNumber
+ * @property int $PackageCount
  * @property \FedEx\TrackService\SimpleType\TrackReturnLabelType|string $TrackReturnLabelType
  * @property string $TrackReturnDescription
  * @property Address $ShipperAddress
  * @property Address $OriginLocationAddress
- * @property dateTime $EstimatedPickupTimestamp
- * @property dateTime $ShipTimestamp
+ * @property string $EstimatedPickupTimestamp
+ * @property string $ShipTimestamp
  * @property Distance $TotalTransitDistance
  * @property Distance $DistanceToDestination
  * @property Address $DestinationAddress
  * @property Address $DestinationLocationAddress
- * @property dateTime $EstimatedDeliveryTimestamp
- * @property dateTime $ActualDeliveryTimestamp
+ * @property string $EstimatedDeliveryTimestamp
+ * @property string $ActualDeliveryTimestamp
  * @property Address $ActualDeliveryAddress
  * @property \FedEx\TrackService\SimpleType\OfficeOrderDeliveryMethodType|string $OfficeOrderDeliveryMethod
  * @property \FedEx\TrackService\SimpleType\TrackDeliveryLocationType|string $DeliveryLocationType
@@ -308,7 +308,7 @@ class TrackDetail extends AbstractComplexType
     /**
      * The sequence number of this package in a shipment. This would be 2 if it was package number 2 of 4.
      *
-     * @param nonNegativeInteger $packageSequenceNumber
+     * @param int $packageSequenceNumber
      * @return $this
      */
     public function setPackageSequenceNumber($packageSequenceNumber)
@@ -320,7 +320,7 @@ class TrackDetail extends AbstractComplexType
     /**
      * The number of packages in this shipment.
      *
-     * @param nonNegativeInteger $packageCount
+     * @param int $packageCount
      * @return $this
      */
     public function setPackageCount($packageCount)
@@ -380,7 +380,7 @@ class TrackDetail extends AbstractComplexType
     /**
      * Estimated package pickup time for shipments that haven't been picked up.
      *
-     * @param dateTime $estimatedPickupTimestamp
+     * @param string $estimatedPickupTimestamp
      * @return $this
      */
     public function setEstimatedPickupTimestamp($estimatedPickupTimestamp)
@@ -392,7 +392,7 @@ class TrackDetail extends AbstractComplexType
     /**
      * Time package was shipped/tendered over to FedEx. Time portion will be populated if available, otherwise will be set to midnight.
      *
-     * @param dateTime $shipTimestamp
+     * @param string $shipTimestamp
      * @return $this
      */
     public function setShipTimestamp($shipTimestamp)
@@ -452,7 +452,7 @@ class TrackDetail extends AbstractComplexType
     /**
      * Projected package delivery time based on ship time stamp, service and destination. Not populated if delivery has already occurred.
      *
-     * @param dateTime $estimatedDeliveryTimestamp
+     * @param string $estimatedDeliveryTimestamp
      * @return $this
      */
     public function setEstimatedDeliveryTimestamp($estimatedDeliveryTimestamp)
@@ -464,7 +464,7 @@ class TrackDetail extends AbstractComplexType
     /**
      * The time the package was actually delivered.
      *
-     * @param dateTime $actualDeliveryTimestamp
+     * @param string $actualDeliveryTimestamp
      * @return $this
      */
     public function setActualDeliveryTimestamp($actualDeliveryTimestamp)

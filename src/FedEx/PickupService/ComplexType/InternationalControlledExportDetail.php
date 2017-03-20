@@ -14,7 +14,7 @@ use FedEx\AbstractComplexType;
  * @property string $ForeignTradeZoneCode
  * @property string $EntryNumber
  * @property string $LicenseOrPermitNumber
- * @property date $LicenseOrPermitExpirationDate
+ * @property string $LicenseOrPermitExpirationDate
 
  */
 class InternationalControlledExportDetail extends AbstractComplexType
@@ -77,7 +77,7 @@ class InternationalControlledExportDetail extends AbstractComplexType
     /**
      * Set LicenseOrPermitExpirationDate
      *
-     * @param date $licenseOrPermitExpirationDate
+     * @param string $licenseOrPermitExpirationDate
      * @return $this
      */
     public function setLicenseOrPermitExpirationDate($licenseOrPermitExpirationDate)

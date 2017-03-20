@@ -11,7 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Upload Document Service
  *
  * @property string $Currency
- * @property decimal $Amount
+ * @property float $Amount
 
  */
 class Money extends AbstractComplexType
@@ -38,7 +38,7 @@ class Money extends AbstractComplexType
     /**
      * Identifies the monetary amount.
      *
-     * @param decimal $amount
+     * @param float $amount
      * @return $this
      */
     public function setAmount($amount)

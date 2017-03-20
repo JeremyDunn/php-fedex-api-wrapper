@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  *
- * @property positiveInteger $ZoneNumber
+ * @property int $ZoneNumber
  * @property string $Header
  * @property string $DataField
  * @property string $LiteralValue
@@ -29,7 +29,7 @@ class DocTabZoneSpecification extends AbstractComplexType
     /**
      * Zone number can be between 1 and 12.
      *
-     * @param positiveInteger $zoneNumber
+     * @param int $zoneNumber
      * @return $this
      */
     public function setZoneNumber($zoneNumber)

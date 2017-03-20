@@ -12,7 +12,7 @@ use FedEx\AbstractComplexType;
  *
  * @property string $PartNumber
  * @property string $ItemNumber
- * @property nonNegativeInteger $ReceivedQuantity
+ * @property int $ReceivedQuantity
  * @property string $Description
 
  */
@@ -52,7 +52,7 @@ class ContentRecord extends AbstractComplexType
     /**
      * Set ReceivedQuantity
      *
-     * @param nonNegativeInteger $receivedQuantity
+     * @param int $receivedQuantity
      * @return $this
      */
     public function setReceivedQuantity($receivedQuantity)

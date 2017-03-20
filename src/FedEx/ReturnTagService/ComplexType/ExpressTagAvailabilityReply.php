@@ -14,8 +14,8 @@ use FedEx\AbstractComplexType;
  * @property Notification[] $Notifications
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
- * @property time $AccessTime
- * @property time $ReadyTime
+ * @property string $AccessTime
+ * @property string $ReadyTime
  * @property \FedEx\ReturnTagService\SimpleType\ExpressTagAvailabilityType|string $Availability
 
  */
@@ -79,10 +79,10 @@ class ExpressTagAvailabilityReply extends AbstractComplexType
     /**
      * This is the minimum time window that must be allocated for the FedEx courier to make the pickup. This is a length of time. The difference between the Business close time, (or the local Cutoff time if it is earlier than  the Business Close time), and the Ready Time must be equal to or exceed the access time.
      *
-     * @param time $accessTime
+     * @param string $accessTime
      * @return $this
      */
-    public function setAccessTime(time $accessTime)
+    public function setAccessTime($accessTime)
     {
         $this->values['AccessTime'] = $accessTime;
         return $this;
@@ -91,10 +91,10 @@ class ExpressTagAvailabilityReply extends AbstractComplexType
     /**
      * Latest time a FedEx courier will be available to pick up the package from the Sender.
      *
-     * @param time $readyTime
+     * @param string $readyTime
      * @return $this
      */
-    public function setReadyTime(time $readyTime)
+    public function setReadyTime($readyTime)
     {
         $this->values['ReadyTime'] = $readyTime;
         return $this;

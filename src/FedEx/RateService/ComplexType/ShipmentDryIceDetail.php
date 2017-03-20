@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  *
- * @property nonNegativeInteger $PackageCount
+ * @property int $PackageCount
  * @property Weight $TotalWeight
 
  */
@@ -26,7 +26,7 @@ class ShipmentDryIceDetail extends AbstractComplexType
     /**
      * Total number of packages in the shipment that contain dry ice.
      *
-     * @param nonNegativeInteger $packageCount
+     * @param int $packageCount
      * @return $this
      */
     public function setPackageCount($packageCount)

@@ -14,7 +14,7 @@ use FedEx\AbstractComplexType;
  * @property ClientDetail $ClientDetail
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
- * @property dateTime $RequestTimestamp
+ * @property string $RequestTimestamp
  * @property AddressValidationOptions $Options
  * @property AddressToValidate[] $AddressesToValidate
 
@@ -79,7 +79,7 @@ class AddressValidationRequest extends AbstractComplexType
     /**
      * Set RequestTimestamp
      *
-     * @param dateTime $requestTimestamp
+     * @param string $requestTimestamp
      * @return $this
      */
     public function setRequestTimestamp($requestTimestamp)

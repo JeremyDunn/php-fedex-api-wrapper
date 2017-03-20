@@ -18,10 +18,10 @@ use FedEx\AbstractComplexType;
  * @property PickupOriginDetail $OriginDetail
  * @property FreightPickupDetail $FreightPickupDetail
  * @property ExpressFreightPickupDetail $ExpressFreightDetail
- * @property positiveInteger $PackageCount
+ * @property int $PackageCount
  * @property Weight $TotalWeight
  * @property \FedEx\Pickup\SimpleType\CarrierCodeType|string $CarrierCode
- * @property positiveInteger $OversizePackageCount
+ * @property int $OversizePackageCount
  * @property string $Remarks
  * @property string $CommodityDescription
  * @property \FedEx\Pickup\SimpleType\CountryRelationshipType|string $CountryRelationship
@@ -135,7 +135,7 @@ class CreatePickupRequest extends AbstractComplexType
     /**
      * Identifies the number of packages that are being tendered to FedEx for this pickup request.
      *
-     * @param positiveInteger $packageCount
+     * @param int $packageCount
      * @return $this
      */
     public function setPackageCount($packageCount)
@@ -171,7 +171,7 @@ class CreatePickupRequest extends AbstractComplexType
     /**
      * Identifies the number of oversize packages that are being tendered to FedEx for this pickup request. Please refer to the FedEx Service Guide for package size limits to determine if a package is oversized for the service being shipped.
      *
-     * @param positiveInteger $oversizePackageCount
+     * @param int $oversizePackageCount
      * @return $this
      */
     public function setOversizePackageCount($oversizePackageCount)

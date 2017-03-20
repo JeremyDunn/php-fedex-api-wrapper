@@ -11,7 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Ship Service
  *
  * @property \FedEx\ShipService\SimpleType\BinaryBarcodeType|string $Type
- * @property base64Binary $Value
+ * @property string $Value
 
  */
 class BinaryBarcode extends AbstractComplexType
@@ -38,7 +38,7 @@ class BinaryBarcode extends AbstractComplexType
     /**
      * The data content of this instance.
      *
-     * @param base64Binary $value
+     * @param string $value
      * @return $this
      */
     public function setValue($value)

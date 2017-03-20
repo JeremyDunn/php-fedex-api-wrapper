@@ -11,7 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Rate Service
  *
  * @property \FedEx\RateService\SimpleType\PendingShipmentType|string $Type
- * @property date $ExpirationDate
+ * @property string $ExpirationDate
  * @property EMailLabelDetail $EmailLabelDetail
 
  */
@@ -39,7 +39,7 @@ class PendingShipmentDetail extends AbstractComplexType
     /**
      * Date after which the pending shipment will no longer be available for completion.
      *
-     * @param date $expirationDate
+     * @param string $expirationDate
      * @return $this
      */
     public function setExpirationDate($expirationDate)

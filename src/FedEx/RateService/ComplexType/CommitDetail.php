@@ -14,17 +14,17 @@ use FedEx\AbstractComplexType;
  * @property \FedEx\RateService\SimpleType\ServiceType|string $ServiceType
  * @property \FedEx\RateService\SimpleType\ServiceOptionType|string[] $AppliedOptions
  * @property ServiceSubOptionDetail $AppliedSubOptions
- * @property dateTime $CommitTimestamp
+ * @property string $CommitTimestamp
  * @property \FedEx\RateService\SimpleType\DayOfWeekType|string $DayOfWeek
  * @property \FedEx\RateService\SimpleType\TransitTimeType|string $TransitTime
  * @property \FedEx\RateService\SimpleType\TransitTimeType|string $MaximumTransitTime
  * @property string $DestinationServiceArea
  * @property Address $BrokerAddress
  * @property string $BrokerLocationId
- * @property dateTime $BrokerCommitTimestamp
+ * @property string $BrokerCommitTimestamp
  * @property \FedEx\RateService\SimpleType\DayOfWeekType|string $BrokerCommitDayOfWeek
- * @property nonNegativeInteger $BrokerToDestinationDays
- * @property date $ProofOfDeliveryDate
+ * @property int $BrokerToDestinationDays
+ * @property string $ProofOfDeliveryDate
  * @property \FedEx\RateService\SimpleType\DayOfWeekType|string $ProofOfDeliveryDayOfWeek
  * @property Notification[] $CommitMessages
  * @property string[] $DeliveryMessages
@@ -94,7 +94,7 @@ class CommitDetail extends AbstractComplexType
     /**
      * THe delivery commitment date/time. Express Only.
      *
-     * @param dateTime $commitTimestamp
+     * @param string $commitTimestamp
      * @return $this
      */
     public function setCommitTimestamp($commitTimestamp)
@@ -178,7 +178,7 @@ class CommitDetail extends AbstractComplexType
     /**
      * The delivery commitment date/time the shipment will arrive at the border.
      *
-     * @param dateTime $brokerCommitTimestamp
+     * @param string $brokerCommitTimestamp
      * @return $this
      */
     public function setBrokerCommitTimestamp($brokerCommitTimestamp)
@@ -202,7 +202,7 @@ class CommitDetail extends AbstractComplexType
     /**
      * The number of days it will take for the shipment to make it from broker to destination
      *
-     * @param nonNegativeInteger $brokerToDestinationDays
+     * @param int $brokerToDestinationDays
      * @return $this
      */
     public function setBrokerToDestinationDays($brokerToDestinationDays)
@@ -214,7 +214,7 @@ class CommitDetail extends AbstractComplexType
     /**
      * The delivery commitment date for shipment served by GSP (Global Service Provider)
      *
-     * @param date $proofOfDeliveryDate
+     * @param string $proofOfDeliveryDate
      * @return $this
      */
     public function setProofOfDeliveryDate($proofOfDeliveryDate)

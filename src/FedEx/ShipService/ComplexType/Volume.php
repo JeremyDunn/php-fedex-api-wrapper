@@ -11,7 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Ship Service
  *
  * @property \FedEx\ShipService\SimpleType\VolumeUnits|string $Units
- * @property decimal $Value
+ * @property float $Value
 
  */
 class Volume extends AbstractComplexType
@@ -38,7 +38,7 @@ class Volume extends AbstractComplexType
     /**
      * Set Value
      *
-     * @param decimal $value
+     * @param float $value
      * @return $this
      */
     public function setValue($value)

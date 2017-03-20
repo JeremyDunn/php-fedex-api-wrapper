@@ -11,7 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Ship Service
  *
  * @property \FedEx\ShipService\SimpleType\EdtTaxType|string $TaxType
- * @property date $EffectiveDate
+ * @property string $EffectiveDate
  * @property string $Name
  * @property Money $TaxableValue
  * @property string $Description
@@ -43,7 +43,7 @@ class EdtTaxDetail extends AbstractComplexType
     /**
      * Set EffectiveDate
      *
-     * @param date $effectiveDate
+     * @param string $effectiveDate
      * @return $this
      */
     public function setEffectiveDate($effectiveDate)

@@ -14,7 +14,7 @@ use FedEx\AbstractComplexType;
  * @property ClientDetail $ClientDetail
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
- * @property date $CloseDate
+ * @property string $CloseDate
  * @property CloseDocumentSpecification $CloseDocumentSpecification
 
  */
@@ -78,7 +78,7 @@ class GroundCloseWithDocumentsRequest extends AbstractComplexType
     /**
      * Date on which shipments were closed.
      *
-     * @param date $closeDate
+     * @param string $closeDate
      * @return $this
      */
     public function setCloseDate($closeDate)

@@ -11,7 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Rate Service
  *
  * @property \FedEx\RateService\SimpleType\AdditionalLabelsType|string $Type
- * @property nonNegativeInteger $Count
+ * @property int $Count
 
  */
 class AdditionalLabelsDetail extends AbstractComplexType
@@ -38,7 +38,7 @@ class AdditionalLabelsDetail extends AbstractComplexType
     /**
      * The number of this type label to return
      *
-     * @param nonNegativeInteger $count
+     * @param int $count
      * @return $this
      */
     public function setCount($count)

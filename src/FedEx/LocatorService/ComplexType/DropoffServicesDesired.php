@@ -16,7 +16,7 @@ use FedEx\AbstractComplexType;
  * @property boolean $FedExSelfService
  * @property boolean $FedExAuthorizedShippingCenter
  * @property boolean $LatestExpressDropoff
- * @property time $ExpressDropoffAfterTime
+ * @property string $ExpressDropoffAfterTime
  * @property boolean $HoldAtLocation
  * @property boolean $GroundHoldAtLocation
  * @property boolean $DangerousGoods
@@ -112,10 +112,10 @@ class DropoffServicesDesired extends AbstractComplexType
     /**
      * Locations that are open after this local time.
      *
-     * @param time $expressDropoffAfterTime
+     * @param string $expressDropoffAfterTime
      * @return $this
      */
-    public function setExpressDropoffAfterTime(time $expressDropoffAfterTime)
+    public function setExpressDropoffAfterTime($expressDropoffAfterTime)
     {
         $this->values['ExpressDropoffAfterTime'] = $expressDropoffAfterTime;
         return $this;

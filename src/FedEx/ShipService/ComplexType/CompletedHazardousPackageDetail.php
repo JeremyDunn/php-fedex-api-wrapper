@@ -13,7 +13,7 @@ use FedEx\AbstractComplexType;
  * @property string $ReferenceId
  * @property \FedEx\ShipService\SimpleType\DangerousGoodsAccessibilityType|string $Accessibility
  * @property boolean $CargoAircraftOnly
- * @property decimal $RadioactiveTransportIndex
+ * @property float $RadioactiveTransportIndex
  * @property \FedEx\ShipService\SimpleType\RadioactiveLabelType|string $LabelType
  * @property ValidatedHazardousContainer[] $Containers
 
@@ -66,7 +66,7 @@ class CompletedHazardousPackageDetail extends AbstractComplexType
     /**
      * Specifies the maximum radiation level from the package (measured in microSieverts per hour at a distance of one meter from the external surface of the package, divided by 10).
      *
-     * @param decimal $radioactiveTransportIndex
+     * @param float $radioactiveTransportIndex
      * @return $this
      */
     public function setRadioactiveTransportIndex($radioactiveTransportIndex)

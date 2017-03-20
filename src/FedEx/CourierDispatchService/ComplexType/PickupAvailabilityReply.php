@@ -14,7 +14,7 @@ use FedEx\AbstractComplexType;
  * @property Notification[] $Notifications
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
- * @property dateTime $RequestTimestamp
+ * @property string $RequestTimestamp
  * @property PickupScheduleOption[] $Options
 
  */
@@ -78,7 +78,7 @@ class PickupAvailabilityReply extends AbstractComplexType
     /**
      * the point in time when the request was processed
      *
-     * @param dateTime $requestTimestamp
+     * @param string $requestTimestamp
      * @return $this
      */
     public function setRequestTimestamp($requestTimestamp)

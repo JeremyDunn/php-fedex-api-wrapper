@@ -16,7 +16,7 @@ use FedEx\AbstractComplexType;
  * @property VersionId $Version
  * @property Address $Origin
  * @property Address $Destination
- * @property date $ShipDate
+ * @property string $ShipDate
  * @property \FedEx\PackageMovementInformationService\SimpleType\CarrierCodeType|string $CarrierCode
  * @property \FedEx\PackageMovementInformationService\SimpleType\ServiceType|string $Service
  * @property \FedEx\PackageMovementInformationService\SimpleType\PackagingType|string $Packaging
@@ -106,7 +106,7 @@ class ServiceAvailabilityRequest extends AbstractComplexType
     /**
      * The date on which the package will be shipped. The date should not  be a past date or a date more than 10 days in the future. The date format must be YYYY-MM-DD.
      *
-     * @param date $shipDate
+     * @param string $shipDate
      * @return $this
      */
     public function setShipDate($shipDate)

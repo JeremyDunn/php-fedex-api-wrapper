@@ -15,7 +15,7 @@ use FedEx\AbstractComplexType;
  * @property int $AdditionalDays
  * @property \FedEx\RateService\SimpleType\ServiceType|string $LocalService
  * @property Distance $LocalDistance
- * @property duration $LocalDuration
+ * @property string $LocalDuration
  * @property \FedEx\RateService\SimpleType\FreightServiceSchedulingType|string $LocalServiceScheduling
  * @property \FedEx\RateService\SimpleType\DayOfWeekType|string[] $LimitedServiceDays
  * @property string $GatewayLocationId
@@ -95,10 +95,10 @@ class FreightServiceCenterDetail extends AbstractComplexType
     /**
      * Time to travel between customer address (pickup or delivery) and the supporting Freight / National Freight service center.
      *
-     * @param duration $localDuration
+     * @param string $localDuration
      * @return $this
      */
-    public function setLocalDuration(duration $localDuration)
+    public function setLocalDuration($localDuration)
     {
         $this->values['LocalDuration'] = $localDuration;
         return $this;

@@ -14,8 +14,8 @@ use FedEx\AbstractComplexType;
  * @property Notification[] $Notifications
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
- * @property base64Binary $CodReport
- * @property base64Binary $HazMatCertificate
+ * @property string $CodReport
+ * @property string $HazMatCertificate
  * @property ManifestFile[] $Manifests
 
  */
@@ -79,7 +79,7 @@ class GroundCloseReportsReprintReply extends AbstractComplexType
     /**
      * Set CodReport
      *
-     * @param base64Binary $codReport
+     * @param string $codReport
      * @return $this
      */
     public function setCodReport($codReport)
@@ -91,7 +91,7 @@ class GroundCloseReportsReprintReply extends AbstractComplexType
     /**
      * Set HazMatCertificate
      *
-     * @param base64Binary $hazMatCertificate
+     * @param string $hazMatCertificate
      * @return $this
      */
     public function setHazMatCertificate($hazMatCertificate)

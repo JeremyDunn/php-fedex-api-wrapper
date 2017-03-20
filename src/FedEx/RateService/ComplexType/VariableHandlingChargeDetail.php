@@ -11,7 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Rate Service
  *
  * @property Money $FixedValue
- * @property decimal $PercentValue
+ * @property float $PercentValue
  * @property \FedEx\RateService\SimpleType\RateElementBasisType|string $RateElementBasis
  * @property \FedEx\RateService\SimpleType\RateTypeBasisType|string $RateTypeBasis
 
@@ -40,7 +40,7 @@ class VariableHandlingChargeDetail extends AbstractComplexType
     /**
      * Actual percentage (10 means 10%, which is a mutiplier of 0.1)
      *
-     * @param decimal $percentValue
+     * @param float $percentValue
      * @return $this
      */
     public function setPercentValue($percentValue)

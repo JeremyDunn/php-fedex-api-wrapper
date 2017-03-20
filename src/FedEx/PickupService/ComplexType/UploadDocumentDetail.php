@@ -10,12 +10,12 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *
- * @property nonNegativeInteger $LineNumber
+ * @property int $LineNumber
  * @property string $CustomerReference
  * @property \FedEx\Pickup\SimpleType\UploadDocumentProducerType|string $DocumentProducer
  * @property \FedEx\Pickup\SimpleType\UploadDocumentType|string $DocumentType
  * @property string $FileName
- * @property base64Binary $DocumentContent
+ * @property string $DocumentContent
 
  */
 class UploadDocumentDetail extends AbstractComplexType
@@ -30,7 +30,7 @@ class UploadDocumentDetail extends AbstractComplexType
     /**
      * Set LineNumber
      *
-     * @param nonNegativeInteger $lineNumber
+     * @param int $lineNumber
      * @return $this
      */
     public function setLineNumber($lineNumber)
@@ -90,7 +90,7 @@ class UploadDocumentDetail extends AbstractComplexType
     /**
      * Set DocumentContent
      *
-     * @param base64Binary $documentContent
+     * @param string $documentContent
      * @return $this
      */
     public function setDocumentContent($documentContent)

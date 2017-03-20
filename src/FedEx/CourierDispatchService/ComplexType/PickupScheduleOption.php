@@ -17,9 +17,9 @@ use FedEx\AbstractComplexType;
  * @property string $Description
  * @property \FedEx\CourierDispatchService\SimpleType\PickupRequestType|string $ScheduleDay
  * @property boolean $Available
- * @property date $PickupDate
- * @property time $CutOffTime
- * @property duration $AccessTime
+ * @property string $PickupDate
+ * @property string $CutOffTime
+ * @property string $AccessTime
  * @property boolean $ResidentialAvailable
 
  */
@@ -83,7 +83,7 @@ class PickupScheduleOption extends AbstractComplexType
     /**
      * Identifies the date (in the postal code's time zone) to which this PickupScheduleOption refers.
      *
-     * @param date $pickupDate
+     * @param string $pickupDate
      * @return $this
      */
     public function setPickupDate($pickupDate)
@@ -95,10 +95,10 @@ class PickupScheduleOption extends AbstractComplexType
     /**
      * Identifies the latest allowed ready time (in the postal code's time zone) for a postal code. As a local time, it will not include a Time Zone Designator
      *
-     * @param time $cutOffTime
+     * @param string $cutOffTime
      * @return $this
      */
-    public function setCutOffTime(time $cutOffTime)
+    public function setCutOffTime($cutOffTime)
     {
         $this->values['CutOffTime'] = $cutOffTime;
         return $this;
@@ -107,10 +107,10 @@ class PickupScheduleOption extends AbstractComplexType
     /**
      * Identifies the minimum required length of the window of time between the ReadyTime and the CustomerCloseTime.
      *
-     * @param duration $accessTime
+     * @param string $accessTime
      * @return $this
      */
-    public function setAccessTime(duration $accessTime)
+    public function setAccessTime($accessTime)
     {
         $this->values['AccessTime'] = $accessTime;
         return $this;

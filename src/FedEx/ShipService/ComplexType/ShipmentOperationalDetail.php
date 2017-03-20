@@ -19,10 +19,10 @@ use FedEx\AbstractComplexType;
  * @property int $DestinationLocationNumber
  * @property string $DestinationServiceArea
  * @property string $DestinationLocationStateOrProvinceCode
- * @property date $DeliveryDate
+ * @property string $DeliveryDate
  * @property \FedEx\ShipService\SimpleType\DayOfWeekType|string $DeliveryDay
- * @property time $PublishedDeliveryTime
- * @property date $CommitDate
+ * @property string $PublishedDeliveryTime
+ * @property string $CommitDate
  * @property \FedEx\ShipService\SimpleType\DayOfWeekType|string $CommitDay
  * @property \FedEx\ShipService\SimpleType\TransitTimeType|string $TransitTime
  * @property \FedEx\ShipService\SimpleType\TransitTimeType|string $MaximumTransitTime
@@ -159,7 +159,7 @@ class ShipmentOperationalDetail extends AbstractComplexType
     /**
      * Expected/estimated date of delivery.
      *
-     * @param date $deliveryDate
+     * @param string $deliveryDate
      * @return $this
      */
     public function setDeliveryDate($deliveryDate)
@@ -183,10 +183,10 @@ class ShipmentOperationalDetail extends AbstractComplexType
     /**
      * Delivery time, as published in Service Guide.
      *
-     * @param time $publishedDeliveryTime
+     * @param string $publishedDeliveryTime
      * @return $this
      */
-    public function setPublishedDeliveryTime(time $publishedDeliveryTime)
+    public function setPublishedDeliveryTime($publishedDeliveryTime)
     {
         $this->values['PublishedDeliveryTime'] = $publishedDeliveryTime;
         return $this;
@@ -195,7 +195,7 @@ class ShipmentOperationalDetail extends AbstractComplexType
     /**
      * Committed date of delivery.
      *
-     * @param date $commitDate
+     * @param string $commitDate
      * @return $this
      */
     public function setCommitDate($commitDate)

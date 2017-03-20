@@ -15,7 +15,7 @@ use FedEx\AbstractComplexType;
  * @property string[] $DataFields
  * @property string $ThermalFontId
  * @property string $FontName
- * @property positiveInteger $FontSize
+ * @property int $FontSize
 
  */
 class CustomLabelTextEntry extends AbstractComplexType
@@ -90,7 +90,7 @@ class CustomLabelTextEntry extends AbstractComplexType
     /**
      * Generic font size for use with plain paper labels.
      *
-     * @param positiveInteger $fontSize
+     * @param int $fontSize
      * @return $this
      */
     public function setFontSize($fontSize)

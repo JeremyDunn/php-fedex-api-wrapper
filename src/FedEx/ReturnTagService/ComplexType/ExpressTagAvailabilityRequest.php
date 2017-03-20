@@ -14,7 +14,7 @@ use FedEx\AbstractComplexType;
  * @property ClientDetail $ClientDetail
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
- * @property dateTime $ReadyDateTime
+ * @property string $ReadyDateTime
  * @property Address $OriginAddress
  * @property \FedEx\ReturnTagService\SimpleType\ServiceType|string $Service
  * @property \FedEx\ReturnTagService\SimpleType\PackagingType|string $Packaging
@@ -80,7 +80,7 @@ class ExpressTagAvailabilityRequest extends AbstractComplexType
     /**
      * Package ready date and time.
      *
-     * @param dateTime $readyDateTime
+     * @param string $readyDateTime
      * @return $this
      */
     public function setReadyDateTime($readyDateTime)

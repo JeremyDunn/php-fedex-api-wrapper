@@ -17,7 +17,7 @@ use FedEx\AbstractComplexType;
  * @property \FedEx\ShipService\SimpleType\SecondaryBarcodeType|string $SecondaryBarcode
  * @property Localization $TermsAndConditionsLocalization
  * @property AdditionalLabelsDetail[] $AdditionalLabels
- * @property nonNegativeInteger $AirWaybillSuppressionCount
+ * @property int $AirWaybillSuppressionCount
 
  */
 class CustomerSpecifiedLabelDetail extends AbstractComplexType
@@ -116,7 +116,7 @@ class CustomerSpecifiedLabelDetail extends AbstractComplexType
     /**
      * This value reduces the default quantity of destination/consignee air waybill labels. A value of zero indicates no change to default. A minimum of one copy will always be produced.
      *
-     * @param nonNegativeInteger $airWaybillSuppressionCount
+     * @param int $airWaybillSuppressionCount
      * @return $this
      */
     public function setAirWaybillSuppressionCount($airWaybillSuppressionCount)

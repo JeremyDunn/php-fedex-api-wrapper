@@ -11,7 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Ship Service
  *
  * @property ShippingDocumentFormat $Format
- * @property nonNegativeInteger $Copies
+ * @property int $Copies
  * @property \FedEx\ShipService\SimpleType\PageQuadrantType|string $StartingPosition
  * @property DocTabContent $DocTabContent
 
@@ -40,7 +40,7 @@ class FreightAddressLabelDetail extends AbstractComplexType
     /**
      * Indicates the number of copies to be produced for each unique label.
      *
-     * @param nonNegativeInteger $copies
+     * @param int $copies
      * @return $this
      */
     public function setCopies($copies)

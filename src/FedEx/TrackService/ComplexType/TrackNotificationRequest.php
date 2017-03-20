@@ -18,8 +18,8 @@ use FedEx\AbstractComplexType;
  * @property boolean $MultiPiece
  * @property string $PagingToken
  * @property string $TrackingNumberUniqueId
- * @property date $ShipDateRangeBegin
- * @property date $ShipDateRangeEnd
+ * @property string $ShipDateRangeBegin
+ * @property string $ShipDateRangeEnd
  * @property string $SenderEMailAddress
  * @property string $SenderContactName
  * @property EMailNotificationDetail $NotificationDetail
@@ -133,7 +133,7 @@ class TrackNotificationRequest extends AbstractComplexType
     /**
      * To narrow the search to a period in time the ShipDateRangeBegin and ShipDateRangeEnd can be used to help eliminate duplicates.
      *
-     * @param date $shipDateRangeBegin
+     * @param string $shipDateRangeBegin
      * @return $this
      */
     public function setShipDateRangeBegin($shipDateRangeBegin)
@@ -145,7 +145,7 @@ class TrackNotificationRequest extends AbstractComplexType
     /**
      * To narrow the search to a period in time the ShipDateRangeBegin and ShipDateRangeEnd can be used to help eliminate duplicates.
      *
-     * @param date $shipDateRangeEnd
+     * @param string $shipDateRangeEnd
      * @return $this
      */
     public function setShipDateRangeEnd($shipDateRangeEnd)

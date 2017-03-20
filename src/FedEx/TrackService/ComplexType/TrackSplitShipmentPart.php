@@ -10,8 +10,8 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  *
- * @property positiveInteger $PieceCount
- * @property dateTime $Timestamp
+ * @property int $PieceCount
+ * @property string $Timestamp
  * @property string $StatusCode
  * @property string $StatusDescription
 
@@ -28,7 +28,7 @@ class TrackSplitShipmentPart extends AbstractComplexType
     /**
      * The number of pieces in this part.
      *
-     * @param positiveInteger $pieceCount
+     * @param int $pieceCount
      * @return $this
      */
     public function setPieceCount($pieceCount)
@@ -40,7 +40,7 @@ class TrackSplitShipmentPart extends AbstractComplexType
     /**
      * The date and time this status began.
      *
-     * @param dateTime $timestamp
+     * @param string $timestamp
      * @return $this
      */
     public function setTimestamp($timestamp)

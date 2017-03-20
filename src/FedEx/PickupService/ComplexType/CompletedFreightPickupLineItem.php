@@ -12,8 +12,8 @@ use FedEx\AbstractComplexType;
  *
  * @property int $SequenceNumber
  * @property FreightServiceCenterDetail $Destination
- * @property duration $TotalTravelTime
- * @property dateTime $EtaDeliveryTimestamp
+ * @property string $TotalTravelTime
+ * @property string $EtaDeliveryTimestamp
 
  */
 class CompletedFreightPickupLineItem extends AbstractComplexType
@@ -52,10 +52,10 @@ class CompletedFreightPickupLineItem extends AbstractComplexType
     /**
      * Total travel time for this line item.
      *
-     * @param duration $totalTravelTime
+     * @param string $totalTravelTime
      * @return $this
      */
-    public function setTotalTravelTime(duration $totalTravelTime)
+    public function setTotalTravelTime($totalTravelTime)
     {
         $this->values['TotalTravelTime'] = $totalTravelTime;
         return $this;
@@ -64,7 +64,7 @@ class CompletedFreightPickupLineItem extends AbstractComplexType
     /**
      * Identifies estimated delivery date and time for each line item.
      *
-     * @param dateTime $etaDeliveryTimestamp
+     * @param string $etaDeliveryTimestamp
      * @return $this
      */
     public function setEtaDeliveryTimestamp($etaDeliveryTimestamp)

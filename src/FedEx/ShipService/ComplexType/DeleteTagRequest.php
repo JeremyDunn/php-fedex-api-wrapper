@@ -15,7 +15,7 @@ use FedEx\AbstractComplexType;
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
  * @property string $DispatchLocationId
- * @property date $DispatchDate
+ * @property string $DispatchDate
  * @property Payment $Payment
  * @property string $ConfirmationNumber
 
@@ -92,7 +92,7 @@ class DeleteTagRequest extends AbstractComplexType
     /**
      * Only used for tags which had FedEx Express services.
      *
-     * @param date $dispatchDate
+     * @param string $dispatchDate
      * @return $this
      */
     public function setDispatchDate($dispatchDate)

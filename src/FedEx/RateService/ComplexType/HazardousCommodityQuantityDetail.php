@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  *
- * @property decimal $Amount
+ * @property float $Amount
  * @property string $Units
 
  */
@@ -26,7 +26,7 @@ class HazardousCommodityQuantityDetail extends AbstractComplexType
     /**
      * Number of units of the type below.
      *
-     * @param decimal $amount
+     * @param float $amount
      * @return $this
      */
     public function setAmount($amount)

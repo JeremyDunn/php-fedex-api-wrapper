@@ -16,7 +16,7 @@ use FedEx\AbstractComplexType;
  * @property ServiceSubOptionDetail $AppliedSubOptions
  * @property string $DeliveryStation
  * @property \FedEx\RateService\SimpleType\DayOfWeekType|string $DeliveryDayOfWeek
- * @property dateTime $DeliveryTimestamp
+ * @property string $DeliveryTimestamp
  * @property CommitDetail[] $CommitDetails
  * @property string $DestinationAirportId
  * @property boolean $IneligibleForMoneyBackGuarantee
@@ -113,7 +113,7 @@ class RateReplyDetail extends AbstractComplexType
     /**
      * Set DeliveryTimestamp
      *
-     * @param dateTime $deliveryTimestamp
+     * @param string $deliveryTimestamp
      * @return $this
      */
     public function setDeliveryTimestamp($deliveryTimestamp)

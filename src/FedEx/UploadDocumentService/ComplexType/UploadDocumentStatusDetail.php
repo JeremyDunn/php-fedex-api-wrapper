@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  *
- * @property nonNegativeInteger $LineNumber
+ * @property int $LineNumber
  * @property string $CustomerReference
  * @property \FedEx\UploadDocumentService\SimpleType\UploadDocumentProducerType|string $DocumentProducer
  * @property \FedEx\UploadDocumentService\SimpleType\UploadDocumentType|string $DocumentType
@@ -34,7 +34,7 @@ class UploadDocumentStatusDetail extends AbstractComplexType
     /**
      * Set LineNumber
      *
-     * @param nonNegativeInteger $lineNumber
+     * @param int $lineNumber
      * @return $this
      */
     public function setLineNumber($lineNumber)

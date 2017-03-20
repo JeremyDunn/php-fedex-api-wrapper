@@ -11,7 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Rate Service
  *
  * @property TrackingId[] $TrackingIds
- * @property nonNegativeInteger $GroupNumber
+ * @property int $GroupNumber
  * @property Money $EffectiveNetDiscount
  * @property Money $AdjustedCodCollectionAmount
  * @property \FedEx\RateService\SimpleType\OversizeClassType|string $OversizeClass
@@ -42,7 +42,7 @@ class RatedPackageDetail extends AbstractComplexType
     /**
      * Used with request containing PACKAGE_GROUPS, to identify which group of identical packages was used to produce a reply item.
      *
-     * @param nonNegativeInteger $groupNumber
+     * @param int $groupNumber
      * @return $this
      */
     public function setGroupNumber($groupNumber)

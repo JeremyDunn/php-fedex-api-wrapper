@@ -11,7 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Ship Service
  *
  * @property boolean $PackingListEnclosed
- * @property positiveInteger $ShippersLoadAndCount
+ * @property int $ShippersLoadAndCount
  * @property string $BookingConfirmationNumber
 
  */
@@ -44,7 +44,7 @@ class ExpressFreightDetail extends AbstractComplexType
                 Values must be in the range of 1 - 99999
               
      *
-     * @param positiveInteger $shippersLoadAndCount
+     * @param int $shippersLoadAndCount
      * @return $this
      */
     public function setShippersLoadAndCount($shippersLoadAndCount)

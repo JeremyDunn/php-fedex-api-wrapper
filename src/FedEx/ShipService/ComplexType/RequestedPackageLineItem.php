@@ -10,9 +10,9 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  *
- * @property positiveInteger $SequenceNumber
- * @property nonNegativeInteger $GroupNumber
- * @property nonNegativeInteger $GroupPackageCount
+ * @property int $SequenceNumber
+ * @property int $GroupNumber
+ * @property int $GroupPackageCount
  * @property VariableHandlingChargeDetail $VariableHandlingChargeDetail
  * @property Money $InsuredValue
  * @property Weight $Weight
@@ -36,7 +36,7 @@ class RequestedPackageLineItem extends AbstractComplexType
     /**
      * Used only with INDIVIDUAL_PACKAGE, as a unique identifier of each requested package.
      *
-     * @param positiveInteger $sequenceNumber
+     * @param int $sequenceNumber
      * @return $this
      */
     public function setSequenceNumber($sequenceNumber)
@@ -48,7 +48,7 @@ class RequestedPackageLineItem extends AbstractComplexType
     /**
      * Used only with PACKAGE_GROUPS, as a unique identifier of each group of identical packages.
      *
-     * @param nonNegativeInteger $groupNumber
+     * @param int $groupNumber
      * @return $this
      */
     public function setGroupNumber($groupNumber)
@@ -60,7 +60,7 @@ class RequestedPackageLineItem extends AbstractComplexType
     /**
      * Used only with PACKAGE_GROUPS, as a count of packages within a group of identical packages.
      *
-     * @param nonNegativeInteger $groupPackageCount
+     * @param int $groupPackageCount
      * @return $this
      */
     public function setGroupPackageCount($groupPackageCount)

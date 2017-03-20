@@ -12,9 +12,9 @@ use FedEx\AbstractComplexType;
  *
  * @property \FedEx\ShipService\SimpleType\FreightClassType|string $FreightClass
  * @property boolean $ClassProvidedByCustomer
- * @property nonNegativeInteger $HandlingUnits
+ * @property int $HandlingUnits
  * @property \FedEx\ShipService\SimpleType\PhysicalPackagingType|string $Packaging
- * @property nonNegativeInteger $Pieces
+ * @property int $Pieces
  * @property string $NmfcCode
  * @property \FedEx\ShipService\SimpleType\HazardousCommodityOptionType|string $HazardousMaterials
  * @property string $PurchaseOrderNumber
@@ -60,7 +60,7 @@ class FreightShipmentLineItem extends AbstractComplexType
     /**
      * Number of individual handling units to which this line applies. (NOTE: Total of line-item-level handling units may not balance to shipment-level total handling units.)
      *
-     * @param nonNegativeInteger $handlingUnits
+     * @param int $handlingUnits
      * @return $this
      */
     public function setHandlingUnits($handlingUnits)
@@ -84,7 +84,7 @@ class FreightShipmentLineItem extends AbstractComplexType
     /**
      * Number of pieces for this commodity or class line.
      *
-     * @param nonNegativeInteger $pieces
+     * @param int $pieces
      * @return $this
      */
     public function setPieces($pieces)

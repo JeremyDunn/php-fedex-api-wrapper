@@ -14,7 +14,7 @@ use FedEx\AbstractComplexType;
  * @property ClientDetail $ClientDetail
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
- * @property date $ReportDate
+ * @property string $ReportDate
  * @property string $TrackingNumber
  * @property \FedEx\CloseService\SimpleType\CloseReportType|string $CloseReportType
 
@@ -79,7 +79,7 @@ class GroundCloseReportsReprintRequest extends AbstractComplexType
     /**
      * Set ReportDate
      *
-     * @param date $reportDate
+     * @param string $reportDate
      * @return $this
      */
     public function setReportDate($reportDate)

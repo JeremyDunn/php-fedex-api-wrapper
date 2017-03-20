@@ -16,11 +16,11 @@ use FedEx\AbstractComplexType;
  * @property \FedEx\Pickup\SimpleType\PickupBuildingLocationType|string $PackageLocation
  * @property \FedEx\Pickup\SimpleType\BuildingPartCode|string $BuildingPart
  * @property string $BuildingPartDescription
- * @property dateTime $ReadyTimestamp
- * @property time $CompanyCloseTime
+ * @property string $ReadyTimestamp
+ * @property string $CompanyCloseTime
  * @property boolean $StayLate
  * @property \FedEx\Pickup\SimpleType\PickupRequestType|string $PickupDateType
- * @property time $LastAccessTime
+ * @property string $LastAccessTime
  * @property string $GeographicalPostalCode
  * @property string $Location
  * @property boolean $DeleteLastUsed
@@ -112,7 +112,7 @@ class PickupOriginDetail extends AbstractComplexType
     /**
      * Identifies the date and time the package will be ready for pickup by FedEx. Both the date and time portions of the string are expected to be used. The date should not be a past date or a date more than 10 days in the future. The time is the local time of the pickup based on the shipper's time zone. The date component must be in the format: YYYY-MM-DD (e.g. 2006-06-26). The time component must be in the format: HH:MM:SS in 24-hour form. The date and time parts are separated by the letter T (e.g. 2006-06-26T17:00:00). Because this is a local time, no TZD should be included. If a TZD is included, it will be ignored, and the time treated as local to the pickup postal code.
      *
-     * @param dateTime $readyTimestamp
+     * @param string $readyTimestamp
      * @return $this
      */
     public function setReadyTimestamp($readyTimestamp)
@@ -124,10 +124,10 @@ class PickupOriginDetail extends AbstractComplexType
     /**
      * Identifies the close time of the company requesting the pickup. The time is the local time of the pickup based on the shipper's time zone. The time component must be in the format: HH:MM:SS in 24-hour form (e.g. 17:00:00). Because this is a local time, no TZD should be included. If a TZD is included, it will be ignored, and the time treated as local to the pickup postal code.
      *
-     * @param time $companyCloseTime
+     * @param string $companyCloseTime
      * @return $this
      */
-    public function setCompanyCloseTime(time $companyCloseTime)
+    public function setCompanyCloseTime($companyCloseTime)
     {
         $this->values['CompanyCloseTime'] = $companyCloseTime;
         return $this;
@@ -160,10 +160,10 @@ class PickupOriginDetail extends AbstractComplexType
     /**
      * FedEx IVR Only
      *
-     * @param time $lastAccessTime
+     * @param string $lastAccessTime
      * @return $this
      */
-    public function setLastAccessTime(time $lastAccessTime)
+    public function setLastAccessTime($lastAccessTime)
     {
         $this->values['LastAccessTime'] = $lastAccessTime;
         return $this;

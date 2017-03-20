@@ -13,7 +13,7 @@ use FedEx\AbstractComplexType;
  * @property string $EmailLabelUrl
  * @property string $UserId
  * @property string $Password
- * @property dateTime $ExpirationTimestamp
+ * @property string $ExpirationTimestamp
 
  */
 class PendingShipmentAccessDetail extends AbstractComplexType
@@ -64,7 +64,7 @@ class PendingShipmentAccessDetail extends AbstractComplexType
     /**
      * This element is currently not supported and is for the future use.
      *
-     * @param dateTime $expirationTimestamp
+     * @param string $expirationTimestamp
      * @return $this
      */
     public function setExpirationTimestamp($expirationTimestamp)

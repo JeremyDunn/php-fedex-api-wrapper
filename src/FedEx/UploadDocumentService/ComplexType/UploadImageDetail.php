@@ -11,7 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Upload Document Service
  *
  * @property \FedEx\UploadDocumentService\SimpleType\ImageId|string $Id
- * @property base64Binary $Image
+ * @property string $Image
 
  */
 class UploadImageDetail extends AbstractComplexType
@@ -38,7 +38,7 @@ class UploadImageDetail extends AbstractComplexType
     /**
      * Set Image
      *
-     * @param base64Binary $image
+     * @param string $image
      * @return $this
      */
     public function setImage($image)

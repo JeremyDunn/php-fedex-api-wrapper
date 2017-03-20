@@ -10,9 +10,9 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  *
- * @property nonNegativeInteger $Length
- * @property nonNegativeInteger $Width
- * @property nonNegativeInteger $Height
+ * @property int $Length
+ * @property int $Width
+ * @property int $Height
  * @property \FedEx\RateService\SimpleType\LinearUnits|string $Units
 
  */
@@ -28,7 +28,7 @@ class Dimensions extends AbstractComplexType
     /**
      * Set Length
      *
-     * @param nonNegativeInteger $length
+     * @param int $length
      * @return $this
      */
     public function setLength($length)
@@ -40,7 +40,7 @@ class Dimensions extends AbstractComplexType
     /**
      * Set Width
      *
-     * @param nonNegativeInteger $width
+     * @param int $width
      * @return $this
      */
     public function setWidth($width)
@@ -52,7 +52,7 @@ class Dimensions extends AbstractComplexType
     /**
      * Set Height
      *
-     * @param nonNegativeInteger $height
+     * @param int $height
      * @return $this
      */
     public function setHeight($height)

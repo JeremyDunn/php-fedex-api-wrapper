@@ -11,7 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Ship Service
  *
  * @property string $TrackingNumber
- * @property date $ShipDate
+ * @property string $ShipDate
 
  */
 class ReturnAssociationDetail extends AbstractComplexType
@@ -38,7 +38,7 @@ class ReturnAssociationDetail extends AbstractComplexType
     /**
      * Set ShipDate
      *
-     * @param date $shipDate
+     * @param string $shipDate
      * @return $this
      */
     public function setShipDate($shipDate)

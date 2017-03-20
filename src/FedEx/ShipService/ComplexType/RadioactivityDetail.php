@@ -10,9 +10,9 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  *
- * @property decimal $TransportIndex
- * @property decimal $SurfaceReading
- * @property decimal $CriticalitySafetyIndex
+ * @property float $TransportIndex
+ * @property float $SurfaceReading
+ * @property float $CriticalitySafetyIndex
  * @property Dimensions $Dimensions
 
  */
@@ -28,7 +28,7 @@ class RadioactivityDetail extends AbstractComplexType
     /**
      * Set TransportIndex
      *
-     * @param decimal $transportIndex
+     * @param float $transportIndex
      * @return $this
      */
     public function setTransportIndex($transportIndex)
@@ -40,7 +40,7 @@ class RadioactivityDetail extends AbstractComplexType
     /**
      * Set SurfaceReading
      *
-     * @param decimal $surfaceReading
+     * @param float $surfaceReading
      * @return $this
      */
     public function setSurfaceReading($surfaceReading)
@@ -52,7 +52,7 @@ class RadioactivityDetail extends AbstractComplexType
     /**
      * Set CriticalitySafetyIndex
      *
-     * @param decimal $criticalitySafetyIndex
+     * @param float $criticalitySafetyIndex
      * @return $this
      */
     public function setCriticalitySafetyIndex($criticalitySafetyIndex)

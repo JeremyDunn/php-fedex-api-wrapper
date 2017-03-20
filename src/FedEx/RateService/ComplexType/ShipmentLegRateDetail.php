@@ -21,9 +21,9 @@ use FedEx\AbstractComplexType;
  * @property \FedEx\RateService\SimpleType\MinimumChargeType|string $MinimumChargeType
  * @property CurrencyExchangeRate $CurrencyExchangeRate
  * @property \FedEx\RateService\SimpleType\SpecialRatingAppliedType|string[] $SpecialRatingApplied
- * @property nonNegativeInteger $DimDivisor
+ * @property int $DimDivisor
  * @property \FedEx\RateService\SimpleType\RateDimensionalDivisorType|string $DimDivisorType
- * @property decimal $FuelSurchargePercent
+ * @property float $FuelSurchargePercent
  * @property Weight $TotalBillingWeight
  * @property Weight $TotalDimWeight
  * @property Money $TotalBaseCharge
@@ -190,7 +190,7 @@ class ShipmentLegRateDetail extends AbstractComplexType
     /**
      * Set DimDivisor
      *
-     * @param nonNegativeInteger $dimDivisor
+     * @param int $dimDivisor
      * @return $this
      */
     public function setDimDivisor($dimDivisor)
@@ -214,7 +214,7 @@ class ShipmentLegRateDetail extends AbstractComplexType
     /**
      * Set FuelSurchargePercent
      *
-     * @param decimal $fuelSurchargePercent
+     * @param float $fuelSurchargePercent
      * @return $this
      */
     public function setFuelSurchargePercent($fuelSurchargePercent)

@@ -14,11 +14,11 @@ use FedEx\AbstractComplexType;
  * @property Notification[] $Notifications
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
- * @property dateTime $RequestTimestamp
+ * @property string $RequestTimestamp
  * @property PickupScheduleOption[] $Options
  * @property \FedEx\Pickup\SimpleType\CloseTimeType|string $CloseTimeType
- * @property time $CloseTime
- * @property time $LocalTime
+ * @property string $CloseTime
+ * @property string $LocalTime
 
  */
 class PickupAvailabilityReply extends AbstractComplexType
@@ -81,7 +81,7 @@ class PickupAvailabilityReply extends AbstractComplexType
     /**
      * the point in time when the request was processed
      *
-     * @param dateTime $requestTimestamp
+     * @param string $requestTimestamp
      * @return $this
      */
     public function setRequestTimestamp($requestTimestamp)
@@ -117,10 +117,10 @@ class PickupAvailabilityReply extends AbstractComplexType
     /**
      * Close time corresponding to the above specified type
      *
-     * @param time $closeTime
+     * @param string $closeTime
      * @return $this
      */
-    public function setCloseTime(time $closeTime)
+    public function setCloseTime($closeTime)
     {
         $this->values['CloseTime'] = $closeTime;
         return $this;
@@ -129,10 +129,10 @@ class PickupAvailabilityReply extends AbstractComplexType
     /**
      * Local time of the service center that will service the pickup
      *
-     * @param time $localTime
+     * @param string $localTime
      * @return $this
      */
-    public function setLocalTime(time $localTime)
+    public function setLocalTime($localTime)
     {
         $this->values['LocalTime'] = $localTime;
         return $this;

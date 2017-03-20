@@ -11,7 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Close Service
  *
  * @property string $FileName
- * @property base64Binary $File
+ * @property string $File
 
  */
 class ManifestFile extends AbstractComplexType
@@ -38,7 +38,7 @@ class ManifestFile extends AbstractComplexType
     /**
      * Set File
      *
-     * @param base64Binary $file
+     * @param string $file
      * @return $this
      */
     public function setFile($file)

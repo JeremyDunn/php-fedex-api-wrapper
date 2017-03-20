@@ -10,9 +10,9 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  *
- * @property positiveInteger $SequenceNumber
+ * @property int $SequenceNumber
  * @property TrackingId[] $TrackingIds
- * @property nonNegativeInteger $GroupNumber
+ * @property int $GroupNumber
  * @property \FedEx\ShipService\SimpleType\OversizeClassType|string $OversizeClass
  * @property PackageRating $PackageRating
  * @property PackageOperationalDetail $OperationalDetail
@@ -36,7 +36,7 @@ class CompletedPackageDetail extends AbstractComplexType
     /**
      * The package sequence number of this package in a multiple piece shipment.
      *
-     * @param positiveInteger $sequenceNumber
+     * @param int $sequenceNumber
      * @return $this
      */
     public function setSequenceNumber($sequenceNumber)
@@ -60,7 +60,7 @@ class CompletedPackageDetail extends AbstractComplexType
     /**
      * Used with request containing PACKAGE_GROUPS, to identify which group of identical packages was used to produce a reply item.
      *
-     * @param nonNegativeInteger $groupNumber
+     * @param int $groupNumber
      * @return $this
      */
     public function setGroupNumber($groupNumber)

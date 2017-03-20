@@ -15,8 +15,8 @@ use FedEx\AbstractComplexType;
  * @property \FedEx\ShipService\SimpleType\ShippingDocumentDispositionType|string $ShippingDocumentDisposition
  * @property string $AccessReference
  * @property \FedEx\ShipService\SimpleType\ShippingDocumentImageType|string $ImageType
- * @property nonNegativeInteger $Resolution
- * @property nonNegativeInteger $CopiesToPrint
+ * @property int $Resolution
+ * @property int $CopiesToPrint
  * @property ShippingDocumentPart[] $Parts
 
  */
@@ -92,7 +92,7 @@ class ShippingDocument extends AbstractComplexType
     /**
      * Specifies the image resolution in DPI (dots per inch).
      *
-     * @param nonNegativeInteger $resolution
+     * @param int $resolution
      * @return $this
      */
     public function setResolution($resolution)
@@ -104,7 +104,7 @@ class ShippingDocument extends AbstractComplexType
     /**
      * Can be zero for documents whose disposition implies that no content is included.
      *
-     * @param nonNegativeInteger $copiesToPrint
+     * @param int $copiesToPrint
      * @return $this
      */
     public function setCopiesToPrint($copiesToPrint)

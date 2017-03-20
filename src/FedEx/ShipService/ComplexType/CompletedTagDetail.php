@@ -11,11 +11,11 @@ use FedEx\AbstractComplexType;
  * @subpackage  Ship Service
  *
  * @property string $ConfirmationNumber
- * @property duration $AccessTime
- * @property time $CutoffTime
+ * @property string $AccessTime
+ * @property string $CutoffTime
  * @property string $Location
- * @property dateTime $DeliveryCommitment
- * @property date $DispatchDate
+ * @property string $DeliveryCommitment
+ * @property string $DispatchDate
 
  */
 class CompletedTagDetail extends AbstractComplexType
@@ -42,10 +42,10 @@ class CompletedTagDetail extends AbstractComplexType
     /**
      * As of June 2007, returned only for FedEx Express services.
      *
-     * @param duration $accessTime
+     * @param string $accessTime
      * @return $this
      */
-    public function setAccessTime(duration $accessTime)
+    public function setAccessTime($accessTime)
     {
         $this->values['AccessTime'] = $accessTime;
         return $this;
@@ -54,10 +54,10 @@ class CompletedTagDetail extends AbstractComplexType
     /**
      * As of June 2007, returned only for FedEx Express services.
      *
-     * @param time $cutoffTime
+     * @param string $cutoffTime
      * @return $this
      */
-    public function setCutoffTime(time $cutoffTime)
+    public function setCutoffTime($cutoffTime)
     {
         $this->values['CutoffTime'] = $cutoffTime;
         return $this;
@@ -78,7 +78,7 @@ class CompletedTagDetail extends AbstractComplexType
     /**
      * As of June 2007, returned only for FedEx Express services.
      *
-     * @param dateTime $deliveryCommitment
+     * @param string $deliveryCommitment
      * @return $this
      */
     public function setDeliveryCommitment($deliveryCommitment)
@@ -90,7 +90,7 @@ class CompletedTagDetail extends AbstractComplexType
     /**
      * FEDEX INTERNAL USE ONLY: for use by INET.
      *
-     * @param date $dispatchDate
+     * @param string $dispatchDate
      * @return $this
      */
     public function setDispatchDate($dispatchDate)

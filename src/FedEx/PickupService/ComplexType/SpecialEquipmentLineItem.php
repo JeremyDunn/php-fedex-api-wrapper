@@ -11,7 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Pickup Service
  *
  * @property \FedEx\Pickup\SimpleType\SpecialEquipmentType|string $Type
- * @property duration $Duration
+ * @property string $Duration
 
  */
 class SpecialEquipmentLineItem extends AbstractComplexType
@@ -38,10 +38,10 @@ class SpecialEquipmentLineItem extends AbstractComplexType
     /**
      * Total amount of time the equipment was used
      *
-     * @param duration $duration
+     * @param string $duration
      * @return $this
      */
-    public function setDuration(duration $duration)
+    public function setDuration($duration)
     {
         $this->values['Duration'] = $duration;
         return $this;

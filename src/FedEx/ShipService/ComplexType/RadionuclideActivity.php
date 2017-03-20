@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  *
- * @property decimal $Value
+ * @property float $Value
  * @property \FedEx\ShipService\SimpleType\RadioactivityUnitOfMeasure|string $UnitOfMeasure
 
  */
@@ -26,7 +26,7 @@ class RadionuclideActivity extends AbstractComplexType
     /**
      * Set Value
      *
-     * @param decimal $value
+     * @param float $value
      * @return $this
      */
     public function setValue($value)

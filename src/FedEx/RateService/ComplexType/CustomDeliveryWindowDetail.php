@@ -11,9 +11,9 @@ use FedEx\AbstractComplexType;
  * @subpackage  Rate Service
  *
  * @property \FedEx\RateService\SimpleType\CustomDeliveryWindowType|string $Type
- * @property time $RequestTime
+ * @property string $RequestTime
  * @property DateRange $RequestRange
- * @property date $RequestDate
+ * @property string $RequestDate
 
  */
 class CustomDeliveryWindowDetail extends AbstractComplexType
@@ -40,10 +40,10 @@ class CustomDeliveryWindowDetail extends AbstractComplexType
     /**
      * Time by which delivery is requested.
      *
-     * @param time $requestTime
+     * @param string $requestTime
      * @return $this
      */
-    public function setRequestTime(time $requestTime)
+    public function setRequestTime($requestTime)
     {
         $this->values['RequestTime'] = $requestTime;
         return $this;
@@ -64,7 +64,7 @@ class CustomDeliveryWindowDetail extends AbstractComplexType
     /**
      * Date for custom delivery request; only used for types of ON, BETWEEN, or AFTER.
      *
-     * @param date $requestDate
+     * @param string $requestDate
      * @return $this
      */
     public function setRequestDate($requestDate)

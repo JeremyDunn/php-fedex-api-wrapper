@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *
- * @property positiveInteger $Count
+ * @property int $Count
 
  */
 class MarkingOrTaggingDetail extends AbstractComplexType
@@ -25,7 +25,7 @@ class MarkingOrTaggingDetail extends AbstractComplexType
     /**
      * Number of pieces to be marked or tagged by FedEx.
      *
-     * @param positiveInteger $count
+     * @param int $count
      * @return $this
      */
     public function setCount($count)

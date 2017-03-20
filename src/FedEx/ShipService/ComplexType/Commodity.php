@@ -14,19 +14,19 @@ use FedEx\AbstractComplexType;
  * @subpackage  Ship Service
  *
  * @property string $Name
- * @property nonNegativeInteger $NumberOfPieces
+ * @property int $NumberOfPieces
  * @property string $Description
  * @property string $CountryOfManufacture
  * @property string $HarmonizedCode
  * @property Weight $Weight
- * @property nonNegativeInteger $Quantity
+ * @property int $Quantity
  * @property string $QuantityUnits
  * @property Measure[] $AdditionalMeasures
  * @property Money $UnitPrice
  * @property Money $CustomsValue
  * @property EdtExciseCondition[] $ExciseConditions
  * @property string $ExportLicenseNumber
- * @property date $ExportLicenseExpirationDate
+ * @property string $ExportLicenseExpirationDate
  * @property string $CIMarksAndNumbers
  * @property string $PartNumber
  * @property NaftaCommodityDetail $NaftaDetail
@@ -56,7 +56,7 @@ class Commodity extends AbstractComplexType
     /**
      * Total number of pieces of this commodity
      *
-     * @param nonNegativeInteger $numberOfPieces
+     * @param int $numberOfPieces
      * @return $this
      */
     public function setNumberOfPieces($numberOfPieces)
@@ -119,7 +119,7 @@ class Commodity extends AbstractComplexType
     /**
      * This field is used for enterprise transactions.
      *
-     * @param nonNegativeInteger $quantity
+     * @param int $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -212,7 +212,7 @@ class Commodity extends AbstractComplexType
                 Required only if commodity is shipped on commerce export license, and Export License Number is supplied.
               
      *
-     * @param date $exportLicenseExpirationDate
+     * @param string $exportLicenseExpirationDate
      * @return $this
      */
     public function setExportLicenseExpirationDate($exportLicenseExpirationDate)

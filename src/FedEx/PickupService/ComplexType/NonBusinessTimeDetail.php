@@ -10,8 +10,8 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *
- * @property nonNegativeInteger $PersonDays
- * @property nonNegativeInteger $PersonHours
+ * @property int $PersonDays
+ * @property int $PersonHours
 
  */
 class NonBusinessTimeDetail extends AbstractComplexType
@@ -26,7 +26,7 @@ class NonBusinessTimeDetail extends AbstractComplexType
     /**
      * Total number of person days for full non-business days.
      *
-     * @param nonNegativeInteger $personDays
+     * @param int $personDays
      * @return $this
      */
     public function setPersonDays($personDays)
@@ -38,7 +38,7 @@ class NonBusinessTimeDetail extends AbstractComplexType
     /**
      * Total number of person hours (whole or partial hours) for non-business hours.
      *
-     * @param nonNegativeInteger $personHours
+     * @param int $personHours
      * @return $this
      */
     public function setPersonHours($personHours)

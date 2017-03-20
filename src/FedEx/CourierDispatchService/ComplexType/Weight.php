@@ -11,7 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Courier Dispatch Service
  *
  * @property \FedEx\CourierDispatchService\SimpleType\WeightUnits|string $Units
- * @property decimal $Value
+ * @property float $Value
 
  */
 class Weight extends AbstractComplexType
@@ -38,7 +38,7 @@ class Weight extends AbstractComplexType
     /**
      * Identifies the weight value of the package.
      *
-     * @param decimal $value
+     * @param float $value
      * @return $this
      */
     public function setValue($value)

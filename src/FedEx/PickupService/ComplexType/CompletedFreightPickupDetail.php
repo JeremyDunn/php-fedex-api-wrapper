@@ -12,9 +12,9 @@ use FedEx\AbstractComplexType;
  *
  * @property FreightServiceCenterDetail $Origin
  * @property CompletedFreightPickupLineItem[] $LineItems
- * @property nonNegativeInteger $TotalPieces
+ * @property int $TotalPieces
  * @property Weight $TotalWeight
- * @property nonNegativeInteger $TotalHandlingUnits
+ * @property int $TotalHandlingUnits
  * @property \FedEx\Pickup\SimpleType\PickupEventType|string $Status
 
  */
@@ -54,7 +54,7 @@ class CompletedFreightPickupDetail extends AbstractComplexType
     /**
      * Total number of pieces from all line items from request.
      *
-     * @param nonNegativeInteger $totalPieces
+     * @param int $totalPieces
      * @return $this
      */
     public function setTotalPieces($totalPieces)
@@ -78,7 +78,7 @@ class CompletedFreightPickupDetail extends AbstractComplexType
     /**
      * Total handling units from all line items from request.
      *
-     * @param nonNegativeInteger $totalHandlingUnits
+     * @param int $totalHandlingUnits
      * @return $this
      */
     public function setTotalHandlingUnits($totalHandlingUnits)

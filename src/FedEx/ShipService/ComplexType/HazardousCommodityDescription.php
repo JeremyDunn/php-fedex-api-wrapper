@@ -11,13 +11,13 @@ use FedEx\AbstractComplexType;
  * @subpackage  Ship Service
  *
  * @property string $Id
- * @property nonNegativeInteger $SequenceNumber
+ * @property int $SequenceNumber
  * @property \FedEx\ShipService\SimpleType\HazardousCommodityPackingGroupType|string $PackingGroup
  * @property HazardousCommodityPackingDetail $PackingDetails
  * @property boolean $ReportableQuantity
  * @property string $ProperShippingName
  * @property string $TechnicalName
- * @property decimal $Percentage
+ * @property float $Percentage
  * @property string $HazardClass
  * @property string[] $SubsidiaryClasses
  * @property string $LabelText
@@ -49,7 +49,7 @@ class HazardousCommodityDescription extends AbstractComplexType
     /**
      * In conjunction with the regulatory identifier, this field uniquely identifies a specific hazardous materials commodity.
      *
-     * @param nonNegativeInteger $sequenceNumber
+     * @param int $sequenceNumber
      * @return $this
      */
     public function setSequenceNumber($sequenceNumber)
@@ -121,7 +121,7 @@ class HazardousCommodityDescription extends AbstractComplexType
     /**
      * Set Percentage
      *
-     * @param decimal $percentage
+     * @param float $percentage
      * @return $this
      */
     public function setPercentage($percentage)

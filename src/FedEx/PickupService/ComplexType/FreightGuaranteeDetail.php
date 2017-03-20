@@ -11,7 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Pickup Service
  *
  * @property \FedEx\Pickup\SimpleType\FreightGuaranteeType|string $Type
- * @property date $Date
+ * @property string $Date
 
  */
 class FreightGuaranteeDetail extends AbstractComplexType
@@ -38,7 +38,7 @@ class FreightGuaranteeDetail extends AbstractComplexType
     /**
      * Date for all Freight guarantee types.
      *
-     * @param date $date
+     * @param string $date
      * @return $this
      */
     public function setDate($date)

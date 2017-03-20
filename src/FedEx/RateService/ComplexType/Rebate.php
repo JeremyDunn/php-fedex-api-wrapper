@@ -13,7 +13,7 @@ use FedEx\AbstractComplexType;
  * @property \FedEx\RateService\SimpleType\RebateType|string $RebateType
  * @property string $Description
  * @property Money $Amount
- * @property decimal $Percent
+ * @property float $Percent
 
  */
 class Rebate extends AbstractComplexType
@@ -64,7 +64,7 @@ class Rebate extends AbstractComplexType
     /**
      * The percentage of the discount applied to the shipment.
      *
-     * @param decimal $percent
+     * @param float $percent
      * @return $this
      */
     public function setPercent($percent)

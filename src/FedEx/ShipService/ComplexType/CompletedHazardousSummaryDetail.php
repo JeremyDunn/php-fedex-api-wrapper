@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  *
- * @property nonNegativeInteger $SmallQuantityExceptionPackageCount
+ * @property int $SmallQuantityExceptionPackageCount
 
  */
 class CompletedHazardousSummaryDetail extends AbstractComplexType
@@ -25,7 +25,7 @@ class CompletedHazardousSummaryDetail extends AbstractComplexType
     /**
      * Specifies the total number of packages containing hazardous commodities in small exceptions.
      *
-     * @param nonNegativeInteger $smallQuantityExceptionPackageCount
+     * @param int $smallQuantityExceptionPackageCount
      * @return $this
      */
     public function setSmallQuantityExceptionPackageCount($smallQuantityExceptionPackageCount)

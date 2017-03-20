@@ -19,7 +19,7 @@ use FedEx\AbstractComplexType;
  * @property string $MessageCode
  * @property string $Message
  * @property string $PRPControlNumber
- * @property time $LastAccessTime
+ * @property string $LastAccessTime
  * @property CompletedFreightPickupDetail $CompletedFreightPickupDetail
 
  */
@@ -143,10 +143,10 @@ class CreatePickupReply extends AbstractComplexType
     /**
      * Used with "stay late" requests; postal-code specific.
      *
-     * @param time $lastAccessTime
+     * @param string $lastAccessTime
      * @return $this
      */
-    public function setLastAccessTime(time $lastAccessTime)
+    public function setLastAccessTime($lastAccessTime)
     {
         $this->values['LastAccessTime'] = $lastAccessTime;
         return $this;

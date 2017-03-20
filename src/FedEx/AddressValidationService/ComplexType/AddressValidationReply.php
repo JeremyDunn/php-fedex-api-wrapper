@@ -14,7 +14,7 @@ use FedEx\AbstractComplexType;
  * @property Notification[] $Notifications
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
- * @property dateTime $ReplyTimestamp
+ * @property string $ReplyTimestamp
  * @property AddressValidationResult[] $AddressResults
 
  */
@@ -78,7 +78,7 @@ class AddressValidationReply extends AbstractComplexType
     /**
      * Set ReplyTimestamp
      *
-     * @param dateTime $replyTimestamp
+     * @param string $replyTimestamp
      * @return $this
      */
     public function setReplyTimestamp($replyTimestamp)
