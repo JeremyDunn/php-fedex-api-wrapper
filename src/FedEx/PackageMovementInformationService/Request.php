@@ -12,46 +12,8 @@ use FedEx\AbstractRequest;
  */
 class Request extends AbstractRequest
 {
-    /**
-     * WSDL Path
-     *
-     * @var string
-     */
-    protected $wsdlPath;
-
-    /**
-     * SoapClient object
-     *
-     * @var SoapClient
-     */
-    protected $soapClient;
-
-    /**
-     * Constructor
-     *
-     * @param string $wsdlPath
-     */
-    public function __construct($wsdlPath = null)
-    {
-        if (null != $wsdlPath) {
-            $this->wsdlPath = $wsdlPath;
-        } else {
-            $this->wsdlPath = realpath(dirname(__FILE__) . '/../_wsdl/PackageMovementInformationService_v5.wsdl');
-        }
-
-        $this->soapClient = new \SoapClient($this->wsdlPath, array('trace' => true));
-    }
-
-    /**
-     * Returns the SoapClient instance
-     *
-     * @return \SoapClient
-     */
-    public function getSoapClient()
-    {
-        return $this->soapClient;
-    }
-
+    protected $wsdlFileName = 'PackageMovementInformationService_v5.wsdl';
+            
     /**
      * Sends the PostalCodeInquiryRequest and returns the response
      *
@@ -60,8 +22,10 @@ class Request extends AbstractRequest
      */
     public function getPostalCodeInquiryReply(ComplexType\PostalCodeInquiryRequest $postalCodeInquiryRequest)
     {
-        return $this->soapClient->postalCodeInquiry($postalCodeInquiryRequest->toArray());
-    }    /**
+        return $this->getSoapClient()->postalCodeInquiry($postalCodeInquiryRequest->toArray());
+    }
+            
+    /**
      * Sends the ServiceAvailabilityRequest and returns the response
      *
      * @param ComplexType\ServiceAvailabilityRequest $serviceAvailabilityRequest
@@ -69,6 +33,7 @@ class Request extends AbstractRequest
      */
     public function getServiceAvailabilityReply(ComplexType\ServiceAvailabilityRequest $serviceAvailabilityRequest)
     {
-        return $this->soapClient->serviceAvailability($serviceAvailabilityRequest->toArray());
+        return $this->getSoapClient()->serviceAvailability($serviceAvailabilityRequest->toArray());
     }
+
 }

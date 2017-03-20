@@ -90,12 +90,13 @@ class GenerateRequestClass extends AbstractGenerate
      */
     protected function getGeneratedFileBody(array $requestFunctionDefinitions)
     {
-        $relativePathToWSDL = $this->getRelativePath($this->exportPath, $this->wsdlPath);
+        $wsdlFileName = basename($this->wsdlPath);
 
         $requestFunctions = '';
 
         foreach ($requestFunctionDefinitions as $functionDefinition) {
             $requestFunctions .= <<<TEXT
+            
     /**
      * Sends the {$functionDefinition['requestObjectName']} and returns the response
      *
@@ -104,8 +105,9 @@ class GenerateRequestClass extends AbstractGenerate
      */
     {$functionDefinition['functionDefinition']}
     {
-        return \$this->soapClient->{$functionDefinition['soapFunction']}({$functionDefinition['arg1VariableName']}->toArray());
+        return \$this->getSoapClient()->{$functionDefinition['soapFunction']}({$functionDefinition['arg1VariableName']}->toArray());
     }
+
 TEXT;
         }
 
@@ -125,46 +127,7 @@ use FedEx\AbstractRequest;
  */
 class Request extends AbstractRequest
 {
-    /**
-     * WSDL Path
-     *
-     * @var string
-     */
-    protected \$wsdlPath;
-
-    /**
-     * SoapClient object
-     *
-     * @var SoapClient
-     */
-    protected \$soapClient;
-
-    /**
-     * Constructor
-     *
-     * @param string \$wsdlPath
-     */
-    public function __construct(\$wsdlPath = null)
-    {
-        if (null != \$wsdlPath) {
-            \$this->wsdlPath = \$wsdlPath;
-        } else {
-            \$this->wsdlPath = realpath(dirname(__FILE__) . '/$relativePathToWSDL');
-        }
-
-        \$this->soapClient = new \SoapClient(\$this->wsdlPath, array('trace' => true));
-    }
-
-    /**
-     * Returns the SoapClient instance
-     *
-     * @return \SoapClient
-     */
-    public function getSoapClient()
-    {
-        return \$this->soapClient;
-    }
-
+    protected \$wsdlFileName = '$wsdlFileName';
 $requestFunctions
 }
 

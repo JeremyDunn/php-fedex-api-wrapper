@@ -12,46 +12,8 @@ use FedEx\AbstractRequest;
  */
 class Request extends AbstractRequest
 {
-    /**
-     * WSDL Path
-     *
-     * @var string
-     */
-    protected $wsdlPath;
-
-    /**
-     * SoapClient object
-     *
-     * @var SoapClient
-     */
-    protected $soapClient;
-
-    /**
-     * Constructor
-     *
-     * @param string $wsdlPath
-     */
-    public function __construct($wsdlPath = null)
-    {
-        if (null != $wsdlPath) {
-            $this->wsdlPath = $wsdlPath;
-        } else {
-            $this->wsdlPath = realpath(dirname(__FILE__) . '/../_wsdl/PickupService_v3.wsdl');
-        }
-
-        $this->soapClient = new \SoapClient($this->wsdlPath, array('trace' => true));
-    }
-
-    /**
-     * Returns the SoapClient instance
-     *
-     * @return \SoapClient
-     */
-    public function getSoapClient()
-    {
-        return $this->soapClient;
-    }
-
+    protected $wsdlFileName = 'PickupService_v3.wsdl';
+            
     /**
      * Sends the PickupAvailabilityRequest and returns the response
      *
@@ -60,8 +22,10 @@ class Request extends AbstractRequest
      */
     public function getGetPickupAvailabilityReply(ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest)
     {
-        return $this->soapClient->getPickupAvailability($pickupAvailabilityRequest->toArray());
-    }    /**
+        return $this->getSoapClient()->getPickupAvailability($pickupAvailabilityRequest->toArray());
+    }
+            
+    /**
      * Sends the CreatePickupRequest and returns the response
      *
      * @param ComplexType\CreatePickupRequest $createPickupRequest
@@ -69,8 +33,10 @@ class Request extends AbstractRequest
      */
     public function getCreatePickupReply(ComplexType\CreatePickupRequest $createPickupRequest)
     {
-        return $this->soapClient->createPickup($createPickupRequest->toArray());
-    }    /**
+        return $this->getSoapClient()->createPickup($createPickupRequest->toArray());
+    }
+            
+    /**
      * Sends the CancelPickupRequest and returns the response
      *
      * @param ComplexType\CancelPickupRequest $cancelPickupRequest
@@ -78,6 +44,7 @@ class Request extends AbstractRequest
      */
     public function getCancelPickupReply(ComplexType\CancelPickupRequest $cancelPickupRequest)
     {
-        return $this->soapClient->cancelPickup($cancelPickupRequest->toArray());
+        return $this->getSoapClient()->cancelPickup($cancelPickupRequest->toArray());
     }
+
 }

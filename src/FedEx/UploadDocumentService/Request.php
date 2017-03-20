@@ -12,46 +12,8 @@ use FedEx\AbstractRequest;
  */
 class Request extends AbstractRequest
 {
-    /**
-     * WSDL Path
-     *
-     * @var string
-     */
-    protected $wsdlPath;
-
-    /**
-     * SoapClient object
-     *
-     * @var SoapClient
-     */
-    protected $soapClient;
-
-    /**
-     * Constructor
-     *
-     * @param string $wsdlPath
-     */
-    public function __construct($wsdlPath = null)
-    {
-        if (null != $wsdlPath) {
-            $this->wsdlPath = $wsdlPath;
-        } else {
-            $this->wsdlPath = realpath(dirname(__FILE__) . '/../_wsdl/UploadDocumentService_v1.wsdl');
-        }
-
-        $this->soapClient = new \SoapClient($this->wsdlPath, array('trace' => true));
-    }
-
-    /**
-     * Returns the SoapClient instance
-     *
-     * @return \SoapClient
-     */
-    public function getSoapClient()
-    {
-        return $this->soapClient;
-    }
-
+    protected $wsdlFileName = 'UploadDocumentService_v1.wsdl';
+            
     /**
      * Sends the UploadDocumentsRequest and returns the response
      *
@@ -60,8 +22,10 @@ class Request extends AbstractRequest
      */
     public function getUploadDocumentsReply(ComplexType\UploadDocumentsRequest $uploadDocumentsRequest)
     {
-        return $this->soapClient->uploadDocuments($uploadDocumentsRequest->toArray());
-    }    /**
+        return $this->getSoapClient()->uploadDocuments($uploadDocumentsRequest->toArray());
+    }
+            
+    /**
      * Sends the UploadImagesRequest and returns the response
      *
      * @param ComplexType\UploadImagesRequest $uploadImagesRequest
@@ -69,6 +33,7 @@ class Request extends AbstractRequest
      */
     public function getUploadImagesReply(ComplexType\UploadImagesRequest $uploadImagesRequest)
     {
-        return $this->soapClient->uploadImages($uploadImagesRequest->toArray());
+        return $this->getSoapClient()->uploadImages($uploadImagesRequest->toArray());
     }
+
 }

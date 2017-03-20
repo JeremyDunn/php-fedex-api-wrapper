@@ -12,46 +12,8 @@ use FedEx\AbstractRequest;
  */
 class Request extends AbstractRequest
 {
-    /**
-     * WSDL Path
-     *
-     * @var string
-     */
-    protected $wsdlPath;
-
-    /**
-     * SoapClient object
-     *
-     * @var SoapClient
-     */
-    protected $soapClient;
-
-    /**
-     * Constructor
-     *
-     * @param string $wsdlPath
-     */
-    public function __construct($wsdlPath = null)
-    {
-        if (null != $wsdlPath) {
-            $this->wsdlPath = $wsdlPath;
-        } else {
-            $this->wsdlPath = realpath(dirname(__FILE__) . '/../_wsdl/ShipService_v12.wsdl');
-        }
-
-        $this->soapClient = new \SoapClient($this->wsdlPath, array('trace' => true));
-    }
-
-    /**
-     * Returns the SoapClient instance
-     *
-     * @return \SoapClient
-     */
-    public function getSoapClient()
-    {
-        return $this->soapClient;
-    }
-
+    protected $wsdlFileName = 'ShipService_v12.wsdl';
+            
     /**
      * Sends the CreatePendingShipmentRequest and returns the response
      *
@@ -60,8 +22,10 @@ class Request extends AbstractRequest
      */
     public function getCreatePendingShipmentReply(ComplexType\CreatePendingShipmentRequest $createPendingShipmentRequest)
     {
-        return $this->soapClient->createPendingShipment($createPendingShipmentRequest->toArray());
-    }    /**
+        return $this->getSoapClient()->createPendingShipment($createPendingShipmentRequest->toArray());
+    }
+            
+    /**
      * Sends the ProcessTagRequest and returns the response
      *
      * @param ComplexType\ProcessTagRequest $processTagRequest
@@ -69,8 +33,10 @@ class Request extends AbstractRequest
      */
     public function getProcessTagReply(ComplexType\ProcessTagRequest $processTagRequest)
     {
-        return $this->soapClient->processTag($processTagRequest->toArray());
-    }    /**
+        return $this->getSoapClient()->processTag($processTagRequest->toArray());
+    }
+            
+    /**
      * Sends the ProcessShipmentRequest and returns the response
      *
      * @param ComplexType\ProcessShipmentRequest $processShipmentRequest
@@ -78,8 +44,10 @@ class Request extends AbstractRequest
      */
     public function getProcessShipmentReply(ComplexType\ProcessShipmentRequest $processShipmentRequest)
     {
-        return $this->soapClient->processShipment($processShipmentRequest->toArray());
-    }    /**
+        return $this->getSoapClient()->processShipment($processShipmentRequest->toArray());
+    }
+            
+    /**
      * Sends the CancelPendingShipmentRequest and returns the response
      *
      * @param ComplexType\CancelPendingShipmentRequest $cancelPendingShipmentRequest
@@ -87,8 +55,10 @@ class Request extends AbstractRequest
      */
     public function getCancelPendingShipmentReply(ComplexType\CancelPendingShipmentRequest $cancelPendingShipmentRequest)
     {
-        return $this->soapClient->cancelPendingShipment($cancelPendingShipmentRequest->toArray());
-    }    /**
+        return $this->getSoapClient()->cancelPendingShipment($cancelPendingShipmentRequest->toArray());
+    }
+            
+    /**
      * Sends the DeleteTagRequest and returns the response
      *
      * @param ComplexType\DeleteTagRequest $deleteTagRequest
@@ -96,8 +66,10 @@ class Request extends AbstractRequest
      */
     public function getDeleteTagReply(ComplexType\DeleteTagRequest $deleteTagRequest)
     {
-        return $this->soapClient->deleteTag($deleteTagRequest->toArray());
-    }    /**
+        return $this->getSoapClient()->deleteTag($deleteTagRequest->toArray());
+    }
+            
+    /**
      * Sends the DeleteShipmentRequest and returns the response
      *
      * @param ComplexType\DeleteShipmentRequest $deleteShipmentRequest
@@ -105,8 +77,10 @@ class Request extends AbstractRequest
      */
     public function getDeleteShipmentReply(ComplexType\DeleteShipmentRequest $deleteShipmentRequest)
     {
-        return $this->soapClient->deleteShipment($deleteShipmentRequest->toArray());
-    }    /**
+        return $this->getSoapClient()->deleteShipment($deleteShipmentRequest->toArray());
+    }
+            
+    /**
      * Sends the ValidateShipmentRequest and returns the response
      *
      * @param ComplexType\ValidateShipmentRequest $validateShipmentRequest
@@ -114,6 +88,7 @@ class Request extends AbstractRequest
      */
     public function getValidateShipmentReply(ComplexType\ValidateShipmentRequest $validateShipmentRequest)
     {
-        return $this->soapClient->validateShipment($validateShipmentRequest->toArray());
+        return $this->getSoapClient()->validateShipment($validateShipmentRequest->toArray());
     }
+
 }
