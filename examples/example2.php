@@ -8,110 +8,74 @@
 require_once 'credentials.php';
 require_once 'bootstrap.php';
 
-use     FedEx\RateService,
-        FedEx\RateService\ComplexType,
-        FedEx\RateService\SimpleType;
+use FedEx\RateService\Request;
+use FedEx\RateService\ComplexType;
+use FedEx\RateService\SimpleType;
 
 $rateRequest = new ComplexType\RateRequest();
 
-//WebAuthenticationDetail
-$rateRequest->setWebAuthenticationDetail(new ComplexType\WebAuthenticationDetail(array(
-    'UserCredential' => new ComplexType\WebAuthenticationCredential(array(
-        'Key' => FEDEX_KEY,
-        'Password' => FEDEX_PASSWORD
-    ))
-)));
+//authentication & client details
+$rateRequest->WebAuthenticationDetail->UserCredential->Key = FEDEX_KEY;
+$rateRequest->WebAuthenticationDetail->UserCredential->Password = FEDEX_PASSWORD;
+$rateRequest->ClientDetail->AccountNumber = FEDEX_ACCOUNT_NUMBER;
+$rateRequest->ClientDetail->MeterNumber = FEDEX_METER_NUMBER;
 
-//ClientDetail
-$rateRequest->setClientDetail(new ComplexType\ClientDetail(array(
-    'AccountNumber' => FEDEX_ACCOUNT_NUMBER,
-    'MeterNumber' => FEDEX_METER_NUMBER
-)));
+$rateRequest->TransactionDetail->CustomerTransactionId = 'testing rate service request';
 
-//TransactionDetail
-$rateRequest->setTransactionDetail(new ComplexType\TransactionDetail(array(
-    'CustomerTransactionId' => ' *** Rate Available Services Request v8 using PHP ***'
-)));
+//version
+$rateRequest->Version->ServiceId = 'crs';
+$rateRequest->Version->Major = 10;
+$rateRequest->Version->Minor = 0;
+$rateRequest->Version->Intermediate = 0;
 
-//Version
-$rateRequest->setVersion(new ComplexType\VersionId(array(
-    'ServiceId' => 'crs',
-    'Major' => 10,
-    'Intermediate' => 0,
-    'Minor' => 0
-)));
+$rateRequest->ReturnTransitAndCommit = true;
 
-//ReturnTransitAndCommit
-$rateRequest->setReturnTransitAndCommit(true);
+//shipper
+$rateRequest->RequestedShipment->Shipper->Address->StreetLines = ['10 Fed Ex Pkwy'];
+$rateRequest->RequestedShipment->Shipper->Address->City = 'Memphis';
+$rateRequest->RequestedShipment->Shipper->Address->StateOrProvinceCode = 'TN';
+$rateRequest->RequestedShipment->Shipper->Address->PostalCode = 38115;
+$rateRequest->RequestedShipment->Shipper->Address->CountryCode = 'US';
 
-//RequestedShipment
-$rateRequest->setRequestedShipment(new ComplexType\RequestedShipment(array(
-    'DropoffType' => new SimpleType\DropoffType(SimpleType\DropoffType::_REGULAR_PICKUP),
-    'ShipTimestamp' => date('c'),
-    'Shipper' => new ComplexType\Party(array(
-        'Address' => new ComplexType\Address(array(
-            'StreetLines' => array('10 Fed Ex Pkwy'),
-            'City' => 'Memphis',
-            'StateOrProvinceCode' => 'TN',
-            'PostalCode' => 38115,
-            'CountryCode' => 'US'
-        ))
-    )),
-    'Recipient' => new ComplexType\Party(array(
-        'Address' => new ComplexType\Address(array(
-            'StreetLines' => array('13450 Farmcrest Ct'),
-            'City' => 'Herndon',
-            'StateOrProvinceCode' => 'VA',
-            'PostalCode' => 20171,
-            'CountryCode' => 'US'
-        ))
-    )),
-    'ShippingChargesPayment' => new ComplexType\Payment(array(
-        'PaymentType' => new SimpleType\PaymentType(SimpleType\PaymentType::_SENDER),
-        'Payor' => new ComplexType\Payor(array(
-            'AccountNumber' => FEDEX_ACCOUNT_NUMBER,
-            'CountryCode' => 'US'
-        ))
-    )),
-    'RateRequestTypes' => array(
-        new SimpleType\RateRequestType(SimpleType\RateRequestType::_ACCOUNT),
-        new SimpleType\RateRequestType(SimpleType\RateRequestType::_LIST)
-    ),
-    'PackageCount' => 2,
-    'PackageDetail' => new SimpleType\RequestedPackageDetailType(SimpleType\RequestedPackageDetailType::_INDIVIDUAL_PACKAGES),
-    'RequestedPackageLineItems' => array(
-        new ComplexType\RequestedPackageLineItem(array(
-            'Weight' => new ComplexType\Weight(array(
-                'Units' => new SimpleType\WeightUnits(SimpleType\WeightUnits::_LB),
-                'Value' => 2.0
-            )),
-            'Dimensions' => new ComplexType\Dimensions(array(
-                'Length' => 10,
-                'Width' => 10,
-                'Height' => 3,
-                'Units' => new SimpleType\LinearUnits(SimpleType\LinearUnits::_IN)
-            )),
-            'GroupPackageCount' => 1
-        )),
-        new ComplexType\RequestedPackageLineItem(array(
-            'Weight' => new ComplexType\Weight(array(
-                'Units' => new SimpleType\WeightUnits(SimpleType\WeightUnits::_LB),
-                'Value' => 2
-            )),
-            'Dimensions' => new ComplexType\Dimensions(array(
-                'Length' => 20,
-                'Width' => 20,
-                'Height' => 10,
-                'Units' => new SimpleType\LinearUnits(SimpleType\LinearUnits::_IN)
-            )),
-            'GroupPackageCount' => 1
-        ))
-    )
-)));
+//recipient
+$rateRequest->RequestedShipment->Recipient->Address->StreetLines = ['13450 Farmcrest Ct'];
+$rateRequest->RequestedShipment->Recipient->Address->City = 'Herndon';
+$rateRequest->RequestedShipment->Recipient->Address->StateOrProvinceCode = 'VA';
+$rateRequest->RequestedShipment->Recipient->Address->PostalCode = 20171;
+$rateRequest->RequestedShipment->Recipient->Address->CountryCode = 'US';
 
+//shipping charges payment
+$rateRequest->RequestedShipment->ShippingChargesPayment->PaymentType = SimpleType\PaymentType::_SENDER;
+$rateRequest->RequestedShipment->ShippingChargesPayment->Payor->AccountNumber = FEDEX_ACCOUNT_NUMBER;
+$rateRequest->RequestedShipment->ShippingChargesPayment->Payor->CountryCode = 'US';
 
-var_dump($rateRequest->toArray());
-echo "<hr />";
+//rate request types
+$rateRequest->RequestedShipment->RateRequestTypes = [SimpleType\RateRequestType::_ACCOUNT, SimpleType\RateRequestType::_LIST];
 
-$validateShipmentRequest = new RateService\Request();
-var_dump($validateShipmentRequest->getGetRatesReply($rateRequest));
+$rateRequest->RequestedShipment->PackageCount = 2;
+
+//create package line items
+$rateRequest->RequestedShipment->RequestedPackageLineItems = [new ComplexType\RequestedPackageLineItem(), new ComplexType\RequestedPackageLineItem()];
+
+//package 1
+$rateRequest->RequestedShipment->RequestedPackageLineItems[0]->Weight->Value = 2;
+$rateRequest->RequestedShipment->RequestedPackageLineItems[0]->Weight->Units = SimpleType\WeightUnits::_LB;
+$rateRequest->RequestedShipment->RequestedPackageLineItems[0]->Dimensions->Length = 10;
+$rateRequest->RequestedShipment->RequestedPackageLineItems[0]->Dimensions->Width = 10;
+$rateRequest->RequestedShipment->RequestedPackageLineItems[0]->Dimensions->Height = 3;
+$rateRequest->RequestedShipment->RequestedPackageLineItems[0]->Dimensions->Units = SimpleType\LinearUnits::_IN;
+$rateRequest->RequestedShipment->RequestedPackageLineItems[0]->GroupPackageCount = 1;
+
+//package 2
+$rateRequest->RequestedShipment->RequestedPackageLineItems[1]->Weight->Value = 5;
+$rateRequest->RequestedShipment->RequestedPackageLineItems[1]->Weight->Units = SimpleType\WeightUnits::_LB;
+$rateRequest->RequestedShipment->RequestedPackageLineItems[1]->Dimensions->Length = 20;
+$rateRequest->RequestedShipment->RequestedPackageLineItems[1]->Dimensions->Width = 20;
+$rateRequest->RequestedShipment->RequestedPackageLineItems[1]->Dimensions->Height = 10;
+$rateRequest->RequestedShipment->RequestedPackageLineItems[1]->Dimensions->Units = SimpleType\LinearUnits::_IN;
+$rateRequest->RequestedShipment->RequestedPackageLineItems[1]->GroupPackageCount = 1;
+
+$rateServiceRequest = new Request();
+$response = $rateServiceRequest->getGetRatesReply($rateRequest);
+
+var_dump($response);
