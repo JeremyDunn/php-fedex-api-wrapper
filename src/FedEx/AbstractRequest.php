@@ -10,6 +10,16 @@ namespace FedEx;
 abstract class AbstractRequest
 {
     /**
+     * URL to production environment
+     */
+    const PRODUCTION_URL = null;
+
+    /**
+     * URL to testing environment
+     */
+    const TESTING_URL = null;
+
+    /**
      * SoapClient object
      *
      * @var SoapClient
