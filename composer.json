@@ -23,7 +23,8 @@
     "autoload": {
         "psr-4": {
             "FedEx\\": "src/FedEx/",
-            "FedEx\\Utility\\": "util/"
+            "FedEx\\Utility\\": "util/",
+            "FedEx\\Tests\\": "tests/FedEx/Tests"
         }
     },
     "scripts": {
