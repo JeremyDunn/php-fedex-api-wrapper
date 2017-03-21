@@ -155,7 +155,7 @@ $requestedShipment->setRequestedPackageLineItems([$item1, $item2]);
 $rateRequest->setRequestedShipment($requestedShipment);
 
 $rateServiceRequest = new RateService\Request();
-//$rateServiceRequest->getSoapClient()->__setLocation('https://ws.fedex.com:443/web-services/rate'); //use the production web service
+//$rateServiceRequest->getSoapClient()->__setLocation(RateService\Request::PRODUCTION_URL); //use the production web service
 $response = $rateServiceRequest->getGetRatesReply($rateRequest);
 
 var_dump($response);

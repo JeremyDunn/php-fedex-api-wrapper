@@ -76,6 +76,7 @@ $rateRequest->RequestedShipment->RequestedPackageLineItems[1]->Dimensions->Units
 $rateRequest->RequestedShipment->RequestedPackageLineItems[1]->GroupPackageCount = 1;
 
 $rateServiceRequest = new Request();
+//$rateServiceRequest->getSoapClient()->__setLocation(Request::PRODUCTION_URL);
 $response = $rateServiceRequest->getGetRatesReply($rateRequest);
 
 var_dump($response);
