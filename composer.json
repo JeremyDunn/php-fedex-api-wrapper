@@ -13,12 +13,12 @@
         }
     ],
     "require": {
-        "php": ">=5.5.0"
+        "php": ">=5.4.0"
     },
     "require-dev": {
         "symfony/console": "2.*",
         "apigen/apigen": "^4.1",
-        "phpunit/phpunit": "^6.0"
+        "phpunit/phpunit": "^5.7"
     },
     "autoload": {
         "psr-4": {
