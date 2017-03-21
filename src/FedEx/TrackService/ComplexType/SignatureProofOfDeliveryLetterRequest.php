@@ -9,114 +9,121 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
- */
-class SignatureProofOfDeliveryLetterRequest
-    extends AbstractComplexType
-{
+ *
+ * @property WebAuthenticationDetail $WebAuthenticationDetail
+ * @property ClientDetail $ClientDetail
+ * @property TransactionDetail $TransactionDetail
+ * @property VersionId $Version
+ * @property QualifiedTrackingNumber $QualifiedTrackingNumber
+ * @property string $AdditionalComments
+ * @property \FedEx\TrackService\SimpleType\SignatureProofOfDeliveryImageType|string $LetterFormat
+ * @property ContactAndAddress $Consignee
 
+ */
+class SignatureProofOfDeliveryLetterRequest extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'SignatureProofOfDeliveryLetterRequest';
+    protected $name = 'SignatureProofOfDeliveryLetterRequest';
 
     /**
      * Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
      * @param WebAuthenticationDetail $webAuthenticationDetail
-     * return SignatureProofOfDeliveryLetterRequest
+     * @return $this
      */
     public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
     {
-        $this->WebAuthenticationDetail = $webAuthenticationDetail;
+        $this->values['WebAuthenticationDetail'] = $webAuthenticationDetail;
         return $this;
     }
-    
+
     /**
      * Descriptive data identifying the client submitting the transaction.
      *
      * @param ClientDetail $clientDetail
-     * return SignatureProofOfDeliveryLetterRequest
+     * @return $this
      */
     public function setClientDetail(ClientDetail $clientDetail)
     {
-        $this->ClientDetail = $clientDetail;
+        $this->values['ClientDetail'] = $clientDetail;
         return $this;
     }
-    
+
     /**
      * Contains a free form field that is echoed back in the reply to match requests with replies and data that governs the data payload language/translations.
      *
      * @param TransactionDetail $transactionDetail
-     * return SignatureProofOfDeliveryLetterRequest
+     * @return $this
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
-        $this->TransactionDetail = $transactionDetail;
+        $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
     }
-    
+
     /**
      * The version of the request being used.
      *
      * @param VersionId $version
-     * return SignatureProofOfDeliveryLetterRequest
+     * @return $this
      */
     public function setVersion(VersionId $version)
     {
-        $this->Version = $version;
+        $this->values['Version'] = $version;
         return $this;
     }
-    
+
     /**
      * Tracking number and additional shipment data used to identify a unique shipment for proof of delivery.
      *
      * @param QualifiedTrackingNumber $qualifiedTrackingNumber
-     * return SignatureProofOfDeliveryLetterRequest
+     * @return $this
      */
     public function setQualifiedTrackingNumber(QualifiedTrackingNumber $qualifiedTrackingNumber)
     {
-        $this->QualifiedTrackingNumber = $qualifiedTrackingNumber;
+        $this->values['QualifiedTrackingNumber'] = $qualifiedTrackingNumber;
         return $this;
     }
-    
+
     /**
      * Additional customer-supplied text to be added to the body of the letter.
      *
      * @param string $additionalComments
-     * return SignatureProofOfDeliveryLetterRequest
+     * @return $this
      */
     public function setAdditionalComments($additionalComments)
     {
-        $this->AdditionalComments = $additionalComments;
+        $this->values['AdditionalComments'] = $additionalComments;
         return $this;
     }
-    
+
     /**
      * Identifies the set of SPOD image types.
      *
      * @param \FedEx\TrackService\SimpleType\SignatureProofOfDeliveryImageType|string $letterFormat
-     * return SignatureProofOfDeliveryLetterRequest
+     * @return $this
      */
     public function setLetterFormat($letterFormat)
     {
-        $this->LetterFormat = $letterFormat;
+        $this->values['LetterFormat'] = $letterFormat;
         return $this;
     }
-    
+
     /**
      * If provided this information will be print on the letter.
      *
      * @param ContactAndAddress $consignee
-     * return SignatureProofOfDeliveryLetterRequest
+     * @return $this
      */
     public function setConsignee(ContactAndAddress $consignee)
     {
-        $this->Consignee = $consignee;
+        $this->values['Consignee'] = $consignee;
         return $this;
     }
-    
 
     
 }

@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Address Validation Service
  */
-class AddressValidationChangeType
-    extends AbstractSimpleType
+class AddressValidationChangeType extends AbstractSimpleType
 {
     const _APARTMENT_NUMBER_NOT_FOUND = 'APARTMENT_NUMBER_NOT_FOUND';
     const _APARTMENT_NUMBER_REQUIRED = 'APARTMENT_NUMBER_REQUIRED';

@@ -9,66 +9,69 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class Party
-    extends AbstractComplexType
-{
+ *
+ * @property string $AccountNumber
+ * @property TaxpayerIdentification[] $Tins
+ * @property Contact $Contact
+ * @property Address $Address
 
+ */
+class Party extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'Party';
+    protected $name = 'Party';
 
     /**
      * Identifies the FedEx account number assigned to the customer.
      *
      * @param string $accountNumber
-     * return Party
+     * @return $this
      */
     public function setAccountNumber($accountNumber)
     {
-        $this->AccountNumber = $accountNumber;
+        $this->values['AccountNumber'] = $accountNumber;
         return $this;
     }
-    
+
     /**
      * Descriptive data for taxpayer identification information.
      *
      * @param TaxpayerIdentification[] $tins
-     * return Party
+     * @return $this
      */
     public function setTins(array $tins)
     {
-        $this->Tins = $tins;
+        $this->values['Tins'] = $tins;
         return $this;
     }
-    
+
     /**
      * Descriptive data identifying the point-of-contact person.
      *
      * @param Contact $contact
-     * return Party
+     * @return $this
      */
     public function setContact(Contact $contact)
     {
-        $this->Contact = $contact;
+        $this->values['Contact'] = $contact;
         return $this;
     }
-    
+
     /**
      * The descriptive data for a physical location.
      *
      * @param Address $address
-     * return Party
+     * @return $this
      */
     public function setAddress(Address $address)
     {
-        $this->Address = $address;
+        $this->values['Address'] = $address;
         return $this;
     }
-    
 
     
 }

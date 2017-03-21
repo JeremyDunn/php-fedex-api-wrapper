@@ -12,66 +12,83 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class Commodity
-    extends AbstractComplexType
-{
+ *
+ * @property string $Name
+ * @property int $NumberOfPieces
+ * @property string $Description
+ * @property string $CountryOfManufacture
+ * @property string $HarmonizedCode
+ * @property Weight $Weight
+ * @property int $Quantity
+ * @property string $QuantityUnits
+ * @property Measure[] $AdditionalMeasures
+ * @property Money $UnitPrice
+ * @property Money $CustomsValue
+ * @property EdtExciseCondition[] $ExciseConditions
+ * @property string $ExportLicenseNumber
+ * @property string $ExportLicenseExpirationDate
+ * @property string $CIMarksAndNumbers
+ * @property string $PartNumber
+ * @property NaftaCommodityDetail $NaftaDetail
 
+ */
+class Commodity extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'Commodity';
+    protected $name = 'Commodity';
 
     /**
      * Name of this commodity.
      *
      * @param string $name
-     * return Commodity
+     * @return $this
      */
     public function setName($name)
     {
-        $this->Name = $name;
+        $this->values['Name'] = $name;
         return $this;
     }
-    
+
     /**
      * Total number of pieces of this commodity
      *
-     * @param nonNegativeInteger $numberOfPieces
-     * return Commodity
+     * @param int $numberOfPieces
+     * @return $this
      */
     public function setNumberOfPieces($numberOfPieces)
     {
-        $this->NumberOfPieces = $numberOfPieces;
+        $this->values['NumberOfPieces'] = $numberOfPieces;
         return $this;
     }
-    
+
     /**
      * Complete and accurate description of this commodity.
      *
      * @param string $description
-     * return Commodity
+     * @return $this
      */
     public function setDescription($description)
     {
-        $this->Description = $description;
+        $this->values['Description'] = $description;
         return $this;
     }
-    
+
     /**
      * Country code where commodity contents were produced or manufactured in their final form.
      *
      * @param string $countryOfManufacture
-     * return Commodity
+     * @return $this
      */
     public function setCountryOfManufacture($countryOfManufacture)
     {
-        $this->CountryOfManufacture = $countryOfManufacture;
+        $this->values['CountryOfManufacture'] = $countryOfManufacture;
         return $this;
     }
-    
+
     /**
      * 
                 Unique alpha/numeric representing commodity item.
@@ -79,74 +96,74 @@ class Commodity
               
      *
      * @param string $harmonizedCode
-     * return Commodity
+     * @return $this
      */
     public function setHarmonizedCode($harmonizedCode)
     {
-        $this->HarmonizedCode = $harmonizedCode;
+        $this->values['HarmonizedCode'] = $harmonizedCode;
         return $this;
     }
-    
+
     /**
      * Total weight of this commodity. 1 explicit decimal position. Max length 11 including decimal.
      *
      * @param Weight $weight
-     * return Commodity
+     * @return $this
      */
     public function setWeight(Weight $weight)
     {
-        $this->Weight = $weight;
+        $this->values['Weight'] = $weight;
         return $this;
     }
-    
+
     /**
      * This field is used for enterprise transactions.
      *
-     * @param nonNegativeInteger $quantity
-     * return Commodity
+     * @param int $quantity
+     * @return $this
      */
     public function setQuantity($quantity)
     {
-        $this->Quantity = $quantity;
+        $this->values['Quantity'] = $quantity;
         return $this;
     }
-    
+
     /**
      * Unit of measure used to express the quantity of this commodity line item.
      *
      * @param string $quantityUnits
-     * return Commodity
+     * @return $this
      */
     public function setQuantityUnits($quantityUnits)
     {
-        $this->QuantityUnits = $quantityUnits;
+        $this->values['QuantityUnits'] = $quantityUnits;
         return $this;
     }
-    
+
     /**
      * Contains only additional quantitative information other than weight and quantity to calculate duties and taxes.
      *
      * @param Measure[] $additionalMeasures
-     * return Commodity
+     * @return $this
      */
     public function setAdditionalMeasures(array $additionalMeasures)
     {
-        $this->AdditionalMeasures = $additionalMeasures;
+        $this->values['AdditionalMeasures'] = $additionalMeasures;
         return $this;
     }
-    
+
     /**
      * Value of each unit in Quantity. Six explicit decimal positions, Max length 18 including decimal.
      *
      * @param Money $unitPrice
-     * return Commodity
+     * @return $this
      */
     public function setUnitPrice(Money $unitPrice)
     {
-        $this->UnitPrice = $unitPrice;
+        $this->values['UnitPrice'] = $unitPrice;
         return $this;
     }
-    
+
     /**
      * 
                 Total customs value for this line item.
@@ -155,38 +172,38 @@ class Commodity
               
      *
      * @param Money $customsValue
-     * return Commodity
+     * @return $this
      */
     public function setCustomsValue(Money $customsValue)
     {
-        $this->CustomsValue = $customsValue;
+        $this->values['CustomsValue'] = $customsValue;
         return $this;
     }
-    
+
     /**
      * Defines additional characteristic of commodity used to calculate duties and taxes
      *
      * @param EdtExciseCondition[] $exciseConditions
-     * return Commodity
+     * @return $this
      */
     public function setExciseConditions(array $exciseConditions)
     {
-        $this->ExciseConditions = $exciseConditions;
+        $this->values['ExciseConditions'] = $exciseConditions;
         return $this;
     }
-    
+
     /**
      * Applicable to US export shipping only.
      *
      * @param string $exportLicenseNumber
-     * return Commodity
+     * @return $this
      */
     public function setExportLicenseNumber($exportLicenseNumber)
     {
-        $this->ExportLicenseNumber = $exportLicenseNumber;
+        $this->values['ExportLicenseNumber'] = $exportLicenseNumber;
         return $this;
     }
-    
+
     /**
      * 
                 Date of expiration. Must be at least 1 day into future.
@@ -195,53 +212,52 @@ class Commodity
                 Required only if commodity is shipped on commerce export license, and Export License Number is supplied.
               
      *
-     * @param date $exportLicenseExpirationDate
-     * return Commodity
+     * @param string $exportLicenseExpirationDate
+     * @return $this
      */
     public function setExportLicenseExpirationDate($exportLicenseExpirationDate)
     {
-        $this->ExportLicenseExpirationDate = $exportLicenseExpirationDate;
+        $this->values['ExportLicenseExpirationDate'] = $exportLicenseExpirationDate;
         return $this;
     }
-    
+
     /**
      * 
                 An identifying mark or number used on the packaging of a shipment to help customers identify a particular shipment.
               
      *
      * @param string $cIMarksAndNumbers
-     * return Commodity
+     * @return $this
      */
     public function setCIMarksAndNumbers($cIMarksAndNumbers)
     {
-        $this->CIMarksAndNumbers = $cIMarksAndNumbers;
+        $this->values['CIMarksAndNumbers'] = $cIMarksAndNumbers;
         return $this;
     }
-    
+
     /**
      * Set PartNumber
      *
      * @param string $partNumber
-     * return Commodity
+     * @return $this
      */
     public function setPartNumber($partNumber)
     {
-        $this->PartNumber = $partNumber;
+        $this->values['PartNumber'] = $partNumber;
         return $this;
     }
-    
+
     /**
      * All data required for this commodity in NAFTA Certificate of Origin.
      *
      * @param NaftaCommodityDetail $naftaDetail
-     * return Commodity
+     * @return $this
      */
     public function setNaftaDetail(NaftaCommodityDetail $naftaDetail)
     {
-        $this->NaftaDetail = $naftaDetail;
+        $this->values['NaftaDetail'] = $naftaDetail;
         return $this;
     }
-    
 
     
 }

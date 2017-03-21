@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class RateDimensionalDivisorType
-    extends AbstractSimpleType
+class RateDimensionalDivisorType extends AbstractSimpleType
 {
     const _COUNTRY = 'COUNTRY';
     const _CUSTOMER = 'CUSTOMER';

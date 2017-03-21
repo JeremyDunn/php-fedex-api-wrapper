@@ -9,102 +9,108 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class HazardousCommodityDescription
-    extends AbstractComplexType
-{
+ *
+ * @property string $Id
+ * @property \FedEx\RateService\SimpleType\HazardousCommodityPackingGroupType|string $PackingGroup
+ * @property string $ProperShippingName
+ * @property string $TechnicalName
+ * @property string $HazardClass
+ * @property string[] $SubsidiaryClasses
+ * @property string $LabelText
 
+ */
+class HazardousCommodityDescription extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'HazardousCommodityDescription';
+    protected $name = 'HazardousCommodityDescription';
 
     /**
      * Regulatory identifier for a commodity (e.g. "UN ID" value).
      *
      * @param string $id
-     * return HazardousCommodityDescription
+     * @return $this
      */
     public function setId($id)
     {
-        $this->Id = $id;
+        $this->values['Id'] = $id;
         return $this;
     }
-    
+
     /**
      * Set PackingGroup
      *
      * @param \FedEx\RateService\SimpleType\HazardousCommodityPackingGroupType|string $packingGroup
-     * return HazardousCommodityDescription
+     * @return $this
      */
     public function setPackingGroup($packingGroup)
     {
-        $this->PackingGroup = $packingGroup;
+        $this->values['PackingGroup'] = $packingGroup;
         return $this;
     }
-    
+
     /**
      * Set ProperShippingName
      *
      * @param string $properShippingName
-     * return HazardousCommodityDescription
+     * @return $this
      */
     public function setProperShippingName($properShippingName)
     {
-        $this->ProperShippingName = $properShippingName;
+        $this->values['ProperShippingName'] = $properShippingName;
         return $this;
     }
-    
+
     /**
      * Set TechnicalName
      *
      * @param string $technicalName
-     * return HazardousCommodityDescription
+     * @return $this
      */
     public function setTechnicalName($technicalName)
     {
-        $this->TechnicalName = $technicalName;
+        $this->values['TechnicalName'] = $technicalName;
         return $this;
     }
-    
+
     /**
      * Set HazardClass
      *
      * @param string $hazardClass
-     * return HazardousCommodityDescription
+     * @return $this
      */
     public function setHazardClass($hazardClass)
     {
-        $this->HazardClass = $hazardClass;
+        $this->values['HazardClass'] = $hazardClass;
         return $this;
     }
-    
+
     /**
      * Set SubsidiaryClasses
      *
      * @param string[] $subsidiaryClasses
-     * return HazardousCommodityDescription
+     * @return $this
      */
     public function setSubsidiaryClasses(array $subsidiaryClasses)
     {
-        $this->SubsidiaryClasses = $subsidiaryClasses;
+        $this->values['SubsidiaryClasses'] = $subsidiaryClasses;
         return $this;
     }
-    
+
     /**
      * Set LabelText
      *
      * @param string $labelText
-     * return HazardousCommodityDescription
+     * @return $this
      */
     public function setLabelText($labelText)
     {
-        $this->LabelText = $labelText;
+        $this->values['LabelText'] = $labelText;
         return $this;
     }
-    
 
     
 }

@@ -9,222 +9,238 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class RateReplyDetail
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\RateService\SimpleType\ServiceType|string $ServiceType
+ * @property \FedEx\RateService\SimpleType\PackagingType|string $PackagingType
+ * @property \FedEx\RateService\SimpleType\ServiceOptionType|string[] $AppliedOptions
+ * @property ServiceSubOptionDetail $AppliedSubOptions
+ * @property string $DeliveryStation
+ * @property \FedEx\RateService\SimpleType\DayOfWeekType|string $DeliveryDayOfWeek
+ * @property string $DeliveryTimestamp
+ * @property CommitDetail[] $CommitDetails
+ * @property string $DestinationAirportId
+ * @property boolean $IneligibleForMoneyBackGuarantee
+ * @property string $OriginServiceArea
+ * @property string $DestinationServiceArea
+ * @property \FedEx\RateService\SimpleType\TransitTimeType|string $TransitTime
+ * @property \FedEx\RateService\SimpleType\TransitTimeType|string $MaximumTransitTime
+ * @property \FedEx\RateService\SimpleType\SignatureOptionType|string $SignatureOption
+ * @property \FedEx\RateService\SimpleType\ReturnedRateType|string $ActualRateType
+ * @property RatedShipmentDetail[] $RatedShipmentDetails
 
+ */
+class RateReplyDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'RateReplyDetail';
+    protected $name = 'RateReplyDetail';
 
     /**
      * Identifies the FedEx service to use in shipping the package. See ServiceType for list of valid enumerated values.
      *
      * @param \FedEx\RateService\SimpleType\ServiceType|string $serviceType
-     * return RateReplyDetail
+     * @return $this
      */
     public function setServiceType($serviceType)
     {
-        $this->ServiceType = $serviceType;
+        $this->values['ServiceType'] = $serviceType;
         return $this;
     }
-    
+
     /**
      * Identifies the packaging used by the requestor for the package. See PackagingType for list of valid enumerated values.
      *
      * @param \FedEx\RateService\SimpleType\PackagingType|string $packagingType
-     * return RateReplyDetail
+     * @return $this
      */
     public function setPackagingType($packagingType)
     {
-        $this->PackagingType = $packagingType;
+        $this->values['PackagingType'] = $packagingType;
         return $this;
     }
-    
+
     /**
      * Shows the specific combination of service options combined with the service type that produced this committment in the set returned to the caller.
      *
      * @param ServiceOptionType[] $appliedOptions
-     * return RateReplyDetail
+     * @return $this
      */
     public function setAppliedOptions(array $appliedOptions)
     {
-        $this->AppliedOptions = $appliedOptions;
+        $this->values['AppliedOptions'] = $appliedOptions;
         return $this;
     }
-    
+
     /**
      * Supporting detail for applied options identified in preceding field.
      *
      * @param ServiceSubOptionDetail $appliedSubOptions
-     * return RateReplyDetail
+     * @return $this
      */
     public function setAppliedSubOptions(ServiceSubOptionDetail $appliedSubOptions)
     {
-        $this->AppliedSubOptions = $appliedSubOptions;
+        $this->values['AppliedSubOptions'] = $appliedSubOptions;
         return $this;
     }
-    
+
     /**
      * Set DeliveryStation
      *
      * @param string $deliveryStation
-     * return RateReplyDetail
+     * @return $this
      */
     public function setDeliveryStation($deliveryStation)
     {
-        $this->DeliveryStation = $deliveryStation;
+        $this->values['DeliveryStation'] = $deliveryStation;
         return $this;
     }
-    
+
     /**
      * Set DeliveryDayOfWeek
      *
      * @param \FedEx\RateService\SimpleType\DayOfWeekType|string $deliveryDayOfWeek
-     * return RateReplyDetail
+     * @return $this
      */
     public function setDeliveryDayOfWeek($deliveryDayOfWeek)
     {
-        $this->DeliveryDayOfWeek = $deliveryDayOfWeek;
+        $this->values['DeliveryDayOfWeek'] = $deliveryDayOfWeek;
         return $this;
     }
-    
+
     /**
      * Set DeliveryTimestamp
      *
-     * @param dateTime $deliveryTimestamp
-     * return RateReplyDetail
+     * @param string $deliveryTimestamp
+     * @return $this
      */
     public function setDeliveryTimestamp($deliveryTimestamp)
     {
-        $this->DeliveryTimestamp = $deliveryTimestamp;
+        $this->values['DeliveryTimestamp'] = $deliveryTimestamp;
         return $this;
     }
-    
+
     /**
      * Set CommitDetails
      *
      * @param CommitDetail[] $commitDetails
-     * return RateReplyDetail
+     * @return $this
      */
     public function setCommitDetails(array $commitDetails)
     {
-        $this->CommitDetails = $commitDetails;
+        $this->values['CommitDetails'] = $commitDetails;
         return $this;
     }
-    
+
     /**
      * Identification of an airport, using standard three-letter abbreviations.
      *
      * @param string $destinationAirportId
-     * return RateReplyDetail
+     * @return $this
      */
     public function setDestinationAirportId($destinationAirportId)
     {
-        $this->DestinationAirportId = $destinationAirportId;
+        $this->values['DestinationAirportId'] = $destinationAirportId;
         return $this;
     }
-    
+
     /**
      * Indicates whether or not this shipment is eligible for a money back guarantee.
      *
      * @param boolean $ineligibleForMoneyBackGuarantee
-     * return RateReplyDetail
+     * @return $this
      */
     public function setIneligibleForMoneyBackGuarantee($ineligibleForMoneyBackGuarantee)
     {
-        $this->IneligibleForMoneyBackGuarantee = $ineligibleForMoneyBackGuarantee;
+        $this->values['IneligibleForMoneyBackGuarantee'] = $ineligibleForMoneyBackGuarantee;
         return $this;
     }
-    
+
     /**
      * Commitment code for the origin.
      *
      * @param string $originServiceArea
-     * return RateReplyDetail
+     * @return $this
      */
     public function setOriginServiceArea($originServiceArea)
     {
-        $this->OriginServiceArea = $originServiceArea;
+        $this->values['OriginServiceArea'] = $originServiceArea;
         return $this;
     }
-    
+
     /**
      * Commitment code for the destination.
      *
      * @param string $destinationServiceArea
-     * return RateReplyDetail
+     * @return $this
      */
     public function setDestinationServiceArea($destinationServiceArea)
     {
-        $this->DestinationServiceArea = $destinationServiceArea;
+        $this->values['DestinationServiceArea'] = $destinationServiceArea;
         return $this;
     }
-    
+
     /**
      * Time in transit from pickup to delivery.
      *
      * @param \FedEx\RateService\SimpleType\TransitTimeType|string $transitTime
-     * return RateReplyDetail
+     * @return $this
      */
     public function setTransitTime($transitTime)
     {
-        $this->TransitTime = $transitTime;
+        $this->values['TransitTime'] = $transitTime;
         return $this;
     }
-    
+
     /**
      * Maximum expected transit time
      *
      * @param \FedEx\RateService\SimpleType\TransitTimeType|string $maximumTransitTime
-     * return RateReplyDetail
+     * @return $this
      */
     public function setMaximumTransitTime($maximumTransitTime)
     {
-        $this->MaximumTransitTime = $maximumTransitTime;
+        $this->values['MaximumTransitTime'] = $maximumTransitTime;
         return $this;
     }
-    
+
     /**
      * The signature option for this package.
      *
      * @param \FedEx\RateService\SimpleType\SignatureOptionType|string $signatureOption
-     * return RateReplyDetail
+     * @return $this
      */
     public function setSignatureOption($signatureOption)
     {
-        $this->SignatureOption = $signatureOption;
+        $this->values['SignatureOption'] = $signatureOption;
         return $this;
     }
-    
+
     /**
      * The actual rate type of the charges for this package.
      *
      * @param \FedEx\RateService\SimpleType\ReturnedRateType|string $actualRateType
-     * return RateReplyDetail
+     * @return $this
      */
     public function setActualRateType($actualRateType)
     {
-        $this->ActualRateType = $actualRateType;
+        $this->values['ActualRateType'] = $actualRateType;
         return $this;
     }
-    
+
     /**
      * Each element contains all rate data for a single rate type.
      *
      * @param RatedShipmentDetail[] $ratedShipmentDetails
-     * return RateReplyDetail
+     * @return $this
      */
     public function setRatedShipmentDetails(array $ratedShipmentDetails)
     {
-        $this->RatedShipmentDetails = $ratedShipmentDetails;
+        $this->values['RatedShipmentDetails'] = $ratedShipmentDetails;
         return $this;
     }
-    
 
     
 }

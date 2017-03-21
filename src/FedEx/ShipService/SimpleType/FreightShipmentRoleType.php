@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class FreightShipmentRoleType
-    extends AbstractSimpleType
+class FreightShipmentRoleType extends AbstractSimpleType
 {
     const _CONSIGNEE = 'CONSIGNEE';
     const _SHIPPER = 'SHIPPER';

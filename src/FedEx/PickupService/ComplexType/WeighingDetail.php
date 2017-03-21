@@ -9,30 +9,30 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
- */
-class WeighingDetail
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\Pickup\SimpleType\WeighingScaleType|string $Type
 
+ */
+class WeighingDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'WeighingDetail';
+    protected $name = 'WeighingDetail';
 
     /**
      * Type of scale used
      *
      * @param \FedEx\Pickup\SimpleType\WeighingScaleType|string $type
-     * return WeighingDetail
+     * @return $this
      */
     public function setType($type)
     {
-        $this->Type = $type;
+        $this->values['Type'] = $type;
         return $this;
     }
-    
 
     
 }

@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class DeletionControlType
-    extends AbstractSimpleType
+class DeletionControlType extends AbstractSimpleType
 {
     const _DELETE_ALL_PACKAGES = 'DELETE_ALL_PACKAGES';
     const _DELETE_ENTIRE_CONSOLIDATION = 'DELETE_ENTIRE_CONSOLIDATION';

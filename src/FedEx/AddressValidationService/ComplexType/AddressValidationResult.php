@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Address Validation Service
- */
-class AddressValidationResult
-    extends AbstractComplexType
-{
+ *
+ * @property string $AddressId
+ * @property ProposedAddressDetail[] $ProposedAddressDetails
 
+ */
+class AddressValidationResult extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'AddressValidationResult';
+    protected $name = 'AddressValidationResult';
 
     /**
      * Set AddressId
      *
      * @param string $addressId
-     * return AddressValidationResult
+     * @return $this
      */
     public function setAddressId($addressId)
     {
-        $this->AddressId = $addressId;
+        $this->values['AddressId'] = $addressId;
         return $this;
     }
-    
+
     /**
      * Set ProposedAddressDetails
      *
      * @param ProposedAddressDetail[] $proposedAddressDetails
-     * return AddressValidationResult
+     * @return $this
      */
     public function setProposedAddressDetails(array $proposedAddressDetails)
     {
-        $this->ProposedAddressDetails = $proposedAddressDetails;
+        $this->values['ProposedAddressDetails'] = $proposedAddressDetails;
         return $this;
     }
-    
 
     
 }

@@ -9,102 +9,108 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
- */
-class TrackEvent
-    extends AbstractComplexType
-{
+ *
+ * @property string $Timestamp
+ * @property string $EventType
+ * @property string $EventDescription
+ * @property string $StatusExceptionCode
+ * @property string $StatusExceptionDescription
+ * @property Address $Address
+ * @property \FedEx\TrackService\SimpleType\ArrivalLocationType|string $ArrivalLocation
 
+ */
+class TrackEvent extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'TrackEvent';
+    protected $name = 'TrackEvent';
 
     /**
      * The time this event occurred.
      *
-     * @param dateTime $timestamp
-     * return TrackEvent
+     * @param string $timestamp
+     * @return $this
      */
     public function setTimestamp($timestamp)
     {
-        $this->Timestamp = $timestamp;
+        $this->values['Timestamp'] = $timestamp;
         return $this;
     }
-    
+
     /**
      * Carrier's scan code. Pairs with EventDescription.
      *
      * @param string $eventType
-     * return TrackEvent
+     * @return $this
      */
     public function setEventType($eventType)
     {
-        $this->EventType = $eventType;
+        $this->values['EventType'] = $eventType;
         return $this;
     }
-    
+
     /**
      * Literal description that pairs with the EventType.
      *
      * @param string $eventDescription
-     * return TrackEvent
+     * @return $this
      */
     public function setEventDescription($eventDescription)
     {
-        $this->EventDescription = $eventDescription;
+        $this->values['EventDescription'] = $eventDescription;
         return $this;
     }
-    
+
     /**
      * Further defines the Scan Type code's specific type (e.g., DEX08 business closed). Pairs with StatusExceptionDescription.
      *
      * @param string $statusExceptionCode
-     * return TrackEvent
+     * @return $this
      */
     public function setStatusExceptionCode($statusExceptionCode)
     {
-        $this->StatusExceptionCode = $statusExceptionCode;
+        $this->values['StatusExceptionCode'] = $statusExceptionCode;
         return $this;
     }
-    
+
     /**
      * Literal description that pairs with the StatusExceptionCode.
      *
      * @param string $statusExceptionDescription
-     * return TrackEvent
+     * @return $this
      */
     public function setStatusExceptionDescription($statusExceptionDescription)
     {
-        $this->StatusExceptionDescription = $statusExceptionDescription;
+        $this->values['StatusExceptionDescription'] = $statusExceptionDescription;
         return $this;
     }
-    
+
     /**
      * Address information of the station that is responsible for the scan.
      *
      * @param Address $address
-     * return TrackEvent
+     * @return $this
      */
     public function setAddress(Address $address)
     {
-        $this->Address = $address;
+        $this->values['Address'] = $address;
         return $this;
     }
-    
+
     /**
      * Indicates where the arrival actually occurred.
      *
      * @param \FedEx\TrackService\SimpleType\ArrivalLocationType|string $arrivalLocation
-     * return TrackEvent
+     * @return $this
      */
     public function setArrivalLocation($arrivalLocation)
     {
-        $this->ArrivalLocation = $arrivalLocation;
+        $this->values['ArrivalLocation'] = $arrivalLocation;
         return $this;
     }
-    
 
     
 }

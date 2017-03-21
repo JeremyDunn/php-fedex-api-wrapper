@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class FreightOnValueType
-    extends AbstractSimpleType
+class FreightOnValueType extends AbstractSimpleType
 {
     const _CARRIER_RISK = 'CARRIER_RISK';
     const _OWN_RISK = 'OWN_RISK';

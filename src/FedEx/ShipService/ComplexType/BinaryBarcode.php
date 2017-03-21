@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class BinaryBarcode
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\ShipService\SimpleType\BinaryBarcodeType|string $Type
+ * @property string $Value
 
+ */
+class BinaryBarcode extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'BinaryBarcode';
+    protected $name = 'BinaryBarcode';
 
     /**
      * The kind of barcode data in this instance.
      *
      * @param \FedEx\ShipService\SimpleType\BinaryBarcodeType|string $type
-     * return BinaryBarcode
+     * @return $this
      */
     public function setType($type)
     {
-        $this->Type = $type;
+        $this->values['Type'] = $type;
         return $this;
     }
-    
+
     /**
      * The data content of this instance.
      *
-     * @param base64Binary $value
-     * return BinaryBarcode
+     * @param string $value
+     * @return $this
      */
     public function setValue($value)
     {
-        $this->Value = $value;
+        $this->values['Value'] = $value;
         return $this;
     }
-    
 
     
 }

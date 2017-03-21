@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class SpecialRatingAppliedType
-    extends AbstractSimpleType
+class SpecialRatingAppliedType extends AbstractSimpleType
 {
     const _FIXED_FUEL_SURCHARGE = 'FIXED_FUEL_SURCHARGE';
     const _IMPORT_PRICING = 'IMPORT_PRICING';

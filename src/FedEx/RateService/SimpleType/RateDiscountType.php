@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class RateDiscountType
-    extends AbstractSimpleType
+class RateDiscountType extends AbstractSimpleType
 {
     const _BONUS = 'BONUS';
     const _COUPON = 'COUPON';

@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class HazardousCommodityOptionType
-    extends AbstractSimpleType
+class HazardousCommodityOptionType extends AbstractSimpleType
 {
     const _HAZARDOUS_MATERIALS = 'HAZARDOUS_MATERIALS';
     const _LITHIUM_BATTERY_EXCEPTION = 'LITHIUM_BATTERY_EXCEPTION';

@@ -9,30 +9,30 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
- */
-class ExtraLaborDetail
-    extends AbstractComplexType
-{
+ *
+ * @property string $Duration
 
+ */
+class ExtraLaborDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'ExtraLaborDetail';
+    protected $name = 'ExtraLaborDetail';
 
     /**
      * Total labor time.
      *
-     * @param duration $duration
-     * return ExtraLaborDetail
+     * @param string $duration
+     * @return $this
      */
-    public function setDuration(duration $duration)
+    public function setDuration($duration)
     {
-        $this->Duration = $duration;
+        $this->values['Duration'] = $duration;
         return $this;
     }
-    
 
     
 }

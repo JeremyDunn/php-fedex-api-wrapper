@@ -9,114 +9,121 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class ShippingDocument
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\ShipService\SimpleType\ReturnedShippingDocumentType|string $Type
+ * @property \FedEx\ShipService\SimpleType\ShippingDocumentGroupingType|string $Grouping
+ * @property \FedEx\ShipService\SimpleType\ShippingDocumentDispositionType|string $ShippingDocumentDisposition
+ * @property string $AccessReference
+ * @property \FedEx\ShipService\SimpleType\ShippingDocumentImageType|string $ImageType
+ * @property int $Resolution
+ * @property int $CopiesToPrint
+ * @property ShippingDocumentPart[] $Parts
 
+ */
+class ShippingDocument extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'ShippingDocument';
+    protected $name = 'ShippingDocument';
 
     /**
      * Shipping Document Type
      *
      * @param \FedEx\ShipService\SimpleType\ReturnedShippingDocumentType|string $type
-     * return ShippingDocument
+     * @return $this
      */
     public function setType($type)
     {
-        $this->Type = $type;
+        $this->values['Type'] = $type;
         return $this;
     }
-    
+
     /**
      * Specifies how this document image/file is organized.
      *
      * @param \FedEx\ShipService\SimpleType\ShippingDocumentGroupingType|string $grouping
-     * return ShippingDocument
+     * @return $this
      */
     public function setGrouping($grouping)
     {
-        $this->Grouping = $grouping;
+        $this->values['Grouping'] = $grouping;
         return $this;
     }
-    
+
     /**
      * Set ShippingDocumentDisposition
      *
      * @param \FedEx\ShipService\SimpleType\ShippingDocumentDispositionType|string $shippingDocumentDisposition
-     * return ShippingDocument
+     * @return $this
      */
     public function setShippingDocumentDisposition($shippingDocumentDisposition)
     {
-        $this->ShippingDocumentDisposition = $shippingDocumentDisposition;
+        $this->values['ShippingDocumentDisposition'] = $shippingDocumentDisposition;
         return $this;
     }
-    
+
     /**
      * The name under which a STORED or DEFERRED document is written.
      *
      * @param string $accessReference
-     * return ShippingDocument
+     * @return $this
      */
     public function setAccessReference($accessReference)
     {
-        $this->AccessReference = $accessReference;
+        $this->values['AccessReference'] = $accessReference;
         return $this;
     }
-    
+
     /**
      * Specifies the image type of this shipping document.
      *
      * @param \FedEx\ShipService\SimpleType\ShippingDocumentImageType|string $imageType
-     * return ShippingDocument
+     * @return $this
      */
     public function setImageType($imageType)
     {
-        $this->ImageType = $imageType;
+        $this->values['ImageType'] = $imageType;
         return $this;
     }
-    
+
     /**
      * Specifies the image resolution in DPI (dots per inch).
      *
-     * @param nonNegativeInteger $resolution
-     * return ShippingDocument
+     * @param int $resolution
+     * @return $this
      */
     public function setResolution($resolution)
     {
-        $this->Resolution = $resolution;
+        $this->values['Resolution'] = $resolution;
         return $this;
     }
-    
+
     /**
      * Can be zero for documents whose disposition implies that no content is included.
      *
-     * @param nonNegativeInteger $copiesToPrint
-     * return ShippingDocument
+     * @param int $copiesToPrint
+     * @return $this
      */
     public function setCopiesToPrint($copiesToPrint)
     {
-        $this->CopiesToPrint = $copiesToPrint;
+        $this->values['CopiesToPrint'] = $copiesToPrint;
         return $this;
     }
-    
+
     /**
      * One or more document parts which make up a single logical document, such as multiple pages of a single form.
      *
      * @param ShippingDocumentPart[] $parts
-     * return ShippingDocument
+     * @return $this
      */
     public function setParts(array $parts)
     {
-        $this->Parts = $parts;
+        $this->values['Parts'] = $parts;
         return $this;
     }
-    
 
     
 }

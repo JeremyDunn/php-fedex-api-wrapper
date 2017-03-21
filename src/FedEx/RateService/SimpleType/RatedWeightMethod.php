@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class RatedWeightMethod
-    extends AbstractSimpleType
+class RatedWeightMethod extends AbstractSimpleType
 {
     const _ACTUAL = 'ACTUAL';
     const _AVERAGE_PACKAGE_WEIGHT_MINIMUM = 'AVERAGE_PACKAGE_WEIGHT_MINIMUM';

@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class LinearUnits
-    extends AbstractSimpleType
+class LinearUnits extends AbstractSimpleType
 {
     const _CM = 'CM';
     const _IN = 'IN';

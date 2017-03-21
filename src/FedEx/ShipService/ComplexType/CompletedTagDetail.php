@@ -9,90 +9,95 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class CompletedTagDetail
-    extends AbstractComplexType
-{
+ *
+ * @property string $ConfirmationNumber
+ * @property string $AccessTime
+ * @property string $CutoffTime
+ * @property string $Location
+ * @property string $DeliveryCommitment
+ * @property string $DispatchDate
 
+ */
+class CompletedTagDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'CompletedTagDetail';
+    protected $name = 'CompletedTagDetail';
 
     /**
      * .
      *
      * @param string $confirmationNumber
-     * return CompletedTagDetail
+     * @return $this
      */
     public function setConfirmationNumber($confirmationNumber)
     {
-        $this->ConfirmationNumber = $confirmationNumber;
+        $this->values['ConfirmationNumber'] = $confirmationNumber;
         return $this;
     }
-    
+
     /**
      * As of June 2007, returned only for FedEx Express services.
      *
-     * @param duration $accessTime
-     * return CompletedTagDetail
+     * @param string $accessTime
+     * @return $this
      */
-    public function setAccessTime(duration $accessTime)
+    public function setAccessTime($accessTime)
     {
-        $this->AccessTime = $accessTime;
+        $this->values['AccessTime'] = $accessTime;
         return $this;
     }
-    
+
     /**
      * As of June 2007, returned only for FedEx Express services.
      *
-     * @param time $cutoffTime
-     * return CompletedTagDetail
+     * @param string $cutoffTime
+     * @return $this
      */
-    public function setCutoffTime(time $cutoffTime)
+    public function setCutoffTime($cutoffTime)
     {
-        $this->CutoffTime = $cutoffTime;
+        $this->values['CutoffTime'] = $cutoffTime;
         return $this;
     }
-    
+
     /**
      * As of June 2007, returned only for FedEx Express services.
      *
      * @param string $location
-     * return CompletedTagDetail
+     * @return $this
      */
     public function setLocation($location)
     {
-        $this->Location = $location;
+        $this->values['Location'] = $location;
         return $this;
     }
-    
+
     /**
      * As of June 2007, returned only for FedEx Express services.
      *
-     * @param dateTime $deliveryCommitment
-     * return CompletedTagDetail
+     * @param string $deliveryCommitment
+     * @return $this
      */
     public function setDeliveryCommitment($deliveryCommitment)
     {
-        $this->DeliveryCommitment = $deliveryCommitment;
+        $this->values['DeliveryCommitment'] = $deliveryCommitment;
         return $this;
     }
-    
+
     /**
      * FEDEX INTERNAL USE ONLY: for use by INET.
      *
-     * @param date $dispatchDate
-     * return CompletedTagDetail
+     * @param string $dispatchDate
+     * @return $this
      */
     public function setDispatchDate($dispatchDate)
     {
-        $this->DispatchDate = $dispatchDate;
+        $this->values['DispatchDate'] = $dispatchDate;
         return $this;
     }
-    
 
     
 }

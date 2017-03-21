@@ -9,162 +9,173 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class CompletedPackageDetail
-    extends AbstractComplexType
-{
+ *
+ * @property int $SequenceNumber
+ * @property TrackingId[] $TrackingIds
+ * @property int $GroupNumber
+ * @property \FedEx\ShipService\SimpleType\OversizeClassType|string $OversizeClass
+ * @property PackageRating $PackageRating
+ * @property PackageOperationalDetail $OperationalDetail
+ * @property ShippingDocument $Label
+ * @property ShippingDocument[] $PackageDocuments
+ * @property CodReturnPackageDetail $CodReturnDetail
+ * @property \FedEx\ShipService\SimpleType\SignatureOptionType|string $SignatureOption
+ * @property Weight $DryIceWeight
+ * @property CompletedHazardousPackageDetail $HazardousPackageDetail
 
+ */
+class CompletedPackageDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'CompletedPackageDetail';
+    protected $name = 'CompletedPackageDetail';
 
     /**
      * The package sequence number of this package in a multiple piece shipment.
      *
-     * @param positiveInteger $sequenceNumber
-     * return CompletedPackageDetail
+     * @param int $sequenceNumber
+     * @return $this
      */
     public function setSequenceNumber($sequenceNumber)
     {
-        $this->SequenceNumber = $sequenceNumber;
+        $this->values['SequenceNumber'] = $sequenceNumber;
         return $this;
     }
-    
+
     /**
      * The Tracking number and form id for this package.
      *
      * @param TrackingId[] $trackingIds
-     * return CompletedPackageDetail
+     * @return $this
      */
     public function setTrackingIds(array $trackingIds)
     {
-        $this->TrackingIds = $trackingIds;
+        $this->values['TrackingIds'] = $trackingIds;
         return $this;
     }
-    
+
     /**
      * Used with request containing PACKAGE_GROUPS, to identify which group of identical packages was used to produce a reply item.
      *
-     * @param nonNegativeInteger $groupNumber
-     * return CompletedPackageDetail
+     * @param int $groupNumber
+     * @return $this
      */
     public function setGroupNumber($groupNumber)
     {
-        $this->GroupNumber = $groupNumber;
+        $this->values['GroupNumber'] = $groupNumber;
         return $this;
     }
-    
+
     /**
      * Oversize class for this package.
      *
      * @param \FedEx\ShipService\SimpleType\OversizeClassType|string $oversizeClass
-     * return CompletedPackageDetail
+     * @return $this
      */
     public function setOversizeClass($oversizeClass)
     {
-        $this->OversizeClass = $oversizeClass;
+        $this->values['OversizeClass'] = $oversizeClass;
         return $this;
     }
-    
+
     /**
      * All package-level rating data for this package, which may include data for multiple rate types.
      *
      * @param PackageRating $packageRating
-     * return CompletedPackageDetail
+     * @return $this
      */
     public function setPackageRating(PackageRating $packageRating)
     {
-        $this->PackageRating = $packageRating;
+        $this->values['PackageRating'] = $packageRating;
         return $this;
     }
-    
+
     /**
      * Set OperationalDetail
      *
      * @param PackageOperationalDetail $operationalDetail
-     * return CompletedPackageDetail
+     * @return $this
      */
     public function setOperationalDetail(PackageOperationalDetail $operationalDetail)
     {
-        $this->OperationalDetail = $operationalDetail;
+        $this->values['OperationalDetail'] = $operationalDetail;
         return $this;
     }
-    
+
     /**
      * The label image or printer commands to print the label.
      *
      * @param ShippingDocument $label
-     * return CompletedPackageDetail
+     * @return $this
      */
     public function setLabel(ShippingDocument $label)
     {
-        $this->Label = $label;
+        $this->values['Label'] = $label;
         return $this;
     }
-    
+
     /**
      * All package-level shipping documents (other than labels and barcodes). For use in loads after January, 2008.
      *
      * @param ShippingDocument[] $packageDocuments
-     * return CompletedPackageDetail
+     * @return $this
      */
     public function setPackageDocuments(array $packageDocuments)
     {
-        $this->PackageDocuments = $packageDocuments;
+        $this->values['PackageDocuments'] = $packageDocuments;
         return $this;
     }
-    
+
     /**
      * Specifies the information associated with this package that has COD special service in a ground shipment.
      *
      * @param CodReturnPackageDetail $codReturnDetail
-     * return CompletedPackageDetail
+     * @return $this
      */
     public function setCodReturnDetail(CodReturnPackageDetail $codReturnDetail)
     {
-        $this->CodReturnDetail = $codReturnDetail;
+        $this->values['CodReturnDetail'] = $codReturnDetail;
         return $this;
     }
-    
+
     /**
      * Actual signature option applied, to allow for cases in which the original value conflicted with other service features in the shipment.
      *
      * @param \FedEx\ShipService\SimpleType\SignatureOptionType|string $signatureOption
-     * return CompletedPackageDetail
+     * @return $this
      */
     public function setSignatureOption($signatureOption)
     {
-        $this->SignatureOption = $signatureOption;
+        $this->values['SignatureOption'] = $signatureOption;
         return $this;
     }
-    
+
     /**
      * Set DryIceWeight
      *
      * @param Weight $dryIceWeight
-     * return CompletedPackageDetail
+     * @return $this
      */
     public function setDryIceWeight(Weight $dryIceWeight)
     {
-        $this->DryIceWeight = $dryIceWeight;
+        $this->values['DryIceWeight'] = $dryIceWeight;
         return $this;
     }
-    
+
     /**
      * Documents the kinds and quantities of all hazardous commodities in the current package, using updated hazardous commodity description data.
      *
      * @param CompletedHazardousPackageDetail $hazardousPackageDetail
-     * return CompletedPackageDetail
+     * @return $this
      */
     public function setHazardousPackageDetail(CompletedHazardousPackageDetail $hazardousPackageDetail)
     {
-        $this->HazardousPackageDetail = $hazardousPackageDetail;
+        $this->values['HazardousPackageDetail'] = $hazardousPackageDetail;
         return $this;
     }
-    
 
     
 }

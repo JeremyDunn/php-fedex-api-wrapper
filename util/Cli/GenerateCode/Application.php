@@ -1,7 +1,7 @@
 <?php
 namespace FedEx\Utility\Cli\GenerateCode;
 
-use     Symfony\Component\Console\Application as SymfonyConsoleApplication;
+use Symfony\Component\Console\Application as SymfonyConsoleApplication;
 
 /**
  * CLI Application to generate code from WSDLs
@@ -12,10 +12,8 @@ use     Symfony\Component\Console\Application as SymfonyConsoleApplication;
  */
 class Application extends SymfonyConsoleApplication
 {
-    /**
-     * Constructor 
-     */
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct('Generate code from WSDL', 1);
         
         $this->addCommands(array(

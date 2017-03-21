@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Courier Dispatch Service
- */
-class PickupShipmentAttributes
-    extends AbstractComplexType
-{
+ *
+ * @property Dimensions $Dimensions
+ * @property Weight $Weight
 
+ */
+class PickupShipmentAttributes extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'PickupShipmentAttributes';
+    protected $name = 'PickupShipmentAttributes';
 
     /**
      * Descriptive information about the dimensions of the package.
      *
      * @param Dimensions $dimensions
-     * return PickupShipmentAttributes
+     * @return $this
      */
     public function setDimensions(Dimensions $dimensions)
     {
-        $this->Dimensions = $dimensions;
+        $this->values['Dimensions'] = $dimensions;
         return $this;
     }
-    
+
     /**
      * Descriptive information about the weight of the package.
      *
      * @param Weight $weight
-     * return PickupShipmentAttributes
+     * @return $this
      */
     public function setWeight(Weight $weight)
     {
-        $this->Weight = $weight;
+        $this->values['Weight'] = $weight;
         return $this;
     }
-    
 
     
 }

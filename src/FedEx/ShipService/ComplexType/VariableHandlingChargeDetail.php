@@ -9,17 +9,21 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class VariableHandlingChargeDetail
-    extends AbstractComplexType
-{
+ *
+ * @property Money $FixedValue
+ * @property float $PercentValue
+ * @property \FedEx\ShipService\SimpleType\RateElementBasisType|string $RateElementBasis
+ * @property \FedEx\ShipService\SimpleType\RateTypeBasisType|string $RateTypeBasis
 
+ */
+class VariableHandlingChargeDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'VariableHandlingChargeDetail';
+    protected $name = 'VariableHandlingChargeDetail';
 
     /**
      * 
@@ -29,50 +33,49 @@ class VariableHandlingChargeDetail
               
      *
      * @param Money $fixedValue
-     * return VariableHandlingChargeDetail
+     * @return $this
      */
     public function setFixedValue(Money $fixedValue)
     {
-        $this->FixedValue = $fixedValue;
+        $this->values['FixedValue'] = $fixedValue;
         return $this;
     }
-    
+
     /**
      * Actual percentage (10 means 10%, which is a mutiplier of 0.1)
      *
-     * @param decimal $percentValue
-     * return VariableHandlingChargeDetail
+     * @param float $percentValue
+     * @return $this
      */
     public function setPercentValue($percentValue)
     {
-        $this->PercentValue = $percentValue;
+        $this->values['PercentValue'] = $percentValue;
         return $this;
     }
-    
+
     /**
      * Select the value from a set of rate data to which the percentage is applied.
      *
      * @param \FedEx\ShipService\SimpleType\RateElementBasisType|string $rateElementBasis
-     * return VariableHandlingChargeDetail
+     * @return $this
      */
     public function setRateElementBasis($rateElementBasis)
     {
-        $this->RateElementBasis = $rateElementBasis;
+        $this->values['RateElementBasis'] = $rateElementBasis;
         return $this;
     }
-    
+
     /**
      * Select the type of rate from which the element is to be selected.
      *
      * @param \FedEx\ShipService\SimpleType\RateTypeBasisType|string $rateTypeBasis
-     * return VariableHandlingChargeDetail
+     * @return $this
      */
     public function setRateTypeBasis($rateTypeBasis)
     {
-        $this->RateTypeBasis = $rateTypeBasis;
+        $this->values['RateTypeBasis'] = $rateTypeBasis;
         return $this;
     }
-    
 
     
 }

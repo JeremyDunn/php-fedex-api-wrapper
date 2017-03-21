@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class SignatureOptionType
-    extends AbstractSimpleType
+class SignatureOptionType extends AbstractSimpleType
 {
     const _ADULT = 'ADULT';
     const _DIRECT = 'DIRECT';

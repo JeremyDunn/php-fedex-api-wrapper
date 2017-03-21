@@ -9,66 +9,69 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class CustomDocumentDetail
-    extends AbstractComplexType
-{
+ *
+ * @property ShippingDocumentFormat $Format
+ * @property \FedEx\RateService\SimpleType\LabelPrintingOrientationType|string $LabelPrintingOrientation
+ * @property \FedEx\RateService\SimpleType\LabelRotationType|string $LabelRotation
+ * @property string $SpecificationId
 
+ */
+class CustomDocumentDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'CustomDocumentDetail';
+    protected $name = 'CustomDocumentDetail';
 
     /**
      * Common information controlling document production.
      *
      * @param ShippingDocumentFormat $format
-     * return CustomDocumentDetail
+     * @return $this
      */
     public function setFormat(ShippingDocumentFormat $format)
     {
-        $this->Format = $format;
+        $this->values['Format'] = $format;
         return $this;
     }
-    
+
     /**
      * Applicable only to documents produced on thermal printers with roll stock.
      *
      * @param \FedEx\RateService\SimpleType\LabelPrintingOrientationType|string $labelPrintingOrientation
-     * return CustomDocumentDetail
+     * @return $this
      */
     public function setLabelPrintingOrientation($labelPrintingOrientation)
     {
-        $this->LabelPrintingOrientation = $labelPrintingOrientation;
+        $this->values['LabelPrintingOrientation'] = $labelPrintingOrientation;
         return $this;
     }
-    
+
     /**
      * Applicable only to documents produced on thermal printers with roll stock.
      *
      * @param \FedEx\RateService\SimpleType\LabelRotationType|string $labelRotation
-     * return CustomDocumentDetail
+     * @return $this
      */
     public function setLabelRotation($labelRotation)
     {
-        $this->LabelRotation = $labelRotation;
+        $this->values['LabelRotation'] = $labelRotation;
         return $this;
     }
-    
+
     /**
      * Identifies the formatting specification used to construct this custom document.
      *
      * @param string $specificationId
-     * return CustomDocumentDetail
+     * @return $this
      */
     public function setSpecificationId($specificationId)
     {
-        $this->SpecificationId = $specificationId;
+        $this->values['SpecificationId'] = $specificationId;
         return $this;
     }
-    
 
     
 }

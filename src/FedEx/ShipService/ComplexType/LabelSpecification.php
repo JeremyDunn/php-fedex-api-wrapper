@@ -9,102 +9,108 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class LabelSpecification
-    extends AbstractComplexType
-{
+ *
+ * @property ShippingDocumentDispositionDetail[] $Dispositions
+ * @property \FedEx\ShipService\SimpleType\LabelFormatType|string $LabelFormatType
+ * @property \FedEx\ShipService\SimpleType\ShippingDocumentImageType|string $ImageType
+ * @property \FedEx\ShipService\SimpleType\LabelStockType|string $LabelStockType
+ * @property \FedEx\ShipService\SimpleType\LabelPrintingOrientationType|string $LabelPrintingOrientation
+ * @property ContactAndAddress $PrintedLabelOrigin
+ * @property CustomerSpecifiedLabelDetail $CustomerSpecifiedDetail
 
+ */
+class LabelSpecification extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'LabelSpecification';
+    protected $name = 'LabelSpecification';
 
     /**
      * Specifies how to create, organize, and return the document.
      *
      * @param ShippingDocumentDispositionDetail[] $dispositions
-     * return LabelSpecification
+     * @return $this
      */
     public function setDispositions(array $dispositions)
     {
-        $this->Dispositions = $dispositions;
+        $this->values['Dispositions'] = $dispositions;
         return $this;
     }
-    
+
     /**
      * Specify type of label to be returned
      *
      * @param \FedEx\ShipService\SimpleType\LabelFormatType|string $labelFormatType
-     * return LabelSpecification
+     * @return $this
      */
     public function setLabelFormatType($labelFormatType)
     {
-        $this->LabelFormatType = $labelFormatType;
+        $this->values['LabelFormatType'] = $labelFormatType;
         return $this;
     }
-    
+
     /**
      * Specifies the image format used for a shipping document.
      *
      * @param \FedEx\ShipService\SimpleType\ShippingDocumentImageType|string $imageType
-     * return LabelSpecification
+     * @return $this
      */
     public function setImageType($imageType)
     {
-        $this->ImageType = $imageType;
+        $this->values['ImageType'] = $imageType;
         return $this;
     }
-    
+
     /**
      * For thermal printer lables this indicates the size of the label and the location of the doc tab if present.
      *
      * @param \FedEx\ShipService\SimpleType\LabelStockType|string $labelStockType
-     * return LabelSpecification
+     * @return $this
      */
     public function setLabelStockType($labelStockType)
     {
-        $this->LabelStockType = $labelStockType;
+        $this->values['LabelStockType'] = $labelStockType;
         return $this;
     }
-    
+
     /**
      * This indicates if the top or bottom of the label comes out of the printer first.
      *
      * @param \FedEx\ShipService\SimpleType\LabelPrintingOrientationType|string $labelPrintingOrientation
-     * return LabelSpecification
+     * @return $this
      */
     public function setLabelPrintingOrientation($labelPrintingOrientation)
     {
-        $this->LabelPrintingOrientation = $labelPrintingOrientation;
+        $this->values['LabelPrintingOrientation'] = $labelPrintingOrientation;
         return $this;
     }
-    
+
     /**
      * If present, this contact and address information will replace the return address information on the label.
      *
      * @param ContactAndAddress $printedLabelOrigin
-     * return LabelSpecification
+     * @return $this
      */
     public function setPrintedLabelOrigin(ContactAndAddress $printedLabelOrigin)
     {
-        $this->PrintedLabelOrigin = $printedLabelOrigin;
+        $this->values['PrintedLabelOrigin'] = $printedLabelOrigin;
         return $this;
     }
-    
+
     /**
      * Allows customer-specified control of label content.
      *
      * @param CustomerSpecifiedLabelDetail $customerSpecifiedDetail
-     * return LabelSpecification
+     * @return $this
      */
     public function setCustomerSpecifiedDetail(CustomerSpecifiedLabelDetail $customerSpecifiedDetail)
     {
-        $this->CustomerSpecifiedDetail = $customerSpecifiedDetail;
+        $this->values['CustomerSpecifiedDetail'] = $customerSpecifiedDetail;
         return $this;
     }
-    
 
     
 }

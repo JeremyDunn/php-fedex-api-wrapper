@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class HazardousContainerPackingType
-    extends AbstractSimpleType
+class HazardousContainerPackingType extends AbstractSimpleType
 {
     const _ALL_PACKED_IN_ONE = 'ALL_PACKED_IN_ONE';
 }

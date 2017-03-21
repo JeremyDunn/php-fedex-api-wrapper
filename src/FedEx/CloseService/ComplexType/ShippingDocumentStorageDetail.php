@@ -9,54 +9,56 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Close Service
- */
-class ShippingDocumentStorageDetail
-    extends AbstractComplexType
-{
+ *
+ * @property string $FilePath
+ * @property \FedEx\CloseService\SimpleType\ShippingDocumentNamingType|string $FileNaming
+ * @property string $FileSuffix
 
+ */
+class ShippingDocumentStorageDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'ShippingDocumentStorageDetail';
+    protected $name = 'ShippingDocumentStorageDetail';
 
     /**
      * Provides the path to be used for STORED or DEFERRED documents.
      *
      * @param string $filePath
-     * return ShippingDocumentStorageDetail
+     * @return $this
      */
     public function setFilePath($filePath)
     {
-        $this->FilePath = $filePath;
+        $this->values['FilePath'] = $filePath;
         return $this;
     }
-    
+
     /**
      * Identifies the convention by which file names are constructed for STORED or DEFERRED documents.
      *
      * @param \FedEx\CloseService\SimpleType\ShippingDocumentNamingType|string $fileNaming
-     * return ShippingDocumentStorageDetail
+     * @return $this
      */
     public function setFileNaming($fileNaming)
     {
-        $this->FileNaming = $fileNaming;
+        $this->values['FileNaming'] = $fileNaming;
         return $this;
     }
-    
+
     /**
      * Suffix to be placed at the end of the file name; required on some platforms to determine file type.
      *
      * @param string $fileSuffix
-     * return ShippingDocumentStorageDetail
+     * @return $this
      */
     public function setFileSuffix($fileSuffix)
     {
-        $this->FileSuffix = $fileSuffix;
+        $this->values['FileSuffix'] = $fileSuffix;
         return $this;
     }
-    
 
     
 }

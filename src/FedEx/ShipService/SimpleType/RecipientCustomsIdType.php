@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class RecipientCustomsIdType
-    extends AbstractSimpleType
+class RecipientCustomsIdType extends AbstractSimpleType
 {
     const _COMPANY = 'COMPANY';
     const _INDIVIDUAL = 'INDIVIDUAL';

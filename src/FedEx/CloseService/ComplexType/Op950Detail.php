@@ -9,54 +9,56 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Close Service
- */
-class Op950Detail
-    extends AbstractComplexType
-{
+ *
+ * @property CloseDocumentFormat $Format
+ * @property CustomerImageUsage[] $CustomerImageUsages
+ * @property string $SignatureName
 
+ */
+class Op950Detail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'Op950Detail';
+    protected $name = 'Op950Detail';
 
     /**
      * Specifies characteristics of a shipping document to be produced.
      *
      * @param CloseDocumentFormat $format
-     * return Op950Detail
+     * @return $this
      */
     public function setFormat(CloseDocumentFormat $format)
     {
-        $this->Format = $format;
+        $this->values['Format'] = $format;
         return $this;
     }
-    
+
     /**
      * Specifies the usage and identification of a customer supplied image to be used on this document.
      *
      * @param CustomerImageUsage[] $customerImageUsages
-     * return Op950Detail
+     * @return $this
      */
     public function setCustomerImageUsages(array $customerImageUsages)
     {
-        $this->CustomerImageUsages = $customerImageUsages;
+        $this->values['CustomerImageUsages'] = $customerImageUsages;
         return $this;
     }
-    
+
     /**
      * Data field to be used when a name is to be printed in the document instead of (or in addition to) a signature image.
      *
      * @param string $signatureName
-     * return Op950Detail
+     * @return $this
      */
     public function setSignatureName($signatureName)
     {
-        $this->SignatureName = $signatureName;
+        $this->values['SignatureName'] = $signatureName;
         return $this;
     }
-    
 
     
 }

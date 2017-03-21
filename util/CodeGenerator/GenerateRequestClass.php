@@ -2,7 +2,7 @@
 namespace FedEx\Utility\CodeGenerator;
 
 /**
- * Generates the Request.php class for each 
+ * Generates the Request.php class for each
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -11,142 +11,133 @@ namespace FedEx\Utility\CodeGenerator;
 class GenerateRequestClass extends AbstractGenerate
 {
     /**
-     * Path to WSDL file
-     * 
      * @var string
      */
-    protected $_wsdlPath;
-    
+    protected $testingUrl;
+
     /**
-     * Path to Request class file
-     * 
      * @var string
      */
-    protected $_pathToRequestClassFile;
-    
-    /**
-     * Namespace name
-     * 
-     * @var string
-     */
-    protected $_namespace;
-    
-    /**
-     * Subpackage name
-     * 
-     * @var string
-     */
-    protected $_subPackageName;
-    
+    protected $productionUrl;
+
     /**
      * Constructor
-     * 
-     * @param string $pathToRequestClassFile Path to Request.php file
+     *
+     * @param string $exportPath Path to Request.php file
      * @param string $wsdlPath Path to WSDL file
      * @param string $namespace base Namespace name (eg: FedEx\RateService).
      * @param string $subPackageName Sub package the generated class belongs to (used in DocBlock)
-     * @throws Exception
+     * @throws \Exception
      */
-    public function __construct($pathToRequestClassFile, $wsdlPath, $namespace, $subPackageName)
+    public function __construct($exportPath, $wsdlPath, $namespace, $subPackageName)
     {
         if (file_exists($wsdlPath)) {
-            $this->_wsdlPath = $wsdlPath;
+            $this->wsdlPath = $wsdlPath;
         } else {
             throw new \Exception('path to wsdl file is invalid');
         }
-        
-        $this->_pathToRequestClassFile = $pathToRequestClassFile;
-        
-        
-        $this->_namespace = $namespace;
-        
-        $this->_subPackageName = $subPackageName;
-        
+
+        $this->exportPath = $exportPath;
+        $this->namespace = $namespace;
+        $this->subPackageName = $subPackageName;
+
+        $this->loadXML();
     }
-    
+
     /**
      * Run generator
      */
     public function run()
     {
-        $soapClient = new \Soapclient($this->_wsdlPath, array('trace' => true));
-        
+        $this->setupWebServiceUrls();
+
+        $soapClient = new \Soapclient($this->wsdlPath, array('trace' => true));
+
         $soapFunctions = $soapClient->__getFunctions();
-        
+
         $requestFunctionDefinitions = array();
-        
+
         foreach ($soapFunctions as $soapFunctionDescription) {
-            
             $thisDefinition = array();
-            
-            $functionDefinition = '';
-            
+
             $parts = explode(' ', $soapFunctionDescription);
-            
+
             $functionDefinition = 'public function get' . ucfirst(substr($parts[1], 0, stripos($parts[1], '(')) . 'Reply');
-            
+
             $thisDefinition['soapFunction'] = substr($parts[1], 0, stripos($parts[1], '('));
-            
+
             $requestObjectName = substr($parts[1], stripos($parts[1], '(') + 1);
             $thisDefinition['requestObjectName'] = $requestObjectName;
-            
+
             $arg1Type = 'ComplexType\\' . $requestObjectName;
             $arg1VariableName = '$' . lcfirst($requestObjectName);
-            
+
             $thisDefinition['arg1VariableName'] = $arg1VariableName;
-            
+
             $functionDefinition .= "($arg1Type $arg1VariableName)";
-            
+
             $thisDefinition['functionDefinition'] = $functionDefinition;
-            
+
             $requestFunctionDefinitions[] = $thisDefinition;
         }
-        
-       
-        echo "Writing file: {$this->_pathToRequestClassFile}\n";
-        
-        $fh = fopen($this->_pathToRequestClassFile, 'w');
-        
-        $fileBody = $this->_getGeneratedFileBody($requestFunctionDefinitions);
-        
+
+        echo "Writing file: {$this->exportPath}\n";
+
+        $fh = fopen($this->exportPath, 'w');
+
+        $fileBody = $this->getGeneratedFileBody($requestFunctionDefinitions);
+
         fwrite($fh, $fileBody);
         fclose($fh);
-        
     }
-    
+
+    /**
+     * Parses the web service URL from .wdl file
+     */
+    protected function setupWebServiceUrls()
+    {
+        $betaUrl = (string) $this->xml->service->port->children($this->xml->getDocNamespaces()['s1'])->address->attributes()->location;
+        if (empty($betaUrl)) {
+            return;
+        }
+
+        $this->testingUrl = $betaUrl;
+        $this->productionUrl = str_ireplace('beta', '', $this->testingUrl);
+    }
+
     /**
      * Generate body of class file
-     * 
+     *
      * @param array $requestFunctionDefinitions Array contining the request function details
      * @return string
      */
-    protected function _getGeneratedFileBody(array $requestFunctionDefinitions)
-    {        
-        $relativePathToWSDL = $this->getRelativePath($this->_pathToRequestClassFile, $this->_wsdlPath);
+    protected function getGeneratedFileBody(array $requestFunctionDefinitions)
+    {
+        $wsdlFileName = basename($this->wsdlPath);
 
         $requestFunctions = '';
-                
-        foreach ($requestFunctionDefinitions as $functionDefinition)
-        {
+
+        foreach ($requestFunctionDefinitions as $functionDefinition) {
             $requestFunctions .= <<<TEXT
+            
     /**
      * Sends the {$functionDefinition['requestObjectName']} and returns the response
      *
-     * @param ComplexType\\{$functionDefinition['requestObjectName']} {$functionDefinition['arg1VariableName']} 
+     * @param ComplexType\\{$functionDefinition['requestObjectName']} {$functionDefinition['arg1VariableName']}
      * @return stdClass
      */
     {$functionDefinition['functionDefinition']}
     {
-        return \$this->_soapClient->{$functionDefinition['soapFunction']}({$functionDefinition['arg1VariableName']}->toArray());
+        return \$this->getSoapClient()->{$functionDefinition['soapFunction']}({$functionDefinition['arg1VariableName']}->toArray());
     }
-   
+
 TEXT;
         }
-        
-        
+
+
         $fileBody = <<<TEXT
 <?php
-namespace {$this->_namespace};
+namespace {$this->namespace};
     
 use FedEx\AbstractRequest;
 
@@ -155,59 +146,19 @@ use FedEx\AbstractRequest;
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
- * @subpackage  {$this->_subPackageName}
+ * @subpackage  {$this->subPackageName}
  */
 class Request extends AbstractRequest
 {
-    /**
-     * WSDL Path
-     *
-     * @var string
-     */
-    protected \$_wsdlPath;
+    const PRODUCTION_URL = '{$this->productionUrl}';
+    const TESTING_URL = '{$this->testingUrl}';
 
-    /**
-     * SoapClient object
-     *
-     * @var SoapClient
-     */
-    protected \$_soapClient;
-
-    /**
-     * Constructor
-     *
-     * @param string \$wsdlPath
-     */
-    public function __construct(\$wsdlPath = null)
-    {
-        if (null != \$wsdlPath) {
-            \$this->_wsdlPath = \$wsdlPath;
-        } else {
-            \$this->_wsdlPath = realpath(dirname(__FILE__) . '/$relativePathToWSDL');
-        }
-
-        \$this->_soapClient = new \SoapClient(\$this->_wsdlPath, array('trace' => true));
-    }
-
-    /**
-     * Returns the SoapClient instance
-     *
-     * @return \SoapClient
-     */
-    public function getSoapClient()
-    {
-        return \$this->_soapClient;
-    }
-
+    protected \$wsdlFileName = '$wsdlFileName';
 $requestFunctions
-
 }
 
-   
 TEXT;
 
         return $fileBody;
     }
-    
-    
 }

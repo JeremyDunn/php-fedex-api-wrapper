@@ -9,54 +9,56 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class Tax
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\RateService\SimpleType\TaxType|string $TaxType
+ * @property string $Description
+ * @property Money $Amount
 
+ */
+class Tax extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'Tax';
+    protected $name = 'Tax';
 
     /**
      * Set TaxType
      *
      * @param \FedEx\RateService\SimpleType\TaxType|string $taxType
-     * return Tax
+     * @return $this
      */
     public function setTaxType($taxType)
     {
-        $this->TaxType = $taxType;
+        $this->values['TaxType'] = $taxType;
         return $this;
     }
-    
+
     /**
      * Set Description
      *
      * @param string $description
-     * return Tax
+     * @return $this
      */
     public function setDescription($description)
     {
-        $this->Description = $description;
+        $this->values['Description'] = $description;
         return $this;
     }
-    
+
     /**
      * Set Amount
      *
      * @param Money $amount
-     * return Tax
+     * @return $this
      */
     public function setAmount(Money $amount)
     {
-        $this->Amount = $amount;
+        $this->values['Amount'] = $amount;
         return $this;
     }
-    
 
     
 }

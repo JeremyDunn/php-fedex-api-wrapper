@@ -9,150 +9,160 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class FreightServiceCenterDetail
-    extends AbstractComplexType
-{
+ *
+ * @property string $InterlineCarrierCode
+ * @property string $InterlineCarrierName
+ * @property int $AdditionalDays
+ * @property \FedEx\RateService\SimpleType\ServiceType|string $LocalService
+ * @property Distance $LocalDistance
+ * @property string $LocalDuration
+ * @property \FedEx\RateService\SimpleType\FreightServiceSchedulingType|string $LocalServiceScheduling
+ * @property \FedEx\RateService\SimpleType\DayOfWeekType|string[] $LimitedServiceDays
+ * @property string $GatewayLocationId
+ * @property string $Location
+ * @property ContactAndAddress $ContactAndAddress
 
+ */
+class FreightServiceCenterDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'FreightServiceCenterDetail';
+    protected $name = 'FreightServiceCenterDetail';
 
     /**
      * Freight Industry standard non-FedEx carrier identification
      *
      * @param string $interlineCarrierCode
-     * return FreightServiceCenterDetail
+     * @return $this
      */
     public function setInterlineCarrierCode($interlineCarrierCode)
     {
-        $this->InterlineCarrierCode = $interlineCarrierCode;
+        $this->values['InterlineCarrierCode'] = $interlineCarrierCode;
         return $this;
     }
-    
+
     /**
      * The name of the Interline carrier.
      *
      * @param string $interlineCarrierName
-     * return FreightServiceCenterDetail
+     * @return $this
      */
     public function setInterlineCarrierName($interlineCarrierName)
     {
-        $this->InterlineCarrierName = $interlineCarrierName;
+        $this->values['InterlineCarrierName'] = $interlineCarrierName;
         return $this;
     }
-    
+
     /**
      * Additional time it might take at the origin or destination to pickup or deliver the freight. This is usually due to the remoteness of the location. This time is included in the total transit time.
      *
      * @param int $additionalDays
-     * return FreightServiceCenterDetail
+     * @return $this
      */
     public function setAdditionalDays($additionalDays)
     {
-        $this->AdditionalDays = $additionalDays;
+        $this->values['AdditionalDays'] = $additionalDays;
         return $this;
     }
-    
+
     /**
      * Service branding which may be used for local pickup or delivery, distinct from service used for line-haul of customer's shipment.
      *
      * @param \FedEx\RateService\SimpleType\ServiceType|string $localService
-     * return FreightServiceCenterDetail
+     * @return $this
      */
     public function setLocalService($localService)
     {
-        $this->LocalService = $localService;
+        $this->values['LocalService'] = $localService;
         return $this;
     }
-    
+
     /**
      * Distance between customer address (pickup or delivery) and the supporting Freight / National Freight service center.
      *
      * @param Distance $localDistance
-     * return FreightServiceCenterDetail
+     * @return $this
      */
     public function setLocalDistance(Distance $localDistance)
     {
-        $this->LocalDistance = $localDistance;
+        $this->values['LocalDistance'] = $localDistance;
         return $this;
     }
-    
+
     /**
      * Time to travel between customer address (pickup or delivery) and the supporting Freight / National Freight service center.
      *
-     * @param duration $localDuration
-     * return FreightServiceCenterDetail
+     * @param string $localDuration
+     * @return $this
      */
-    public function setLocalDuration(duration $localDuration)
+    public function setLocalDuration($localDuration)
     {
-        $this->LocalDuration = $localDuration;
+        $this->values['LocalDuration'] = $localDuration;
         return $this;
     }
-    
+
     /**
      * Specifies when/how the customer can arrange for pickup or delivery.
      *
      * @param \FedEx\RateService\SimpleType\FreightServiceSchedulingType|string $localServiceScheduling
-     * return FreightServiceCenterDetail
+     * @return $this
      */
     public function setLocalServiceScheduling($localServiceScheduling)
     {
-        $this->LocalServiceScheduling = $localServiceScheduling;
+        $this->values['LocalServiceScheduling'] = $localServiceScheduling;
         return $this;
     }
-    
+
     /**
      * Specifies days of operation if localServiceScheduling is LIMITED.
      *
      * @param DayOfWeekType[] $limitedServiceDays
-     * return FreightServiceCenterDetail
+     * @return $this
      */
     public function setLimitedServiceDays(array $limitedServiceDays)
     {
-        $this->LimitedServiceDays = $limitedServiceDays;
+        $this->values['LimitedServiceDays'] = $limitedServiceDays;
         return $this;
     }
-    
+
     /**
      * Freight service center that is a gateway on the border of Canada or Mexico.
      *
      * @param string $gatewayLocationId
-     * return FreightServiceCenterDetail
+     * @return $this
      */
     public function setGatewayLocationId($gatewayLocationId)
     {
-        $this->GatewayLocationId = $gatewayLocationId;
+        $this->values['GatewayLocationId'] = $gatewayLocationId;
         return $this;
     }
-    
+
     /**
      * Alphabetical code identifying a Freight Service Center
      *
      * @param string $location
-     * return FreightServiceCenterDetail
+     * @return $this
      */
     public function setLocation($location)
     {
-        $this->Location = $location;
+        $this->values['Location'] = $location;
         return $this;
     }
-    
+
     /**
      * Freight service center Contact and Address
      *
      * @param ContactAndAddress $contactAndAddress
-     * return FreightServiceCenterDetail
+     * @return $this
      */
     public function setContactAndAddress(ContactAndAddress $contactAndAddress)
     {
-        $this->ContactAndAddress = $contactAndAddress;
+        $this->values['ContactAndAddress'] = $contactAndAddress;
         return $this;
     }
-    
 
     
 }

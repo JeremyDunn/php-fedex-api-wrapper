@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class ShippingDocumentEMailRecipient
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\RateService\SimpleType\EMailNotificationRecipientType|string $RecipientType
+ * @property string $Address
 
+ */
+class ShippingDocumentEMailRecipient extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'ShippingDocumentEMailRecipient';
+    protected $name = 'ShippingDocumentEMailRecipient';
 
     /**
      * Identifies the relationship of this recipient in the shipment.
      *
      * @param \FedEx\RateService\SimpleType\EMailNotificationRecipientType|string $recipientType
-     * return ShippingDocumentEMailRecipient
+     * @return $this
      */
     public function setRecipientType($recipientType)
     {
-        $this->RecipientType = $recipientType;
+        $this->values['RecipientType'] = $recipientType;
         return $this;
     }
-    
+
     /**
      * Address to which the document is to be sent.
      *
      * @param string $address
-     * return ShippingDocumentEMailRecipient
+     * @return $this
      */
     public function setAddress($address)
     {
-        $this->Address = $address;
+        $this->values['Address'] = $address;
         return $this;
     }
-    
 
     
 }

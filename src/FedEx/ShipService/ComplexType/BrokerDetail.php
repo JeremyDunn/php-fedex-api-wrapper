@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class BrokerDetail
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\ShipService\SimpleType\BrokerType|string $Type
+ * @property Party $Broker
 
+ */
+class BrokerDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'BrokerDetail';
+    protected $name = 'BrokerDetail';
 
     /**
      * Set Type
      *
      * @param \FedEx\ShipService\SimpleType\BrokerType|string $type
-     * return BrokerDetail
+     * @return $this
      */
     public function setType($type)
     {
-        $this->Type = $type;
+        $this->values['Type'] = $type;
         return $this;
     }
-    
+
     /**
      * Set Broker
      *
      * @param Party $broker
-     * return BrokerDetail
+     * @return $this
      */
     public function setBroker(Party $broker)
     {
-        $this->Broker = $broker;
+        $this->values['Broker'] = $broker;
         return $this;
     }
-    
 
     
 }

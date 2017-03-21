@@ -9,66 +9,69 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class PackageOperationalDetail
-    extends AbstractComplexType
-{
+ *
+ * @property string $AstraHandlingText
+ * @property OperationalInstruction[] $OperationalInstructions
+ * @property PackageBarcodes $Barcodes
+ * @property string $GroundServiceCode
 
+ */
+class PackageOperationalDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'PackageOperationalDetail';
+    protected $name = 'PackageOperationalDetail';
 
     /**
      * Human-readable text for pre-January 2011 clients.
      *
      * @param string $astraHandlingText
-     * return PackageOperationalDetail
+     * @return $this
      */
     public function setAstraHandlingText($astraHandlingText)
     {
-        $this->AstraHandlingText = $astraHandlingText;
+        $this->values['AstraHandlingText'] = $astraHandlingText;
         return $this;
     }
-    
+
     /**
      * Human-readable content for use on a label.
      *
      * @param OperationalInstruction[] $operationalInstructions
-     * return PackageOperationalDetail
+     * @return $this
      */
     public function setOperationalInstructions(array $operationalInstructions)
     {
-        $this->OperationalInstructions = $operationalInstructions;
+        $this->values['OperationalInstructions'] = $operationalInstructions;
         return $this;
     }
-    
+
     /**
      * The operational barcodes pertaining to the current package.
      *
      * @param PackageBarcodes $barcodes
-     * return PackageOperationalDetail
+     * @return $this
      */
     public function setBarcodes(PackageBarcodes $barcodes)
     {
-        $this->Barcodes = $barcodes;
+        $this->values['Barcodes'] = $barcodes;
         return $this;
     }
-    
+
     /**
      * The FedEx internal code that represents the service and/or features of service for the current package moving under a FedEx Ground service.
      *
      * @param string $groundServiceCode
-     * return PackageOperationalDetail
+     * @return $this
      */
     public function setGroundServiceCode($groundServiceCode)
     {
-        $this->GroundServiceCode = $groundServiceCode;
+        $this->values['GroundServiceCode'] = $groundServiceCode;
         return $this;
     }
-    
 
     
 }

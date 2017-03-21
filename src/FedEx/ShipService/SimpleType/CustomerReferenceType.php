@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class CustomerReferenceType
-    extends AbstractSimpleType
+class CustomerReferenceType extends AbstractSimpleType
 {
     const _BILL_OF_LADING = 'BILL_OF_LADING';
     const _CUSTOMER_REFERENCE = 'CUSTOMER_REFERENCE';

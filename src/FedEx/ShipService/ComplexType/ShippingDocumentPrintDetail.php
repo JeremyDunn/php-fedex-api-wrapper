@@ -9,30 +9,30 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class ShippingDocumentPrintDetail
-    extends AbstractComplexType
-{
+ *
+ * @property string $PrinterId
 
+ */
+class ShippingDocumentPrintDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'ShippingDocumentPrintDetail';
+    protected $name = 'ShippingDocumentPrintDetail';
 
     /**
      * Provides environment-specific printer identification.
      *
      * @param string $printerId
-     * return ShippingDocumentPrintDetail
+     * @return $this
      */
     public function setPrinterId($printerId)
     {
-        $this->PrinterId = $printerId;
+        $this->values['PrinterId'] = $printerId;
         return $this;
     }
-    
 
     
 }

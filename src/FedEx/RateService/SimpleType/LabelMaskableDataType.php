@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class LabelMaskableDataType
-    extends AbstractSimpleType
+class LabelMaskableDataType extends AbstractSimpleType
 {
     const _CUSTOMS_VALUE = 'CUSTOMS_VALUE';
     const _DIMENSIONS = 'DIMENSIONS';

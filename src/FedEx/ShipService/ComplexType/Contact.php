@@ -9,138 +9,147 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class Contact
-    extends AbstractComplexType
-{
+ *
+ * @property string $ContactId
+ * @property string $PersonName
+ * @property string $Title
+ * @property string $CompanyName
+ * @property string $PhoneNumber
+ * @property string $PhoneExtension
+ * @property string $TollFreePhoneNumber
+ * @property string $PagerNumber
+ * @property string $FaxNumber
+ * @property string $EMailAddress
 
+ */
+class Contact extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'Contact';
+    protected $name = 'Contact';
 
     /**
      * Client provided identifier corresponding to this contact information.
      *
      * @param string $contactId
-     * return Contact
+     * @return $this
      */
     public function setContactId($contactId)
     {
-        $this->ContactId = $contactId;
+        $this->values['ContactId'] = $contactId;
         return $this;
     }
-    
+
     /**
      * Identifies the contact person's name.
      *
      * @param string $personName
-     * return Contact
+     * @return $this
      */
     public function setPersonName($personName)
     {
-        $this->PersonName = $personName;
+        $this->values['PersonName'] = $personName;
         return $this;
     }
-    
+
     /**
      * Identifies the contact person's title.
      *
      * @param string $title
-     * return Contact
+     * @return $this
      */
     public function setTitle($title)
     {
-        $this->Title = $title;
+        $this->values['Title'] = $title;
         return $this;
     }
-    
+
     /**
      * Identifies the company this contact is associated with.
      *
      * @param string $companyName
-     * return Contact
+     * @return $this
      */
     public function setCompanyName($companyName)
     {
-        $this->CompanyName = $companyName;
+        $this->values['CompanyName'] = $companyName;
         return $this;
     }
-    
+
     /**
      * Identifies the phone number associated with this contact.
      *
      * @param string $phoneNumber
-     * return Contact
+     * @return $this
      */
     public function setPhoneNumber($phoneNumber)
     {
-        $this->PhoneNumber = $phoneNumber;
+        $this->values['PhoneNumber'] = $phoneNumber;
         return $this;
     }
-    
+
     /**
      * Identifies the phone extension associated with this contact.
      *
      * @param string $phoneExtension
-     * return Contact
+     * @return $this
      */
     public function setPhoneExtension($phoneExtension)
     {
-        $this->PhoneExtension = $phoneExtension;
+        $this->values['PhoneExtension'] = $phoneExtension;
         return $this;
     }
-    
+
     /**
      * Identifies a toll free number, if any, associated with this contact.
      *
      * @param string $tollFreePhoneNumber
-     * return Contact
+     * @return $this
      */
     public function setTollFreePhoneNumber($tollFreePhoneNumber)
     {
-        $this->TollFreePhoneNumber = $tollFreePhoneNumber;
+        $this->values['TollFreePhoneNumber'] = $tollFreePhoneNumber;
         return $this;
     }
-    
+
     /**
      * Identifies the pager number associated with this contact.
      *
      * @param string $pagerNumber
-     * return Contact
+     * @return $this
      */
     public function setPagerNumber($pagerNumber)
     {
-        $this->PagerNumber = $pagerNumber;
+        $this->values['PagerNumber'] = $pagerNumber;
         return $this;
     }
-    
+
     /**
      * Identifies the fax number associated with this contact.
      *
      * @param string $faxNumber
-     * return Contact
+     * @return $this
      */
     public function setFaxNumber($faxNumber)
     {
-        $this->FaxNumber = $faxNumber;
+        $this->values['FaxNumber'] = $faxNumber;
         return $this;
     }
-    
+
     /**
      * Identifies the email address associated with this contact.
      *
      * @param string $eMailAddress
-     * return Contact
+     * @return $this
      */
     public function setEMailAddress($eMailAddress)
     {
-        $this->EMailAddress = $eMailAddress;
+        $this->values['EMailAddress'] = $eMailAddress;
         return $this;
     }
-    
 
     
 }

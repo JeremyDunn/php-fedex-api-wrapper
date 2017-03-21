@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class ExpressFreightDetailContact
-    extends AbstractComplexType
-{
+ *
+ * @property string $Name
+ * @property string $Phone
 
+ */
+class ExpressFreightDetailContact extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'ExpressFreightDetailContact';
+    protected $name = 'ExpressFreightDetailContact';
 
     /**
      * Set Name
      *
      * @param string $name
-     * return ExpressFreightDetailContact
+     * @return $this
      */
     public function setName($name)
     {
-        $this->Name = $name;
+        $this->values['Name'] = $name;
         return $this;
     }
-    
+
     /**
      * Set Phone
      *
      * @param string $phone
-     * return ExpressFreightDetailContact
+     * @return $this
      */
     public function setPhone($phone)
     {
-        $this->Phone = $phone;
+        $this->values['Phone'] = $phone;
         return $this;
     }
-    
 
     
 }

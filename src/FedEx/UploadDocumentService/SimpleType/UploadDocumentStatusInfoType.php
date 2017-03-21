@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */
-class UploadDocumentStatusInfoType
-    extends AbstractSimpleType
+class UploadDocumentStatusInfoType extends AbstractSimpleType
 {
     const _DOCUMENT_CONTENT_FAILED_VIRUS_CHECK = 'DOCUMENT_CONTENT_FAILED_VIRUS_CHECK';
     const _DOCUMENT_CONTENT_MISSING = 'DOCUMENT_CONTENT_MISSING';

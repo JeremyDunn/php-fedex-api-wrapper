@@ -9,54 +9,56 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class DangerousGoodsSignatory
-    extends AbstractComplexType
-{
+ *
+ * @property string $ContactName
+ * @property string $Title
+ * @property string $Place
 
+ */
+class DangerousGoodsSignatory extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'DangerousGoodsSignatory';
+    protected $name = 'DangerousGoodsSignatory';
 
     /**
      * Set ContactName
      *
      * @param string $contactName
-     * return DangerousGoodsSignatory
+     * @return $this
      */
     public function setContactName($contactName)
     {
-        $this->ContactName = $contactName;
+        $this->values['ContactName'] = $contactName;
         return $this;
     }
-    
+
     /**
      * Set Title
      *
      * @param string $title
-     * return DangerousGoodsSignatory
+     * @return $this
      */
     public function setTitle($title)
     {
-        $this->Title = $title;
+        $this->values['Title'] = $title;
         return $this;
     }
-    
+
     /**
      * Indicates the place where the form is signed.
      *
      * @param string $place
-     * return DangerousGoodsSignatory
+     * @return $this
      */
     public function setPlace($place)
     {
-        $this->Place = $place;
+        $this->values['Place'] = $place;
         return $this;
     }
-    
 
     
 }

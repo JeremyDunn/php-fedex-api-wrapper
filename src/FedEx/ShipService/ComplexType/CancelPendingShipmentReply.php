@@ -9,66 +9,69 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class CancelPendingShipmentReply
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\ShipService\SimpleType\NotificationSeverityType|string $HighestSeverity
+ * @property Notification[] $Notifications
+ * @property TransactionDetail $TransactionDetail
+ * @property VersionId $Version
 
+ */
+class CancelPendingShipmentReply extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'CancelPendingShipmentReply';
+    protected $name = 'CancelPendingShipmentReply';
 
     /**
      * Set HighestSeverity
      *
      * @param \FedEx\ShipService\SimpleType\NotificationSeverityType|string $highestSeverity
-     * return CancelPendingShipmentReply
+     * @return $this
      */
     public function setHighestSeverity($highestSeverity)
     {
-        $this->HighestSeverity = $highestSeverity;
+        $this->values['HighestSeverity'] = $highestSeverity;
         return $this;
     }
-    
+
     /**
      * Set Notifications
      *
      * @param Notification[] $notifications
-     * return CancelPendingShipmentReply
+     * @return $this
      */
     public function setNotifications(array $notifications)
     {
-        $this->Notifications = $notifications;
+        $this->values['Notifications'] = $notifications;
         return $this;
     }
-    
+
     /**
      * Set TransactionDetail
      *
      * @param TransactionDetail $transactionDetail
-     * return CancelPendingShipmentReply
+     * @return $this
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
-        $this->TransactionDetail = $transactionDetail;
+        $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
     }
-    
+
     /**
      * Set Version
      *
      * @param VersionId $version
-     * return CancelPendingShipmentReply
+     * @return $this
      */
     public function setVersion(VersionId $version)
     {
-        $this->Version = $version;
+        $this->values['Version'] = $version;
         return $this;
     }
-    
 
     
 }

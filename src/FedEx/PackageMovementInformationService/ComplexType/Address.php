@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
- */
-class Address
-    extends AbstractComplexType
-{
+ *
+ * @property string $PostalCode
+ * @property string $CountryCode
 
+ */
+class Address extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'Address';
+    protected $name = 'Address';
 
     /**
      * Identification of a region (usually small) for mail/package delivery. Format and presence of this field will vary, depending on country.
      *
      * @param string $postalCode
-     * return Address
+     * @return $this
      */
     public function setPostalCode($postalCode)
     {
-        $this->PostalCode = $postalCode;
+        $this->values['PostalCode'] = $postalCode;
         return $this;
     }
-    
+
     /**
      * The two-letter code used to identify a country.
      *
      * @param string $countryCode
-     * return Address
+     * @return $this
      */
     public function setCountryCode($countryCode)
     {
-        $this->CountryCode = $countryCode;
+        $this->values['CountryCode'] = $countryCode;
         return $this;
     }
-    
 
     
 }

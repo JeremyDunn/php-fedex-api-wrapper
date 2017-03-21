@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class FreightClassType
-    extends AbstractSimpleType
+class FreightClassType extends AbstractSimpleType
 {
     const _CLASS_050 = 'CLASS_050';
     const _CLASS_055 = 'CLASS_055';

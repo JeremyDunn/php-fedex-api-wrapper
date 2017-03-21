@@ -9,30 +9,30 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class GeneralAgencyAgreementDetail
-    extends AbstractComplexType
-{
+ *
+ * @property ShippingDocumentFormat $Format
 
+ */
+class GeneralAgencyAgreementDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'GeneralAgencyAgreementDetail';
+    protected $name = 'GeneralAgencyAgreementDetail';
 
     /**
      * Set Format
      *
      * @param ShippingDocumentFormat $format
-     * return GeneralAgencyAgreementDetail
+     * @return $this
      */
     public function setFormat(ShippingDocumentFormat $format)
     {
-        $this->Format = $format;
+        $this->values['Format'] = $format;
         return $this;
     }
-    
 
     
 }

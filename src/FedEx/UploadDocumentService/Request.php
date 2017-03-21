@@ -12,68 +12,31 @@ use FedEx\AbstractRequest;
  */
 class Request extends AbstractRequest
 {
-    /**
-     * WSDL Path
-     *
-     * @var string
-     */
-    protected $_wsdlPath;
+    const PRODUCTION_URL = 'https://gateway.fedex.com:443/web-services/uploaddocument';
+    const TESTING_URL = 'https://gatewaybeta.fedex.com:443/web-services/uploaddocument';
 
-    /**
-     * SoapClient object
-     *
-     * @var SoapClient
-     */
-    protected $_soapClient;
-
-    /**
-     * Constructor
-     *
-     * @param string $wsdlPath
-     */
-    public function __construct($wsdlPath = null)
-    {
-        if (null != $wsdlPath) {
-            $this->_wsdlPath = $wsdlPath;
-        } else {
-            $this->_wsdlPath = realpath(dirname(__FILE__) . '/../_wsdl/UploadDocumentService_v1.wsdl');
-        }
-
-        $this->_soapClient = new \SoapClient($this->_wsdlPath, array('trace' => true));
-    }
-
-    /**
-     * Returns the SoapClient instance
-     *
-     * @return \SoapClient
-     */
-    public function getSoapClient()
-    {
-        return $this->_soapClient;
-    }
-
+    protected $wsdlFileName = 'UploadDocumentService_v1.wsdl';
+            
     /**
      * Sends the UploadDocumentsRequest and returns the response
      *
-     * @param ComplexType\UploadDocumentsRequest $uploadDocumentsRequest 
+     * @param ComplexType\UploadDocumentsRequest $uploadDocumentsRequest
      * @return stdClass
      */
     public function getUploadDocumentsReply(ComplexType\UploadDocumentsRequest $uploadDocumentsRequest)
     {
-        return $this->_soapClient->uploadDocuments($uploadDocumentsRequest->toArray());
+        return $this->getSoapClient()->uploadDocuments($uploadDocumentsRequest->toArray());
     }
-       /**
+            
+    /**
      * Sends the UploadImagesRequest and returns the response
      *
-     * @param ComplexType\UploadImagesRequest $uploadImagesRequest 
+     * @param ComplexType\UploadImagesRequest $uploadImagesRequest
      * @return stdClass
      */
     public function getUploadImagesReply(ComplexType\UploadImagesRequest $uploadImagesRequest)
     {
-        return $this->_soapClient->uploadImages($uploadImagesRequest->toArray());
+        return $this->getSoapClient()->uploadImages($uploadImagesRequest->toArray());
     }
-   
 
 }
-
-   

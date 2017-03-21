@@ -9,54 +9,56 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class ShipmentRating
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\ShipService\SimpleType\ReturnedRateType|string $ActualRateType
+ * @property Money $EffectiveNetDiscount
+ * @property ShipmentRateDetail[] $ShipmentRateDetails
 
+ */
+class ShipmentRating extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'ShipmentRating';
+    protected $name = 'ShipmentRating';
 
     /**
      * This rate type identifies which entry in the following array is considered as presenting the "actual" rates for the shipment.
      *
      * @param \FedEx\ShipService\SimpleType\ReturnedRateType|string $actualRateType
-     * return ShipmentRating
+     * @return $this
      */
     public function setActualRateType($actualRateType)
     {
-        $this->ActualRateType = $actualRateType;
+        $this->values['ActualRateType'] = $actualRateType;
         return $this;
     }
-    
+
     /**
      * The "list" total net charge minus "actual" total net charge.
      *
      * @param Money $effectiveNetDiscount
-     * return ShipmentRating
+     * @return $this
      */
     public function setEffectiveNetDiscount(Money $effectiveNetDiscount)
     {
-        $this->EffectiveNetDiscount = $effectiveNetDiscount;
+        $this->values['EffectiveNetDiscount'] = $effectiveNetDiscount;
         return $this;
     }
-    
+
     /**
      * Each element of this field provides shipment-level rate totals for a specific rate type.
      *
      * @param ShipmentRateDetail[] $shipmentRateDetails
-     * return ShipmentRating
+     * @return $this
      */
     public function setShipmentRateDetails(array $shipmentRateDetails)
     {
-        $this->ShipmentRateDetails = $shipmentRateDetails;
+        $this->values['ShipmentRateDetails'] = $shipmentRateDetails;
         return $this;
     }
-    
 
     
 }

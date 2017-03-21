@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class HazardousCommodityLabelTextOptionType
-    extends AbstractSimpleType
+class HazardousCommodityLabelTextOptionType extends AbstractSimpleType
 {
     const _APPEND = 'APPEND';
     const _OVERRIDE = 'OVERRIDE';

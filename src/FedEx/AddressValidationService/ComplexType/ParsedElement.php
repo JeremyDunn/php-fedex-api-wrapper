@@ -9,54 +9,56 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Address Validation Service
- */
-class ParsedElement
-    extends AbstractComplexType
-{
+ *
+ * @property string $Name
+ * @property string $Value
+ * @property \FedEx\AddressValidationService\SimpleType\AddressValidationChangeType|string[] $Changes
 
+ */
+class ParsedElement extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'ParsedElement';
+    protected $name = 'ParsedElement';
 
     /**
      * Set Name
      *
      * @param string $name
-     * return ParsedElement
+     * @return $this
      */
     public function setName($name)
     {
-        $this->Name = $name;
+        $this->values['Name'] = $name;
         return $this;
     }
-    
+
     /**
      * Set Value
      *
      * @param string $value
-     * return ParsedElement
+     * @return $this
      */
     public function setValue($value)
     {
-        $this->Value = $value;
+        $this->values['Value'] = $value;
         return $this;
     }
-    
+
     /**
      * Set Changes
      *
      * @param AddressValidationChangeType[] $changes
-     * return ParsedElement
+     * @return $this
      */
     public function setChanges(array $changes)
     {
-        $this->Changes = $changes;
+        $this->values['Changes'] = $changes;
         return $this;
     }
-    
 
     
 }

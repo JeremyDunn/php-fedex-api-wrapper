@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class EdtTaxType
-    extends AbstractSimpleType
+class EdtTaxType extends AbstractSimpleType
 {
     const _ADDITIONAL_TAXES = 'ADDITIONAL_TAXES';
     const _CONSULAR_INVOICE_FEE = 'CONSULAR_INVOICE_FEE';

@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Address Validation Service
- */
-class WebAuthenticationCredential
-    extends AbstractComplexType
-{
+ *
+ * @property string $Key
+ * @property string $Password
 
+ */
+class WebAuthenticationCredential extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'WebAuthenticationCredential';
+    protected $name = 'WebAuthenticationCredential';
 
     /**
      * Identifying part of the authentication key. This value is provided by FedEx after registration.
      *
      * @param string $key
-     * return WebAuthenticationCredential
+     * @return $this
      */
     public function setKey($key)
     {
-        $this->Key = $key;
+        $this->values['Key'] = $key;
         return $this;
     }
-    
+
     /**
      * Secret part of authentication key used for authentication. This value is provided by FedEx after registration.
      *
      * @param string $password
-     * return WebAuthenticationCredential
+     * @return $this
      */
     public function setPassword($password)
     {
-        $this->Password = $password;
+        $this->values['Password'] = $password;
         return $this;
     }
-    
 
     
 }

@@ -12,8 +12,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class NaftaNetCostMethodCode
-    extends AbstractSimpleType
+class NaftaNetCostMethodCode extends AbstractSimpleType
 {
     const _NC = 'NC';
     const _NO = 'NO';

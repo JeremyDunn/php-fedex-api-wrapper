@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Return Tag Service
  */
-class ExpressTagAvailabilityType
-    extends AbstractSimpleType
+class ExpressTagAvailabilityType extends AbstractSimpleType
 {
     const _NEXT_DAY_AVAILABLE = 'NEXT_DAY_AVAILABLE';
     const _SAME_DAY_AND_NEXT_DAY_AVAILABLE = 'SAME_DAY_AND_NEXT_DAY_AVAILABLE';

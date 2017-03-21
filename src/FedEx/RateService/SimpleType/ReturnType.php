@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class ReturnType
-    extends AbstractSimpleType
+class ReturnType extends AbstractSimpleType
 {
     const _FEDEX_TAG = 'FEDEX_TAG';
     const _PENDING = 'PENDING';

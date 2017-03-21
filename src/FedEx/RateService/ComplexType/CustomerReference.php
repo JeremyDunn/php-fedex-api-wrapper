@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class CustomerReference
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\RateService\SimpleType\CustomerReferenceType|string $CustomerReferenceType
+ * @property string $Value
 
+ */
+class CustomerReference extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'CustomerReference';
+    protected $name = 'CustomerReference';
 
     /**
      * Set CustomerReferenceType
      *
      * @param \FedEx\RateService\SimpleType\CustomerReferenceType|string $customerReferenceType
-     * return CustomerReference
+     * @return $this
      */
     public function setCustomerReferenceType($customerReferenceType)
     {
-        $this->CustomerReferenceType = $customerReferenceType;
+        $this->values['CustomerReferenceType'] = $customerReferenceType;
         return $this;
     }
-    
+
     /**
      * Set Value
      *
      * @param string $value
-     * return CustomerReference
+     * @return $this
      */
     public function setValue($value)
     {
-        $this->Value = $value;
+        $this->values['Value'] = $value;
         return $this;
     }
-    
 
     
 }

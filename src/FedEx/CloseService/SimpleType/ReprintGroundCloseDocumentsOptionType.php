@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Close Service
  */
-class ReprintGroundCloseDocumentsOptionType
-    extends AbstractSimpleType
+class ReprintGroundCloseDocumentsOptionType extends AbstractSimpleType
 {
     const _BY_SHIP_DATE = 'BY_SHIP_DATE';
     const _BY_TRACKING_NUMBER = 'BY_TRACKING_NUMBER';

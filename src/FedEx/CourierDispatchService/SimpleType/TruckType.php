@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Courier Dispatch Service
  */
-class TruckType
-    extends AbstractSimpleType
+class TruckType extends AbstractSimpleType
 {
     const _DROP_TRAILER_AGREEMENT = 'DROP_TRAILER_AGREEMENT';
     const _LIFTGATE = 'LIFTGATE';

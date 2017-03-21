@@ -9,30 +9,30 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
- */
-class SpecialEquipmentDetail
-    extends AbstractComplexType
-{
+ *
+ * @property SpecialEquipmentLineItem[] $LineItems
 
+ */
+class SpecialEquipmentDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'SpecialEquipmentDetail';
+    protected $name = 'SpecialEquipmentDetail';
 
     /**
      * Contains an entry for each type of special equipment used with shipment
      *
      * @param SpecialEquipmentLineItem[] $lineItems
-     * return SpecialEquipmentDetail
+     * @return $this
      */
     public function setLineItems(array $lineItems)
     {
-        $this->LineItems = $lineItems;
+        $this->values['LineItems'] = $lineItems;
         return $this;
     }
-    
 
     
 }

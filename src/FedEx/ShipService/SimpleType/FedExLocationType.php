@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class FedExLocationType
-    extends AbstractSimpleType
+class FedExLocationType extends AbstractSimpleType
 {
     const _FEDEX_EXPRESS_STATION = 'FEDEX_EXPRESS_STATION';
     const _FEDEX_FREIGHT_SERVICE_CENTER = 'FEDEX_FREIGHT_SERVICE_CENTER';

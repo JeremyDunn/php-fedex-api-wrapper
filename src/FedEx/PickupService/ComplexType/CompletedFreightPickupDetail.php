@@ -9,90 +9,95 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
- */
-class CompletedFreightPickupDetail
-    extends AbstractComplexType
-{
+ *
+ * @property FreightServiceCenterDetail $Origin
+ * @property CompletedFreightPickupLineItem[] $LineItems
+ * @property int $TotalPieces
+ * @property Weight $TotalWeight
+ * @property int $TotalHandlingUnits
+ * @property \FedEx\Pickup\SimpleType\PickupEventType|string $Status
 
+ */
+class CompletedFreightPickupDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'CompletedFreightPickupDetail';
+    protected $name = 'CompletedFreightPickupDetail';
 
     /**
      * Describes the origin service center handling the pickup.
      *
      * @param FreightServiceCenterDetail $origin
-     * return CompletedFreightPickupDetail
+     * @return $this
      */
     public function setOrigin(FreightServiceCenterDetail $origin)
     {
-        $this->Origin = $origin;
+        $this->values['Origin'] = $origin;
         return $this;
     }
-    
+
     /**
      * Describes the results for each line item in the original request.
      *
      * @param CompletedFreightPickupLineItem[] $lineItems
-     * return CompletedFreightPickupDetail
+     * @return $this
      */
     public function setLineItems(array $lineItems)
     {
-        $this->LineItems = $lineItems;
+        $this->values['LineItems'] = $lineItems;
         return $this;
     }
-    
+
     /**
      * Total number of pieces from all line items from request.
      *
-     * @param nonNegativeInteger $totalPieces
-     * return CompletedFreightPickupDetail
+     * @param int $totalPieces
+     * @return $this
      */
     public function setTotalPieces($totalPieces)
     {
-        $this->TotalPieces = $totalPieces;
+        $this->values['TotalPieces'] = $totalPieces;
         return $this;
     }
-    
+
     /**
      * Total weight from all line items from request.
      *
      * @param Weight $totalWeight
-     * return CompletedFreightPickupDetail
+     * @return $this
      */
     public function setTotalWeight(Weight $totalWeight)
     {
-        $this->TotalWeight = $totalWeight;
+        $this->values['TotalWeight'] = $totalWeight;
         return $this;
     }
-    
+
     /**
      * Total handling units from all line items from request.
      *
-     * @param nonNegativeInteger $totalHandlingUnits
-     * return CompletedFreightPickupDetail
+     * @param int $totalHandlingUnits
+     * @return $this
      */
     public function setTotalHandlingUnits($totalHandlingUnits)
     {
-        $this->TotalHandlingUnits = $totalHandlingUnits;
+        $this->values['TotalHandlingUnits'] = $totalHandlingUnits;
         return $this;
     }
-    
+
     /**
      * Resulting status of pickup.
      *
      * @param \FedEx\Pickup\SimpleType\PickupEventType|string $status
-     * return CompletedFreightPickupDetail
+     * @return $this
      */
     public function setStatus($status)
     {
-        $this->Status = $status;
+        $this->values['Status'] = $status;
         return $this;
     }
-    
 
     
 }

@@ -9,102 +9,108 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Locator Service
- */
-class Address
-    extends AbstractComplexType
-{
+ *
+ * @property string[] $StreetLines
+ * @property string $City
+ * @property string $StateOrProvinceCode
+ * @property string $PostalCode
+ * @property string $UrbanizationCode
+ * @property string $CountryCode
+ * @property boolean $Residential
 
+ */
+class Address extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'Address';
+    protected $name = 'Address';
 
     /**
      * Combination of number, street name, etc. Empty lines should not be included.
      *
      * @param string[] $streetLines
-     * return Address
+     * @return $this
      */
     public function setStreetLines(array $streetLines)
     {
-        $this->StreetLines = $streetLines;
+        $this->values['StreetLines'] = $streetLines;
         return $this;
     }
-    
+
     /**
      * Name of city, town, etc. 
      *
      * @param string $city
-     * return Address
+     * @return $this
      */
     public function setCity($city)
     {
-        $this->City = $city;
+        $this->values['City'] = $city;
         return $this;
     }
-    
+
     /**
      * Identifying abbreviation for US state, Canada province, etc. Format and presence of this field will vary, depending on country.
      *
      * @param string $stateOrProvinceCode
-     * return Address
+     * @return $this
      */
     public function setStateOrProvinceCode($stateOrProvinceCode)
     {
-        $this->StateOrProvinceCode = $stateOrProvinceCode;
+        $this->values['StateOrProvinceCode'] = $stateOrProvinceCode;
         return $this;
     }
-    
+
     /**
      * Identification of a region (usually small) for mail/package delivery. Format and presence of this field will vary, depending on country.
      *
      * @param string $postalCode
-     * return Address
+     * @return $this
      */
     public function setPostalCode($postalCode)
     {
-        $this->PostalCode = $postalCode;
+        $this->values['PostalCode'] = $postalCode;
         return $this;
     }
-    
+
     /**
      * Relevant only to addresses in Puerto Rico. In Puerto Rico, multiple addresses within the same ZIP code can have the same house number and street name. When this is the case, the urbanization code is needed to distinguish them.
      *
      * @param string $urbanizationCode
-     * return Address
+     * @return $this
      */
     public function setUrbanizationCode($urbanizationCode)
     {
-        $this->UrbanizationCode = $urbanizationCode;
+        $this->values['UrbanizationCode'] = $urbanizationCode;
         return $this;
     }
-    
+
     /**
      * Identification of a country. Defaults to "US". Valid values: US - United States, CA - Canada.
      *
      * @param string $countryCode
-     * return Address
+     * @return $this
      */
     public function setCountryCode($countryCode)
     {
-        $this->CountryCode = $countryCode;
+        $this->values['CountryCode'] = $countryCode;
         return $this;
     }
-    
+
     /**
      * Indicates whether this address is residential (as opposed to commercial).
      *
      * @param boolean $residential
-     * return Address
+     * @return $this
      */
     public function setResidential($residential)
     {
-        $this->Residential = $residential;
+        $this->values['Residential'] = $residential;
         return $this;
     }
-    
 
     
 }

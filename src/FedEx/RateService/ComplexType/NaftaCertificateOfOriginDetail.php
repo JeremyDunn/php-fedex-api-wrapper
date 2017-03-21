@@ -9,102 +9,108 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class NaftaCertificateOfOriginDetail
-    extends AbstractComplexType
-{
+ *
+ * @property ShippingDocumentFormat $Format
+ * @property DateRange $BlanketPeriod
+ * @property \FedEx\RateService\SimpleType\NaftaImporterSpecificationType|string $ImporterSpecification
+ * @property Contact $SignatureContact
+ * @property \FedEx\RateService\SimpleType\NaftaProducerSpecificationType|string $ProducerSpecification
+ * @property NaftaProducer[] $Producers
+ * @property CustomerImageUsage[] $CustomerImageUsages
 
+ */
+class NaftaCertificateOfOriginDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'NaftaCertificateOfOriginDetail';
+    protected $name = 'NaftaCertificateOfOriginDetail';
 
     /**
      * Set Format
      *
      * @param ShippingDocumentFormat $format
-     * return NaftaCertificateOfOriginDetail
+     * @return $this
      */
     public function setFormat(ShippingDocumentFormat $format)
     {
-        $this->Format = $format;
+        $this->values['Format'] = $format;
         return $this;
     }
-    
+
     /**
      * Set BlanketPeriod
      *
      * @param DateRange $blanketPeriod
-     * return NaftaCertificateOfOriginDetail
+     * @return $this
      */
     public function setBlanketPeriod(DateRange $blanketPeriod)
     {
-        $this->BlanketPeriod = $blanketPeriod;
+        $this->values['BlanketPeriod'] = $blanketPeriod;
         return $this;
     }
-    
+
     /**
      * Indicates which Party (if any) from the shipment is to be used as the source of importer data on the NAFTA COO form.
      *
      * @param \FedEx\RateService\SimpleType\NaftaImporterSpecificationType|string $importerSpecification
-     * return NaftaCertificateOfOriginDetail
+     * @return $this
      */
     public function setImporterSpecification($importerSpecification)
     {
-        $this->ImporterSpecification = $importerSpecification;
+        $this->values['ImporterSpecification'] = $importerSpecification;
         return $this;
     }
-    
+
     /**
      * Contact information for "Authorized Signature" area of form.
      *
      * @param Contact $signatureContact
-     * return NaftaCertificateOfOriginDetail
+     * @return $this
      */
     public function setSignatureContact(Contact $signatureContact)
     {
-        $this->SignatureContact = $signatureContact;
+        $this->values['SignatureContact'] = $signatureContact;
         return $this;
     }
-    
+
     /**
      * Set ProducerSpecification
      *
      * @param \FedEx\RateService\SimpleType\NaftaProducerSpecificationType|string $producerSpecification
-     * return NaftaCertificateOfOriginDetail
+     * @return $this
      */
     public function setProducerSpecification($producerSpecification)
     {
-        $this->ProducerSpecification = $producerSpecification;
+        $this->values['ProducerSpecification'] = $producerSpecification;
         return $this;
     }
-    
+
     /**
      * Set Producers
      *
      * @param NaftaProducer[] $producers
-     * return NaftaCertificateOfOriginDetail
+     * @return $this
      */
     public function setProducers(array $producers)
     {
-        $this->Producers = $producers;
+        $this->values['Producers'] = $producers;
         return $this;
     }
-    
+
     /**
      * Set CustomerImageUsages
      *
      * @param CustomerImageUsage[] $customerImageUsages
-     * return NaftaCertificateOfOriginDetail
+     * @return $this
      */
     public function setCustomerImageUsages(array $customerImageUsages)
     {
-        $this->CustomerImageUsages = $customerImageUsages;
+        $this->values['CustomerImageUsages'] = $customerImageUsages;
         return $this;
     }
-    
 
     
 }

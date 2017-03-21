@@ -12,58 +12,20 @@ use FedEx\AbstractRequest;
  */
 class Request extends AbstractRequest
 {
-    /**
-     * WSDL Path
-     *
-     * @var string
-     */
-    protected $_wsdlPath;
+    const PRODUCTION_URL = 'https://gateway.fedex.com:443/web-services';
+    const TESTING_URL = 'https://gatewaybeta.fedex.com:443/web-services';
 
-    /**
-     * SoapClient object
-     *
-     * @var SoapClient
-     */
-    protected $_soapClient;
-
-    /**
-     * Constructor
-     *
-     * @param string $wsdlPath
-     */
-    public function __construct($wsdlPath = null)
-    {
-        if (null != $wsdlPath) {
-            $this->_wsdlPath = $wsdlPath;
-        } else {
-            $this->_wsdlPath = realpath(dirname(__FILE__) . '/../_wsdl/ReturnTagService_v1.wsdl');
-        }
-
-        $this->_soapClient = new \SoapClient($this->_wsdlPath, array('trace' => true));
-    }
-
-    /**
-     * Returns the SoapClient instance
-     *
-     * @return \SoapClient
-     */
-    public function getSoapClient()
-    {
-        return $this->_soapClient;
-    }
-
+    protected $wsdlFileName = 'ReturnTagService_v1.wsdl';
+            
     /**
      * Sends the ExpressTagAvailabilityRequest and returns the response
      *
-     * @param ComplexType\ExpressTagAvailabilityRequest $expressTagAvailabilityRequest 
+     * @param ComplexType\ExpressTagAvailabilityRequest $expressTagAvailabilityRequest
      * @return stdClass
      */
     public function getGetExpressTagAvailabilityReply(ComplexType\ExpressTagAvailabilityRequest $expressTagAvailabilityRequest)
     {
-        return $this->_soapClient->getExpressTagAvailability($expressTagAvailabilityRequest->toArray());
+        return $this->getSoapClient()->getExpressTagAvailability($expressTagAvailabilityRequest->toArray());
     }
-   
 
 }
-
-   

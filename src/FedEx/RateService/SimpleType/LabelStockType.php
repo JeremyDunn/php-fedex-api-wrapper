@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class LabelStockType
-    extends AbstractSimpleType
+class LabelStockType extends AbstractSimpleType
 {
     const _PAPER_4X6 = 'PAPER_4X6';
     const _PAPER_4X8 = 'PAPER_4X8';

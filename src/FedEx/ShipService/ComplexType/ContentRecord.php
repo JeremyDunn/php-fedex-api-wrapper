@@ -9,66 +9,69 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class ContentRecord
-    extends AbstractComplexType
-{
+ *
+ * @property string $PartNumber
+ * @property string $ItemNumber
+ * @property int $ReceivedQuantity
+ * @property string $Description
 
+ */
+class ContentRecord extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'ContentRecord';
+    protected $name = 'ContentRecord';
 
     /**
      * Part Number.
      *
      * @param string $partNumber
-     * return ContentRecord
+     * @return $this
      */
     public function setPartNumber($partNumber)
     {
-        $this->PartNumber = $partNumber;
+        $this->values['PartNumber'] = $partNumber;
         return $this;
     }
-    
+
     /**
      * Item Number.
      *
      * @param string $itemNumber
-     * return ContentRecord
+     * @return $this
      */
     public function setItemNumber($itemNumber)
     {
-        $this->ItemNumber = $itemNumber;
+        $this->values['ItemNumber'] = $itemNumber;
         return $this;
     }
-    
+
     /**
      * Received Quantity.
      *
-     * @param nonNegativeInteger $receivedQuantity
-     * return ContentRecord
+     * @param int $receivedQuantity
+     * @return $this
      */
     public function setReceivedQuantity($receivedQuantity)
     {
-        $this->ReceivedQuantity = $receivedQuantity;
+        $this->values['ReceivedQuantity'] = $receivedQuantity;
         return $this;
     }
-    
+
     /**
      * Description.
      *
      * @param string $description
-     * return ContentRecord
+     * @return $this
      */
     public function setDescription($description)
     {
-        $this->Description = $description;
+        $this->values['Description'] = $description;
         return $this;
     }
-    
 
     
 }

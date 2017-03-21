@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
- */
-class EMailLabelDetail
-    extends AbstractComplexType
-{
+ *
+ * @property string $NotificationEMailAddress
+ * @property string $NotificationMessage
 
+ */
+class EMailLabelDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'EMailLabelDetail';
+    protected $name = 'EMailLabelDetail';
 
     /**
      * Notification email will be sent to this email address
      *
      * @param string $notificationEMailAddress
-     * return EMailLabelDetail
+     * @return $this
      */
     public function setNotificationEMailAddress($notificationEMailAddress)
     {
-        $this->NotificationEMailAddress = $notificationEMailAddress;
+        $this->values['NotificationEMailAddress'] = $notificationEMailAddress;
         return $this;
     }
-    
+
     /**
      * Message to be sent in the notification email
      *
      * @param string $notificationMessage
-     * return EMailLabelDetail
+     * @return $this
      */
     public function setNotificationMessage($notificationMessage)
     {
-        $this->NotificationMessage = $notificationMessage;
+        $this->values['NotificationMessage'] = $notificationMessage;
         return $this;
     }
-    
 
     
 }

@@ -9,30 +9,30 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class Rma
-    extends AbstractComplexType
-{
+ *
+ * @property string $Reason
 
+ */
+class Rma extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'Rma';
+    protected $name = 'Rma';
 
     /**
      * The reason for the return.
      *
      * @param string $reason
-     * return Rma
+     * @return $this
      */
     public function setReason($reason)
     {
-        $this->Reason = $reason;
+        $this->values['Reason'] = $reason;
         return $this;
     }
-    
 
     
 }

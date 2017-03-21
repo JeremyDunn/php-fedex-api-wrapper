@@ -9,54 +9,56 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
- */
-class CreditCardTransactionDetail
-    extends AbstractComplexType
-{
+ *
+ * @property string $AuthorizationId
+ * @property \FedEx\Pickup\SimpleType\CreditCardAuthorizationType|string $AuthorizationType
+ * @property CreditFraudDetectionDetail $FraudDetectionDetail
 
+ */
+class CreditCardTransactionDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'CreditCardTransactionDetail';
+    protected $name = 'CreditCardTransactionDetail';
 
     /**
      * Set AuthorizationId
      *
      * @param string $authorizationId
-     * return CreditCardTransactionDetail
+     * @return $this
      */
     public function setAuthorizationId($authorizationId)
     {
-        $this->AuthorizationId = $authorizationId;
+        $this->values['AuthorizationId'] = $authorizationId;
         return $this;
     }
-    
+
     /**
      * Set AuthorizationType
      *
      * @param \FedEx\Pickup\SimpleType\CreditCardAuthorizationType|string $authorizationType
-     * return CreditCardTransactionDetail
+     * @return $this
      */
     public function setAuthorizationType($authorizationType)
     {
-        $this->AuthorizationType = $authorizationType;
+        $this->values['AuthorizationType'] = $authorizationType;
         return $this;
     }
-    
+
     /**
      * Set FraudDetectionDetail
      *
      * @param CreditFraudDetectionDetail $fraudDetectionDetail
-     * return CreditCardTransactionDetail
+     * @return $this
      */
     public function setFraudDetectionDetail(CreditFraudDetectionDetail $fraudDetectionDetail)
     {
-        $this->FraudDetectionDetail = $fraudDetectionDetail;
+        $this->values['FraudDetectionDetail'] = $fraudDetectionDetail;
         return $this;
     }
-    
 
     
 }

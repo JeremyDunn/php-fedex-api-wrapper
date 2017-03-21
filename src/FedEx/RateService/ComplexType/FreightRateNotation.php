@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class FreightRateNotation
-    extends AbstractComplexType
-{
+ *
+ * @property string $Code
+ * @property string $Description
 
+ */
+class FreightRateNotation extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'FreightRateNotation';
+    protected $name = 'FreightRateNotation';
 
     /**
      * Unique identifier for notation.
      *
      * @param string $code
-     * return FreightRateNotation
+     * @return $this
      */
     public function setCode($code)
     {
-        $this->Code = $code;
+        $this->values['Code'] = $code;
         return $this;
     }
-    
+
     /**
      * Human-readable explanation of notation.
      *
      * @param string $description
-     * return FreightRateNotation
+     * @return $this
      */
     public function setDescription($description)
     {
-        $this->Description = $description;
+        $this->values['Description'] = $description;
         return $this;
     }
-    
 
     
 }

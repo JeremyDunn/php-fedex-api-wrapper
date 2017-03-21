@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class NaftaPreferenceCriterionCode
-    extends AbstractSimpleType
+class NaftaPreferenceCriterionCode extends AbstractSimpleType
 {
     const _A = 'A';
     const _B = 'B';

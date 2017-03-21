@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class CodAddTransportationChargeBasisType
-    extends AbstractSimpleType
+class CodAddTransportationChargeBasisType extends AbstractSimpleType
 {
     const _COD_SURCHARGE = 'COD_SURCHARGE';
     const _NET_CHARGE = 'NET_CHARGE';

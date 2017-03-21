@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class WeighingScaleType
-    extends AbstractSimpleType
+class WeighingScaleType extends AbstractSimpleType
 {
     const _FEDEX_SCALE = 'FEDEX_SCALE';
     const _PUBLIC_SCALE = 'PUBLIC_SCALE';

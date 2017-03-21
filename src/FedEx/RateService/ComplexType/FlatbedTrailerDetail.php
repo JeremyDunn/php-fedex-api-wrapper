@@ -9,30 +9,30 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class FlatbedTrailerDetail
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\RateService\SimpleType\FlatbedTrailerOption|string[] $Options
 
+ */
+class FlatbedTrailerDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'FlatbedTrailerDetail';
+    protected $name = 'FlatbedTrailerDetail';
 
     /**
      * Set Options
      *
      * @param FlatbedTrailerOption[] $options
-     * return FlatbedTrailerDetail
+     * @return $this
      */
     public function setOptions(array $options)
     {
-        $this->Options = $options;
+        $this->values['Options'] = $options;
         return $this;
     }
-    
 
     
 }

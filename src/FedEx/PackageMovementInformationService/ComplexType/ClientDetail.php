@@ -9,54 +9,56 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
- */
-class ClientDetail
-    extends AbstractComplexType
-{
+ *
+ * @property string $AccountNumber
+ * @property string $MeterNumber
+ * @property Localization $Localization
 
+ */
+class ClientDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'ClientDetail';
+    protected $name = 'ClientDetail';
 
     /**
      * The FedEx account number associated with this transaction.
      *
      * @param string $accountNumber
-     * return ClientDetail
+     * @return $this
      */
     public function setAccountNumber($accountNumber)
     {
-        $this->AccountNumber = $accountNumber;
+        $this->values['AccountNumber'] = $accountNumber;
         return $this;
     }
-    
+
     /**
      * This number is assigned by FedEx and identifies the unique device from which the request is originating
      *
      * @param string $meterNumber
-     * return ClientDetail
+     * @return $this
      */
     public function setMeterNumber($meterNumber)
     {
-        $this->MeterNumber = $meterNumber;
+        $this->values['MeterNumber'] = $meterNumber;
         return $this;
     }
-    
+
     /**
      * The language to be used for human-readable Notification.localizedMessages in responses to the request containing this ClientDetail object. Different requests from the same client may contain different Localization data. (Contrast with TransactionDetail.localization, which governs data payload language/translation.)
      *
      * @param Localization $localization
-     * return ClientDetail
+     * @return $this
      */
     public function setLocalization(Localization $localization)
     {
-        $this->Localization = $localization;
+        $this->values['Localization'] = $localization;
         return $this;
     }
-    
 
     
 }

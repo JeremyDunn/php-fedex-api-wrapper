@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class LabelFormatType
-    extends AbstractSimpleType
+class LabelFormatType extends AbstractSimpleType
 {
     const _COMMON2D = 'COMMON2D';
     const _FEDEX_FREIGHT_STRAIGHT_BILL_OF_LADING = 'FEDEX_FREIGHT_STRAIGHT_BILL_OF_LADING';

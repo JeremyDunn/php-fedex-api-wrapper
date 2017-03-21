@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class CustomLabelCoordinateUnits
-    extends AbstractSimpleType
+class CustomLabelCoordinateUnits extends AbstractSimpleType
 {
     const _MILS = 'MILS';
     const _PIXELS = 'PIXELS';

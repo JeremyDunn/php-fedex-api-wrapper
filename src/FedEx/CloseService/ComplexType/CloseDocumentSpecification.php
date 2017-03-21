@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Close Service
- */
-class CloseDocumentSpecification
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\CloseService\SimpleType\CloseDocumentType|string[] $CloseDocumentTypes
+ * @property Op950Detail $Op950Detail
 
+ */
+class CloseDocumentSpecification extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'CloseDocumentSpecification';
+    protected $name = 'CloseDocumentSpecification';
 
     /**
      * Indicates the types of close documents requested by the caller.
      *
      * @param CloseDocumentType[] $closeDocumentTypes
-     * return CloseDocumentSpecification
+     * @return $this
      */
     public function setCloseDocumentTypes(array $closeDocumentTypes)
     {
-        $this->CloseDocumentTypes = $closeDocumentTypes;
+        $this->values['CloseDocumentTypes'] = $closeDocumentTypes;
         return $this;
     }
-    
+
     /**
      * Specifies the production of the OP-950 document for hazardous materials.
      *
      * @param Op950Detail $op950Detail
-     * return CloseDocumentSpecification
+     * @return $this
      */
     public function setOp950Detail(Op950Detail $op950Detail)
     {
-        $this->Op950Detail = $op950Detail;
+        $this->values['Op950Detail'] = $op950Detail;
         return $this;
     }
-    
 
     
 }

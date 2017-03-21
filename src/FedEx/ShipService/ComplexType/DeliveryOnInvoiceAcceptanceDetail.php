@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class DeliveryOnInvoiceAcceptanceDetail
-    extends AbstractComplexType
-{
+ *
+ * @property Party $Recipient
+ * @property TrackingId $TrackingId
 
+ */
+class DeliveryOnInvoiceAcceptanceDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'DeliveryOnInvoiceAcceptanceDetail';
+    protected $name = 'DeliveryOnInvoiceAcceptanceDetail';
 
     /**
      * Set Recipient
      *
      * @param Party $recipient
-     * return DeliveryOnInvoiceAcceptanceDetail
+     * @return $this
      */
     public function setRecipient(Party $recipient)
     {
-        $this->Recipient = $recipient;
+        $this->values['Recipient'] = $recipient;
         return $this;
     }
-    
+
     /**
      * Specifies the tracking id for the return, if preassigned.
      *
      * @param TrackingId $trackingId
-     * return DeliveryOnInvoiceAcceptanceDetail
+     * @return $this
      */
     public function setTrackingId(TrackingId $trackingId)
     {
-        $this->TrackingId = $trackingId;
+        $this->values['TrackingId'] = $trackingId;
         return $this;
     }
-    
 
     
 }

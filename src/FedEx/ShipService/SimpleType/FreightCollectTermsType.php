@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class FreightCollectTermsType
-    extends AbstractSimpleType
+class FreightCollectTermsType extends AbstractSimpleType
 {
     const _NON_RECOURSE_SHIPPER_SIGNED = 'NON_RECOURSE_SHIPPER_SIGNED';
     const _STANDARD = 'STANDARD';

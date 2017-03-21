@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class SmartPostAncillaryEndorsementType
-    extends AbstractSimpleType
+class SmartPostAncillaryEndorsementType extends AbstractSimpleType
 {
     const _ADDRESS_CORRECTION = 'ADDRESS_CORRECTION';
     const _CARRIER_LEAVE_IF_NO_RESPONSE = 'CARRIER_LEAVE_IF_NO_RESPONSE';

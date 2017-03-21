@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */
-class UploadDocumentStatusType
-    extends AbstractSimpleType
+class UploadDocumentStatusType extends AbstractSimpleType
 {
     const _ERROR = 'ERROR';
     const _FAILURE = 'FAILURE';

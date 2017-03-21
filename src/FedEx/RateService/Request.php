@@ -12,58 +12,20 @@ use FedEx\AbstractRequest;
  */
 class Request extends AbstractRequest
 {
-    /**
-     * WSDL Path
-     *
-     * @var string
-     */
-    protected $_wsdlPath;
+    const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/rate';
+    const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/rate';
 
-    /**
-     * SoapClient object
-     *
-     * @var SoapClient
-     */
-    protected $_soapClient;
-
-    /**
-     * Constructor
-     *
-     * @param string $wsdlPath
-     */
-    public function __construct($wsdlPath = null)
-    {
-        if (null != $wsdlPath) {
-            $this->_wsdlPath = $wsdlPath;
-        } else {
-            $this->_wsdlPath = realpath(dirname(__FILE__) . '/../_wsdl/RateService_v10.wsdl');
-        }
-
-        $this->_soapClient = new \SoapClient($this->_wsdlPath, array('trace' => true));
-    }
-
-    /**
-     * Returns the SoapClient instance
-     *
-     * @return \SoapClient
-     */
-    public function getSoapClient()
-    {
-        return $this->_soapClient;
-    }
-
+    protected $wsdlFileName = 'RateService_v10.wsdl';
+            
     /**
      * Sends the RateRequest and returns the response
      *
-     * @param ComplexType\RateRequest $rateRequest 
+     * @param ComplexType\RateRequest $rateRequest
      * @return stdClass
      */
     public function getGetRatesReply(ComplexType\RateRequest $rateRequest)
     {
-        return $this->_soapClient->getRates($rateRequest->toArray());
+        return $this->getSoapClient()->getRates($rateRequest->toArray());
     }
-   
 
 }
-
-   

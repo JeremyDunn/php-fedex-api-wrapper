@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class RequestedShippingDocumentType
-    extends AbstractSimpleType
+class RequestedShippingDocumentType extends AbstractSimpleType
 {
     const _CERTIFICATE_OF_ORIGIN = 'CERTIFICATE_OF_ORIGIN';
     const _COMMERCIAL_INVOICE = 'COMMERCIAL_INVOICE';

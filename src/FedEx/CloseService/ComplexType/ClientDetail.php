@@ -9,66 +9,69 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Close Service
- */
-class ClientDetail
-    extends AbstractComplexType
-{
+ *
+ * @property string $AccountNumber
+ * @property string $MeterNumber
+ * @property string $IntegratorId
+ * @property Localization $Localization
 
+ */
+class ClientDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'ClientDetail';
+    protected $name = 'ClientDetail';
 
     /**
      * Set AccountNumber
      *
      * @param string $accountNumber
-     * return ClientDetail
+     * @return $this
      */
     public function setAccountNumber($accountNumber)
     {
-        $this->AccountNumber = $accountNumber;
+        $this->values['AccountNumber'] = $accountNumber;
         return $this;
     }
-    
+
     /**
      * Set MeterNumber
      *
      * @param string $meterNumber
-     * return ClientDetail
+     * @return $this
      */
     public function setMeterNumber($meterNumber)
     {
-        $this->MeterNumber = $meterNumber;
+        $this->values['MeterNumber'] = $meterNumber;
         return $this;
     }
-    
+
     /**
      * Only used in transactions which require identification of the Fed Ex Office integrator.
      *
      * @param string $integratorId
-     * return ClientDetail
+     * @return $this
      */
     public function setIntegratorId($integratorId)
     {
-        $this->IntegratorId = $integratorId;
+        $this->values['IntegratorId'] = $integratorId;
         return $this;
     }
-    
+
     /**
      * The language to be used for human-readable Notification.localizedMessages in responses to the request containing this ClientDetail object. Different requests from the same client may contain different Localization data. (Contrast with TransactionDetail.localization, which governs data payload language/translation.)
      *
      * @param Localization $localization
-     * return ClientDetail
+     * @return $this
      */
     public function setLocalization(Localization $localization)
     {
-        $this->Localization = $localization;
+        $this->values['Localization'] = $localization;
         return $this;
     }
-    
 
     
 }

@@ -13,8 +13,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class B13AFilingOptionType
-    extends AbstractSimpleType
+class B13AFilingOptionType extends AbstractSimpleType
 {
     const _FILED_ELECTRONICALLY = 'FILED_ELECTRONICALLY';
     const _MANUALLY_ATTACHED = 'MANUALLY_ATTACHED';

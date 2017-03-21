@@ -9,126 +9,134 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
- */
-class PickupAvailabilityReply
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\Pickup\SimpleType\NotificationSeverityType|string $HighestSeverity
+ * @property Notification[] $Notifications
+ * @property TransactionDetail $TransactionDetail
+ * @property VersionId $Version
+ * @property string $RequestTimestamp
+ * @property PickupScheduleOption[] $Options
+ * @property \FedEx\Pickup\SimpleType\CloseTimeType|string $CloseTimeType
+ * @property string $CloseTime
+ * @property string $LocalTime
 
+ */
+class PickupAvailabilityReply extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'PickupAvailabilityReply';
+    protected $name = 'PickupAvailabilityReply';
 
     /**
      * Identifies the highest severity encountered when executing the request; in order from high to low: FAILURE, ERROR, WARNING, NOTE, SUCCESS.
      *
      * @param \FedEx\Pickup\SimpleType\NotificationSeverityType|string $highestSeverity
-     * return PickupAvailabilityReply
+     * @return $this
      */
     public function setHighestSeverity($highestSeverity)
     {
-        $this->HighestSeverity = $highestSeverity;
+        $this->values['HighestSeverity'] = $highestSeverity;
         return $this;
     }
-    
+
     /**
      * The descriptive data detailing the status of a sumbitted transaction.
      *
      * @param Notification[] $notifications
-     * return PickupAvailabilityReply
+     * @return $this
      */
     public function setNotifications(array $notifications)
     {
-        $this->Notifications = $notifications;
+        $this->values['Notifications'] = $notifications;
         return $this;
     }
-    
+
     /**
      * Descriptive data that governs data payload language/translations. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
      * @param TransactionDetail $transactionDetail
-     * return PickupAvailabilityReply
+     * @return $this
      */
     public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
-        $this->TransactionDetail = $transactionDetail;
+        $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
     }
-    
+
     /**
      * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
      *
      * @param VersionId $version
-     * return PickupAvailabilityReply
+     * @return $this
      */
     public function setVersion(VersionId $version)
     {
-        $this->Version = $version;
+        $this->values['Version'] = $version;
         return $this;
     }
-    
+
     /**
      * the point in time when the request was processed
      *
-     * @param dateTime $requestTimestamp
-     * return PickupAvailabilityReply
+     * @param string $requestTimestamp
+     * @return $this
      */
     public function setRequestTimestamp($requestTimestamp)
     {
-        $this->RequestTimestamp = $requestTimestamp;
+        $this->values['RequestTimestamp'] = $requestTimestamp;
         return $this;
     }
-    
+
     /**
      * Identifies the options for picking up the shipment.
      *
      * @param PickupScheduleOption[] $options
-     * return PickupAvailabilityReply
+     * @return $this
      */
     public function setOptions(array $options)
     {
-        $this->Options = $options;
+        $this->values['Options'] = $options;
         return $this;
     }
-    
+
     /**
      * Identifies whether the close time is specified by the customer or is the default time.
      *
      * @param \FedEx\Pickup\SimpleType\CloseTimeType|string $closeTimeType
-     * return PickupAvailabilityReply
+     * @return $this
      */
     public function setCloseTimeType($closeTimeType)
     {
-        $this->CloseTimeType = $closeTimeType;
+        $this->values['CloseTimeType'] = $closeTimeType;
         return $this;
     }
-    
+
     /**
      * Close time corresponding to the above specified type
      *
-     * @param time $closeTime
-     * return PickupAvailabilityReply
+     * @param string $closeTime
+     * @return $this
      */
-    public function setCloseTime(time $closeTime)
+    public function setCloseTime($closeTime)
     {
-        $this->CloseTime = $closeTime;
+        $this->values['CloseTime'] = $closeTime;
         return $this;
     }
-    
+
     /**
      * Local time of the service center that will service the pickup
      *
-     * @param time $localTime
-     * return PickupAvailabilityReply
+     * @param string $localTime
+     * @return $this
      */
-    public function setLocalTime(time $localTime)
+    public function setLocalTime($localTime)
     {
-        $this->LocalTime = $localTime;
+        $this->values['LocalTime'] = $localTime;
         return $this;
     }
-    
 
     
 }

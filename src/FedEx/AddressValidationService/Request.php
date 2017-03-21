@@ -12,58 +12,20 @@ use FedEx\AbstractRequest;
  */
 class Request extends AbstractRequest
 {
-    /**
-     * WSDL Path
-     *
-     * @var string
-     */
-    protected $_wsdlPath;
+    const PRODUCTION_URL = 'https://gateway.fedex.com:443/web-services';
+    const TESTING_URL = 'https://gatewaybeta.fedex.com:443/web-services';
 
-    /**
-     * SoapClient object
-     *
-     * @var SoapClient
-     */
-    protected $_soapClient;
-
-    /**
-     * Constructor
-     *
-     * @param string $wsdlPath
-     */
-    public function __construct($wsdlPath = null)
-    {
-        if (null != $wsdlPath) {
-            $this->_wsdlPath = $wsdlPath;
-        } else {
-            $this->_wsdlPath = realpath(dirname(__FILE__) . '/../_wsdl/AddressValidationService_v2.wsdl');
-        }
-
-        $this->_soapClient = new \SoapClient($this->_wsdlPath, array('trace' => true));
-    }
-
-    /**
-     * Returns the SoapClient instance
-     *
-     * @return \SoapClient
-     */
-    public function getSoapClient()
-    {
-        return $this->_soapClient;
-    }
-
+    protected $wsdlFileName = 'AddressValidationService_v2.wsdl';
+            
     /**
      * Sends the AddressValidationRequest and returns the response
      *
-     * @param ComplexType\AddressValidationRequest $addressValidationRequest 
+     * @param ComplexType\AddressValidationRequest $addressValidationRequest
      * @return stdClass
      */
     public function getAddressValidationReply(ComplexType\AddressValidationRequest $addressValidationRequest)
     {
-        return $this->_soapClient->addressValidation($addressValidationRequest->toArray());
+        return $this->getSoapClient()->addressValidation($addressValidationRequest->toArray());
     }
-   
 
 }
-
-   

@@ -9,66 +9,69 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class Rebate
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\ShipService\SimpleType\RebateType|string $RebateType
+ * @property string $Description
+ * @property Money $Amount
+ * @property float $Percent
 
+ */
+class Rebate extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'Rebate';
+    protected $name = 'Rebate';
 
     /**
      * Set RebateType
      *
      * @param \FedEx\ShipService\SimpleType\RebateType|string $rebateType
-     * return Rebate
+     * @return $this
      */
     public function setRebateType($rebateType)
     {
-        $this->RebateType = $rebateType;
+        $this->values['RebateType'] = $rebateType;
         return $this;
     }
-    
+
     /**
      * Set Description
      *
      * @param string $description
-     * return Rebate
+     * @return $this
      */
     public function setDescription($description)
     {
-        $this->Description = $description;
+        $this->values['Description'] = $description;
         return $this;
     }
-    
+
     /**
      * Set Amount
      *
      * @param Money $amount
-     * return Rebate
+     * @return $this
      */
     public function setAmount(Money $amount)
     {
-        $this->Amount = $amount;
+        $this->values['Amount'] = $amount;
         return $this;
     }
-    
+
     /**
      * Set Percent
      *
-     * @param decimal $percent
-     * return Rebate
+     * @param float $percent
+     * @return $this
      */
     public function setPercent($percent)
     {
-        $this->Percent = $percent;
+        $this->values['Percent'] = $percent;
         return $this;
     }
-    
 
     
 }

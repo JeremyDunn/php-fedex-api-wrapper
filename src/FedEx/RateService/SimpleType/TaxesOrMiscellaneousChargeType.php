@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class TaxesOrMiscellaneousChargeType
-    extends AbstractSimpleType
+class TaxesOrMiscellaneousChargeType extends AbstractSimpleType
 {
     const _COMMISSIONS = 'COMMISSIONS';
     const _DISCOUNTS = 'DISCOUNTS';

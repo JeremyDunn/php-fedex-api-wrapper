@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class PrintedReference
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\ShipService\SimpleType\PrintedReferenceType|string $Type
+ * @property string $Value
 
+ */
+class PrintedReference extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'PrintedReference';
+    protected $name = 'PrintedReference';
 
     /**
      * Set Type
      *
      * @param \FedEx\ShipService\SimpleType\PrintedReferenceType|string $type
-     * return PrintedReference
+     * @return $this
      */
     public function setType($type)
     {
-        $this->Type = $type;
+        $this->values['Type'] = $type;
         return $this;
     }
-    
+
     /**
      * Set Value
      *
      * @param string $value
-     * return PrintedReference
+     * @return $this
      */
     public function setValue($value)
     {
-        $this->Value = $value;
+        $this->values['Value'] = $value;
         return $this;
     }
-    
 
     
 }

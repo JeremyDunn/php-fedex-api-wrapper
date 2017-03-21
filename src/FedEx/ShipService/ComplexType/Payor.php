@@ -9,30 +9,30 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class Payor
-    extends AbstractComplexType
-{
+ *
+ * @property Party $ResponsibleParty
 
+ */
+class Payor extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'Payor';
+    protected $name = 'Payor';
 
     /**
      * Set ResponsibleParty
      *
      * @param Party $responsibleParty
-     * return Payor
+     * @return $this
      */
     public function setResponsibleParty(Party $responsibleParty)
     {
-        $this->ResponsibleParty = $responsibleParty;
+        $this->values['ResponsibleParty'] = $responsibleParty;
         return $this;
     }
-    
 
     
 }

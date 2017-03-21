@@ -9,54 +9,56 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class TrackingId
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\RateService\SimpleType\TrackingIdType|string $TrackingIdType
+ * @property string $FormId
+ * @property string $TrackingNumber
 
+ */
+class TrackingId extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'TrackingId';
+    protected $name = 'TrackingId';
 
     /**
      * Set TrackingIdType
      *
      * @param \FedEx\RateService\SimpleType\TrackingIdType|string $trackingIdType
-     * return TrackingId
+     * @return $this
      */
     public function setTrackingIdType($trackingIdType)
     {
-        $this->TrackingIdType = $trackingIdType;
+        $this->values['TrackingIdType'] = $trackingIdType;
         return $this;
     }
-    
+
     /**
      * Set FormId
      *
      * @param string $formId
-     * return TrackingId
+     * @return $this
      */
     public function setFormId($formId)
     {
-        $this->FormId = $formId;
+        $this->values['FormId'] = $formId;
         return $this;
     }
-    
+
     /**
      * Set TrackingNumber
      *
      * @param string $trackingNumber
-     * return TrackingId
+     * @return $this
      */
     public function setTrackingNumber($trackingNumber)
     {
-        $this->TrackingNumber = $trackingNumber;
+        $this->values['TrackingNumber'] = $trackingNumber;
         return $this;
     }
-    
 
     
 }

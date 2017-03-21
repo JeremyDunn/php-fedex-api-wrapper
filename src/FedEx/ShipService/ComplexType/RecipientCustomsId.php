@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class RecipientCustomsId
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\ShipService\SimpleType\RecipientCustomsIdType|string $Type
+ * @property string $Value
 
+ */
+class RecipientCustomsId extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'RecipientCustomsId';
+    protected $name = 'RecipientCustomsId';
 
     /**
      * Specifies the kind of identification being used.
      *
      * @param \FedEx\ShipService\SimpleType\RecipientCustomsIdType|string $type
-     * return RecipientCustomsId
+     * @return $this
      */
     public function setType($type)
     {
-        $this->Type = $type;
+        $this->values['Type'] = $type;
         return $this;
     }
-    
+
     /**
      * Contains the actual ID value, of the type specified above.
      *
      * @param string $value
-     * return RecipientCustomsId
+     * @return $this
      */
     public function setValue($value)
     {
-        $this->Value = $value;
+        $this->values['Value'] = $value;
         return $this;
     }
-    
 
     
 }

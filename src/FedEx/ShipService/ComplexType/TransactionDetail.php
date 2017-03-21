@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class TransactionDetail
-    extends AbstractComplexType
-{
+ *
+ * @property string $CustomerTransactionId
+ * @property Localization $Localization
 
+ */
+class TransactionDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'TransactionDetail';
+    protected $name = 'TransactionDetail';
 
     /**
      * Free form text to be echoed back in the reply. Used to match requests and replies.
      *
      * @param string $customerTransactionId
-     * return TransactionDetail
+     * @return $this
      */
     public function setCustomerTransactionId($customerTransactionId)
     {
-        $this->CustomerTransactionId = $customerTransactionId;
+        $this->values['CustomerTransactionId'] = $customerTransactionId;
         return $this;
     }
-    
+
     /**
      * Governs data payload language/translations (contrasted with ClientDetail.localization, which governs Notification.localizedMessage language selection).
      *
      * @param Localization $localization
-     * return TransactionDetail
+     * @return $this
      */
     public function setLocalization(Localization $localization)
     {
-        $this->Localization = $localization;
+        $this->values['Localization'] = $localization;
         return $this;
     }
-    
 
     
 }

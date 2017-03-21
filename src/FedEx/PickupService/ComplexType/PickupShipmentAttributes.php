@@ -9,66 +9,69 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
- */
-class PickupShipmentAttributes
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\Pickup\SimpleType\ServiceType|string $ServiceType
+ * @property \FedEx\Pickup\SimpleType\PackagingType|string $PackagingType
+ * @property Dimensions $Dimensions
+ * @property Weight $Weight
 
+ */
+class PickupShipmentAttributes extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'PickupShipmentAttributes';
+    protected $name = 'PickupShipmentAttributes';
 
     /**
      * Set ServiceType
      *
      * @param \FedEx\Pickup\SimpleType\ServiceType|string $serviceType
-     * return PickupShipmentAttributes
+     * @return $this
      */
     public function setServiceType($serviceType)
     {
-        $this->ServiceType = $serviceType;
+        $this->values['ServiceType'] = $serviceType;
         return $this;
     }
-    
+
     /**
      * Set PackagingType
      *
      * @param \FedEx\Pickup\SimpleType\PackagingType|string $packagingType
-     * return PickupShipmentAttributes
+     * @return $this
      */
     public function setPackagingType($packagingType)
     {
-        $this->PackagingType = $packagingType;
+        $this->values['PackagingType'] = $packagingType;
         return $this;
     }
-    
+
     /**
      * Descriptive information about the dimensions of the package.
      *
      * @param Dimensions $dimensions
-     * return PickupShipmentAttributes
+     * @return $this
      */
     public function setDimensions(Dimensions $dimensions)
     {
-        $this->Dimensions = $dimensions;
+        $this->values['Dimensions'] = $dimensions;
         return $this;
     }
-    
+
     /**
      * Descriptive information about the weight of the package.
      *
      * @param Weight $weight
-     * return PickupShipmentAttributes
+     * @return $this
      */
     public function setWeight(Weight $weight)
     {
-        $this->Weight = $weight;
+        $this->values['Weight'] = $weight;
         return $this;
     }
-    
 
     
 }

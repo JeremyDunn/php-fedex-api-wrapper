@@ -9,66 +9,69 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
- */
-class PostalCodeServiceAreaDescription
-    extends AbstractComplexType
-{
+ *
+ * @property string $LocationId
+ * @property string $StateOrProvinceCode
+ * @property string $PostalCode
+ * @property string $ServiceArea
 
+ */
+class PostalCodeServiceAreaDescription extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'PostalCodeServiceAreaDescription';
+    protected $name = 'PostalCodeServiceAreaDescription';
 
     /**
      * Location ID
      *
      * @param string $locationId
-     * return PostalCodeServiceAreaDescription
+     * @return $this
      */
     public function setLocationId($locationId)
     {
-        $this->LocationId = $locationId;
+        $this->values['LocationId'] = $locationId;
         return $this;
     }
-    
+
     /**
      * State or Province code
      *
      * @param string $stateOrProvinceCode
-     * return PostalCodeServiceAreaDescription
+     * @return $this
      */
     public function setStateOrProvinceCode($stateOrProvinceCode)
     {
-        $this->StateOrProvinceCode = $stateOrProvinceCode;
+        $this->values['StateOrProvinceCode'] = $stateOrProvinceCode;
         return $this;
     }
-    
+
     /**
      * Postal Code
      *
      * @param string $postalCode
-     * return PostalCodeServiceAreaDescription
+     * @return $this
      */
     public function setPostalCode($postalCode)
     {
-        $this->PostalCode = $postalCode;
+        $this->values['PostalCode'] = $postalCode;
         return $this;
     }
-    
+
     /**
      * Service area code
      *
      * @param string $serviceArea
-     * return PostalCodeServiceAreaDescription
+     * @return $this
      */
     public function setServiceArea($serviceArea)
     {
-        $this->ServiceArea = $serviceArea;
+        $this->values['ServiceArea'] = $serviceArea;
         return $this;
     }
-    
 
     
 }

@@ -9,162 +9,173 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class RequestedPackageLineItem
-    extends AbstractComplexType
-{
+ *
+ * @property int $SequenceNumber
+ * @property int $GroupNumber
+ * @property int $GroupPackageCount
+ * @property VariableHandlingChargeDetail $VariableHandlingChargeDetail
+ * @property Money $InsuredValue
+ * @property Weight $Weight
+ * @property Dimensions $Dimensions
+ * @property \FedEx\ShipService\SimpleType\PhysicalPackagingType|string $PhysicalPackaging
+ * @property string $ItemDescription
+ * @property CustomerReference[] $CustomerReferences
+ * @property PackageSpecialServicesRequested $SpecialServicesRequested
+ * @property ContentRecord[] $ContentRecords
 
+ */
+class RequestedPackageLineItem extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'RequestedPackageLineItem';
+    protected $name = 'RequestedPackageLineItem';
 
     /**
      * Used only with INDIVIDUAL_PACKAGE, as a unique identifier of each requested package.
      *
-     * @param positiveInteger $sequenceNumber
-     * return RequestedPackageLineItem
+     * @param int $sequenceNumber
+     * @return $this
      */
     public function setSequenceNumber($sequenceNumber)
     {
-        $this->SequenceNumber = $sequenceNumber;
+        $this->values['SequenceNumber'] = $sequenceNumber;
         return $this;
     }
-    
+
     /**
      * Used only with PACKAGE_GROUPS, as a unique identifier of each group of identical packages.
      *
-     * @param nonNegativeInteger $groupNumber
-     * return RequestedPackageLineItem
+     * @param int $groupNumber
+     * @return $this
      */
     public function setGroupNumber($groupNumber)
     {
-        $this->GroupNumber = $groupNumber;
+        $this->values['GroupNumber'] = $groupNumber;
         return $this;
     }
-    
+
     /**
      * Used only with PACKAGE_GROUPS, as a count of packages within a group of identical packages.
      *
-     * @param nonNegativeInteger $groupPackageCount
-     * return RequestedPackageLineItem
+     * @param int $groupPackageCount
+     * @return $this
      */
     public function setGroupPackageCount($groupPackageCount)
     {
-        $this->GroupPackageCount = $groupPackageCount;
+        $this->values['GroupPackageCount'] = $groupPackageCount;
         return $this;
     }
-    
+
     /**
      * Set VariableHandlingChargeDetail
      *
      * @param VariableHandlingChargeDetail $variableHandlingChargeDetail
-     * return RequestedPackageLineItem
+     * @return $this
      */
     public function setVariableHandlingChargeDetail(VariableHandlingChargeDetail $variableHandlingChargeDetail)
     {
-        $this->VariableHandlingChargeDetail = $variableHandlingChargeDetail;
+        $this->values['VariableHandlingChargeDetail'] = $variableHandlingChargeDetail;
         return $this;
     }
-    
+
     /**
      * Only used for INDIVIDUAL_PACKAGES and PACKAGE_GROUPS. Ignored for PACKAGE_SUMMARY, in which case totalInsuredValue and packageCount on the shipment will be used to determine this value.
      *
      * @param Money $insuredValue
-     * return RequestedPackageLineItem
+     * @return $this
      */
     public function setInsuredValue(Money $insuredValue)
     {
-        $this->InsuredValue = $insuredValue;
+        $this->values['InsuredValue'] = $insuredValue;
         return $this;
     }
-    
+
     /**
      * Only used for INDIVIDUAL_PACKAGES and PACKAGE_GROUPS. Ignored for PACKAGE_SUMMARY, in which case total weight and packageCount on the shipment will be used to determine this value.
      *
      * @param Weight $weight
-     * return RequestedPackageLineItem
+     * @return $this
      */
     public function setWeight(Weight $weight)
     {
-        $this->Weight = $weight;
+        $this->values['Weight'] = $weight;
         return $this;
     }
-    
+
     /**
      * Set Dimensions
      *
      * @param Dimensions $dimensions
-     * return RequestedPackageLineItem
+     * @return $this
      */
     public function setDimensions(Dimensions $dimensions)
     {
-        $this->Dimensions = $dimensions;
+        $this->values['Dimensions'] = $dimensions;
         return $this;
     }
-    
+
     /**
      * Provides additional detail on how the customer has physically packaged this item. As of June 2009, required for packages moving under international and SmartPost services.
      *
      * @param \FedEx\ShipService\SimpleType\PhysicalPackagingType|string $physicalPackaging
-     * return RequestedPackageLineItem
+     * @return $this
      */
     public function setPhysicalPackaging($physicalPackaging)
     {
-        $this->PhysicalPackaging = $physicalPackaging;
+        $this->values['PhysicalPackaging'] = $physicalPackaging;
         return $this;
     }
-    
+
     /**
      * Human-readable text describing the package.
      *
      * @param string $itemDescription
-     * return RequestedPackageLineItem
+     * @return $this
      */
     public function setItemDescription($itemDescription)
     {
-        $this->ItemDescription = $itemDescription;
+        $this->values['ItemDescription'] = $itemDescription;
         return $this;
     }
-    
+
     /**
      * Set CustomerReferences
      *
      * @param CustomerReference[] $customerReferences
-     * return RequestedPackageLineItem
+     * @return $this
      */
     public function setCustomerReferences(array $customerReferences)
     {
-        $this->CustomerReferences = $customerReferences;
+        $this->values['CustomerReferences'] = $customerReferences;
         return $this;
     }
-    
+
     /**
      * Set SpecialServicesRequested
      *
      * @param PackageSpecialServicesRequested $specialServicesRequested
-     * return RequestedPackageLineItem
+     * @return $this
      */
     public function setSpecialServicesRequested(PackageSpecialServicesRequested $specialServicesRequested)
     {
-        $this->SpecialServicesRequested = $specialServicesRequested;
+        $this->values['SpecialServicesRequested'] = $specialServicesRequested;
         return $this;
     }
-    
+
     /**
      * Only used for INDIVIDUAL_PACKAGES and PACKAGE_GROUPS.
      *
      * @param ContentRecord[] $contentRecords
-     * return RequestedPackageLineItem
+     * @return $this
      */
     public function setContentRecords(array $contentRecords)
     {
-        $this->ContentRecords = $contentRecords;
+        $this->values['ContentRecords'] = $contentRecords;
         return $this;
     }
-    
 
     
 }

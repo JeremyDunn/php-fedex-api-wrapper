@@ -9,66 +9,69 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
- */
-class ImageUploadStatusDetail
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\UploadDocumentService\SimpleType\ImageId|string $Id
+ * @property \FedEx\UploadDocumentService\SimpleType\UploadImageStatusType|string $Status
+ * @property \FedEx\UploadDocumentService\SimpleType\UploadImageStatusInfoType|string $StatusInfo
+ * @property string $Message
 
+ */
+class ImageUploadStatusDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'ImageUploadStatusDetail';
+    protected $name = 'ImageUploadStatusDetail';
 
     /**
      * Set Id
      *
      * @param \FedEx\UploadDocumentService\SimpleType\ImageId|string $id
-     * return ImageUploadStatusDetail
+     * @return $this
      */
     public function setId($id)
     {
-        $this->Id = $id;
+        $this->values['Id'] = $id;
         return $this;
     }
-    
+
     /**
      * Set Status
      *
      * @param \FedEx\UploadDocumentService\SimpleType\UploadImageStatusType|string $status
-     * return ImageUploadStatusDetail
+     * @return $this
      */
     public function setStatus($status)
     {
-        $this->Status = $status;
+        $this->values['Status'] = $status;
         return $this;
     }
-    
+
     /**
      * Set StatusInfo
      *
      * @param \FedEx\UploadDocumentService\SimpleType\UploadImageStatusInfoType|string $statusInfo
-     * return ImageUploadStatusDetail
+     * @return $this
      */
     public function setStatusInfo($statusInfo)
     {
-        $this->StatusInfo = $statusInfo;
+        $this->values['StatusInfo'] = $statusInfo;
         return $this;
     }
-    
+
     /**
      * Set Message
      *
      * @param string $message
-     * return ImageUploadStatusDetail
+     * @return $this
      */
     public function setMessage($message)
     {
-        $this->Message = $message;
+        $this->values['Message'] = $message;
         return $this;
     }
-    
 
     
 }

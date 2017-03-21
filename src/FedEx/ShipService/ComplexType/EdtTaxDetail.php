@@ -9,102 +9,108 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class EdtTaxDetail
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\ShipService\SimpleType\EdtTaxType|string $TaxType
+ * @property string $EffectiveDate
+ * @property string $Name
+ * @property Money $TaxableValue
+ * @property string $Description
+ * @property string $Formula
+ * @property Money $Amount
 
+ */
+class EdtTaxDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'EdtTaxDetail';
+    protected $name = 'EdtTaxDetail';
 
     /**
      * Set TaxType
      *
      * @param \FedEx\ShipService\SimpleType\EdtTaxType|string $taxType
-     * return EdtTaxDetail
+     * @return $this
      */
     public function setTaxType($taxType)
     {
-        $this->TaxType = $taxType;
+        $this->values['TaxType'] = $taxType;
         return $this;
     }
-    
+
     /**
      * Set EffectiveDate
      *
-     * @param date $effectiveDate
-     * return EdtTaxDetail
+     * @param string $effectiveDate
+     * @return $this
      */
     public function setEffectiveDate($effectiveDate)
     {
-        $this->EffectiveDate = $effectiveDate;
+        $this->values['EffectiveDate'] = $effectiveDate;
         return $this;
     }
-    
+
     /**
      * Set Name
      *
      * @param string $name
-     * return EdtTaxDetail
+     * @return $this
      */
     public function setName($name)
     {
-        $this->Name = $name;
+        $this->values['Name'] = $name;
         return $this;
     }
-    
+
     /**
      * Set TaxableValue
      *
      * @param Money $taxableValue
-     * return EdtTaxDetail
+     * @return $this
      */
     public function setTaxableValue(Money $taxableValue)
     {
-        $this->TaxableValue = $taxableValue;
+        $this->values['TaxableValue'] = $taxableValue;
         return $this;
     }
-    
+
     /**
      * Set Description
      *
      * @param string $description
-     * return EdtTaxDetail
+     * @return $this
      */
     public function setDescription($description)
     {
-        $this->Description = $description;
+        $this->values['Description'] = $description;
         return $this;
     }
-    
+
     /**
      * Set Formula
      *
      * @param string $formula
-     * return EdtTaxDetail
+     * @return $this
      */
     public function setFormula($formula)
     {
-        $this->Formula = $formula;
+        $this->values['Formula'] = $formula;
         return $this;
     }
-    
+
     /**
      * Set Amount
      *
      * @param Money $amount
-     * return EdtTaxDetail
+     * @return $this
      */
     public function setAmount(Money $amount)
     {
-        $this->Amount = $amount;
+        $this->values['Amount'] = $amount;
         return $this;
     }
-    
 
     
 }

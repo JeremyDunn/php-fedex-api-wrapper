@@ -9,54 +9,56 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class DocTabContent
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\RateService\SimpleType\DocTabContentType|string $DocTabContentType
+ * @property DocTabContentZone001 $Zone001
+ * @property DocTabContentBarcoded $Barcoded
 
+ */
+class DocTabContent extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'DocTabContent';
+    protected $name = 'DocTabContent';
 
     /**
      * The DocTabContentType options available.
      *
      * @param \FedEx\RateService\SimpleType\DocTabContentType|string $docTabContentType
-     * return DocTabContent
+     * @return $this
      */
     public function setDocTabContentType($docTabContentType)
     {
-        $this->DocTabContentType = $docTabContentType;
+        $this->values['DocTabContentType'] = $docTabContentType;
         return $this;
     }
-    
+
     /**
      * The DocTabContentType should be set to ZONE001 to specify additional Zone details.
      *
      * @param DocTabContentZone001 $zone001
-     * return DocTabContent
+     * @return $this
      */
     public function setZone001(DocTabContentZone001 $zone001)
     {
-        $this->Zone001 = $zone001;
+        $this->values['Zone001'] = $zone001;
         return $this;
     }
-    
+
     /**
      * The DocTabContentType should be set to BARCODED to specify additional BarCoded details.
      *
      * @param DocTabContentBarcoded $barcoded
-     * return DocTabContent
+     * @return $this
      */
     public function setBarcoded(DocTabContentBarcoded $barcoded)
     {
-        $this->Barcoded = $barcoded;
+        $this->values['Barcoded'] = $barcoded;
         return $this;
     }
-    
 
     
 }

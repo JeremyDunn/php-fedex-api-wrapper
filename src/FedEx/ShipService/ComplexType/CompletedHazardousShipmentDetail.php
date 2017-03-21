@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class CompletedHazardousShipmentDetail
-    extends AbstractComplexType
-{
+ *
+ * @property CompletedHazardousSummaryDetail $HazardousSummaryDetail
+ * @property ShipmentDryIceDetail $DryIceDetail
 
+ */
+class CompletedHazardousShipmentDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'CompletedHazardousShipmentDetail';
+    protected $name = 'CompletedHazardousShipmentDetail';
 
     /**
      * Set HazardousSummaryDetail
      *
      * @param CompletedHazardousSummaryDetail $hazardousSummaryDetail
-     * return CompletedHazardousShipmentDetail
+     * @return $this
      */
     public function setHazardousSummaryDetail(CompletedHazardousSummaryDetail $hazardousSummaryDetail)
     {
-        $this->HazardousSummaryDetail = $hazardousSummaryDetail;
+        $this->values['HazardousSummaryDetail'] = $hazardousSummaryDetail;
         return $this;
     }
-    
+
     /**
      * Set DryIceDetail
      *
      * @param ShipmentDryIceDetail $dryIceDetail
-     * return CompletedHazardousShipmentDetail
+     * @return $this
      */
     public function setDryIceDetail(ShipmentDryIceDetail $dryIceDetail)
     {
-        $this->DryIceDetail = $dryIceDetail;
+        $this->values['DryIceDetail'] = $dryIceDetail;
         return $this;
     }
-    
 
     
 }

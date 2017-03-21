@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Address Validation Service
  */
-class DeliveryPointValidationType
-    extends AbstractSimpleType
+class DeliveryPointValidationType extends AbstractSimpleType
 {
     const _CONFIRMED = 'CONFIRMED';
     const _UNCONFIRMED = 'UNCONFIRMED';

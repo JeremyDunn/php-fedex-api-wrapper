@@ -9,222 +9,238 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class FreightShipmentDetail
-    extends AbstractComplexType
-{
+ *
+ * @property string $FedExFreightAccountNumber
+ * @property ContactAndAddress $FedExFreightBillingContactAndAddress
+ * @property string $FedExNationalFreightAccountNumber
+ * @property ContactAndAddress $FedExNationalFreightBillingContactAndAddress
+ * @property \FedEx\RateService\SimpleType\FreightShipmentRoleType|string $Role
+ * @property \FedEx\RateService\SimpleType\FreightAccountPaymentType|string $PaymentType
+ * @property Money $DeclaredValuePerUnit
+ * @property string $DeclaredValueUnits
+ * @property LiabilityCoverageDetail $LiabilityCoverageDetail
+ * @property string[] $Coupons
+ * @property int $TotalHandlingUnits
+ * @property float $ClientDiscountPercent
+ * @property Weight $PalletWeight
+ * @property Dimensions $ShipmentDimensions
+ * @property string $Comment
+ * @property FreightSpecialServicePayment[] $SpecialServicePayments
+ * @property FreightShipmentLineItem[] $LineItems
 
+ */
+class FreightShipmentDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'FreightShipmentDetail';
+    protected $name = 'FreightShipmentDetail';
 
     /**
      * Account number used with FEDEX_FREIGHT service.
      *
      * @param string $fedExFreightAccountNumber
-     * return FreightShipmentDetail
+     * @return $this
      */
     public function setFedExFreightAccountNumber($fedExFreightAccountNumber)
     {
-        $this->FedExFreightAccountNumber = $fedExFreightAccountNumber;
+        $this->values['FedExFreightAccountNumber'] = $fedExFreightAccountNumber;
         return $this;
     }
-    
+
     /**
      * Used for validating FedEx Freight account number and (optionally) identifying third party payment on the bill of lading.
      *
      * @param ContactAndAddress $fedExFreightBillingContactAndAddress
-     * return FreightShipmentDetail
+     * @return $this
      */
     public function setFedExFreightBillingContactAndAddress(ContactAndAddress $fedExFreightBillingContactAndAddress)
     {
-        $this->FedExFreightBillingContactAndAddress = $fedExFreightBillingContactAndAddress;
+        $this->values['FedExFreightBillingContactAndAddress'] = $fedExFreightBillingContactAndAddress;
         return $this;
     }
-    
+
     /**
      * Account number used with FEDEX_NATIONAL_FREIGHT service.
      *
      * @param string $fedExNationalFreightAccountNumber
-     * return FreightShipmentDetail
+     * @return $this
      */
     public function setFedExNationalFreightAccountNumber($fedExNationalFreightAccountNumber)
     {
-        $this->FedExNationalFreightAccountNumber = $fedExNationalFreightAccountNumber;
+        $this->values['FedExNationalFreightAccountNumber'] = $fedExNationalFreightAccountNumber;
         return $this;
     }
-    
+
     /**
      * Used for validating FedEx National Freight account number and (optionally) identifying third party payment on the bill of lading.
      *
      * @param ContactAndAddress $fedExNationalFreightBillingContactAndAddress
-     * return FreightShipmentDetail
+     * @return $this
      */
     public function setFedExNationalFreightBillingContactAndAddress(ContactAndAddress $fedExNationalFreightBillingContactAndAddress)
     {
-        $this->FedExNationalFreightBillingContactAndAddress = $fedExNationalFreightBillingContactAndAddress;
+        $this->values['FedExNationalFreightBillingContactAndAddress'] = $fedExNationalFreightBillingContactAndAddress;
         return $this;
     }
-    
+
     /**
      * Indicates the role of the party submitting the transaction.
      *
      * @param \FedEx\RateService\SimpleType\FreightShipmentRoleType|string $role
-     * return FreightShipmentDetail
+     * @return $this
      */
     public function setRole($role)
     {
-        $this->Role = $role;
+        $this->values['Role'] = $role;
         return $this;
     }
-    
+
     /**
      * Designates which of the requester's tariffs will be used for rating.
      *
      * @param \FedEx\RateService\SimpleType\FreightAccountPaymentType|string $paymentType
-     * return FreightShipmentDetail
+     * @return $this
      */
     public function setPaymentType($paymentType)
     {
-        $this->PaymentType = $paymentType;
+        $this->values['PaymentType'] = $paymentType;
         return $this;
     }
-    
+
     /**
      * Identifies the declared value for the shipment
      *
      * @param Money $declaredValuePerUnit
-     * return FreightShipmentDetail
+     * @return $this
      */
     public function setDeclaredValuePerUnit(Money $declaredValuePerUnit)
     {
-        $this->DeclaredValuePerUnit = $declaredValuePerUnit;
+        $this->values['DeclaredValuePerUnit'] = $declaredValuePerUnit;
         return $this;
     }
-    
+
     /**
      * Identifies the declared value units corresponding to the above defined declared value
      *
      * @param string $declaredValueUnits
-     * return FreightShipmentDetail
+     * @return $this
      */
     public function setDeclaredValueUnits($declaredValueUnits)
     {
-        $this->DeclaredValueUnits = $declaredValueUnits;
+        $this->values['DeclaredValueUnits'] = $declaredValueUnits;
         return $this;
     }
-    
+
     /**
      * Set LiabilityCoverageDetail
      *
      * @param LiabilityCoverageDetail $liabilityCoverageDetail
-     * return FreightShipmentDetail
+     * @return $this
      */
     public function setLiabilityCoverageDetail(LiabilityCoverageDetail $liabilityCoverageDetail)
     {
-        $this->LiabilityCoverageDetail = $liabilityCoverageDetail;
+        $this->values['LiabilityCoverageDetail'] = $liabilityCoverageDetail;
         return $this;
     }
-    
+
     /**
      * Identifiers for promotional discounts offered to customers.
      *
      * @param string[] $coupons
-     * return FreightShipmentDetail
+     * @return $this
      */
     public function setCoupons(array $coupons)
     {
-        $this->Coupons = $coupons;
+        $this->values['Coupons'] = $coupons;
         return $this;
     }
-    
+
     /**
      * Total number of individual handling units in the entire shipment (for unit pricing).
      *
-     * @param nonNegativeInteger $totalHandlingUnits
-     * return FreightShipmentDetail
+     * @param int $totalHandlingUnits
+     * @return $this
      */
     public function setTotalHandlingUnits($totalHandlingUnits)
     {
-        $this->TotalHandlingUnits = $totalHandlingUnits;
+        $this->values['TotalHandlingUnits'] = $totalHandlingUnits;
         return $this;
     }
-    
+
     /**
      * Estimated discount rate provided by client for unsecured rate quote.
      *
-     * @param decimal $clientDiscountPercent
-     * return FreightShipmentDetail
+     * @param float $clientDiscountPercent
+     * @return $this
      */
     public function setClientDiscountPercent($clientDiscountPercent)
     {
-        $this->ClientDiscountPercent = $clientDiscountPercent;
+        $this->values['ClientDiscountPercent'] = $clientDiscountPercent;
         return $this;
     }
-    
+
     /**
      * Total weight of pallets used in shipment.
      *
      * @param Weight $palletWeight
-     * return FreightShipmentDetail
+     * @return $this
      */
     public function setPalletWeight(Weight $palletWeight)
     {
-        $this->PalletWeight = $palletWeight;
+        $this->values['PalletWeight'] = $palletWeight;
         return $this;
     }
-    
+
     /**
      * Overall shipment dimensions.
      *
      * @param Dimensions $shipmentDimensions
-     * return FreightShipmentDetail
+     * @return $this
      */
     public function setShipmentDimensions(Dimensions $shipmentDimensions)
     {
-        $this->ShipmentDimensions = $shipmentDimensions;
+        $this->values['ShipmentDimensions'] = $shipmentDimensions;
         return $this;
     }
-    
+
     /**
      * Description for the shipment.
      *
      * @param string $comment
-     * return FreightShipmentDetail
+     * @return $this
      */
     public function setComment($comment)
     {
-        $this->Comment = $comment;
+        $this->values['Comment'] = $comment;
         return $this;
     }
-    
+
     /**
      * Specifies which party will pay surcharges for any special services which support split billing.
      *
      * @param FreightSpecialServicePayment[] $specialServicePayments
-     * return FreightShipmentDetail
+     * @return $this
      */
     public function setSpecialServicePayments(array $specialServicePayments)
     {
-        $this->SpecialServicePayments = $specialServicePayments;
+        $this->values['SpecialServicePayments'] = $specialServicePayments;
         return $this;
     }
-    
+
     /**
      * Details of the commodities in the shipment.
      *
      * @param FreightShipmentLineItem[] $lineItems
-     * return FreightShipmentDetail
+     * @return $this
      */
     public function setLineItems(array $lineItems)
     {
-        $this->LineItems = $lineItems;
+        $this->values['LineItems'] = $lineItems;
         return $this;
     }
-    
 
     
 }

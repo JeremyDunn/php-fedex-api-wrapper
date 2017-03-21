@@ -9,162 +9,173 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
- */
-class FreightPickupLineItem
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\Pickup\SimpleType\ServiceType|string $Service
+ * @property int $SequenceNumber
+ * @property Address $Destination
+ * @property \FedEx\Pickup\SimpleType\PhysicalPackagingType|string $Packaging
+ * @property int $Pieces
+ * @property Weight $Weight
+ * @property int $TotalHandlingUnits
+ * @property string $PurchaseOrderNumber
+ * @property boolean $JustOneMore
+ * @property ShipmentSpecialServicesRequested $SpecialServicesRequested
+ * @property FreightGuaranteeDetail $FreightGuaranteeDetail
+ * @property string $Description
 
+ */
+class FreightPickupLineItem extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'FreightPickupLineItem';
+    protected $name = 'FreightPickupLineItem';
 
     /**
      * Set Service
      *
      * @param \FedEx\Pickup\SimpleType\ServiceType|string $service
-     * return FreightPickupLineItem
+     * @return $this
      */
     public function setService($service)
     {
-        $this->Service = $service;
+        $this->values['Service'] = $service;
         return $this;
     }
-    
+
     /**
      * Identifies the line item, to match reply line with request line.
      *
      * @param int $sequenceNumber
-     * return FreightPickupLineItem
+     * @return $this
      */
     public function setSequenceNumber($sequenceNumber)
     {
-        $this->SequenceNumber = $sequenceNumber;
+        $this->values['SequenceNumber'] = $sequenceNumber;
         return $this;
     }
-    
+
     /**
      * Identifies the destination of the shipment.
      *
      * @param Address $destination
-     * return FreightPickupLineItem
+     * @return $this
      */
     public function setDestination(Address $destination)
     {
-        $this->Destination = $destination;
+        $this->values['Destination'] = $destination;
         return $this;
     }
-    
+
     /**
      * Identifies the physical packaging of the shipment.
      *
      * @param \FedEx\Pickup\SimpleType\PhysicalPackagingType|string $packaging
-     * return FreightPickupLineItem
+     * @return $this
      */
     public function setPackaging($packaging)
     {
-        $this->Packaging = $packaging;
+        $this->values['Packaging'] = $packaging;
         return $this;
     }
-    
+
     /**
      * Identifies number of items contained in the packaging.
      *
      * @param int $pieces
-     * return FreightPickupLineItem
+     * @return $this
      */
     public function setPieces($pieces)
     {
-        $this->Pieces = $pieces;
+        $this->values['Pieces'] = $pieces;
         return $this;
     }
-    
+
     /**
      * Identifies the total weight of the item being tendered to FedEx for this pickup request.
      *
      * @param Weight $weight
-     * return FreightPickupLineItem
+     * @return $this
      */
     public function setWeight(Weight $weight)
     {
-        $this->Weight = $weight;
+        $this->values['Weight'] = $weight;
         return $this;
     }
-    
+
     /**
      * Identifies number of items to be moved.
      *
      * @param int $totalHandlingUnits
-     * return FreightPickupLineItem
+     * @return $this
      */
     public function setTotalHandlingUnits($totalHandlingUnits)
     {
-        $this->TotalHandlingUnits = $totalHandlingUnits;
+        $this->values['TotalHandlingUnits'] = $totalHandlingUnits;
         return $this;
     }
-    
+
     /**
      * Set PurchaseOrderNumber
      *
      * @param string $purchaseOrderNumber
-     * return FreightPickupLineItem
+     * @return $this
      */
     public function setPurchaseOrderNumber($purchaseOrderNumber)
     {
-        $this->PurchaseOrderNumber = $purchaseOrderNumber;
+        $this->values['PurchaseOrderNumber'] = $purchaseOrderNumber;
         return $this;
     }
-    
+
     /**
      * Set JustOneMore
      *
      * @param boolean $justOneMore
-     * return FreightPickupLineItem
+     * @return $this
      */
     public function setJustOneMore($justOneMore)
     {
-        $this->JustOneMore = $justOneMore;
+        $this->values['JustOneMore'] = $justOneMore;
         return $this;
     }
-    
+
     /**
      * These special services are available at the shipment level for some or all service types. If the shipper is requesting a special service which requires additional data (such as the COD amount), the shipment special service type must be present in the specialServiceTypes collection, and the supporting detail must be provided in the appropriate sub-object below. 
      *
      * @param ShipmentSpecialServicesRequested $specialServicesRequested
-     * return FreightPickupLineItem
+     * @return $this
      */
     public function setSpecialServicesRequested(ShipmentSpecialServicesRequested $specialServicesRequested)
     {
-        $this->SpecialServicesRequested = $specialServicesRequested;
+        $this->values['SpecialServicesRequested'] = $specialServicesRequested;
         return $this;
     }
-    
+
     /**
      * Identifies the delivery guarantee information.
      *
      * @param FreightGuaranteeDetail $freightGuaranteeDetail
-     * return FreightPickupLineItem
+     * @return $this
      */
     public function setFreightGuaranteeDetail(FreightGuaranteeDetail $freightGuaranteeDetail)
     {
-        $this->FreightGuaranteeDetail = $freightGuaranteeDetail;
+        $this->values['FreightGuaranteeDetail'] = $freightGuaranteeDetail;
         return $this;
     }
-    
+
     /**
      * Describes the contents of the package.
      *
      * @param string $description
-     * return FreightPickupLineItem
+     * @return $this
      */
     public function setDescription($description)
     {
-        $this->Description = $description;
+        $this->values['Description'] = $description;
         return $this;
     }
-    
 
     
 }

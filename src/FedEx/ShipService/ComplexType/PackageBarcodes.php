@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class PackageBarcodes
-    extends AbstractComplexType
-{
+ *
+ * @property BinaryBarcode[] $BinaryBarcodes
+ * @property StringBarcode[] $StringBarcodes
 
+ */
+class PackageBarcodes extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'PackageBarcodes';
+    protected $name = 'PackageBarcodes';
 
     /**
      * Binary-style barcodes for this package.
      *
      * @param BinaryBarcode[] $binaryBarcodes
-     * return PackageBarcodes
+     * @return $this
      */
     public function setBinaryBarcodes(array $binaryBarcodes)
     {
-        $this->BinaryBarcodes = $binaryBarcodes;
+        $this->values['BinaryBarcodes'] = $binaryBarcodes;
         return $this;
     }
-    
+
     /**
      * String-style barcodes for this package.
      *
      * @param StringBarcode[] $stringBarcodes
-     * return PackageBarcodes
+     * @return $this
      */
     public function setStringBarcodes(array $stringBarcodes)
     {
-        $this->StringBarcodes = $stringBarcodes;
+        $this->values['StringBarcodes'] = $stringBarcodes;
         return $this;
     }
-    
 
     
 }

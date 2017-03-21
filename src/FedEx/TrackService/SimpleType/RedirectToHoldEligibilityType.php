@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class RedirectToHoldEligibilityType
-    extends AbstractSimpleType
+class RedirectToHoldEligibilityType extends AbstractSimpleType
 {
     const _ELIGIBLE = 'ELIGIBLE';
     const _INELIGIBLE = 'INELIGIBLE';

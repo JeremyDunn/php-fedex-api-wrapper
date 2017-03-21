@@ -18,8 +18,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class TermsOfSaleType
-    extends AbstractSimpleType
+class TermsOfSaleType extends AbstractSimpleType
 {
     const _CFR_OR_CPT = 'CFR_OR_CPT';
     const _CIF_OR_CIP = 'CIF_OR_CIP';

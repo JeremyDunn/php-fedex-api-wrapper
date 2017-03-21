@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class ShippingDocumentDispositionType
-    extends AbstractSimpleType
+class ShippingDocumentDispositionType extends AbstractSimpleType
 {
     const _CONFIRMED = 'CONFIRMED';
     const _DEFERRED_RETURNED = 'DEFERRED_RETURNED';

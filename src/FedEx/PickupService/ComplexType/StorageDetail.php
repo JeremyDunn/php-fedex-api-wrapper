@@ -9,30 +9,30 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
- */
-class StorageDetail
-    extends AbstractComplexType
-{
+ *
+ * @property string $Duration
 
+ */
+class StorageDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'StorageDetail';
+    protected $name = 'StorageDetail';
 
     /**
      * Total time shipment is held by carrier.
      *
-     * @param duration $duration
-     * return StorageDetail
+     * @param string $duration
+     * @return $this
      */
-    public function setDuration(duration $duration)
+    public function setDuration($duration)
     {
-        $this->Duration = $duration;
+        $this->values['Duration'] = $duration;
         return $this;
     }
-    
 
     
 }

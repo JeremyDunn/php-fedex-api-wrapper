@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class Measure
-    extends AbstractComplexType
-{
+ *
+ * @property float $Quantity
+ * @property string $Units
 
+ */
+class Measure extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'Measure';
+    protected $name = 'Measure';
 
     /**
      * Set Quantity
      *
-     * @param decimal $quantity
-     * return Measure
+     * @param float $quantity
+     * @return $this
      */
     public function setQuantity($quantity)
     {
-        $this->Quantity = $quantity;
+        $this->values['Quantity'] = $quantity;
         return $this;
     }
-    
+
     /**
      * Set Units
      *
      * @param string $units
-     * return Measure
+     * @return $this
      */
     public function setUnits($units)
     {
-        $this->Units = $units;
+        $this->values['Units'] = $units;
         return $this;
     }
-    
 
     
 }

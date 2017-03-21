@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class EtdConfirmationType
-    extends AbstractSimpleType
+class EtdConfirmationType extends AbstractSimpleType
 {
     const _CONFIRMED = 'CONFIRMED';
     const _DEFERRED = 'DEFERRED';

@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class RadioactivityUnitOfMeasure
-    extends AbstractSimpleType
+class RadioactivityUnitOfMeasure extends AbstractSimpleType
 {
     const _BQ = 'BQ';
     const _GBQ = 'GBQ';

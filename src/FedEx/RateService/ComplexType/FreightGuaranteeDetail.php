@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class FreightGuaranteeDetail
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\RateService\SimpleType\FreightGuaranteeType|string $Type
+ * @property string $Date
 
+ */
+class FreightGuaranteeDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'FreightGuaranteeDetail';
+    protected $name = 'FreightGuaranteeDetail';
 
     /**
      * Set Type
      *
      * @param \FedEx\RateService\SimpleType\FreightGuaranteeType|string $type
-     * return FreightGuaranteeDetail
+     * @return $this
      */
     public function setType($type)
     {
-        $this->Type = $type;
+        $this->values['Type'] = $type;
         return $this;
     }
-    
+
     /**
      * Date for all Freight guarantee types.
      *
-     * @param date $date
-     * return FreightGuaranteeDetail
+     * @param string $date
+     * @return $this
      */
     public function setDate($date)
     {
-        $this->Date = $date;
+        $this->values['Date'] = $date;
         return $this;
     }
-    
 
     
 }

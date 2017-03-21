@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class ServiceOptionType
-    extends AbstractSimpleType
+class ServiceOptionType extends AbstractSimpleType
 {
     const _FREIGHT_GUARANTEE = 'FREIGHT_GUARANTEE';
     const _SATURDAY_DELIVERY = 'SATURDAY_DELIVERY';

@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class PriorityAlertDetail
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\ShipService\SimpleType\PriorityAlertEnhancementType|string[] $EnhancementTypes
+ * @property string[] $Content
 
+ */
+class PriorityAlertDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'PriorityAlertDetail';
+    protected $name = 'PriorityAlertDetail';
 
     /**
      * Set EnhancementTypes
      *
      * @param PriorityAlertEnhancementType[] $enhancementTypes
-     * return PriorityAlertDetail
+     * @return $this
      */
     public function setEnhancementTypes(array $enhancementTypes)
     {
-        $this->EnhancementTypes = $enhancementTypes;
+        $this->values['EnhancementTypes'] = $enhancementTypes;
         return $this;
     }
-    
+
     /**
      * Set Content
      *
      * @param string[] $content
-     * return PriorityAlertDetail
+     * @return $this
      */
     public function setContent(array $content)
     {
-        $this->Content = $content;
+        $this->values['Content'] = $content;
         return $this;
     }
-    
 
     
 }

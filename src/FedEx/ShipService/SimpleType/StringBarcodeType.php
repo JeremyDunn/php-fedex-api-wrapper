@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class StringBarcodeType
-    extends AbstractSimpleType
+class StringBarcodeType extends AbstractSimpleType
 {
     const _ADDRESS = 'ADDRESS';
     const _ASTRA = 'ASTRA';

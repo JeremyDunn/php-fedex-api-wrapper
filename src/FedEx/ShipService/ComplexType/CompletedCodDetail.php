@@ -9,42 +9,43 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class CompletedCodDetail
-    extends AbstractComplexType
-{
+ *
+ * @property Money $CollectionAmount
+ * @property \FedEx\ShipService\SimpleType\CodAdjustmentType|string $AdjustmentType
 
+ */
+class CompletedCodDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'CompletedCodDetail';
+    protected $name = 'CompletedCodDetail';
 
     /**
      * Set CollectionAmount
      *
      * @param Money $collectionAmount
-     * return CompletedCodDetail
+     * @return $this
      */
     public function setCollectionAmount(Money $collectionAmount)
     {
-        $this->CollectionAmount = $collectionAmount;
+        $this->values['CollectionAmount'] = $collectionAmount;
         return $this;
     }
-    
+
     /**
      * Set AdjustmentType
      *
      * @param \FedEx\ShipService\SimpleType\CodAdjustmentType|string $adjustmentType
-     * return CompletedCodDetail
+     * @return $this
      */
     public function setAdjustmentType($adjustmentType)
     {
-        $this->AdjustmentType = $adjustmentType;
+        $this->values['AdjustmentType'] = $adjustmentType;
         return $this;
     }
-    
 
     
 }

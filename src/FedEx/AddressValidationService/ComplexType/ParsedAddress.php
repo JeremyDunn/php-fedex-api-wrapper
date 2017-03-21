@@ -9,90 +9,95 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Address Validation Service
- */
-class ParsedAddress
-    extends AbstractComplexType
-{
+ *
+ * @property ParsedAddressPart $ParsedUrbanizationCode
+ * @property ParsedAddressPart[] $ParsedStreetLine
+ * @property ParsedAddressPart $ParsedCity
+ * @property ParsedAddressPart $ParsedStateOrProvinceCode
+ * @property ParsedAddressPart $ParsedPostalCode
+ * @property ParsedAddressPart $ParsedCountryCode
 
+ */
+class ParsedAddress extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'ParsedAddress';
+    protected $name = 'ParsedAddress';
 
     /**
      * Set ParsedUrbanizationCode
      *
      * @param ParsedAddressPart $parsedUrbanizationCode
-     * return ParsedAddress
+     * @return $this
      */
     public function setParsedUrbanizationCode(ParsedAddressPart $parsedUrbanizationCode)
     {
-        $this->ParsedUrbanizationCode = $parsedUrbanizationCode;
+        $this->values['ParsedUrbanizationCode'] = $parsedUrbanizationCode;
         return $this;
     }
-    
+
     /**
      * Set ParsedStreetLine
      *
      * @param ParsedAddressPart[] $parsedStreetLine
-     * return ParsedAddress
+     * @return $this
      */
     public function setParsedStreetLine(array $parsedStreetLine)
     {
-        $this->ParsedStreetLine = $parsedStreetLine;
+        $this->values['ParsedStreetLine'] = $parsedStreetLine;
         return $this;
     }
-    
+
     /**
      * Set ParsedCity
      *
      * @param ParsedAddressPart $parsedCity
-     * return ParsedAddress
+     * @return $this
      */
     public function setParsedCity(ParsedAddressPart $parsedCity)
     {
-        $this->ParsedCity = $parsedCity;
+        $this->values['ParsedCity'] = $parsedCity;
         return $this;
     }
-    
+
     /**
      * Set ParsedStateOrProvinceCode
      *
      * @param ParsedAddressPart $parsedStateOrProvinceCode
-     * return ParsedAddress
+     * @return $this
      */
     public function setParsedStateOrProvinceCode(ParsedAddressPart $parsedStateOrProvinceCode)
     {
-        $this->ParsedStateOrProvinceCode = $parsedStateOrProvinceCode;
+        $this->values['ParsedStateOrProvinceCode'] = $parsedStateOrProvinceCode;
         return $this;
     }
-    
+
     /**
      * Set ParsedPostalCode
      *
      * @param ParsedAddressPart $parsedPostalCode
-     * return ParsedAddress
+     * @return $this
      */
     public function setParsedPostalCode(ParsedAddressPart $parsedPostalCode)
     {
-        $this->ParsedPostalCode = $parsedPostalCode;
+        $this->values['ParsedPostalCode'] = $parsedPostalCode;
         return $this;
     }
-    
+
     /**
      * Set ParsedCountryCode
      *
      * @param ParsedAddressPart $parsedCountryCode
-     * return ParsedAddress
+     * @return $this
      */
     public function setParsedCountryCode(ParsedAddressPart $parsedCountryCode)
     {
-        $this->ParsedCountryCode = $parsedCountryCode;
+        $this->values['ParsedCountryCode'] = $parsedCountryCode;
         return $this;
     }
-    
 
     
 }

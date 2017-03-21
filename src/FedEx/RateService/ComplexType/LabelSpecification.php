@@ -9,30 +9,37 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
- */
-class LabelSpecification
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\RateService\SimpleType\LabelFormatType|string $LabelFormatType
+ * @property \FedEx\RateService\SimpleType\ShippingDocumentImageType|string $ImageType
+ * @property \FedEx\RateService\SimpleType\LabelStockType|string $LabelStockType
+ * @property \FedEx\RateService\SimpleType\LabelPrintingOrientationType|string $LabelPrintingOrientation
+ * @property \FedEx\RateService\SimpleType\LabelRotationType|string $LabelRotation
+ * @property ContactAndAddress $PrintedLabelOrigin
+ * @property CustomerSpecifiedLabelDetail $CustomerSpecifiedDetail
 
+ */
+class LabelSpecification extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'LabelSpecification';
+    protected $name = 'LabelSpecification';
 
     /**
      * Specify type of label to be returned
      *
      * @param \FedEx\RateService\SimpleType\LabelFormatType|string $labelFormatType
-     * return LabelSpecification
+     * @return $this
      */
     public function setLabelFormatType($labelFormatType)
     {
-        $this->LabelFormatType = $labelFormatType;
+        $this->values['LabelFormatType'] = $labelFormatType;
         return $this;
     }
-    
+
     /**
      * 
                 The type of image or printer commands the label is to be formatted in.
@@ -44,74 +51,73 @@ class LabelSpecification
               
      *
      * @param \FedEx\RateService\SimpleType\ShippingDocumentImageType|string $imageType
-     * return LabelSpecification
+     * @return $this
      */
     public function setImageType($imageType)
     {
-        $this->ImageType = $imageType;
+        $this->values['ImageType'] = $imageType;
         return $this;
     }
-    
+
     /**
      * For thermal printer lables this indicates the size of the label and the location of the doc tab if present.
      *
      * @param \FedEx\RateService\SimpleType\LabelStockType|string $labelStockType
-     * return LabelSpecification
+     * @return $this
      */
     public function setLabelStockType($labelStockType)
     {
-        $this->LabelStockType = $labelStockType;
+        $this->values['LabelStockType'] = $labelStockType;
         return $this;
     }
-    
+
     /**
      * This indicates if the top or bottom of the label comes out of the printer first.
      *
      * @param \FedEx\RateService\SimpleType\LabelPrintingOrientationType|string $labelPrintingOrientation
-     * return LabelSpecification
+     * @return $this
      */
     public function setLabelPrintingOrientation($labelPrintingOrientation)
     {
-        $this->LabelPrintingOrientation = $labelPrintingOrientation;
+        $this->values['LabelPrintingOrientation'] = $labelPrintingOrientation;
         return $this;
     }
-    
+
     /**
      * Relative to normal orientation for the printer. RIGHT=90 degrees clockwise, UPSIDE_DOWN=180 degrees, LEFT=90 degrees counterclockwise.
      *
      * @param \FedEx\RateService\SimpleType\LabelRotationType|string $labelRotation
-     * return LabelSpecification
+     * @return $this
      */
     public function setLabelRotation($labelRotation)
     {
-        $this->LabelRotation = $labelRotation;
+        $this->values['LabelRotation'] = $labelRotation;
         return $this;
     }
-    
+
     /**
      * If present, this contact and address information will replace the return address information on the label.
      *
      * @param ContactAndAddress $printedLabelOrigin
-     * return LabelSpecification
+     * @return $this
      */
     public function setPrintedLabelOrigin(ContactAndAddress $printedLabelOrigin)
     {
-        $this->PrintedLabelOrigin = $printedLabelOrigin;
+        $this->values['PrintedLabelOrigin'] = $printedLabelOrigin;
         return $this;
     }
-    
+
     /**
      * Allows customer-specified control of label content.
      *
      * @param CustomerSpecifiedLabelDetail $customerSpecifiedDetail
-     * return LabelSpecification
+     * @return $this
      */
     public function setCustomerSpecifiedDetail(CustomerSpecifiedLabelDetail $customerSpecifiedDetail)
     {
-        $this->CustomerSpecifiedDetail = $customerSpecifiedDetail;
+        $this->values['CustomerSpecifiedDetail'] = $customerSpecifiedDetail;
         return $this;
     }
-    
 
     
 }

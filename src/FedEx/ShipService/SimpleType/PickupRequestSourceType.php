@@ -10,8 +10,7 @@ use FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class PickupRequestSourceType
-    extends AbstractSimpleType
+class PickupRequestSourceType extends AbstractSimpleType
 {
     const _AUTOMATION = 'AUTOMATION';
     const _CUSTOMER_SERVICE = 'CUSTOMER_SERVICE';

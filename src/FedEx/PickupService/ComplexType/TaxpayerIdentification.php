@@ -9,54 +9,56 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
- */
-class TaxpayerIdentification
-    extends AbstractComplexType
-{
+ *
+ * @property \FedEx\Pickup\SimpleType\TinType|string $TinType
+ * @property string $Number
+ * @property string $Usage
 
+ */
+class TaxpayerIdentification extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'TaxpayerIdentification';
+    protected $name = 'TaxpayerIdentification';
 
     /**
      * Identifies the category of the taxpayer identification number. See TinType for the list of values.
      *
      * @param \FedEx\Pickup\SimpleType\TinType|string $tinType
-     * return TaxpayerIdentification
+     * @return $this
      */
     public function setTinType($tinType)
     {
-        $this->TinType = $tinType;
+        $this->values['TinType'] = $tinType;
         return $this;
     }
-    
+
     /**
      * Identifies the taxpayer identification number.
      *
      * @param string $number
-     * return TaxpayerIdentification
+     * @return $this
      */
     public function setNumber($number)
     {
-        $this->Number = $number;
+        $this->values['Number'] = $number;
         return $this;
     }
-    
+
     /**
      * Identifies the usage of Tax Identification Number in Shipment processing
      *
      * @param string $usage
-     * return TaxpayerIdentification
+     * @return $this
      */
     public function setUsage($usage)
     {
-        $this->Usage = $usage;
+        $this->values['Usage'] = $usage;
         return $this;
     }
-    
 
     
 }

@@ -9,174 +9,186 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
- */
-class CommercialInvoice
-    extends AbstractComplexType
-{
+ *
+ * @property string[] $Comments
+ * @property Money $FreightCharge
+ * @property Money $TaxesOrMiscellaneousCharge
+ * @property \FedEx\ShipService\SimpleType\TaxesOrMiscellaneousChargeType|string $TaxesOrMiscellaneousChargeType
+ * @property Money $PackingCosts
+ * @property Money $HandlingCosts
+ * @property string $SpecialInstructions
+ * @property string $DeclarationStatement
+ * @property string $PaymentTerms
+ * @property \FedEx\ShipService\SimpleType\PurposeOfShipmentType|string $Purpose
+ * @property CustomerReference[] $CustomerReferences
+ * @property string $OriginatorName
+ * @property \FedEx\ShipService\SimpleType\TermsOfSaleType|string $TermsOfSale
 
+ */
+class CommercialInvoice extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'CommercialInvoice';
+    protected $name = 'CommercialInvoice';
 
     /**
      * Any comments that need to be communicated about this shipment.
      *
      * @param string[] $comments
-     * return CommercialInvoice
+     * @return $this
      */
     public function setComments(array $comments)
     {
-        $this->Comments = $comments;
+        $this->values['Comments'] = $comments;
         return $this;
     }
-    
+
     /**
      * Any freight charges that are associated with this shipment.
      *
      * @param Money $freightCharge
-     * return CommercialInvoice
+     * @return $this
      */
     public function setFreightCharge(Money $freightCharge)
     {
-        $this->FreightCharge = $freightCharge;
+        $this->values['FreightCharge'] = $freightCharge;
         return $this;
     }
-    
+
     /**
      * Any taxes or miscellaneous charges(other than Freight charges or Insurance charges) that are associated with this shipment.
      *
      * @param Money $taxesOrMiscellaneousCharge
-     * return CommercialInvoice
+     * @return $this
      */
     public function setTaxesOrMiscellaneousCharge(Money $taxesOrMiscellaneousCharge)
     {
-        $this->TaxesOrMiscellaneousCharge = $taxesOrMiscellaneousCharge;
+        $this->values['TaxesOrMiscellaneousCharge'] = $taxesOrMiscellaneousCharge;
         return $this;
     }
-    
+
     /**
      * Specifies which kind of charge is being recorded in the preceding field.
      *
      * @param \FedEx\ShipService\SimpleType\TaxesOrMiscellaneousChargeType|string $taxesOrMiscellaneousChargeType
-     * return CommercialInvoice
+     * @return $this
      */
     public function setTaxesOrMiscellaneousChargeType($taxesOrMiscellaneousChargeType)
     {
-        $this->TaxesOrMiscellaneousChargeType = $taxesOrMiscellaneousChargeType;
+        $this->values['TaxesOrMiscellaneousChargeType'] = $taxesOrMiscellaneousChargeType;
         return $this;
     }
-    
+
     /**
      * Any packing costs that are associated with this shipment.
      *
      * @param Money $packingCosts
-     * return CommercialInvoice
+     * @return $this
      */
     public function setPackingCosts(Money $packingCosts)
     {
-        $this->PackingCosts = $packingCosts;
+        $this->values['PackingCosts'] = $packingCosts;
         return $this;
     }
-    
+
     /**
      * Any handling costs that are associated with this shipment.
      *
      * @param Money $handlingCosts
-     * return CommercialInvoice
+     * @return $this
      */
     public function setHandlingCosts(Money $handlingCosts)
     {
-        $this->HandlingCosts = $handlingCosts;
+        $this->values['HandlingCosts'] = $handlingCosts;
         return $this;
     }
-    
+
     /**
      * Free-form text.
      *
      * @param string $specialInstructions
-     * return CommercialInvoice
+     * @return $this
      */
     public function setSpecialInstructions($specialInstructions)
     {
-        $this->SpecialInstructions = $specialInstructions;
+        $this->values['SpecialInstructions'] = $specialInstructions;
         return $this;
     }
-    
+
     /**
      * Free-form text.
      *
      * @param string $declarationStatement
-     * return CommercialInvoice
+     * @return $this
      */
     public function setDeclarationStatement($declarationStatement)
     {
-        $this->DeclarationStatement = $declarationStatement;
+        $this->values['DeclarationStatement'] = $declarationStatement;
         return $this;
     }
-    
+
     /**
      * Free-form text.
      *
      * @param string $paymentTerms
-     * return CommercialInvoice
+     * @return $this
      */
     public function setPaymentTerms($paymentTerms)
     {
-        $this->PaymentTerms = $paymentTerms;
+        $this->values['PaymentTerms'] = $paymentTerms;
         return $this;
     }
-    
+
     /**
      * The reason for the shipment. Note: SOLD is not a valid purpose for a Proforma Invoice.
      *
      * @param \FedEx\ShipService\SimpleType\PurposeOfShipmentType|string $purpose
-     * return CommercialInvoice
+     * @return $this
      */
     public function setPurpose($purpose)
     {
-        $this->Purpose = $purpose;
+        $this->values['Purpose'] = $purpose;
         return $this;
     }
-    
+
     /**
      * Additional customer reference data.
      *
      * @param CustomerReference[] $customerReferences
-     * return CommercialInvoice
+     * @return $this
      */
     public function setCustomerReferences(array $customerReferences)
     {
-        $this->CustomerReferences = $customerReferences;
+        $this->values['CustomerReferences'] = $customerReferences;
         return $this;
     }
-    
+
     /**
      * Name of the International Expert that completed the Commercial Invoice different from Sender.
      *
      * @param string $originatorName
-     * return CommercialInvoice
+     * @return $this
      */
     public function setOriginatorName($originatorName)
     {
-        $this->OriginatorName = $originatorName;
+        $this->values['OriginatorName'] = $originatorName;
         return $this;
     }
-    
+
     /**
      * Required for dutiable international Express or Ground shipment. This field is not applicable to an international PIB(document) or a non-document which does not require a Commercial Invoice
      *
      * @param \FedEx\ShipService\SimpleType\TermsOfSaleType|string $termsOfSale
-     * return CommercialInvoice
+     * @return $this
      */
     public function setTermsOfSale($termsOfSale)
     {
-        $this->TermsOfSale = $termsOfSale;
+        $this->values['TermsOfSale'] = $termsOfSale;
         return $this;
     }
-    
 
     
 }

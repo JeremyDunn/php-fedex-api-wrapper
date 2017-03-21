@@ -9,54 +9,56 @@ use FedEx\AbstractComplexType;
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
- */
-class CreditFraudDetectionDetail
-    extends AbstractComplexType
-{
+ *
+ * @property string $IpAddress
+ * @property boolean $ClientCookiesEnabled
+ * @property string $DevicePrint
 
+ */
+class CreditFraudDetectionDetail extends AbstractComplexType
+{
     /**
      * Name of this complex type
-     * 
+     *
      * @var string
      */
-    protected $_name = 'CreditFraudDetectionDetail';
+    protected $name = 'CreditFraudDetectionDetail';
 
     /**
      * Set IpAddress
      *
      * @param string $ipAddress
-     * return CreditFraudDetectionDetail
+     * @return $this
      */
     public function setIpAddress($ipAddress)
     {
-        $this->IpAddress = $ipAddress;
+        $this->values['IpAddress'] = $ipAddress;
         return $this;
     }
-    
+
     /**
      * Set ClientCookiesEnabled
      *
      * @param boolean $clientCookiesEnabled
-     * return CreditFraudDetectionDetail
+     * @return $this
      */
     public function setClientCookiesEnabled($clientCookiesEnabled)
     {
-        $this->ClientCookiesEnabled = $clientCookiesEnabled;
+        $this->values['ClientCookiesEnabled'] = $clientCookiesEnabled;
         return $this;
     }
-    
+
     /**
      * Set DevicePrint
      *
      * @param string $devicePrint
-     * return CreditFraudDetectionDetail
+     * @return $this
      */
     public function setDevicePrint($devicePrint)
     {
-        $this->DevicePrint = $devicePrint;
+        $this->values['DevicePrint'] = $devicePrint;
         return $this;
     }
-    
 
     
 }
