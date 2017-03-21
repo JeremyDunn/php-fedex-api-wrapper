@@ -12,6 +12,9 @@ use FedEx\AbstractRequest;
  */
 class Request extends AbstractRequest
 {
+    const PRODUCTION_URL = 'https://gateway.fedex.com:443/web-services';
+    const TESTING_URL = 'https://gatewaybeta.fedex.com:443/web-services';
+
     protected $wsdlFileName = 'CourierDispatchService_v3.wsdl';
             
     /**

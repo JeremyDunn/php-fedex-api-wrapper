@@ -50,7 +50,7 @@ class GenerateComplexTypeClasses extends AbstractGenerate
 
         $this->baseNamespace = $baseNamespace;
         $this->subPackageName = $subPackageName;
-        $this->_loadXML();
+        $this->loadXML();
     }
 
     /**

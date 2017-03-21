@@ -12,6 +12,9 @@ use FedEx\AbstractRequest;
  */
 class Request extends AbstractRequest
 {
+    const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/rate';
+    const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/rate';
+
     protected $wsdlFileName = 'RateService_v10.wsdl';
             
     /**

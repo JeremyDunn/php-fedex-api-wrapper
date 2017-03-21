@@ -11,6 +11,16 @@ namespace FedEx\Utility\CodeGenerator;
 class GenerateRequestClass extends AbstractGenerate
 {
     /**
+     * @var string
+     */
+    protected $testingUrl;
+
+    /**
+     * @var string
+     */
+    protected $productionUrl;
+
+    /**
      * Constructor
      *
      * @param string $exportPath Path to Request.php file
@@ -28,11 +38,10 @@ class GenerateRequestClass extends AbstractGenerate
         }
 
         $this->exportPath = $exportPath;
-
-
         $this->namespace = $namespace;
-
         $this->subPackageName = $subPackageName;
+
+        $this->loadXML();
     }
 
     /**
@@ -40,6 +49,8 @@ class GenerateRequestClass extends AbstractGenerate
      */
     public function run()
     {
+        $this->setupWebServiceUrls();
+
         $soapClient = new \Soapclient($this->wsdlPath, array('trace' => true));
 
         $soapFunctions = $soapClient->__getFunctions();
@@ -48,8 +59,6 @@ class GenerateRequestClass extends AbstractGenerate
 
         foreach ($soapFunctions as $soapFunctionDescription) {
             $thisDefinition = array();
-
-            $functionDefinition = '';
 
             $parts = explode(' ', $soapFunctionDescription);
 
@@ -80,6 +89,20 @@ class GenerateRequestClass extends AbstractGenerate
 
         fwrite($fh, $fileBody);
         fclose($fh);
+    }
+
+    /**
+     * Parses the web service URL from .wdl file
+     */
+    protected function setupWebServiceUrls()
+    {
+        $betaUrl = (string) $this->xml->service->port->children($this->xml->getDocNamespaces()['s1'])->address->attributes()->location;
+        if (empty($betaUrl)) {
+            return;
+        }
+
+        $this->testingUrl = $betaUrl;
+        $this->productionUrl = str_ireplace('beta', '', $this->testingUrl);
     }
 
     /**
@@ -127,6 +150,9 @@ use FedEx\AbstractRequest;
  */
 class Request extends AbstractRequest
 {
+    const PRODUCTION_URL = '{$this->productionUrl}';
+    const TESTING_URL = '{$this->testingUrl}';
+
     protected \$wsdlFileName = '$wsdlFileName';
 $requestFunctions
 }

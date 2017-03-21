@@ -12,6 +12,9 @@ use FedEx\AbstractRequest;
  */
 class Request extends AbstractRequest
 {
+    const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/track';
+    const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/track';
+
     protected $wsdlFileName = 'TrackService_v5.wsdl';
             
     /**
