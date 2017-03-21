@@ -1,5 +1,7 @@
 # PHP FedEx API Wrapper
 
+[![Build Status](https://travis-ci.org/JeremyDunn/php-fedex-api-wrapper.svg?branch=master)](https://travis-ci.org/JeremyDunn/php-fedex-api-wrapper)
+
 This library provides a fluid interface for constructing requests to the FedEx web service API.
 
 ## General Information
