@@ -25,20 +25,6 @@ abstract class AbstractComplexType
     protected $name;
 
     /**
-     * Constructor
-     *
-     * @param array $options Data as key => value array
-     */
-    public function __construct(array $options = null)
-    {
-        if (is_array($options)) {
-            foreach ($options as $name => $value) {
-                $this->$name = $value;
-            }
-        }
-    }
-
-    /**
      * __set implementation
      *
      * @param string $name
