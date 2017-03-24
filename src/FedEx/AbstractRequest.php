@@ -43,21 +43,17 @@ abstract class AbstractRequest
     /**
      * Constructor
      *
-     * @param string $wsdlPath
+     * @param \SoapClient|null $soapClient
      */
-    public function __construct($wsdlPath = null)
+    public function __construct(\SoapClient $soapClient = null)
     {
-        if (null != $wsdlPath) {
-            $this->wsdlPath = $wsdlPath;
-        } else {
-            $this->wsdlPath = realpath(dirname(__FILE__) . "/_wsdl/{$this->wsdlFileName}");
-        }
-
-        $this->soapClient = new \SoapClient($this->wsdlPath, array('trace' => true));
+        $this->wsdlPath = realpath(dirname(__FILE__) . "/_wsdl/{$this->wsdlFileName}");
+        $this->soapClient = $soapClient ?: new \SoapClient($this->wsdlPath, ['trace' => true]);
     }
 
     /**
-     * Returns the SoapClient instance
+     * Returns the SoapClient instance from Client
+     * for backwards compatibility
      *
      * @return \SoapClient
      */

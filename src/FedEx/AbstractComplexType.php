@@ -85,7 +85,7 @@ abstract class AbstractComplexType
      */
     protected function convertToArray($arrayValues)
     {
-        $returnArray = array();
+        $returnArray = [];
 
         foreach ($arrayValues as $key => $value) {
             if ($value instanceof self) {
