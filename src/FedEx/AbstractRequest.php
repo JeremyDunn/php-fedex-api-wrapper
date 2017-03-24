@@ -31,14 +31,14 @@ abstract class AbstractRequest
      *
      * @var string
      */
-    protected $wsdlPath;
+    protected static $wsdlPath;
 
     /**
      * WSDL file name
      *
      * @var string
      */
-    protected $wsdlFileName;
+    protected static $wsdlFileName;
 
     /**
      * Constructor
@@ -47,12 +47,21 @@ abstract class AbstractRequest
      */
     public function __construct(\SoapClient $soapClient = null)
     {
-        $this->wsdlPath = realpath(dirname(__FILE__) . "/_wsdl/{$this->wsdlFileName}");
-        $this->soapClient = $soapClient ?: new \SoapClient($this->wsdlPath, ['trace' => true]);
+        $this->soapClient = $soapClient ?: new \SoapClient(static::getWsdlPath(), ['trace' => true]);
     }
 
     /**
-     * Returns the SoapClient instance from Client
+     * Returns absolute path to .wsdl file
+     *
+     * @return string|bool
+     */
+    public static function getWsdlPath()
+    {
+        return realpath(__DIR__ . '/../FedEx/_wsdl/' . static::$wsdlFileName);
+    }
+
+    /**
+     * Returns the SoapClient instance
      * for backwards compatibility
      *
      * @return \SoapClient

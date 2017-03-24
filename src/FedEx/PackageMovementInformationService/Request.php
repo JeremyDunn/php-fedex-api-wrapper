@@ -15,7 +15,7 @@ class Request extends AbstractRequest
     const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services';
     const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services';
 
-    protected $wsdlFileName = 'PackageMovementInformationService_v5.wsdl';
+    protected static $wsdlFileName = 'PackageMovementInformationService_v5.wsdl';
             
     /**
      * Sends the PostalCodeInquiryRequest and returns the response

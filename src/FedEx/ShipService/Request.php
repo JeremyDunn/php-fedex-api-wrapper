@@ -15,7 +15,7 @@ class Request extends AbstractRequest
     const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/ship';
     const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/ship';
 
-    protected $wsdlFileName = 'ShipService_v12.wsdl';
+    protected static $wsdlFileName = 'ShipService_v12.wsdl';
             
     /**
      * Sends the CreatePendingShipmentRequest and returns the response
