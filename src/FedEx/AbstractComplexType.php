@@ -64,7 +64,7 @@ abstract class AbstractComplexType
     }
 
     /**
-     * Recursive algorthim to convert complex types to an array
+     * Recursive algorithm to convert complex types to an array
      *
      * @param array $arrayValues
      * @return array
@@ -79,7 +79,7 @@ abstract class AbstractComplexType
             } else if (is_array($value)) {
                 $returnArray[$key] = $this->convertToArray($value);
             } else {
-                if ($value instanceof SimpleType\AbstractSimpleType) {
+                if ($value instanceof AbstractSimpleType) {
                     $returnArray[$key] = (string)$value;
                 } else {
                     $returnArray[$key] = $value;

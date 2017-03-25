@@ -2,15 +2,17 @@
 
 namespace FedEx\Tests;
 
+use FedEx\AbstractRequest;
+
 class TestCase extends \PHPUnit\Framework\TestCase
 {
 
     /**
-     * Run assertions that determine if an endpoint URL is valid
+     * Run assertions that determine if an endpoint URL exists
      *
      * @param $url
      */
-    public function validateUrl($url)
+    protected function validateUrlExists($url)
     {
         //send CURL requests
         $ch = curl_init($url);
@@ -18,10 +20,28 @@ class TestCase extends \PHPUnit\Framework\TestCase
         curl_setopt($ch, CURLOPT_NOBODY, true);
         curl_setopt($ch, CURLOPT_HEADER, true);
         $responseHeaders = curl_exec($ch);
-        $info = curl_getinfo($ch);
         curl_close($ch);
-
         $this->assertNotEmpty($responseHeaders);
-        $this->assertEquals(500, $info['http_code']);
     }
+
+    /**
+     * @return AbstractRequest[]
+     */
+    protected function getAllRequestObjects()
+    {
+        return [
+            new \FedEx\AddressValidationService\Request(),
+            new \FedEx\CloseService\Request(),
+            new \FedEx\CourierDispatchService\Request(),
+            new \FedEx\LocatorService\Request(),
+            new \FedEx\PackageMovementInformationService\Request(),
+            new \FedEx\Pickup\Request(),
+            new \FedEx\RateService\Request(),
+            new \FedEx\ReturnTagService\Request(),
+            new \FedEx\ShipService\Request(),
+            new \FedEx\TrackService\Request(),
+            new \FedEx\UploadDocumentService\Request()
+        ];
+    }
+
 }
