@@ -46,6 +46,8 @@ abstract class AbstractComplexType
      */
     public function &__get($name)
     {
+        $nullValue = null;
+
         if (isset($this->values[$name])) {
             return $this->values[$name];
         }
@@ -60,7 +62,7 @@ abstract class AbstractComplexType
             }
         }
 
-        return null;
+        return $nullValue;
     }
 
     /**
@@ -79,11 +81,7 @@ abstract class AbstractComplexType
             } else if (is_array($value)) {
                 $returnArray[$key] = $this->convertToArray($value);
             } else {
-                if ($value instanceof AbstractSimpleType) {
-                    $returnArray[$key] = (string)$value;
-                } else {
-                    $returnArray[$key] = $value;
-                }
+                $returnArray[$key] = (string) $value;
             }
         }
 
