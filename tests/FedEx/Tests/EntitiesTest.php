@@ -5,6 +5,7 @@ namespace FedEx\Tests;
 use FedEx\RateService\ComplexType\Address;
 use FedEx\RateService\ComplexType\Party;
 use FedEx\RateService\ComplexType\RateRequest;
+use FedEx\RateService\ComplexType\WebAuthenticationDetail;
 use FedEx\RateService\ComplexType\Weight;
 use FedEx\RateService\SimpleType\WeightUnits;
 
@@ -79,4 +80,24 @@ class EntitiesTest extends TestCase
         $this->assertEquals(WeightUnits::_LB, $weight->Units);
     }
 
+    /**
+     * Tests the ComplexType::__get() magic method functionality
+     */
+    public function testComplexTypeGetMagicMethodReturnsInitializedObject()
+    {
+        $rateRequest = new RateRequest();
+
+        //__get() method should return a new instance of expected object if not already set
+        $this->assertInstanceOf(WebAuthenticationDetail::class, $rateRequest->WebAuthenticationDetail);
+
+        //when a ComplexType property is set, the same instance of that property should be returned
+        $webAuthenticationDetail = new WebAuthenticationDetail();
+        $this->assertNotSame($webAuthenticationDetail, $rateRequest->WebAuthenticationDetail);
+        $rateRequest->WebAuthenticationDetail = $webAuthenticationDetail;
+        $this->assertSame($webAuthenticationDetail, $rateRequest->WebAuthenticationDetail);
+
+        //__get() method should return null if class property isn't defined
+        var_dump($rateRequest->Test);
+        $this->assertNull($rateRequest->PropertyThatDoesNotExist);
+    }
 }
