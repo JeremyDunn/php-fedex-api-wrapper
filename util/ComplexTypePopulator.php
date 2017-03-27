@@ -42,7 +42,7 @@ class ComplexTypePopulator
 
             //recursively populate child classes
             if ($fakeValue instanceof AbstractComplexType) {
-                $this->populateDependencies($fakeValue);
+                $this->populate($fakeValue);
             }
 
             $object->{$reflectionMethod->name}($fakeValue);
@@ -62,7 +62,7 @@ class ComplexTypePopulator
                         return [$this->getRandomConstValueFromSimpleType($arrayType)];
                     } else {
                         $complexType = new $arrayType();
-                        $this->populateDependencies($complexType);
+                        $this->populate($complexType);
                         return [$complexType];
                     }
                 }

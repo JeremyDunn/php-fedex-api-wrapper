@@ -97,7 +97,6 @@ class EntitiesTest extends TestCase
         $this->assertSame($webAuthenticationDetail, $rateRequest->WebAuthenticationDetail);
 
         //__get() method should return null if class property isn't defined
-        var_dump($rateRequest->Test);
         $this->assertNull($rateRequest->PropertyThatDoesNotExist);
     }
 }

@@ -6,6 +6,10 @@ use FedEx\AbstractRequest;
 
 class TestCase extends \PHPUnit\Framework\TestCase
 {
+    const FEDEX_KEY = 'key';
+    const FEDEX_PASSWORD = 'password';
+    const FEDEX_METER_NUMBER = 'meter number';
+    const FEDEX_ACCOUNT_NUMBER = 'account number';
 
     /**
      * Run assertions that determine if an endpoint URL exists
