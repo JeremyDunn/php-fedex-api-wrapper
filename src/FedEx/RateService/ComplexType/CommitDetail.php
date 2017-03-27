@@ -70,7 +70,7 @@ class CommitDetail extends AbstractComplexType
     /**
      * Shows the specific combination of service options combined with the service type that produced this committment in the set returned to the caller.
      *
-     * @param ServiceOptionType[] $appliedOptions
+     * @param \FedEx\RateService\SimpleType\ServiceOptionType[]|string[] $appliedOptions
      * @return $this
      */
     public function setAppliedOptions(array $appliedOptions)
@@ -250,10 +250,10 @@ class CommitDetail extends AbstractComplexType
     /**
      * Messages concerning the delivery commitment on an International commit quote such as "0:00 A.M. IF NO CUSTOMS DELAY"
      *
-     * @param string[] $deliveryMessages
+     * @param string $deliveryMessages
      * @return $this
      */
-    public function setDeliveryMessages(array $deliveryMessages)
+    public function setDeliveryMessages($deliveryMessages)
     {
         $this->values['DeliveryMessages'] = $deliveryMessages;
         return $this;
@@ -286,7 +286,7 @@ class CommitDetail extends AbstractComplexType
     /**
      * Required documentation for this shipment.
      *
-     * @param RequiredShippingDocumentType[] $requiredDocuments
+     * @param \FedEx\RateService\SimpleType\RequiredShippingDocumentType[]|string[] $requiredDocuments
      * @return $this
      */
     public function setRequiredDocuments(array $requiredDocuments)

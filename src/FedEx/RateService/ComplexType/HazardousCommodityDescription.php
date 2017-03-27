@@ -91,10 +91,10 @@ class HazardousCommodityDescription extends AbstractComplexType
     /**
      * Set SubsidiaryClasses
      *
-     * @param string[] $subsidiaryClasses
+     * @param string $subsidiaryClasses
      * @return $this
      */
-    public function setSubsidiaryClasses(array $subsidiaryClasses)
+    public function setSubsidiaryClasses($subsidiaryClasses)
     {
         $this->values['SubsidiaryClasses'] = $subsidiaryClasses;
         return $this;

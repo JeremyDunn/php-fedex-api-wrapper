@@ -53,7 +53,7 @@ class EMailNotificationRecipient extends AbstractComplexType
     /**
      * The types of email notifications being requested for this recipient.
      *
-     * @param EMailNotificationEventType[] $notificationEventsRequested
+     * @param \FedEx\TrackService\SimpleType\EMailNotificationEventType[]|string[] $notificationEventsRequested
      * @return $this
      */
     public function setNotificationEventsRequested(array $notificationEventsRequested)

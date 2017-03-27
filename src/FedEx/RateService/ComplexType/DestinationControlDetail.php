@@ -27,7 +27,7 @@ class DestinationControlDetail extends AbstractComplexType
     /**
      * Set StatementTypes
      *
-     * @param DestinationControlStatementType[] $statementTypes
+     * @param \FedEx\RateService\SimpleType\DestinationControlStatementType[]|string[] $statementTypes
      * @return $this
      */
     public function setStatementTypes(array $statementTypes)

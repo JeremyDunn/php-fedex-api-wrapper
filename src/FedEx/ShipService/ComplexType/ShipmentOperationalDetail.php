@@ -267,7 +267,7 @@ class ShipmentOperationalDetail extends AbstractComplexType
     /**
      * FedEx Ground delivery features for which this shipment may be eligible.
      *
-     * @param GroundDeliveryEligibilityType[] $deliveryEligibilities
+     * @param \FedEx\ShipService\SimpleType\GroundDeliveryEligibilityType[]|string[] $deliveryEligibilities
      * @return $this
      */
     public function setDeliveryEligibilities(array $deliveryEligibilities)

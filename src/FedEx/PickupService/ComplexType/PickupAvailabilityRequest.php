@@ -110,7 +110,7 @@ class PickupAvailabilityRequest extends AbstractComplexType
      * An array of PickupRequestType. If SAME_DAY is included, Options with ScheduleDay of SAME_DAY will be included in the reply.
 								If FUTURE_DAY is included, Options with ScheduleDay of FUTURE_DAY will be included in the reply.
      *
-     * @param PickupRequestType[] $pickupRequestType
+     * @param \FedEx\Pickup\SimpleType\PickupRequestType[]|string[] $pickupRequestType
      * @return $this
      */
     public function setPickupRequestType(array $pickupRequestType)
@@ -170,7 +170,7 @@ class PickupAvailabilityRequest extends AbstractComplexType
     /**
      * The FedEx carrier(s) for which availability is requested.
      *
-     * @param CarrierCodeType[] $carriers
+     * @param \FedEx\Pickup\SimpleType\CarrierCodeType[]|string[] $carriers
      * @return $this
      */
     public function setCarriers(array $carriers)

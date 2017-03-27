@@ -38,7 +38,7 @@ class ReturnEMailDetail extends AbstractComplexType
     /**
      * Identifies the allowed (merchant-authorized) special services which may be selected when the subsequent shipment is created. Only services represented in EMailLabelAllowedSpecialServiceType will be controlled by this list.
      *
-     * @param ReturnEMailAllowedSpecialServiceType[] $allowedSpecialServices
+     * @param \FedEx\RateService\SimpleType\ReturnEMailAllowedSpecialServiceType[]|string[] $allowedSpecialServices
      * @return $this
      */
     public function setAllowedSpecialServices(array $allowedSpecialServices)

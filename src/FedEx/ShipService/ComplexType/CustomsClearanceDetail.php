@@ -207,7 +207,7 @@ class CustomsClearanceDetail extends AbstractComplexType
     /**
      * Set RegulatoryControls
      *
-     * @param RegulatoryControlType[] $regulatoryControls
+     * @param \FedEx\ShipService\SimpleType\RegulatoryControlType[]|string[] $regulatoryControls
      * @return $this
      */
     public function setRegulatoryControls(array $regulatoryControls)

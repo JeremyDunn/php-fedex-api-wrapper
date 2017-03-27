@@ -151,10 +151,10 @@ class FreightShipmentDetail extends AbstractComplexType
     /**
      * Identifiers for promotional discounts offered to customers.
      *
-     * @param string[] $coupons
+     * @param string $coupons
      * @return $this
      */
-    public function setCoupons(array $coupons)
+    public function setCoupons($coupons)
     {
         $this->values['Coupons'] = $coupons;
         return $this;

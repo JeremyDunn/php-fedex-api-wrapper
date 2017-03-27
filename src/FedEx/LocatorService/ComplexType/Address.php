@@ -31,10 +31,10 @@ class Address extends AbstractComplexType
     /**
      * Combination of number, street name, etc. Empty lines should not be included.
      *
-     * @param string[] $streetLines
+     * @param string $streetLines
      * @return $this
      */
-    public function setStreetLines(array $streetLines)
+    public function setStreetLines($streetLines)
     {
         $this->values['StreetLines'] = $streetLines;
         return $this;

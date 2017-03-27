@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Address Validation Service
  *
- * @property integer $Score
+ * @property int $Score
  * @property \FedEx\AddressValidationService\SimpleType\AddressValidationChangeType|string[] $Changes
  * @property \FedEx\AddressValidationService\SimpleType\ResidentialStatusType|string $ResidentialStatus
  * @property \FedEx\AddressValidationService\SimpleType\DeliveryPointValidationType|string $DeliveryPointValidation
@@ -33,10 +33,10 @@ class ProposedAddressDetail extends AbstractComplexType
     /**
      * Set Score
      *
-     * @param integer $score
+     * @param int $score
      * @return $this
      */
-    public function setScore(integer $score)
+    public function setScore($score)
     {
         $this->values['Score'] = $score;
         return $this;
@@ -45,7 +45,7 @@ class ProposedAddressDetail extends AbstractComplexType
     /**
      * Set Changes
      *
-     * @param AddressValidationChangeType[] $changes
+     * @param \FedEx\AddressValidationService\SimpleType\AddressValidationChangeType[]|string[] $changes
      * @return $this
      */
     public function setChanges(array $changes)

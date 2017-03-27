@@ -54,10 +54,10 @@ class CustomLabelTextEntry extends AbstractComplexType
     /**
      * Set DataFields
      *
-     * @param string[] $dataFields
+     * @param string $dataFields
      * @return $this
      */
-    public function setDataFields(array $dataFields)
+    public function setDataFields($dataFields)
     {
         $this->values['DataFields'] = $dataFields;
         return $this;

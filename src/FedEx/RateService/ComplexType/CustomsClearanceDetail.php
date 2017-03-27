@@ -210,7 +210,7 @@ class CustomsClearanceDetail extends AbstractComplexType
     /**
      * FOOD_OR_PERISHABLE is required by FDA/BTA; must be true for food/perishable items coming to US or PR from non-US/non-PR origin.
      *
-     * @param RegulatoryControlType[] $regulatoryControls
+     * @param \FedEx\RateService\SimpleType\RegulatoryControlType[]|string[] $regulatoryControls
      * @return $this
      */
     public function setRegulatoryControls(array $regulatoryControls)

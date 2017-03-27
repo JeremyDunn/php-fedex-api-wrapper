@@ -36,7 +36,7 @@ class ShipmentSpecialServicesRequested extends AbstractComplexType
     /**
      * The types of all special services requested for the enclosing shipment (or other shipment-level transaction).
      *
-     * @param ShipmentSpecialServiceType[] $specialServiceTypes
+     * @param \FedEx\RateService\SimpleType\ShipmentSpecialServiceType[]|string[] $specialServiceTypes
      * @return $this
      */
     public function setSpecialServiceTypes(array $specialServiceTypes)

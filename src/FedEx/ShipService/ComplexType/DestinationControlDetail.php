@@ -27,7 +27,7 @@ class DestinationControlDetail extends AbstractComplexType
     /**
      * List of applicable Statment types.
      *
-     * @param DestinationControlStatementType[] $statementTypes
+     * @param \FedEx\ShipService\SimpleType\DestinationControlStatementType[]|string[] $statementTypes
      * @return $this
      */
     public function setStatementTypes(array $statementTypes)

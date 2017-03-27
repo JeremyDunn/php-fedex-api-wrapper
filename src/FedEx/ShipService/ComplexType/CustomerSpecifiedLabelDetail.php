@@ -68,7 +68,7 @@ class CustomerSpecifiedLabelDetail extends AbstractComplexType
     /**
      * Controls which data/sections will be suppressed.
      *
-     * @param LabelMaskableDataType[] $maskedData
+     * @param \FedEx\ShipService\SimpleType\LabelMaskableDataType[]|string[] $maskedData
      * @return $this
      */
     public function setMaskedData(array $maskedData)

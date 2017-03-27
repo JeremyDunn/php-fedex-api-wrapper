@@ -25,7 +25,7 @@ class FlatbedTrailerDetail extends AbstractComplexType
     /**
      * Set Options
      *
-     * @param FlatbedTrailerOption[] $options
+     * @param \FedEx\RateService\SimpleType\FlatbedTrailerOption[]|string[] $options
      * @return $this
      */
     public function setOptions(array $options)

@@ -65,7 +65,7 @@ class RateReplyDetail extends AbstractComplexType
     /**
      * Shows the specific combination of service options combined with the service type that produced this committment in the set returned to the caller.
      *
-     * @param ServiceOptionType[] $appliedOptions
+     * @param \FedEx\RateService\SimpleType\ServiceOptionType[]|string[] $appliedOptions
      * @return $this
      */
     public function setAppliedOptions(array $appliedOptions)

@@ -119,7 +119,7 @@ class FreightServiceCenterDetail extends AbstractComplexType
     /**
      * Specifies days of operation if localServiceScheduling is LIMITED.
      *
-     * @param DayOfWeekType[] $limitedServiceDays
+     * @param \FedEx\RateService\SimpleType\DayOfWeekType[]|string[] $limitedServiceDays
      * @return $this
      */
     public function setLimitedServiceDays(array $limitedServiceDays)

@@ -26,7 +26,7 @@ class PriorityAlertDetail extends AbstractComplexType
     /**
      * Set EnhancementTypes
      *
-     * @param PriorityAlertEnhancementType[] $enhancementTypes
+     * @param \FedEx\ShipService\SimpleType\PriorityAlertEnhancementType[]|string[] $enhancementTypes
      * @return $this
      */
     public function setEnhancementTypes(array $enhancementTypes)
@@ -38,10 +38,10 @@ class PriorityAlertDetail extends AbstractComplexType
     /**
      * Set Content
      *
-     * @param string[] $content
+     * @param string $content
      * @return $this
      */
-    public function setContent(array $content)
+    public function setContent($content)
     {
         $this->values['Content'] = $content;
         return $this;
