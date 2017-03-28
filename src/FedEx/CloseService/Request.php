@@ -15,7 +15,7 @@ class Request extends AbstractRequest
     const PRODUCTION_URL = 'https://gateway.fedex.com:443/web-services/close';
     const TESTING_URL = 'https://gatewaybeta.fedex.com:443/web-services/close';
 
-    protected $wsdlFileName = 'CloseService_v2.wsdl';
+    protected static $wsdlFileName = 'CloseService_v2.wsdl';
             
     /**
      * Sends the SmartPostCloseRequest and returns the response

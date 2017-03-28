@@ -178,7 +178,7 @@ class ShipmentLegRateDetail extends AbstractComplexType
     /**
      * Indicates which special rating cases applied to this shipment.
      *
-     * @param SpecialRatingAppliedType[] $specialRatingApplied
+     * @param \FedEx\RateService\SimpleType\SpecialRatingAppliedType[]|string[] $specialRatingApplied
      * @return $this
      */
     public function setSpecialRatingApplied(array $specialRatingApplied)

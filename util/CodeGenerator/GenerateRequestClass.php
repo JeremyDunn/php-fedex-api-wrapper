@@ -153,7 +153,7 @@ class Request extends AbstractRequest
     const PRODUCTION_URL = '{$this->productionUrl}';
     const TESTING_URL = '{$this->testingUrl}';
 
-    protected \$wsdlFileName = '$wsdlFileName';
+    protected static \$wsdlFileName = '$wsdlFileName';
 $requestFunctions
 }
 

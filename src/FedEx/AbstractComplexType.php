@@ -25,20 +25,6 @@ abstract class AbstractComplexType
     protected $name;
 
     /**
-     * Constructor
-     *
-     * @param array $options Data as key => value array
-     */
-    public function __construct(array $options = null)
-    {
-        if (is_array($options)) {
-            foreach ($options as $name => $value) {
-                $this->$name = $value;
-            }
-        }
-    }
-
-    /**
      * __set implementation
      *
      * @param string $name
@@ -60,6 +46,8 @@ abstract class AbstractComplexType
      */
     public function &__get($name)
     {
+        $nullValue = null;
+
         if (isset($this->values[$name])) {
             return $this->values[$name];
         }
@@ -74,18 +62,18 @@ abstract class AbstractComplexType
             }
         }
 
-        return null;
+        return $nullValue;
     }
 
     /**
-     * Recursive algorthim to convert complex types to an array
+     * Recursive algorithm to convert complex types to an array
      *
      * @param array $arrayValues
      * @return array
      */
     protected function convertToArray($arrayValues)
     {
-        $returnArray = array();
+        $returnArray = [];
 
         foreach ($arrayValues as $key => $value) {
             if ($value instanceof self) {
@@ -93,11 +81,7 @@ abstract class AbstractComplexType
             } else if (is_array($value)) {
                 $returnArray[$key] = $this->convertToArray($value);
             } else {
-                if ($value instanceof SimpleType\AbstractSimpleType) {
-                    $returnArray[$key] = (string)$value;
-                } else {
-                    $returnArray[$key] = $value;
-                }
+                $returnArray[$key] = (string) $value;
             }
         }
 

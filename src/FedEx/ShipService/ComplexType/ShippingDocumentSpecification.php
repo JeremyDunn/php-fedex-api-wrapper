@@ -35,7 +35,7 @@ class ShippingDocumentSpecification extends AbstractComplexType
     /**
      * Indicates the types of shipping documents requested by the shipper.
      *
-     * @param RequestedShippingDocumentType[] $shippingDocumentTypes
+     * @param \FedEx\ShipService\SimpleType\RequestedShippingDocumentType[]|string[] $shippingDocumentTypes
      * @return $this
      */
     public function setShippingDocumentTypes(array $shippingDocumentTypes)

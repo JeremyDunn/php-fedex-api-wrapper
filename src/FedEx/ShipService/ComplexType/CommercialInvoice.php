@@ -37,10 +37,10 @@ class CommercialInvoice extends AbstractComplexType
     /**
      * Any comments that need to be communicated about this shipment.
      *
-     * @param string[] $comments
+     * @param string $comments
      * @return $this
      */
-    public function setComments(array $comments)
+    public function setComments($comments)
     {
         $this->values['Comments'] = $comments;
         return $this;

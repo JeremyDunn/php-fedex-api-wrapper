@@ -92,7 +92,7 @@ class RateRequest extends AbstractComplexType
     /**
      * Candidate carriers for rate-shopping use case. This field is only considered if requestedShipment/serviceType is omitted.
      *
-     * @param CarrierCodeType[] $carrierCodes
+     * @param \FedEx\RateService\SimpleType\CarrierCodeType[]|string[] $carrierCodes
      * @return $this
      */
     public function setCarrierCodes(array $carrierCodes)
@@ -104,7 +104,7 @@ class RateRequest extends AbstractComplexType
     /**
      * Contains zero or more service options whose combinations are to be considered when replying with available services.
      *
-     * @param ServiceOptionType[] $variableOptions
+     * @param \FedEx\RateService\SimpleType\ServiceOptionType[]|string[] $variableOptions
      * @return $this
      */
     public function setVariableOptions(array $variableOptions)

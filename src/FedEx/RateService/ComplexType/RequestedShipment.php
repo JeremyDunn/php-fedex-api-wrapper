@@ -315,7 +315,7 @@ class RequestedShipment extends AbstractComplexType
     /**
      * Specifies whether and what kind of rates the customer wishes to have quoted on this shipment. The reply will also be constrained by other data on the shipment and customer.
      *
-     * @param RateRequestType[] $rateRequestTypes
+     * @param \FedEx\RateService\SimpleType\RateRequestType[]|string[] $rateRequestTypes
      * @return $this
      */
     public function setRateRequestTypes(array $rateRequestTypes)
@@ -351,7 +351,7 @@ class RequestedShipment extends AbstractComplexType
     /**
      * Specifies which package-level data values are provided at the shipment-level only. The package-level data values types specified here will not be provided at the package-level.
      *
-     * @param ShipmentOnlyFieldsType[] $shipmentOnlyFields
+     * @param \FedEx\RateService\SimpleType\ShipmentOnlyFieldsType[]|string[] $shipmentOnlyFields
      * @return $this
      */
     public function setShipmentOnlyFields(array $shipmentOnlyFields)

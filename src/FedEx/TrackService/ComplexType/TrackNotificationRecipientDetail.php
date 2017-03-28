@@ -25,7 +25,7 @@ class TrackNotificationRecipientDetail extends AbstractComplexType
     /**
      * The types of email notifications available for this recipient.
      *
-     * @param EMailNotificationEventType[] $notificationEventsAvailable
+     * @param \FedEx\TrackService\SimpleType\EMailNotificationEventType[]|string[] $notificationEventsAvailable
      * @return $this
      */
     public function setNotificationEventsAvailable(array $notificationEventsAvailable)

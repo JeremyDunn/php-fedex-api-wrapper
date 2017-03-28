@@ -40,7 +40,7 @@ class EtdDetail extends AbstractComplexType
     /**
      * Indicates the types of shipping documents produced for the shipper by FedEx (see ShippingDocumentSpecification) which should be copied back to the shipper in the shipment result data.
      *
-     * @param RequestedShippingDocumentType[] $requestedDocumentCopies
+     * @param \FedEx\Pickup\SimpleType\RequestedShippingDocumentType[]|string[] $requestedDocumentCopies
      * @return $this
      */
     public function setRequestedDocumentCopies(array $requestedDocumentCopies)

@@ -15,7 +15,7 @@ class Request extends AbstractRequest
     const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services';
     const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services';
 
-    protected $wsdlFileName = 'LocatorService_v2.wsdl';
+    protected static $wsdlFileName = 'LocatorService_v2.wsdl';
             
     /**
      * Sends the FedExLocatorRequest and returns the response

@@ -26,7 +26,7 @@ class CloseDocumentSpecification extends AbstractComplexType
     /**
      * Indicates the types of close documents requested by the caller.
      *
-     * @param CloseDocumentType[] $closeDocumentTypes
+     * @param \FedEx\CloseService\SimpleType\CloseDocumentType[]|string[] $closeDocumentTypes
      * @return $this
      */
     public function setCloseDocumentTypes(array $closeDocumentTypes)

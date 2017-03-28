@@ -15,7 +15,7 @@ class Request extends AbstractRequest
     const PRODUCTION_URL = 'https://gateway.fedex.com:443/web-services';
     const TESTING_URL = 'https://gatewaybeta.fedex.com:443/web-services';
 
-    protected $wsdlFileName = 'AddressValidationService_v2.wsdl';
+    protected static $wsdlFileName = 'AddressValidationService_v2.wsdl';
             
     /**
      * Sends the AddressValidationRequest and returns the response

@@ -61,7 +61,7 @@ class DangerousGoodsDetail extends AbstractComplexType
     /**
      * Indicates which kinds of hazardous content are in the current package.
      *
-     * @param HazardousCommodityOptionType[] $options
+     * @param \FedEx\ShipService\SimpleType\HazardousCommodityOptionType[]|string[] $options
      * @return $this
      */
     public function setOptions(array $options)

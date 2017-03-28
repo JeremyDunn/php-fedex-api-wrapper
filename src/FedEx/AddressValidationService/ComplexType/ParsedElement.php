@@ -51,7 +51,7 @@ class ParsedElement extends AbstractComplexType
     /**
      * Set Changes
      *
-     * @param AddressValidationChangeType[] $changes
+     * @param \FedEx\AddressValidationService\SimpleType\AddressValidationChangeType[]|string[] $changes
      * @return $this
      */
     public function setChanges(array $changes)

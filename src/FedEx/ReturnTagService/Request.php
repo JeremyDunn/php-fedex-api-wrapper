@@ -15,7 +15,7 @@ class Request extends AbstractRequest
     const PRODUCTION_URL = 'https://gateway.fedex.com:443/web-services';
     const TESTING_URL = 'https://gatewaybeta.fedex.com:443/web-services';
 
-    protected $wsdlFileName = 'ReturnTagService_v1.wsdl';
+    protected static $wsdlFileName = 'ReturnTagService_v1.wsdl';
             
     /**
      * Sends the ExpressTagAvailabilityRequest and returns the response

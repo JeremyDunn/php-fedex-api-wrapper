@@ -30,7 +30,7 @@ class PackageSpecialServicesRequested extends AbstractComplexType
     /**
      * The types of all special services requested for the enclosing shipment or package.
      *
-     * @param PackageSpecialServiceType[] $specialServiceTypes
+     * @param \FedEx\RateService\SimpleType\PackageSpecialServiceType[]|string[] $specialServiceTypes
      * @return $this
      */
     public function setSpecialServiceTypes(array $specialServiceTypes)

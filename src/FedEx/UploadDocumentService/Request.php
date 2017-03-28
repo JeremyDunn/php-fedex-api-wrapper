@@ -15,7 +15,7 @@ class Request extends AbstractRequest
     const PRODUCTION_URL = 'https://gateway.fedex.com:443/web-services/uploaddocument';
     const TESTING_URL = 'https://gatewaybeta.fedex.com:443/web-services/uploaddocument';
 
-    protected $wsdlFileName = 'UploadDocumentService_v1.wsdl';
+    protected static $wsdlFileName = 'UploadDocumentService_v1.wsdl';
             
     /**
      * Sends the UploadDocumentsRequest and returns the response

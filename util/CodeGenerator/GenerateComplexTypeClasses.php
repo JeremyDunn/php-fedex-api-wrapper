@@ -1,5 +1,6 @@
 <?php
 namespace FedEx\Utility\CodeGenerator;
+use FedEx\Pickup\SimpleType\PaymentType;
 
 /**
  * Converts complex types in .wsdl file to PHP class files
@@ -13,6 +14,7 @@ class GenerateComplexTypeClasses extends AbstractGenerate
     protected $simpleTypeMap = [
         'string' => 'string',
         'int' => 'int',
+        'integer' => 'int',
         'datetime' => 'string',
         'boolean' => 'boolean',
         'nonnegativeinteger' => 'int',
@@ -176,23 +178,34 @@ TEXT;
         $varName = lcfirst($property['name']);
 
         $property['typePHPDoc'] = $property['type'];
+        $isArray = false;
 
         if ($property['maxOccurs'] > 1 || $property['maxOccurs'] == 'unbounded') {
             $property['typePHPDoc'] = "{$property['type']}[]";
-            $property['type'] = 'array';
+            $isArray = true;
         }
 
         //set property type if is simple type
         if ($this->isSimpleType($property['type'])) {
-            $property['typePHPDoc'] = $simpleTypeNamespace . $property['type'] . '|string';
-            $property['type'] = null;
+            if ($isArray) {
+                $property['typePHPDoc'] = $simpleTypeNamespace . $property['type'] . '[]|string[]';
+                $property['type'] = 'array ';
+            } else {
+                $property['typePHPDoc'] = $simpleTypeNamespace . $property['type'] . '|string';
+                $property['type'] = null;
+            }
+
         } else {
             //check for invalid types for parameter type hints
             if (array_key_exists(strtolower($property['type']), $this->simpleTypeMap)) {
                 $property['typePHPDoc'] = $this->simpleTypeMap[strtolower($property['type'])];
                 $property['type'] = '';
             } else {
-                $property['type'] = $property['type'] . ' ';
+                if ($isArray) {
+                    $property['type'] = 'array ';
+                } else {
+                    $property['type'] = $property['type'] . ' ';
+                }
             }
         }
 
