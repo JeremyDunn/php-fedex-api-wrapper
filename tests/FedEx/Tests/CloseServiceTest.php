@@ -22,13 +22,18 @@ class CloseServiceTest extends TestCase
         $complexTypePopulator->populate($smartPostCloseRequest);
         $complexTypePopulator->populate($groundCloseReportReprintsRequest);
 
-        //for now use mock soap client that doesn't expect or return anything
         $mockSoapClient = $this->getMockFromWsdl(Request::getWsdlPath());
+        $mockSoapClient->method('groundClose')->will($this->returnValue(ComplexType\GroundCloseRequest::class));
+        $mockSoapClient->method('groundCloseWithDocuments')->will($this->returnValue(ComplexType\GroundCloseWithDocumentsRequest::class));
+        $mockSoapClient->method('reprintGroundCloseDocuments')->will($this->returnValue(ComplexType\ReprintGroundCloseDocumentsRequest::class));
+        $mockSoapClient->method('smartPostClose')->will($this->returnValue(ComplexType\SmartPostCloseRequest::class));
+        $mockSoapClient->method('groundCloseReportsReprint')->will($this->returnValue(ComplexType\GroundCloseReportsReprintRequest::class));
+
         $closeService = new Request($mockSoapClient);
-        $closeService->getGroundCloseReply($groundCloseRequest);
-        $closeService->getGroundCloseWithDocumentsReply($groundCloseWithDocumentsRequest);
-        $closeService->getReprintGroundCloseDocumentsReply($reprintGroundCloseDocumentsRequest);
-        $closeService->getSmartPostCloseReply($smartPostCloseRequest);
-        $closeService->getGroundCloseReportsReprintReply($groundCloseReportReprintsRequest);
+        $this->assertEquals(ComplexType\GroundCloseRequest::class, $closeService->getGroundCloseReply($groundCloseRequest));
+        $this->assertEquals(ComplexType\GroundCloseWithDocumentsRequest::class, $closeService->getGroundCloseWithDocumentsReply($groundCloseWithDocumentsRequest));
+        $this->assertEquals(ComplexType\ReprintGroundCloseDocumentsRequest::class, $closeService->getReprintGroundCloseDocumentsReply($reprintGroundCloseDocumentsRequest));
+        $this->assertEquals(ComplexType\SmartPostCloseRequest::class, $closeService->getSmartPostCloseReply($smartPostCloseRequest));
+        $this->assertEquals(ComplexType\GroundCloseReportsReprintRequest::class, $closeService->getGroundCloseReportsReprintReply($groundCloseReportReprintsRequest));
     }
 }

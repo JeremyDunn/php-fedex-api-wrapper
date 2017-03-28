@@ -15,9 +15,11 @@ class LocatorServiceTest extends TestCase
         $complextTypePopulator = new ComplexTypePopulator();
         $complextTypePopulator->populate($fedexLocatorRequest);
 
-        //for now use a mock soap client that doesn't expect or return anything
         $mockSoapClient = $this->getMockFromWsdl(Request::getWsdlPath());
+        $mockSoapClient->method('fedExLocator')->will($this->returnValue(ComplexType\FedExLocatorRequest::class));
+
         $request = new Request($mockSoapClient);
-        $request->getFedExLocatorReply($fedexLocatorRequest);
+
+        $this->assertEquals(ComplexType\FedExLocatorRequest::class, $request->getFedExLocatorReply($fedexLocatorRequest));
     }
 }

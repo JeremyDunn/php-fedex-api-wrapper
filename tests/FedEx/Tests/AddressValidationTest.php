@@ -16,7 +16,9 @@ class AddressValidationTest extends TestCase
 
         //for now use a mock soap client that doesn't expect or return anything
         $mockSoapClient = $this->getMockFromWsdl(Request::getWsdlPath());
+        $mockSoapClient->method('addressValidation')->will($this->returnValue(ComplexType\AddressValidationRequest::class));
+
         $request = new Request($mockSoapClient);
-        $request->getAddressValidationReply($addressValidationRequest);
+        $this->assertEquals(ComplexType\AddressValidationRequest::class, $request->getAddressValidationReply($addressValidationRequest));
     }
 }

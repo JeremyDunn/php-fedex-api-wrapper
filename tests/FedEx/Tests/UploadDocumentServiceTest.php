@@ -17,10 +17,13 @@ class UploadDocumentServiceTest extends TestCase
         $populator->populate($uploadDocumentsRequest);
         $populator->populate($uploadImagesRequest);
 
-        //for now use a mock soap client that doesn't expect or return anything
         $mockSoapClient = $this->getMockFromWsdl(Request::getWsdlPath());
+        $mockSoapClient->method('uploadDocuments')->will($this->returnValue(ComplexType\UploadDocumentsRequest::class));
+        $mockSoapClient->method('uploadImages')->will($this->returnValue(ComplexType\UploadImagesRequest::class));
+
         $request = new Request($mockSoapClient);
-        $request->getUploadDocumentsReply($uploadDocumentsRequest);
-        $request->getUploadImagesReply($uploadImagesRequest);
+
+        $this->assertEquals(ComplexType\UploadDocumentsRequest::class, $request->getUploadDocumentsReply($uploadDocumentsRequest));
+        $this->assertEquals(ComplexType\UploadImagesRequest::class, $request->getUploadImagesReply($uploadImagesRequest));
     }
 }

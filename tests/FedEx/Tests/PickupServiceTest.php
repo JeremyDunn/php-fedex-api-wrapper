@@ -19,11 +19,15 @@ class PickupServiceTest extends TestCase
         $populator->populate($cancelPickupRequest);
         $populator->populate($createPickupRequest);
 
-        //for now use a mock soap client that doesn't expect or return anything
         $mockSoapClient = $this->getMockFromWsdl(Request::getWsdlPath());
+        $mockSoapClient->method('getPickupAvailability')->will($this->returnValue(ComplexType\PickupAvailabilityRequest::class));
+        $mockSoapClient->method('cancelPickup')->will($this->returnValue(ComplexType\CancelPickupRequest::class));
+        $mockSoapClient->method('createPickup')->will($this->returnValue(ComplexType\CreatePickupRequest::class));
+
         $request = new Request($mockSoapClient);
-        $request->getGetPickupAvailabilityReply($pickupAvailabilityRequest);
-        $request->getCancelPickupReply($cancelPickupRequest);
-        $request->getCreatePickupReply($createPickupRequest);
+
+        $this->assertEquals(ComplexType\PickupAvailabilityRequest::class, $request->getGetPickupAvailabilityReply($pickupAvailabilityRequest));
+        $this->assertEquals(ComplexType\CancelPickupRequest::class, $request->getCancelPickupReply($cancelPickupRequest));
+        $this->assertEquals(ComplexType\CreatePickupRequest::class, $request->getCreatePickupReply($createPickupRequest));
     }
 }

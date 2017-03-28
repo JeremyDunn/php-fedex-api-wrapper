@@ -21,12 +21,16 @@ class TrackServiceTest extends TestCase
         $populator->populate($sendSignatureProofOfDeliveryFaxRequest);
         $populator->populate($trackRequest);
 
-        //for now use a mock soap client that doesn't expect or return anything
         $mockSoapClient = $this->getMockFromWsdl(Request::getWsdlPath());
+        $mockSoapClient->method('getTrackNotification')->will($this->returnValue(ComplexType\TrackNotificationRequest::class));
+        $mockSoapClient->method('retrieveSignatureProofOfDeliveryLetter')->will($this->returnValue(ComplexType\SignatureProofOfDeliveryLetterRequest::class));
+        $mockSoapClient->method('sendSignatureProofOfDeliveryFax')->will($this->returnValue(ComplexType\SignatureProofOfDeliveryFaxRequest::class));
+
         $request = new Request($mockSoapClient);
-        $request->getGetTrackNotificationReply($trackNotificationRequest);
-        $request->getRetrieveSignatureProofOfDeliveryLetterReply($retrieveSignatureProofOfDeliveryLetterRequest);
-        $request->getSendSignatureProofOfDeliveryFaxReply($sendSignatureProofOfDeliveryFaxRequest);
+
+        $this->assertEquals(ComplexType\TrackNotificationRequest::class, $request->getGetTrackNotificationReply($trackNotificationRequest));
+        $this->assertEquals(ComplexType\SignatureProofOfDeliveryLetterRequest::class, $request->getRetrieveSignatureProofOfDeliveryLetterReply($retrieveSignatureProofOfDeliveryLetterRequest));
+        $this->assertEquals(ComplexType\SignatureProofOfDeliveryFaxRequest::class, $request->getSendSignatureProofOfDeliveryFaxReply($sendSignatureProofOfDeliveryFaxRequest));
         $request->getTrackReply($trackRequest);
     }
 }

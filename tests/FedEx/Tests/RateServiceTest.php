@@ -15,9 +15,11 @@ class RateServiceTest extends TestCase
         $populator = new ComplexTypePopulator();
         $populator->populate($rateRequest);
 
-        //for now use a mock soap client that doesn't expect or return anything
         $mockSoapClient = $this->getMockFromWsdl(Request::getWsdlPath());
+        $mockSoapClient->method('getRates')->will($this->returnValue(ComplexType\RateRequest::class));
+
         $request = new Request($mockSoapClient);
-        $request->getGetRatesReply($rateRequest);
+
+        $this->assertEquals(ComplexType\RateRequest::class, $request->getGetRatesReply($rateRequest));
     }
 }

@@ -19,11 +19,15 @@ class CourierDispatchServiceTest extends TestCase
         $complextTypePopulator->populate($courierDispatchRequest);
         $complextTypePopulator->populate($pickupAvailabilityRequest);
 
-        //for now use a mock soap client that doesn't expect or return anything
         $mockSoapClient = $this->getMockFromWsdl(Request::getWsdlPath());
+        $mockSoapClient->method('cancelCourierDispatch')->will($this->returnValue(ComplexType\CancelCourierDispatchRequest::class));
+        $mockSoapClient->method('createCourierDispatch')->will($this->returnValue(ComplexType\CourierDispatchRequest::class));
+        $mockSoapClient->method('getPickupAvailability')->will($this->returnValue(ComplexType\PickupAvailabilityRequest::class));
+
         $request = new Request($mockSoapClient);
-        $request->getCancelCourierDispatchReply($cancelCourierDispatchRequest);
-        $request->getCreateCourierDispatchReply($courierDispatchRequest);
-        $request->getGetPickupAvailabilityReply($pickupAvailabilityRequest);
+
+        $this->assertEquals(ComplexType\CancelCourierDispatchRequest::class, $request->getCancelCourierDispatchReply($cancelCourierDispatchRequest));
+        $this->assertEquals(ComplexType\CourierDispatchRequest::class, $request->getCreateCourierDispatchReply($courierDispatchRequest));
+        $this->assertEquals(ComplexType\PickupAvailabilityRequest::class, $request->getGetPickupAvailabilityReply($pickupAvailabilityRequest));
     }
 }

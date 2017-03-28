@@ -15,9 +15,10 @@ class ReturnTagServiceTest extends TestCase
         $populator = new ComplexTypePopulator();
         $populator->populate($expressTagAvailabilityRequest);
 
-        //for now use a mock soap client that doesn't expect or return anything
         $mockSoapClient = $this->getMockFromWsdl(Request::getWsdlPath());
+        $mockSoapClient->method('getExpressTagAvailability')->will($this->returnValue(ComplexType\ExpressTagAvailabilityRequest::class));
+
         $request = new Request($mockSoapClient);
-        $request->getGetExpressTagAvailabilityReply($expressTagAvailabilityRequest);
+        $this->assertEquals(ComplexType\ExpressTagAvailabilityRequest::class, $request->getGetExpressTagAvailabilityReply($expressTagAvailabilityRequest));
     }
 }

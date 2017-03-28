@@ -17,10 +17,13 @@ class PackageMovementInformationServiceTest extends TestCase
         $complexTypePopulator->populate($postalCodeInquieryRequest);
         $complexTypePopulator->populate($serviceAvailabilityRequest);
 
-        //for now use a mock soap client that doesn't expect or return anything
         $mockSoapClient = $this->getMockFromWsdl(Request::getWsdlPath());
+        $mockSoapClient->method('postalCodeInquiry')->will($this->returnValue(ComplexType\PostalCodeInquiryRequest::class));
+        $mockSoapClient->method('serviceAvailability')->will($this->returnValue(ComplexType\ServiceAvailabilityRequest::class));
+
         $request = new Request($mockSoapClient);
-        $request->getPostalCodeInquiryReply($postalCodeInquieryRequest);
-        $request->getServiceAvailabilityReply($serviceAvailabilityRequest);
+
+        $this->assertEquals(ComplexType\PostalCodeInquiryRequest::class, $request->getPostalCodeInquiryReply($postalCodeInquieryRequest));
+        $this->assertEquals(ComplexType\ServiceAvailabilityRequest::class, $request->getServiceAvailabilityReply($serviceAvailabilityRequest));
     }
 }
