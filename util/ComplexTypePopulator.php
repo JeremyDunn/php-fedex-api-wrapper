@@ -4,6 +4,7 @@ namespace FedEx\Utility;
 
 use FedEx\AbstractComplexType;
 use Faker\Factory;
+use FedEx\Reflection;
 
 class ComplexTypePopulator
 {
@@ -33,7 +34,11 @@ class ComplexTypePopulator
         /* @var $object \FedEx\RateService\ComplexType\RateRequest */
         $reflectionClass = new \ReflectionClass($object);
 
-        foreach ($reflectionClass->getMethods(\ReflectionMethod::IS_PUBLIC) as $reflectionMethod) {
+        $setterMethods = array_filter($reflectionClass->getMethods(\ReflectionMethod::IS_PUBLIC), function ($reflectionMethod) {
+            return (preg_match('/^set.*$/', $reflectionMethod->name));
+        });
+
+        foreach ($setterMethods as $reflectionMethod) {
             if (in_array($reflectionMethod->name, $this->ignoreMethods)) {
                 continue;
             }
@@ -56,9 +61,9 @@ class ComplexTypePopulator
                 $className = $reflectionParameter->getClass()->name;
                 return new $className;
             } elseif ($reflectionParameter->isArray()) {
-                $arrayType = $this->getArrayType($reflectionParameter);
+                $arrayType = Reflection::getAbstractClassSetterMethodArrayType($reflectionParameter);
                 if (class_exists($arrayType)) {
-                    if ($this->isSimpleType($arrayType)) {
+                    if (Reflection::isClassNameSimpleType($arrayType)) {
                         return [$this->getRandomConstValueFromSimpleType($arrayType)];
                     } else {
                         $complexType = new $arrayType();
@@ -68,7 +73,7 @@ class ComplexTypePopulator
                 }
                 return ['test'];
             } else {
-                $scalarType = $this->getScalarType($reflectionParameter);
+                $scalarType = Reflection::getAbstractClassSetterMethodScalarType($reflectionParameter);
 
                 if (class_exists($scalarType)) {
                     return $this->getRandomConstValueFromSimpleType($scalarType);
@@ -94,44 +99,7 @@ class ComplexTypePopulator
         }
     }
 
-    protected function getArrayType(\ReflectionParameter $reflectionParameter)
-    {
-        if (!$reflectionParameter->isArray()) {
-            return null;
-        }
-        preg_match('/@param\s+([^\s]+)/', $reflectionParameter->getDeclaringFunction()->getDocComment(), $matches);
-        if (isset($matches[1])) {
-            if (stristr($matches[1], 'SimpleType')) {
-                return str_replace('[]', '', explode('|', $matches[1])[0]);
-            } else {
-                $namespaceParts = explode('\\', $reflectionParameter->getDeclaringClass()->name);
-                array_pop($namespaceParts);
-                return join('\\', $namespaceParts) . '\\' . str_replace('[]', '', $matches[1]);
-            }
-        }
-    }
 
-    protected function getScalarType(\ReflectionParameter $reflectionParameter)
-    {
-        if ($reflectionParameter->isArray() || ($reflectionParameter->getClass() instanceof \ReflectionClass)) {
-            return null;
-        }
-
-        preg_match('/@param\s+([^\s]+)/', $reflectionParameter->getDeclaringFunction()->getDocComment(), $matches);
-        if (!isset($matches[1])) {
-            return null;
-        }
-
-        $match = $matches[1];
-
-        if (preg_match('/(.*)\|string$/', $match, $matches)) {
-            if (isset($matches[1]) && class_exists($matches[1])) {
-                return $matches[1];
-            }
-        }
-
-        return $match;
-    }
 
     /**
      * Returns a random class constant value from a SimpleType object
@@ -151,17 +119,5 @@ class ComplexTypePopulator
         return $constantValues[array_rand($constantValues)];
     }
 
-    /**
-     * Is fully qualified class name a Simpletype?
-     *
-     * @param string $fullyQualifiedClassName
-     * @return bool
-     */
-    protected function isSimpleType($fullyQualifiedClassName)
-    {
-        if (preg_match('/SimpleType/', $fullyQualifiedClassName)) {
-            return true;
-        }
-        return false;
-    }
+
 }
