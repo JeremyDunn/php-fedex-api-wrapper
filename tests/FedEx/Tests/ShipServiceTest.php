@@ -37,12 +37,12 @@ class ShipServiceTest extends TestCase
 
         $request = new Request($mockSoapClient);
 
-        $this->assertEquals(ComplexType\CreatePendingShipmentRequest::class, $request->getCreatePendingShipmentReply($createPendingShipmentRequest));
-        $this->assertEquals(ComplexType\ProcessTagRequest::class, $request->getProcessTagReply($processTagRequest));
-        $this->assertEquals(ComplexType\ProcessShipmentRequest::class, $request->getProcessShipmentReply($processShipmentRequest));
-        $this->assertEquals(ComplexType\CancelPendingShipmentRequest::class, $request->getCancelPendingShipmentReply($cancelPendingShipmentRequest));
-        $this->assertEquals(ComplexType\DeleteTagRequest::class, $request->getDeleteTagReply($deleteTagRequest));
-        $this->assertEquals(ComplexType\DeleteShipmentRequest::class, $request->getDeleteShipmentReply($deleteShipmentRequest));
-        $this->assertEquals(ComplexType\ValidateShipmentRequest::class, $request->getValidateShipmentReply($validationShipmentRequest));
+        $this->assertEquals(ComplexType\CreatePendingShipmentRequest::class, $request->getCreatePendingShipmentReply($createPendingShipmentRequest, true));
+        $this->assertEquals(ComplexType\ProcessTagRequest::class, $request->getProcessTagReply($processTagRequest, true));
+        $this->assertEquals(ComplexType\ProcessShipmentRequest::class, $request->getProcessShipmentReply($processShipmentRequest, true));
+        $this->assertEquals(ComplexType\CancelPendingShipmentRequest::class, $request->getCancelPendingShipmentReply($cancelPendingShipmentRequest, true));
+        $this->assertEquals(ComplexType\DeleteTagRequest::class, $request->getDeleteTagReply($deleteTagRequest, true));
+        $this->assertEquals(ComplexType\DeleteShipmentRequest::class, $request->getDeleteShipmentReply($deleteShipmentRequest, true));
+        $this->assertEquals(ComplexType\ValidateShipmentRequest::class, $request->getValidateShipmentReply($validationShipmentRequest, true));
     }
 }

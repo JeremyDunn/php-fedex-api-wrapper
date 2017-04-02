@@ -21,11 +21,19 @@ class Request extends AbstractRequest
      * Sends the RateRequest and returns the response
      *
      * @param ComplexType\RateRequest $rateRequest
-     * @return stdClass
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\RateReply|stdClass
      */
-    public function getGetRatesReply(ComplexType\RateRequest $rateRequest)
+    public function getGetRatesReply(ComplexType\RateRequest $rateRequest, $returnStdClass = false)
     {
-        return $this->getSoapClient()->getRates($rateRequest->toArray());
+        $response = $this->getSoapClient()->getRates($rateRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $rateReply = new ComplexType\RateReply;
+        $rateReply->populateFromStdClass($response);
+        return $rateReply;
     }
 
 }

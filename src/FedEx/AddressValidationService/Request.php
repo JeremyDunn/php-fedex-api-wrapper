@@ -21,11 +21,19 @@ class Request extends AbstractRequest
      * Sends the AddressValidationRequest and returns the response
      *
      * @param ComplexType\AddressValidationRequest $addressValidationRequest
-     * @return stdClass
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\AddressValidationReply|stdClass
      */
-    public function getAddressValidationReply(ComplexType\AddressValidationRequest $addressValidationRequest)
+    public function getAddressValidationReply(ComplexType\AddressValidationRequest $addressValidationRequest, $returnStdClass = false)
     {
-        return $this->getSoapClient()->addressValidation($addressValidationRequest->toArray());
+        $response = $this->getSoapClient()->addressValidation($addressValidationRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $addressValidationReply = new ComplexType\AddressValidationReply;
+        $addressValidationReply->populateFromStdClass($response);
+        return $addressValidationReply;
     }
 
 }

@@ -58,12 +58,13 @@ class GenerateRequestClass extends AbstractGenerate
         $requestFunctionDefinitions = array();
 
         foreach ($soapFunctions as $soapFunctionDescription) {
-            $thisDefinition = array();
+            $thisDefinition = [];
 
             $parts = explode(' ', $soapFunctionDescription);
 
             $functionDefinition = 'public function get' . ucfirst(substr($parts[1], 0, stripos($parts[1], '(')) . 'Reply');
 
+            $thisDefinition['returnObject'] = $parts[0];
             $thisDefinition['soapFunction'] = substr($parts[1], 0, stripos($parts[1], '('));
 
             $requestObjectName = substr($parts[1], stripos($parts[1], '(') + 1);
@@ -74,7 +75,7 @@ class GenerateRequestClass extends AbstractGenerate
 
             $thisDefinition['arg1VariableName'] = $arg1VariableName;
 
-            $functionDefinition .= "($arg1Type $arg1VariableName)";
+            $functionDefinition .= "($arg1Type $arg1VariableName, \$returnStdClass = false)";
 
             $thisDefinition['functionDefinition'] = $functionDefinition;
 
@@ -118,17 +119,26 @@ class GenerateRequestClass extends AbstractGenerate
         $requestFunctions = '';
 
         foreach ($requestFunctionDefinitions as $functionDefinition) {
+            $camelCaseReturnVar = lcfirst($functionDefinition['returnObject']);
             $requestFunctions .= <<<TEXT
             
     /**
      * Sends the {$functionDefinition['requestObjectName']} and returns the response
      *
      * @param ComplexType\\{$functionDefinition['requestObjectName']} {$functionDefinition['arg1VariableName']}
-     * @return stdClass
+     * @param bool \$returnStdClass Return the \$stdClass response directly from \SoapClient
+     * @return ComplexType\\{$functionDefinition['returnObject']}|stdClass
      */
     {$functionDefinition['functionDefinition']}
     {
-        return \$this->getSoapClient()->{$functionDefinition['soapFunction']}({$functionDefinition['arg1VariableName']}->toArray());
+        \$response = \$this->getSoapClient()->{$functionDefinition['soapFunction']}({$functionDefinition['arg1VariableName']}->toArray());
+        if (\$returnStdClass) {
+            return \$response;
+        }
+        
+        \${$camelCaseReturnVar} = new ComplexType\\{$functionDefinition['returnObject']};
+        \${$camelCaseReturnVar}->populateFromStdClass(\$response);
+        return \${$camelCaseReturnVar};
     }
 
 TEXT;

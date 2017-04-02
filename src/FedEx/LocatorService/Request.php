@@ -21,11 +21,19 @@ class Request extends AbstractRequest
      * Sends the FedExLocatorRequest and returns the response
      *
      * @param ComplexType\FedExLocatorRequest $fedExLocatorRequest
-     * @return stdClass
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\FedExLocatorReply|stdClass
      */
-    public function getFedExLocatorReply(ComplexType\FedExLocatorRequest $fedExLocatorRequest)
+    public function getFedExLocatorReply(ComplexType\FedExLocatorRequest $fedExLocatorRequest, $returnStdClass = false)
     {
-        return $this->getSoapClient()->fedExLocator($fedExLocatorRequest->toArray());
+        $response = $this->getSoapClient()->fedExLocator($fedExLocatorRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $fedExLocatorReply = new ComplexType\FedExLocatorReply;
+        $fedExLocatorReply->populateFromStdClass($response);
+        return $fedExLocatorReply;
     }
 
 }

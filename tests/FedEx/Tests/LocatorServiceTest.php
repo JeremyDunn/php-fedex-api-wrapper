@@ -20,6 +20,6 @@ class LocatorServiceTest extends TestCase
 
         $request = new Request($mockSoapClient);
 
-        $this->assertEquals(ComplexType\FedExLocatorRequest::class, $request->getFedExLocatorReply($fedexLocatorRequest));
+        $this->assertEquals(ComplexType\FedExLocatorRequest::class, $request->getFedExLocatorReply($fedexLocatorRequest, true));
     }
 }

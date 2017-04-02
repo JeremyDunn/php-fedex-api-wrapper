@@ -20,6 +20,6 @@ class RateServiceTest extends TestCase
 
         $request = new Request($mockSoapClient);
 
-        $this->assertEquals(ComplexType\RateRequest::class, $request->getGetRatesReply($rateRequest));
+        $this->assertEquals(ComplexType\RateRequest::class, $request->getGetRatesReply($rateRequest, true));
     }
 }

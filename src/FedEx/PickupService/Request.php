@@ -21,33 +21,57 @@ class Request extends AbstractRequest
      * Sends the PickupAvailabilityRequest and returns the response
      *
      * @param ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest
-     * @return stdClass
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\PickupAvailabilityReply|stdClass
      */
-    public function getGetPickupAvailabilityReply(ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest)
+    public function getGetPickupAvailabilityReply(ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest, $returnStdClass = false)
     {
-        return $this->getSoapClient()->getPickupAvailability($pickupAvailabilityRequest->toArray());
+        $response = $this->getSoapClient()->getPickupAvailability($pickupAvailabilityRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $pickupAvailabilityReply = new ComplexType\PickupAvailabilityReply;
+        $pickupAvailabilityReply->populateFromStdClass($response);
+        return $pickupAvailabilityReply;
     }
             
     /**
      * Sends the CreatePickupRequest and returns the response
      *
      * @param ComplexType\CreatePickupRequest $createPickupRequest
-     * @return stdClass
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\CreatePickupReply|stdClass
      */
-    public function getCreatePickupReply(ComplexType\CreatePickupRequest $createPickupRequest)
+    public function getCreatePickupReply(ComplexType\CreatePickupRequest $createPickupRequest, $returnStdClass = false)
     {
-        return $this->getSoapClient()->createPickup($createPickupRequest->toArray());
+        $response = $this->getSoapClient()->createPickup($createPickupRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $createPickupReply = new ComplexType\CreatePickupReply;
+        $createPickupReply->populateFromStdClass($response);
+        return $createPickupReply;
     }
             
     /**
      * Sends the CancelPickupRequest and returns the response
      *
      * @param ComplexType\CancelPickupRequest $cancelPickupRequest
-     * @return stdClass
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\CancelPickupReply|stdClass
      */
-    public function getCancelPickupReply(ComplexType\CancelPickupRequest $cancelPickupRequest)
+    public function getCancelPickupReply(ComplexType\CancelPickupRequest $cancelPickupRequest, $returnStdClass = false)
     {
-        return $this->getSoapClient()->cancelPickup($cancelPickupRequest->toArray());
+        $response = $this->getSoapClient()->cancelPickup($cancelPickupRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $cancelPickupReply = new ComplexType\CancelPickupReply;
+        $cancelPickupReply->populateFromStdClass($response);
+        return $cancelPickupReply;
     }
 
 }

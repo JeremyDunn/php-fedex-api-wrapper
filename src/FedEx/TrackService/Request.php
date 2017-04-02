@@ -21,44 +21,76 @@ class Request extends AbstractRequest
      * Sends the TrackNotificationRequest and returns the response
      *
      * @param ComplexType\TrackNotificationRequest $trackNotificationRequest
-     * @return stdClass
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\TrackNotificationReply|stdClass
      */
-    public function getGetTrackNotificationReply(ComplexType\TrackNotificationRequest $trackNotificationRequest)
+    public function getGetTrackNotificationReply(ComplexType\TrackNotificationRequest $trackNotificationRequest, $returnStdClass = false)
     {
-        return $this->getSoapClient()->getTrackNotification($trackNotificationRequest->toArray());
+        $response = $this->getSoapClient()->getTrackNotification($trackNotificationRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $trackNotificationReply = new ComplexType\TrackNotificationReply;
+        $trackNotificationReply->populateFromStdClass($response);
+        return $trackNotificationReply;
     }
             
     /**
      * Sends the SignatureProofOfDeliveryLetterRequest and returns the response
      *
      * @param ComplexType\SignatureProofOfDeliveryLetterRequest $signatureProofOfDeliveryLetterRequest
-     * @return stdClass
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\SignatureProofOfDeliveryLetterReply|stdClass
      */
-    public function getRetrieveSignatureProofOfDeliveryLetterReply(ComplexType\SignatureProofOfDeliveryLetterRequest $signatureProofOfDeliveryLetterRequest)
+    public function getRetrieveSignatureProofOfDeliveryLetterReply(ComplexType\SignatureProofOfDeliveryLetterRequest $signatureProofOfDeliveryLetterRequest, $returnStdClass = false)
     {
-        return $this->getSoapClient()->retrieveSignatureProofOfDeliveryLetter($signatureProofOfDeliveryLetterRequest->toArray());
+        $response = $this->getSoapClient()->retrieveSignatureProofOfDeliveryLetter($signatureProofOfDeliveryLetterRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $signatureProofOfDeliveryLetterReply = new ComplexType\SignatureProofOfDeliveryLetterReply;
+        $signatureProofOfDeliveryLetterReply->populateFromStdClass($response);
+        return $signatureProofOfDeliveryLetterReply;
     }
             
     /**
      * Sends the TrackRequest and returns the response
      *
      * @param ComplexType\TrackRequest $trackRequest
-     * @return stdClass
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\TrackReply|stdClass
      */
-    public function getTrackReply(ComplexType\TrackRequest $trackRequest)
+    public function getTrackReply(ComplexType\TrackRequest $trackRequest, $returnStdClass = false)
     {
-        return $this->getSoapClient()->track($trackRequest->toArray());
+        $response = $this->getSoapClient()->track($trackRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $trackReply = new ComplexType\TrackReply;
+        $trackReply->populateFromStdClass($response);
+        return $trackReply;
     }
             
     /**
      * Sends the SignatureProofOfDeliveryFaxRequest and returns the response
      *
      * @param ComplexType\SignatureProofOfDeliveryFaxRequest $signatureProofOfDeliveryFaxRequest
-     * @return stdClass
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\SignatureProofOfDeliveryFaxReply|stdClass
      */
-    public function getSendSignatureProofOfDeliveryFaxReply(ComplexType\SignatureProofOfDeliveryFaxRequest $signatureProofOfDeliveryFaxRequest)
+    public function getSendSignatureProofOfDeliveryFaxReply(ComplexType\SignatureProofOfDeliveryFaxRequest $signatureProofOfDeliveryFaxRequest, $returnStdClass = false)
     {
-        return $this->getSoapClient()->sendSignatureProofOfDeliveryFax($signatureProofOfDeliveryFaxRequest->toArray());
+        $response = $this->getSoapClient()->sendSignatureProofOfDeliveryFax($signatureProofOfDeliveryFaxRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $signatureProofOfDeliveryFaxReply = new ComplexType\SignatureProofOfDeliveryFaxReply;
+        $signatureProofOfDeliveryFaxReply->populateFromStdClass($response);
+        return $signatureProofOfDeliveryFaxReply;
     }
 
 }

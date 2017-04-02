@@ -19,6 +19,6 @@ class ReturnTagServiceTest extends TestCase
         $mockSoapClient->method('getExpressTagAvailability')->will($this->returnValue(ComplexType\ExpressTagAvailabilityRequest::class));
 
         $request = new Request($mockSoapClient);
-        $this->assertEquals(ComplexType\ExpressTagAvailabilityRequest::class, $request->getGetExpressTagAvailabilityReply($expressTagAvailabilityRequest));
+        $this->assertEquals(ComplexType\ExpressTagAvailabilityRequest::class, $request->getGetExpressTagAvailabilityReply($expressTagAvailabilityRequest, true));
     }
 }

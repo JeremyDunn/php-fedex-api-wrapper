@@ -21,11 +21,19 @@ class Request extends AbstractRequest
      * Sends the ExpressTagAvailabilityRequest and returns the response
      *
      * @param ComplexType\ExpressTagAvailabilityRequest $expressTagAvailabilityRequest
-     * @return stdClass
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\ExpressTagAvailabilityReply|stdClass
      */
-    public function getGetExpressTagAvailabilityReply(ComplexType\ExpressTagAvailabilityRequest $expressTagAvailabilityRequest)
+    public function getGetExpressTagAvailabilityReply(ComplexType\ExpressTagAvailabilityRequest $expressTagAvailabilityRequest, $returnStdClass = false)
     {
-        return $this->getSoapClient()->getExpressTagAvailability($expressTagAvailabilityRequest->toArray());
+        $response = $this->getSoapClient()->getExpressTagAvailability($expressTagAvailabilityRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $expressTagAvailabilityReply = new ComplexType\ExpressTagAvailabilityReply;
+        $expressTagAvailabilityReply->populateFromStdClass($response);
+        return $expressTagAvailabilityReply;
     }
 
 }

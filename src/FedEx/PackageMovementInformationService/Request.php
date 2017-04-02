@@ -21,22 +21,38 @@ class Request extends AbstractRequest
      * Sends the PostalCodeInquiryRequest and returns the response
      *
      * @param ComplexType\PostalCodeInquiryRequest $postalCodeInquiryRequest
-     * @return stdClass
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\PostalCodeInquiryReply|stdClass
      */
-    public function getPostalCodeInquiryReply(ComplexType\PostalCodeInquiryRequest $postalCodeInquiryRequest)
+    public function getPostalCodeInquiryReply(ComplexType\PostalCodeInquiryRequest $postalCodeInquiryRequest, $returnStdClass = false)
     {
-        return $this->getSoapClient()->postalCodeInquiry($postalCodeInquiryRequest->toArray());
+        $response = $this->getSoapClient()->postalCodeInquiry($postalCodeInquiryRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $postalCodeInquiryReply = new ComplexType\PostalCodeInquiryReply;
+        $postalCodeInquiryReply->populateFromStdClass($response);
+        return $postalCodeInquiryReply;
     }
             
     /**
      * Sends the ServiceAvailabilityRequest and returns the response
      *
      * @param ComplexType\ServiceAvailabilityRequest $serviceAvailabilityRequest
-     * @return stdClass
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\ServiceAvailabilityReply|stdClass
      */
-    public function getServiceAvailabilityReply(ComplexType\ServiceAvailabilityRequest $serviceAvailabilityRequest)
+    public function getServiceAvailabilityReply(ComplexType\ServiceAvailabilityRequest $serviceAvailabilityRequest, $returnStdClass = false)
     {
-        return $this->getSoapClient()->serviceAvailability($serviceAvailabilityRequest->toArray());
+        $response = $this->getSoapClient()->serviceAvailability($serviceAvailabilityRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $serviceAvailabilityReply = new ComplexType\ServiceAvailabilityReply;
+        $serviceAvailabilityReply->populateFromStdClass($response);
+        return $serviceAvailabilityReply;
     }
 
 }

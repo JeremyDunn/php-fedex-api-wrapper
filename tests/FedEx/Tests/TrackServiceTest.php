@@ -25,12 +25,13 @@ class TrackServiceTest extends TestCase
         $mockSoapClient->method('getTrackNotification')->will($this->returnValue(ComplexType\TrackNotificationRequest::class));
         $mockSoapClient->method('retrieveSignatureProofOfDeliveryLetter')->will($this->returnValue(ComplexType\SignatureProofOfDeliveryLetterRequest::class));
         $mockSoapClient->method('sendSignatureProofOfDeliveryFax')->will($this->returnValue(ComplexType\SignatureProofOfDeliveryFaxRequest::class));
+        $mockSoapClient->method('track')->will($this->returnValue(ComplexType\TrackRequest::class));
 
         $request = new Request($mockSoapClient);
 
-        $this->assertEquals(ComplexType\TrackNotificationRequest::class, $request->getGetTrackNotificationReply($trackNotificationRequest));
-        $this->assertEquals(ComplexType\SignatureProofOfDeliveryLetterRequest::class, $request->getRetrieveSignatureProofOfDeliveryLetterReply($retrieveSignatureProofOfDeliveryLetterRequest));
-        $this->assertEquals(ComplexType\SignatureProofOfDeliveryFaxRequest::class, $request->getSendSignatureProofOfDeliveryFaxReply($sendSignatureProofOfDeliveryFaxRequest));
-        $request->getTrackReply($trackRequest);
+        $this->assertEquals(ComplexType\TrackNotificationRequest::class, $request->getGetTrackNotificationReply($trackNotificationRequest, true));
+        $this->assertEquals(ComplexType\SignatureProofOfDeliveryLetterRequest::class, $request->getRetrieveSignatureProofOfDeliveryLetterReply($retrieveSignatureProofOfDeliveryLetterRequest, true));
+        $this->assertEquals(ComplexType\SignatureProofOfDeliveryFaxRequest::class, $request->getSendSignatureProofOfDeliveryFaxReply($sendSignatureProofOfDeliveryFaxRequest, true));
+        $this->assertEquals(ComplexType\TrackRequest::class, $request->getTrackReply($trackRequest, true));
     }
 }

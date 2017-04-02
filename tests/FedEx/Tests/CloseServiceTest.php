@@ -30,10 +30,10 @@ class CloseServiceTest extends TestCase
         $mockSoapClient->method('groundCloseReportsReprint')->will($this->returnValue(ComplexType\GroundCloseReportsReprintRequest::class));
 
         $closeService = new Request($mockSoapClient);
-        $this->assertEquals(ComplexType\GroundCloseRequest::class, $closeService->getGroundCloseReply($groundCloseRequest));
-        $this->assertEquals(ComplexType\GroundCloseWithDocumentsRequest::class, $closeService->getGroundCloseWithDocumentsReply($groundCloseWithDocumentsRequest));
-        $this->assertEquals(ComplexType\ReprintGroundCloseDocumentsRequest::class, $closeService->getReprintGroundCloseDocumentsReply($reprintGroundCloseDocumentsRequest));
-        $this->assertEquals(ComplexType\SmartPostCloseRequest::class, $closeService->getSmartPostCloseReply($smartPostCloseRequest));
-        $this->assertEquals(ComplexType\GroundCloseReportsReprintRequest::class, $closeService->getGroundCloseReportsReprintReply($groundCloseReportReprintsRequest));
+        $this->assertEquals(ComplexType\GroundCloseRequest::class, $closeService->getGroundCloseReply($groundCloseRequest, true));
+        $this->assertEquals(ComplexType\GroundCloseWithDocumentsRequest::class, $closeService->getGroundCloseWithDocumentsReply($groundCloseWithDocumentsRequest, true));
+        $this->assertEquals(ComplexType\ReprintGroundCloseDocumentsRequest::class, $closeService->getReprintGroundCloseDocumentsReply($reprintGroundCloseDocumentsRequest, true));
+        $this->assertEquals(ComplexType\SmartPostCloseRequest::class, $closeService->getSmartPostCloseReply($smartPostCloseRequest, true));
+        $this->assertEquals(ComplexType\GroundCloseReportsReprintRequest::class, $closeService->getGroundCloseReportsReprintReply($groundCloseReportReprintsRequest, true));
     }
 }

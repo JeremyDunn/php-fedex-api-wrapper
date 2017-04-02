@@ -21,33 +21,57 @@ class Request extends AbstractRequest
      * Sends the CourierDispatchRequest and returns the response
      *
      * @param ComplexType\CourierDispatchRequest $courierDispatchRequest
-     * @return stdClass
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\CourierDispatchReply|stdClass
      */
-    public function getCreateCourierDispatchReply(ComplexType\CourierDispatchRequest $courierDispatchRequest)
+    public function getCreateCourierDispatchReply(ComplexType\CourierDispatchRequest $courierDispatchRequest, $returnStdClass = false)
     {
-        return $this->getSoapClient()->createCourierDispatch($courierDispatchRequest->toArray());
+        $response = $this->getSoapClient()->createCourierDispatch($courierDispatchRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $courierDispatchReply = new ComplexType\CourierDispatchReply;
+        $courierDispatchReply->populateFromStdClass($response);
+        return $courierDispatchReply;
     }
             
     /**
      * Sends the CancelCourierDispatchRequest and returns the response
      *
      * @param ComplexType\CancelCourierDispatchRequest $cancelCourierDispatchRequest
-     * @return stdClass
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\CancelCourierDispatchReply|stdClass
      */
-    public function getCancelCourierDispatchReply(ComplexType\CancelCourierDispatchRequest $cancelCourierDispatchRequest)
+    public function getCancelCourierDispatchReply(ComplexType\CancelCourierDispatchRequest $cancelCourierDispatchRequest, $returnStdClass = false)
     {
-        return $this->getSoapClient()->cancelCourierDispatch($cancelCourierDispatchRequest->toArray());
+        $response = $this->getSoapClient()->cancelCourierDispatch($cancelCourierDispatchRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $cancelCourierDispatchReply = new ComplexType\CancelCourierDispatchReply;
+        $cancelCourierDispatchReply->populateFromStdClass($response);
+        return $cancelCourierDispatchReply;
     }
             
     /**
      * Sends the PickupAvailabilityRequest and returns the response
      *
      * @param ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest
-     * @return stdClass
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\PickupAvailabilityReply|stdClass
      */
-    public function getGetPickupAvailabilityReply(ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest)
+    public function getGetPickupAvailabilityReply(ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest, $returnStdClass = false)
     {
-        return $this->getSoapClient()->getPickupAvailability($pickupAvailabilityRequest->toArray());
+        $response = $this->getSoapClient()->getPickupAvailability($pickupAvailabilityRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $pickupAvailabilityReply = new ComplexType\PickupAvailabilityReply;
+        $pickupAvailabilityReply->populateFromStdClass($response);
+        return $pickupAvailabilityReply;
     }
 
 }

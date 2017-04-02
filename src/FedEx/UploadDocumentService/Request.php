@@ -21,22 +21,38 @@ class Request extends AbstractRequest
      * Sends the UploadDocumentsRequest and returns the response
      *
      * @param ComplexType\UploadDocumentsRequest $uploadDocumentsRequest
-     * @return stdClass
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\UploadDocumentsReply|stdClass
      */
-    public function getUploadDocumentsReply(ComplexType\UploadDocumentsRequest $uploadDocumentsRequest)
+    public function getUploadDocumentsReply(ComplexType\UploadDocumentsRequest $uploadDocumentsRequest, $returnStdClass = false)
     {
-        return $this->getSoapClient()->uploadDocuments($uploadDocumentsRequest->toArray());
+        $response = $this->getSoapClient()->uploadDocuments($uploadDocumentsRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $uploadDocumentsReply = new ComplexType\UploadDocumentsReply;
+        $uploadDocumentsReply->populateFromStdClass($response);
+        return $uploadDocumentsReply;
     }
             
     /**
      * Sends the UploadImagesRequest and returns the response
      *
      * @param ComplexType\UploadImagesRequest $uploadImagesRequest
-     * @return stdClass
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\UploadImagesReply|stdClass
      */
-    public function getUploadImagesReply(ComplexType\UploadImagesRequest $uploadImagesRequest)
+    public function getUploadImagesReply(ComplexType\UploadImagesRequest $uploadImagesRequest, $returnStdClass = false)
     {
-        return $this->getSoapClient()->uploadImages($uploadImagesRequest->toArray());
+        $response = $this->getSoapClient()->uploadImages($uploadImagesRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $uploadImagesReply = new ComplexType\UploadImagesReply;
+        $uploadImagesReply->populateFromStdClass($response);
+        return $uploadImagesReply;
     }
 
 }

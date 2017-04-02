@@ -21,77 +21,133 @@ class Request extends AbstractRequest
      * Sends the CreatePendingShipmentRequest and returns the response
      *
      * @param ComplexType\CreatePendingShipmentRequest $createPendingShipmentRequest
-     * @return stdClass
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\CreatePendingShipmentReply|stdClass
      */
-    public function getCreatePendingShipmentReply(ComplexType\CreatePendingShipmentRequest $createPendingShipmentRequest)
+    public function getCreatePendingShipmentReply(ComplexType\CreatePendingShipmentRequest $createPendingShipmentRequest, $returnStdClass = false)
     {
-        return $this->getSoapClient()->createPendingShipment($createPendingShipmentRequest->toArray());
+        $response = $this->getSoapClient()->createPendingShipment($createPendingShipmentRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $createPendingShipmentReply = new ComplexType\CreatePendingShipmentReply;
+        $createPendingShipmentReply->populateFromStdClass($response);
+        return $createPendingShipmentReply;
     }
             
     /**
      * Sends the ProcessTagRequest and returns the response
      *
      * @param ComplexType\ProcessTagRequest $processTagRequest
-     * @return stdClass
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\ProcessTagReply|stdClass
      */
-    public function getProcessTagReply(ComplexType\ProcessTagRequest $processTagRequest)
+    public function getProcessTagReply(ComplexType\ProcessTagRequest $processTagRequest, $returnStdClass = false)
     {
-        return $this->getSoapClient()->processTag($processTagRequest->toArray());
+        $response = $this->getSoapClient()->processTag($processTagRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $processTagReply = new ComplexType\ProcessTagReply;
+        $processTagReply->populateFromStdClass($response);
+        return $processTagReply;
     }
             
     /**
      * Sends the ProcessShipmentRequest and returns the response
      *
      * @param ComplexType\ProcessShipmentRequest $processShipmentRequest
-     * @return stdClass
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\ProcessShipmentReply|stdClass
      */
-    public function getProcessShipmentReply(ComplexType\ProcessShipmentRequest $processShipmentRequest)
+    public function getProcessShipmentReply(ComplexType\ProcessShipmentRequest $processShipmentRequest, $returnStdClass = false)
     {
-        return $this->getSoapClient()->processShipment($processShipmentRequest->toArray());
+        $response = $this->getSoapClient()->processShipment($processShipmentRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $processShipmentReply = new ComplexType\ProcessShipmentReply;
+        $processShipmentReply->populateFromStdClass($response);
+        return $processShipmentReply;
     }
             
     /**
      * Sends the CancelPendingShipmentRequest and returns the response
      *
      * @param ComplexType\CancelPendingShipmentRequest $cancelPendingShipmentRequest
-     * @return stdClass
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\CancelPendingShipmentReply|stdClass
      */
-    public function getCancelPendingShipmentReply(ComplexType\CancelPendingShipmentRequest $cancelPendingShipmentRequest)
+    public function getCancelPendingShipmentReply(ComplexType\CancelPendingShipmentRequest $cancelPendingShipmentRequest, $returnStdClass = false)
     {
-        return $this->getSoapClient()->cancelPendingShipment($cancelPendingShipmentRequest->toArray());
+        $response = $this->getSoapClient()->cancelPendingShipment($cancelPendingShipmentRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $cancelPendingShipmentReply = new ComplexType\CancelPendingShipmentReply;
+        $cancelPendingShipmentReply->populateFromStdClass($response);
+        return $cancelPendingShipmentReply;
     }
             
     /**
      * Sends the DeleteTagRequest and returns the response
      *
      * @param ComplexType\DeleteTagRequest $deleteTagRequest
-     * @return stdClass
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\ShipmentReply|stdClass
      */
-    public function getDeleteTagReply(ComplexType\DeleteTagRequest $deleteTagRequest)
+    public function getDeleteTagReply(ComplexType\DeleteTagRequest $deleteTagRequest, $returnStdClass = false)
     {
-        return $this->getSoapClient()->deleteTag($deleteTagRequest->toArray());
+        $response = $this->getSoapClient()->deleteTag($deleteTagRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $shipmentReply = new ComplexType\ShipmentReply;
+        $shipmentReply->populateFromStdClass($response);
+        return $shipmentReply;
     }
             
     /**
      * Sends the DeleteShipmentRequest and returns the response
      *
      * @param ComplexType\DeleteShipmentRequest $deleteShipmentRequest
-     * @return stdClass
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\ShipmentReply|stdClass
      */
-    public function getDeleteShipmentReply(ComplexType\DeleteShipmentRequest $deleteShipmentRequest)
+    public function getDeleteShipmentReply(ComplexType\DeleteShipmentRequest $deleteShipmentRequest, $returnStdClass = false)
     {
-        return $this->getSoapClient()->deleteShipment($deleteShipmentRequest->toArray());
+        $response = $this->getSoapClient()->deleteShipment($deleteShipmentRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $shipmentReply = new ComplexType\ShipmentReply;
+        $shipmentReply->populateFromStdClass($response);
+        return $shipmentReply;
     }
             
     /**
      * Sends the ValidateShipmentRequest and returns the response
      *
      * @param ComplexType\ValidateShipmentRequest $validateShipmentRequest
-     * @return stdClass
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\ShipmentReply|stdClass
      */
-    public function getValidateShipmentReply(ComplexType\ValidateShipmentRequest $validateShipmentRequest)
+    public function getValidateShipmentReply(ComplexType\ValidateShipmentRequest $validateShipmentRequest, $returnStdClass = false)
     {
-        return $this->getSoapClient()->validateShipment($validateShipmentRequest->toArray());
+        $response = $this->getSoapClient()->validateShipment($validateShipmentRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $shipmentReply = new ComplexType\ShipmentReply;
+        $shipmentReply->populateFromStdClass($response);
+        return $shipmentReply;
     }
 
 }

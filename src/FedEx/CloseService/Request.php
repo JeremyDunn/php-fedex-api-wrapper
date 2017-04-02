@@ -21,55 +21,95 @@ class Request extends AbstractRequest
      * Sends the SmartPostCloseRequest and returns the response
      *
      * @param ComplexType\SmartPostCloseRequest $smartPostCloseRequest
-     * @return stdClass
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\SmartPostCloseReply|stdClass
      */
-    public function getSmartPostCloseReply(ComplexType\SmartPostCloseRequest $smartPostCloseRequest)
+    public function getSmartPostCloseReply(ComplexType\SmartPostCloseRequest $smartPostCloseRequest, $returnStdClass = false)
     {
-        return $this->getSoapClient()->smartPostClose($smartPostCloseRequest->toArray());
+        $response = $this->getSoapClient()->smartPostClose($smartPostCloseRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $smartPostCloseReply = new ComplexType\SmartPostCloseReply;
+        $smartPostCloseReply->populateFromStdClass($response);
+        return $smartPostCloseReply;
     }
             
     /**
      * Sends the GroundCloseRequest and returns the response
      *
      * @param ComplexType\GroundCloseRequest $groundCloseRequest
-     * @return stdClass
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\GroundCloseReply|stdClass
      */
-    public function getGroundCloseReply(ComplexType\GroundCloseRequest $groundCloseRequest)
+    public function getGroundCloseReply(ComplexType\GroundCloseRequest $groundCloseRequest, $returnStdClass = false)
     {
-        return $this->getSoapClient()->groundClose($groundCloseRequest->toArray());
+        $response = $this->getSoapClient()->groundClose($groundCloseRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $groundCloseReply = new ComplexType\GroundCloseReply;
+        $groundCloseReply->populateFromStdClass($response);
+        return $groundCloseReply;
     }
             
     /**
      * Sends the GroundCloseReportsReprintRequest and returns the response
      *
      * @param ComplexType\GroundCloseReportsReprintRequest $groundCloseReportsReprintRequest
-     * @return stdClass
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\GroundCloseReportsReprintReply|stdClass
      */
-    public function getGroundCloseReportsReprintReply(ComplexType\GroundCloseReportsReprintRequest $groundCloseReportsReprintRequest)
+    public function getGroundCloseReportsReprintReply(ComplexType\GroundCloseReportsReprintRequest $groundCloseReportsReprintRequest, $returnStdClass = false)
     {
-        return $this->getSoapClient()->groundCloseReportsReprint($groundCloseReportsReprintRequest->toArray());
+        $response = $this->getSoapClient()->groundCloseReportsReprint($groundCloseReportsReprintRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $groundCloseReportsReprintReply = new ComplexType\GroundCloseReportsReprintReply;
+        $groundCloseReportsReprintReply->populateFromStdClass($response);
+        return $groundCloseReportsReprintReply;
     }
             
     /**
      * Sends the GroundCloseWithDocumentsRequest and returns the response
      *
      * @param ComplexType\GroundCloseWithDocumentsRequest $groundCloseWithDocumentsRequest
-     * @return stdClass
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\GroundCloseDocumentsReply|stdClass
      */
-    public function getGroundCloseWithDocumentsReply(ComplexType\GroundCloseWithDocumentsRequest $groundCloseWithDocumentsRequest)
+    public function getGroundCloseWithDocumentsReply(ComplexType\GroundCloseWithDocumentsRequest $groundCloseWithDocumentsRequest, $returnStdClass = false)
     {
-        return $this->getSoapClient()->groundCloseWithDocuments($groundCloseWithDocumentsRequest->toArray());
+        $response = $this->getSoapClient()->groundCloseWithDocuments($groundCloseWithDocumentsRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $groundCloseDocumentsReply = new ComplexType\GroundCloseDocumentsReply;
+        $groundCloseDocumentsReply->populateFromStdClass($response);
+        return $groundCloseDocumentsReply;
     }
             
     /**
      * Sends the ReprintGroundCloseDocumentsRequest and returns the response
      *
      * @param ComplexType\ReprintGroundCloseDocumentsRequest $reprintGroundCloseDocumentsRequest
-     * @return stdClass
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\GroundCloseDocumentsReply|stdClass
      */
-    public function getReprintGroundCloseDocumentsReply(ComplexType\ReprintGroundCloseDocumentsRequest $reprintGroundCloseDocumentsRequest)
+    public function getReprintGroundCloseDocumentsReply(ComplexType\ReprintGroundCloseDocumentsRequest $reprintGroundCloseDocumentsRequest, $returnStdClass = false)
     {
-        return $this->getSoapClient()->reprintGroundCloseDocuments($reprintGroundCloseDocumentsRequest->toArray());
+        $response = $this->getSoapClient()->reprintGroundCloseDocuments($reprintGroundCloseDocumentsRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $groundCloseDocumentsReply = new ComplexType\GroundCloseDocumentsReply;
+        $groundCloseDocumentsReply->populateFromStdClass($response);
+        return $groundCloseDocumentsReply;
     }
 
 }
