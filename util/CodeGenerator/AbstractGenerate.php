@@ -66,13 +66,13 @@ abstract class AbstractGenerate
         if (file_exists($wsdlPath)) {
             $this->wsdlPath = $wsdlPath;
         } else {
-            throw new Exception('path to wsdl file is invalid');
+            throw new \Exception('path to wsdl file is invalid');
         }
 
         if (is_writable($exportPath)) {
             $this->exportPath = $exportPath;
         } else {
-            throw new Exception('cannot write to export path');
+            throw new \Exception('cannot write to export path');
         }
 
         $this->namespace = $namespace;

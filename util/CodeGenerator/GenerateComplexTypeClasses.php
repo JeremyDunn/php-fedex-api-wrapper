@@ -1,6 +1,5 @@
 <?php
 namespace FedEx\Utility\CodeGenerator;
-use FedEx\Pickup\SimpleType\PaymentType;
 
 /**
  * Converts complex types in .wsdl file to PHP class files
