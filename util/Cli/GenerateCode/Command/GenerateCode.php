@@ -265,6 +265,29 @@ class GenerateCode extends Console\Command\Command
         $generateComplexTypes = new CodeGenerator\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
         $generateComplexTypes->run();
 
+
+        //ValidationAvailabilityAndCommitmentService
+        $wsdlPath = $fedexSrcDir . '/_wsdl/ValidationAvailabilityAndCommitmentService_v6.wsdl';
+
+        $baseNamespace = 'FedEx\ValidationAvailabilityAndCommitmentService';
+        $subPackageName = 'Validation Availability And Commitment Service';
+
+        //generate Request class
+        $pathToRequestClassFile = $fedexSrcDir . '/ValidationAvailabilityAndCommitmentService/Request.php';
+        $generateRequestClassFile = new CodeGenerator\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, $baseNamespace, $subPackageName);
+        $generateRequestClassFile->run();
+
+        //generate SimpleType classes
+        $exportPath = $fedexSrcDir . '/ValidationAvailabilityAndCommitmentService/SimpleType';
+        $generateSimpleTypes = new CodeGenerator\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
+        $generateSimpleTypes->run();
+
+        //generate ComplexType classes
+        $exportPath = $fedexSrcDir . '/ValidationAvailabilityAndCommitmentService/ComplexType';
+        $generateComplexTypes = new CodeGenerator\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
+        $generateComplexTypes->run();
+
+
         //PickupService
         $wsdlPath = $fedexSrcDir . '/_wsdl/PickupService_v3.wsdl';
 
