@@ -4,7 +4,7 @@ namespace FedEx\TrackService\SimpleType;
 use FedEx\AbstractSimpleType;
 
 /**
- * Identifies the set of SPOD image types.
+ * SignatureProofOfDeliveryImageType
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,4 +13,5 @@ use FedEx\AbstractSimpleType;
 class SignatureProofOfDeliveryImageType extends AbstractSimpleType
 {
     const _PDF = 'PDF';
+    const _PNG = 'PNG';
 }

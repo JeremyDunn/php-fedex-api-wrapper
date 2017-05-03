@@ -4,13 +4,14 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * All package-level shipping documents (other than labels and barcodes).
+ * ShippingDocument
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  *
  * @property \FedEx\ShipService\SimpleType\ReturnedShippingDocumentType|string $Type
+ * @property Localization[] $Localizations
  * @property \FedEx\ShipService\SimpleType\ShippingDocumentGroupingType|string $Grouping
  * @property \FedEx\ShipService\SimpleType\ShippingDocumentDispositionType|string $ShippingDocumentDisposition
  * @property string $AccessReference
@@ -30,7 +31,7 @@ class ShippingDocument extends AbstractComplexType
     protected $name = 'ShippingDocument';
 
     /**
-     * Shipping Document Type
+     * Set Type
      *
      * @param \FedEx\ShipService\SimpleType\ReturnedShippingDocumentType|string $type
      * @return $this
@@ -38,6 +39,18 @@ class ShippingDocument extends AbstractComplexType
     public function setType($type)
     {
         $this->values['Type'] = $type;
+        return $this;
+    }
+
+    /**
+     * The localizations are populated if multiple language versions of a shipping document are returned.
+     *
+     * @param Localization[] $localizations
+     * @return $this
+     */
+    public function setLocalizations(array $localizations)
+    {
+        $this->values['Localizations'] = $localizations;
         return $this;
     }
 
@@ -66,7 +79,7 @@ class ShippingDocument extends AbstractComplexType
     }
 
     /**
-     * The name under which a STORED or DEFERRED document is written.
+     * The name under which a STORED, DEFERRED or EMAILED document is written.
      *
      * @param string $accessReference
      * @return $this

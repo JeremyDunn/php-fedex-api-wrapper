@@ -20,7 +20,9 @@ use FedEx\AbstractComplexType;
  * @property string $HazardClass
  * @property string[] $SubsidiaryClasses
  * @property string $Symbols
+ * @property string $TunnelRestrictionCode
  * @property string $SpecialProvisions
+ * @property \FedEx\ShipService\SimpleType\HazardousCommodityAttributeType|string[] $Attributes
  * @property string $Authorization
  * @property string $LabelText
 
@@ -155,6 +157,18 @@ class ValidatedHazardousCommodityDescription extends AbstractComplexType
     }
 
     /**
+     * Set TunnelRestrictionCode
+     *
+     * @param string $tunnelRestrictionCode
+     * @return $this
+     */
+    public function setTunnelRestrictionCode($tunnelRestrictionCode)
+    {
+        $this->values['TunnelRestrictionCode'] = $tunnelRestrictionCode;
+        return $this;
+    }
+
+    /**
      * Set SpecialProvisions
      *
      * @param string $specialProvisions
@@ -163,6 +177,18 @@ class ValidatedHazardousCommodityDescription extends AbstractComplexType
     public function setSpecialProvisions($specialProvisions)
     {
         $this->values['SpecialProvisions'] = $specialProvisions;
+        return $this;
+    }
+
+    /**
+     * Set Attributes
+     *
+     * @param \FedEx\ShipService\SimpleType\HazardousCommodityAttributeType[]|string[] $attributes
+     * @return $this
+     */
+    public function setAttributes(array $attributes)
+    {
+        $this->values['Attributes'] = $attributes;
         return $this;
     }
 

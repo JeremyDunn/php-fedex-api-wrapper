@@ -16,6 +16,7 @@ use FedEx\AbstractComplexType;
  * @property Weight $DryIceWeight
  * @property SignatureOptionDetail $SignatureOptionDetail
  * @property PriorityAlertDetail $PriorityAlertDetail
+ * @property AlcoholDetail $AlcoholDetail
 
  */
 class PackageSpecialServicesRequested extends AbstractComplexType
@@ -52,7 +53,7 @@ class PackageSpecialServicesRequested extends AbstractComplexType
     }
 
     /**
-     * Descriptive data required for a FedEx shipment containing dangerous materials. This element is required when SpecialServiceType.DANGEROUS_GOODS or HAZARDOUS_MATERIAL is present in the SpecialServiceTypes collection.
+     * Set DangerousGoodsDetail
      *
      * @param DangerousGoodsDetail $dangerousGoodsDetail
      * @return $this
@@ -64,7 +65,7 @@ class PackageSpecialServicesRequested extends AbstractComplexType
     }
 
     /**
-     * Descriptive data required for a FedEx shipment containing dry ice. This element is required when SpecialServiceType.DRY_ICE is present in the SpecialServiceTypes collection.
+     * Set DryIceWeight
      *
      * @param Weight $dryIceWeight
      * @return $this
@@ -76,7 +77,7 @@ class PackageSpecialServicesRequested extends AbstractComplexType
     }
 
     /**
-     * The descriptive data required for FedEx signature services. This element is required when SpecialServiceType.SIGNATURE_OPTION is present in the SpecialServiceTypes collection.
+     * Set SignatureOptionDetail
      *
      * @param SignatureOptionDetail $signatureOptionDetail
      * @return $this
@@ -88,7 +89,7 @@ class PackageSpecialServicesRequested extends AbstractComplexType
     }
 
     /**
-     * The descriptive data required for FedEx Priority Alert service. This element is required when SpecialServiceType.PRIORITY_ALERT is present in the SpecialServiceTypes collection.
+     * Set PriorityAlertDetail
      *
      * @param PriorityAlertDetail $priorityAlertDetail
      * @return $this
@@ -96,6 +97,18 @@ class PackageSpecialServicesRequested extends AbstractComplexType
     public function setPriorityAlertDetail(PriorityAlertDetail $priorityAlertDetail)
     {
         $this->values['PriorityAlertDetail'] = $priorityAlertDetail;
+        return $this;
+    }
+
+    /**
+     * Set AlcoholDetail
+     *
+     * @param AlcoholDetail $alcoholDetail
+     * @return $this
+     */
+    public function setAlcoholDetail(AlcoholDetail $alcoholDetail)
+    {
+        $this->values['AlcoholDetail'] = $alcoholDetail;
         return $this;
     }
 

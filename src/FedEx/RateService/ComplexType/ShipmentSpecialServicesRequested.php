@@ -12,10 +12,13 @@ use FedEx\AbstractComplexType;
  *
  * @property \FedEx\RateService\SimpleType\ShipmentSpecialServiceType|string[] $SpecialServiceTypes
  * @property CodDetail $CodDetail
+ * @property DeliveryOnInvoiceAcceptanceDetail $DeliveryOnInvoiceAcceptanceDetail
  * @property HoldAtLocationDetail $HoldAtLocationDetail
- * @property EMailNotificationDetail $EMailNotificationDetail
+ * @property ShipmentEventNotificationDetail $EventNotificationDetail
  * @property ReturnShipmentDetail $ReturnShipmentDetail
  * @property PendingShipmentDetail $PendingShipmentDetail
+ * @property InternationalControlledExportDetail $InternationalControlledExportDetail
+ * @property InternationalTrafficInArmsRegulationsDetail $InternationalTrafficInArmsRegulationsDetail
  * @property ShipmentDryIceDetail $ShipmentDryIceDetail
  * @property HomeDeliveryPremiumDetail $HomeDeliveryPremiumDetail
  * @property FlatbedTrailerDetail $FlatbedTrailerDetail
@@ -46,7 +49,7 @@ class ShipmentSpecialServicesRequested extends AbstractComplexType
     }
 
     /**
-     * Descriptive data required for a FedEx COD (Collect-On-Delivery) shipment. This element is required when SpecialServiceType.COD is present in the SpecialServiceTypes collection.
+     * Set CodDetail
      *
      * @param CodDetail $codDetail
      * @return $this
@@ -58,7 +61,19 @@ class ShipmentSpecialServicesRequested extends AbstractComplexType
     }
 
     /**
-     * Descriptive data required for a FedEx shipment that is to be held at the destination FedEx location for pickup by the recipient. This element is required when SpecialServiceType.HOLD_AT_LOCATION is present in the SpecialServiceTypes collection.
+     * Set DeliveryOnInvoiceAcceptanceDetail
+     *
+     * @param DeliveryOnInvoiceAcceptanceDetail $deliveryOnInvoiceAcceptanceDetail
+     * @return $this
+     */
+    public function setDeliveryOnInvoiceAcceptanceDetail(DeliveryOnInvoiceAcceptanceDetail $deliveryOnInvoiceAcceptanceDetail)
+    {
+        $this->values['DeliveryOnInvoiceAcceptanceDetail'] = $deliveryOnInvoiceAcceptanceDetail;
+        return $this;
+    }
+
+    /**
+     * Set HoldAtLocationDetail
      *
      * @param HoldAtLocationDetail $holdAtLocationDetail
      * @return $this
@@ -70,19 +85,19 @@ class ShipmentSpecialServicesRequested extends AbstractComplexType
     }
 
     /**
-     * Descriptive data required for FedEx to provide email notification to the customer regarding the shipment. This element is required when SpecialServiceType.EMAIL_NOTIFICATION is present in the SpecialServiceTypes collection.
+     * This replaces eMailNotificationDetail
      *
-     * @param EMailNotificationDetail $eMailNotificationDetail
+     * @param ShipmentEventNotificationDetail $eventNotificationDetail
      * @return $this
      */
-    public function setEMailNotificationDetail(EMailNotificationDetail $eMailNotificationDetail)
+    public function setEventNotificationDetail(ShipmentEventNotificationDetail $eventNotificationDetail)
     {
-        $this->values['EMailNotificationDetail'] = $eMailNotificationDetail;
+        $this->values['EventNotificationDetail'] = $eventNotificationDetail;
         return $this;
     }
 
     /**
-     * The descriptive data required for FedEx Printed Return Label. This element is required when SpecialServiceType.PRINTED_RETURN_LABEL is present in the SpecialServiceTypes collection
+     * Set ReturnShipmentDetail
      *
      * @param ReturnShipmentDetail $returnShipmentDetail
      * @return $this
@@ -106,7 +121,31 @@ class ShipmentSpecialServicesRequested extends AbstractComplexType
     }
 
     /**
-     * The number of packages with dry ice and the total weight of the dry ice.
+     * Set InternationalControlledExportDetail
+     *
+     * @param InternationalControlledExportDetail $internationalControlledExportDetail
+     * @return $this
+     */
+    public function setInternationalControlledExportDetail(InternationalControlledExportDetail $internationalControlledExportDetail)
+    {
+        $this->values['InternationalControlledExportDetail'] = $internationalControlledExportDetail;
+        return $this;
+    }
+
+    /**
+     * Set InternationalTrafficInArmsRegulationsDetail
+     *
+     * @param InternationalTrafficInArmsRegulationsDetail $internationalTrafficInArmsRegulationsDetail
+     * @return $this
+     */
+    public function setInternationalTrafficInArmsRegulationsDetail(InternationalTrafficInArmsRegulationsDetail $internationalTrafficInArmsRegulationsDetail)
+    {
+        $this->values['InternationalTrafficInArmsRegulationsDetail'] = $internationalTrafficInArmsRegulationsDetail;
+        return $this;
+    }
+
+    /**
+     * Set ShipmentDryIceDetail
      *
      * @param ShipmentDryIceDetail $shipmentDryIceDetail
      * @return $this
@@ -118,7 +157,7 @@ class ShipmentSpecialServicesRequested extends AbstractComplexType
     }
 
     /**
-     * The descriptive data required for FedEx Home Delivery options. This element is required when SpecialServiceType.HOME_DELIVERY_PREMIUM is present in the SpecialServiceTypes collection
+     * Set HomeDeliveryPremiumDetail
      *
      * @param HomeDeliveryPremiumDetail $homeDeliveryPremiumDetail
      * @return $this

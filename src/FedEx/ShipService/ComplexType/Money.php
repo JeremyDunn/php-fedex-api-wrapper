@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * The descriptive data for the medium of exchange for FedEx services.
+ * Money
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -24,7 +24,7 @@ class Money extends AbstractComplexType
     protected $name = 'Money';
 
     /**
-     * Identifies the currency of the monetary amount.
+     * Set Currency
      *
      * @param string $currency
      * @return $this
@@ -36,7 +36,7 @@ class Money extends AbstractComplexType
     }
 
     /**
-     * Identifies the monetary amount.
+     * Set Amount
      *
      * @param float $amount
      * @return $this

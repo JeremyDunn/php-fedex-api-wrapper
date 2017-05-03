@@ -47,7 +47,7 @@ class GenerateCode extends Console\Command\Command
         }
 
         //RateRequest
-        $wsdlPath = $fedexSrcDir . '/_wsdl/RateService_v10.wsdl';
+        $wsdlPath = $fedexSrcDir . '/_wsdl/RateService_v20.wsdl';
 
         $baseNamespace = 'FedEx\RateService';
         $subpackageName = 'Rate Service';
@@ -90,7 +90,7 @@ class GenerateCode extends Console\Command\Command
 
 
         //TrackService
-        $wsdlPath = $fedexSrcDir . '/_wsdl/TrackService_v5.wsdl';
+        $wsdlPath = $fedexSrcDir . '/_wsdl/TrackService_v12.wsdl';
 
         $baseNamespace = 'FedEx\TrackService';
         $subPackageName = 'Track Service';
@@ -156,7 +156,7 @@ class GenerateCode extends Console\Command\Command
 
 
         //ShipService
-        $wsdlPath = $fedexSrcDir . '/_wsdl/ShipService_v12.wsdl';
+        $wsdlPath = $fedexSrcDir . '/_wsdl/ShipService_v19.wsdl';
 
         $baseNamespace = 'FedEx\ShipService';
         $subPackageName = 'Ship Service';

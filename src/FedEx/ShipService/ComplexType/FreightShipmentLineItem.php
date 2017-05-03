@@ -154,7 +154,7 @@ class FreightShipmentLineItem extends AbstractComplexType
     }
 
     /**
-     * FED EX INTERNAL USE ONLY - Individual line item dimensions.
+     * Set Dimensions
      *
      * @param Dimensions $dimensions
      * @return $this

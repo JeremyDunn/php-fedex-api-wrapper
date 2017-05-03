@@ -27,7 +27,7 @@ class DocTabZoneSpecification extends AbstractComplexType
     protected $name = 'DocTabZoneSpecification';
 
     /**
-     * Zone number can be between 1 and 12.
+     * Set ZoneNumber
      *
      * @param int $zoneNumber
      * @return $this
@@ -39,7 +39,7 @@ class DocTabZoneSpecification extends AbstractComplexType
     }
 
     /**
-     * Header value on this zone.
+     * Set Header
      *
      * @param string $header
      * @return $this
@@ -51,7 +51,7 @@ class DocTabZoneSpecification extends AbstractComplexType
     }
 
     /**
-     * Reference path to the element in the request/reply whose value should be printed on this zone.
+     * Set DataField
      *
      * @param string $dataField
      * @return $this
@@ -63,7 +63,7 @@ class DocTabZoneSpecification extends AbstractComplexType
     }
 
     /**
-     * Free form-text to be printed in this zone.
+     * Set LiteralValue
      *
      * @param string $literalValue
      * @return $this
@@ -75,7 +75,7 @@ class DocTabZoneSpecification extends AbstractComplexType
     }
 
     /**
-     * Justification for the text printed on this zone.
+     * Set Justification
      *
      * @param \FedEx\ShipService\SimpleType\DocTabZoneJustificationType|string $justification
      * @return $this

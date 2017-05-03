@@ -29,6 +29,7 @@ class ArrivalLocationType extends AbstractSimpleType
     const _PICKUP_LOCATION = 'PICKUP_LOCATION';
     const _PLANE = 'PLANE';
     const _PORT_OF_ENTRY = 'PORT_OF_ENTRY';
+    const _SHIP_AND_GET_LOCATION = 'SHIP_AND_GET_LOCATION';
     const _SORT_FACILITY = 'SORT_FACILITY';
     const _TURNPOINT = 'TURNPOINT';
     const _VEHICLE = 'VEHICLE';

@@ -32,6 +32,8 @@ use FedEx\AbstractComplexType;
  * @property Money $TotalNetCharge
  * @property Money $TotalRebates
  * @property Money $TotalDutiesAndTaxes
+ * @property Money $TotalAncillaryFeesAndTaxes
+ * @property Money $TotalDutiesTaxesAndFees
  * @property Money $TotalNetChargeWithDutiesAndTaxes
  * @property ShipmentLegRateDetail[] $ShipmentLegRateDetails
  * @property FreightRateDetail $FreightRateDetail
@@ -40,6 +42,7 @@ use FedEx\AbstractComplexType;
  * @property Surcharge[] $Surcharges
  * @property Tax[] $Taxes
  * @property EdtCommodityTax[] $DutiesAndTaxes
+ * @property AncillaryFeeAndTax[] $AncillaryFeesAndTaxes
  * @property VariableHandlingCharges $VariableHandlingCharges
  * @property VariableHandlingCharges $TotalVariableHandlingCharges
 
@@ -90,7 +93,7 @@ class ShipmentRateDetail extends AbstractComplexType
     }
 
     /**
-     * Indicates the type of pricing used for this shipment.
+     * Set PricingCode
      *
      * @param \FedEx\RateService\SimpleType\PricingCodeType|string $pricingCode
      * @return $this
@@ -150,7 +153,7 @@ class ShipmentRateDetail extends AbstractComplexType
     }
 
     /**
-     * The value used to calculate the weight based on the dimensions.
+     * Set DimDivisor
      *
      * @param int $dimDivisor
      * @return $this
@@ -186,7 +189,7 @@ class ShipmentRateDetail extends AbstractComplexType
     }
 
     /**
-     * The weight used to calculate these rates.
+     * Set TotalBillingWeight
      *
      * @param Weight $totalBillingWeight
      * @return $this
@@ -222,7 +225,7 @@ class ShipmentRateDetail extends AbstractComplexType
     }
 
     /**
-     * The total discounts used in the rate calculation.
+     * Set TotalFreightDiscounts
      *
      * @param Money $totalFreightDiscounts
      * @return $this
@@ -234,7 +237,7 @@ class ShipmentRateDetail extends AbstractComplexType
     }
 
     /**
-     * The freight charge minus discounts.
+     * Set TotalNetFreight
      *
      * @param Money $totalNetFreight
      * @return $this
@@ -246,7 +249,7 @@ class ShipmentRateDetail extends AbstractComplexType
     }
 
     /**
-     * The total amount of all surcharges applied to this shipment.
+     * Set TotalSurcharges
      *
      * @param Money $totalSurcharges
      * @return $this
@@ -282,7 +285,7 @@ class ShipmentRateDetail extends AbstractComplexType
     }
 
     /**
-     * The net charge after applying all discounts and surcharges.
+     * Set TotalNetCharge
      *
      * @param Money $totalNetCharge
      * @return $this
@@ -294,7 +297,7 @@ class ShipmentRateDetail extends AbstractComplexType
     }
 
     /**
-     * The total sum of all rebates applied to this shipment.
+     * Set TotalRebates
      *
      * @param Money $totalRebates
      * @return $this
@@ -318,7 +321,31 @@ class ShipmentRateDetail extends AbstractComplexType
     }
 
     /**
-     * This shipment's totalNetCharge + totalDutiesAndTaxes; only provided if estimated duties and taxes were calculated for this shipment AND duties, taxes and transportation charges are all paid by the same sender's account.
+     * Identifies the total amount of the shipment-level fees and taxes that are not based on transportation charges or commodity-level estimated duties and taxes.
+     *
+     * @param Money $totalAncillaryFeesAndTaxes
+     * @return $this
+     */
+    public function setTotalAncillaryFeesAndTaxes(Money $totalAncillaryFeesAndTaxes)
+    {
+        $this->values['TotalAncillaryFeesAndTaxes'] = $totalAncillaryFeesAndTaxes;
+        return $this;
+    }
+
+    /**
+     * The total of the totalDutiesAndTaxes plus the totalAncillaryFeesAndTaxes.
+     *
+     * @param Money $totalDutiesTaxesAndFees
+     * @return $this
+     */
+    public function setTotalDutiesTaxesAndFees(Money $totalDutiesTaxesAndFees)
+    {
+        $this->values['TotalDutiesTaxesAndFees'] = $totalDutiesTaxesAndFees;
+        return $this;
+    }
+
+    /**
+     * This shipment's totalNetCharge + totalDutiesTaxesAndFees; some duties and taxes are only provided if estimated duties and taxes were calculated for this shipment AND duties, taxes and transportation charges are all paid by the same sender's account.
      *
      * @param Money $totalNetChargeWithDutiesAndTaxes
      * @return $this
@@ -410,6 +437,18 @@ class ShipmentRateDetail extends AbstractComplexType
     public function setDutiesAndTaxes(array $dutiesAndTaxes)
     {
         $this->values['DutiesAndTaxes'] = $dutiesAndTaxes;
+        return $this;
+    }
+
+    /**
+     * Identifies the shipment-level fees and taxes that are not based on transportation charges or commodity-level estimated duties and taxes.
+     *
+     * @param AncillaryFeeAndTax[] $ancillaryFeesAndTaxes
+     * @return $this
+     */
+    public function setAncillaryFeesAndTaxes(array $ancillaryFeesAndTaxes)
+    {
+        $this->values['AncillaryFeesAndTaxes'] = $ancillaryFeesAndTaxes;
         return $this;
     }
 

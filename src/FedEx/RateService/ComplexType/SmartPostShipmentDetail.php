@@ -10,6 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  *
+ * @property SmartPostShipmentProcessingOptionsRequested $ProcessingOptionsRequested
  * @property \FedEx\RateService\SimpleType\SmartPostIndiciaType|string $Indicia
  * @property \FedEx\RateService\SimpleType\SmartPostAncillaryEndorsementType|string $AncillaryEndorsement
  * @property string $HubId
@@ -24,6 +25,18 @@ class SmartPostShipmentDetail extends AbstractComplexType
      * @var string
      */
     protected $name = 'SmartPostShipmentDetail';
+
+    /**
+     * Set ProcessingOptionsRequested
+     *
+     * @param SmartPostShipmentProcessingOptionsRequested $processingOptionsRequested
+     * @return $this
+     */
+    public function setProcessingOptionsRequested(SmartPostShipmentProcessingOptionsRequested $processingOptionsRequested)
+    {
+        $this->values['ProcessingOptionsRequested'] = $processingOptionsRequested;
+        return $this;
+    }
 
     /**
      * Set Indicia

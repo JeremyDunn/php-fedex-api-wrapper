@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Descriptive data sent to FedEx by a customer in order to delete a package.
+ * DeleteShipmentRequest
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -41,7 +41,7 @@ class DeleteShipmentRequest extends AbstractComplexType
     }
 
     /**
-     * Descriptive data identifying the client submitting the transaction.
+     * Set ClientDetail
      *
      * @param ClientDetail $clientDetail
      * @return $this
@@ -53,7 +53,7 @@ class DeleteShipmentRequest extends AbstractComplexType
     }
 
     /**
-     * Descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
+     * Set TransactionDetail
      *
      * @param TransactionDetail $transactionDetail
      * @return $this
@@ -65,7 +65,7 @@ class DeleteShipmentRequest extends AbstractComplexType
     }
 
     /**
-     * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
+     * Set Version
      *
      * @param VersionId $version
      * @return $this
@@ -77,7 +77,7 @@ class DeleteShipmentRequest extends AbstractComplexType
     }
 
     /**
-     * The timestamp of the shipment request.
+     * Set ShipTimestamp
      *
      * @param string $shipTimestamp
      * @return $this
@@ -89,7 +89,7 @@ class DeleteShipmentRequest extends AbstractComplexType
     }
 
     /**
-     * Identifies the FedEx tracking number of the package being cancelled.
+     * Set TrackingId
      *
      * @param TrackingId $trackingId
      * @return $this
@@ -101,7 +101,7 @@ class DeleteShipmentRequest extends AbstractComplexType
     }
 
     /**
-     * Determines the type of deletion to be performed in relation to package level vs shipment level.
+     * Set DeletionControl
      *
      * @param \FedEx\ShipService\SimpleType\DeletionControlType|string $deletionControl
      * @return $this

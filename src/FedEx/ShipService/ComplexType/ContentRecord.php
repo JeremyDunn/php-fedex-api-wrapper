@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Content Record.
+ * ContentRecord
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -26,7 +26,7 @@ class ContentRecord extends AbstractComplexType
     protected $name = 'ContentRecord';
 
     /**
-     * Part Number.
+     * Set PartNumber
      *
      * @param string $partNumber
      * @return $this
@@ -38,7 +38,7 @@ class ContentRecord extends AbstractComplexType
     }
 
     /**
-     * Item Number.
+     * Set ItemNumber
      *
      * @param string $itemNumber
      * @return $this
@@ -50,7 +50,7 @@ class ContentRecord extends AbstractComplexType
     }
 
     /**
-     * Received Quantity.
+     * Set ReceivedQuantity
      *
      * @param int $receivedQuantity
      * @return $this
@@ -62,7 +62,7 @@ class ContentRecord extends AbstractComplexType
     }
 
     /**
-     * Description.
+     * Set Description
      *
      * @param string $description
      * @return $this

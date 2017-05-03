@@ -15,18 +15,7 @@ class Request extends AbstractRequest
     const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/ship';
     const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/ship';
 
-    protected static $wsdlFileName = 'ShipService_v12.wsdl';
-            
-    /**
-     * Sends the CreatePendingShipmentRequest and returns the response
-     *
-     * @param ComplexType\CreatePendingShipmentRequest $createPendingShipmentRequest
-     * @return stdClass
-     */
-    public function getCreatePendingShipmentReply(ComplexType\CreatePendingShipmentRequest $createPendingShipmentRequest)
-    {
-        return $this->getSoapClient()->createPendingShipment($createPendingShipmentRequest->toArray());
-    }
+    protected static $wsdlFileName = 'ShipService_v19.wsdl';
             
     /**
      * Sends the ProcessTagRequest and returns the response
@@ -48,17 +37,6 @@ class Request extends AbstractRequest
     public function getProcessShipmentReply(ComplexType\ProcessShipmentRequest $processShipmentRequest)
     {
         return $this->getSoapClient()->processShipment($processShipmentRequest->toArray());
-    }
-            
-    /**
-     * Sends the CancelPendingShipmentRequest and returns the response
-     *
-     * @param ComplexType\CancelPendingShipmentRequest $cancelPendingShipmentRequest
-     * @return stdClass
-     */
-    public function getCancelPendingShipmentReply(ComplexType\CancelPendingShipmentRequest $cancelPendingShipmentRequest)
-    {
-        return $this->getSoapClient()->cancelPendingShipment($cancelPendingShipmentRequest->toArray());
     }
             
     /**

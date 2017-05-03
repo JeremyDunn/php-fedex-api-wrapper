@@ -4,7 +4,7 @@ namespace FedEx\TrackService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * FedEx Signature Proof Of Delivery Letter request.
+ * SignatureProofOfDeliveryLetterRequest
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper

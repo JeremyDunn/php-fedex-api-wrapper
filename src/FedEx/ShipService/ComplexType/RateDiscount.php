@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Identifies a discount applied to the shipment.
+ * RateDiscount
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -26,7 +26,7 @@ class RateDiscount extends AbstractComplexType
     protected $name = 'RateDiscount';
 
     /**
-     * Identifies the type of discount applied to the shipment.
+     * Set RateDiscountType
      *
      * @param \FedEx\ShipService\SimpleType\RateDiscountType|string $rateDiscountType
      * @return $this
@@ -50,7 +50,7 @@ class RateDiscount extends AbstractComplexType
     }
 
     /**
-     * The amount of the discount applied to the shipment.
+     * Set Amount
      *
      * @param Money $amount
      * @return $this
@@ -62,7 +62,7 @@ class RateDiscount extends AbstractComplexType
     }
 
     /**
-     * The percentage of the discount applied to the shipment.
+     * Set Percent
      *
      * @param float $percent
      * @return $this

@@ -39,7 +39,7 @@ class RateReplyDetail extends AbstractComplexType
     protected $name = 'RateReplyDetail';
 
     /**
-     * Identifies the FedEx service to use in shipping the package. See ServiceType for list of valid enumerated values.
+     * Set ServiceType
      *
      * @param \FedEx\RateService\SimpleType\ServiceType|string $serviceType
      * @return $this
@@ -51,7 +51,7 @@ class RateReplyDetail extends AbstractComplexType
     }
 
     /**
-     * Identifies the packaging used by the requestor for the package. See PackagingType for list of valid enumerated values.
+     * Set PackagingType
      *
      * @param \FedEx\RateService\SimpleType\PackagingType|string $packagingType
      * @return $this
@@ -135,7 +135,7 @@ class RateReplyDetail extends AbstractComplexType
     }
 
     /**
-     * Identification of an airport, using standard three-letter abbreviations.
+     * Set DestinationAirportId
      *
      * @param string $destinationAirportId
      * @return $this
@@ -147,7 +147,7 @@ class RateReplyDetail extends AbstractComplexType
     }
 
     /**
-     * Indicates whether or not this shipment is eligible for a money back guarantee.
+     * Set IneligibleForMoneyBackGuarantee
      *
      * @param boolean $ineligibleForMoneyBackGuarantee
      * @return $this
@@ -159,7 +159,7 @@ class RateReplyDetail extends AbstractComplexType
     }
 
     /**
-     * Commitment code for the origin.
+     * Not populated by FAST service in Jan07.
      *
      * @param string $originServiceArea
      * @return $this
@@ -171,7 +171,7 @@ class RateReplyDetail extends AbstractComplexType
     }
 
     /**
-     * Commitment code for the destination.
+     * Not populated by FAST service in Jan07.
      *
      * @param string $destinationServiceArea
      * @return $this
@@ -183,7 +183,7 @@ class RateReplyDetail extends AbstractComplexType
     }
 
     /**
-     * Time in transit from pickup to delivery.
+     * Not populated by FAST service in Jan07.
      *
      * @param \FedEx\RateService\SimpleType\TransitTimeType|string $transitTime
      * @return $this
@@ -207,7 +207,7 @@ class RateReplyDetail extends AbstractComplexType
     }
 
     /**
-     * The signature option for this package.
+     * Not populated by FAST service in Jan07. Actual signature option applied, to allow for cases in wihch the original value conflicted with other service features in the shipment.
      *
      * @param \FedEx\RateService\SimpleType\SignatureOptionType|string $signatureOption
      * @return $this
@@ -219,7 +219,7 @@ class RateReplyDetail extends AbstractComplexType
     }
 
     /**
-     * The actual rate type of the charges for this package.
+     * Set ActualRateType
      *
      * @param \FedEx\RateService\SimpleType\ReturnedRateType|string $actualRateType
      * @return $this

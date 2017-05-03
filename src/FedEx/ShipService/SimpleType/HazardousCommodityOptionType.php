@@ -4,7 +4,7 @@ namespace FedEx\ShipService\SimpleType;
 use FedEx\AbstractSimpleType;
 
 /**
- * Indicates which kind of hazardous content (as defined by DOT) is being reported.
+ * Indicates which kind of hazardous content is being reported.
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -12,8 +12,9 @@ use FedEx\AbstractSimpleType;
  */
 class HazardousCommodityOptionType extends AbstractSimpleType
 {
+    const _BATTERY = 'BATTERY';
     const _HAZARDOUS_MATERIALS = 'HAZARDOUS_MATERIALS';
-    const _LITHIUM_BATTERY_EXCEPTION = 'LITHIUM_BATTERY_EXCEPTION';
+    const _LIMITED_QUANTITIES_COMMODITIES = 'LIMITED_QUANTITIES_COMMODITIES';
     const _ORM_D = 'ORM_D';
     const _REPORTABLE_QUANTITIES = 'REPORTABLE_QUANTITIES';
     const _SMALL_QUANTITY_EXCEPTION = 'SMALL_QUANTITY_EXCEPTION';

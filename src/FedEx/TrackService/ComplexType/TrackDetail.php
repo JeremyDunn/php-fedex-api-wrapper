@@ -4,7 +4,7 @@ namespace FedEx\TrackService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Detailed tracking information about a particular package.
+ * TrackDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -14,45 +14,75 @@ use FedEx\AbstractComplexType;
  * @property string $TrackingNumber
  * @property StringBarcode $Barcode
  * @property string $TrackingNumberUniqueIdentifier
- * @property string $StatusCode
- * @property string $StatusDescription
+ * @property TrackStatusDetail $StatusDetail
+ * @property TrackInformationNoteDetail[] $InformationNotes
+ * @property CustomerExceptionRequestDetail[] $CustomerExceptionRequests
  * @property TrackReconciliation $Reconciliation
  * @property string $ServiceCommitMessage
+ * @property string $DestinationServiceArea
+ * @property string $DestinationServiceAreaDescription
  * @property \FedEx\TrackService\SimpleType\CarrierCodeType|string $CarrierCode
  * @property \FedEx\TrackService\SimpleType\OperatingCompanyType|string $OperatingCompany
+ * @property string $OperatingCompanyOrCarrierDescription
+ * @property string $CartageAgentCompanyName
  * @property ContactAndAddress $ProductionLocationContactAndAddress
- * @property TrackPackageIdentifier[] $OtherIdentifiers
- * @property string $ServiceInfo
- * @property \FedEx\TrackService\SimpleType\ServiceType|string $ServiceType
+ * @property TrackOtherIdentifierDetail[] $OtherIdentifiers
+ * @property string $FormId
+ * @property TrackServiceDescriptionDetail $Service
  * @property Weight $PackageWeight
  * @property Dimensions $PackageDimensions
  * @property Weight $PackageDimensionalWeight
  * @property Weight $ShipmentWeight
  * @property string $Packaging
  * @property \FedEx\TrackService\SimpleType\PackagingType|string $PackagingType
+ * @property \FedEx\TrackService\SimpleType\PhysicalPackagingType|string $PhysicalPackagingType
  * @property int $PackageSequenceNumber
  * @property int $PackageCount
- * @property \FedEx\TrackService\SimpleType\TrackReturnLabelType|string $TrackReturnLabelType
- * @property string $TrackReturnDescription
+ * @property string $CreatorSoftwareId
+ * @property TrackChargeDetail[] $Charges
+ * @property string $NickName
+ * @property string $Notes
+ * @property \FedEx\TrackService\SimpleType\TrackDetailAttributeType|string[] $Attributes
+ * @property ContentRecord[] $ShipmentContents
+ * @property string[] $PackageContents
+ * @property string $ClearanceLocationCode
+ * @property Commodity[] $Commodities
+ * @property TrackReturnDetail $ReturnDetail
+ * @property CustomsOptionDetail[] $CustomsOptionDetails
+ * @property TrackAdvanceNotificationDetail $AdvanceNotificationDetail
+ * @property TrackSpecialHandling[] $SpecialHandlings
+ * @property TrackPayment[] $Payments
+ * @property Contact $Shipper
+ * @property \FedEx\TrackService\SimpleType\TrackPossessionStatusType|string $PossessionStatus
  * @property Address $ShipperAddress
  * @property Address $OriginLocationAddress
- * @property string $EstimatedPickupTimestamp
- * @property string $ShipTimestamp
+ * @property string $OriginStationId
+ * @property TrackingDateOrTimestamp[] $DatesOrTimes
  * @property Distance $TotalTransitDistance
  * @property Distance $DistanceToDestination
+ * @property TrackSpecialInstruction[] $SpecialInstructions
+ * @property Contact $Recipient
+ * @property Address $LastUpdatedDestinationAddress
  * @property Address $DestinationAddress
+ * @property Contact $HoldAtLocationContact
+ * @property Address $HoldAtLocationAddress
+ * @property string $DestinationStationId
  * @property Address $DestinationLocationAddress
- * @property string $EstimatedDeliveryTimestamp
- * @property string $ActualDeliveryTimestamp
+ * @property \FedEx\TrackService\SimpleType\FedExLocationType|string $DestinationLocationType
+ * @property string $DestinationLocationTimeZoneOffset
  * @property Address $ActualDeliveryAddress
  * @property \FedEx\TrackService\SimpleType\OfficeOrderDeliveryMethodType|string $OfficeOrderDeliveryMethod
  * @property \FedEx\TrackService\SimpleType\TrackDeliveryLocationType|string $DeliveryLocationType
  * @property string $DeliveryLocationDescription
+ * @property int $DeliveryAttempts
  * @property string $DeliverySignatureName
- * @property boolean $SignatureProofOfDeliveryAvailable
- * @property \FedEx\TrackService\SimpleType\EMailNotificationEventType|string[] $NotificationEventsAvailable
+ * @property PieceCountVerificationDetail[] $PieceCountVerificationDetails
+ * @property int $TotalUniqueAddressCountInConsolidation
+ * @property AvailableImagesDetail[] $AvailableImages
+ * @property SignatureImageDetail $Signature
+ * @property \FedEx\TrackService\SimpleType\NotificationEventType|string[] $NotificationEventsAvailable
  * @property TrackSplitShipmentPart[] $SplitShipmentParts
- * @property \FedEx\TrackService\SimpleType\RedirectToHoldEligibilityType|string $RedirectToHoldEligibility
+ * @property DeliveryOptionEligibilityDetail[] $DeliveryOptionEligibilityDetails
  * @property TrackEvent[] $Events
 
  */
@@ -114,26 +144,38 @@ class TrackDetail extends AbstractComplexType
     }
 
     /**
-     * A code that identifies this type of status. This is the most recent status.
+     * Specifies details about the status of the shipment being tracked.
      *
-     * @param string $statusCode
+     * @param TrackStatusDetail $statusDetail
      * @return $this
      */
-    public function setStatusCode($statusCode)
+    public function setStatusDetail(TrackStatusDetail $statusDetail)
     {
-        $this->values['StatusCode'] = $statusCode;
+        $this->values['StatusDetail'] = $statusDetail;
         return $this;
     }
 
     /**
-     * A human-readable description of this status.
+     * Notifications to the end user that provide additional information relevant to the tracked shipment. For example, a notification may indicate that a change in behavior has occurred.
      *
-     * @param string $statusDescription
+     * @param TrackInformationNoteDetail[] $informationNotes
      * @return $this
      */
-    public function setStatusDescription($statusDescription)
+    public function setInformationNotes(array $informationNotes)
     {
-        $this->values['StatusDescription'] = $statusDescription;
+        $this->values['InformationNotes'] = $informationNotes;
+        return $this;
+    }
+
+    /**
+     * Set CustomerExceptionRequests
+     *
+     * @param CustomerExceptionRequestDetail[] $customerExceptionRequests
+     * @return $this
+     */
+    public function setCustomerExceptionRequests(array $customerExceptionRequests)
+    {
+        $this->values['CustomerExceptionRequests'] = $customerExceptionRequests;
         return $this;
     }
 
@@ -162,6 +204,30 @@ class TrackDetail extends AbstractComplexType
     }
 
     /**
+     * Set DestinationServiceArea
+     *
+     * @param string $destinationServiceArea
+     * @return $this
+     */
+    public function setDestinationServiceArea($destinationServiceArea)
+    {
+        $this->values['DestinationServiceArea'] = $destinationServiceArea;
+        return $this;
+    }
+
+    /**
+     * Set DestinationServiceAreaDescription
+     *
+     * @param string $destinationServiceAreaDescription
+     * @return $this
+     */
+    public function setDestinationServiceAreaDescription($destinationServiceAreaDescription)
+    {
+        $this->values['DestinationServiceAreaDescription'] = $destinationServiceAreaDescription;
+        return $this;
+    }
+
+    /**
      * Identifies a FedEx operating company (transportation).
      *
      * @param \FedEx\TrackService\SimpleType\CarrierCodeType|string $carrierCode
@@ -186,6 +252,30 @@ class TrackDetail extends AbstractComplexType
     }
 
     /**
+     * Specifies a detailed description about the carrier or the operating company.
+     *
+     * @param string $operatingCompanyOrCarrierDescription
+     * @return $this
+     */
+    public function setOperatingCompanyOrCarrierDescription($operatingCompanyOrCarrierDescription)
+    {
+        $this->values['OperatingCompanyOrCarrierDescription'] = $operatingCompanyOrCarrierDescription;
+        return $this;
+    }
+
+    /**
+     * If the package was interlined to a cartage agent, this is the name of the cartage agent. (Returned for CSR SL only.)
+     *
+     * @param string $cartageAgentCompanyName
+     * @return $this
+     */
+    public function setCartageAgentCompanyName($cartageAgentCompanyName)
+    {
+        $this->values['CartageAgentCompanyName'] = $cartageAgentCompanyName;
+        return $this;
+    }
+
+    /**
      * Specifies the FXO production centre contact and address.
      *
      * @param ContactAndAddress $productionLocationContactAndAddress
@@ -198,9 +288,9 @@ class TrackDetail extends AbstractComplexType
     }
 
     /**
-     * Other related identifiers for this package such as reference numbers.
+     * Set OtherIdentifiers
      *
-     * @param TrackPackageIdentifier[] $otherIdentifiers
+     * @param TrackOtherIdentifierDetail[] $otherIdentifiers
      * @return $this
      */
     public function setOtherIdentifiers(array $otherIdentifiers)
@@ -210,26 +300,26 @@ class TrackDetail extends AbstractComplexType
     }
 
     /**
-     * Retained for legacy compatibility only. User/screen friendly description of the Service type (e.g. Priority Overnight).
+     * (Returned for CSR SL only.)
      *
-     * @param string $serviceInfo
+     * @param string $formId
      * @return $this
      */
-    public function setServiceInfo($serviceInfo)
+    public function setFormId($formId)
     {
-        $this->values['ServiceInfo'] = $serviceInfo;
+        $this->values['FormId'] = $formId;
         return $this;
     }
 
     /**
-     * Strict representation of the Service type (e.g. PRIORITY_OVERNIGHT).
+     * Specifies details about service such as service description and type.
      *
-     * @param \FedEx\TrackService\SimpleType\ServiceType|string $serviceType
+     * @param TrackServiceDescriptionDetail $service
      * @return $this
      */
-    public function setServiceType($serviceType)
+    public function setService(TrackServiceDescriptionDetail $service)
     {
-        $this->values['ServiceType'] = $serviceType;
+        $this->values['Service'] = $service;
         return $this;
     }
 
@@ -306,6 +396,18 @@ class TrackDetail extends AbstractComplexType
     }
 
     /**
+     * Set PhysicalPackagingType
+     *
+     * @param \FedEx\TrackService\SimpleType\PhysicalPackagingType|string $physicalPackagingType
+     * @return $this
+     */
+    public function setPhysicalPackagingType($physicalPackagingType)
+    {
+        $this->values['PhysicalPackagingType'] = $physicalPackagingType;
+        return $this;
+    }
+
+    /**
      * The sequence number of this package in a shipment. This would be 2 if it was package number 2 of 4.
      *
      * @param int $packageSequenceNumber
@@ -330,31 +432,199 @@ class TrackDetail extends AbstractComplexType
     }
 
     /**
-     * Set TrackReturnLabelType
+     * FOR FEDEX INTERNAL USE ONLY: Specifies the software id of the device that was used to create this tracked shipment.
      *
-     * @param \FedEx\TrackService\SimpleType\TrackReturnLabelType|string $trackReturnLabelType
+     * @param string $creatorSoftwareId
      * @return $this
      */
-    public function setTrackReturnLabelType($trackReturnLabelType)
+    public function setCreatorSoftwareId($creatorSoftwareId)
     {
-        $this->values['TrackReturnLabelType'] = $trackReturnLabelType;
+        $this->values['CreatorSoftwareId'] = $creatorSoftwareId;
         return $this;
     }
 
     /**
-     * Set TrackReturnDescription
+     * Specifies the details about the SPOC details.
      *
-     * @param string $trackReturnDescription
+     * @param TrackChargeDetail[] $charges
      * @return $this
      */
-    public function setTrackReturnDescription($trackReturnDescription)
+    public function setCharges(array $charges)
     {
-        $this->values['TrackReturnDescription'] = $trackReturnDescription;
+        $this->values['Charges'] = $charges;
         return $this;
     }
 
     /**
-     * The address information for the shipper.
+     * Set NickName
+     *
+     * @param string $nickName
+     * @return $this
+     */
+    public function setNickName($nickName)
+    {
+        $this->values['NickName'] = $nickName;
+        return $this;
+    }
+
+    /**
+     * Set Notes
+     *
+     * @param string $notes
+     * @return $this
+     */
+    public function setNotes($notes)
+    {
+        $this->values['Notes'] = $notes;
+        return $this;
+    }
+
+    /**
+     * Set Attributes
+     *
+     * @param \FedEx\TrackService\SimpleType\TrackDetailAttributeType[]|string[] $attributes
+     * @return $this
+     */
+    public function setAttributes(array $attributes)
+    {
+        $this->values['Attributes'] = $attributes;
+        return $this;
+    }
+
+    /**
+     * Set ShipmentContents
+     *
+     * @param ContentRecord[] $shipmentContents
+     * @return $this
+     */
+    public function setShipmentContents(array $shipmentContents)
+    {
+        $this->values['ShipmentContents'] = $shipmentContents;
+        return $this;
+    }
+
+    /**
+     * Set PackageContents
+     *
+     * @param string $packageContents
+     * @return $this
+     */
+    public function setPackageContents($packageContents)
+    {
+        $this->values['PackageContents'] = $packageContents;
+        return $this;
+    }
+
+    /**
+     * Set ClearanceLocationCode
+     *
+     * @param string $clearanceLocationCode
+     * @return $this
+     */
+    public function setClearanceLocationCode($clearanceLocationCode)
+    {
+        $this->values['ClearanceLocationCode'] = $clearanceLocationCode;
+        return $this;
+    }
+
+    /**
+     * Set Commodities
+     *
+     * @param Commodity[] $commodities
+     * @return $this
+     */
+    public function setCommodities(array $commodities)
+    {
+        $this->values['Commodities'] = $commodities;
+        return $this;
+    }
+
+    /**
+     * Set ReturnDetail
+     *
+     * @param TrackReturnDetail $returnDetail
+     * @return $this
+     */
+    public function setReturnDetail(TrackReturnDetail $returnDetail)
+    {
+        $this->values['ReturnDetail'] = $returnDetail;
+        return $this;
+    }
+
+    /**
+     * Specifies the reason for return.
+     *
+     * @param CustomsOptionDetail[] $customsOptionDetails
+     * @return $this
+     */
+    public function setCustomsOptionDetails(array $customsOptionDetails)
+    {
+        $this->values['CustomsOptionDetails'] = $customsOptionDetails;
+        return $this;
+    }
+
+    /**
+     * Set AdvanceNotificationDetail
+     *
+     * @param TrackAdvanceNotificationDetail $advanceNotificationDetail
+     * @return $this
+     */
+    public function setAdvanceNotificationDetail(TrackAdvanceNotificationDetail $advanceNotificationDetail)
+    {
+        $this->values['AdvanceNotificationDetail'] = $advanceNotificationDetail;
+        return $this;
+    }
+
+    /**
+     * List of special handlings that applied to this package.
+     *
+     * @param TrackSpecialHandling[] $specialHandlings
+     * @return $this
+     */
+    public function setSpecialHandlings(array $specialHandlings)
+    {
+        $this->values['SpecialHandlings'] = $specialHandlings;
+        return $this;
+    }
+
+    /**
+     * Specifies the details about the payments for the shipment being tracked.
+     *
+     * @param TrackPayment[] $payments
+     * @return $this
+     */
+    public function setPayments(array $payments)
+    {
+        $this->values['Payments'] = $payments;
+        return $this;
+    }
+
+    /**
+     * (Returned for CSR SL only.)
+     *
+     * @param Contact $shipper
+     * @return $this
+     */
+    public function setShipper(Contact $shipper)
+    {
+        $this->values['Shipper'] = $shipper;
+        return $this;
+    }
+
+    /**
+     * Indicates last-known possession of package (Returned for CSR SL only.)
+     *
+     * @param \FedEx\TrackService\SimpleType\TrackPossessionStatusType|string $possessionStatus
+     * @return $this
+     */
+    public function setPossessionStatus($possessionStatus)
+    {
+        $this->values['PossessionStatus'] = $possessionStatus;
+        return $this;
+    }
+
+    /**
+     * Set ShipperAddress
      *
      * @param Address $shipperAddress
      * @return $this
@@ -378,26 +648,26 @@ class TrackDetail extends AbstractComplexType
     }
 
     /**
-     * Estimated package pickup time for shipments that haven't been picked up.
+     * (Returned for CSR SL only.)
      *
-     * @param string $estimatedPickupTimestamp
+     * @param string $originStationId
      * @return $this
      */
-    public function setEstimatedPickupTimestamp($estimatedPickupTimestamp)
+    public function setOriginStationId($originStationId)
     {
-        $this->values['EstimatedPickupTimestamp'] = $estimatedPickupTimestamp;
+        $this->values['OriginStationId'] = $originStationId;
         return $this;
     }
 
     /**
-     * Time package was shipped/tendered over to FedEx. Time portion will be populated if available, otherwise will be set to midnight.
+     * Set DatesOrTimes
      *
-     * @param string $shipTimestamp
+     * @param TrackingDateOrTimestamp[] $datesOrTimes
      * @return $this
      */
-    public function setShipTimestamp($shipTimestamp)
+    public function setDatesOrTimes(array $datesOrTimes)
     {
-        $this->values['ShipTimestamp'] = $shipTimestamp;
+        $this->values['DatesOrTimes'] = $datesOrTimes;
         return $this;
     }
 
@@ -426,6 +696,42 @@ class TrackDetail extends AbstractComplexType
     }
 
     /**
+     * Provides additional details about package delivery.
+     *
+     * @param TrackSpecialInstruction[] $specialInstructions
+     * @return $this
+     */
+    public function setSpecialInstructions(array $specialInstructions)
+    {
+        $this->values['SpecialInstructions'] = $specialInstructions;
+        return $this;
+    }
+
+    /**
+     * (Returned for CSR SL only.)
+     *
+     * @param Contact $recipient
+     * @return $this
+     */
+    public function setRecipient(Contact $recipient)
+    {
+        $this->values['Recipient'] = $recipient;
+        return $this;
+    }
+
+    /**
+     * This is the latest updated destination address.
+     *
+     * @param Address $lastUpdatedDestinationAddress
+     * @return $this
+     */
+    public function setLastUpdatedDestinationAddress(Address $lastUpdatedDestinationAddress)
+    {
+        $this->values['LastUpdatedDestinationAddress'] = $lastUpdatedDestinationAddress;
+        return $this;
+    }
+
+    /**
      * The address this package is to be (or has been) delivered.
      *
      * @param Address $destinationAddress
@@ -434,6 +740,42 @@ class TrackDetail extends AbstractComplexType
     public function setDestinationAddress(Address $destinationAddress)
     {
         $this->values['DestinationAddress'] = $destinationAddress;
+        return $this;
+    }
+
+    /**
+     * Set HoldAtLocationContact
+     *
+     * @param Contact $holdAtLocationContact
+     * @return $this
+     */
+    public function setHoldAtLocationContact(Contact $holdAtLocationContact)
+    {
+        $this->values['HoldAtLocationContact'] = $holdAtLocationContact;
+        return $this;
+    }
+
+    /**
+     * The address this package is requested to placed on hold.
+     *
+     * @param Address $holdAtLocationAddress
+     * @return $this
+     */
+    public function setHoldAtLocationAddress(Address $holdAtLocationAddress)
+    {
+        $this->values['HoldAtLocationAddress'] = $holdAtLocationAddress;
+        return $this;
+    }
+
+    /**
+     * (Returned for CSR SL only.)
+     *
+     * @param string $destinationStationId
+     * @return $this
+     */
+    public function setDestinationStationId($destinationStationId)
+    {
+        $this->values['DestinationStationId'] = $destinationStationId;
         return $this;
     }
 
@@ -450,26 +792,26 @@ class TrackDetail extends AbstractComplexType
     }
 
     /**
-     * Projected package delivery time based on ship time stamp, service and destination. Not populated if delivery has already occurred.
+     * Set DestinationLocationType
      *
-     * @param string $estimatedDeliveryTimestamp
+     * @param \FedEx\TrackService\SimpleType\FedExLocationType|string $destinationLocationType
      * @return $this
      */
-    public function setEstimatedDeliveryTimestamp($estimatedDeliveryTimestamp)
+    public function setDestinationLocationType($destinationLocationType)
     {
-        $this->values['EstimatedDeliveryTimestamp'] = $estimatedDeliveryTimestamp;
+        $this->values['DestinationLocationType'] = $destinationLocationType;
         return $this;
     }
 
     /**
-     * The time the package was actually delivered.
+     * Set DestinationLocationTimeZoneOffset
      *
-     * @param string $actualDeliveryTimestamp
+     * @param string $destinationLocationTimeZoneOffset
      * @return $this
      */
-    public function setActualDeliveryTimestamp($actualDeliveryTimestamp)
+    public function setDestinationLocationTimeZoneOffset($destinationLocationTimeZoneOffset)
     {
-        $this->values['ActualDeliveryTimestamp'] = $actualDeliveryTimestamp;
+        $this->values['DestinationLocationTimeZoneOffset'] = $destinationLocationTimeZoneOffset;
         return $this;
     }
 
@@ -522,6 +864,18 @@ class TrackDetail extends AbstractComplexType
     }
 
     /**
+     * Specifies the number of delivery attempts made to deliver the shipment.
+     *
+     * @param int $deliveryAttempts
+     * @return $this
+     */
+    public function setDeliveryAttempts($deliveryAttempts)
+    {
+        $this->values['DeliveryAttempts'] = $deliveryAttempts;
+        return $this;
+    }
+
+    /**
      * This is either the name of the person that signed for the package or "Signature not requested" or "Signature on file".
      *
      * @param string $deliverySignatureName
@@ -534,21 +888,57 @@ class TrackDetail extends AbstractComplexType
     }
 
     /**
-     * True if signed for by signature image is available.
+     * Specifies the details about the count of the packages delivered at the delivery location and the count of the packages at the origin.
      *
-     * @param boolean $signatureProofOfDeliveryAvailable
+     * @param PieceCountVerificationDetail[] $pieceCountVerificationDetails
      * @return $this
      */
-    public function setSignatureProofOfDeliveryAvailable($signatureProofOfDeliveryAvailable)
+    public function setPieceCountVerificationDetails(array $pieceCountVerificationDetails)
     {
-        $this->values['SignatureProofOfDeliveryAvailable'] = $signatureProofOfDeliveryAvailable;
+        $this->values['PieceCountVerificationDetails'] = $pieceCountVerificationDetails;
         return $this;
     }
 
     /**
-     * The types of email notifications that are available for the package.
+     * Specifies the total number of unique addresses on the CRNs in a consolidation.
      *
-     * @param \FedEx\TrackService\SimpleType\EMailNotificationEventType[]|string[] $notificationEventsAvailable
+     * @param int $totalUniqueAddressCountInConsolidation
+     * @return $this
+     */
+    public function setTotalUniqueAddressCountInConsolidation($totalUniqueAddressCountInConsolidation)
+    {
+        $this->values['TotalUniqueAddressCountInConsolidation'] = $totalUniqueAddressCountInConsolidation;
+        return $this;
+    }
+
+    /**
+     * Set AvailableImages
+     *
+     * @param AvailableImagesDetail[] $availableImages
+     * @return $this
+     */
+    public function setAvailableImages(array $availableImages)
+    {
+        $this->values['AvailableImages'] = $availableImages;
+        return $this;
+    }
+
+    /**
+     * Set Signature
+     *
+     * @param SignatureImageDetail $signature
+     * @return $this
+     */
+    public function setSignature(SignatureImageDetail $signature)
+    {
+        $this->values['Signature'] = $signature;
+        return $this;
+    }
+
+    /**
+     * Set NotificationEventsAvailable
+     *
+     * @param \FedEx\TrackService\SimpleType\NotificationEventType[]|string[] $notificationEventsAvailable
      * @return $this
      */
     public function setNotificationEventsAvailable(array $notificationEventsAvailable)
@@ -570,14 +960,14 @@ class TrackDetail extends AbstractComplexType
     }
 
     /**
-     * Indicates redirection eligibility as determined by tracking service, subject to refinement/override by redirect-to-hold service.
+     * Specifies the details about the eligibility for different delivery options.
      *
-     * @param \FedEx\TrackService\SimpleType\RedirectToHoldEligibilityType|string $redirectToHoldEligibility
+     * @param DeliveryOptionEligibilityDetail[] $deliveryOptionEligibilityDetails
      * @return $this
      */
-    public function setRedirectToHoldEligibility($redirectToHoldEligibility)
+    public function setDeliveryOptionEligibilityDetails(array $deliveryOptionEligibilityDetails)
     {
-        $this->values['RedirectToHoldEligibility'] = $redirectToHoldEligibility;
+        $this->values['DeliveryOptionEligibilityDetails'] = $deliveryOptionEligibilityDetails;
         return $this;
     }
 

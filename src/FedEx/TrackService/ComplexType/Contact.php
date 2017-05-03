@@ -15,6 +15,7 @@ use FedEx\AbstractComplexType;
  * @property string $CompanyName
  * @property string $PhoneNumber
  * @property string $PhoneExtension
+ * @property string $TollFreePhoneNumber
  * @property string $PagerNumber
  * @property string $FaxNumber
  * @property string $EMailAddress
@@ -86,6 +87,18 @@ class Contact extends AbstractComplexType
     public function setPhoneExtension($phoneExtension)
     {
         $this->values['PhoneExtension'] = $phoneExtension;
+        return $this;
+    }
+
+    /**
+     * Identifies a toll free number, if any, associated with this contact.
+     *
+     * @param string $tollFreePhoneNumber
+     * @return $this
+     */
+    public function setTollFreePhoneNumber($tollFreePhoneNumber)
+    {
+        $this->values['TollFreePhoneNumber'] = $tollFreePhoneNumber;
         return $this;
     }
 
