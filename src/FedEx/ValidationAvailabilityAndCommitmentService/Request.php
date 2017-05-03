@@ -21,7 +21,7 @@ class Request extends AbstractRequest
      * Sends the ServiceAvailabilityRequest and returns the response
      *
      * @param ComplexType\ServiceAvailabilityRequest $serviceAvailabilityRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getServiceAvailabilityReply(ComplexType\ServiceAvailabilityRequest $serviceAvailabilityRequest)
     {

@@ -21,7 +21,7 @@ class Request extends AbstractRequest
      * Sends the ProcessTagRequest and returns the response
      *
      * @param ComplexType\ProcessTagRequest $processTagRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getProcessTagReply(ComplexType\ProcessTagRequest $processTagRequest)
     {
@@ -32,7 +32,7 @@ class Request extends AbstractRequest
      * Sends the ProcessShipmentRequest and returns the response
      *
      * @param ComplexType\ProcessShipmentRequest $processShipmentRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getProcessShipmentReply(ComplexType\ProcessShipmentRequest $processShipmentRequest)
     {
@@ -43,7 +43,7 @@ class Request extends AbstractRequest
      * Sends the DeleteTagRequest and returns the response
      *
      * @param ComplexType\DeleteTagRequest $deleteTagRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getDeleteTagReply(ComplexType\DeleteTagRequest $deleteTagRequest)
     {
@@ -54,7 +54,7 @@ class Request extends AbstractRequest
      * Sends the DeleteShipmentRequest and returns the response
      *
      * @param ComplexType\DeleteShipmentRequest $deleteShipmentRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getDeleteShipmentReply(ComplexType\DeleteShipmentRequest $deleteShipmentRequest)
     {
@@ -65,7 +65,7 @@ class Request extends AbstractRequest
      * Sends the ValidateShipmentRequest and returns the response
      *
      * @param ComplexType\ValidateShipmentRequest $validateShipmentRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getValidateShipmentReply(ComplexType\ValidateShipmentRequest $validateShipmentRequest)
     {

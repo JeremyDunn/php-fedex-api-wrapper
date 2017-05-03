@@ -21,7 +21,7 @@ class Request extends AbstractRequest
      * Sends the AddressValidationRequest and returns the response
      *
      * @param ComplexType\AddressValidationRequest $addressValidationRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getAddressValidationReply(ComplexType\AddressValidationRequest $addressValidationRequest)
     {

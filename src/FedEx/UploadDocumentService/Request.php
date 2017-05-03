@@ -21,7 +21,7 @@ class Request extends AbstractRequest
      * Sends the UploadDocumentsRequest and returns the response
      *
      * @param ComplexType\UploadDocumentsRequest $uploadDocumentsRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getUploadDocumentsReply(ComplexType\UploadDocumentsRequest $uploadDocumentsRequest)
     {
@@ -32,7 +32,7 @@ class Request extends AbstractRequest
      * Sends the UploadImagesRequest and returns the response
      *
      * @param ComplexType\UploadImagesRequest $uploadImagesRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getUploadImagesReply(ComplexType\UploadImagesRequest $uploadImagesRequest)
     {

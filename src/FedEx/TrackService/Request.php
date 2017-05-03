@@ -21,7 +21,7 @@ class Request extends AbstractRequest
      * Sends the SignatureProofOfDeliveryLetterRequest and returns the response
      *
      * @param ComplexType\SignatureProofOfDeliveryLetterRequest $signatureProofOfDeliveryLetterRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getRetrieveSignatureProofOfDeliveryLetterReply(ComplexType\SignatureProofOfDeliveryLetterRequest $signatureProofOfDeliveryLetterRequest)
     {
@@ -32,7 +32,7 @@ class Request extends AbstractRequest
      * Sends the TrackRequest and returns the response
      *
      * @param ComplexType\TrackRequest $trackRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getTrackReply(ComplexType\TrackRequest $trackRequest)
     {
@@ -43,7 +43,7 @@ class Request extends AbstractRequest
      * Sends the SignatureProofOfDeliveryFaxRequest and returns the response
      *
      * @param ComplexType\SignatureProofOfDeliveryFaxRequest $signatureProofOfDeliveryFaxRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getSendSignatureProofOfDeliveryFaxReply(ComplexType\SignatureProofOfDeliveryFaxRequest $signatureProofOfDeliveryFaxRequest)
     {
@@ -54,7 +54,7 @@ class Request extends AbstractRequest
      * Sends the SendNotificationsRequest and returns the response
      *
      * @param ComplexType\SendNotificationsRequest $sendNotificationsRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getSendNotificationsReply(ComplexType\SendNotificationsRequest $sendNotificationsRequest)
     {

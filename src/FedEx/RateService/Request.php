@@ -21,7 +21,7 @@ class Request extends AbstractRequest
      * Sends the RateRequest and returns the response
      *
      * @param ComplexType\RateRequest $rateRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getGetRatesReply(ComplexType\RateRequest $rateRequest)
     {
