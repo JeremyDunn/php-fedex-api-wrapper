@@ -27,34 +27,6 @@ class GenerateComplexTypeClasses extends AbstractGenerate
     ];
 
     /**
-     * Constructor
-     *
-     * @param string $exportPath Path to export ComplexType classes
-     * @param string $wsdlPath Path to .wsdl file
-     * @param string $baseNamespace base Namespace name (eg: FedEx\RateService).
-     * @param string $subPackageName Sub package the generated class belongs to (used in DocBlock)
-     * @throws \Exception
-     */
-    public function __construct($exportPath, $wsdlPath, $baseNamespace, $subPackageName)
-    {
-        if (file_exists($wsdlPath)) {
-            $this->wsdlPath = $wsdlPath;
-        } else {
-            throw new \Exception('path to wsdl file is invalid');
-        }
-
-        if (is_writable($exportPath)) {
-            $this->exportPath = $exportPath;
-        } else {
-            throw new \Exception('cannot write to export path');
-        }
-
-        $this->baseNamespace = $baseNamespace;
-        $this->subPackageName = $subPackageName;
-        $this->loadXML();
-    }
-
-    /**
      * Run generator
      */
     public function run()
@@ -133,7 +105,7 @@ class GenerateComplexTypeClasses extends AbstractGenerate
 
         $fileBody = <<<TEXT
 <?php
-namespace {$this->baseNamespace}\ComplexType;
+namespace {$this->namespace}\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -172,7 +144,7 @@ TEXT;
      */
     protected function getGeneratedSetMethod(array $property)
     {
-        $simpleTypeNamespace = "\\{$this->baseNamespace}\\SimpleType\\";
+        $simpleTypeNamespace = "\\{$this->namespace}\\SimpleType\\";
 
         $varName = lcfirst($property['name']);
 
@@ -235,7 +207,7 @@ TEXT;
     {
         $typePHPDoc = $property['type'];
 
-        $simpleTypeNamespace = "\\{$this->baseNamespace}\\SimpleType\\";
+        $simpleTypeNamespace = "\\{$this->namespace}\\SimpleType\\";
         if ($this->isSimpleType($property['type'])) {
             $typePHPDoc = $simpleTypeNamespace . $property['type'] . '|string';
         } else {

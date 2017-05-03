@@ -31,17 +31,8 @@ class GenerateRequestClass extends AbstractGenerate
      */
     public function __construct($exportPath, $wsdlPath, $namespace, $subPackageName)
     {
-        if (file_exists($wsdlPath)) {
-            $this->wsdlPath = $wsdlPath;
-        } else {
-            throw new \Exception('path to wsdl file is invalid');
-        }
-
+        parent::__construct(dirname($exportPath), $wsdlPath, $namespace, $subPackageName);
         $this->exportPath = $exportPath;
-        $this->namespace = $namespace;
-        $this->subPackageName = $subPackageName;
-
-        $this->loadXML();
     }
 
     /**
