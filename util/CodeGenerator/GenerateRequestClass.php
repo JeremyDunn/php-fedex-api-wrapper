@@ -124,7 +124,7 @@ class GenerateRequestClass extends AbstractGenerate
      * Sends the {$functionDefinition['requestObjectName']} and returns the response
      *
      * @param ComplexType\\{$functionDefinition['requestObjectName']} {$functionDefinition['arg1VariableName']}
-     * @return stdClass
+     * @return \stdClass
      */
     {$functionDefinition['functionDefinition']}
     {
