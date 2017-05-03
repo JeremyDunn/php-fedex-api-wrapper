@@ -25,34 +25,6 @@ class GenerateSimpleTypeClasses extends AbstractGenerate
     );
 
     /**
-     * Constructor
-     *
-     * @param string $exportPath Path to export ComplexType classes
-     * @param string $wsdlPath Path to .wsdl file
-     * @param string $namespace base Namespace name (eg: FedEx\RateService).
-     * @param string $subPackageName Sub package the generated class belongs to (used in DocBlock)
-     * @throws \Exception
-     */
-    public function __construct($exportPath, $wsdlPath, $namespace, $subPackageName)
-    {
-        if (file_exists($wsdlPath)) {
-            $this->wsdlPath = $wsdlPath;
-        } else {
-            throw new \Exception('path to wsdl file is invalid');
-        }
-
-        if (is_writable($exportPath)) {
-            $this->exportPath = $exportPath;
-        } else {
-            throw new \Exception('cannot write to export path');
-        }
-
-        $this->namespace = $namespace;
-        $this->subPackageName = $subPackageName;
-        $this->loadXML();
-    }
-
-    /**
      * Run generator
      */
     public function run()
