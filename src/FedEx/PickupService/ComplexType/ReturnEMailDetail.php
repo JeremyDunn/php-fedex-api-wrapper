@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -11,7 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Pickup Service
  *
  * @property string $MerchantPhoneNumber
- * @property \FedEx\Pickup\SimpleType\ReturnEMailAllowedSpecialServiceType|string[] $AllowedSpecialServices
+ * @property \FedEx\PickupService\SimpleType\ReturnEMailAllowedSpecialServiceType|string[] $AllowedSpecialServices
 
  */
 class ReturnEMailDetail extends AbstractComplexType
@@ -38,7 +38,7 @@ class ReturnEMailDetail extends AbstractComplexType
     /**
      * Identifies the allowed (merchant-authorized) special services which may be selected when the subsequent shipment is created. Only services represented in EMailLabelAllowedSpecialServiceType will be controlled by this list.
      *
-     * @param \FedEx\Pickup\SimpleType\ReturnEMailAllowedSpecialServiceType[]|string[] $allowedSpecialServices
+     * @param \FedEx\PickupService\SimpleType\ReturnEMailAllowedSpecialServiceType[]|string[] $allowedSpecialServices
      * @return $this
      */
     public function setAllowedSpecialServices(array $allowedSpecialServices)

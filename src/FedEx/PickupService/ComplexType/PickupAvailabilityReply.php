@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -10,13 +10,13 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *
- * @property \FedEx\Pickup\SimpleType\NotificationSeverityType|string $HighestSeverity
+ * @property \FedEx\PickupService\SimpleType\NotificationSeverityType|string $HighestSeverity
  * @property Notification[] $Notifications
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
  * @property string $RequestTimestamp
  * @property PickupScheduleOption[] $Options
- * @property \FedEx\Pickup\SimpleType\CloseTimeType|string $CloseTimeType
+ * @property \FedEx\PickupService\SimpleType\CloseTimeType|string $CloseTimeType
  * @property string $CloseTime
  * @property string $LocalTime
 
@@ -33,7 +33,7 @@ class PickupAvailabilityReply extends AbstractComplexType
     /**
      * Identifies the highest severity encountered when executing the request; in order from high to low: FAILURE, ERROR, WARNING, NOTE, SUCCESS.
      *
-     * @param \FedEx\Pickup\SimpleType\NotificationSeverityType|string $highestSeverity
+     * @param \FedEx\PickupService\SimpleType\NotificationSeverityType|string $highestSeverity
      * @return $this
      */
     public function setHighestSeverity($highestSeverity)
@@ -105,7 +105,7 @@ class PickupAvailabilityReply extends AbstractComplexType
     /**
      * Identifies whether the close time is specified by the customer or is the default time.
      *
-     * @param \FedEx\Pickup\SimpleType\CloseTimeType|string $closeTimeType
+     * @param \FedEx\PickupService\SimpleType\CloseTimeType|string $closeTimeType
      * @return $this
      */
     public function setCloseTimeType($closeTimeType)

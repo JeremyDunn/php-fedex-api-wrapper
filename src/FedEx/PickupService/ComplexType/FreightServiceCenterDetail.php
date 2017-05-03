@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -13,11 +13,11 @@ use FedEx\AbstractComplexType;
  * @property string $InterlineCarrierCode
  * @property string $InterlineCarrierName
  * @property int $AdditionalDays
- * @property \FedEx\Pickup\SimpleType\ServiceType|string $LocalService
+ * @property \FedEx\PickupService\SimpleType\ServiceType|string $LocalService
  * @property Distance $LocalDistance
  * @property string $LocalDuration
- * @property \FedEx\Pickup\SimpleType\FreightServiceSchedulingType|string $LocalServiceScheduling
- * @property \FedEx\Pickup\SimpleType\DayOfWeekType|string[] $LimitedServiceDays
+ * @property \FedEx\PickupService\SimpleType\FreightServiceSchedulingType|string $LocalServiceScheduling
+ * @property \FedEx\PickupService\SimpleType\DayOfWeekType|string[] $LimitedServiceDays
  * @property string $GatewayLocationId
  * @property string $Location
  * @property ContactAndAddress $ContactAndAddress
@@ -71,7 +71,7 @@ class FreightServiceCenterDetail extends AbstractComplexType
     /**
      * Service branding which may be used for local pickup or delivery, distinct from service used for line-haul of customer's shipment.
      *
-     * @param \FedEx\Pickup\SimpleType\ServiceType|string $localService
+     * @param \FedEx\PickupService\SimpleType\ServiceType|string $localService
      * @return $this
      */
     public function setLocalService($localService)
@@ -107,7 +107,7 @@ class FreightServiceCenterDetail extends AbstractComplexType
     /**
      * Specifies when/how the customer can arrange for pickup or delivery.
      *
-     * @param \FedEx\Pickup\SimpleType\FreightServiceSchedulingType|string $localServiceScheduling
+     * @param \FedEx\PickupService\SimpleType\FreightServiceSchedulingType|string $localServiceScheduling
      * @return $this
      */
     public function setLocalServiceScheduling($localServiceScheduling)
@@ -119,7 +119,7 @@ class FreightServiceCenterDetail extends AbstractComplexType
     /**
      * Specifies days of operation if localServiceScheduling is LIMITED.
      *
-     * @param \FedEx\Pickup\SimpleType\DayOfWeekType[]|string[] $limitedServiceDays
+     * @param \FedEx\PickupService\SimpleType\DayOfWeekType[]|string[] $limitedServiceDays
      * @return $this
      */
     public function setLimitedServiceDays(array $limitedServiceDays)

@@ -268,7 +268,7 @@ class GenerateCode extends Console\Command\Command
         //PickupService
         $wsdlPath = $fedexSrcDir . '/_wsdl/PickupService_v3.wsdl';
 
-        $baseNamespace = 'FedEx\Pickup';
+        $baseNamespace = 'FedEx\PickupService';
         $subPackageName = 'Pickup Service';
 
         //generate Request class

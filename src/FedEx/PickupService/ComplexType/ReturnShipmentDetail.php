@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *
- * @property \FedEx\Pickup\SimpleType\ReturnType|string $ReturnType
+ * @property \FedEx\PickupService\SimpleType\ReturnType|string $ReturnType
  * @property Rma $Rma
  * @property ReturnEMailDetail $ReturnEMailDetail
 
@@ -27,7 +27,7 @@ class ReturnShipmentDetail extends AbstractComplexType
     /**
      * The type of return shipment that is being requested.
      *
-     * @param \FedEx\Pickup\SimpleType\ReturnType|string $returnType
+     * @param \FedEx\PickupService\SimpleType\ReturnType|string $returnType
      * @return $this
      */
     public function setReturnType($returnType)

@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -15,7 +15,7 @@ use FedEx\AbstractComplexType;
  * @property int $TotalPieces
  * @property Weight $TotalWeight
  * @property int $TotalHandlingUnits
- * @property \FedEx\Pickup\SimpleType\PickupEventType|string $Status
+ * @property \FedEx\PickupService\SimpleType\PickupEventType|string $Status
 
  */
 class CompletedFreightPickupDetail extends AbstractComplexType
@@ -90,7 +90,7 @@ class CompletedFreightPickupDetail extends AbstractComplexType
     /**
      * Resulting status of pickup.
      *
-     * @param \FedEx\Pickup\SimpleType\PickupEventType|string $status
+     * @param \FedEx\PickupService\SimpleType\PickupEventType|string $status
      * @return $this
      */
     public function setStatus($status)

@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -10,10 +10,10 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *
- * @property \FedEx\Pickup\SimpleType\EMailNotificationRecipientType|string $EMailNotificationRecipientType
+ * @property \FedEx\PickupService\SimpleType\EMailNotificationRecipientType|string $EMailNotificationRecipientType
  * @property string $EMailAddress
- * @property \FedEx\Pickup\SimpleType\EMailNotificationEventType|string[] $NotificationEventsRequested
- * @property \FedEx\Pickup\SimpleType\EMailNotificationFormatType|string $Format
+ * @property \FedEx\PickupService\SimpleType\EMailNotificationEventType|string[] $NotificationEventsRequested
+ * @property \FedEx\PickupService\SimpleType\EMailNotificationFormatType|string $Format
  * @property Localization $Localization
 
  */
@@ -29,7 +29,7 @@ class EMailNotificationRecipient extends AbstractComplexType
     /**
      * Identifies the relationship this email recipient has to the shipment.
      *
-     * @param \FedEx\Pickup\SimpleType\EMailNotificationRecipientType|string $eMailNotificationRecipientType
+     * @param \FedEx\PickupService\SimpleType\EMailNotificationRecipientType|string $eMailNotificationRecipientType
      * @return $this
      */
     public function setEMailNotificationRecipientType($eMailNotificationRecipientType)
@@ -53,7 +53,7 @@ class EMailNotificationRecipient extends AbstractComplexType
     /**
      * The types of email notifications being requested for this recipient.
      *
-     * @param \FedEx\Pickup\SimpleType\EMailNotificationEventType[]|string[] $notificationEventsRequested
+     * @param \FedEx\PickupService\SimpleType\EMailNotificationEventType[]|string[] $notificationEventsRequested
      * @return $this
      */
     public function setNotificationEventsRequested(array $notificationEventsRequested)
@@ -65,7 +65,7 @@ class EMailNotificationRecipient extends AbstractComplexType
     /**
      * The format of the email notification.
      *
-     * @param \FedEx\Pickup\SimpleType\EMailNotificationFormatType|string $format
+     * @param \FedEx\PickupService\SimpleType\EMailNotificationFormatType|string $format
      * @return $this
      */
     public function setFormat($format)

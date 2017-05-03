@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -12,8 +12,8 @@ use FedEx\AbstractComplexType;
  *
  * @property int $LineNumber
  * @property string $CustomerReference
- * @property \FedEx\Pickup\SimpleType\UploadDocumentProducerType|string $DocumentProducer
- * @property \FedEx\Pickup\SimpleType\UploadDocumentType|string $DocumentType
+ * @property \FedEx\PickupService\SimpleType\UploadDocumentProducerType|string $DocumentProducer
+ * @property \FedEx\PickupService\SimpleType\UploadDocumentType|string $DocumentType
  * @property string $FileName
  * @property string $DocumentContent
 
@@ -54,7 +54,7 @@ class UploadDocumentDetail extends AbstractComplexType
     /**
      * Set DocumentProducer
      *
-     * @param \FedEx\Pickup\SimpleType\UploadDocumentProducerType|string $documentProducer
+     * @param \FedEx\PickupService\SimpleType\UploadDocumentProducerType|string $documentProducer
      * @return $this
      */
     public function setDocumentProducer($documentProducer)
@@ -66,7 +66,7 @@ class UploadDocumentDetail extends AbstractComplexType
     /**
      * Set DocumentType
      *
-     * @param \FedEx\Pickup\SimpleType\UploadDocumentType|string $documentType
+     * @param \FedEx\PickupService\SimpleType\UploadDocumentType|string $documentType
      * @return $this
      */
     public function setDocumentType($documentType)

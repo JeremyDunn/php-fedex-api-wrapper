@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -10,10 +10,10 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *
- * @property \FedEx\Pickup\SimpleType\ServiceType|string $Service
+ * @property \FedEx\PickupService\SimpleType\ServiceType|string $Service
  * @property int $SequenceNumber
  * @property Address $Destination
- * @property \FedEx\Pickup\SimpleType\PhysicalPackagingType|string $Packaging
+ * @property \FedEx\PickupService\SimpleType\PhysicalPackagingType|string $Packaging
  * @property int $Pieces
  * @property Weight $Weight
  * @property int $TotalHandlingUnits
@@ -36,7 +36,7 @@ class FreightPickupLineItem extends AbstractComplexType
     /**
      * Set Service
      *
-     * @param \FedEx\Pickup\SimpleType\ServiceType|string $service
+     * @param \FedEx\PickupService\SimpleType\ServiceType|string $service
      * @return $this
      */
     public function setService($service)
@@ -72,7 +72,7 @@ class FreightPickupLineItem extends AbstractComplexType
     /**
      * Identifies the physical packaging of the shipment.
      *
-     * @param \FedEx\Pickup\SimpleType\PhysicalPackagingType|string $packaging
+     * @param \FedEx\PickupService\SimpleType\PhysicalPackagingType|string $packaging
      * @return $this
      */
     public function setPackaging($packaging)

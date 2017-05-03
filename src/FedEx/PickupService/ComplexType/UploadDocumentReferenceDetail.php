@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -12,10 +12,10 @@ use FedEx\AbstractComplexType;
  *
  * @property int $LineNumber
  * @property string $CustomerReference
- * @property \FedEx\Pickup\SimpleType\UploadDocumentProducerType|string $DocumentProducer
- * @property \FedEx\Pickup\SimpleType\UploadDocumentType|string $DocumentType
+ * @property \FedEx\PickupService\SimpleType\UploadDocumentProducerType|string $DocumentProducer
+ * @property \FedEx\PickupService\SimpleType\UploadDocumentType|string $DocumentType
  * @property string $DocumentId
- * @property \FedEx\Pickup\SimpleType\UploadDocumentIdProducer|string $DocumentIdProducer
+ * @property \FedEx\PickupService\SimpleType\UploadDocumentIdProducer|string $DocumentIdProducer
 
  */
 class UploadDocumentReferenceDetail extends AbstractComplexType
@@ -54,7 +54,7 @@ class UploadDocumentReferenceDetail extends AbstractComplexType
     /**
      * Set DocumentProducer
      *
-     * @param \FedEx\Pickup\SimpleType\UploadDocumentProducerType|string $documentProducer
+     * @param \FedEx\PickupService\SimpleType\UploadDocumentProducerType|string $documentProducer
      * @return $this
      */
     public function setDocumentProducer($documentProducer)
@@ -66,7 +66,7 @@ class UploadDocumentReferenceDetail extends AbstractComplexType
     /**
      * Set DocumentType
      *
-     * @param \FedEx\Pickup\SimpleType\UploadDocumentType|string $documentType
+     * @param \FedEx\PickupService\SimpleType\UploadDocumentType|string $documentType
      * @return $this
      */
     public function setDocumentType($documentType)
@@ -90,7 +90,7 @@ class UploadDocumentReferenceDetail extends AbstractComplexType
     /**
      * Set DocumentIdProducer
      *
-     * @param \FedEx\Pickup\SimpleType\UploadDocumentIdProducer|string $documentIdProducer
+     * @param \FedEx\PickupService\SimpleType\UploadDocumentIdProducer|string $documentIdProducer
      * @return $this
      */
     public function setDocumentIdProducer($documentIdProducer)

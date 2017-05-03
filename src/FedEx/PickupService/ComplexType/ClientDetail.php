@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -14,7 +14,7 @@ use FedEx\AbstractComplexType;
  * @property string $MeterNumber
  * @property string $MeterInstance
  * @property string $IntegratorId
- * @property \FedEx\Pickup\SimpleType\ExpressRegionCode|string $Region
+ * @property \FedEx\PickupService\SimpleType\ExpressRegionCode|string $Region
  * @property Localization $Localization
 
  */
@@ -78,7 +78,7 @@ class ClientDetail extends AbstractComplexType
     /**
      * Indicates the region from which the transaction is submitted.
      *
-     * @param \FedEx\Pickup\SimpleType\ExpressRegionCode|string $region
+     * @param \FedEx\PickupService\SimpleType\ExpressRegionCode|string $region
      * @return $this
      */
     public function setRegion($region)

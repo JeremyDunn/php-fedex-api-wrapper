@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\SimpleType;
+namespace FedEx\PickupService\SimpleType;
 
 use FedEx\AbstractSimpleType;
 
