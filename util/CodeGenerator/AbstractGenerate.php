@@ -69,7 +69,7 @@ abstract class AbstractGenerate
             throw new \Exception('path to wsdl file is invalid');
         }
 
-        if (is_writable($exportPath)) {
+        if ($this->createDirectory($exportPath)) {
             $this->exportPath = $exportPath;
         } else {
             throw new \Exception('cannot write to export path');
@@ -89,6 +89,20 @@ abstract class AbstractGenerate
         $fileContents = file_get_contents($this->wsdlPath);
         $fileContents = str_replace('xs:', '', $fileContents);
         $this->xml = new \SimpleXMLElement($fileContents);
+    }
+
+    /**
+     * @param $path
+     *
+     * @return bool
+     */
+    protected function createDirectory($path)
+    {
+        if (!is_writable($path) && !file_exists($path)) {
+            mkdir($path);
+        }
+
+        return is_writable($path);
     }
 
     /**
