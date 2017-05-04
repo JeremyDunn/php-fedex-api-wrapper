@@ -91,7 +91,7 @@ abstract class AbstractGenerate
      */
     protected function createDirectory($path)
     {
-        if (!is_writable($path) && !is_dir($path)) {
+        if (!is_writable($path) && !file_exists($path)) {
             mkdir($path);
         }
 
