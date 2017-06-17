@@ -1,5 +1,6 @@
 # PHP FedEx API Wrapper
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ee5bdc605dfd44d0a590ea1dfc031421)](https://www.codacy.com/app/JeremyDunn/php-fedex-api-wrapper?utm_source=github.com&utm_medium=referral&utm_content=JeremyDunn/php-fedex-api-wrapper&utm_campaign=badger)
 [![Build Status](https://travis-ci.org/JeremyDunn/php-fedex-api-wrapper.svg?branch=master)](https://travis-ci.org/JeremyDunn/php-fedex-api-wrapper)
 
 This library provides a fluid interface for constructing requests to the FedEx web service API.
