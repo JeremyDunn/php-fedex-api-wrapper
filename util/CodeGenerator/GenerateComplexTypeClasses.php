@@ -103,6 +103,8 @@ class GenerateComplexTypeClasses extends AbstractGenerate
             $methodString .= $this->getGeneratedSetMethod($property) . "\n";
         }
 
+        $methodString = rtrim($methodString);
+
         $fileBody = <<<TEXT
 <?php
 namespace {$this->namespace}\ComplexType;
@@ -127,7 +129,7 @@ class $className extends AbstractComplexType
      */
     protected \$name = '$className';
 
-$methodString    
+$methodString
 }
 
 TEXT;
