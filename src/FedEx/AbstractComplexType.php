@@ -118,4 +118,66 @@ abstract class AbstractComplexType
             return $returnArray;
         }
     }
+
+    /**
+     * Populates this class and children using provided $stdClass
+     * Use this method to populate a response from the \SoapClient
+     *
+     * @param \stdClass $stdClass
+     */
+    public function populateFromStdClass(\stdClass $stdClass)
+    {
+        $reflectionClass = new \ReflectionClass($this);
+        $setterMethods = array_filter(
+            $reflectionClass->getMethods(\ReflectionMethod::IS_PUBLIC),
+            function ($reflectionMethod) {
+                return (preg_match('/^set.*$/', $reflectionMethod->name));
+            }
+        );
+        foreach ($setterMethods as $reflectionMethod) {
+            /* @var $reflectionMethod \ReflectionMethod */
+            $methodName = $reflectionMethod->name;
+            $stdPropertyName = str_replace('set', '', $methodName);
+            $parameterValue = null;
+            $reflectionParameter = $reflectionMethod->getParameters()[0];
+            if ($reflectionParameter->getClass() instanceof \ReflectionClass) {
+                //class
+                $classPropertyName = $reflectionParameter->getClass()->name;
+                /** @var AbstractComplexType $parameterValue */
+                $parameterValue = new $classPropertyName;
+                if (isset($stdClass->$stdPropertyName)) {
+                    $parameterValue->populateFromStdClass($stdClass->$stdPropertyName);
+                }
+            } elseif ($reflectionParameter->isArray()) {
+                //array
+                $arrayType = Reflection::getAbstractClassSetterMethodArrayType($reflectionParameter);
+                /** @var AbstractComplexType $class */
+                if (Reflection::isClassNameSimpleType($arrayType)) {
+                } else {
+                    if (isset($stdClass->$stdPropertyName)) {
+                        $parameterValue = [];
+                        if (is_array($stdClass->$stdPropertyName)) {
+                            foreach ($stdClass->$stdPropertyName as $property) {
+                                $class = new $arrayType;
+                                $parameterValue[] = $class;
+                                $class->populateFromStdClass($property);
+                            }
+                        } else {
+                            $class = new $arrayType;
+                            $parameterValue[] = $class;
+                            $class->populateFromStdClass($stdClass->$stdPropertyName);
+                        }
+                    }
+                }
+            } else {
+                //is scalar type
+                if (isset($stdClass->$stdPropertyName)) {
+                    $parameterValue = $stdClass->$stdPropertyName;
+                }
+            }
+            if (isset($parameterValue, $stdClass->$stdPropertyName)) {
+                $this->$methodName($parameterValue);
+            }
+        }
+    }
 }

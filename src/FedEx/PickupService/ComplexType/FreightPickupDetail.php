@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -11,8 +11,8 @@ use FedEx\AbstractComplexType;
  * @subpackage  Pickup Service
  *
  * @property Contact $ApprovedBy
- * @property \FedEx\Pickup\SimpleType\FreightAccountPaymentType|string $Payment
- * @property \FedEx\Pickup\SimpleType\FreightShipmentRoleType|string $Role
+ * @property \FedEx\PickupService\SimpleType\FreightAccountPaymentType|string $Payment
+ * @property \FedEx\PickupService\SimpleType\FreightShipmentRoleType|string $Role
  * @property Contact $SubmittedBy
  * @property FreightPickupLineItem[] $LineItems
 
@@ -41,7 +41,7 @@ class FreightPickupDetail extends AbstractComplexType
     /**
      * Identifies the type of payment to be tendered for the pickup.
      *
-     * @param \FedEx\Pickup\SimpleType\FreightAccountPaymentType|string $payment
+     * @param \FedEx\PickupService\SimpleType\FreightAccountPaymentType|string $payment
      * @return $this
      */
     public function setPayment($payment)
@@ -53,7 +53,7 @@ class FreightPickupDetail extends AbstractComplexType
     /**
      * Indicates the role of the party submitting the transaction.
      *
-     * @param \FedEx\Pickup\SimpleType\FreightShipmentRoleType|string $role
+     * @param \FedEx\PickupService\SimpleType\FreightShipmentRoleType|string $role
      * @return $this
      */
     public function setRole($role)

@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *
- * @property \FedEx\Pickup\SimpleType\PaymentType|string $PaymentType
+ * @property \FedEx\PickupService\SimpleType\PaymentType|string $PaymentType
  * @property Payor $Payor
  * @property CreditCard $CreditCard
  * @property CreditCardTransactionDetail $CreditCardTransactionDetail
@@ -29,7 +29,7 @@ class Payment extends AbstractComplexType
     /**
      * Identifies the method of payment for a service. See PaymentType for list of valid enumerated values.
      *
-     * @param \FedEx\Pickup\SimpleType\PaymentType|string $paymentType
+     * @param \FedEx\PickupService\SimpleType\PaymentType|string $paymentType
      * @return $this
      */
     public function setPaymentType($paymentType)

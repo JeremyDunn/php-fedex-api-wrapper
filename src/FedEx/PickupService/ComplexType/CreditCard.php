@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -11,7 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Pickup Service
  *
  * @property string $Number
- * @property \FedEx\Pickup\SimpleType\CreditCardType|string $CreditCardType
+ * @property \FedEx\PickupService\SimpleType\CreditCardType|string $CreditCardType
  * @property string $ExpirationDate
  * @property string $VerificationCode
  * @property ParsedContactAndAddress $CreditCardHolder
@@ -41,7 +41,7 @@ class CreditCard extends AbstractComplexType
     /**
      * Set CreditCardType
      *
-     * @param \FedEx\Pickup\SimpleType\CreditCardType|string $creditCardType
+     * @param \FedEx\PickupService\SimpleType\CreditCardType|string $creditCardType
      * @return $this
      */
     public function setCreditCardType($creditCardType)
