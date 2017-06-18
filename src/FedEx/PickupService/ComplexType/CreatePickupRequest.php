@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -20,11 +20,11 @@ use FedEx\AbstractComplexType;
  * @property ExpressFreightPickupDetail $ExpressFreightDetail
  * @property int $PackageCount
  * @property Weight $TotalWeight
- * @property \FedEx\Pickup\SimpleType\CarrierCodeType|string $CarrierCode
+ * @property \FedEx\PickupService\SimpleType\CarrierCodeType|string $CarrierCode
  * @property int $OversizePackageCount
  * @property string $Remarks
  * @property string $CommodityDescription
- * @property \FedEx\Pickup\SimpleType\CountryRelationshipType|string $CountryRelationship
+ * @property \FedEx\PickupService\SimpleType\CountryRelationshipType|string $CountryRelationship
 
  */
 class CreatePickupRequest extends AbstractComplexType
@@ -159,7 +159,7 @@ class CreatePickupRequest extends AbstractComplexType
     /**
      * Identifies the FedEx operating company (transportation) that is being sent the package pickup request.
      *
-     * @param \FedEx\Pickup\SimpleType\CarrierCodeType|string $carrierCode
+     * @param \FedEx\PickupService\SimpleType\CarrierCodeType|string $carrierCode
      * @return $this
      */
     public function setCarrierCode($carrierCode)
@@ -207,7 +207,7 @@ class CreatePickupRequest extends AbstractComplexType
     /**
      * Describes the country relationship (domestic and/or international) among the shipments being picked up.
      *
-     * @param \FedEx\Pickup\SimpleType\CountryRelationshipType|string $countryRelationship
+     * @param \FedEx\PickupService\SimpleType\CountryRelationshipType|string $countryRelationship
      * @return $this
      */
     public function setCountryRelationship($countryRelationship)

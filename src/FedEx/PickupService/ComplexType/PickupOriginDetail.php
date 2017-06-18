@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -13,13 +13,13 @@ use FedEx\AbstractComplexType;
  * @property boolean $UseAccountAddress
  * @property string $AddressId
  * @property ContactAndAddress $PickupLocation
- * @property \FedEx\Pickup\SimpleType\PickupBuildingLocationType|string $PackageLocation
- * @property \FedEx\Pickup\SimpleType\BuildingPartCode|string $BuildingPart
+ * @property \FedEx\PickupService\SimpleType\PickupBuildingLocationType|string $PackageLocation
+ * @property \FedEx\PickupService\SimpleType\BuildingPartCode|string $BuildingPart
  * @property string $BuildingPartDescription
  * @property string $ReadyTimestamp
  * @property string $CompanyCloseTime
  * @property boolean $StayLate
- * @property \FedEx\Pickup\SimpleType\PickupRequestType|string $PickupDateType
+ * @property \FedEx\PickupService\SimpleType\PickupRequestType|string $PickupDateType
  * @property string $LastAccessTime
  * @property string $GeographicalPostalCode
  * @property string $Location
@@ -76,7 +76,7 @@ class PickupOriginDetail extends AbstractComplexType
     /**
      * Identifies the physical location where the courier should pick up the shipment. See CourierDispatchBuildingLocationType for valid values.
      *
-     * @param \FedEx\Pickup\SimpleType\PickupBuildingLocationType|string $packageLocation
+     * @param \FedEx\PickupService\SimpleType\PickupBuildingLocationType|string $packageLocation
      * @return $this
      */
     public function setPackageLocation($packageLocation)
@@ -88,7 +88,7 @@ class PickupOriginDetail extends AbstractComplexType
     /**
      * Set BuildingPart
      *
-     * @param \FedEx\Pickup\SimpleType\BuildingPartCode|string $buildingPart
+     * @param \FedEx\PickupService\SimpleType\BuildingPartCode|string $buildingPart
      * @return $this
      */
     public function setBuildingPart($buildingPart)
@@ -148,7 +148,7 @@ class PickupOriginDetail extends AbstractComplexType
     /**
      * FedEx USE ONLY (with IVR client)
      *
-     * @param \FedEx\Pickup\SimpleType\PickupRequestType|string $pickupDateType
+     * @param \FedEx\PickupService\SimpleType\PickupRequestType|string $pickupDateType
      * @return $this
      */
     public function setPickupDateType($pickupDateType)

@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup;
+namespace FedEx\PickupService;
     
 use FedEx\AbstractRequest;
 
