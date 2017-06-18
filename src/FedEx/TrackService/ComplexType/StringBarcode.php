@@ -46,6 +46,4 @@ class StringBarcode extends AbstractComplexType
         $this->values['Value'] = $value;
         return $this;
     }
-
-    
 }

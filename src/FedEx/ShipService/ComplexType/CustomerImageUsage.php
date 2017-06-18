@@ -46,6 +46,4 @@ class CustomerImageUsage extends AbstractComplexType
         $this->values['Id'] = $id;
         return $this;
     }
-
-    
 }

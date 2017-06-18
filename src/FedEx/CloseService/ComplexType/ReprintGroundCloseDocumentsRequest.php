@@ -124,6 +124,4 @@ class ReprintGroundCloseDocumentsRequest extends AbstractComplexType
         $this->values['CloseDocumentSpecification'] = $closeDocumentSpecification;
         return $this;
     }
-
-    
 }

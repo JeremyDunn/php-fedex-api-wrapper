@@ -46,6 +46,4 @@ class CustomsOptionDetail extends AbstractComplexType
         $this->values['Description'] = $description;
         return $this;
     }
-
-    
 }

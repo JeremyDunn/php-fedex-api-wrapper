@@ -46,6 +46,4 @@ class AdditionalLabelsDetail extends AbstractComplexType
         $this->values['Count'] = $count;
         return $this;
     }
-
-    
 }

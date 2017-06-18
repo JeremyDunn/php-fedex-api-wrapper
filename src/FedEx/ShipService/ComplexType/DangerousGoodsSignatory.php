@@ -59,6 +59,4 @@ class DangerousGoodsSignatory extends AbstractComplexType
         $this->values['Place'] = $place;
         return $this;
     }
-
-    
 }

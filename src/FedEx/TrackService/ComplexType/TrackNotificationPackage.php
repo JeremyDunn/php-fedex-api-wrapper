@@ -98,6 +98,4 @@ class TrackNotificationPackage extends AbstractComplexType
         $this->values['RecipientDetails'] = $recipientDetails;
         return $this;
     }
-
-    
 }

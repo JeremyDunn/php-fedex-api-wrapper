@@ -202,6 +202,4 @@ class DropoffLocationProfile extends AbstractComplexType
         $this->values['ReturnSystem'] = $returnSystem;
         return $this;
     }
-
-    
 }

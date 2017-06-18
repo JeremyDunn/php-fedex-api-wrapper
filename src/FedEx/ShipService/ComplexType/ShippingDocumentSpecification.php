@@ -163,6 +163,4 @@ class ShippingDocumentSpecification extends AbstractComplexType
         $this->values['ReturnInstructionsDetail'] = $returnInstructionsDetail;
         return $this;
     }
-
-    
 }

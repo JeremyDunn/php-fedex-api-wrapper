@@ -46,6 +46,4 @@ class ReturnInstructionsDetail extends AbstractComplexType
         $this->values['CustomText'] = $customText;
         return $this;
     }
-
-    
 }

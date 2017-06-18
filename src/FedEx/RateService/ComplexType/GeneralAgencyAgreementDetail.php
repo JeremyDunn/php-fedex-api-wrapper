@@ -33,6 +33,4 @@ class GeneralAgencyAgreementDetail extends AbstractComplexType
         $this->values['Format'] = $format;
         return $this;
     }
-
-    
 }

@@ -35,5 +35,4 @@ class Request extends AbstractRequest
         $rateReply->populateFromStdClass($response);
         return $rateReply;
     }
-
 }

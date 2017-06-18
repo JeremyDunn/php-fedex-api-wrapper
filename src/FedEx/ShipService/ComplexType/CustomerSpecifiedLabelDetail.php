@@ -124,6 +124,4 @@ class CustomerSpecifiedLabelDetail extends AbstractComplexType
         $this->values['AirWaybillSuppressionCount'] = $airWaybillSuppressionCount;
         return $this;
     }
-
-    
 }

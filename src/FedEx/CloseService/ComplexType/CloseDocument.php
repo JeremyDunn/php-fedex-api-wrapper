@@ -111,6 +111,4 @@ class CloseDocument extends AbstractComplexType
         $this->values['Parts'] = $parts;
         return $this;
     }
-
-    
 }

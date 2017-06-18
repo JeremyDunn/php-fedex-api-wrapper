@@ -111,5 +111,4 @@ class Request extends AbstractRequest
         $groundCloseDocumentsReply->populateFromStdClass($response);
         return $groundCloseDocumentsReply;
     }
-
 }

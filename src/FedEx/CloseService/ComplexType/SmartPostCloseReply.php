@@ -72,6 +72,4 @@ class SmartPostCloseReply extends AbstractComplexType
         $this->values['Version'] = $version;
         return $this;
     }
-
-    
 }

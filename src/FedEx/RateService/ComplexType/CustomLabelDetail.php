@@ -85,6 +85,4 @@ class CustomLabelDetail extends AbstractComplexType
         $this->values['BarcodeEntries'] = $barcodeEntries;
         return $this;
     }
-
-    
 }

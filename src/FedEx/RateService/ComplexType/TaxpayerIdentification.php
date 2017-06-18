@@ -59,6 +59,4 @@ class TaxpayerIdentification extends AbstractComplexType
         $this->values['Usage'] = $usage;
         return $this;
     }
-
-    
 }

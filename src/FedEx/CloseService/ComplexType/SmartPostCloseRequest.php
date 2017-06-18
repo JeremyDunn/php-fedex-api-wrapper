@@ -124,6 +124,4 @@ class SmartPostCloseRequest extends AbstractComplexType
         $this->values['PickUpCarrier'] = $pickUpCarrier;
         return $this;
     }
-
-    
 }

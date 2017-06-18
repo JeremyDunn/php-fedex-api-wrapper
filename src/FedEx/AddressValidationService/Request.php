@@ -35,5 +35,4 @@ class Request extends AbstractRequest
         $addressValidationReply->populateFromStdClass($response);
         return $addressValidationReply;
     }
-
 }

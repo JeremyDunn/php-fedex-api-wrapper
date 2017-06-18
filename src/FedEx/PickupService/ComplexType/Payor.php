@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -59,6 +59,4 @@ class Payor extends AbstractComplexType
         $this->values['AssociatedAccounts'] = $associatedAccounts;
         return $this;
     }
-
-    
 }

@@ -98,6 +98,4 @@ class PackageSpecialServicesRequested extends AbstractComplexType
         $this->values['PriorityAlertDetail'] = $priorityAlertDetail;
         return $this;
     }
-
-    
 }

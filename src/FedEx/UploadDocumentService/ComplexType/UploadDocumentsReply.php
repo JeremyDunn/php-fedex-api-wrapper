@@ -85,6 +85,4 @@ class UploadDocumentsReply extends AbstractComplexType
         $this->values['DocumentStatuses'] = $documentStatuses;
         return $this;
     }
-
-    
 }

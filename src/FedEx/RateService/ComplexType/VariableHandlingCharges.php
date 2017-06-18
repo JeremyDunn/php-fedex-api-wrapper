@@ -46,6 +46,4 @@ class VariableHandlingCharges extends AbstractComplexType
         $this->values['TotalCustomerCharge'] = $totalCustomerCharge;
         return $this;
     }
-
-    
 }

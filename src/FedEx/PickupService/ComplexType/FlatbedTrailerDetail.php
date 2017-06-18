@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *
- * @property \FedEx\Pickup\SimpleType\FlatbedTrailerOption|string[] $Options
+ * @property \FedEx\PickupService\SimpleType\FlatbedTrailerOption|string[] $Options
 
  */
 class FlatbedTrailerDetail extends AbstractComplexType
@@ -25,7 +25,7 @@ class FlatbedTrailerDetail extends AbstractComplexType
     /**
      * Specifies the optional features/characteristics requested for a Freight shipment utilizing a flatbed trailer.
      *
-     * @param \FedEx\Pickup\SimpleType\FlatbedTrailerOption[]|string[] $options
+     * @param \FedEx\PickupService\SimpleType\FlatbedTrailerOption[]|string[] $options
      * @return $this
      */
     public function setOptions(array $options)
@@ -33,6 +33,4 @@ class FlatbedTrailerDetail extends AbstractComplexType
         $this->values['Options'] = $options;
         return $this;
     }
-
-    
 }

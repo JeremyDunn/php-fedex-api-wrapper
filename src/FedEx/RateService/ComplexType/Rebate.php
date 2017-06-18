@@ -72,6 +72,4 @@ class Rebate extends AbstractComplexType
         $this->values['Percent'] = $percent;
         return $this;
     }
-
-    
 }

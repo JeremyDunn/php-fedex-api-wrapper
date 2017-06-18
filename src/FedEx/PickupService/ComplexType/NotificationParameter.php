@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -46,6 +46,4 @@ class NotificationParameter extends AbstractComplexType
         $this->values['Value'] = $value;
         return $this;
     }
-
-    
 }

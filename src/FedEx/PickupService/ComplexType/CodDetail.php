@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -12,9 +12,9 @@ use FedEx\AbstractComplexType;
  *
  * @property Money $CodCollectionAmount
  * @property CodAddTransportationChargesDetail $AddTransportationChargesDetail
- * @property \FedEx\Pickup\SimpleType\CodCollectionType|string $CollectionType
+ * @property \FedEx\PickupService\SimpleType\CodCollectionType|string $CollectionType
  * @property Party $CodRecipient
- * @property \FedEx\Pickup\SimpleType\CodReturnReferenceIndicatorType|string $ReferenceIndicator
+ * @property \FedEx\PickupService\SimpleType\CodReturnReferenceIndicatorType|string $ReferenceIndicator
 
  */
 class CodDetail extends AbstractComplexType
@@ -53,7 +53,7 @@ class CodDetail extends AbstractComplexType
     /**
      * Identifies the type of funds FedEx should collect upon package delivery
      *
-     * @param \FedEx\Pickup\SimpleType\CodCollectionType|string $collectionType
+     * @param \FedEx\PickupService\SimpleType\CodCollectionType|string $collectionType
      * @return $this
      */
     public function setCollectionType($collectionType)
@@ -77,7 +77,7 @@ class CodDetail extends AbstractComplexType
     /**
      * Indicates which type of reference information to include on the COD return shipping label.
      *
-     * @param \FedEx\Pickup\SimpleType\CodReturnReferenceIndicatorType|string $referenceIndicator
+     * @param \FedEx\PickupService\SimpleType\CodReturnReferenceIndicatorType|string $referenceIndicator
      * @return $this
      */
     public function setReferenceIndicator($referenceIndicator)
@@ -85,6 +85,4 @@ class CodDetail extends AbstractComplexType
         $this->values['ReferenceIndicator'] = $referenceIndicator;
         return $this;
     }
-
-    
 }

@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *
- * @property \FedEx\Pickup\SimpleType\InternationalControlledExportType|string $Type
+ * @property \FedEx\PickupService\SimpleType\InternationalControlledExportType|string $Type
  * @property string $ForeignTradeZoneCode
  * @property string $EntryNumber
  * @property string $LicenseOrPermitNumber
@@ -29,7 +29,7 @@ class InternationalControlledExportDetail extends AbstractComplexType
     /**
      * Set Type
      *
-     * @param \FedEx\Pickup\SimpleType\InternationalControlledExportType|string $type
+     * @param \FedEx\PickupService\SimpleType\InternationalControlledExportType|string $type
      * @return $this
      */
     public function setType($type)
@@ -85,6 +85,4 @@ class InternationalControlledExportDetail extends AbstractComplexType
         $this->values['LicenseOrPermitExpirationDate'] = $licenseOrPermitExpirationDate;
         return $this;
     }
-
-    
 }

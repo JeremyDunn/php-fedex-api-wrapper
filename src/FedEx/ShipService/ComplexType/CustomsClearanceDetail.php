@@ -215,6 +215,4 @@ class CustomsClearanceDetail extends AbstractComplexType
         $this->values['RegulatoryControls'] = $regulatoryControls;
         return $this;
     }
-
-    
 }

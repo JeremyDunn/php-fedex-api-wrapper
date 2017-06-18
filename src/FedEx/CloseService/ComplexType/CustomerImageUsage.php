@@ -72,6 +72,4 @@ class CustomerImageUsage extends AbstractComplexType
         $this->values['InternalImageType'] = $internalImageType;
         return $this;
     }
-
-    
 }

@@ -59,6 +59,4 @@ class DocTabContent extends AbstractComplexType
         $this->values['Barcoded'] = $barcoded;
         return $this;
     }
-
-    
 }

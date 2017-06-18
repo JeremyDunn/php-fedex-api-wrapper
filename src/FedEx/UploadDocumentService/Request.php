@@ -54,5 +54,4 @@ class Request extends AbstractRequest
         $uploadImagesReply->populateFromStdClass($response);
         return $uploadImagesReply;
     }
-
 }

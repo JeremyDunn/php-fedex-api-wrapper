@@ -189,6 +189,4 @@ class CommercialInvoice extends AbstractComplexType
         $this->values['TermsOfSale'] = $termsOfSale;
         return $this;
     }
-
-    
 }

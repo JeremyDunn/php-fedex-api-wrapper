@@ -33,6 +33,4 @@ class ParsedAddressPart extends AbstractComplexType
         $this->values['Elements'] = $elements;
         return $this;
     }
-
-    
 }

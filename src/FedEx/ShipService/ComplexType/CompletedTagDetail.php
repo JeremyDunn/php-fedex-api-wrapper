@@ -98,6 +98,4 @@ class CompletedTagDetail extends AbstractComplexType
         $this->values['DispatchDate'] = $dispatchDate;
         return $this;
     }
-
-    
 }

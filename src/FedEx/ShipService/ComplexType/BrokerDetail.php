@@ -46,6 +46,4 @@ class BrokerDetail extends AbstractComplexType
         $this->values['Broker'] = $broker;
         return $this;
     }
-
-    
 }

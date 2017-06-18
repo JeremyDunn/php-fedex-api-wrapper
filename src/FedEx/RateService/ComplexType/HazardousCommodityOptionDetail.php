@@ -46,6 +46,4 @@ class HazardousCommodityOptionDetail extends AbstractComplexType
         $this->values['CustomerSuppliedLabelText'] = $customerSuppliedLabelText;
         return $this;
     }
-
-    
 }

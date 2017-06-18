@@ -72,6 +72,4 @@ class HazardousCommodityContent extends AbstractComplexType
         $this->values['RadionuclideDetail'] = $radionuclideDetail;
         return $this;
     }
-
-    
 }

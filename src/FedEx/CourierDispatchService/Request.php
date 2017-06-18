@@ -73,5 +73,4 @@ class Request extends AbstractRequest
         $pickupAvailabilityReply->populateFromStdClass($response);
         return $pickupAvailabilityReply;
     }
-
 }

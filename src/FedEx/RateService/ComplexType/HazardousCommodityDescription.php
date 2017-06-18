@@ -111,6 +111,4 @@ class HazardousCommodityDescription extends AbstractComplexType
         $this->values['LabelText'] = $labelText;
         return $this;
     }
-
-    
 }

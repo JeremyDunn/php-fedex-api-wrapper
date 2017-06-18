@@ -52,7 +52,7 @@ class FedExLocatorReply extends AbstractComplexType
     }
 
     /**
-     * Descriptive data that governs data payload language/translations.	The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
+     * Descriptive data that governs data payload language/translations.The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
      * @param TransactionDetail $transactionDetail
      * @return $this
@@ -98,6 +98,4 @@ class FedExLocatorReply extends AbstractComplexType
         $this->values['AvailableRecordCount'] = $availableRecordCount;
         return $this;
     }
-
-    
 }

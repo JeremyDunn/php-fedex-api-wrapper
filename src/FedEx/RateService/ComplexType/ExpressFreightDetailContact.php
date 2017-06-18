@@ -46,6 +46,4 @@ class ExpressFreightDetailContact extends AbstractComplexType
         $this->values['Phone'] = $phone;
         return $this;
     }
-
-    
 }

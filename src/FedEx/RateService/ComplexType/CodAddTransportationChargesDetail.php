@@ -59,6 +59,4 @@ class CodAddTransportationChargesDetail extends AbstractComplexType
         $this->values['ChargeBasisLevel'] = $chargeBasisLevel;
         return $this;
     }
-
-    
 }

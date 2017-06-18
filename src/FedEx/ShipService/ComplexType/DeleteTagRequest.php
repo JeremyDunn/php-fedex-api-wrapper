@@ -124,6 +124,4 @@ class DeleteTagRequest extends AbstractComplexType
         $this->values['ConfirmationNumber'] = $confirmationNumber;
         return $this;
     }
-
-    
 }

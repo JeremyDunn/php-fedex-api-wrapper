@@ -98,6 +98,4 @@ class ParsedAddress extends AbstractComplexType
         $this->values['ParsedCountryCode'] = $parsedCountryCode;
         return $this;
     }
-
-    
 }

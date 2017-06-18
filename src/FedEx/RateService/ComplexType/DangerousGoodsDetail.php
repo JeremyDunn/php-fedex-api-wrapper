@@ -111,6 +111,4 @@ class DangerousGoodsDetail extends AbstractComplexType
         $this->values['Offeror'] = $offeror;
         return $this;
     }
-
-    
 }

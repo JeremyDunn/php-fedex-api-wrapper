@@ -46,6 +46,4 @@ class Payor extends AbstractComplexType
         $this->values['CountryCode'] = $countryCode;
         return $this;
     }
-
-    
 }

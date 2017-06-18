@@ -33,6 +33,4 @@ class Payor extends AbstractComplexType
         $this->values['ResponsibleParty'] = $responsibleParty;
         return $this;
     }
-
-    
 }

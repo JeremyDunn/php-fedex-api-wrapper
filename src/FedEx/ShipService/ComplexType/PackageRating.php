@@ -59,6 +59,4 @@ class PackageRating extends AbstractComplexType
         $this->values['PackageRateDetails'] = $packageRateDetails;
         return $this;
     }
-
-    
 }

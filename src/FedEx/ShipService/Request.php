@@ -149,5 +149,4 @@ class Request extends AbstractRequest
         $shipmentReply->populateFromStdClass($response);
         return $shipmentReply;
     }
-
 }

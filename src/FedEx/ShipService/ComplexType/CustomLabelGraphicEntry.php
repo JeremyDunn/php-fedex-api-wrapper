@@ -59,6 +59,4 @@ class CustomLabelGraphicEntry extends AbstractComplexType
         $this->values['FileGraphicFullName'] = $fileGraphicFullName;
         return $this;
     }
-
-    
 }

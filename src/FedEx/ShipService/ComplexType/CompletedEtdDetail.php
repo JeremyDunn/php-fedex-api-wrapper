@@ -46,6 +46,4 @@ class CompletedEtdDetail extends AbstractComplexType
         $this->values['UploadDocumentReferenceDetails'] = $uploadDocumentReferenceDetails;
         return $this;
     }
-
-    
 }

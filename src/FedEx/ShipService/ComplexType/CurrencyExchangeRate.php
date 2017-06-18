@@ -59,6 +59,4 @@ class CurrencyExchangeRate extends AbstractComplexType
         $this->values['Rate'] = $rate;
         return $this;
     }
-
-    
 }

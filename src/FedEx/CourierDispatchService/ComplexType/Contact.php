@@ -124,6 +124,4 @@ class Contact extends AbstractComplexType
         $this->values['EMailAddress'] = $eMailAddress;
         return $this;
     }
-
-    
 }

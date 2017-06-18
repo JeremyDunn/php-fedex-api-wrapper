@@ -51,7 +51,7 @@ class ServiceAvailabilityReply extends AbstractComplexType
     }
 
     /**
-     * Descriptive data that governs data payload language/translations.  The TransactionDetail from the request is echoed back to the caller in the corresponding reply. 
+     * Descriptive data that governs data payload language/translations.  The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
      *
      * @param TransactionDetail $transactionDetail
      * @return $this
@@ -85,6 +85,4 @@ class ServiceAvailabilityReply extends AbstractComplexType
         $this->values['Options'] = $options;
         return $this;
     }
-
-    
 }

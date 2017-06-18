@@ -41,14 +41,12 @@ class LabelSpecification extends AbstractComplexType
     }
 
     /**
-     * 
-                The type of image or printer commands the label is to be formatted in.
+     * The type of image or printer commands the label is to be formatted in.
                 DPL = Unimark thermal printer language
                 EPL2 = Eltron thermal printer language
                 PDF = a label returned as a pdf image
                 PNG = a label returned as a png image
                 ZPLII = Zebra thermal printer language
-              
      *
      * @param \FedEx\RateService\SimpleType\ShippingDocumentImageType|string $imageType
      * @return $this
@@ -118,6 +116,4 @@ class LabelSpecification extends AbstractComplexType
         $this->values['CustomerSpecifiedDetail'] = $customerSpecifiedDetail;
         return $this;
     }
-
-    
 }

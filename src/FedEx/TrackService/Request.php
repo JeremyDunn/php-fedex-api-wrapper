@@ -92,5 +92,4 @@ class Request extends AbstractRequest
         $signatureProofOfDeliveryFaxReply->populateFromStdClass($response);
         return $signatureProofOfDeliveryFaxReply;
     }
-
 }

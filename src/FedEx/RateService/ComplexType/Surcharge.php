@@ -72,6 +72,4 @@ class Surcharge extends AbstractComplexType
         $this->values['Amount'] = $amount;
         return $this;
     }
-
-    
 }

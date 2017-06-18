@@ -46,6 +46,4 @@ class HazardousCommodityPackagingDetail extends AbstractComplexType
         $this->values['Units'] = $units;
         return $this;
     }
-
-    
 }

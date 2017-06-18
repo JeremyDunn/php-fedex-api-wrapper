@@ -33,6 +33,4 @@ class DocTabContentZone001 extends AbstractComplexType
         $this->values['DocTabZoneSpecifications'] = $docTabZoneSpecifications;
         return $this;
     }
-
-    
 }

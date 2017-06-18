@@ -33,6 +33,4 @@ class ShipmentConfigurationData extends AbstractComplexType
         $this->values['DangerousGoodsPackageConfigurations'] = $dangerousGoodsPackageConfigurations;
         return $this;
     }
-
-    
 }

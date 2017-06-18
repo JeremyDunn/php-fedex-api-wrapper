@@ -50,7 +50,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
             new \FedEx\CourierDispatchService\Request(),
             new \FedEx\LocatorService\Request(),
             new \FedEx\PackageMovementInformationService\Request(),
-            new \FedEx\Pickup\Request(),
+            new \FedEx\PickupService\Request(),
             new \FedEx\RateService\Request(),
             new \FedEx\ReturnTagService\Request(),
             new \FedEx\ShipService\Request(),

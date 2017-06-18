@@ -46,6 +46,4 @@ class CompletedHoldAtLocationDetail extends AbstractComplexType
         $this->values['HoldingLocationType'] = $holdingLocationType;
         return $this;
     }
-
-    
 }

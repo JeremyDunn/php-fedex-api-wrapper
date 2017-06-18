@@ -46,6 +46,4 @@ class UploadImageDetail extends AbstractComplexType
         $this->values['Image'] = $image;
         return $this;
     }
-
-    
 }

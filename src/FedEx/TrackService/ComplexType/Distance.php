@@ -46,6 +46,4 @@ class Distance extends AbstractComplexType
         $this->values['Units'] = $units;
         return $this;
     }
-
-    
 }

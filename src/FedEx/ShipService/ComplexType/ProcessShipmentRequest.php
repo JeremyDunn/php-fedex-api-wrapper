@@ -85,6 +85,4 @@ class ProcessShipmentRequest extends AbstractComplexType
         $this->values['RequestedShipment'] = $requestedShipment;
         return $this;
     }
-
-    
 }

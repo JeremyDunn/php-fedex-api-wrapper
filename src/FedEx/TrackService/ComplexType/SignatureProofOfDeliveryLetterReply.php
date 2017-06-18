@@ -85,6 +85,4 @@ class SignatureProofOfDeliveryLetterReply extends AbstractComplexType
         $this->values['Letter'] = $letter;
         return $this;
     }
-
-    
 }

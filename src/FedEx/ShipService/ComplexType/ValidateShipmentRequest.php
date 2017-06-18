@@ -85,6 +85,4 @@ class ValidateShipmentRequest extends AbstractComplexType
         $this->values['RequestedShipment'] = $requestedShipment;
         return $this;
     }
-
-    
 }

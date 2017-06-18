@@ -46,6 +46,4 @@ class CertificateOfOriginDetail extends AbstractComplexType
         $this->values['CustomerImageUsages'] = $customerImageUsages;
         return $this;
     }
-
-    
 }

@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -46,6 +46,4 @@ class TransactionDetail extends AbstractComplexType
         $this->values['Localization'] = $localization;
         return $this;
     }
-
-    
 }

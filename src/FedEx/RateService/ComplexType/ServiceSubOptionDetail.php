@@ -59,6 +59,4 @@ class ServiceSubOptionDetail extends AbstractComplexType
         $this->values['SmartPostIndicia'] = $smartPostIndicia;
         return $this;
     }
-
-    
 }

@@ -4,10 +4,8 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * 
-            For international multiple piece shipments, commodity information must be passed in the Master and on each child transaction.
+ * For international multiple piece shipments, commodity information must be passed in the Master and on each child transaction.
             If this shipment cotains more than four commodities line items, the four highest valued should be included in the first 4 occurances for this request.
-          
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -89,10 +87,8 @@ class Commodity extends AbstractComplexType
     }
 
     /**
-     * 
-                Unique alpha/numeric representing commodity item.
+     * Unique alpha/numeric representing commodity item.
                 At least one occurrence is required for US Export shipments if the Customs Value is greater than $2500 or if a valid US Export license is required.
-              
      *
      * @param string $harmonizedCode
      * @return $this
@@ -164,11 +160,9 @@ class Commodity extends AbstractComplexType
     }
 
     /**
-     * 
-                Total customs value for this line item.
+     * Total customs value for this line item.
                 It should equal the commodity unit quantity times commodity unit value.
                 Six explicit decimal positions, max length 18 including decimal.
-              
      *
      * @param Money $customsValue
      * @return $this
@@ -216,9 +210,7 @@ class Commodity extends AbstractComplexType
     }
 
     /**
-     * 
-                An identifying mark or number used on the packaging of a shipment to help customers identify a particular shipment.
-              
+     * An identifying mark or number used on the packaging of a shipment to help customers identify a particular shipment.
      *
      * @param string $cIMarksAndNumbers
      * @return $this
@@ -240,6 +232,4 @@ class Commodity extends AbstractComplexType
         $this->values['NaftaDetail'] = $naftaDetail;
         return $this;
     }
-
-    
 }

@@ -98,6 +98,4 @@ class PickupAvailabilityReply extends AbstractComplexType
         $this->values['Options'] = $options;
         return $this;
     }
-
-    
 }

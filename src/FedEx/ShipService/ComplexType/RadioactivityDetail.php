@@ -72,6 +72,4 @@ class RadioactivityDetail extends AbstractComplexType
         $this->values['Dimensions'] = $dimensions;
         return $this;
     }
-
-    
 }

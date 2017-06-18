@@ -85,6 +85,4 @@ class CodDetail extends AbstractComplexType
         $this->values['ReferenceIndicator'] = $referenceIndicator;
         return $this;
     }
-
-    
 }

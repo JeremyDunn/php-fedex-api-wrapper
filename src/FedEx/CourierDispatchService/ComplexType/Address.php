@@ -111,6 +111,4 @@ class Address extends AbstractComplexType
         $this->values['Residential'] = $residential;
         return $this;
     }
-
-    
 }

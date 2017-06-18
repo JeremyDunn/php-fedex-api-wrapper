@@ -202,6 +202,4 @@ class ShipmentSpecialServicesRequested extends AbstractComplexType
         $this->values['CustomDeliveryWindowDetail'] = $customDeliveryWindowDetail;
         return $this;
     }
-
-    
 }

@@ -46,6 +46,4 @@ class DeliveryOnInvoiceAcceptanceDetail extends AbstractComplexType
         $this->values['TrackingId'] = $trackingId;
         return $this;
     }
-
-    
 }

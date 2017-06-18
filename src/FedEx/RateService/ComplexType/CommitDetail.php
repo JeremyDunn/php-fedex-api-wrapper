@@ -306,6 +306,4 @@ class CommitDetail extends AbstractComplexType
         $this->values['FreightCommitDetail'] = $freightCommitDetail;
         return $this;
     }
-
-    
 }

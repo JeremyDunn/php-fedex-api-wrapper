@@ -35,5 +35,4 @@ class Request extends AbstractRequest
         $expressTagAvailabilityReply->populateFromStdClass($response);
         return $expressTagAvailabilityReply;
     }
-
 }

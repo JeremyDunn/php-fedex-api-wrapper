@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *
- * @property \FedEx\Pickup\SimpleType\WeightUnits|string $Units
+ * @property \FedEx\PickupService\SimpleType\WeightUnits|string $Units
  * @property float $Value
 
  */
@@ -26,7 +26,7 @@ class Weight extends AbstractComplexType
     /**
      * Identifies the unit of measure associated with a weight value.
      *
-     * @param \FedEx\Pickup\SimpleType\WeightUnits|string $units
+     * @param \FedEx\PickupService\SimpleType\WeightUnits|string $units
      * @return $this
      */
     public function setUnits($units)
@@ -46,6 +46,4 @@ class Weight extends AbstractComplexType
         $this->values['Value'] = $value;
         return $this;
     }
-
-    
 }

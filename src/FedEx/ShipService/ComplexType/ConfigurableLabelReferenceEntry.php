@@ -72,6 +72,4 @@ class ConfigurableLabelReferenceEntry extends AbstractComplexType
         $this->values['LiteralValue'] = $literalValue;
         return $this;
     }
-
-    
 }

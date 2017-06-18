@@ -176,6 +176,4 @@ class CompletedPackageDetail extends AbstractComplexType
         $this->values['HazardousPackageDetail'] = $hazardousPackageDetail;
         return $this;
     }
-
-    
 }

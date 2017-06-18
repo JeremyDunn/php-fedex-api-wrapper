@@ -59,6 +59,4 @@ class PendingShipmentDetail extends AbstractComplexType
         $this->values['EmailLabelDetail'] = $emailLabelDetail;
         return $this;
     }
-
-    
 }

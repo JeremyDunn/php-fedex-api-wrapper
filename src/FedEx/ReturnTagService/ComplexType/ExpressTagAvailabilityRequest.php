@@ -124,6 +124,4 @@ class ExpressTagAvailabilityRequest extends AbstractComplexType
         $this->values['Packaging'] = $packaging;
         return $this;
     }
-
-    
 }

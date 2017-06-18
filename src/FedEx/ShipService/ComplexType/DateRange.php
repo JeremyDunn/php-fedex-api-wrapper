@@ -46,6 +46,4 @@ class DateRange extends AbstractComplexType
         $this->values['Ends'] = $ends;
         return $this;
     }
-
-    
 }

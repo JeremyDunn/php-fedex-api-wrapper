@@ -98,6 +98,4 @@ class AddressValidationReply extends AbstractComplexType
         $this->values['AddressResults'] = $addressResults;
         return $this;
     }
-
-    
 }

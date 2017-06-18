@@ -59,6 +59,4 @@ class Op950Detail extends AbstractComplexType
         $this->values['SignatureName'] = $signatureName;
         return $this;
     }
-
-    
 }

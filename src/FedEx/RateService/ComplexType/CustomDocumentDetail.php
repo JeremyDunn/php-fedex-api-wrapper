@@ -72,6 +72,4 @@ class CustomDocumentDetail extends AbstractComplexType
         $this->values['SpecificationId'] = $specificationId;
         return $this;
     }
-
-    
 }

@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -72,6 +72,4 @@ class Party extends AbstractComplexType
         $this->values['Address'] = $address;
         return $this;
     }
-
-    
 }

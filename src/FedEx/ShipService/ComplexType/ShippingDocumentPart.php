@@ -46,6 +46,4 @@ class ShippingDocumentPart extends AbstractComplexType
         $this->values['Image'] = $image;
         return $this;
     }
-
-    
 }

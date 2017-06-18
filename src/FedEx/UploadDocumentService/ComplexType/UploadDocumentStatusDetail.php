@@ -150,6 +150,4 @@ class UploadDocumentStatusDetail extends AbstractComplexType
         $this->values['DocumentIdProducer'] = $documentIdProducer;
         return $this;
     }
-
-    
 }

@@ -72,6 +72,4 @@ class SmartPostShipmentDetail extends AbstractComplexType
         $this->values['CustomerManifestId'] = $customerManifestId;
         return $this;
     }
-
-    
 }

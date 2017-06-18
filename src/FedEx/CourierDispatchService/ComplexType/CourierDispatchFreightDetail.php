@@ -85,6 +85,4 @@ class CourierDispatchFreightDetail extends AbstractComplexType
         $this->values['TrailerSize'] = $trailerSize;
         return $this;
     }
-
-    
 }

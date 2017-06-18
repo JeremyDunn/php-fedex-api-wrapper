@@ -85,6 +85,4 @@ class ShippingDocumentDispositionDetail extends AbstractComplexType
         $this->values['PrintDetail'] = $printDetail;
         return $this;
     }
-
-    
 }

@@ -33,6 +33,4 @@ class CompletedHazardousSummaryDetail extends AbstractComplexType
         $this->values['SmallQuantityExceptionPackageCount'] = $smallQuantityExceptionPackageCount;
         return $this;
     }
-
-    
 }

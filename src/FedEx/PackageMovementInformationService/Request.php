@@ -54,5 +54,4 @@ class Request extends AbstractRequest
         $serviceAvailabilityReply->populateFromStdClass($response);
         return $serviceAvailabilityReply;
     }
-
 }

@@ -46,6 +46,4 @@ class FreightSpecialServicePayment extends AbstractComplexType
         $this->values['PaymentType'] = $paymentType;
         return $this;
     }
-
-    
 }

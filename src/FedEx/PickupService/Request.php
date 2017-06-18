@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup;
+namespace FedEx\PickupService;
     
 use FedEx\AbstractRequest;
 
@@ -73,5 +73,4 @@ class Request extends AbstractRequest
         $cancelPickupReply->populateFromStdClass($response);
         return $cancelPickupReply;
     }
-
 }

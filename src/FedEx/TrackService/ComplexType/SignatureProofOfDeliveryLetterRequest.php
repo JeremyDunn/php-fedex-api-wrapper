@@ -124,6 +124,4 @@ class SignatureProofOfDeliveryLetterRequest extends AbstractComplexType
         $this->values['Consignee'] = $consignee;
         return $this;
     }
-
-    
 }

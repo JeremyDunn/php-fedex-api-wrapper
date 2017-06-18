@@ -46,6 +46,4 @@ class HazardousCommodityPackingDetail extends AbstractComplexType
         $this->values['PackingInstructions'] = $packingInstructions;
         return $this;
     }
-
-    
 }

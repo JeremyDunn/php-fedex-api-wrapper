@@ -111,6 +111,4 @@ class LabelSpecification extends AbstractComplexType
         $this->values['CustomerSpecifiedDetail'] = $customerSpecifiedDetail;
         return $this;
     }
-
-    
 }

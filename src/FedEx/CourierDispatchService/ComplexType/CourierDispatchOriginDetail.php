@@ -111,6 +111,4 @@ class CourierDispatchOriginDetail extends AbstractComplexType
         $this->values['CompanyCloseTime'] = $companyCloseTime;
         return $this;
     }
-
-    
 }

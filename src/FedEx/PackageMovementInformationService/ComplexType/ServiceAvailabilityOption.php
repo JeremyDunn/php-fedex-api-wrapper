@@ -85,6 +85,4 @@ class ServiceAvailabilityOption extends AbstractComplexType
         $this->values['DestinationAirportId'] = $destinationAirportId;
         return $this;
     }
-
-    
 }

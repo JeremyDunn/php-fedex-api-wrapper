@@ -59,6 +59,4 @@ class ParsedElement extends AbstractComplexType
         $this->values['Changes'] = $changes;
         return $this;
     }
-
-    
 }

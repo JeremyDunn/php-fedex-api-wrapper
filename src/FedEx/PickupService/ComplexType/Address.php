@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -111,6 +111,4 @@ class Address extends AbstractComplexType
         $this->values['Residential'] = $residential;
         return $this;
     }
-
-    
 }

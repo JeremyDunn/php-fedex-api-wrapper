@@ -371,6 +371,4 @@ class RequestedShipment extends AbstractComplexType
         $this->values['RequestedPackageLineItems'] = $requestedPackageLineItems;
         return $this;
     }
-
-    
 }

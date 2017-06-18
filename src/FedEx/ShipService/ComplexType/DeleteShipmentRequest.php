@@ -111,6 +111,4 @@ class DeleteShipmentRequest extends AbstractComplexType
         $this->values['DeletionControl'] = $deletionControl;
         return $this;
     }
-
-    
 }

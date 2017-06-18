@@ -40,12 +40,10 @@ class ExpressFreightDetail extends AbstractComplexType
     }
 
     /**
-     * 
-                Total shipment pieces.
+     * Total shipment pieces.
                 ie. 3 boxes and 3 pallets of 100 pieces each = Shippers Load and Count of 303.
                 Applicable to International Priority Freight and International Economy Freight.
                 Values must be in the range of 1 - 99999
-              
      *
      * @param int $shippersLoadAndCount
      * @return $this
@@ -103,6 +101,4 @@ class ExpressFreightDetail extends AbstractComplexType
         $this->values['UndeliverableContact'] = $undeliverableContact;
         return $this;
     }
-
-    
 }

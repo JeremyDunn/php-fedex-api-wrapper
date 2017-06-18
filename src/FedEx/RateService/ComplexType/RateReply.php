@@ -85,6 +85,4 @@ class RateReply extends AbstractComplexType
         $this->values['RateReplyDetails'] = $rateReplyDetails;
         return $this;
     }
-
-    
 }

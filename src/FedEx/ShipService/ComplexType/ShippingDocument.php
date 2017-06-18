@@ -124,6 +124,4 @@ class ShippingDocument extends AbstractComplexType
         $this->values['Parts'] = $parts;
         return $this;
     }
-
-    
 }

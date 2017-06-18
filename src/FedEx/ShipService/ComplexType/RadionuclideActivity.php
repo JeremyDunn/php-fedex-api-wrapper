@@ -46,6 +46,4 @@ class RadionuclideActivity extends AbstractComplexType
         $this->values['UnitOfMeasure'] = $unitOfMeasure;
         return $this;
     }
-
-    
 }

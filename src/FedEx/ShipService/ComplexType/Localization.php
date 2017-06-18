@@ -46,6 +46,4 @@ class Localization extends AbstractComplexType
         $this->values['LocaleCode'] = $localeCode;
         return $this;
     }
-
-    
 }

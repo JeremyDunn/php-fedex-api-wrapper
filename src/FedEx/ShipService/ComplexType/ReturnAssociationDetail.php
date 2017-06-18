@@ -46,6 +46,4 @@ class ReturnAssociationDetail extends AbstractComplexType
         $this->values['ShipDate'] = $shipDate;
         return $this;
     }
-
-    
 }

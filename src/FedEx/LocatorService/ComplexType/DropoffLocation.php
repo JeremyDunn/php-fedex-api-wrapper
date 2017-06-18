@@ -106,11 +106,9 @@ class DropoffLocation extends AbstractComplexType
      * @param  $recordIndex
      * @return $this
      */
-    public function setRecordIndex( $recordIndex)
+    public function setRecordIndex($recordIndex)
     {
         $this->values['RecordIndex'] = $recordIndex;
         return $this;
     }
-
-    
 }

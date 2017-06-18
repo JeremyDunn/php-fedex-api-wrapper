@@ -46,6 +46,4 @@ class EdtCommodityTax extends AbstractComplexType
         $this->values['Taxes'] = $taxes;
         return $this;
     }
-
-    
 }

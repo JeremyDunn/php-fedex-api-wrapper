@@ -111,6 +111,4 @@ class AddressValidationRequest extends AbstractComplexType
         $this->values['AddressesToValidate'] = $addressesToValidate;
         return $this;
     }
-
-    
 }

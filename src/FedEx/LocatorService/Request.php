@@ -35,5 +35,4 @@ class Request extends AbstractRequest
         $fedExLocatorReply->populateFromStdClass($response);
         return $fedExLocatorReply;
     }
-
 }

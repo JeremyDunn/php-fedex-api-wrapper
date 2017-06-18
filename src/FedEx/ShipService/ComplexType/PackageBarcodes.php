@@ -46,6 +46,4 @@ class PackageBarcodes extends AbstractComplexType
         $this->values['StringBarcodes'] = $stringBarcodes;
         return $this;
     }
-
-    
 }

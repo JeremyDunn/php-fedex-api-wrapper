@@ -46,6 +46,4 @@ class PickupShipmentAttributes extends AbstractComplexType
         $this->values['Weight'] = $weight;
         return $this;
     }
-
-    
 }

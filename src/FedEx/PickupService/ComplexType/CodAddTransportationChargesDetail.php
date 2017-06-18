@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -10,9 +10,9 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *
- * @property \FedEx\Pickup\SimpleType\RateTypeBasisType|string $RateTypeBasis
- * @property \FedEx\Pickup\SimpleType\CodAddTransportationChargeBasisType|string $ChargeBasis
- * @property \FedEx\Pickup\SimpleType\ChargeBasisLevelType|string $ChargeBasisLevel
+ * @property \FedEx\PickupService\SimpleType\RateTypeBasisType|string $RateTypeBasis
+ * @property \FedEx\PickupService\SimpleType\CodAddTransportationChargeBasisType|string $ChargeBasis
+ * @property \FedEx\PickupService\SimpleType\ChargeBasisLevelType|string $ChargeBasisLevel
 
  */
 class CodAddTransportationChargesDetail extends AbstractComplexType
@@ -27,7 +27,7 @@ class CodAddTransportationChargesDetail extends AbstractComplexType
     /**
      * Set RateTypeBasis
      *
-     * @param \FedEx\Pickup\SimpleType\RateTypeBasisType|string $rateTypeBasis
+     * @param \FedEx\PickupService\SimpleType\RateTypeBasisType|string $rateTypeBasis
      * @return $this
      */
     public function setRateTypeBasis($rateTypeBasis)
@@ -39,7 +39,7 @@ class CodAddTransportationChargesDetail extends AbstractComplexType
     /**
      * Set ChargeBasis
      *
-     * @param \FedEx\Pickup\SimpleType\CodAddTransportationChargeBasisType|string $chargeBasis
+     * @param \FedEx\PickupService\SimpleType\CodAddTransportationChargeBasisType|string $chargeBasis
      * @return $this
      */
     public function setChargeBasis($chargeBasis)
@@ -51,7 +51,7 @@ class CodAddTransportationChargesDetail extends AbstractComplexType
     /**
      * Set ChargeBasisLevel
      *
-     * @param \FedEx\Pickup\SimpleType\ChargeBasisLevelType|string $chargeBasisLevel
+     * @param \FedEx\PickupService\SimpleType\ChargeBasisLevelType|string $chargeBasisLevel
      * @return $this
      */
     public function setChargeBasisLevel($chargeBasisLevel)
@@ -59,6 +59,4 @@ class CodAddTransportationChargesDetail extends AbstractComplexType
         $this->values['ChargeBasisLevel'] = $chargeBasisLevel;
         return $this;
     }
-
-    
 }

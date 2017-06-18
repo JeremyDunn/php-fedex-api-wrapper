@@ -111,6 +111,4 @@ class UploadDocumentsRequest extends AbstractComplexType
         $this->values['Documents'] = $documents;
         return $this;
     }
-
-    
 }

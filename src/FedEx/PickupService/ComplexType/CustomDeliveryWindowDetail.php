@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *
- * @property \FedEx\Pickup\SimpleType\CustomDeliveryWindowType|string $Type
+ * @property \FedEx\PickupService\SimpleType\CustomDeliveryWindowType|string $Type
  * @property string $RequestTime
  * @property DateRange $RequestRange
  * @property string $RequestDate
@@ -28,7 +28,7 @@ class CustomDeliveryWindowDetail extends AbstractComplexType
     /**
      * Indicates the type of custom delivery being requested.
      *
-     * @param \FedEx\Pickup\SimpleType\CustomDeliveryWindowType|string $type
+     * @param \FedEx\PickupService\SimpleType\CustomDeliveryWindowType|string $type
      * @return $this
      */
     public function setType($type)
@@ -72,6 +72,4 @@ class CustomDeliveryWindowDetail extends AbstractComplexType
         $this->values['RequestDate'] = $requestDate;
         return $this;
     }
-
-    
 }

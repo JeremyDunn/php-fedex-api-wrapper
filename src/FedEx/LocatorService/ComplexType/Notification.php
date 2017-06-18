@@ -98,6 +98,4 @@ class Notification extends AbstractComplexType
         $this->values['MessageParameters'] = $messageParameters;
         return $this;
     }
-
-    
 }

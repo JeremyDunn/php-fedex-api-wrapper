@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -10,11 +10,11 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *
- * @property \FedEx\Pickup\SimpleType\ServiceType|string $Service
+ * @property \FedEx\PickupService\SimpleType\ServiceType|string $Service
  * @property string $BookingNumber
  * @property Dimensions $Dimensions
- * @property \FedEx\Pickup\SimpleType\TruckType|string $TruckType
- * @property \FedEx\Pickup\SimpleType\TrailerSizeType|string $TrailerSize
+ * @property \FedEx\PickupService\SimpleType\TruckType|string $TruckType
+ * @property \FedEx\PickupService\SimpleType\TrailerSizeType|string $TrailerSize
 
  */
 class ExpressFreightPickupDetail extends AbstractComplexType
@@ -29,7 +29,7 @@ class ExpressFreightPickupDetail extends AbstractComplexType
     /**
      * Identifies the collection of available FedEx transportation service options. Must be a valid FedEx freight service identifier.
      *
-     * @param \FedEx\Pickup\SimpleType\ServiceType|string $service
+     * @param \FedEx\PickupService\SimpleType\ServiceType|string $service
      * @return $this
      */
     public function setService($service)
@@ -65,7 +65,7 @@ class ExpressFreightPickupDetail extends AbstractComplexType
     /**
      * Identifies the type of truck that is needed for FedEx to pick up the freight shipment. See TruckType for valid values.
      *
-     * @param \FedEx\Pickup\SimpleType\TruckType|string $truckType
+     * @param \FedEx\PickupService\SimpleType\TruckType|string $truckType
      * @return $this
      */
     public function setTruckType($truckType)
@@ -77,7 +77,7 @@ class ExpressFreightPickupDetail extends AbstractComplexType
     /**
      * Identifies the tailer size needed for FedEx to pick up a freight shipment. See TrailerSizeType for valid values.
      *
-     * @param \FedEx\Pickup\SimpleType\TrailerSizeType|string $trailerSize
+     * @param \FedEx\PickupService\SimpleType\TrailerSizeType|string $trailerSize
      * @return $this
      */
     public function setTrailerSize($trailerSize)
@@ -85,6 +85,4 @@ class ExpressFreightPickupDetail extends AbstractComplexType
         $this->values['TrailerSize'] = $trailerSize;
         return $this;
     }
-
-    
 }

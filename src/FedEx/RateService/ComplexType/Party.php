@@ -72,6 +72,4 @@ class Party extends AbstractComplexType
         $this->values['Address'] = $address;
         return $this;
     }
-
-    
 }

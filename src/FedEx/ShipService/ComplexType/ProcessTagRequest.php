@@ -85,6 +85,4 @@ class ProcessTagRequest extends AbstractComplexType
         $this->values['RequestedShipment'] = $requestedShipment;
         return $this;
     }
-
-    
 }

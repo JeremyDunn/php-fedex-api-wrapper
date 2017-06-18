@@ -46,6 +46,4 @@ class EdtExciseCondition extends AbstractComplexType
         $this->values['Value'] = $value;
         return $this;
     }
-
-    
 }

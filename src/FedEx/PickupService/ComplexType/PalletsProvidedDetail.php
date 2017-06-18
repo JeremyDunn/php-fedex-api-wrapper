@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -33,6 +33,4 @@ class PalletsProvidedDetail extends AbstractComplexType
         $this->values['PalletCount'] = $palletCount;
         return $this;
     }
-
-    
 }

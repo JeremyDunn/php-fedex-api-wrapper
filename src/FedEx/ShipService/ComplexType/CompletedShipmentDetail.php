@@ -254,6 +254,4 @@ class CompletedShipmentDetail extends AbstractComplexType
         $this->values['CompletedPackageDetails'] = $completedPackageDetails;
         return $this;
     }
-
-    
 }

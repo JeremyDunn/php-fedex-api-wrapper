@@ -31,7 +31,7 @@ class Dimensions extends AbstractComplexType
      * @param  $length
      * @return $this
      */
-    public function setLength( $length)
+    public function setLength($length)
     {
         $this->values['Length'] = $length;
         return $this;
@@ -43,7 +43,7 @@ class Dimensions extends AbstractComplexType
      * @param  $width
      * @return $this
      */
-    public function setWidth( $width)
+    public function setWidth($width)
     {
         $this->values['Width'] = $width;
         return $this;
@@ -55,7 +55,7 @@ class Dimensions extends AbstractComplexType
      * @param  $height
      * @return $this
      */
-    public function setHeight( $height)
+    public function setHeight($height)
     {
         $this->values['Height'] = $height;
         return $this;
@@ -72,6 +72,4 @@ class Dimensions extends AbstractComplexType
         $this->values['Units'] = $units;
         return $this;
     }
-
-    
 }

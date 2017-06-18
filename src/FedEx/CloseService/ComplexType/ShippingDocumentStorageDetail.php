@@ -59,6 +59,4 @@ class ShippingDocumentStorageDetail extends AbstractComplexType
         $this->values['FileSuffix'] = $fileSuffix;
         return $this;
     }
-
-    
 }

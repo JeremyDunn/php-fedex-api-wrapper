@@ -59,6 +59,4 @@ class EMailNotificationDetail extends AbstractComplexType
         $this->values['Recipients'] = $recipients;
         return $this;
     }
-
-    
 }

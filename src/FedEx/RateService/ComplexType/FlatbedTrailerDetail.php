@@ -33,6 +33,4 @@ class FlatbedTrailerDetail extends AbstractComplexType
         $this->values['Options'] = $options;
         return $this;
     }
-
-    
 }

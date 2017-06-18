@@ -137,6 +137,4 @@ class ProposedAddressDetail extends AbstractComplexType
         $this->values['RemovedNonAddressData'] = $removedNonAddressData;
         return $this;
     }
-
-    
 }

@@ -137,6 +137,4 @@ class CancelCourierDispatchRequest extends AbstractComplexType
         $this->values['CourierRemarks'] = $courierRemarks;
         return $this;
     }
-
-    
 }

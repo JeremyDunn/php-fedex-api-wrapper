@@ -111,6 +111,4 @@ class ProcessShipmentReply extends AbstractComplexType
         $this->values['ErrorLabels'] = $errorLabels;
         return $this;
     }
-
-    
 }

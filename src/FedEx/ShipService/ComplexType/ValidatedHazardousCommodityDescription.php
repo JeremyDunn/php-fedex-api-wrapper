@@ -189,6 +189,4 @@ class ValidatedHazardousCommodityDescription extends AbstractComplexType
         $this->values['LabelText'] = $labelText;
         return $this;
     }
-
-    
 }

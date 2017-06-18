@@ -59,6 +59,4 @@ class ClientDetail extends AbstractComplexType
         $this->values['Localization'] = $localization;
         return $this;
     }
-
-    
 }

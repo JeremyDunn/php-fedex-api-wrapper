@@ -97,7 +97,7 @@ class FedExLocatorRequest extends AbstractComplexType
      * @param  $maximumMatchCount
      * @return $this
      */
-    public function setMaximumMatchCount( $maximumMatchCount)
+    public function setMaximumMatchCount($maximumMatchCount)
     {
         $this->values['MaximumMatchCount'] = $maximumMatchCount;
         return $this;
@@ -128,7 +128,7 @@ class FedExLocatorRequest extends AbstractComplexType
     }
 
     /**
-     * The descriptive data of a physical location for which nearby FedEx locations are to be found. This element is required if NearToPhoneNumber is not present. Both City and StateOrProvinceCode child elements are required if	PostalCode is not present.
+     * The descriptive data of a physical location for which nearby FedEx locations are to be found. This element is required if NearToPhoneNumber is not present. Both City and StateOrProvinceCode child elements are required ifPostalCode is not present.
      *
      * @param Address $nearToAddress
      * @return $this
@@ -150,6 +150,4 @@ class FedExLocatorRequest extends AbstractComplexType
         $this->values['DropoffServicesDesired'] = $dropoffServicesDesired;
         return $this;
     }
-
-    
 }

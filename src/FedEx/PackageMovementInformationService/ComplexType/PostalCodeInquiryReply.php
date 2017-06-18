@@ -111,6 +111,4 @@ class PostalCodeInquiryReply extends AbstractComplexType
         $this->values['ExpressFreightDescription'] = $expressFreightDescription;
         return $this;
     }
-
-    
 }

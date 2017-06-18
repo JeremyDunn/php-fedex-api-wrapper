@@ -46,6 +46,4 @@ class CompletedSmartPostDetail extends AbstractComplexType
         $this->values['Machinable'] = $machinable;
         return $this;
     }
-
-    
 }

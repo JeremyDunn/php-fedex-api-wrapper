@@ -46,6 +46,4 @@ class CustomerReference extends AbstractComplexType
         $this->values['Value'] = $value;
         return $this;
     }
-
-    
 }

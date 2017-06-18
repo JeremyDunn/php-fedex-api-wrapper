@@ -33,6 +33,4 @@ class Rma extends AbstractComplexType
         $this->values['Reason'] = $reason;
         return $this;
     }
-
-    
 }

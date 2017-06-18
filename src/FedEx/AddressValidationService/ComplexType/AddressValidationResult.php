@@ -46,6 +46,4 @@ class AddressValidationResult extends AbstractComplexType
         $this->values['ProposedAddressDetails'] = $proposedAddressDetails;
         return $this;
     }
-
-    
 }

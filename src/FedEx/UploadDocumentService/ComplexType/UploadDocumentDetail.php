@@ -85,6 +85,4 @@ class UploadDocumentDetail extends AbstractComplexType
         $this->values['DocumentContent'] = $documentContent;
         return $this;
     }
-
-    
 }

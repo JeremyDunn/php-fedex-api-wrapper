@@ -85,6 +85,4 @@ class QualifiedTrackingNumber extends AbstractComplexType
         $this->values['Destination'] = $destination;
         return $this;
     }
-
-    
 }

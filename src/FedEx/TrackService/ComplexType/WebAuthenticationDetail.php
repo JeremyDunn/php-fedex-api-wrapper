@@ -33,6 +33,4 @@ class WebAuthenticationDetail extends AbstractComplexType
         $this->values['UserCredential'] = $userCredential;
         return $this;
     }
-
-    
 }

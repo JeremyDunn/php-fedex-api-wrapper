@@ -46,6 +46,4 @@ class NotificationParameter extends AbstractComplexType
         $this->values['Value'] = $value;
         return $this;
     }
-
-    
 }
