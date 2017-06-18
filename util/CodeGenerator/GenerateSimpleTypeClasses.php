@@ -39,7 +39,7 @@ class GenerateSimpleTypeClasses extends AbstractGenerate
 
                 foreach ($schema->restriction->enumeration as $enum) {
                     $attributes = $enum->attributes();
-                    $constantName = str_replace($this->strReplace['invalid'], $this->strReplace['valid'], $attributes->value->__toString());
+                    $constantName = strtoupper(str_replace($this->strReplace['invalid'], $this->strReplace['valid'], $attributes->value->__toString()));
                     $consts .= "    const _{$constantName} = '{$attributes->value->__toString()}';\n";
                 }
 
