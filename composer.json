@@ -19,7 +19,8 @@
         "symfony/console": "2.*",
         "apigen/apigen": "^4.1",
         "phpunit/phpunit": "^5.7",
-        "fzaninotto/faker": "^1.6"
+        "fzaninotto/faker": "^1.6",
+        "squizlabs/php_codesniffer": "*"
     },
     "autoload": {
         "psr-4": {
