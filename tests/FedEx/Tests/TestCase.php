@@ -58,5 +58,4 @@ class TestCase extends \PHPUnit\Framework\TestCase
             new \FedEx\UploadDocumentService\Request()
         ];
     }
-
 }

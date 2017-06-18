@@ -154,6 +154,3 @@ $rateServiceRequest = new RateService\Request();
 $response = $rateServiceRequest->getGetRatesReply($rateRequest);
 
 var_dump($response);
-
-
-

@@ -3,9 +3,9 @@
 require_once 'credentials.php';
 require_once 'bootstrap.php';
 
-use FedEx\ShipService,
-    FedEx\ShipService\ComplexType,
-    FedEx\ShipService\SimpleType;
+use FedEx\ShipService;
+use FedEx\ShipService\ComplexType;
+use FedEx\ShipService\SimpleType;
 
 $userCredential = new ComplexType\WebAuthenticationCredential();
 $userCredential

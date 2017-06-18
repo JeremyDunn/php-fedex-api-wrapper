@@ -5,6 +5,7 @@ namespace FedEx\Tests;
 use FedEx\Utility\ComplexTypePopulator;
 use FedEx\CloseService\ComplexType;
 use FedEx\CloseService\Request;
+
 class CloseServiceTest extends TestCase
 {
     public function testCloseServiceRequest()
