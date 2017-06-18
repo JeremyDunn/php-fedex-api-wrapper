@@ -71,6 +71,9 @@ class GenerateSimpleTypeClasses extends AbstractGenerate
             $documentation = $className;
         }
 
+        $documentation = str_ireplace("\t", '', $documentation);
+        $documentation = trim($documentation);
+
         $fileBody = <<<TEXT
 <?php
 namespace {$this->namespace}\SimpleType;

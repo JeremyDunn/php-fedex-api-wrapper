@@ -95,6 +95,9 @@ class GenerateComplexTypeClasses extends AbstractGenerate
             $classDoc = $className;
         }
 
+        $classDoc = str_ireplace("\t", '', $classDoc);
+        $classDoc = trim($classDoc);
+
         $propertiesString = '';
         $methodString = '';
 
@@ -176,7 +179,7 @@ TEXT;
             } else {
                 if ($isArray) {
                     $property['type'] = 'array ';
-                } else {
+                } elseif (!empty($property['type'])) {
                     $property['type'] = $property['type'] . ' ';
                 }
             }
@@ -186,6 +189,8 @@ TEXT;
             $property['doc'] = "Set {$property['name']}";
         }
 
+        $property['doc'] = str_ireplace("\t", '', $property['doc']);
+        $property['doc'] = trim($property['doc']);
 
         $returnString = <<<TEXT
     /**

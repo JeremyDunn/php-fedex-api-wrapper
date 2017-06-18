@@ -177,9 +177,6 @@ abstract class AbstractComplexType
             if (isset($parameterValue, $stdClass->$stdPropertyName)) {
                 $this->$methodName($parameterValue);
             }
-
         }
     }
-
-
 }

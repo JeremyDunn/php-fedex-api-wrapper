@@ -12,7 +12,7 @@
     <arg value="np"/>
 
     <rule ref="PSR2">
-        <include-pattern>*.php</include-pattern>
+        <exclude-pattern>*.js</exclude-pattern>
     </rule>
 
 

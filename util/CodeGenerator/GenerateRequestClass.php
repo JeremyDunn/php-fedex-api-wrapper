@@ -135,6 +135,7 @@ class GenerateRequestClass extends AbstractGenerate
 TEXT;
         }
 
+        $requestFunctions = rtrim($requestFunctions);
 
         $fileBody = <<<TEXT
 <?php
