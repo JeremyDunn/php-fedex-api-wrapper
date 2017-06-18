@@ -27,7 +27,7 @@ class CodReturnPackageDetail extends AbstractComplexType
     protected $name = 'CodReturnPackageDetail';
 
     /**
-     * The COD amount (after any accumulations) that must be collected upon delivery of a package shipped using the COD special service.
+     * Set CollectionAmount
      *
      * @param Money $collectionAmount
      * @return $this
@@ -63,7 +63,7 @@ class CodReturnPackageDetail extends AbstractComplexType
     }
 
     /**
-     * Contains the data which form the Astra and 2DCommon barcodes that print on the COD return label.
+     * Set Barcodes
      *
      * @param PackageBarcodes $barcodes
      * @return $this
@@ -75,7 +75,7 @@ class CodReturnPackageDetail extends AbstractComplexType
     }
 
     /**
-     * The label image or printer commands to print the label.
+     * Set Label
      *
      * @param ShippingDocument $label
      * @return $this

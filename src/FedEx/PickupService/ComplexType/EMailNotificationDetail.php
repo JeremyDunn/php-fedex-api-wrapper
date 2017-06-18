@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *
- * @property \FedEx\Pickup\SimpleType\EMailNotificationAggregationType|string $AggregationType
+ * @property \FedEx\PickupService\SimpleType\EMailNotificationAggregationType|string $AggregationType
  * @property string $PersonalMessage
  * @property EMailNotificationRecipient[] $Recipients
 
@@ -27,7 +27,7 @@ class EMailNotificationDetail extends AbstractComplexType
     /**
      * Specifies whether/how email notifications are grouped.
      *
-     * @param \FedEx\Pickup\SimpleType\EMailNotificationAggregationType|string $aggregationType
+     * @param \FedEx\PickupService\SimpleType\EMailNotificationAggregationType|string $aggregationType
      * @return $this
      */
     public function setAggregationType($aggregationType)

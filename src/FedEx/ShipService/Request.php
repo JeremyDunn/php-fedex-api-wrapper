@@ -15,24 +15,13 @@ class Request extends AbstractRequest
     const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/ship';
     const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/ship';
 
-    protected static $wsdlFileName = 'ShipService_v12.wsdl';
-            
-    /**
-     * Sends the CreatePendingShipmentRequest and returns the response
-     *
-     * @param ComplexType\CreatePendingShipmentRequest $createPendingShipmentRequest
-     * @return stdClass
-     */
-    public function getCreatePendingShipmentReply(ComplexType\CreatePendingShipmentRequest $createPendingShipmentRequest)
-    {
-        return $this->getSoapClient()->createPendingShipment($createPendingShipmentRequest->toArray());
-    }
+    protected static $wsdlFileName = 'ShipService_v19.wsdl';
             
     /**
      * Sends the ProcessTagRequest and returns the response
      *
      * @param ComplexType\ProcessTagRequest $processTagRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getProcessTagReply(ComplexType\ProcessTagRequest $processTagRequest)
     {
@@ -43,7 +32,7 @@ class Request extends AbstractRequest
      * Sends the ProcessShipmentRequest and returns the response
      *
      * @param ComplexType\ProcessShipmentRequest $processShipmentRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getProcessShipmentReply(ComplexType\ProcessShipmentRequest $processShipmentRequest)
     {
@@ -51,21 +40,10 @@ class Request extends AbstractRequest
     }
             
     /**
-     * Sends the CancelPendingShipmentRequest and returns the response
-     *
-     * @param ComplexType\CancelPendingShipmentRequest $cancelPendingShipmentRequest
-     * @return stdClass
-     */
-    public function getCancelPendingShipmentReply(ComplexType\CancelPendingShipmentRequest $cancelPendingShipmentRequest)
-    {
-        return $this->getSoapClient()->cancelPendingShipment($cancelPendingShipmentRequest->toArray());
-    }
-            
-    /**
      * Sends the DeleteTagRequest and returns the response
      *
      * @param ComplexType\DeleteTagRequest $deleteTagRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getDeleteTagReply(ComplexType\DeleteTagRequest $deleteTagRequest)
     {
@@ -76,7 +54,7 @@ class Request extends AbstractRequest
      * Sends the DeleteShipmentRequest and returns the response
      *
      * @param ComplexType\DeleteShipmentRequest $deleteShipmentRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getDeleteShipmentReply(ComplexType\DeleteShipmentRequest $deleteShipmentRequest)
     {
@@ -87,7 +65,7 @@ class Request extends AbstractRequest
      * Sends the ValidateShipmentRequest and returns the response
      *
      * @param ComplexType\ValidateShipmentRequest $validateShipmentRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getValidateShipmentReply(ComplexType\ValidateShipmentRequest $validateShipmentRequest)
     {

@@ -4,7 +4,7 @@ namespace FedEx\TrackService\SimpleType;
 use FedEx\AbstractSimpleType;
 
 /**
- * The type of track to be performed.
+ * TrackIdentifierType
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -17,6 +17,7 @@ class TrackIdentifierType extends AbstractSimpleType
     const _CUSTOMER_AUTHORIZATION_NUMBER = 'CUSTOMER_AUTHORIZATION_NUMBER';
     const _CUSTOMER_REFERENCE = 'CUSTOMER_REFERENCE';
     const _DEPARTMENT = 'DEPARTMENT';
+    const _DOCUMENT_AIRWAY_BILL = 'DOCUMENT_AIRWAY_BILL';
     const _FREE_FORM_REFERENCE = 'FREE_FORM_REFERENCE';
     const _GROUND_INTERNATIONAL = 'GROUND_INTERNATIONAL';
     const _GROUND_SHIPMENT_ID = 'GROUND_SHIPMENT_ID';
@@ -25,9 +26,11 @@ class TrackIdentifierType extends AbstractSimpleType
     const _JOB_GLOBAL_TRACKING_NUMBER = 'JOB_GLOBAL_TRACKING_NUMBER';
     const _ORDER_GLOBAL_TRACKING_NUMBER = 'ORDER_GLOBAL_TRACKING_NUMBER';
     const _ORDER_TO_PAY_NUMBER = 'ORDER_TO_PAY_NUMBER';
+    const _OUTBOUND_LINK_TO_RETURN = 'OUTBOUND_LINK_TO_RETURN';
     const _PARTNER_CARRIER_NUMBER = 'PARTNER_CARRIER_NUMBER';
     const _PART_NUMBER = 'PART_NUMBER';
     const _PURCHASE_ORDER = 'PURCHASE_ORDER';
+    const _REROUTE_TRACKING_NUMBER = 'REROUTE_TRACKING_NUMBER';
     const _RETURNED_TO_SHIPPER_TRACKING_NUMBER = 'RETURNED_TO_SHIPPER_TRACKING_NUMBER';
     const _RETURN_MATERIALS_AUTHORIZATION = 'RETURN_MATERIALS_AUTHORIZATION';
     const _SHIPPER_REFERENCE = 'SHIPPER_REFERENCE';

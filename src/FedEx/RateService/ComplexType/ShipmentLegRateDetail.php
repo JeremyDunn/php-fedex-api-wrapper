@@ -12,7 +12,9 @@ use FedEx\AbstractComplexType;
  *
  * @property string $LegDescription
  * @property Address $LegOrigin
+ * @property string $LegOriginLocationId
  * @property Address $LegDestination
+ * @property string $LegDestinationLocationId
  * @property \FedEx\RateService\SimpleType\ReturnedRateType|string $RateType
  * @property string $RateScale
  * @property string $RateZone
@@ -80,6 +82,18 @@ class ShipmentLegRateDetail extends AbstractComplexType
     }
 
     /**
+     * Specifies the location id the origin of shipment leg.
+     *
+     * @param string $legOriginLocationId
+     * @return $this
+     */
+    public function setLegOriginLocationId($legOriginLocationId)
+    {
+        $this->values['LegOriginLocationId'] = $legOriginLocationId;
+        return $this;
+    }
+
+    /**
      * Destination for this leg.
      *
      * @param Address $legDestination
@@ -88,6 +102,18 @@ class ShipmentLegRateDetail extends AbstractComplexType
     public function setLegDestination(Address $legDestination)
     {
         $this->values['LegDestination'] = $legDestination;
+        return $this;
+    }
+
+    /**
+     * Specifies the location id the destination of shipment leg.
+     *
+     * @param string $legDestinationLocationId
+     * @return $this
+     */
+    public function setLegDestinationLocationId($legDestinationLocationId)
+    {
+        $this->values['LegDestinationLocationId'] = $legDestinationLocationId;
         return $this;
     }
 

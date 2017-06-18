@@ -25,7 +25,7 @@ class DocTabContent extends AbstractComplexType
     protected $name = 'DocTabContent';
 
     /**
-     * The DocTabContentType options available.
+     * Set DocTabContentType
      *
      * @param \FedEx\ShipService\SimpleType\DocTabContentType|string $docTabContentType
      * @return $this
@@ -37,7 +37,7 @@ class DocTabContent extends AbstractComplexType
     }
 
     /**
-     * The DocTabContentType should be set to ZONE001 to specify additional Zone details.
+     * Set Zone001
      *
      * @param DocTabContentZone001 $zone001
      * @return $this
@@ -49,7 +49,7 @@ class DocTabContent extends AbstractComplexType
     }
 
     /**
-     * The DocTabContentType should be set to BARCODED to specify additional BarCoded details.
+     * Set Barcoded
      *
      * @param DocTabContentBarcoded $barcoded
      * @return $this

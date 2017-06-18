@@ -14,6 +14,7 @@ use FedEx\AbstractComplexType;
  * @property CustomLabelTextEntry[] $TextEntries
  * @property CustomLabelGraphicEntry[] $GraphicEntries
  * @property CustomLabelBoxEntry[] $BoxEntries
+ * @property CustomLabelTextBoxEntry[] $TextBoxEntries
  * @property CustomLabelBarcodeEntry[] $BarcodeEntries
 
  */
@@ -71,6 +72,18 @@ class CustomLabelDetail extends AbstractComplexType
     public function setBoxEntries(array $boxEntries)
     {
         $this->values['BoxEntries'] = $boxEntries;
+        return $this;
+    }
+
+    /**
+     * Set TextBoxEntries
+     *
+     * @param CustomLabelTextBoxEntry[] $textBoxEntries
+     * @return $this
+     */
+    public function setTextBoxEntries(array $textBoxEntries)
+    {
+        $this->values['TextBoxEntries'] = $textBoxEntries;
         return $this;
     }
 

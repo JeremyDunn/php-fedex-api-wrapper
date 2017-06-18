@@ -21,7 +21,7 @@ class Request extends AbstractRequest
      * Sends the SmartPostCloseRequest and returns the response
      *
      * @param ComplexType\SmartPostCloseRequest $smartPostCloseRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getSmartPostCloseReply(ComplexType\SmartPostCloseRequest $smartPostCloseRequest)
     {
@@ -32,7 +32,7 @@ class Request extends AbstractRequest
      * Sends the GroundCloseRequest and returns the response
      *
      * @param ComplexType\GroundCloseRequest $groundCloseRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getGroundCloseReply(ComplexType\GroundCloseRequest $groundCloseRequest)
     {
@@ -43,7 +43,7 @@ class Request extends AbstractRequest
      * Sends the GroundCloseReportsReprintRequest and returns the response
      *
      * @param ComplexType\GroundCloseReportsReprintRequest $groundCloseReportsReprintRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getGroundCloseReportsReprintReply(ComplexType\GroundCloseReportsReprintRequest $groundCloseReportsReprintRequest)
     {
@@ -54,7 +54,7 @@ class Request extends AbstractRequest
      * Sends the GroundCloseWithDocumentsRequest and returns the response
      *
      * @param ComplexType\GroundCloseWithDocumentsRequest $groundCloseWithDocumentsRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getGroundCloseWithDocumentsReply(ComplexType\GroundCloseWithDocumentsRequest $groundCloseWithDocumentsRequest)
     {
@@ -65,7 +65,7 @@ class Request extends AbstractRequest
      * Sends the ReprintGroundCloseDocumentsRequest and returns the response
      *
      * @param ComplexType\ReprintGroundCloseDocumentsRequest $reprintGroundCloseDocumentsRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getReprintGroundCloseDocumentsReply(ComplexType\ReprintGroundCloseDocumentsRequest $reprintGroundCloseDocumentsRequest)
     {

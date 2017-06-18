@@ -22,7 +22,7 @@ abstract class AbstractRequest
     /**
      * SoapClient object
      *
-     * @var SoapClient
+     * @var \SoapClient
      */
     private $soapClient;
 

@@ -21,7 +21,7 @@ class Request extends AbstractRequest
      * Sends the ExpressTagAvailabilityRequest and returns the response
      *
      * @param ComplexType\ExpressTagAvailabilityRequest $expressTagAvailabilityRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getGetExpressTagAvailabilityReply(ComplexType\ExpressTagAvailabilityRequest $expressTagAvailabilityRequest)
     {

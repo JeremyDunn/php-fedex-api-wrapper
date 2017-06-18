@@ -63,7 +63,7 @@ class PickupDetail extends AbstractComplexType
     }
 
     /**
-     * Identifies the type of Pickup request
+     * Set RequestType
      *
      * @param \FedEx\ShipService\SimpleType\PickupRequestType|string $requestType
      * @return $this
@@ -75,7 +75,7 @@ class PickupDetail extends AbstractComplexType
     }
 
     /**
-     * Identifies the type of source for Pickup request
+     * Set RequestSource
      *
      * @param \FedEx\ShipService\SimpleType\PickupRequestSourceType|string $requestSource
      * @return $this

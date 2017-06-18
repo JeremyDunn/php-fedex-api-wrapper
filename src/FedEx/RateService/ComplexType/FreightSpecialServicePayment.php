@@ -11,7 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Rate Service
  *
  * @property \FedEx\RateService\SimpleType\ShipmentSpecialServiceType|string $SpecialService
- * @property \FedEx\RateService\SimpleType\FreightAccountPaymentType|string $PaymentType
+ * @property \FedEx\RateService\SimpleType\FreightShipmentRoleType|string $PaymentType
 
  */
 class FreightSpecialServicePayment extends AbstractComplexType
@@ -38,7 +38,7 @@ class FreightSpecialServicePayment extends AbstractComplexType
     /**
      * Indicates who will pay for the special service.
      *
-     * @param \FedEx\RateService\SimpleType\FreightAccountPaymentType|string $paymentType
+     * @param \FedEx\RateService\SimpleType\FreightShipmentRoleType|string $paymentType
      * @return $this
      */
     public function setPaymentType($paymentType)

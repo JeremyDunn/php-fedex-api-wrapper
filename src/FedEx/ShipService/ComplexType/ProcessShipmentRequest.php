@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Descriptive data sent to FedEx by a customer in order to ship a package.
+ * ProcessShipmentRequest
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -39,7 +39,7 @@ class ProcessShipmentRequest extends AbstractComplexType
     }
 
     /**
-     * Descriptive data identifying the client submitting the transaction.
+     * Set ClientDetail
      *
      * @param ClientDetail $clientDetail
      * @return $this
@@ -51,7 +51,7 @@ class ProcessShipmentRequest extends AbstractComplexType
     }
 
     /**
-     * Descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
+     * Set TransactionDetail
      *
      * @param TransactionDetail $transactionDetail
      * @return $this
@@ -63,7 +63,7 @@ class ProcessShipmentRequest extends AbstractComplexType
     }
 
     /**
-     * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
+     * Set Version
      *
      * @param VersionId $version
      * @return $this
@@ -75,7 +75,7 @@ class ProcessShipmentRequest extends AbstractComplexType
     }
 
     /**
-     * Descriptive data about the shipment being sent by the requestor.
+     * Set RequestedShipment
      *
      * @param RequestedShipment $requestedShipment
      * @return $this

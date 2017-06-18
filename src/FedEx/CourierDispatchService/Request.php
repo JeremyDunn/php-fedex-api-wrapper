@@ -21,7 +21,7 @@ class Request extends AbstractRequest
      * Sends the CourierDispatchRequest and returns the response
      *
      * @param ComplexType\CourierDispatchRequest $courierDispatchRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getCreateCourierDispatchReply(ComplexType\CourierDispatchRequest $courierDispatchRequest)
     {
@@ -32,7 +32,7 @@ class Request extends AbstractRequest
      * Sends the CancelCourierDispatchRequest and returns the response
      *
      * @param ComplexType\CancelCourierDispatchRequest $cancelCourierDispatchRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getCancelCourierDispatchReply(ComplexType\CancelCourierDispatchRequest $cancelCourierDispatchRequest)
     {
@@ -43,7 +43,7 @@ class Request extends AbstractRequest
      * Sends the PickupAvailabilityRequest and returns the response
      *
      * @param ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getGetPickupAvailabilityReply(ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest)
     {

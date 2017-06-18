@@ -16,6 +16,7 @@ use FedEx\AbstractComplexType;
  * @property string $PostalCode
  * @property string $UrbanizationCode
  * @property string $CountryCode
+ * @property string $CountryName
  * @property boolean $Residential
 
  */
@@ -97,6 +98,18 @@ class Address extends AbstractComplexType
     public function setCountryCode($countryCode)
     {
         $this->values['CountryCode'] = $countryCode;
+        return $this;
+    }
+
+    /**
+     * The fully spelt out name of a country.
+     *
+     * @param string $countryName
+     * @return $this
+     */
+    public function setCountryName($countryName)
+    {
+        $this->values['CountryName'] = $countryName;
         return $this;
     }
 

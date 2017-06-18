@@ -4,7 +4,7 @@ namespace FedEx\RateService\SimpleType;
 use FedEx\AbstractSimpleType;
 
 /**
- * Indicates the type of rates to be returned.
+ * RateRequestType
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -12,6 +12,7 @@ use FedEx\AbstractSimpleType;
  */
 class RateRequestType extends AbstractSimpleType
 {
-    const _ACCOUNT = 'ACCOUNT';
     const _LIST = 'LIST';
+    const _NONE = 'NONE';
+    const _PREFERRED = 'PREFERRED';
 }

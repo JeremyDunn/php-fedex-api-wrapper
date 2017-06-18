@@ -26,7 +26,7 @@ class VariableHandlingChargeDetail extends AbstractComplexType
     protected $name = 'VariableHandlingChargeDetail';
 
     /**
-     * Used with Variable handling charge type of FIXED_VALUE. Contains the amount to be added to the freight charge. Contains 2 explicit decimal positions with a total max length of 10 including the decimal.
+     * Set FixedValue
      *
      * @param Money $fixedValue
      * @return $this

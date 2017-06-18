@@ -20,6 +20,7 @@ class CustomerReferenceType extends AbstractSimpleType
     const _INVOICE_NUMBER = 'INVOICE_NUMBER';
     const _PACKING_SLIP_NUMBER = 'PACKING_SLIP_NUMBER';
     const _P_O_NUMBER = 'P_O_NUMBER';
+    const _RMA_ASSOCIATION = 'RMA_ASSOCIATION';
     const _SHIPMENT_INTEGRITY = 'SHIPMENT_INTEGRITY';
     const _STORE_NUMBER = 'STORE_NUMBER';
 }

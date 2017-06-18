@@ -21,7 +21,7 @@ class Request extends AbstractRequest
      * Sends the FedExLocatorRequest and returns the response
      *
      * @param ComplexType\FedExLocatorRequest $fedExLocatorRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getFedExLocatorReply(ComplexType\FedExLocatorRequest $fedExLocatorRequest)
     {

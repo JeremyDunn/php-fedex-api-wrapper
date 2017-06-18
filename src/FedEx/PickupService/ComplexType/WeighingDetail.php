@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *
- * @property \FedEx\Pickup\SimpleType\WeighingScaleType|string $Type
+ * @property \FedEx\PickupService\SimpleType\WeighingScaleType|string $Type
 
  */
 class WeighingDetail extends AbstractComplexType
@@ -25,7 +25,7 @@ class WeighingDetail extends AbstractComplexType
     /**
      * Type of scale used
      *
-     * @param \FedEx\Pickup\SimpleType\WeighingScaleType|string $type
+     * @param \FedEx\PickupService\SimpleType\WeighingScaleType|string $type
      * @return $this
      */
     public function setType($type)

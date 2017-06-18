@@ -15,24 +15,13 @@ class Request extends AbstractRequest
     const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/track';
     const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/track';
 
-    protected static $wsdlFileName = 'TrackService_v5.wsdl';
-            
-    /**
-     * Sends the TrackNotificationRequest and returns the response
-     *
-     * @param ComplexType\TrackNotificationRequest $trackNotificationRequest
-     * @return stdClass
-     */
-    public function getGetTrackNotificationReply(ComplexType\TrackNotificationRequest $trackNotificationRequest)
-    {
-        return $this->getSoapClient()->getTrackNotification($trackNotificationRequest->toArray());
-    }
+    protected static $wsdlFileName = 'TrackService_v12.wsdl';
             
     /**
      * Sends the SignatureProofOfDeliveryLetterRequest and returns the response
      *
      * @param ComplexType\SignatureProofOfDeliveryLetterRequest $signatureProofOfDeliveryLetterRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getRetrieveSignatureProofOfDeliveryLetterReply(ComplexType\SignatureProofOfDeliveryLetterRequest $signatureProofOfDeliveryLetterRequest)
     {
@@ -43,7 +32,7 @@ class Request extends AbstractRequest
      * Sends the TrackRequest and returns the response
      *
      * @param ComplexType\TrackRequest $trackRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getTrackReply(ComplexType\TrackRequest $trackRequest)
     {
@@ -54,11 +43,22 @@ class Request extends AbstractRequest
      * Sends the SignatureProofOfDeliveryFaxRequest and returns the response
      *
      * @param ComplexType\SignatureProofOfDeliveryFaxRequest $signatureProofOfDeliveryFaxRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getSendSignatureProofOfDeliveryFaxReply(ComplexType\SignatureProofOfDeliveryFaxRequest $signatureProofOfDeliveryFaxRequest)
     {
         return $this->getSoapClient()->sendSignatureProofOfDeliveryFax($signatureProofOfDeliveryFaxRequest->toArray());
+    }
+            
+    /**
+     * Sends the SendNotificationsRequest and returns the response
+     *
+     * @param ComplexType\SendNotificationsRequest $sendNotificationsRequest
+     * @return \stdClass
+     */
+    public function getSendNotificationsReply(ComplexType\SendNotificationsRequest $sendNotificationsRequest)
+    {
+        return $this->getSoapClient()->sendNotifications($sendNotificationsRequest->toArray());
     }
 
 }

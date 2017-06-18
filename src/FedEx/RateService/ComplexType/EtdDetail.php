@@ -11,7 +11,6 @@ use FedEx\AbstractComplexType;
  * @subpackage  Rate Service
  *
  * @property \FedEx\RateService\SimpleType\RequestedShippingDocumentType|string[] $RequestedDocumentCopies
- * @property UploadDocumentDetail[] $Documents
  * @property UploadDocumentReferenceDetail[] $DocumentReferences
 
  */
@@ -33,18 +32,6 @@ class EtdDetail extends AbstractComplexType
     public function setRequestedDocumentCopies(array $requestedDocumentCopies)
     {
         $this->values['RequestedDocumentCopies'] = $requestedDocumentCopies;
-        return $this;
-    }
-
-    /**
-     * Currently not supported.
-     *
-     * @param UploadDocumentDetail[] $documents
-     * @return $this
-     */
-    public function setDocuments(array $documents)
-    {
-        $this->values['Documents'] = $documents;
         return $this;
     }
 

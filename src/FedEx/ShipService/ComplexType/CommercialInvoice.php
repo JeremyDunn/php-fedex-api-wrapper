@@ -22,7 +22,7 @@ use FedEx\AbstractComplexType;
  * @property \FedEx\ShipService\SimpleType\PurposeOfShipmentType|string $Purpose
  * @property CustomerReference[] $CustomerReferences
  * @property string $OriginatorName
- * @property \FedEx\ShipService\SimpleType\TermsOfSaleType|string $TermsOfSale
+ * @property string $TermsOfSale
 
  */
 class CommercialInvoice extends AbstractComplexType
@@ -179,9 +179,9 @@ class CommercialInvoice extends AbstractComplexType
     }
 
     /**
-     * Required for dutiable international Express or Ground shipment. This field is not applicable to an international PIB(document) or a non-document which does not require a Commercial Invoice
+     * Required for dutiable international Express or Ground shipments. This field is not applicable to an international PIB(document) or a non-document which does not require a Commercial Invoice.
      *
-     * @param \FedEx\ShipService\SimpleType\TermsOfSaleType|string $termsOfSale
+     * @param string $termsOfSale
      * @return $this
      */
     public function setTermsOfSale($termsOfSale)

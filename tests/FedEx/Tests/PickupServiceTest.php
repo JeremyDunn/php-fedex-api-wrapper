@@ -2,8 +2,8 @@
 
 namespace FedEx\Tests;
 
-use FedEx\Pickup\Request;
-use FedEx\Pickup\ComplexType;
+use FedEx\PickupService\Request;
+use FedEx\PickupService\ComplexType;
 use FedEx\Utility\ComplexTypePopulator;
 
 class PickupServiceTest extends TestCase

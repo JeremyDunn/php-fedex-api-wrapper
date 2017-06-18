@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup;
+namespace FedEx\PickupService;
     
 use FedEx\AbstractRequest;
 
@@ -21,7 +21,7 @@ class Request extends AbstractRequest
      * Sends the PickupAvailabilityRequest and returns the response
      *
      * @param ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getGetPickupAvailabilityReply(ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest)
     {
@@ -32,7 +32,7 @@ class Request extends AbstractRequest
      * Sends the CreatePickupRequest and returns the response
      *
      * @param ComplexType\CreatePickupRequest $createPickupRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getCreatePickupReply(ComplexType\CreatePickupRequest $createPickupRequest)
     {
@@ -43,7 +43,7 @@ class Request extends AbstractRequest
      * Sends the CancelPickupRequest and returns the response
      *
      * @param ComplexType\CancelPickupRequest $cancelPickupRequest
-     * @return stdClass
+     * @return \stdClass
      */
     public function getCancelPickupReply(ComplexType\CancelPickupRequest $cancelPickupRequest)
     {

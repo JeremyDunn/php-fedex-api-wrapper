@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  *
- * @property \FedEx\TrackService\SimpleType\EMailNotificationEventType|string[] $NotificationEventsAvailable
+ * @property \FedEx\TrackService\SimpleType\NotificationEventType|string[] $NotificationEventsAvailable
 
  */
 class TrackNotificationRecipientDetail extends AbstractComplexType
@@ -23,9 +23,9 @@ class TrackNotificationRecipientDetail extends AbstractComplexType
     protected $name = 'TrackNotificationRecipientDetail';
 
     /**
-     * The types of email notifications available for this recipient.
+     * Set NotificationEventsAvailable
      *
-     * @param \FedEx\TrackService\SimpleType\EMailNotificationEventType[]|string[] $notificationEventsAvailable
+     * @param \FedEx\TrackService\SimpleType\NotificationEventType[]|string[] $notificationEventsAvailable
      * @return $this
      */
     public function setNotificationEventsAvailable(array $notificationEventsAvailable)

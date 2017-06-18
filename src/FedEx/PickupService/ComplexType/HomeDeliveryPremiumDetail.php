@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *
- * @property \FedEx\Pickup\SimpleType\HomeDeliveryPremiumType|string $HomeDeliveryPremiumType
+ * @property \FedEx\PickupService\SimpleType\HomeDeliveryPremiumType|string $HomeDeliveryPremiumType
  * @property string $Date
  * @property string $PhoneNumber
 
@@ -27,7 +27,7 @@ class HomeDeliveryPremiumDetail extends AbstractComplexType
     /**
      * The type of Home Delivery Premium service being requested.
      *
-     * @param \FedEx\Pickup\SimpleType\HomeDeliveryPremiumType|string $homeDeliveryPremiumType
+     * @param \FedEx\PickupService\SimpleType\HomeDeliveryPremiumType|string $homeDeliveryPremiumType
      * @return $this
      */
     public function setHomeDeliveryPremiumType($homeDeliveryPremiumType)
