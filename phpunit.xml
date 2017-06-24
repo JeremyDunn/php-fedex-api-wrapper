@@ -20,7 +20,7 @@
     </filter>
     <logging>
         <log type="coverage-html" target="tests/logs/report" lowUpperBound="35" highLowerBound="70"/>
-        <log type="coverage-clover" target="tests/logs/coverage.xml"/>
+        <!--<log type="coverage-clover" target="tests/logs/coverage.xml"/>-->
         <!--<log type="coverage-php" target="tests/logs/coverage.serialized"/>-->
         <!--<log type="coverage-text" target="php://stdout" showUncoveredFiles="false"/>-->
         <!--<log type="junit" target="tests/logs/logfile.xml" logIncompleteSkipped="false"/>-->
