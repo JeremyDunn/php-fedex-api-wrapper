@@ -8,154 +8,90 @@
 require_once 'credentials.php';
 require_once 'bootstrap.php';
 
-use FedEx\RateService;
+use FedEx\RateService\Request;
 use FedEx\RateService\ComplexType;
 use FedEx\RateService\SimpleType;
 
-//RateRequest
 $rateRequest = new ComplexType\RateRequest();
 
-//UserCredential
-$userCredential = new ComplexType\WebAuthenticationCredential();
-$userCredential
-    ->setKey(FEDEX_KEY)
-    ->setPassword(FEDEX_PASSWORD);
+//authentication & client details
+$rateRequest->WebAuthenticationDetail->UserCredential->Key = FEDEX_KEY;
+$rateRequest->WebAuthenticationDetail->UserCredential->Password = FEDEX_PASSWORD;
+$rateRequest->ClientDetail->AccountNumber = FEDEX_ACCOUNT_NUMBER;
+$rateRequest->ClientDetail->MeterNumber = FEDEX_METER_NUMBER;
 
-//WebAuthenticationDetail
-$webAuthenticationDetail = new ComplexType\WebAuthenticationDetail();
-$webAuthenticationDetail->setUserCredential($userCredential);
+$rateRequest->TransactionDetail->CustomerTransactionId = 'testing rate service request';
 
-$rateRequest->setWebAuthenticationDetail($webAuthenticationDetail);
+//version
+$rateRequest->Version->ServiceId = 'crs';
+$rateRequest->Version->Major = 10;
+$rateRequest->Version->Minor = 0;
+$rateRequest->Version->Intermediate = 0;
 
-//ClientDetail
-$clientDetail = new ComplexType\ClientDetail();
-$clientDetail
-    ->setAccountNumber(FEDEX_ACCOUNT_NUMBER)
-    ->setMeterNumber(FEDEX_METER_NUMBER);
+$rateRequest->ReturnTransitAndCommit = true;
 
-$rateRequest->setClientDetail($clientDetail);
+//shipper
+$rateRequest->RequestedShipment->Shipper->Address->StreetLines = ['10 Fed Ex Pkwy'];
+$rateRequest->RequestedShipment->Shipper->Address->City = 'Memphis';
+$rateRequest->RequestedShipment->Shipper->Address->StateOrProvinceCode = 'TN';
+$rateRequest->RequestedShipment->Shipper->Address->PostalCode = 38115;
+$rateRequest->RequestedShipment->Shipper->Address->CountryCode = 'US';
 
-//TransactionDetail
-$transactionDetail = new ComplexType\TransactionDetail();
-$transactionDetail->setCustomerTransactionId('Testing Rate Service request');
+//recipient
+$rateRequest->RequestedShipment->Recipient->Address->StreetLines = ['13450 Farmcrest Ct'];
+$rateRequest->RequestedShipment->Recipient->Address->City = 'Herndon';
+$rateRequest->RequestedShipment->Recipient->Address->StateOrProvinceCode = 'VA';
+$rateRequest->RequestedShipment->Recipient->Address->PostalCode = 20171;
+$rateRequest->RequestedShipment->Recipient->Address->CountryCode = 'US';
 
-$rateRequest->setTransactionDetail($transactionDetail);
+//shipping charges payment
+$rateRequest->RequestedShipment->ShippingChargesPayment->PaymentType = SimpleType\PaymentType::_SENDER;
+$rateRequest->RequestedShipment->ShippingChargesPayment->Payor->AccountNumber = FEDEX_ACCOUNT_NUMBER;
+$rateRequest->RequestedShipment->ShippingChargesPayment->Payor->CountryCode = 'US';
 
-//VersionId
-$versionId = new ComplexType\VersionId();
-$versionId
-    ->setServiceId('crs')
-    ->setMajor(10)
-    ->setIntermediate(0)
-    ->setMinor(0);
+//rate request types
+$rateRequest->RequestedShipment->RateRequestTypes = [SimpleType\RateRequestType::_ACCOUNT, SimpleType\RateRequestType::_LIST];
 
-$rateRequest->setVersion($versionId);
+$rateRequest->RequestedShipment->PackageCount = 2;
 
-//OPTIONAL ReturnTransitAndCommit
-$rateRequest->setReturnTransitAndCommit(true);
+//create package line items
+$rateRequest->RequestedShipment->RequestedPackageLineItems = [new ComplexType\RequestedPackageLineItem(), new ComplexType\RequestedPackageLineItem()];
 
-//RequestedShipment
-$requestedShipment = new ComplexType\RequestedShipment();
-$requestedShipment->setDropoffType(SimpleType\DropoffType::_REGULAR_PICKUP);
-$requestedShipment->setShipTimestamp(date('c'));
+//package 1
+$rateRequest->RequestedShipment->RequestedPackageLineItems[0]->Weight->Value = 2;
+$rateRequest->RequestedShipment->RequestedPackageLineItems[0]->Weight->Units = SimpleType\WeightUnits::_LB;
+$rateRequest->RequestedShipment->RequestedPackageLineItems[0]->Dimensions->Length = 10;
+$rateRequest->RequestedShipment->RequestedPackageLineItems[0]->Dimensions->Width = 10;
+$rateRequest->RequestedShipment->RequestedPackageLineItems[0]->Dimensions->Height = 3;
+$rateRequest->RequestedShipment->RequestedPackageLineItems[0]->Dimensions->Units = SimpleType\LinearUnits::_IN;
+$rateRequest->RequestedShipment->RequestedPackageLineItems[0]->GroupPackageCount = 1;
 
-$rateRequest->setRequestedShipment($requestedShipment);
+//package 2
+$rateRequest->RequestedShipment->RequestedPackageLineItems[1]->Weight->Value = 5;
+$rateRequest->RequestedShipment->RequestedPackageLineItems[1]->Weight->Units = SimpleType\WeightUnits::_LB;
+$rateRequest->RequestedShipment->RequestedPackageLineItems[1]->Dimensions->Length = 20;
+$rateRequest->RequestedShipment->RequestedPackageLineItems[1]->Dimensions->Width = 20;
+$rateRequest->RequestedShipment->RequestedPackageLineItems[1]->Dimensions->Height = 10;
+$rateRequest->RequestedShipment->RequestedPackageLineItems[1]->Dimensions->Units = SimpleType\LinearUnits::_IN;
+$rateRequest->RequestedShipment->RequestedPackageLineItems[1]->GroupPackageCount = 1;
 
-//RequestedShipment/Shipper
-$shipper = new ComplexType\Party();
+$rateServiceRequest = new Request();
+$rateServiceRequest->getSoapClient()->__setLocation(Request::PRODUCTION_URL); //use production URL
 
-$shipperAddress = new ComplexType\Address();
-$shipperAddress
-    ->setStreetLines(array('10 Fed Ex Pkwy'))
-    ->setCity('Memphis')
-    ->setStateOrProvinceCode('TN')
-    ->setPostalCode(38115)
-    ->setCountryCode('US');
+$rateReply = $rateServiceRequest->getGetRatesReply($rateRequest); // send true as the 2nd argument to return the SoapClient's stdClass response.
 
-$shipper->setAddress($shipperAddress);
+if (!empty($rateReply->RateReplyDetails)) {
+    foreach ($rateReply->RateReplyDetails as $rateReplyDetail) {
+        var_dump($rateReplyDetail->ServiceType);
+        var_dump($rateReplyDetail->DeliveryTimestamp);
+        if (!empty($rateReplyDetail->RatedShipmentDetails)) {
+            foreach ($rateReplyDetail->RatedShipmentDetails as $ratedShipmentDetail) {
+                var_dump($ratedShipmentDetail->ShipmentRateDetail->RateType . ": " . $ratedShipmentDetail->ShipmentRateDetail->TotalNetCharge->Amount);
+            }
+        }
+        echo "<hr />";
+    }
+}
 
-$requestedShipment->setShipper($shipper);
+var_dump($rateReply);
 
-//RequestedShipment/Recipient
-$recipient = new ComplexType\Party();
-
-$recipientAddress = new ComplexType\Address();
-$recipientAddress
-    ->setStreetLines(array('13450 Farmcrest Ct'))
-    ->setCity('Herndon')
-    ->setStateOrProvinceCode('VA')
-    ->setPostalCode(20171)
-    ->setCountryCode('US');
-
-$recipient->setAddress($recipientAddress);
-
-$requestedShipment->setRecipient($recipient);
-
-//RequestedShipment/ShippingChargesPayment
-$shippingChargesPayment = new ComplexType\Payment();
-$shippingChargesPayment->setPaymentType(SimpleType\PaymentType::_SENDER);
-
-$payor = new ComplexType\Payor();
-$payor
-    ->setAccountNumber(FEDEX_ACCOUNT_NUMBER)
-    ->setCountryCode('US');
-
-$shippingChargesPayment->setPayor($payor);
-
-$requestedShipment->setShippingChargesPayment($shippingChargesPayment);
-
-//RequestedShipment/RateRequestType(s)
-$requestedShipment->setRateRequestTypes([
-    SimpleType\RateRequestType::_LIST,
-    SimpleType\RateRequestType::_ACCOUNT
-]);
-
-//RequestedShipment/PackageCount
-$requestedShipment->setPackageCount(2);
-
-//RequestedShipment/RequestedPackageLineItem(s)
-$item1Weight = new ComplexType\Weight();
-$item1Weight
-    ->setUnits(SimpleType\WeightUnits::_LB)
-    ->setValue(2.0);
-
-$item1Dimensions = new ComplexType\Dimensions();
-$item1Dimensions
-    ->setLength(10)
-    ->setWidth(10)
-    ->setHeight(3)
-    ->setUnits(SimpleType\LinearUnits::_IN);
-
-$item1 = new ComplexType\RequestedPackageLineItem();
-$item1
-    ->setWeight($item1Weight)
-    ->setDimensions($item1Dimensions)
-    ->setGroupPackageCount(1);
-
-$item2Weight = new ComplexType\Weight();
-$item2Weight
-    ->setUnits(SimpleType\WeightUnits::_LB)
-    ->setValue(5.0);
-
-$item2Dimensions = new ComplexType\Dimensions();
-$item2Dimensions
-    ->setLength(20)
-    ->setWidth(20)
-    ->setHeight(10)
-    ->setUnits(SimpleType\LinearUnits::_IN);
-
-$item2 = new ComplexType\RequestedPackageLineItem();
-$item2
-    ->setWeight($item2Weight)
-    ->setDimensions($item2Dimensions)
-    ->setGroupPackageCount(1);
-
-$requestedShipment->setRequestedPackageLineItems([$item1, $item2]);
-
-$rateRequest->setRequestedShipment($requestedShipment);
-
-$rateServiceRequest = new RateService\Request();
-//$rateServiceRequest->getSoapClient()->__setLocation(RateService\Request::PRODUCTION_URL); //use the production web service
-$response = $rateServiceRequest->getGetRatesReply($rateRequest);
-
-var_dump($response);
