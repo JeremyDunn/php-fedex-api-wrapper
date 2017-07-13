@@ -80,6 +80,17 @@ abstract class AbstractComplexType
     }
 
     /**
+     * __isset implementation
+     *
+     * @param $name
+     * @return bool
+     */
+    public function __isset($name)
+    {
+        return null !== $this->__get($name);
+    }
+
+    /**
      * Recursive algorithm to convert complex types to an array
      *
      * @param array $arrayValues
