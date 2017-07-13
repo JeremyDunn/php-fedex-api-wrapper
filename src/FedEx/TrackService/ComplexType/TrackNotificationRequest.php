@@ -189,6 +189,4 @@ class TrackNotificationRequest extends AbstractComplexType
         $this->values['NotificationDetail'] = $notificationDetail;
         return $this;
     }
-
-    
 }

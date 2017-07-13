@@ -59,6 +59,4 @@ class TrackingId extends AbstractComplexType
         $this->values['TrackingNumber'] = $trackingNumber;
         return $this;
     }
-
-    
 }

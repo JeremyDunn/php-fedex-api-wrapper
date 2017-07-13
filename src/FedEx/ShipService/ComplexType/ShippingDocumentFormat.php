@@ -111,6 +111,4 @@ class ShippingDocumentFormat extends AbstractComplexType
         $this->values['CustomDocumentIdentifier'] = $customDocumentIdentifier;
         return $this;
     }
-
-    
 }

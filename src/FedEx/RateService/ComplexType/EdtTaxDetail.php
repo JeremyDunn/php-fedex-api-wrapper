@@ -111,6 +111,4 @@ class EdtTaxDetail extends AbstractComplexType
         $this->values['Amount'] = $amount;
         return $this;
     }
-
-    
 }

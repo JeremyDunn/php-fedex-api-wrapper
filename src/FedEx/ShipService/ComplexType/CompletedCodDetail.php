@@ -46,6 +46,4 @@ class CompletedCodDetail extends AbstractComplexType
         $this->values['AdjustmentType'] = $adjustmentType;
         return $this;
     }
-
-    
 }

@@ -150,6 +150,4 @@ class ServiceAvailabilityRequest extends AbstractComplexType
         $this->values['Packaging'] = $packaging;
         return $this;
     }
-
-    
 }

@@ -72,6 +72,4 @@ class RateDiscount extends AbstractComplexType
         $this->values['Percent'] = $percent;
         return $this;
     }
-
-    
 }

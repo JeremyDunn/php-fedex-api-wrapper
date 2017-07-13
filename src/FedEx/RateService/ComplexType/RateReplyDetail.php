@@ -241,6 +241,4 @@ class RateReplyDetail extends AbstractComplexType
         $this->values['RatedShipmentDetails'] = $ratedShipmentDetails;
         return $this;
     }
-
-    
 }

@@ -46,6 +46,4 @@ class Money extends AbstractComplexType
         $this->values['Amount'] = $amount;
         return $this;
     }
-
-    
 }

@@ -85,6 +85,4 @@ class CodReturnPackageDetail extends AbstractComplexType
         $this->values['Label'] = $label;
         return $this;
     }
-
-    
 }

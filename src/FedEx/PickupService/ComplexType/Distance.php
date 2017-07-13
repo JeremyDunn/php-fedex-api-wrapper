@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -11,7 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Pickup Service
  *
  * @property float $Value
- * @property \FedEx\Pickup\SimpleType\DistanceUnits|string $Units
+ * @property \FedEx\PickupService\SimpleType\DistanceUnits|string $Units
 
  */
 class Distance extends AbstractComplexType
@@ -38,7 +38,7 @@ class Distance extends AbstractComplexType
     /**
      * Identifies the unit of measure for the distance value.
      *
-     * @param \FedEx\Pickup\SimpleType\DistanceUnits|string $units
+     * @param \FedEx\PickupService\SimpleType\DistanceUnits|string $units
      * @return $this
      */
     public function setUnits($units)
@@ -46,6 +46,4 @@ class Distance extends AbstractComplexType
         $this->values['Units'] = $units;
         return $this;
     }
-
-    
 }

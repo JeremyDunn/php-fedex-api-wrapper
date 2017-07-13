@@ -124,6 +124,4 @@ class CodDetail extends AbstractComplexType
         $this->values['ReturnTrackingId'] = $returnTrackingId;
         return $this;
     }
-
-    
 }

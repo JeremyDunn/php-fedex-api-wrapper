@@ -72,6 +72,4 @@ class PackageOperationalDetail extends AbstractComplexType
         $this->values['GroundServiceCode'] = $groundServiceCode;
         return $this;
     }
-
-    
 }

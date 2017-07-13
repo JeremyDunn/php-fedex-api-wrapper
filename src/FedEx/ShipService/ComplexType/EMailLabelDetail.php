@@ -46,6 +46,4 @@ class EMailLabelDetail extends AbstractComplexType
         $this->values['NotificationMessage'] = $notificationMessage;
         return $this;
     }
-
-    
 }

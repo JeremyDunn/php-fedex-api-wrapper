@@ -72,6 +72,4 @@ class Dimensions extends AbstractComplexType
         $this->values['Units'] = $units;
         return $this;
     }
-
-    
 }

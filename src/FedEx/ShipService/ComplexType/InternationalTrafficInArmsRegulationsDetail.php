@@ -33,6 +33,4 @@ class InternationalTrafficInArmsRegulationsDetail extends AbstractComplexType
         $this->values['LicenseOrExemptionNumber'] = $licenseOrExemptionNumber;
         return $this;
     }
-
-    
 }

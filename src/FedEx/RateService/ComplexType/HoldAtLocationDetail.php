@@ -85,6 +85,4 @@ class HoldAtLocationDetail extends AbstractComplexType
         $this->values['LocationNumber'] = $locationNumber;
         return $this;
     }
-
-    
 }

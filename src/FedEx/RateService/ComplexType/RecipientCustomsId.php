@@ -46,6 +46,4 @@ class RecipientCustomsId extends AbstractComplexType
         $this->values['Value'] = $value;
         return $this;
     }
-
-    
 }

@@ -46,6 +46,4 @@ class Payment extends AbstractComplexType
         $this->values['Payor'] = $payor;
         return $this;
     }
-
-    
 }

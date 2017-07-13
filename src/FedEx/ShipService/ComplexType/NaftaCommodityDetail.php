@@ -85,6 +85,4 @@ class NaftaCommodityDetail extends AbstractComplexType
         $this->values['NetCostDateRange'] = $netCostDateRange;
         return $this;
     }
-
-    
 }

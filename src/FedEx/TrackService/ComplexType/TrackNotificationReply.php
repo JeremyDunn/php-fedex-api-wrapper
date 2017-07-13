@@ -124,6 +124,4 @@ class TrackNotificationReply extends AbstractComplexType
         $this->values['Packages'] = $packages;
         return $this;
     }
-
-    
 }

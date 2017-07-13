@@ -4,7 +4,7 @@ namespace FedEx\LocatorService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * The descriptive data for a physical location. 
+ * The descriptive data for a physical location.
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -41,7 +41,7 @@ class Address extends AbstractComplexType
     }
 
     /**
-     * Name of city, town, etc. 
+     * Name of city, town, etc.
      *
      * @param string $city
      * @return $this
@@ -111,6 +111,4 @@ class Address extends AbstractComplexType
         $this->values['Residential'] = $residential;
         return $this;
     }
-
-    
 }

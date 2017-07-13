@@ -98,6 +98,4 @@ class CustomLabelBarcodeEntry extends AbstractComplexType
         $this->values['BarcodeSymbology'] = $barcodeSymbology;
         return $this;
     }
-
-    
 }

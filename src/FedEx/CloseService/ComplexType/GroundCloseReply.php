@@ -124,6 +124,4 @@ class GroundCloseReply extends AbstractComplexType
         $this->values['MultiweightReport'] = $multiweightReport;
         return $this;
     }
-
-    
 }

@@ -59,6 +59,4 @@ class HomeDeliveryPremiumDetail extends AbstractComplexType
         $this->values['PhoneNumber'] = $phoneNumber;
         return $this;
     }
-
-    
 }

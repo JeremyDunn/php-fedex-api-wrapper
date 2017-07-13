@@ -436,6 +436,4 @@ class ShipmentRateDetail extends AbstractComplexType
         $this->values['TotalVariableHandlingCharges'] = $totalVariableHandlingCharges;
         return $this;
     }
-
-    
 }

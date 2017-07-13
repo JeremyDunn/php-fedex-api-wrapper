@@ -46,6 +46,4 @@ class CommercialInvoiceDetail extends AbstractComplexType
         $this->values['CustomerImageUsages'] = $customerImageUsages;
         return $this;
     }
-
-    
 }

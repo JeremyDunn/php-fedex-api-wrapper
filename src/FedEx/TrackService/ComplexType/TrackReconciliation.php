@@ -46,6 +46,4 @@ class TrackReconciliation extends AbstractComplexType
         $this->values['Description'] = $description;
         return $this;
     }
-
-    
 }

@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -72,6 +72,4 @@ class VersionId extends AbstractComplexType
         $this->values['Minor'] = $minor;
         return $this;
     }
-
-    
 }

@@ -72,6 +72,4 @@ class TrackSplitShipmentPart extends AbstractComplexType
         $this->values['StatusDescription'] = $statusDescription;
         return $this;
     }
-
-    
 }

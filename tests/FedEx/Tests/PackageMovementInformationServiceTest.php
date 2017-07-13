@@ -23,7 +23,7 @@ class PackageMovementInformationServiceTest extends TestCase
 
         $request = new Request($mockSoapClient);
 
-        $this->assertEquals(ComplexType\PostalCodeInquiryRequest::class, $request->getPostalCodeInquiryReply($postalCodeInquieryRequest));
-        $this->assertEquals(ComplexType\ServiceAvailabilityRequest::class, $request->getServiceAvailabilityReply($serviceAvailabilityRequest));
+        $this->assertEquals(ComplexType\PostalCodeInquiryRequest::class, $request->getPostalCodeInquiryReply($postalCodeInquieryRequest, true));
+        $this->assertEquals(ComplexType\ServiceAvailabilityRequest::class, $request->getServiceAvailabilityReply($serviceAvailabilityRequest, true));
     }
 }

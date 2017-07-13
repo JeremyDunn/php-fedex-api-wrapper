@@ -23,7 +23,7 @@ class UploadDocumentServiceTest extends TestCase
 
         $request = new Request($mockSoapClient);
 
-        $this->assertEquals(ComplexType\UploadDocumentsRequest::class, $request->getUploadDocumentsReply($uploadDocumentsRequest));
-        $this->assertEquals(ComplexType\UploadImagesRequest::class, $request->getUploadImagesReply($uploadImagesRequest));
+        $this->assertEquals(ComplexType\UploadDocumentsRequest::class, $request->getUploadDocumentsReply($uploadDocumentsRequest, true));
+        $this->assertEquals(ComplexType\UploadImagesRequest::class, $request->getUploadImagesReply($uploadImagesRequest, true));
     }
 }

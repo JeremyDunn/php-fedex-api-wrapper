@@ -137,6 +137,4 @@ class CourierDispatchReply extends AbstractComplexType
         $this->values['PRPControlNumber'] = $pRPControlNumber;
         return $this;
     }
-
-    
 }

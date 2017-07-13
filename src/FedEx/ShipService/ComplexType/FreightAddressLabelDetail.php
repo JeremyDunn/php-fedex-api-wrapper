@@ -72,6 +72,4 @@ class FreightAddressLabelDetail extends AbstractComplexType
         $this->values['DocTabContent'] = $docTabContent;
         return $this;
     }
-
-    
 }

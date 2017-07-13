@@ -1,6 +1,5 @@
 <?php
 namespace FedEx\Utility\CodeGenerator;
-use FedEx\Pickup\SimpleType\PaymentType;
 
 /**
  * Converts complex types in .wsdl file to PHP class files
@@ -26,34 +25,6 @@ class GenerateComplexTypeClasses extends AbstractGenerate
         'time' => 'string',
         'duration' => 'string'
     ];
-
-    /**
-     * Constructor
-     *
-     * @param string $exportPath Path to export ComplexType classes
-     * @param string $wsdlPath Path to .wsdl file
-     * @param string $baseNamespace base Namespace name (eg: FedEx\RateService).
-     * @param string $subPackageName Sub package the generated class belongs to (used in DocBlock)
-     * @throws \Exception
-     */
-    public function __construct($exportPath, $wsdlPath, $baseNamespace, $subPackageName)
-    {
-        if (file_exists($wsdlPath)) {
-            $this->wsdlPath = $wsdlPath;
-        } else {
-            throw new \Exception('path to wsdl file is invalid');
-        }
-
-        if (is_writable($exportPath)) {
-            $this->exportPath = $exportPath;
-        } else {
-            throw new \Exception('cannot write to export path');
-        }
-
-        $this->baseNamespace = $baseNamespace;
-        $this->subPackageName = $subPackageName;
-        $this->loadXML();
-    }
 
     /**
      * Run generator
@@ -124,6 +95,9 @@ class GenerateComplexTypeClasses extends AbstractGenerate
             $classDoc = $className;
         }
 
+        $classDoc = str_ireplace("\t", '', $classDoc);
+        $classDoc = trim($classDoc);
+
         $propertiesString = '';
         $methodString = '';
 
@@ -132,9 +106,11 @@ class GenerateComplexTypeClasses extends AbstractGenerate
             $methodString .= $this->getGeneratedSetMethod($property) . "\n";
         }
 
+        $methodString = rtrim($methodString);
+
         $fileBody = <<<TEXT
 <?php
-namespace {$this->baseNamespace}\ComplexType;
+namespace {$this->namespace}\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -156,7 +132,7 @@ class $className extends AbstractComplexType
      */
     protected \$name = '$className';
 
-$methodString    
+$methodString
 }
 
 TEXT;
@@ -173,7 +149,7 @@ TEXT;
      */
     protected function getGeneratedSetMethod(array $property)
     {
-        $simpleTypeNamespace = "\\{$this->baseNamespace}\\SimpleType\\";
+        $simpleTypeNamespace = "\\{$this->namespace}\\SimpleType\\";
 
         $varName = lcfirst($property['name']);
 
@@ -203,7 +179,7 @@ TEXT;
             } else {
                 if ($isArray) {
                     $property['type'] = 'array ';
-                } else {
+                } elseif (!empty($property['type'])) {
                     $property['type'] = $property['type'] . ' ';
                 }
             }
@@ -213,6 +189,8 @@ TEXT;
             $property['doc'] = "Set {$property['name']}";
         }
 
+        $property['doc'] = str_ireplace("\t", '', $property['doc']);
+        $property['doc'] = trim($property['doc']);
 
         $returnString = <<<TEXT
     /**
@@ -236,7 +214,7 @@ TEXT;
     {
         $typePHPDoc = $property['type'];
 
-        $simpleTypeNamespace = "\\{$this->baseNamespace}\\SimpleType\\";
+        $simpleTypeNamespace = "\\{$this->namespace}\\SimpleType\\";
         if ($this->isSimpleType($property['type'])) {
             $typePHPDoc = $simpleTypeNamespace . $property['type'] . '|string';
         } else {

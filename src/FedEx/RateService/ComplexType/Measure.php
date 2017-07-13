@@ -46,6 +46,4 @@ class Measure extends AbstractComplexType
         $this->values['Units'] = $units;
         return $this;
     }
-
-    
 }

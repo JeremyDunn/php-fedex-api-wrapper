@@ -85,6 +85,4 @@ class CreatePendingShipmentReply extends AbstractComplexType
         $this->values['CompletedShipmentDetail'] = $completedShipmentDetail;
         return $this;
     }
-
-    
 }

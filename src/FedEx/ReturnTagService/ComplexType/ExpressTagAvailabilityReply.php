@@ -111,6 +111,4 @@ class ExpressTagAvailabilityReply extends AbstractComplexType
         $this->values['Availability'] = $availability;
         return $this;
     }
-
-    
 }

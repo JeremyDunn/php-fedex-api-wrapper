@@ -592,6 +592,4 @@ class TrackDetail extends AbstractComplexType
         $this->values['Events'] = $events;
         return $this;
     }
-
-    
 }

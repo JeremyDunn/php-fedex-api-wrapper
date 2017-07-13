@@ -46,6 +46,4 @@ class ReturnEMailDetail extends AbstractComplexType
         $this->values['AllowedSpecialServices'] = $allowedSpecialServices;
         return $this;
     }
-
-    
 }

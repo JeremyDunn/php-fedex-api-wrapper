@@ -46,6 +46,4 @@ class ShipmentDryIceDetail extends AbstractComplexType
         $this->values['TotalWeight'] = $totalWeight;
         return $this;
     }
-
-    
 }

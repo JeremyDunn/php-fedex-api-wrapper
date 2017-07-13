@@ -85,6 +85,4 @@ class ProcessTagReply extends AbstractComplexType
         $this->values['CompletedShipmentDetail'] = $completedShipmentDetail;
         return $this;
     }
-
-    
 }

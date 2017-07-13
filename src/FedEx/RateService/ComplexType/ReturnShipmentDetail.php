@@ -59,6 +59,4 @@ class ReturnShipmentDetail extends AbstractComplexType
         $this->values['ReturnEMailDetail'] = $returnEMailDetail;
         return $this;
     }
-
-    
 }

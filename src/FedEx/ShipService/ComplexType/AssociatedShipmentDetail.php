@@ -150,6 +150,4 @@ class AssociatedShipmentDetail extends AbstractComplexType
         $this->values['Label'] = $label;
         return $this;
     }
-
-    
 }

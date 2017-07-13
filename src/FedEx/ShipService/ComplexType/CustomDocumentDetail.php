@@ -98,6 +98,4 @@ class CustomDocumentDetail extends AbstractComplexType
         $this->values['DocTabContent'] = $docTabContent;
         return $this;
     }
-
-    
 }

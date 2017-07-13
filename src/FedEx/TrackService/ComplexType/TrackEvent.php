@@ -111,6 +111,4 @@ class TrackEvent extends AbstractComplexType
         $this->values['ArrivalLocation'] = $arrivalLocation;
         return $this;
     }
-
-    
 }

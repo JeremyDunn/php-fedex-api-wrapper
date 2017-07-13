@@ -1,27 +1,27 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
 /**
  * The constraints on the scheduling of a dispatch, where that dispatch would be made by the Carrier, occur on the PickupDate,
-						and would be scheduled (created by means of a CourierDispatchRequest) on a date related to the PickupDate as described
-						by the "ScheduleDay" (SAME_DAY meaning that the creation would occur on the PickupDate, and FUTURE_DAY meaning that the creation
-						would occur on a date prior to the PickupDate).
+and would be scheduled (created by means of a CourierDispatchRequest) on a date related to the PickupDate as described
+by the "ScheduleDay" (SAME_DAY meaning that the creation would occur on the PickupDate, and FUTURE_DAY meaning that the creation
+would occur on a date prior to the PickupDate).
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *
- * @property \FedEx\Pickup\SimpleType\CarrierCodeType|string $Carrier
+ * @property \FedEx\PickupService\SimpleType\CarrierCodeType|string $Carrier
  * @property string $Description
- * @property \FedEx\Pickup\SimpleType\PickupRequestType|string $ScheduleDay
+ * @property \FedEx\PickupService\SimpleType\PickupRequestType|string $ScheduleDay
  * @property boolean $Available
  * @property string $PickupDate
  * @property string $CutOffTime
  * @property string $AccessTime
  * @property boolean $ResidentialAvailable
- * @property \FedEx\Pickup\SimpleType\CountryRelationshipType|string $CountryRelationship
+ * @property \FedEx\PickupService\SimpleType\CountryRelationshipType|string $CountryRelationship
 
  */
 class PickupScheduleOption extends AbstractComplexType
@@ -36,7 +36,7 @@ class PickupScheduleOption extends AbstractComplexType
     /**
      * the carrier to which this PickupScheduleOption applies
      *
-     * @param \FedEx\Pickup\SimpleType\CarrierCodeType|string $carrier
+     * @param \FedEx\PickupService\SimpleType\CarrierCodeType|string $carrier
      * @return $this
      */
     public function setCarrier($carrier)
@@ -60,7 +60,7 @@ class PickupScheduleOption extends AbstractComplexType
     /**
      * Tells whether this option describes a dispatch created on the dispatch date (SAME_DAY), or on a prior date (FUTURE_DAY)
      *
-     * @param \FedEx\Pickup\SimpleType\PickupRequestType|string $scheduleDay
+     * @param \FedEx\PickupService\SimpleType\PickupRequestType|string $scheduleDay
      * @return $this
      */
     public function setScheduleDay($scheduleDay)
@@ -132,7 +132,7 @@ class PickupScheduleOption extends AbstractComplexType
     /**
      * Describes the country relationship (domestic and/or international) among the shipments being picked up.
      *
-     * @param \FedEx\Pickup\SimpleType\CountryRelationshipType|string $countryRelationship
+     * @param \FedEx\PickupService\SimpleType\CountryRelationshipType|string $countryRelationship
      * @return $this
      */
     public function setCountryRelationship($countryRelationship)
@@ -140,6 +140,4 @@ class PickupScheduleOption extends AbstractComplexType
         $this->values['CountryRelationship'] = $countryRelationship;
         return $this;
     }
-
-    
 }

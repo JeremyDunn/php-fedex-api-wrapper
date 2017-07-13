@@ -59,6 +59,4 @@ class HazardousCommodityQuantityDetail extends AbstractComplexType
         $this->values['QuantityType'] = $quantityType;
         return $this;
     }
-
-    
 }

@@ -371,6 +371,4 @@ class ShipmentOperationalDetail extends AbstractComplexType
         $this->values['Scac'] = $scac;
         return $this;
     }
-
-    
 }

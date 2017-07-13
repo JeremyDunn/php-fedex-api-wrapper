@@ -8,10 +8,9 @@
 require_once 'credentials.php';
 require_once 'bootstrap.php';
 
-use FedEx\AddressValidationService,
-    FedEx\AddressValidationService\ComplexType,
-    FedEx\AddressValidationService\SimpleType;
-
+use FedEx\AddressValidationService;
+use FedEx\AddressValidationService\ComplexType;
+use FedEx\AddressValidationService\SimpleType;
 
 $userCredential = new ComplexType\WebAuthenticationCredential();
 $userCredential

@@ -46,6 +46,4 @@ class CompletedHazardousShipmentDetail extends AbstractComplexType
         $this->values['DryIceDetail'] = $dryIceDetail;
         return $this;
     }
-
-    
 }

@@ -72,6 +72,4 @@ class ShipmentReply extends AbstractComplexType
         $this->values['Version'] = $version;
         return $this;
     }
-
-    
 }

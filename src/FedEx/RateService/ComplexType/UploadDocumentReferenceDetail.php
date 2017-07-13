@@ -98,6 +98,4 @@ class UploadDocumentReferenceDetail extends AbstractComplexType
         $this->values['DocumentIdProducer'] = $documentIdProducer;
         return $this;
     }
-
-    
 }

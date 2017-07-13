@@ -111,6 +111,4 @@ class GroundCloseReportsReprintReply extends AbstractComplexType
         $this->values['Manifests'] = $manifests;
         return $this;
     }
-
-    
 }

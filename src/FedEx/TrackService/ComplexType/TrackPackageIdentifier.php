@@ -46,6 +46,4 @@ class TrackPackageIdentifier extends AbstractComplexType
         $this->values['Type'] = $type;
         return $this;
     }
-
-    
 }

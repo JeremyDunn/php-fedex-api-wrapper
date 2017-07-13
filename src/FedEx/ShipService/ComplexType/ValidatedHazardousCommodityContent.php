@@ -59,6 +59,4 @@ class ValidatedHazardousCommodityContent extends AbstractComplexType
         $this->values['Options'] = $options;
         return $this;
     }
-
-    
 }

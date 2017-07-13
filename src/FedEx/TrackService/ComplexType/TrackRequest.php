@@ -202,6 +202,4 @@ class TrackRequest extends AbstractComplexType
         $this->values['PagingToken'] = $pagingToken;
         return $this;
     }
-
-    
 }

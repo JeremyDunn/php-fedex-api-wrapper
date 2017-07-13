@@ -124,6 +124,4 @@ class FreightBaseCharge extends AbstractComplexType
         $this->values['ExtendedAmount'] = $extendedAmount;
         return $this;
     }
-
-    
 }

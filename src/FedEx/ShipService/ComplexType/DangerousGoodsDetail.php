@@ -189,6 +189,4 @@ class DangerousGoodsDetail extends AbstractComplexType
         $this->values['RadioactivityDetail'] = $radioactivityDetail;
         return $this;
     }
-
-    
 }

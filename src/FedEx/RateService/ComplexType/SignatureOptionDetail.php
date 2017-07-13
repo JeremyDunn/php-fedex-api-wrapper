@@ -46,6 +46,4 @@ class SignatureOptionDetail extends AbstractComplexType
         $this->values['SignatureReleaseNumber'] = $signatureReleaseNumber;
         return $this;
     }
-
-    
 }

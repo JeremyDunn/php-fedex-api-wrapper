@@ -46,6 +46,4 @@ class ShippingDocumentEMailRecipient extends AbstractComplexType
         $this->values['Address'] = $address;
         return $this;
     }
-
-    
 }

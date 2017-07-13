@@ -189,6 +189,4 @@ class HazardousCommodityDescription extends AbstractComplexType
         $this->values['Authorization'] = $authorization;
         return $this;
     }
-
-    
 }

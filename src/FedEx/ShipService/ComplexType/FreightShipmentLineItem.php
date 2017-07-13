@@ -176,6 +176,4 @@ class FreightShipmentLineItem extends AbstractComplexType
         $this->values['Volume'] = $volume;
         return $this;
     }
-
-    
 }

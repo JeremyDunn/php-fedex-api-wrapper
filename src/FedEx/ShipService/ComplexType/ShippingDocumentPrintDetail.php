@@ -33,6 +33,4 @@ class ShippingDocumentPrintDetail extends AbstractComplexType
         $this->values['PrinterId'] = $printerId;
         return $this;
     }
-
-    
 }

@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -10,8 +10,8 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *
- * @property \FedEx\Pickup\SimpleType\EtdConfirmationType|string $Confirmation
- * @property \FedEx\Pickup\SimpleType\RequestedShippingDocumentType|string[] $RequestedDocumentCopies
+ * @property \FedEx\PickupService\SimpleType\EtdConfirmationType|string $Confirmation
+ * @property \FedEx\PickupService\SimpleType\RequestedShippingDocumentType|string[] $RequestedDocumentCopies
  * @property UploadDocumentDetail[] $Documents
  * @property UploadDocumentReferenceDetail[] $DocumentReferences
 
@@ -28,7 +28,7 @@ class EtdDetail extends AbstractComplexType
     /**
      * Specifies client's intent for whether all documents must be confirmed before shipment processing.
      *
-     * @param \FedEx\Pickup\SimpleType\EtdConfirmationType|string $confirmation
+     * @param \FedEx\PickupService\SimpleType\EtdConfirmationType|string $confirmation
      * @return $this
      */
     public function setConfirmation($confirmation)
@@ -40,7 +40,7 @@ class EtdDetail extends AbstractComplexType
     /**
      * Indicates the types of shipping documents produced for the shipper by FedEx (see ShippingDocumentSpecification) which should be copied back to the shipper in the shipment result data.
      *
-     * @param \FedEx\Pickup\SimpleType\RequestedShippingDocumentType[]|string[] $requestedDocumentCopies
+     * @param \FedEx\PickupService\SimpleType\RequestedShippingDocumentType[]|string[] $requestedDocumentCopies
      * @return $this
      */
     public function setRequestedDocumentCopies(array $requestedDocumentCopies)
@@ -72,6 +72,4 @@ class EtdDetail extends AbstractComplexType
         $this->values['DocumentReferences'] = $documentReferences;
         return $this;
     }
-
-    
 }

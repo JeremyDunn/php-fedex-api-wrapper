@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -11,7 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Pickup Service
  *
  * @property string $AuthorizationId
- * @property \FedEx\Pickup\SimpleType\CreditCardAuthorizationType|string $AuthorizationType
+ * @property \FedEx\PickupService\SimpleType\CreditCardAuthorizationType|string $AuthorizationType
  * @property CreditFraudDetectionDetail $FraudDetectionDetail
 
  */
@@ -39,7 +39,7 @@ class CreditCardTransactionDetail extends AbstractComplexType
     /**
      * Set AuthorizationType
      *
-     * @param \FedEx\Pickup\SimpleType\CreditCardAuthorizationType|string $authorizationType
+     * @param \FedEx\PickupService\SimpleType\CreditCardAuthorizationType|string $authorizationType
      * @return $this
      */
     public function setAuthorizationType($authorizationType)
@@ -59,6 +59,4 @@ class CreditCardTransactionDetail extends AbstractComplexType
         $this->values['FraudDetectionDetail'] = $fraudDetectionDetail;
         return $this;
     }
-
-    
 }

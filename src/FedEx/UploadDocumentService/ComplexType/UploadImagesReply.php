@@ -85,6 +85,4 @@ class UploadImagesReply extends AbstractComplexType
         $this->values['ImageStatuses'] = $imageStatuses;
         return $this;
     }
-
-    
 }

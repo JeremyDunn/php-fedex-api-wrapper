@@ -46,6 +46,4 @@ class ValidatedHazardousContainer extends AbstractComplexType
         $this->values['HazardousCommodities'] = $hazardousCommodities;
         return $this;
     }
-
-    
 }

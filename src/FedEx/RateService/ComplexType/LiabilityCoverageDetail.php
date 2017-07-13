@@ -46,6 +46,4 @@ class LiabilityCoverageDetail extends AbstractComplexType
         $this->values['CoverageAmount'] = $coverageAmount;
         return $this;
     }
-
-    
 }

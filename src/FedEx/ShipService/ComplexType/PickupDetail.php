@@ -85,6 +85,4 @@ class PickupDetail extends AbstractComplexType
         $this->values['RequestSource'] = $requestSource;
         return $this;
     }
-
-    
 }

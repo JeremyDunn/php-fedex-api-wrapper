@@ -60,7 +60,7 @@ class AddressValidationOptions extends AbstractComplexType
      * @param  $maximumNumberOfMatches
      * @return $this
      */
-    public function setMaximumNumberOfMatches( $maximumNumberOfMatches)
+    public function setMaximumNumberOfMatches($maximumNumberOfMatches)
     {
         $this->values['MaximumNumberOfMatches'] = $maximumNumberOfMatches;
         return $this;
@@ -137,6 +137,4 @@ class AddressValidationOptions extends AbstractComplexType
         $this->values['ReturnParsedElements'] = $returnParsedElements;
         return $this;
     }
-
-    
 }

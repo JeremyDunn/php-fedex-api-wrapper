@@ -7,7 +7,9 @@ use FedEx\RateService\ComplexType\Party;
 use FedEx\RateService\ComplexType\RateRequest;
 use FedEx\RateService\ComplexType\WebAuthenticationDetail;
 use FedEx\RateService\ComplexType\Weight;
+use FedEx\RateService\Request;
 use FedEx\RateService\SimpleType\WeightUnits;
+use FedEx\Utility\ComplexTypePopulator;
 
 class EntitiesTest extends TestCase
 {
@@ -98,5 +100,31 @@ class EntitiesTest extends TestCase
 
         //__get() method should return null if class property isn't defined
         $this->assertNull($rateRequest->PropertyThatDoesNotExist);
+    }
+
+    /**
+     * Tests __isset magic method behavior on AbstractComplexType
+     */
+    public function testIssetMagicMethodOnAbstractComplexType()
+    {
+        $rateRequest = new RateRequest();
+
+
+        $populator = new ComplexTypePopulator();
+        $populator->populate($rateRequest);
+
+        $expectedResponse = $this->mockResponseSerializer->get('rate-service-rates-reply.ser');
+
+        $mockSoapClient = $this->getMockFromWsdl(Request::getWsdlPath());
+        $mockSoapClient->method('getRates')->will($this->returnValue($expectedResponse));
+
+        $request = new Request($mockSoapClient);
+
+        //get rates reply
+        $rateReply = $request->getGetRatesReply($rateRequest);
+
+        $this->assertGreaterThan(0, count($rateReply->RateReplyDetails));
+        $this->assertTrue(isset($rateReply->RateReplyDetails));
+        $this->assertFalse(empty($rateReply->RateReplyDetails));
     }
 }

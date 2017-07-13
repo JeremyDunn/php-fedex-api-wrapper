@@ -98,6 +98,4 @@ class GroundCloseWithDocumentsRequest extends AbstractComplexType
         $this->values['CloseDocumentSpecification'] = $closeDocumentSpecification;
         return $this;
     }
-
-    
 }

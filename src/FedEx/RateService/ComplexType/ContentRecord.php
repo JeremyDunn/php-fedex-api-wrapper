@@ -72,6 +72,4 @@ class ContentRecord extends AbstractComplexType
         $this->values['Description'] = $description;
         return $this;
     }
-
-    
 }

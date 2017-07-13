@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -13,7 +13,7 @@ use FedEx\AbstractComplexType;
  * @property int $Length
  * @property int $Width
  * @property int $Height
- * @property \FedEx\Pickup\SimpleType\LinearUnits|string $Units
+ * @property \FedEx\PickupService\SimpleType\LinearUnits|string $Units
 
  */
 class Dimensions extends AbstractComplexType
@@ -64,7 +64,7 @@ class Dimensions extends AbstractComplexType
     /**
      * Identifies the unit of measure associated with a dimensional values. See LinearUnits for valid values.
      *
-     * @param \FedEx\Pickup\SimpleType\LinearUnits|string $units
+     * @param \FedEx\PickupService\SimpleType\LinearUnits|string $units
      * @return $this
      */
     public function setUnits($units)
@@ -72,6 +72,4 @@ class Dimensions extends AbstractComplexType
         $this->values['Units'] = $units;
         return $this;
     }
-
-    
 }

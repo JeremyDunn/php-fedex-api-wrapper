@@ -46,6 +46,4 @@ class LinearMeasure extends AbstractComplexType
         $this->values['Units'] = $units;
         return $this;
     }
-
-    
 }

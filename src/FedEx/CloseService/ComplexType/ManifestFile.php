@@ -46,6 +46,4 @@ class ManifestFile extends AbstractComplexType
         $this->values['File'] = $file;
         return $this;
     }
-
-    
 }

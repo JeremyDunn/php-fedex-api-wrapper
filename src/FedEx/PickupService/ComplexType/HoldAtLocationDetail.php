@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -12,7 +12,7 @@ use FedEx\AbstractComplexType;
  *
  * @property string $PhoneNumber
  * @property ContactAndAddress $LocationContactAndAddress
- * @property \FedEx\Pickup\SimpleType\FedExLocationType|string $LocationType
+ * @property \FedEx\PickupService\SimpleType\FedExLocationType|string $LocationType
  * @property string $LocationId
  * @property int $LocationNumber
 
@@ -53,7 +53,7 @@ class HoldAtLocationDetail extends AbstractComplexType
     /**
      * Type of facility at which package/shipment is to be held.
      *
-     * @param \FedEx\Pickup\SimpleType\FedExLocationType|string $locationType
+     * @param \FedEx\PickupService\SimpleType\FedExLocationType|string $locationType
      * @return $this
      */
     public function setLocationType($locationType)
@@ -85,6 +85,4 @@ class HoldAtLocationDetail extends AbstractComplexType
         $this->values['LocationNumber'] = $locationNumber;
         return $this;
     }
-
-    
 }

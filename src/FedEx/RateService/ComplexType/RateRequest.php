@@ -124,6 +124,4 @@ class RateRequest extends AbstractComplexType
         $this->values['RequestedShipment'] = $requestedShipment;
         return $this;
     }
-
-    
 }

@@ -111,7 +111,7 @@ class CourierDispatchRequest extends AbstractComplexType
      * @param  $packageCount
      * @return $this
      */
-    public function setPackageCount( $packageCount)
+    public function setPackageCount($packageCount)
     {
         $this->values['PackageCount'] = $packageCount;
         return $this;
@@ -147,7 +147,7 @@ class CourierDispatchRequest extends AbstractComplexType
      * @param  $oversizePackageCount
      * @return $this
      */
-    public function setOversizePackageCount( $oversizePackageCount)
+    public function setOversizePackageCount($oversizePackageCount)
     {
         $this->values['OversizePackageCount'] = $oversizePackageCount;
         return $this;
@@ -176,6 +176,4 @@ class CourierDispatchRequest extends AbstractComplexType
         $this->values['CommodityDescription'] = $commodityDescription;
         return $this;
     }
-
-    
 }

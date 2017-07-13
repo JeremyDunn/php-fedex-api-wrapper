@@ -46,6 +46,4 @@ class DocTabContentBarcoded extends AbstractComplexType
         $this->values['Specification'] = $specification;
         return $this;
     }
-
-    
 }

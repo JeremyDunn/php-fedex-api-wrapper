@@ -46,6 +46,4 @@ class OperationalInstruction extends AbstractComplexType
         $this->values['Content'] = $content;
         return $this;
     }
-
-    
 }

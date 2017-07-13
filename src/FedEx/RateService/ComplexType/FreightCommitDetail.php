@@ -59,6 +59,4 @@ class FreightCommitDetail extends AbstractComplexType
         $this->values['TotalDistance'] = $totalDistance;
         return $this;
     }
-
-    
 }

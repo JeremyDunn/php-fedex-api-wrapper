@@ -72,6 +72,4 @@ class ReturnShipmentDetail extends AbstractComplexType
         $this->values['ReturnAssociation'] = $returnAssociation;
         return $this;
     }
-
-    
 }

@@ -46,6 +46,4 @@ class DangerousGoodsShippersDeclarationDetail extends AbstractComplexType
         $this->values['CustomerImageUsages'] = $customerImageUsages;
         return $this;
     }
-
-    
 }

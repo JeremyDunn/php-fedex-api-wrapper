@@ -98,6 +98,4 @@ class CustomLabelTextEntry extends AbstractComplexType
         $this->values['FontSize'] = $fontSize;
         return $this;
     }
-
-    
 }

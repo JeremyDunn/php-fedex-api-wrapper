@@ -46,6 +46,4 @@ class CustomLabelBoxEntry extends AbstractComplexType
         $this->values['BottomRightCorner'] = $bottomRightCorner;
         return $this;
     }
-
-    
 }

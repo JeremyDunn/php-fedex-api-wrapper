@@ -163,6 +163,4 @@ class FreightServiceCenterDetail extends AbstractComplexType
         $this->values['ContactAndAddress'] = $contactAndAddress;
         return $this;
     }
-
-    
 }

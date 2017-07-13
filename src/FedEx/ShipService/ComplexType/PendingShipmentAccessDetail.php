@@ -72,6 +72,4 @@ class PendingShipmentAccessDetail extends AbstractComplexType
         $this->values['ExpirationTimestamp'] = $expirationTimestamp;
         return $this;
     }
-
-    
 }

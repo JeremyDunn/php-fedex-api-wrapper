@@ -72,6 +72,4 @@ class VersionId extends AbstractComplexType
         $this->values['Minor'] = $minor;
         return $this;
     }
-
-    
 }

@@ -46,6 +46,4 @@ class BinaryBarcode extends AbstractComplexType
         $this->values['Value'] = $value;
         return $this;
     }
-
-    
 }

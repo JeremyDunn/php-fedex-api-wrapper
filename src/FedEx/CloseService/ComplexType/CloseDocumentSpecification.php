@@ -46,6 +46,4 @@ class CloseDocumentSpecification extends AbstractComplexType
         $this->values['Op950Detail'] = $op950Detail;
         return $this;
     }
-
-    
 }

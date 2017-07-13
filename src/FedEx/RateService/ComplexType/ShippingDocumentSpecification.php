@@ -124,6 +124,4 @@ class ShippingDocumentSpecification extends AbstractComplexType
         $this->values['Op900Detail'] = $op900Detail;
         return $this;
     }
-
-    
 }

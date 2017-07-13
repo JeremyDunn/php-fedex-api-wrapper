@@ -85,6 +85,4 @@ class GroundCloseDocumentsReply extends AbstractComplexType
         $this->values['CloseDocuments'] = $closeDocuments;
         return $this;
     }
-
-    
 }

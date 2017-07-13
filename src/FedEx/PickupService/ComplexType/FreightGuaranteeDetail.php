@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *
- * @property \FedEx\Pickup\SimpleType\FreightGuaranteeType|string $Type
+ * @property \FedEx\PickupService\SimpleType\FreightGuaranteeType|string $Type
  * @property string $Date
 
  */
@@ -26,7 +26,7 @@ class FreightGuaranteeDetail extends AbstractComplexType
     /**
      * Description of Guarantee
      *
-     * @param \FedEx\Pickup\SimpleType\FreightGuaranteeType|string $type
+     * @param \FedEx\PickupService\SimpleType\FreightGuaranteeType|string $type
      * @return $this
      */
     public function setType($type)
@@ -46,6 +46,4 @@ class FreightGuaranteeDetail extends AbstractComplexType
         $this->values['Date'] = $date;
         return $this;
     }
-
-    
 }

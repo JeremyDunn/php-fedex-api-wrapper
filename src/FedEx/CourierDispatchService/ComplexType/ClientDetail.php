@@ -37,7 +37,7 @@ class ClientDetail extends AbstractComplexType
     }
 
     /**
-     * Identifies the unique client device submitting the request. 
+     * Identifies the unique client device submitting the request.
      *
      * @param string $meterNumber
      * @return $this
@@ -59,6 +59,4 @@ class ClientDetail extends AbstractComplexType
         $this->values['Localization'] = $localization;
         return $this;
     }
-
-    
 }

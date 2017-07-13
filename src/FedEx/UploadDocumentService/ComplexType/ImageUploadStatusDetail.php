@@ -72,6 +72,4 @@ class ImageUploadStatusDetail extends AbstractComplexType
         $this->values['Message'] = $message;
         return $this;
     }
-
-    
 }

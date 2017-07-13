@@ -111,6 +111,4 @@ class GroundCloseReportsReprintRequest extends AbstractComplexType
         $this->values['CloseReportType'] = $closeReportType;
         return $this;
     }
-
-    
 }

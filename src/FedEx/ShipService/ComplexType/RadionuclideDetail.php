@@ -85,6 +85,4 @@ class RadionuclideDetail extends AbstractComplexType
         $this->values['ChemicalForm'] = $chemicalForm;
         return $this;
     }
-
-    
 }

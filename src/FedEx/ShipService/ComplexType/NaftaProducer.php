@@ -46,6 +46,4 @@ class NaftaProducer extends AbstractComplexType
         $this->values['Producer'] = $producer;
         return $this;
     }
-
-    
 }

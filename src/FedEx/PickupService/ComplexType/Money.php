@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -46,6 +46,4 @@ class Money extends AbstractComplexType
         $this->values['Amount'] = $amount;
         return $this;
     }
-
-    
 }

@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -10,8 +10,8 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *
- * @property \FedEx\Pickup\SimpleType\ServiceType|string $ServiceType
- * @property \FedEx\Pickup\SimpleType\PackagingType|string $PackagingType
+ * @property \FedEx\PickupService\SimpleType\ServiceType|string $ServiceType
+ * @property \FedEx\PickupService\SimpleType\PackagingType|string $PackagingType
  * @property Dimensions $Dimensions
  * @property Weight $Weight
 
@@ -28,7 +28,7 @@ class PickupShipmentAttributes extends AbstractComplexType
     /**
      * Set ServiceType
      *
-     * @param \FedEx\Pickup\SimpleType\ServiceType|string $serviceType
+     * @param \FedEx\PickupService\SimpleType\ServiceType|string $serviceType
      * @return $this
      */
     public function setServiceType($serviceType)
@@ -40,7 +40,7 @@ class PickupShipmentAttributes extends AbstractComplexType
     /**
      * Set PackagingType
      *
-     * @param \FedEx\Pickup\SimpleType\PackagingType|string $packagingType
+     * @param \FedEx\PickupService\SimpleType\PackagingType|string $packagingType
      * @return $this
      */
     public function setPackagingType($packagingType)
@@ -72,6 +72,4 @@ class PickupShipmentAttributes extends AbstractComplexType
         $this->values['Weight'] = $weight;
         return $this;
     }
-
-    
 }

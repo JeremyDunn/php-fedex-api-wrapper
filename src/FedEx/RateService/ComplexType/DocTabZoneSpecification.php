@@ -85,6 +85,4 @@ class DocTabZoneSpecification extends AbstractComplexType
         $this->values['Justification'] = $justification;
         return $this;
     }
-
-    
 }

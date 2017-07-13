@@ -72,6 +72,4 @@ class CustomDeliveryWindowDetail extends AbstractComplexType
         $this->values['RequestDate'] = $requestDate;
         return $this;
     }
-
-    
 }

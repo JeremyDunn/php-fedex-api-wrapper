@@ -85,6 +85,4 @@ class CancelCourierDispatchReply extends AbstractComplexType
         $this->values['Message'] = $message;
         return $this;
     }
-
-    
 }

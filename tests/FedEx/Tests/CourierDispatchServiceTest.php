@@ -26,8 +26,8 @@ class CourierDispatchServiceTest extends TestCase
 
         $request = new Request($mockSoapClient);
 
-        $this->assertEquals(ComplexType\CancelCourierDispatchRequest::class, $request->getCancelCourierDispatchReply($cancelCourierDispatchRequest));
-        $this->assertEquals(ComplexType\CourierDispatchRequest::class, $request->getCreateCourierDispatchReply($courierDispatchRequest));
-        $this->assertEquals(ComplexType\PickupAvailabilityRequest::class, $request->getGetPickupAvailabilityReply($pickupAvailabilityRequest));
+        $this->assertEquals(ComplexType\CancelCourierDispatchRequest::class, $request->getCancelCourierDispatchReply($cancelCourierDispatchRequest, true));
+        $this->assertEquals(ComplexType\CourierDispatchRequest::class, $request->getCreateCourierDispatchReply($courierDispatchRequest, true));
+        $this->assertEquals(ComplexType\PickupAvailabilityRequest::class, $request->getGetPickupAvailabilityReply($pickupAvailabilityRequest, true));
     }
 }

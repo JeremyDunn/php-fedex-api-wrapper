@@ -4,7 +4,7 @@ namespace FedEx\ReturnTagService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * The descriptive data for a physical location. 
+ * The descriptive data for a physical location.
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -41,7 +41,7 @@ class Address extends AbstractComplexType
     }
 
     /**
-     * Name of city, town, etc. 
+     * Name of city, town, etc.
      *
      * @param string $city
      * @return $this
@@ -65,7 +65,7 @@ class Address extends AbstractComplexType
     }
 
     /**
-     * Identification of a region (usually small) for mail/package delivery. Format and presence of this field will vary, depending on country. First five characters will be accepted. 
+     * Identification of a region (usually small) for mail/package delivery. Format and presence of this field will vary, depending on country. First five characters will be accepted.
      *
      * @param string $postalCode
      * @return $this
@@ -111,6 +111,4 @@ class Address extends AbstractComplexType
         $this->values['Residential'] = $residential;
         return $this;
     }
-
-    
 }

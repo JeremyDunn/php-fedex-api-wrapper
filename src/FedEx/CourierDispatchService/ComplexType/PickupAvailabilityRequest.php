@@ -94,7 +94,7 @@ class PickupAvailabilityRequest extends AbstractComplexType
 
     /**
      * An array of PickupRequestType. If SAME_DAY is included, Options with ScheduleDay of SAME_DAY will be included in the reply.
-								If FUTURE_DAY is included, Options with ScheduleDay of FUTURE_DAY will be included in the reply.
+If FUTURE_DAY is included, Options with ScheduleDay of FUTURE_DAY will be included in the reply.
      *
      * @param \FedEx\CourierDispatchService\SimpleType\PickupRequestType[]|string[] $pickupRequestType
      * @return $this
@@ -164,6 +164,4 @@ class PickupAvailabilityRequest extends AbstractComplexType
         $this->values['ShipmentAttributes'] = $shipmentAttributes;
         return $this;
     }
-
-    
 }

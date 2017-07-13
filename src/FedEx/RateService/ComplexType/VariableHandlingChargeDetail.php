@@ -72,6 +72,4 @@ class VariableHandlingChargeDetail extends AbstractComplexType
         $this->values['RateTypeBasis'] = $rateTypeBasis;
         return $this;
     }
-
-    
 }

@@ -36,10 +36,8 @@ class CustomsClearanceDetail extends AbstractComplexType
     protected $name = 'CustomsClearanceDetail';
 
     /**
-     * 
-                Descriptive data identifying the Broker responsible for the shipmet.
+     * Descriptive data identifying the Broker responsible for the shipmet.
                 Required if BROKER_SELECT_OPTION is requested in Special Services.
-              
      *
      * @param Party $broker
      * @return $this
@@ -63,8 +61,7 @@ class CustomsClearanceDetail extends AbstractComplexType
     }
 
     /**
-     * 
-                Applicable only for Commercial Invoice. If the consignee and importer are not the same, the Following importer fields are required.
+     * Applicable only for Commercial Invoice. If the consignee and importer are not the same, the Following importer fields are required.
                 Importer/Contact/PersonName
                 Importer/Contact/CompanyName
                 Importer/Contact/PhoneNumber
@@ -73,7 +70,6 @@ class CustomsClearanceDetail extends AbstractComplexType
                 Importer/Address/StateOrProvinceCode - if Importer Country Code is US or CA
                 Importer/Address/PostalCode - if Importer Country Code is US or CA
                 Importer/Address/CountryCode
-              
      *
      * @param Party $importerOfRecord
      * @return $this
@@ -181,10 +177,8 @@ class CustomsClearanceDetail extends AbstractComplexType
     }
 
     /**
-     * 
-                For international multiple piece shipments, commodity information must be passed in the Master and on each child transaction.
+     * For international multiple piece shipments, commodity information must be passed in the Master and on each child transaction.
                 If this shipment cotains more than four commodities line items, the four highest valued should be included in the first 4 occurances for this request.
-              
      *
      * @param Commodity[] $commodities
      * @return $this
@@ -218,6 +212,4 @@ class CustomsClearanceDetail extends AbstractComplexType
         $this->values['RegulatoryControls'] = $regulatoryControls;
         return $this;
     }
-
-    
 }

@@ -98,6 +98,4 @@ class PostalCodeInquiryRequest extends AbstractComplexType
         $this->values['CountryCode'] = $countryCode;
         return $this;
     }
-
-    
 }

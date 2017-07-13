@@ -46,6 +46,4 @@ class CustomLabelPosition extends AbstractComplexType
         $this->values['Y'] = $y;
         return $this;
     }
-
-    
 }

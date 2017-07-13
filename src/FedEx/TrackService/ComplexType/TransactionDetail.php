@@ -46,6 +46,4 @@ class TransactionDetail extends AbstractComplexType
         $this->values['Localization'] = $localization;
         return $this;
     }
-
-    
 }

@@ -59,6 +59,4 @@ class ShipmentRating extends AbstractComplexType
         $this->values['ShipmentRateDetails'] = $shipmentRateDetails;
         return $this;
     }
-
-    
 }

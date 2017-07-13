@@ -98,6 +98,4 @@ class CompletedHazardousPackageDetail extends AbstractComplexType
         $this->values['Containers'] = $containers;
         return $this;
     }
-
-    
 }

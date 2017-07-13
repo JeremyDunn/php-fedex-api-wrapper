@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *
- * @property \FedEx\Pickup\SimpleType\NotificationSeverityType|string $HighestSeverity
+ * @property \FedEx\PickupService\SimpleType\NotificationSeverityType|string $HighestSeverity
  * @property Notification[] $Notifications
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
@@ -29,7 +29,7 @@ class CancelPickupReply extends AbstractComplexType
     /**
      * Identifies the highest severity encountered when executing the request; in order from high to low: FAILURE, ERROR, WARNING, NOTE, SUCCESS.
      *
-     * @param \FedEx\Pickup\SimpleType\NotificationSeverityType|string $highestSeverity
+     * @param \FedEx\PickupService\SimpleType\NotificationSeverityType|string $highestSeverity
      * @return $this
      */
     public function setHighestSeverity($highestSeverity)
@@ -85,6 +85,4 @@ class CancelPickupReply extends AbstractComplexType
         $this->values['Message'] = $message;
         return $this;
     }
-
-    
 }

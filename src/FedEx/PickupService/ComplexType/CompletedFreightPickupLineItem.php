@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -72,6 +72,4 @@ class CompletedFreightPickupLineItem extends AbstractComplexType
         $this->values['EtaDeliveryTimestamp'] = $etaDeliveryTimestamp;
         return $this;
     }
-
-    
 }

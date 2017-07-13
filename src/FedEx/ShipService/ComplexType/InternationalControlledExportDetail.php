@@ -85,6 +85,4 @@ class InternationalControlledExportDetail extends AbstractComplexType
         $this->values['LicenseOrPermitExpirationDate'] = $licenseOrPermitExpirationDate;
         return $this;
     }
-
-    
 }

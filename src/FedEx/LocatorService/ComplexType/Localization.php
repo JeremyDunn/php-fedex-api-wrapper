@@ -36,7 +36,7 @@ class Localization extends AbstractComplexType
     }
 
     /**
-     * Identifies the locale (i.e.	country code).
+     * Identifies the locale (i.e.country code).
      *
      * @param string $localeCode
      * @return $this
@@ -46,6 +46,4 @@ class Localization extends AbstractComplexType
         $this->values['LocaleCode'] = $localeCode;
         return $this;
     }
-
-    
 }

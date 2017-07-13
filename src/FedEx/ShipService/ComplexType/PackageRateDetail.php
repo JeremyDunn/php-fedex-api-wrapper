@@ -267,6 +267,4 @@ class PackageRateDetail extends AbstractComplexType
         $this->values['VariableHandlingCharges'] = $variableHandlingCharges;
         return $this;
     }
-
-    
 }

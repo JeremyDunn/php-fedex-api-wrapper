@@ -2,8 +2,8 @@
 
 namespace FedEx\Tests;
 
-use FedEx\Pickup\Request;
-use FedEx\Pickup\ComplexType;
+use FedEx\PickupService\Request;
+use FedEx\PickupService\ComplexType;
 use FedEx\Utility\ComplexTypePopulator;
 
 class PickupServiceTest extends TestCase
@@ -26,8 +26,8 @@ class PickupServiceTest extends TestCase
 
         $request = new Request($mockSoapClient);
 
-        $this->assertEquals(ComplexType\PickupAvailabilityRequest::class, $request->getGetPickupAvailabilityReply($pickupAvailabilityRequest));
-        $this->assertEquals(ComplexType\CancelPickupRequest::class, $request->getCancelPickupReply($cancelPickupRequest));
-        $this->assertEquals(ComplexType\CreatePickupRequest::class, $request->getCreatePickupReply($createPickupRequest));
+        $this->assertEquals(ComplexType\PickupAvailabilityRequest::class, $request->getGetPickupAvailabilityReply($pickupAvailabilityRequest, true));
+        $this->assertEquals(ComplexType\CancelPickupRequest::class, $request->getCancelPickupReply($cancelPickupRequest, true));
+        $this->assertEquals(ComplexType\CreatePickupRequest::class, $request->getCreatePickupReply($createPickupRequest, true));
     }
 }

@@ -3,6 +3,7 @@
 namespace FedEx\Tests;
 
 use FedEx\AbstractRequest;
+use FedEx\Utility\MockResponseSerializer;
 
 class TestCase extends \PHPUnit\Framework\TestCase
 {
@@ -10,6 +11,16 @@ class TestCase extends \PHPUnit\Framework\TestCase
     const FEDEX_PASSWORD = 'password';
     const FEDEX_METER_NUMBER = 'meter number';
     const FEDEX_ACCOUNT_NUMBER = 'account number';
+
+    /**
+     * @var MockResponseSerializer
+     */
+    protected $mockResponseSerializer;
+
+    public function setUp()
+    {
+        $this->mockResponseSerializer = new MockResponseSerializer();
+    }
 
     /**
      * Run assertions that determine if an endpoint URL exists
@@ -39,7 +50,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
             new \FedEx\CourierDispatchService\Request(),
             new \FedEx\LocatorService\Request(),
             new \FedEx\PackageMovementInformationService\Request(),
-            new \FedEx\Pickup\Request(),
+            new \FedEx\PickupService\Request(),
             new \FedEx\RateService\Request(),
             new \FedEx\ReturnTagService\Request(),
             new \FedEx\ShipService\Request(),
@@ -47,5 +58,4 @@ class TestCase extends \PHPUnit\Framework\TestCase
             new \FedEx\UploadDocumentService\Request()
         ];
     }
-
 }

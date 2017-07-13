@@ -46,6 +46,4 @@ class Weight extends AbstractComplexType
         $this->values['Value'] = $value;
         return $this;
     }
-
-    
 }

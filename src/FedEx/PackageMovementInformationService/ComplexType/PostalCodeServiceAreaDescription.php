@@ -72,6 +72,4 @@ class PostalCodeServiceAreaDescription extends AbstractComplexType
         $this->values['ServiceArea'] = $serviceArea;
         return $this;
     }
-
-    
 }

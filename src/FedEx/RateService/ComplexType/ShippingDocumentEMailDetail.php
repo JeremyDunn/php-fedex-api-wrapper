@@ -46,6 +46,4 @@ class ShippingDocumentEMailDetail extends AbstractComplexType
         $this->values['Grouping'] = $grouping;
         return $this;
     }
-
-    
 }

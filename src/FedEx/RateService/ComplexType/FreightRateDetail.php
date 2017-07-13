@@ -72,6 +72,4 @@ class FreightRateDetail extends AbstractComplexType
         $this->values['Notations'] = $notations;
         return $this;
     }
-
-    
 }

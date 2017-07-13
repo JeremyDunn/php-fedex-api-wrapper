@@ -59,6 +59,4 @@ class EtdDetail extends AbstractComplexType
         $this->values['DocumentReferences'] = $documentReferences;
         return $this;
     }
-
-    
 }

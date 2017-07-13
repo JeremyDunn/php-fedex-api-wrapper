@@ -33,6 +33,4 @@ class TrackNotificationRecipientDetail extends AbstractComplexType
         $this->values['NotificationEventsAvailable'] = $notificationEventsAvailable;
         return $this;
     }
-
-    
 }

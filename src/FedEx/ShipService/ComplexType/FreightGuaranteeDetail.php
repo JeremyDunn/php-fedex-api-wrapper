@@ -46,6 +46,4 @@ class FreightGuaranteeDetail extends AbstractComplexType
         $this->values['Date'] = $date;
         return $this;
     }
-
-    
 }

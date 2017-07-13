@@ -46,6 +46,4 @@ class Address extends AbstractComplexType
         $this->values['CountryCode'] = $countryCode;
         return $this;
     }
-
-    
 }

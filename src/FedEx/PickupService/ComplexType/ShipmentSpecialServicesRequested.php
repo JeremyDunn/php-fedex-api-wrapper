@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *
- * @property \FedEx\Pickup\SimpleType\ShipmentSpecialServiceType|string[] $SpecialServiceTypes
+ * @property \FedEx\PickupService\SimpleType\ShipmentSpecialServiceType|string[] $SpecialServiceTypes
  * @property CodDetail $CodDetail
  * @property HoldAtLocationDetail $HoldAtLocationDetail
  * @property EMailNotificationDetail $EMailNotificationDetail
@@ -48,7 +48,7 @@ class ShipmentSpecialServicesRequested extends AbstractComplexType
     /**
      * The types of all special services requested for the enclosing shipment (or other shipment-level transaction).
      *
-     * @param \FedEx\Pickup\SimpleType\ShipmentSpecialServiceType[]|string[] $specialServiceTypes
+     * @param \FedEx\PickupService\SimpleType\ShipmentSpecialServiceType[]|string[] $specialServiceTypes
      * @return $this
      */
     public function setSpecialServiceTypes(array $specialServiceTypes)
@@ -332,6 +332,4 @@ class ShipmentSpecialServicesRequested extends AbstractComplexType
         $this->values['CustomDeliveryWindowDetail'] = $customDeliveryWindowDetail;
         return $this;
     }
-
-    
 }

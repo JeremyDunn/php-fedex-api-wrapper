@@ -1,5 +1,5 @@
 <?php
-namespace FedEx\Pickup\ComplexType;
+namespace FedEx\PickupService\ComplexType;
 
 use FedEx\AbstractComplexType;
 
@@ -137,6 +137,4 @@ class Contact extends AbstractComplexType
         $this->values['EMailAddress'] = $eMailAddress;
         return $this;
     }
-
-    
 }

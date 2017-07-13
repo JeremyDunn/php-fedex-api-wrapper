@@ -85,6 +85,4 @@ class SignatureProofOfDeliveryFaxReply extends AbstractComplexType
         $this->values['FaxConfirmationNumber'] = $faxConfirmationNumber;
         return $this;
     }
-
-    
 }

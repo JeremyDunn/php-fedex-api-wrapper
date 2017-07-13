@@ -59,6 +59,4 @@ class DestinationControlDetail extends AbstractComplexType
         $this->values['EndUser'] = $endUser;
         return $this;
     }
-
-    
 }

@@ -176,6 +176,4 @@ class RequestedPackageLineItem extends AbstractComplexType
         $this->values['ContentRecords'] = $contentRecords;
         return $this;
     }
-
-    
 }

@@ -85,6 +85,4 @@ class GroundCloseRequest extends AbstractComplexType
         $this->values['TimeUpToWhichShipmentsAreToBeClosed'] = $timeUpToWhichShipmentsAreToBeClosed;
         return $this;
     }
-
-    
 }

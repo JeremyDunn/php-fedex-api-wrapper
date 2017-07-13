@@ -194,7 +194,7 @@ class DropoffServicesDesired extends AbstractComplexType
     }
 
     /**
-     * Locations that support FedEx	Return System.
+     * Locations that support FedExReturn System.
      *
      * @param boolean $returnSystem
      * @return $this
@@ -228,6 +228,4 @@ class DropoffServicesDesired extends AbstractComplexType
         $this->values['SearchSameStateOnly'] = $searchSameStateOnly;
         return $this;
     }
-
-    
 }

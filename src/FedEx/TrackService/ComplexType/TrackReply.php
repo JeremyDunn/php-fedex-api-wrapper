@@ -124,6 +124,4 @@ class TrackReply extends AbstractComplexType
         $this->values['TrackDetails'] = $trackDetails;
         return $this;
     }
-
-    
 }

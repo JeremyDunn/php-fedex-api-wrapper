@@ -85,6 +85,4 @@ class DangerousGoodsContainer extends AbstractComplexType
         $this->values['HazardousCommodities'] = $hazardousCommodities;
         return $this;
     }
-
-    
 }
