@@ -2,7 +2,7 @@
 
 ## 2.0 (released 2017-07-13)
 
-- SoapClient responses are now parsed and populate Response objects. All of the Request 'Reply' methods now return a populated Response object instead of the SoapClient stdClass.  *This is a backward incompatible change.* To make your code compatible, simply send `true` as the 2nd argument to your `get...Reply` calls. [Click here for an example.](src/FedEx/RateService/Request.php#L27)   
+- SoapClient responses are now parsed and populate Reply objects. All of the Request 'Reply' methods now return a populated Reply object instead of the SoapClient stdClass.  *This is a backward incompatible change.* To make your code compatible, simply send `true` as the 2nd argument to your `get...Reply` calls. [Click here for an example.](src/FedEx/RateService/Request.php#L27)   
 - Added more phpunit tests.
 
 ## 1.0 (released 2016-03-28)
