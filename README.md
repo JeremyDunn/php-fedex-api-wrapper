@@ -1,7 +1,7 @@
 # PHP FedEx API Wrapper
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ee5bdc605dfd44d0a590ea1dfc031421)](https://www.codacy.com/app/JeremyDunn/php-fedex-api-wrapper?utm_source=github.com&utm_medium=referral&utm_content=JeremyDunn/php-fedex-api-wrapper&utm_campaign=badger)
 [![Build Status](https://travis-ci.org/JeremyDunn/php-fedex-api-wrapper.svg?branch=master)](https://travis-ci.org/JeremyDunn/php-fedex-api-wrapper)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ee5bdc605dfd44d0a590ea1dfc031421)](https://www.codacy.com/app/JeremyDunn/php-fedex-api-wrapper?utm_source=github.com&utm_medium=referral&utm_content=JeremyDunn/php-fedex-api-wrapper&utm_campaign=badger)
 
 This library provides a fluid interface for constructing requests to the FedEx web service API.
 
@@ -32,164 +32,6 @@ For example if we wish to get shipping rates, we'll create a new instance of [Fe
 
 This assumes the `FEDEX_KEY`, `FEDEX_PASSWORD`, `FEDEX_ACCOUNT_NUMBER`, and `FEDEX_METER_NUMBER` are previously defined in your application.
 Also note that by default, the library will use the beta/testing server (wsbeta.fedex.com). To use the production server (ws.fedex.com), set the location on the `\SoapClient` returned from the Request. See below for an example of how to do this. 
-```php
-use FedEx\RateService;
-use FedEx\RateService\ComplexType;
-use FedEx\RateService\SimpleType;
-
-//RateRequest
-$rateRequest = new ComplexType\RateRequest();
-
-//UserCredential
-$userCredential = new ComplexType\WebAuthenticationCredential();
-$userCredential
-    ->setKey(FEDEX_KEY)
-    ->setPassword(FEDEX_PASSWORD);
-
-//WebAuthenticationDetail
-$webAuthenticationDetail = new ComplexType\WebAuthenticationDetail();
-$webAuthenticationDetail->setUserCredential($userCredential);
-
-$rateRequest->setWebAuthenticationDetail($webAuthenticationDetail);
-
-//ClientDetail
-$clientDetail = new ComplexType\ClientDetail();
-$clientDetail
-    ->setAccountNumber(FEDEX_ACCOUNT_NUMBER)
-    ->setMeterNumber(FEDEX_METER_NUMBER);
-
-$rateRequest->setClientDetail($clientDetail);
-
-//TransactionDetail
-$transactionDetail = new ComplexType\TransactionDetail();
-$transactionDetail->setCustomerTransactionId('Testing Rate Service request');
-
-$rateRequest->setTransactionDetail($transactionDetail);
-
-//VersionId
-$versionId = new ComplexType\VersionId();
-$versionId
-    ->setServiceId('crs')
-    ->setMajor(10)
-    ->setIntermediate(0)
-    ->setMinor(0);
-
-$rateRequest->setVersion($versionId);
-
-//OPTIONAL ReturnTransitAndCommit
-$rateRequest->setReturnTransitAndCommit(true);
-
-//RequestedShipment
-$requestedShipment = new ComplexType\RequestedShipment();
-$requestedShipment->setDropoffType(SimpleType\DropoffType::_REGULAR_PICKUP);
-$requestedShipment->setShipTimestamp(date('c'));
-
-$rateRequest->setRequestedShipment($requestedShipment);
-
-//RequestedShipment/Shipper
-$shipper = new ComplexType\Party();
-
-$shipperAddress = new ComplexType\Address();
-$shipperAddress
-    ->setStreetLines(array('10 Fed Ex Pkwy'))
-    ->setCity('Memphis')
-    ->setStateOrProvinceCode('TN')
-    ->setPostalCode(38115)
-    ->setCountryCode('US');
-
-$shipper->setAddress($shipperAddress);
-
-$requestedShipment->setShipper($shipper);
-
-//RequestedShipment/Recipient
-$recipient = new ComplexType\Party();
-
-$recipientAddress = new ComplexType\Address();
-$recipientAddress
-    ->setStreetLines(array('13450 Farmcrest Ct'))
-    ->setCity('Herndon')
-    ->setStateOrProvinceCode('VA')
-    ->setPostalCode(20171)
-    ->setCountryCode('US');
-
-$recipient->setAddress($recipientAddress);
-
-$requestedShipment->setRecipient($recipient);
-
-//RequestedShipment/ShippingChargesPayment
-$shippingChargesPayment = new ComplexType\Payment();
-$shippingChargesPayment->setPaymentType(SimpleType\PaymentType::_SENDER);
-
-$payor = new ComplexType\Payor();
-$payor
-    ->setAccountNumber(FEDEX_ACCOUNT_NUMBER)
-    ->setCountryCode('US');
-
-$shippingChargesPayment->setPayor($payor);
-
-$requestedShipment->setShippingChargesPayment($shippingChargesPayment);
-
-//RequestedShipment/RateRequestType(s)
-$requestedShipment->setRateRequestTypes([
-    SimpleType\RateRequestType::_LIST,
-    SimpleType\RateRequestType::_ACCOUNT
-]);
-
-//RequestedShipment/PackageCount
-$requestedShipment->setPackageCount(2);
-
-//RequestedShipment/RequestedPackageLineItem(s)
-$item1Weight = new ComplexType\Weight();
-$item1Weight
-    ->setUnits(SimpleType\WeightUnits::_LB)
-    ->setValue(2.0);
-
-$item1Dimensions = new ComplexType\Dimensions();
-$item1Dimensions
-    ->setLength(10)
-    ->setWidth(10)
-    ->setHeight(3)
-    ->setUnits(SimpleType\LinearUnits::_IN);
-
-$item1 = new ComplexType\RequestedPackageLineItem();
-$item1
-    ->setWeight($item1Weight)
-    ->setDimensions($item1Dimensions)
-    ->setGroupPackageCount(1);
-
-$item2Weight = new ComplexType\Weight();
-$item2Weight
-    ->setUnits(SimpleType\WeightUnits::_LB)
-    ->setValue(5.0);
-
-$item2Dimensions = new ComplexType\Dimensions();
-$item2Dimensions
-    ->setLength(20)
-    ->setWidth(20)
-    ->setHeight(10)
-    ->setUnits(SimpleType\LinearUnits::_IN);
-
-$item2 = new ComplexType\RequestedPackageLineItem();
-$item2
-    ->setWeight($item2Weight)
-    ->setDimensions($item2Dimensions)
-    ->setGroupPackageCount(1);
-
-$requestedShipment->setRequestedPackageLineItems([$item1, $item2]);
-
-$rateRequest->setRequestedShipment($requestedShipment);
-
-$rateServiceRequest = new RateService\Request();
-$rateServiceRequest->getSoapClient()->__setLocation(RateService\Request::PRODUCTION_URL); //use the production web service
-$response = $rateServiceRequest->getGetRatesReply($rateRequest);
-
-var_dump($response);
-
-```
-
-## Shorter syntax example
-
-This is the same request as above using a shorter class property syntax.
 
 ```php
 use FedEx\RateService\Request;
@@ -261,12 +103,28 @@ $rateRequest->RequestedShipment->RequestedPackageLineItems[1]->GroupPackageCount
 
 $rateServiceRequest = new Request();
 $rateServiceRequest->getSoapClient()->__setLocation(Request::PRODUCTION_URL); //use production URL
-$response = $rateServiceRequest->getGetRatesReply($rateRequest);
 
-var_dump($response);
+$rateReply = $rateServiceRequest->getGetRatesReply($rateRequest); // send true as the 2nd argument to return the SoapClient's stdClass response.
+
+if (!empty($rateReply->RateReplyDetails)) {
+    foreach ($rateReply->RateReplyDetails as $rateReplyDetail) {
+        var_dump($rateReplyDetail->ServiceType);
+        var_dump($rateReplyDetail->DeliveryTimestamp);
+        if (!empty($rateReplyDetail->RatedShipmentDetails)) {
+            foreach ($rateReplyDetail->RatedShipmentDetails as $ratedShipmentDetail) {
+                var_dump($ratedShipmentDetail->ShipmentRateDetail->RateType . ": " . $ratedShipmentDetail->ShipmentRateDetail->TotalNetCharge->Amount);
+            }
+        }
+        echo "<hr />";
+    }
+}
+
+var_dump($rateReply);
 
 ```
 
 More examples can be found in the [examples](examples) folder.
+
+## [Change Log](CHANGELOG.md)
 
 
