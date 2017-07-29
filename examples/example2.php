@@ -1,6 +1,6 @@
 <?php
 /**
- * This is the same example as presented in example1.php, but shortened by passing all data through the constructor as an array.
+ * This is the same example as presented in example1.php, but we're var_dumping the entire response.
  *
  */
 

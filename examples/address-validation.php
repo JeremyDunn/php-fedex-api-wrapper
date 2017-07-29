@@ -66,7 +66,6 @@ $addressValidationRequest->setAddressesToValidate($addresses);
 
 
 $validateShipmentRequest = new AddressValidationService\Request();
-$validateShipmentRequest->getSoapClient()->__setLocation('https://gateway.fedex.com:443/web-services');
 $result = $validateShipmentRequest->getAddressValidationReply($addressValidationRequest);
 
 var_dump($result);

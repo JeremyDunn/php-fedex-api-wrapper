@@ -1,154 +1,99 @@
 <?php
-
 require_once 'credentials.php';
 require_once 'bootstrap.php';
 
-use FedEx\ShipService;
+use FedEx\ShipService\Request;
 use FedEx\ShipService\ComplexType;
 use FedEx\ShipService\SimpleType;
 
-$userCredential = new ComplexType\WebAuthenticationCredential();
-$userCredential
-    ->setKey(FEDEX_KEY)
-    ->setPassword(FEDEX_PASSWORD);
+$shipDate = new \DateTime('now +7 days');
+$expirationDate = new \DateTime('now +14 days');
 
-$webAuthenticationDetail = new ComplexType\WebAuthenticationDetail();
-$webAuthenticationDetail->setUserCredential($userCredential);
+//package 1
+$requestedPackageLineItem1 = new ComplexType\RequestedPackageLineItem();
+$requestedPackageLineItem1->SequenceNumber = 1;
+$requestedPackageLineItem1->ItemDescription = 'Product description 1';
+$requestedPackageLineItem1->Dimensions->Width = 10;
+$requestedPackageLineItem1->Dimensions->Height = 10;
+$requestedPackageLineItem1->Dimensions->Length = 15;
+$requestedPackageLineItem1->Dimensions->Units = SimpleType\LinearUnits::_IN;
+$requestedPackageLineItem1->Weight->Value = 2;
+$requestedPackageLineItem1->Weight->Units = SimpleType\WeightUnits::_LB;
 
-$clientDetail = new ComplexType\ClientDetail();
-$clientDetail
-    ->setAccountNumber(FEDEX_ACCOUNT_NUMBER)
-    ->setMeterNumber(FEDEX_METER_NUMBER);
+//package 2
+$requestedPackageLineItem2 = new ComplexType\RequestedPackageLineItem();
+$requestedPackageLineItem2->SequenceNumber = 1;
+$requestedPackageLineItem2->ItemDescription = 'Product description 2';
+$requestedPackageLineItem2->Dimensions->Width = 5;
+$requestedPackageLineItem2->Dimensions->Height = 5;
+$requestedPackageLineItem2->Dimensions->Length = 10;
+$requestedPackageLineItem2->Dimensions->Units = SimpleType\LinearUnits::_IN;
+$requestedPackageLineItem2->Weight->Value = 1;
+$requestedPackageLineItem2->Weight->Units = SimpleType\WeightUnits::_LB;
 
-$version = new ComplexType\VersionId();
-$version
-    ->setServiceId('ship')
-    ->setMajor(12)
-    ->setIntermediate(1)
-    ->setMinor(0);
-
-$shipTimestamp = new DateTime();
-
-$shipperAddress = new ComplexType\Address();
-$shipperAddress
-    ->setStreetLines(array(
-        '1234 Main Street',
-        'STE 810'
-    ))
-    ->setCity('Anytown')
-    ->setStateOrProvinceCode('NY')
-    ->setPostalCode('12345')
-    ->setCountryCode('US');
-
-$shipperContact = new ComplexType\Contact();
-$shipperContact
-    ->setCompanyName('Company name')
-    ->setPersonName('Person Name')
-    ->setEMailAddress('info@example.com')
-    ->setPhoneNumber('1-123-123-1234');
-
-$shipper = new ComplexType\Party();
-$shipper
-    ->setAccountNumber(FEDEX_ACCOUNT_NUMBER)
-    ->setAddress($shipperAddress)
-    ->setContact($shipperContact);
-
-$recipientContact = new ComplexType\Contact();
-$recipientContact
-    ->setPersonName('John Doe')
-    ->setEMailAddress('test@example.com');
-
-$recipientAddress = new ComplexType\Address();
-$recipientAddress
-    ->setStreetLines(array('54321 1st Ave'))
-    ->setCity('Anytown')
-    ->setStateOrProvinceCode('NY')
-    ->setPostalCode('12345')
-    ->setCountryCode('US');
-
-$recipient = new ComplexType\Party();
-$recipient
-    ->setContact($recipientContact)
-    ->setAddress($recipientAddress);
-
-$labelSpecification = new ComplexType\LabelSpecification();
-$labelSpecification
-    ->setImageType(SimpleType\ShippingDocumentImageType::_PDF)
-    ->setLabelFormatType(SimpleType\LabelFormatType::_COMMON2D)
-    ->setLabelStockType(SimpleType\LabelStockType::_PAPER_4X6);
-
-$packageLineItem1 = new ComplexType\RequestedPackageLineItem();
-$packageLineItem1
-    ->setSequenceNumber(1)
-    ->setItemDescription('Product description')
-    ->setDimensions(new ComplexType\Dimensions(array(
-        'Width' => 10,
-        'Height' => 10,
-        'Length' => 25,
-        'Units' => SimpleType\LinearUnits::_IN
-    )))
-    ->setWeight(new ComplexType\Weight(array(
-        'Value' => 2,
-        'Units' => SimpleType\WeightUnits::_LB
-    )));
-
-$shippingChargesPayor = new ComplexType\Payor();
-$shippingChargesPayor->setResponsibleParty($shipper);
-
-
-$shippingChargesPayment = new ComplexType\Payment();
-$shippingChargesPayment
-    ->setPaymentType(SimpleType\PaymentType::_SENDER)
-    ->setPayor($shippingChargesPayor);
-
-$pendingShipmentDetail = new ComplexType\PendingShipmentDetail();
-$pendingShipmentDetail
-    ->setType(SimpleType\PendingShipmentType::_EMAIL)
-    ->setExpirationDate('2012-11-01')
-    ->setEmailLabelDetail(new ComplexType\EMailLabelDetail(array(
-        'NotificationEMailAddress' => 'test',
-        'NotificationMessage' => 'pending shipment notification message'
-    )));
-
-
-$specialServicesRequested = new ComplexType\ShipmentSpecialServicesRequested();
-$specialServicesRequested
-    ->setSpecialServiceTypes(array(SimpleType\ShipmentSpecialServiceType::_PENDING_SHIPMENT))
-    ->setPendingShipmentDetail($pendingShipmentDetail);
-
-$requestedShipment = new ComplexType\RequestedShipment();
-$requestedShipment
-    ->setDropoffType(SimpleType\DropoffType::_REGULAR_PICKUP)
-    ->setShipTimestamp($shipTimestamp->format(DateTime::ISO8601))
-    ->setServiceType(SimpleType\ServiceType::_FEDEX_2_DAY)
-    ->setPackagingType(SimpleType\PackagingType::_YOUR_PACKAGING)
-    ->setShipper($shipper)
-    ->setRecipient($recipient)
-    ->setLabelSpecification($labelSpecification)
-    ->setRateRequestTypes(array(SimpleType\RateRequestType::_ACCOUNT))
-    ->setPackageCount(1)
-    ->setRequestedPackageLineItems(array(
-        $packageLineItem1
-    ))
-    ->setShippingChargesPayment($shippingChargesPayment)
-    ->setSpecialServicesRequested($specialServicesRequested);
-
-
-
-
+//create pending shipment request
 $createPendingShipmentRequest = new ComplexType\CreatePendingShipmentRequest();
-$createPendingShipmentRequest->setWebAuthenticationDetail($webAuthenticationDetail);
-$createPendingShipmentRequest->setClientDetail($clientDetail);
-$createPendingShipmentRequest->setVersion($version);
-$createPendingShipmentRequest->setRequestedShipment($requestedShipment);
 
+//authentication detail
+$createPendingShipmentRequest->WebAuthenticationDetail->UserCredential->Key = FEDEX_KEY;
+$createPendingShipmentRequest->WebAuthenticationDetail->UserCredential->Password = FEDEX_PASSWORD;
 
-var_dump($createPendingShipmentRequest->toArray());
+//client detail
+$createPendingShipmentRequest->ClientDetail->AccountNumber = FEDEX_ACCOUNT_NUMBER;
+$createPendingShipmentRequest->ClientDetail->MeterNumber = FEDEX_METER_NUMBER;
 
-var_export($createPendingShipmentRequest->toArray());
+//version
+$createPendingShipmentRequest->Version->ServiceId = 'ship';
+$createPendingShipmentRequest->Version->Major = 12;
+$createPendingShipmentRequest->Version->Intermediate = 1;
+$createPendingShipmentRequest->Version->Minor = 0;
 
-$validateShipmentRequest = new ShipService\Request();
-$validateShipmentRequest->getSoapClient()->__setLocation('https://ws.fedex.com:443/web-services/ship');
-$response = $validateShipmentRequest->getCreatePendingShipmentReply($createPendingShipmentRequest);
+//requested shipment
+$createPendingShipmentRequest->RequestedShipment->DropoffType = SimpleType\DropoffType::_REGULAR_PICKUP;
+$createPendingShipmentRequest->RequestedShipment->ShipTimestamp = $shipDate->format('c');
+$createPendingShipmentRequest->RequestedShipment->ServiceType = SimpleType\ServiceType::_FEDEX_2_DAY;
+$createPendingShipmentRequest->RequestedShipment->PackagingType = SimpleType\PackagingType::_YOUR_PACKAGING;
+$createPendingShipmentRequest->RequestedShipment->LabelSpecification->ImageType = SimpleType\ShippingDocumentImageType::_PDF;
+$createPendingShipmentRequest->RequestedShipment->LabelSpecification->LabelFormatType = SimpleType\LabelFormatType::_COMMON2D;
+$createPendingShipmentRequest->RequestedShipment->LabelSpecification->LabelStockType = SimpleType\LabelStockType::_PAPER_4X6;
+$createPendingShipmentRequest->RequestedShipment->RateRequestTypes = [SimpleType\RateRequestType::_ACCOUNT];
+$createPendingShipmentRequest->RequestedShipment->PackageCount = 1;
+$createPendingShipmentRequest->RequestedShipment->RequestedPackageLineItems = [$requestedPackageLineItem1, $requestedPackageLineItem2];
 
-var_dump($response);
+//requested shipment shipper
+$createPendingShipmentRequest->RequestedShipment->Shipper->AccountNumber = FEDEX_ACCOUNT_NUMBER;
+$createPendingShipmentRequest->RequestedShipment->Shipper->Address->StreetLines = ['1234 Main Street'];
+$createPendingShipmentRequest->RequestedShipment->Shipper->Address->City = 'Anytown';
+$createPendingShipmentRequest->RequestedShipment->Shipper->Address->StateOrProvinceCode = 'NY';
+$createPendingShipmentRequest->RequestedShipment->Shipper->Address->PostalCode = '12345';
+$createPendingShipmentRequest->RequestedShipment->Shipper->Address->CountryCode = 'US';
+$createPendingShipmentRequest->RequestedShipment->Shipper->Contact->CompanyName = 'Company Name';
+$createPendingShipmentRequest->RequestedShipment->Shipper->Contact->PersonName = 'Person Name';
+$createPendingShipmentRequest->RequestedShipment->Shipper->Contact->EMailAddress = 'shipper@example.com';
+$createPendingShipmentRequest->RequestedShipment->Shipper->Contact->PhoneNumber = '1-123-123-1234';
+
+//requested shipment recipient
+$createPendingShipmentRequest->RequestedShipment->Recipient->Address->StreetLines = ['54321 1st Ave.'];
+$createPendingShipmentRequest->RequestedShipment->Recipient->Address->City = 'Anytown';
+$createPendingShipmentRequest->RequestedShipment->Recipient->Address->StateOrProvinceCode = 'NY';
+$createPendingShipmentRequest->RequestedShipment->Recipient->Address->PostalCode = '12345';
+$createPendingShipmentRequest->RequestedShipment->Recipient->Address->CountryCode = 'US';
+$createPendingShipmentRequest->RequestedShipment->Recipient->Contact->PersonName = 'John Doe';
+$createPendingShipmentRequest->RequestedShipment->Recipient->Contact->EMailAddress = 'recipient@example.com';
+$createPendingShipmentRequest->RequestedShipment->Recipient->Contact->PhoneNumber = '1-321-321-4321';
+
+//shipping charges payment
+$createPendingShipmentRequest->RequestedShipment->ShippingChargesPayment->PaymentType = SimpleType\PaymentType::_SENDER;
+$createPendingShipmentRequest->RequestedShipment->ShippingChargesPayment->Payor->ResponsibleParty = $createPendingShipmentRequest->RequestedShipment->Shipper;
+
+//special services requested
+$createPendingShipmentRequest->RequestedShipment->SpecialServicesRequested->SpecialServiceTypes = [SimpleType\ShipmentSpecialServiceType::_PENDING_SHIPMENT];
+$createPendingShipmentRequest->RequestedShipment->SpecialServicesRequested->PendingShipmentDetail->Type = SimpleType\PendingShipmentType::_EMAIL;
+$createPendingShipmentRequest->RequestedShipment->SpecialServicesRequested->PendingShipmentDetail->ExpirationDate = $expirationDate->format('Y-m-d');
+$createPendingShipmentRequest->RequestedShipment->SpecialServicesRequested->PendingShipmentDetail->EmailLabelDetail->NotificationEMailAddress = 'recipient@example.com';
+$createPendingShipmentRequest->RequestedShipment->SpecialServicesRequested->PendingShipmentDetail->EmailLabelDetail->NotificationMessage = 'Pending shipment notification message.';
+
+$shipServiceRequest = new Request();
+$createPendingShipmentReply = $shipServiceRequest->getCreatePendingShipmentReply($createPendingShipmentRequest);
+
+var_dump($createPendingShipmentReply);
