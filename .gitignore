@@ -56,4 +56,5 @@ nbproject
 examples/credentials.php
 doc/
 tests/logs
+composer.lock
 
