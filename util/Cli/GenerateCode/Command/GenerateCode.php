@@ -286,5 +286,28 @@ class GenerateCode extends Console\Command\Command
         $exportPath = $fedexSrcDir . '/PickupService/ComplexType';
         $generateComplexTypes = new CodeGenerator\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
         $generateComplexTypes->run();
+
+        /*
+         * Open Ship Service (v5)
+         */
+        $wsdlPath = $fedexSrcDir . '/_wsdl/OpenShipService_v11.wsdl';
+
+        $baseNamespace = 'FedEx\OpenShipService';
+        $subPackageName = 'OpenShip Service';
+
+        //generate Request class
+        $pathToRequestClassFile = $fedexSrcDir . '/OpenShipService/Request.php';
+        $generateRequestClassFile = new CodeGenerator\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, $baseNamespace, $subPackageName);
+        $generateRequestClassFile->run();
+
+        //generate SimpleType classes
+        $exportPath = $fedexSrcDir . '/OpenShipService/SimpleType';
+        $generateSimpleTypes = new CodeGenerator\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
+        $generateSimpleTypes->run();
+
+        //generate ComplexType classes
+        $exportPath = $fedexSrcDir . '/OpenShipService/ComplexType';
+        $generateComplexTypes = new CodeGenerator\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
+        $generateComplexTypes->run();
     }
 }
