@@ -28,6 +28,7 @@ class ComplexTypePopulator
      * Recursively populates a ComplexType object with fake data
      *
      * @param AbstractComplexType $object
+     * @return $this
      */
     public function populate(AbstractComplexType $object)
     {
@@ -52,6 +53,8 @@ class ComplexTypePopulator
 
             $object->{$reflectionMethod->name}($fakeValue);
         }
+
+        return $this;
     }
 
     protected function getFakeValue(\ReflectionMethod $reflectionMethod)
@@ -118,6 +121,4 @@ class ComplexTypePopulator
         $constantValues = $reflectionClass->getConstants();
         return $constantValues[array_rand($constantValues)];
     }
-
-
 }
