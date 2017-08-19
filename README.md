@@ -21,6 +21,7 @@ Each web service has it's own class namespace. See the official FedEx web servic
 * [Ship Service](src/FedEx/ShipService)
 * [Track Service](src/FedEx/TrackService)
 * [Upload Document Service](src/FedEx/UploadDocumentService)
+* [Open Ship Service](src/FedEx/OpenShipService)
 
 ## Using the library
 
