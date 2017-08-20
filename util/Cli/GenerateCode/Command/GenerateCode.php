@@ -288,7 +288,7 @@ class GenerateCode extends Console\Command\Command
         $generateComplexTypes->run();
 
         /*
-         * Open Ship Service (v5)
+         * Open Ship Service (v11)
          */
         $wsdlPath = $fedexSrcDir . '/_wsdl/OpenShipService_v11.wsdl';
 
@@ -307,6 +307,29 @@ class GenerateCode extends Console\Command\Command
 
         //generate ComplexType classes
         $exportPath = $fedexSrcDir . '/OpenShipService/ComplexType';
+        $generateComplexTypes = new CodeGenerator\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
+        $generateComplexTypes->run();
+
+        /*
+         * Validation and Commitment Service (v6)
+         */
+        $wsdlPath = $fedexSrcDir . '/_wsdl/ValidationAvailabilityAndCommitmentService_v6.wsdl';
+
+        $baseNamespace = 'FedEx\ValidationAvailabilityAndCommitmentService';
+        $subPackageName = 'Validation Availability And Commitment Service Service';
+
+        //generate Request class
+        $pathToRequestClassFile = $fedexSrcDir . '/ValidationAvailabilityAndCommitmentService/Request.php';
+        $generateRequestClassFile = new CodeGenerator\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, $baseNamespace, $subPackageName);
+        $generateRequestClassFile->run();
+
+        //generate SimpleType classes
+        $exportPath = $fedexSrcDir . '/ValidationAvailabilityAndCommitmentService/SimpleType';
+        $generateSimpleTypes = new CodeGenerator\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
+        $generateSimpleTypes->run();
+
+        //generate ComplexType classes
+        $exportPath = $fedexSrcDir . '/ValidationAvailabilityAndCommitmentService/ComplexType';
         $generateComplexTypes = new CodeGenerator\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
         $generateComplexTypes->run();
     }
