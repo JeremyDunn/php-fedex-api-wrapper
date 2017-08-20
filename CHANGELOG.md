@@ -1,5 +1,24 @@
 # CHANGELOG
 
+## 2.2 (released 2017-08-19)
+- Added Validation Availability and Commitment Service
+
+|Service|Version|
+|---|---|
+|Address Validation|2|
+|Close|2|
+|Courier Dispatch|3|
+|Locator|2|
+|Package Movement Information|5|
+|Pickup|3|
+|Rate|10|
+|Return Tag|1|
+|Ship|12|
+|Track|5|
+|Upload Document|1|
+|Open Ship|11|
+|Validation Availability and Commitment Service|6|
+
 ## 2.1 (release 2017-08-19)
 - Added Open Ship service
 
