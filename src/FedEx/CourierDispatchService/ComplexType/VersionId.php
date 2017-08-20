@@ -25,6 +25,13 @@ class VersionId extends AbstractComplexType
      */
     protected $name = 'VersionId';
 
+    protected $fixedValues = [
+        'ServiceId' => 'disp',
+        'Major' => '3',
+        'Intermediate' => '0',
+        'Minor' => '1'
+    ];
+
     /**
      * Identifies a system or sub-system which performs an operation. Customers using the FedEx Web Services interface should set this element to "wsi".
      *

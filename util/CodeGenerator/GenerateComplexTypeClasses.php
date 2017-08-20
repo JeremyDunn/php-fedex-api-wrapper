@@ -46,6 +46,7 @@ class GenerateComplexTypeClasses extends AbstractGenerate
                     $property['name'] = (string)$element['name'];
                     $property['type'] = (string)str_replace('ns:', '', $element['type']);
                     $property['doc'] = (string)$element->annotation->documentation;
+                    $property['fixed'] = (isset($element['fixed'])) ? (string) $element['fixed'] : null;
 
                     if (isset($element['maxOccurs'])) {
                         $property['maxOccurs'] = (string)$element['maxOccurs'];
@@ -98,15 +99,21 @@ class GenerateComplexTypeClasses extends AbstractGenerate
         $classDoc = str_ireplace("\t", '', $classDoc);
         $classDoc = trim($classDoc);
 
+        $fixedValues = [];
         $propertiesString = '';
         $methodString = '';
 
         foreach ($properties as $property) {
             $propertiesString .= $this->getGeneratedClassProperty($property);
             $methodString .= $this->getGeneratedSetMethod($property) . "\n";
+
+            if (isset($property['fixed'])) {
+                $fixedValues[$property['name']] = $property['fixed'];
+            }
         }
 
         $methodString = rtrim($methodString);
+        $fixedValuesString = $this->generateFixedValuesString($fixedValues);
 
         $fileBody = <<<TEXT
 <?php
@@ -131,7 +138,7 @@ class $className extends AbstractComplexType
      * @var string
      */
     protected \$name = '$className';
-
+$fixedValuesString
 $methodString
 }
 
@@ -246,5 +253,31 @@ TEXT;
         $classPath = $simpleTypeDir . \DIRECTORY_SEPARATOR . $propertyType . '.php';
 
         return file_exists($classPath);
+    }
+
+    /**
+     * Generate the $fixedValues property for this class, if applicable.
+     *
+     * @param array $fixedValues
+     * @return null|string
+     */
+    protected function generateFixedValuesString(array $fixedValues)
+    {
+        if (empty($fixedValues)) {
+            return null;
+        }
+
+        $fixedValuesString = "\n    protected \$fixedValues = [";
+
+        $fixedValuesLines = [];
+        foreach ($fixedValues as $name => $value) {
+            $fixedValuesLines[] = "'$name' => '$value'";
+        }
+
+        $fixedValuesString .= "\n        ";
+        $fixedValuesString .= join(",\n        ", $fixedValuesLines);
+        $fixedValuesString .= "\n    ];\n";
+
+        return $fixedValuesString;
     }
 }

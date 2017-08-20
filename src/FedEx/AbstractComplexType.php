@@ -18,6 +18,13 @@ abstract class AbstractComplexType
     protected $values = [];
 
     /**
+     * Holds the optional fixed values for this class.
+     *
+     * @var array
+     */
+    protected $fixedValues = [];
+
+    /**
      * The name of the extended class/data type
      *
      * @var string
@@ -31,9 +38,26 @@ abstract class AbstractComplexType
      */
     public function __construct(array $options = null)
     {
+        $this->setFixedValues();
+
         if (is_array($options)) {
             foreach ($options as $name => $value) {
                 $this->$name = $value;
+            }
+        }
+    }
+
+    /**
+     * Set fixed values for this class if defined in $fixedValues property.
+     *
+     */
+    protected function setFixedValues()
+    {
+        foreach ($this->fixedValues as $name => $value) {
+            $name = ucfirst($name);
+            $setValueMethod = "set{$name}";
+            if (method_exists($this, $setValueMethod)) {
+                $this->$setValueMethod($value);
             }
         }
     }
