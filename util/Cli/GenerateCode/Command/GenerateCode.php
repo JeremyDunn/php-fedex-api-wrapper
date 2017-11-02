@@ -355,5 +355,28 @@ class GenerateCode extends Console\Command\Command
         $exportPath = $fedexSrcDir . '/AsyncService/ComplexType';
         $generateComplexTypes = new CodeGenerator\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
         $generateComplexTypes->run();
+
+        /*
+         * In Flight Shipment Service (v1_
+         */
+        $wsdlPath = $fedexSrcDir . '/_wsdl/InFlightShipmentService_v1.wsdl';
+
+        $baseNamespace = 'FedEx\InFlightShipmentService';
+        $subPackageName = 'In Flight Shipment Service';
+
+        //generate Request class
+        $pathToRequestClassFile = $fedexSrcDir . '/InFlightShipmentService/Request.php';
+        $generateRequestClassFile = new CodeGenerator\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, $baseNamespace, $subPackageName);
+        $generateRequestClassFile->run();
+
+        //generate SimpleType classes
+        $exportPath = $fedexSrcDir . '/InFlightShipmentService/SimpleType';
+        $generateSimpleTypes = new CodeGenerator\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
+        $generateSimpleTypes->run();
+
+        //generate ComplexType classes
+        $exportPath = $fedexSrcDir . '/InFlightShipmentService/ComplexType';
+        $generateComplexTypes = new CodeGenerator\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
+        $generateComplexTypes->run();
     }
 }
