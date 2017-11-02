@@ -357,7 +357,7 @@ class GenerateCode extends Console\Command\Command
         $generateComplexTypes->run();
 
         /*
-         * In Flight Shipment Service (v1_
+         * In Flight Shipment Service (v1)
          */
         $wsdlPath = $fedexSrcDir . '/_wsdl/InFlightShipmentService_v1.wsdl';
 
@@ -376,6 +376,29 @@ class GenerateCode extends Console\Command\Command
 
         //generate ComplexType classes
         $exportPath = $fedexSrcDir . '/InFlightShipmentService/ComplexType';
+        $generateComplexTypes = new CodeGenerator\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
+        $generateComplexTypes->run();
+
+        /*
+         * List Dangerous Goods Service (v1)
+         */
+        $wsdlPath = $fedexSrcDir . '/_wsdl/DGLD_v1.wsdl';
+
+        $baseNamespace = 'FedEx\DGLDService';
+        $subPackageName = 'List Dangerous Goods Service';
+
+        //generate Request class
+        $pathToRequestClassFile = $fedexSrcDir . '/DGLDService/Request.php';
+        $generateRequestClassFile = new CodeGenerator\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, $baseNamespace, $subPackageName);
+        $generateRequestClassFile->run();
+
+        //generate SimpleType classes
+        $exportPath = $fedexSrcDir . '/DGLDService/SimpleType';
+        $generateSimpleTypes = new CodeGenerator\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
+        $generateSimpleTypes->run();
+
+        //generate ComplexType classes
+        $exportPath = $fedexSrcDir . '/DGLDService/ComplexType';
         $generateComplexTypes = new CodeGenerator\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
         $generateComplexTypes->run();
     }
