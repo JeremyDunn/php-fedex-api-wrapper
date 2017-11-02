@@ -1,5 +1,28 @@
 # CHANGELOG
 
+## 2.6 (released 2017-11-02)
+- Added Dangerous Goods Data Service
+
+|Service|Version|
+|---|---|
+|Address Validation|2|
+|Close|2|
+|Courier Dispatch|3|
+|Locator|2|
+|Package Movement Information|5|
+|Pickup|3|
+|Rate|10|
+|Return Tag|1|
+|Ship|12|
+|Track|5|
+|Upload Document|1|
+|Open Ship|11|
+|Validation Availability and Commitment Service|6|
+|ASYNC Transaction Service|4|
+|In Flight Shipment Service|1|
+|DGLD Service|1|
+|DGDS Service|4|
+
 ## 2.5 (released 2017-11-02)
 - Added List Dangerous Goods Service
 

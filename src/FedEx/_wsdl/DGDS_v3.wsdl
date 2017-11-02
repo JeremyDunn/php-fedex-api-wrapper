@@ -1,0 +1,1267 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://fedex.com/ws/dgds/v3" xmlns:s1="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://fedex.com/ws/dgds/v3" name="DangerousGoodsDataServiceServiceDefinitions">
+  <types>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://fedex.com/ws/dgds/v3">
+      <xs:element name="AddDangerousGoodsHandlingUnitReply" type="ns:AddDangerousGoodsHandlingUnitReply"/>
+      <xs:element name="AddDangerousGoodsHandlingUnitRequest" type="ns:AddDangerousGoodsHandlingUnitRequest"/>
+      <xs:element name="DeleteDangerousGoodsHandlingUnitReply" type="ns:DeleteDangerousGoodsHandlingUnitReply"/>
+      <xs:element name="DeleteDangerousGoodsHandlingUnitRequest" type="ns:DeleteDangerousGoodsHandlingUnitRequest"/>
+      <xs:element name="DeleteDangerousGoodsReply" type="ns:DeleteDangerousGoodsReply"/>
+      <xs:element name="DeleteDangerousGoodsRequest" type="ns:DeleteDangerousGoodsRequest"/>
+      <xs:element name="ModifyDangerousGoodsHandlingUnitReply" type="ns:ModifyDangerousGoodsHandlingUnitReply"/>
+      <xs:element name="ModifyDangerousGoodsHandlingUnitRequest" type="ns:ModifyDangerousGoodsHandlingUnitRequest"/>
+      <xs:element name="ModifyDangerousGoodsShipmentReply" type="ns:ModifyDangerousGoodsShipmentReply"/>
+      <xs:element name="ModifyDangerousGoodsShipmentRequest" type="ns:ModifyDangerousGoodsShipmentRequest"/>
+      <xs:element name="RetrieveDangerousGoodsReply" type="ns:RetrieveDangerousGoodsReply"/>
+      <xs:element name="RetrieveDangerousGoodsRequest" type="ns:RetrieveDangerousGoodsRequest"/>
+      <xs:element name="UploadDangerousGoodsReply" type="ns:UploadDangerousGoodsReply"/>
+      <xs:element name="UploadDangerousGoodsRequest" type="ns:UploadDangerousGoodsRequest"/>
+      <xs:element name="ValidateDangerousGoodsReply" type="ns:ValidateDangerousGoodsReply"/>
+      <xs:element name="ValidateDangerousGoodsRequest" type="ns:ValidateDangerousGoodsRequest"/>
+      <xs:complexType name="AddDangerousGoodsHandlingUnitReply">
+        <xs:sequence>
+          <xs:element name="HighestSeverity" type="ns:NotificationSeverityType" minOccurs="1"/>
+          <xs:element name="Notifications" type="ns:Notification" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element name="TransactionDetail" type="ns:TransactionDetail" minOccurs="0"/>
+          <xs:element name="Version" type="ns:VersionId" minOccurs="1"/>
+          <xs:element name="CompletedShipmentDetail" type="ns:CompletedDangerousGoodsShipmentDetail" minOccurs="0"/>
+          <xs:element name="CompletedHandlingUnitGroup" type="ns:CompletedDangerousGoodsHandlingUnitGroup" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AddDangerousGoodsHandlingUnitRequest">
+        <xs:sequence>
+          <xs:element name="WebAuthenticationDetail" type="ns:WebAuthenticationDetail" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ClientDetail" type="ns:ClientDetail" minOccurs="1"/>
+          <xs:element name="TransactionDetail" type="ns:TransactionDetail" minOccurs="0"/>
+          <xs:element name="Version" type="ns:VersionId" minOccurs="1"/>
+          <xs:element name="UploadId" type="xs:string" minOccurs="0"/>
+          <xs:element name="HandlingUnitGroup" type="ns:UploadedDangerousGoodsHandlingUnitGroup" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Address">
+        <xs:annotation>
+          <xs:documentation>Descriptive data for a physical location. May be used as an actual physical address (place to which one could go), or as a container of "address parts" which should be handled as a unit (such as a city-state-ZIP combination within the US).</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="StreetLines" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Combination of number, street name, etc. At least one line is required for a valid physical address; empty lines should not be included.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="City" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Name of city, town, etc.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="StateOrProvinceCode" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identifying abbreviation for US state, Canada province, etc. Format and presence of this field will vary, depending on country.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PostalCode" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identification of a region (usually small) for mail/package delivery. Format and presence of this field will vary, depending on country.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="UrbanizationCode" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Relevant only to addresses in Puerto Rico.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CountryCode" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The two-letter code used to identify a country.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CountryName" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The fully spelt out name of a country.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Residential" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates whether this address residential (as opposed to commercial).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="CarrierCodeType">
+        <xs:annotation>
+          <xs:documentation>Identification of a FedEx operating company (transportation).</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="FDXC"/>
+          <xs:enumeration value="FDXE"/>
+          <xs:enumeration value="FDXG"/>
+          <xs:enumeration value="FXCC"/>
+          <xs:enumeration value="FXFR"/>
+          <xs:enumeration value="FXSP"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="ClientDetail">
+        <xs:annotation>
+          <xs:documentation>Descriptive data for the client submitting a transaction.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="AccountNumber" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>The FedEx account number associated with this transaction.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="MeterNumber" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>This number is assigned by FedEx and identifies the unique device from which the request is originating</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="MeterInstance" type="xs:string" minOccurs="0"/>
+          <xs:element name="IntegratorId" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Only used in transactions which require identification of the FedEx Office integrator.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Region" type="ns:ExpressRegionCode" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the region from which the transaction is submitted.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Localization" type="ns:Localization" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The language to be used for human-readable Notification.localizedMessages in responses to the request containing this ClientDetail object. Different requests from the same client may contain different Localization data. (Contrast with TransactionDetail.localization, which governs data payload language/translation.)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CompletedDangerousGoodsHandlingUnitGroup">
+        <xs:sequence>
+          <xs:element name="Id" type="xs:string" minOccurs="0"/>
+          <xs:element name="NumberOfHandlingUnits" type="xs:nonNegativeInteger" minOccurs="0"/>
+          <xs:element name="HandlingUnitShippingDetail" type="ns:DangerousGoodsHandlingUnitShippingDetail" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CompletedDangerousGoodsShipmentDetail">
+        <xs:sequence>
+          <xs:element name="Regulation" type="ns:HazardousCommodityRegulationType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The regulation under which the DG data has been validated.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="RegulationAttributes" type="ns:DangerousGoodsRegulationAttributeType" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="TotalHandlingUnitCount" type="xs:nonNegativeInteger" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The total number of DG handling units (or packages) in the shipment.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="AircraftCategoryType" type="ns:DangerousGoodsAircraftCategoryType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identifies the type of aircraft category allowed for the shipment.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="DangerousGoodsDescriptors" type="ns:DangerousGoodsDescriptorType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>FOR FEDEX INTERNAL USE ONLY: These descriptors are used for shipping clients to apply the correct behavior for validation and label generation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Accessibility" type="ns:DangerousGoodsAccessibilityType" minOccurs="0"/>
+          <xs:element name="Options" type="ns:HazardousCommodityOptionType" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="ShipmentDryIceDetail" type="ns:ShipmentDryIceDetail" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The total dry ice information for the shipment.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ExpirationDate" type="xs:date" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The date on which previously uploaded dangerous goods data will expire and no longer be accessible.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Contact">
+        <xs:annotation>
+          <xs:documentation>The descriptive data for a point-of-contact person.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="ContactId" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Client provided identifier corresponding to this contact information.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PersonName" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identifies the contact person's name.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Title" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identifies the contact person's title.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CompanyName" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identifies the company this contact is associated with.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PhoneNumber" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identifies the phone number associated with this contact.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PhoneExtension" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identifies the phone extension associated with this contact.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="TollFreePhoneNumber" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identifies a toll free number, if any, associated with this contact.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PagerNumber" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identifies the pager number associated with this contact.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="FaxNumber" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identifies the fax number associated with this contact.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="EMailAddress" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identifies the email address associated with this contact.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="DangerousGoodsAccessibilityType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ACCESSIBLE"/>
+          <xs:enumeration value="INACCESSIBLE"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="DangerousGoodsAircraftCategoryType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CARGO_AIRCRAFT_ONLY"/>
+          <xs:enumeration value="PASSENGER_AND_CARGO_AIRCRAFT"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="DangerousGoodsContainerAttributeType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ALL_PACKED_IN_ONE"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="DangerousGoodsDescriptorType">
+        <xs:annotation>
+          <xs:documentation>FEDEX INTERNAL USE ONLY: Describes the characteristics of the dangerous goods inferred from the commodity data.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ALCOHOLIC_BEVERAGE"/>
+          <xs:enumeration value="DRY_ICE"/>
+          <xs:enumeration value="EMERGENCY_CONTACT_PHONE_REQUIRED"/>
+          <xs:enumeration value="EXCEPTED_QUANTITIES"/>
+          <xs:enumeration value="INFECTIOUS_SUBSTANCE"/>
+          <xs:enumeration value="RADIOACTIVE"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="DangerousGoodsHandlingUnitAttributeType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="OVERPACK"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="DangerousGoodsHandlingUnitShippingDetail">
+        <xs:annotation>
+          <xs:documentation>This provides the information needed for shipping, rating, validation, and label generation.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="TrackingNumberUnits" type="ns:TrackingNumberUnit" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="Description" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The customer provided description for this handling unit.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="AircraftCategoryType" type="ns:DangerousGoodsAircraftCategoryType" minOccurs="0"/>
+          <xs:element name="DangerousGoodsDescriptors" type="ns:DangerousGoodsDescriptorType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>FOR FEDEX INTERNAL USE ONLY: These descriptors are used for shipping clients to apply the correct behavior for validation and label generation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Accessibility" type="ns:DangerousGoodsAccessibilityType" minOccurs="0"/>
+          <xs:element name="Options" type="ns:HazardousCommodityOptionType" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="DryIceWeight" type="ns:Weight" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The total dry ice weight for this handling unit (or package).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DangerousGoodsInnerReceptacleDetail">
+        <xs:sequence>
+          <xs:element name="Quantity" type="ns:PreciseQuantity" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="DangerousGoodsPackingGroupType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="I"/>
+          <xs:enumeration value="II"/>
+          <xs:enumeration value="III"/>
+          <xs:enumeration value="UNDEFINED"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="DangerousGoodsRadionuclideActivity">
+        <xs:sequence>
+          <xs:element name="Value" type="xs:decimal" minOccurs="0"/>
+          <xs:element name="UnitOfMeasure" type="ns:RadioactivityUnitOfMeasure" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DangerousGoodsRadionuclideDetail">
+        <xs:sequence>
+          <xs:element name="Radionuclides" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Specifies the radionuclide(s) of this dangerous goods commodity (e.g. - U-238 or Tm-168).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Activity" type="ns:DangerousGoodsRadionuclideActivity" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Specifies the measure of radioactivity for this dangerous goods commodity.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PhysicalForm" type="ns:PhysicalFormType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Specifies the physical form or nature of the radioactive material.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ChemicalForm" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="DangerousGoodsRegulationAttributeType">
+        <xs:annotation>
+          <xs:documentation>This attribute type identifies characteristics of a dangerous goods regulation that influence how FedEx systems process dangerous goods shipments.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="DRY_ICE_DECLARATION_REQUIRED"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="DangerousGoodsSignatory">
+        <xs:annotation>
+          <xs:documentation>Specifies that name, title and place of the signatory responsible for the dangerous goods shipment.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="ContactName" type="xs:string" minOccurs="0"/>
+          <xs:element name="Title" type="xs:string" minOccurs="0"/>
+          <xs:element name="Place" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the place where the form is signed.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteDangerousGoodsHandlingUnitReply">
+        <xs:sequence>
+          <xs:element name="HighestSeverity" type="ns:NotificationSeverityType" minOccurs="1"/>
+          <xs:element name="Notifications" type="ns:Notification" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element name="TransactionDetail" type="ns:TransactionDetail" minOccurs="0"/>
+          <xs:element name="Version" type="ns:VersionId" minOccurs="1"/>
+          <xs:element name="CompletedShipmentDetail" type="ns:CompletedDangerousGoodsShipmentDetail" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteDangerousGoodsHandlingUnitRequest">
+        <xs:sequence>
+          <xs:element name="WebAuthenticationDetail" type="ns:WebAuthenticationDetail" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ClientDetail" type="ns:ClientDetail" minOccurs="1"/>
+          <xs:element name="TransactionDetail" type="ns:TransactionDetail" minOccurs="0"/>
+          <xs:element name="Version" type="ns:VersionId" minOccurs="1"/>
+          <xs:element name="UploadId" type="xs:string" minOccurs="0"/>
+          <xs:element name="HandlingUnitGroupId" type="xs:string" minOccurs="0"/>
+          <xs:element name="TrackingNumbers" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteDangerousGoodsReply">
+        <xs:sequence>
+          <xs:element name="HighestSeverity" type="ns:NotificationSeverityType" minOccurs="1"/>
+          <xs:element name="Notifications" type="ns:Notification" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element name="TransactionDetail" type="ns:TransactionDetail" minOccurs="0"/>
+          <xs:element name="Version" type="ns:VersionId" minOccurs="1"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteDangerousGoodsRequest">
+        <xs:sequence>
+          <xs:element name="WebAuthenticationDetail" type="ns:WebAuthenticationDetail" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ClientDetail" type="ns:ClientDetail" minOccurs="1"/>
+          <xs:element name="TransactionDetail" type="ns:TransactionDetail" minOccurs="0"/>
+          <xs:element name="Version" type="ns:VersionId" minOccurs="1"/>
+          <xs:element name="UploadId" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="ExpressRegionCode">
+        <xs:annotation>
+          <xs:documentation>Indicates a FedEx Express operating region.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="APAC"/>
+          <xs:enumeration value="CA"/>
+          <xs:enumeration value="EMEA"/>
+          <xs:enumeration value="LAC"/>
+          <xs:enumeration value="US"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="HazardousCommodityOptionType">
+        <xs:annotation>
+          <xs:documentation>Indicates which kind of hazardous content is being reported.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="BATTERY"/>
+          <xs:enumeration value="HAZARDOUS_MATERIALS"/>
+          <xs:enumeration value="LIMITED_QUANTITIES_COMMODITIES"/>
+          <xs:enumeration value="ORM_D"/>
+          <xs:enumeration value="REPORTABLE_QUANTITIES"/>
+          <xs:enumeration value="SMALL_QUANTITY_EXCEPTION"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="HazardousCommodityRegulationType">
+        <xs:annotation>
+          <xs:documentation>Identifies the source of regulation for hazardous commodity data.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ADR"/>
+          <xs:enumeration value="DOT"/>
+          <xs:enumeration value="IATA"/>
+          <xs:enumeration value="ORMD"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="Localization">
+        <xs:annotation>
+          <xs:documentation>Identifies the representation of human-readable text.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="LanguageCode" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Two-letter code for language (e.g. EN, FR, etc.)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="LocaleCode" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Two-letter code for the region (e.g. us, ca, etc..).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ModifyDangerousGoodsHandlingUnitReply">
+        <xs:sequence>
+          <xs:element name="HighestSeverity" type="ns:NotificationSeverityType" minOccurs="1"/>
+          <xs:element name="Notifications" type="ns:Notification" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element name="TransactionDetail" type="ns:TransactionDetail" minOccurs="0"/>
+          <xs:element name="Version" type="ns:VersionId" minOccurs="1"/>
+          <xs:element name="CompletedShipmentDetail" type="ns:CompletedDangerousGoodsShipmentDetail" minOccurs="0"/>
+          <xs:element name="CompletedHandlingUnitGroup" type="ns:CompletedDangerousGoodsHandlingUnitGroup" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ModifyDangerousGoodsHandlingUnitRequest">
+        <xs:sequence>
+          <xs:element name="WebAuthenticationDetail" type="ns:WebAuthenticationDetail" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ClientDetail" type="ns:ClientDetail" minOccurs="1"/>
+          <xs:element name="TransactionDetail" type="ns:TransactionDetail" minOccurs="0"/>
+          <xs:element name="Version" type="ns:VersionId" minOccurs="1"/>
+          <xs:element name="UploadId" type="xs:string" minOccurs="0"/>
+          <xs:element name="HandlingUnitGroup" type="ns:UploadedDangerousGoodsHandlingUnitGroup" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ModifyDangerousGoodsShipmentReply">
+        <xs:sequence>
+          <xs:element name="HighestSeverity" type="ns:NotificationSeverityType" minOccurs="1"/>
+          <xs:element name="Notifications" type="ns:Notification" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element name="TransactionDetail" type="ns:TransactionDetail" minOccurs="0"/>
+          <xs:element name="Version" type="ns:VersionId" minOccurs="1"/>
+          <xs:element name="CompletedShipmentDetail" type="ns:CompletedDangerousGoodsShipmentDetail" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ModifyDangerousGoodsShipmentRequest">
+        <xs:sequence>
+          <xs:element name="WebAuthenticationDetail" type="ns:WebAuthenticationDetail" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ClientDetail" type="ns:ClientDetail" minOccurs="1"/>
+          <xs:element name="TransactionDetail" type="ns:TransactionDetail" minOccurs="0"/>
+          <xs:element name="Version" type="ns:VersionId" minOccurs="1"/>
+          <xs:element name="UploadId" type="xs:string" minOccurs="0"/>
+          <xs:element name="ShipmentDetail" type="ns:UploadedDangerousGoodsShipmentDetail" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="NetExplosiveClassificationType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="NET_EXPLOSIVE_CONTENT"/>
+          <xs:enumeration value="NET_EXPLOSIVE_MASS"/>
+          <xs:enumeration value="NET_EXPLOSIVE_QUANTITY"/>
+          <xs:enumeration value="NET_EXPLOSIVE_WEIGHT"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="NetExplosiveDetail">
+        <xs:sequence>
+          <xs:element name="Type" type="ns:NetExplosiveClassificationType" minOccurs="0"/>
+          <xs:element name="Amount" type="xs:decimal" minOccurs="0"/>
+          <xs:element name="Units" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Notification">
+        <xs:annotation>
+          <xs:documentation>The descriptive data regarding the result of the submitted transaction.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Severity" type="ns:NotificationSeverityType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The severity of this notification. This can indicate success or failure or some other information about the request. The values that can be returned are SUCCESS - Your transaction succeeded with no other applicable information. NOTE - Additional information that may be of interest to you about your transaction. WARNING - Additional information that you need to know about your transaction that you may need to take action on. ERROR - Information about an error that occurred while processing your transaction. FAILURE - FedEx was unable to process your transaction at this time due to a system failure. Please try again later</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Source" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the source of this notification. Combined with the Code it uniquely identifies this notification</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Code" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>A code that represents this notification. Combined with the Source it uniquely identifies this notification.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Message" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Human-readable text that explains this notification.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="LocalizedMessage" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The translated message. The language and locale specified in the ClientDetail. Localization are used to determine the representation. Currently only supported in a TrackReply.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="MessageParameters" type="ns:NotificationParameter" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>A collection of name/value pairs that provide specific data to help the client determine the nature of an error (or warning, etc.) without having to parse the message string.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NotificationParameter">
+        <xs:sequence>
+          <xs:element name="Id" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identifies the type of data contained in Value (e.g. SERVICE_TYPE, PACKAGE_SEQUENCE, etc..).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Value" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The value of the parameter (e.g. PRIORITY_OVERNIGHT, 2, etc..).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="NotificationSeverityType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ERROR"/>
+          <xs:enumeration value="FAILURE"/>
+          <xs:enumeration value="NOTE"/>
+          <xs:enumeration value="SUCCESS"/>
+          <xs:enumeration value="WARNING"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PhysicalFormType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="GAS"/>
+          <xs:enumeration value="LIQUID"/>
+          <xs:enumeration value="SOLID"/>
+          <xs:enumeration value="SPECIAL"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="PreciseQuantity">
+        <xs:sequence>
+          <xs:element name="Amount" type="xs:decimal" minOccurs="0"/>
+          <xs:element name="Units" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RadioactiveDangerousGoodsHandlingUnitDetail">
+        <xs:sequence>
+          <xs:element name="TransportIndex" type="xs:decimal" minOccurs="0"/>
+          <xs:element name="SurfaceReading" type="xs:decimal" minOccurs="0"/>
+          <xs:element name="CriticalitySafetyIndex" type="xs:decimal" minOccurs="0"/>
+          <xs:element name="LabelType" type="ns:RadioactiveLabelType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Specifies the radioactive label type for this handling unit or package.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="RadioactiveLabelType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="III_YELLOW"/>
+          <xs:enumeration value="II_YELLOW"/>
+          <xs:enumeration value="I_WHITE"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="RadioactivityUnitOfMeasure">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="BQ"/>
+          <xs:enumeration value="GBQ"/>
+          <xs:enumeration value="KBQ"/>
+          <xs:enumeration value="MBQ"/>
+          <xs:enumeration value="PBQ"/>
+          <xs:enumeration value="TBQ"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="RecordedDangerousGoodsHandlingUnitGroup">
+        <xs:sequence>
+          <xs:element name="UploadedHandlingUnitGroup" type="ns:UploadedDangerousGoodsHandlingUnitGroup" minOccurs="0"/>
+          <xs:element name="HandlingUnitShippingDetail" type="ns:DangerousGoodsHandlingUnitShippingDetail" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RecordedDangerousGoodsShipmentDetail">
+        <xs:sequence>
+          <xs:element name="UploadedShipmentDetail" type="ns:UploadedDangerousGoodsShipmentDetail" minOccurs="0"/>
+          <xs:element name="CompletedShipmentDetail" type="ns:CompletedDangerousGoodsShipmentDetail" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RetrieveDangerousGoodsReply">
+        <xs:sequence>
+          <xs:element name="HighestSeverity" type="ns:NotificationSeverityType" minOccurs="1"/>
+          <xs:element name="Notifications" type="ns:Notification" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element name="TransactionDetail" type="ns:TransactionDetail" minOccurs="0"/>
+          <xs:element name="Version" type="ns:VersionId" minOccurs="1"/>
+          <xs:element name="ShipmentDetail" type="ns:RecordedDangerousGoodsShipmentDetail" minOccurs="0"/>
+          <xs:element name="HandlingUnitGroups" type="ns:RecordedDangerousGoodsHandlingUnitGroup" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RetrieveDangerousGoodsRequest">
+        <xs:sequence>
+          <xs:element name="WebAuthenticationDetail" type="ns:WebAuthenticationDetail" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ClientDetail" type="ns:ClientDetail" minOccurs="1"/>
+          <xs:element name="TransactionDetail" type="ns:TransactionDetail" minOccurs="0"/>
+          <xs:element name="Version" type="ns:VersionId" minOccurs="1"/>
+          <xs:element name="UploadId" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The identifier the dangerous goods upload being retrieved.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="ServiceType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="EUROPE_FIRST_INTERNATIONAL_PRIORITY"/>
+          <xs:enumeration value="FEDEX_1_DAY_FREIGHT"/>
+          <xs:enumeration value="FEDEX_2_DAY"/>
+          <xs:enumeration value="FEDEX_2_DAY_AM"/>
+          <xs:enumeration value="FEDEX_2_DAY_FREIGHT"/>
+          <xs:enumeration value="FEDEX_3_DAY_FREIGHT"/>
+          <xs:enumeration value="FEDEX_CARGO_AIRPORT_TO_AIRPORT"/>
+          <xs:enumeration value="FEDEX_CARGO_FREIGHT_FORWARDING"/>
+          <xs:enumeration value="FEDEX_CARGO_INTERNATIONAL_EXPRESS_FREIGHT"/>
+          <xs:enumeration value="FEDEX_CARGO_INTERNATIONAL_PREMIUM"/>
+          <xs:enumeration value="FEDEX_CARGO_MAIL"/>
+          <xs:enumeration value="FEDEX_CARGO_REGISTERED_MAIL"/>
+          <xs:enumeration value="FEDEX_CARGO_SURFACE_MAIL"/>
+          <xs:enumeration value="FEDEX_CUSTOM_CRITICAL_AIR_EXPEDITE"/>
+          <xs:enumeration value="FEDEX_CUSTOM_CRITICAL_AIR_EXPEDITE_EXCLUSIVE_USE"/>
+          <xs:enumeration value="FEDEX_CUSTOM_CRITICAL_AIR_EXPEDITE_NETWORK"/>
+          <xs:enumeration value="FEDEX_CUSTOM_CRITICAL_CHARTER_AIR"/>
+          <xs:enumeration value="FEDEX_CUSTOM_CRITICAL_POINT_TO_POINT"/>
+          <xs:enumeration value="FEDEX_CUSTOM_CRITICAL_SURFACE_EXPEDITE"/>
+          <xs:enumeration value="FEDEX_CUSTOM_CRITICAL_SURFACE_EXPEDITE_EXCLUSIVE_USE"/>
+          <xs:enumeration value="FEDEX_CUSTOM_CRITICAL_TEMP_ASSURE_AIR"/>
+          <xs:enumeration value="FEDEX_CUSTOM_CRITICAL_TEMP_ASSURE_VALIDATED_AIR"/>
+          <xs:enumeration value="FEDEX_CUSTOM_CRITICAL_WHITE_GLOVE_SERVICES"/>
+          <xs:enumeration value="FEDEX_DISTANCE_DEFERRED"/>
+          <xs:enumeration value="FEDEX_EXPRESS_SAVER"/>
+          <xs:enumeration value="FEDEX_FIRST_FREIGHT"/>
+          <xs:enumeration value="FEDEX_FREIGHT_ECONOMY"/>
+          <xs:enumeration value="FEDEX_FREIGHT_PRIORITY"/>
+          <xs:enumeration value="FEDEX_GROUND"/>
+          <xs:enumeration value="FEDEX_INTERNATIONAL_PRIORITY_PLUS"/>
+          <xs:enumeration value="FEDEX_NEXT_DAY_AFTERNOON"/>
+          <xs:enumeration value="FEDEX_NEXT_DAY_EARLY_MORNING"/>
+          <xs:enumeration value="FEDEX_NEXT_DAY_END_OF_DAY"/>
+          <xs:enumeration value="FEDEX_NEXT_DAY_FREIGHT"/>
+          <xs:enumeration value="FEDEX_NEXT_DAY_MID_MORNING"/>
+          <xs:enumeration value="FIRST_OVERNIGHT"/>
+          <xs:enumeration value="GROUND_HOME_DELIVERY"/>
+          <xs:enumeration value="INTERNATIONAL_DISTRIBUTION_FREIGHT"/>
+          <xs:enumeration value="INTERNATIONAL_ECONOMY"/>
+          <xs:enumeration value="INTERNATIONAL_ECONOMY_DISTRIBUTION"/>
+          <xs:enumeration value="INTERNATIONAL_ECONOMY_FREIGHT"/>
+          <xs:enumeration value="INTERNATIONAL_FIRST"/>
+          <xs:enumeration value="INTERNATIONAL_PRIORITY"/>
+          <xs:enumeration value="INTERNATIONAL_PRIORITY_DISTRIBUTION"/>
+          <xs:enumeration value="INTERNATIONAL_PRIORITY_EXPRESS"/>
+          <xs:enumeration value="INTERNATIONAL_PRIORITY_FREIGHT"/>
+          <xs:enumeration value="PRIORITY_OVERNIGHT"/>
+          <xs:enumeration value="SAME_DAY"/>
+          <xs:enumeration value="SAME_DAY_CITY"/>
+          <xs:enumeration value="SAME_DAY_METRO_AFTERNOON"/>
+          <xs:enumeration value="SAME_DAY_METRO_MORNING"/>
+          <xs:enumeration value="SAME_DAY_METRO_RUSH"/>
+          <xs:enumeration value="SMART_POST"/>
+          <xs:enumeration value="STANDARD_OVERNIGHT"/>
+          <xs:enumeration value="TRANSBORDER_DISTRIBUTION_CONSOLIDATION"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="ShipmentDryIceDetail">
+        <xs:annotation>
+          <xs:documentation>Shipment-level totals of dry ice data across all packages.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="PackageCount" type="xs:nonNegativeInteger" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Total number of packages in the shipment that contain dry ice.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="TotalWeight" type="ns:Weight" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Total shipment dry ice weight for all packages.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ProcessingOptions" type="ns:ShipmentDryIceProcessingOptionsRequested" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="ShipmentDryIceProcessingOptionType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="SHIPMENT_LEVEL_DRY_ICE_ONLY"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="ShipmentDryIceProcessingOptionsRequested">
+        <xs:sequence>
+          <xs:element name="Options" type="ns:ShipmentDryIceProcessingOptionType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TrackingId">
+        <xs:sequence>
+          <xs:element name="TrackingIdType" type="ns:TrackingIdType" minOccurs="0"/>
+          <xs:element name="FormId" type="xs:string" minOccurs="0"/>
+          <xs:element name="UspsApplicationId" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>For use with SmartPost tracking IDs only</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="TrackingNumber" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="TrackingIdType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="EXPRESS"/>
+          <xs:enumeration value="FEDEX"/>
+          <xs:enumeration value="FREIGHT"/>
+          <xs:enumeration value="GROUND"/>
+          <xs:enumeration value="INTERNAL"/>
+          <xs:enumeration value="UNKNOWN"/>
+          <xs:enumeration value="USPS"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="TrackingNumberUnit">
+        <xs:annotation>
+          <xs:documentation>Each instance of this class groups together TrackingId instances that pertain to the same entity (e.g. package).</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="TrackingIds" type="ns:TrackingId" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TransactionDetail">
+        <xs:sequence>
+          <xs:element name="CustomerTransactionId" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Free form text to be echoed back in the reply. Used to match requests and replies.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Localization" type="ns:Localization" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Governs data payload language/translations (contrasted with ClientDetail.localization, which governs Notification.localizedMessage language selection).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UploadDangerousGoodsReply">
+        <xs:sequence>
+          <xs:element name="HighestSeverity" type="ns:NotificationSeverityType" minOccurs="1"/>
+          <xs:element name="Notifications" type="ns:Notification" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element name="TransactionDetail" type="ns:TransactionDetail" minOccurs="0"/>
+          <xs:element name="Version" type="ns:VersionId" minOccurs="1"/>
+          <xs:element name="UploadId" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The identifier of the upload, which can be used for subsequent retrieval or modification transactions.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="MasterTrackingId" type="ns:TrackingId" minOccurs="0"/>
+          <xs:element name="CompletedShipmentDetail" type="ns:CompletedDangerousGoodsShipmentDetail" minOccurs="0"/>
+          <xs:element name="CompletedHandlingUnitGroups" type="ns:CompletedDangerousGoodsHandlingUnitGroup" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UploadDangerousGoodsRequest">
+        <xs:sequence>
+          <xs:element name="WebAuthenticationDetail" type="ns:WebAuthenticationDetail" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ClientDetail" type="ns:ClientDetail" minOccurs="1"/>
+          <xs:element name="TransactionDetail" type="ns:TransactionDetail" minOccurs="0"/>
+          <xs:element name="Version" type="ns:VersionId" minOccurs="1"/>
+          <xs:element name="ShipmentDetail" type="ns:UploadedDangerousGoodsShipmentDetail" minOccurs="0"/>
+          <xs:element name="HandlingUnitGroups" type="ns:UploadedDangerousGoodsHandlingUnitGroup" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>This specifies the groups of handling units in the shipment.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UploadedDangerousGoodsCommodityContent">
+        <xs:sequence>
+          <xs:element name="Description" type="ns:UploadedDangerousGoodsCommodityDescription" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Specifies detailed commodity information related to the regulations.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Quantity" type="ns:PreciseQuantity" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Specifies the total quantity of this commodity within the container.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="InnerReceptacles" type="ns:DangerousGoodsInnerReceptacleDetail" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Specifies the inner receptacles within the container - including the quantities of this commodity in the receptacles.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="RadionuclideDetail" type="ns:DangerousGoodsRadionuclideDetail" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Specifies the radioactive information for this commodity.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="NetExplosiveDetail" type="ns:NetExplosiveDetail" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Specifies the net explosive mass of this commodity.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UploadedDangerousGoodsCommodityDescription">
+        <xs:sequence>
+          <xs:element name="IdType" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>This identifies the commodity ID type (e.g. - UN, ID, or NA)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Id" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Regulatory identifier for a commodity (e.g. - 1845)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="SequenceNumber" type="xs:nonNegativeInteger" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>In conjunction with the regulatory identifier, this field uniquely identifies a specific record in the commodity regulation table.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PackingGroup" type="ns:DangerousGoodsPackingGroupType" minOccurs="0"/>
+          <xs:element name="PackingInstructions" type="xs:string" minOccurs="0"/>
+          <xs:element name="AircraftCategoryType" type="ns:DangerousGoodsAircraftCategoryType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identifies the type of aircraft available for this commodity</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ProperShippingName" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>This identifies the proper shipping name as defined by the regulation. This could also include qualifying words.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="TechnicalName" type="xs:string" minOccurs="0"/>
+          <xs:element name="PrimaryClass" type="xs:string" minOccurs="0"/>
+          <xs:element name="SubsidiaryClasses" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="ReportableQuantity" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="Percentage" type="xs:decimal" minOccurs="0"/>
+          <xs:element name="AuthorizationInformation" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>This field should be populated with any authorization and other required information. Depending on the regulation, this could include the Type DOT Label(s), special permit numbers, or other information as needed. For ground shipments, this is equivalent to the labelText field.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UploadedDangerousGoodsContainer">
+        <xs:sequence>
+          <xs:element name="Attributes" type="ns:DangerousGoodsContainerAttributeType" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="ContainerType" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Specifies the type of container or dangerous goods packaging, like 'Fiberboard Box' or 'Type B(U) Package'.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="QValue" type="xs:decimal" minOccurs="0"/>
+          <xs:element name="GrossWeight" type="ns:Weight" minOccurs="0"/>
+          <xs:element name="Commodities" type="ns:UploadedDangerousGoodsCommodityContent" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UploadedDangerousGoodsContainerGroup">
+        <xs:sequence>
+          <xs:element name="NumberOfIdenticalContainers" type="xs:nonNegativeInteger" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the number of identical containers in this group.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Container" type="ns:UploadedDangerousGoodsContainer" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>This specifies the commodities in the container. A container may also be known as a dangerous goods package, but this is not necessarily the same as the 'package' or handling unit that a courier transports for shipping. If the handling unit is an OVERPACK, then this container is inside the handling unit.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UploadedDangerousGoodsHandlingUnit">
+        <xs:sequence>
+          <xs:element name="Attributes" type="ns:DangerousGoodsHandlingUnitAttributeType" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="RadioactiveDetail" type="ns:RadioactiveDangerousGoodsHandlingUnitDetail" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Specifies the radioactive information required for a handling unit.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ContainerGroups" type="ns:UploadedDangerousGoodsContainerGroup" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>A container group is used to specify a single dangerous goods container or specify a group of identical dangerous goods containers. A dangerous goods container may also be known as a dangerous goods package. The term 'package' is not necessarily the same concept as a requested package line item in the shipping domain.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UploadedDangerousGoodsHandlingUnitGroup">
+        <xs:sequence>
+          <xs:element name="Id" type="xs:string" minOccurs="0"/>
+          <xs:element name="Description" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Specifies detailed commodity information related to the regulations.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="NumberOfHandlingUnits" type="xs:nonNegativeInteger" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>This specifies the number of identical handling units in the shipment for this group.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="TrackingNumberUnits" type="ns:TrackingNumberUnit" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="HandlingUnit" type="ns:UploadedDangerousGoodsHandlingUnit" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="UploadedDangerousGoodsShipmentAttributeType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="MANUAL_SHIPPING_LABEL"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="UploadedDangerousGoodsShipmentDetail">
+        <xs:sequence>
+          <xs:element name="Attributes" type="ns:UploadedDangerousGoodsShipmentAttributeType" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="Origin" type="ns:Address" minOccurs="0"/>
+          <xs:element name="Destination" type="ns:Address" minOccurs="0"/>
+          <xs:element name="CarrierCode" type="ns:CarrierCodeType" minOccurs="0"/>
+          <xs:element name="ServiceType" type="ns:ServiceType" minOccurs="0"/>
+          <xs:element name="ShipDate" type="xs:date" minOccurs="0"/>
+          <xs:element name="Offeror" type="xs:string" minOccurs="0"/>
+          <xs:element name="Signatory" type="ns:DangerousGoodsSignatory" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Name, title and place of the signatory for this shipment.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="InfectiousSubstanceResponsibleContact" type="ns:Contact" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The contact information for infectious substances.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="EmergencyContactNumber" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Telephone number to use for contact in the event of an emergency.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="AircraftCategoryType" type="ns:DangerousGoodsAircraftCategoryType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identifies the type of aircraft available for this shipment.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="AdditionalHandling" type="xs:string" minOccurs="0"/>
+          <xs:element name="MasterTrackingId" type="ns:TrackingId" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ValidateDangerousGoodsReply">
+        <xs:sequence>
+          <xs:element name="HighestSeverity" type="ns:NotificationSeverityType" minOccurs="1"/>
+          <xs:element name="Notifications" type="ns:Notification" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element name="TransactionDetail" type="ns:TransactionDetail" minOccurs="0"/>
+          <xs:element name="Version" type="ns:VersionId" minOccurs="1"/>
+          <xs:element name="CompletedShipmentDetail" type="ns:CompletedDangerousGoodsShipmentDetail" minOccurs="0"/>
+          <xs:element name="CompletedHandlingUnitGroups" type="ns:CompletedDangerousGoodsHandlingUnitGroup" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ValidateDangerousGoodsRequest">
+        <xs:sequence>
+          <xs:element name="WebAuthenticationDetail" type="ns:WebAuthenticationDetail" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ClientDetail" type="ns:ClientDetail" minOccurs="1"/>
+          <xs:element name="TransactionDetail" type="ns:TransactionDetail" minOccurs="0"/>
+          <xs:element name="Version" type="ns:VersionId" minOccurs="1"/>
+          <xs:element name="ShipmentDetail" type="ns:UploadedDangerousGoodsShipmentDetail" minOccurs="0"/>
+          <xs:element name="HandlingUnitGroups" type="ns:UploadedDangerousGoodsHandlingUnitGroup" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Weight">
+        <xs:annotation>
+          <xs:documentation>The descriptive data for the heaviness of an object.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Units" type="ns:WeightUnits" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identifies the unit of measure associated with a weight value.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Value" type="xs:decimal" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identifies the weight value of a package/shipment.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="WeightUnits">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="KG"/>
+          <xs:enumeration value="LB"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="WebAuthenticationDetail">
+        <xs:annotation>
+          <xs:documentation>Used in authentication of the sender's identity.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="ParentCredential" type="ns:WebAuthenticationCredential" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>This was renamed from cspCredential.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="UserCredential" type="ns:WebAuthenticationCredential" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Credential used to authenticate a specific software application. This value is provided by FedEx after registration.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="WebAuthenticationCredential">
+        <xs:annotation>
+          <xs:documentation>Two part authentication string used for the sender's identity</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Key" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Identifying part of authentication credential. This value is provided by FedEx after registration</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Password" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Secret part of authentication key. This value is provided by FedEx after registration.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="VersionId">
+        <xs:annotation>
+          <xs:documentation>Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="ServiceId" type="xs:string" fixed="dgds" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Identifies a system or sub-system which performs an operation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Major" type="xs:int" fixed="3" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Identifies the service business level.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Intermediate" type="xs:int" fixed="0" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Identifies the service interface level.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Minor" type="xs:int" fixed="0" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Identifies the service code level.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </types>
+  <message name="AddDangerousGoodsHandlingUnitRequest">
+    <part name="AddDangerousGoodsHandlingUnitRequest" element="ns:AddDangerousGoodsHandlingUnitRequest"/>
+  </message>
+  <message name="UploadDangerousGoodsRequest">
+    <part name="UploadDangerousGoodsRequest" element="ns:UploadDangerousGoodsRequest"/>
+  </message>
+  <message name="ValidateDangerousGoodsRequest">
+    <part name="ValidateDangerousGoodsRequest" element="ns:ValidateDangerousGoodsRequest"/>
+  </message>
+  <message name="ValidateDangerousGoodsReply">
+    <part name="ValidateDangerousGoodsReply" element="ns:ValidateDangerousGoodsReply"/>
+  </message>
+  <message name="AddDangerousGoodsHandlingUnitReply">
+    <part name="AddDangerousGoodsHandlingUnitReply" element="ns:AddDangerousGoodsHandlingUnitReply"/>
+  </message>
+  <message name="DeleteDangerousGoodsRequest">
+    <part name="DeleteDangerousGoodsRequest" element="ns:DeleteDangerousGoodsRequest"/>
+  </message>
+  <message name="ModifyDangerousGoodsShipmentReply">
+    <part name="ModifyDangerousGoodsShipmentReply" element="ns:ModifyDangerousGoodsShipmentReply"/>
+  </message>
+  <message name="DeleteDangerousGoodsHandlingUnitRequest">
+    <part name="DeleteDangerousGoodsHandlingUnitRequest" element="ns:DeleteDangerousGoodsHandlingUnitRequest"/>
+  </message>
+  <message name="DeleteDangerousGoodsHandlingUnitReply">
+    <part name="DeleteDangerousGoodsHandlingUnitReply" element="ns:DeleteDangerousGoodsHandlingUnitReply"/>
+  </message>
+  <message name="RetrieveDangerousGoodsReply">
+    <part name="RetrieveDangerousGoodsReply" element="ns:RetrieveDangerousGoodsReply"/>
+  </message>
+  <message name="ModifyDangerousGoodsShipmentRequest">
+    <part name="ModifyDangerousGoodsShipmentRequest" element="ns:ModifyDangerousGoodsShipmentRequest"/>
+  </message>
+  <message name="ModifyDangerousGoodsHandlingUnitReply">
+    <part name="ModifyDangerousGoodsHandlingUnitReply" element="ns:ModifyDangerousGoodsHandlingUnitReply"/>
+  </message>
+  <message name="ModifyDangerousGoodsHandlingUnitRequest">
+    <part name="ModifyDangerousGoodsHandlingUnitRequest" element="ns:ModifyDangerousGoodsHandlingUnitRequest"/>
+  </message>
+  <message name="UploadDangerousGoodsReply">
+    <part name="UploadDangerousGoodsReply" element="ns:UploadDangerousGoodsReply"/>
+  </message>
+  <message name="DeleteDangerousGoodsReply">
+    <part name="DeleteDangerousGoodsReply" element="ns:DeleteDangerousGoodsReply"/>
+  </message>
+  <message name="RetrieveDangerousGoodsRequest">
+    <part name="RetrieveDangerousGoodsRequest" element="ns:RetrieveDangerousGoodsRequest"/>
+  </message>
+  <portType name="DangerousGoodsDataServicePortType">
+    <operation name="addDangerousGoodsHandlingUnit" parameterOrder="AddDangerousGoodsHandlingUnitRequest">
+      <input message="ns:AddDangerousGoodsHandlingUnitRequest"/>
+      <output message="ns:AddDangerousGoodsHandlingUnitReply"/>
+    </operation>
+    <operation name="modifyDangerousGoodsShipment" parameterOrder="ModifyDangerousGoodsShipmentRequest">
+      <input message="ns:ModifyDangerousGoodsShipmentRequest"/>
+      <output message="ns:ModifyDangerousGoodsShipmentReply"/>
+    </operation>
+    <operation name="uploadDangerousGoods" parameterOrder="UploadDangerousGoodsRequest">
+      <input message="ns:UploadDangerousGoodsRequest"/>
+      <output message="ns:UploadDangerousGoodsReply"/>
+    </operation>
+    <operation name="modifyDangerousGoodsHandlingUnit" parameterOrder="ModifyDangerousGoodsHandlingUnitRequest">
+      <input message="ns:ModifyDangerousGoodsHandlingUnitRequest"/>
+      <output message="ns:ModifyDangerousGoodsHandlingUnitReply"/>
+    </operation>
+    <operation name="deleteDangerousGoodsHandlingUnit" parameterOrder="DeleteDangerousGoodsHandlingUnitRequest">
+      <input message="ns:DeleteDangerousGoodsHandlingUnitRequest"/>
+      <output message="ns:DeleteDangerousGoodsHandlingUnitReply"/>
+    </operation>
+    <operation name="deleteDangerousGoods" parameterOrder="DeleteDangerousGoodsRequest">
+      <input message="ns:DeleteDangerousGoodsRequest"/>
+      <output message="ns:DeleteDangerousGoodsReply"/>
+    </operation>
+    <operation name="retrieveDangerousGoods" parameterOrder="RetrieveDangerousGoodsRequest">
+      <input message="ns:RetrieveDangerousGoodsRequest"/>
+      <output message="ns:RetrieveDangerousGoodsReply"/>
+    </operation>
+    <operation name="validateDangerousGoods " parameterOrder="ValidateDangerousGoodsRequest">
+      <input message="ns:ValidateDangerousGoodsRequest"/>
+      <output message="ns:ValidateDangerousGoodsReply"/>
+    </operation>
+  </portType>
+  <binding name="DangerousGoodsDataServiceServiceSoapBinding" type="ns:DangerousGoodsDataServicePortType">
+    <s1:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="addDangerousGoodsHandlingUnit">
+      <s1:operation soapAction="http://fedex.com/ws/dgds/v3/addDangerousGoodsHandlingUnit" style="document"/>
+      <input>
+        <s1:body use="literal"/>
+      </input>
+      <output>
+        <s1:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="modifyDangerousGoodsShipment">
+      <s1:operation soapAction="http://fedex.com/ws/dgds/v3/modifyDangerousGoodsShipment" style="document"/>
+      <input>
+        <s1:body use="literal"/>
+      </input>
+      <output>
+        <s1:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="uploadDangerousGoods">
+      <s1:operation soapAction="http://fedex.com/ws/dgds/v3/uploadDangerousGoods" style="document"/>
+      <input>
+        <s1:body use="literal"/>
+      </input>
+      <output>
+        <s1:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="modifyDangerousGoodsHandlingUnit">
+      <s1:operation soapAction="http://fedex.com/ws/dgds/v3/modifyDangerousGoodsHandlingUnit" style="document"/>
+      <input>
+        <s1:body use="literal"/>
+      </input>
+      <output>
+        <s1:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="deleteDangerousGoodsHandlingUnit">
+      <s1:operation soapAction="http://fedex.com/ws/dgds/v3/deleteDangerousGoodsHandlingUnit" style="document"/>
+      <input>
+        <s1:body use="literal"/>
+      </input>
+      <output>
+        <s1:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="deleteDangerousGoods">
+      <s1:operation soapAction="http://fedex.com/ws/dgds/v3/deleteDangerousGoods" style="document"/>
+      <input>
+        <s1:body use="literal"/>
+      </input>
+      <output>
+        <s1:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="retrieveDangerousGoods">
+      <s1:operation soapAction="http://fedex.com/ws/dgds/v3/retrieveDangerousGoods" style="document"/>
+      <input>
+        <s1:body use="literal"/>
+      </input>
+      <output>
+        <s1:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="validateDangerousGoods ">
+      <s1:operation soapAction="http://fedex.com/ws/dgds/v3/validateDangerousGoods " style="document"/>
+      <input>
+        <s1:body use="literal"/>
+      </input>
+      <output>
+        <s1:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="DangerousGoodsDataServiceService">
+    <port name="DangerousGoodsDataServiceServicePort" binding="ns:DangerousGoodsDataServiceServiceSoapBinding">
+      <s1:address location="https://wsbeta.fedex.com:443/web-services/dgds"/>
+    </port>
+  </service>
+</definitions>
