@@ -1,0 +1,371 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://fedex.com/ws/async/v4" xmlns:s1="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://fedex.com/ws/async/v4" name="ASYNCServiceDefinitions">
+  <types>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://fedex.com/ws/async/v4">
+      <xs:element name="RetrieveJobResultsReply" type="ns:RetrieveJobResultsReply"/>
+      <xs:element name="RetrieveJobResultsRequest" type="ns:RetrieveJobResultsRequest"/>
+      <xs:simpleType name="ArtifactFormatType">
+        <xs:annotation>
+          <xs:documentation>Identifies the format of the artifact.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="BINARY"/>
+          <xs:enumeration value="DOC"/>
+          <xs:enumeration value="EPL2"/>
+          <xs:enumeration value="PDF"/>
+          <xs:enumeration value="PNG"/>
+          <xs:enumeration value="RTF"/>
+          <xs:enumeration value="TEXT"/>
+          <xs:enumeration value="XML"/>
+          <xs:enumeration value="ZPLII"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="ArtifactPart">
+        <xs:sequence>
+          <xs:element name="SequenceNumber" type="xs:positiveInteger" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Specifies the sequence of this part of the artifact.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Contents" type="xs:base64Binary" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Specifies the contents of this retrieved artifact part.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArtifactRetrievalFilter">
+        <xs:annotation>
+          <xs:documentation>Specifies the details about the criteria used for artifact selection during retrieval.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="AccessReference" type="xs:string" minOccurs="0"/>
+          <xs:element name="Type" type="ns:ArtifactType" minOccurs="0"/>
+          <xs:element name="ReferenceId" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="ArtifactType">
+        <xs:annotation>
+          <xs:documentation>Identifies the type of artifact created.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="AUXILIARY_LABEL"/>
+          <xs:enumeration value="CERTIFICATE_OF_ORIGIN"/>
+          <xs:enumeration value="COD_RETURN_LABEL"/>
+          <xs:enumeration value="COMMERCIAL_INVOICE"/>
+          <xs:enumeration value="COMMODITIES_BY_TRACKING_NUMBER_REPORT"/>
+          <xs:enumeration value="CONDENSED_CRN_REPORT"/>
+          <xs:enumeration value="CONSOLIDATED_COMMERCIAL_INVOICE"/>
+          <xs:enumeration value="CONSOLIDATED_CUSTOMS_LINEHAUL_REPORT"/>
+          <xs:enumeration value="CONSOLIDATED_SOLD_TO_SUMMARY_REPORT"/>
+          <xs:enumeration value="CRN_REPORT"/>
+          <xs:enumeration value="CUSTOMS_PACKING_LIST"/>
+          <xs:enumeration value="CUSTOM_CONSOLIDATION_DOCUMENT"/>
+          <xs:enumeration value="CUSTOM_PACKAGE_DOCUMENT"/>
+          <xs:enumeration value="CUSTOM_SHIPMENT_DOCUMENT"/>
+          <xs:enumeration value="DANGEROUS_GOODS_SHIPPERS_DECLARATION"/>
+          <xs:enumeration value="DELIVERY_ON_INVOICE_ACCEPTANCE_RETURN_LABEL"/>
+          <xs:enumeration value="FREIGHT_ADDRESS_LABEL"/>
+          <xs:enumeration value="GENERAL_AGENCY_AGREEMENT"/>
+          <xs:enumeration value="LOW_CUSTOMS_VALUE_EXCEPTION_PARTY_REPORT"/>
+          <xs:enumeration value="NAFTA_CERTIFICATE_OF_ORIGIN"/>
+          <xs:enumeration value="OP_900"/>
+          <xs:enumeration value="OUTBOUND_LABEL"/>
+          <xs:enumeration value="PRO_FORMA_INVOICE"/>
+          <xs:enumeration value="RETURN_INSTRUCTIONS"/>
+          <xs:enumeration value="SERVICE_REPLY"/>
+          <xs:enumeration value="SERVICE_REQUEST"/>
+          <xs:enumeration value="STANDARD_BROKER_CLEARANCE_PARTY_REPORT"/>
+          <xs:enumeration value="TERMS_AND_CONDITIONS"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="ClientDetail">
+        <xs:annotation>
+          <xs:documentation>Descriptive data for the client submitting a transaction.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="AccountNumber" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>The FedEx account number associated with this transaction.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="MeterNumber" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>This number is assigned by FedEx and identifies the unique device from which the request is originating</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="MeterInstance" type="xs:string" minOccurs="0"/>
+          <xs:element name="IntegratorId" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Only used in transactions which require identification of the FedEx Office integrator.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Region" type="ns:ExpressRegionCode" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the region from which the transaction is submitted.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Localization" type="ns:Localization" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The language to be used for human-readable Notification.localizedMessages in responses to the request containing this ClientDetail object. Different requests from the same client may contain different Localization data. (Contrast with TransactionDetail.localization, which governs data payload language/translation.)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="ExpressRegionCode">
+        <xs:annotation>
+          <xs:documentation>Indicates a FedEx Express operating region.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="APAC"/>
+          <xs:enumeration value="CA"/>
+          <xs:enumeration value="EMEA"/>
+          <xs:enumeration value="LAC"/>
+          <xs:enumeration value="US"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="Localization">
+        <xs:annotation>
+          <xs:documentation>Identifies the representation of human-readable text.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="LanguageCode" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Two-letter code for language (e.g. EN, FR, etc.)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="LocaleCode" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Two-letter code for the region (e.g. us, ca, etc..).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Notification">
+        <xs:annotation>
+          <xs:documentation>The descriptive data regarding the result of the submitted transaction.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Severity" type="ns:NotificationSeverityType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The severity of this notification. This can indicate success or failure or some other information about the request. The values that can be returned are SUCCESS - Your transaction succeeded with no other applicable information. NOTE - Additional information that may be of interest to you about your transaction. WARNING - Additional information that you need to know about your transaction that you may need to take action on. ERROR - Information about an error that occurred while processing your transaction. FAILURE - FedEx was unable to process your transaction at this time due to a system failure. Please try again later</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Source" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the source of this notification. Combined with the Code it uniquely identifies this notification</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Code" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>A code that represents this notification. Combined with the Source it uniquely identifies this notification.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Message" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Human-readable text that explains this notification.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="LocalizedMessage" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The translated message. The language and locale specified in the ClientDetail. Localization are used to determine the representation. Currently only supported in a TrackReply.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="MessageParameters" type="ns:NotificationParameter" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>A collection of name/value pairs that provide specific data to help the client determine the nature of an error (or warning, etc.) without having to parse the message string.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NotificationParameter">
+        <xs:sequence>
+          <xs:element name="Id" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identifies the type of data contained in Value (e.g. SERVICE_TYPE, PACKAGE_SEQUENCE, etc..).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Value" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The value of the parameter (e.g. PRIORITY_OVERNIGHT, 2, etc..).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="NotificationSeverityType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ERROR"/>
+          <xs:enumeration value="FAILURE"/>
+          <xs:enumeration value="NOTE"/>
+          <xs:enumeration value="SUCCESS"/>
+          <xs:enumeration value="WARNING"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="RetrieveJobResultsReply">
+        <xs:sequence>
+          <xs:element name="HighestSeverity" type="ns:NotificationSeverityType" minOccurs="1"/>
+          <xs:element name="Notifications" type="ns:Notification" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element name="TransactionDetail" type="ns:TransactionDetail" minOccurs="0"/>
+          <xs:element name="Version" type="ns:VersionId" minOccurs="1"/>
+          <xs:element name="Artifacts" type="ns:RetrievedArtifact" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RetrieveJobResultsRequest">
+        <xs:annotation>
+          <xs:documentation>This request object is used by the client to retrieve artifacts stored by the ASYNC service.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="WebAuthenticationDetail" type="ns:WebAuthenticationDetail" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ClientDetail" type="ns:ClientDetail" minOccurs="1"/>
+          <xs:element name="TransactionDetail" type="ns:TransactionDetail" minOccurs="0"/>
+          <xs:element name="Version" type="ns:VersionId" minOccurs="1"/>
+          <xs:element name="JobId" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Specifies the job under which the desired artifacts are stored.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Filters" type="ns:ArtifactRetrievalFilter" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Specifies the filters to be used for retrieving artifacts.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RetrievedArtifact">
+        <xs:sequence>
+          <xs:element name="AccessReference" type="xs:string" minOccurs="0"/>
+          <xs:element name="HighestSeverity" type="ns:NotificationSeverityType" minOccurs="0"/>
+          <xs:element name="Notifications" type="ns:Notification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="Type" type="ns:ArtifactType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identifies the type of artifact.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Format" type="ns:ArtifactFormatType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Specifies the format of the artifact.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="FormatSpecification" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identifies the schema or specific format definition used for the artifact.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ReferenceId" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Specifies a reference to the artifact that follows the naming convention defined for file storage.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Parts" type="ns:ArtifactPart" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TransactionDetail">
+        <xs:sequence>
+          <xs:element name="CustomerTransactionId" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Free form text to be echoed back in the reply. Used to match requests and replies.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Localization" type="ns:Localization" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Governs data payload language/translations (contrasted with ClientDetail.localization, which governs Notification.localizedMessage language selection).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="WebAuthenticationDetail">
+        <xs:annotation>
+          <xs:documentation>Used in authentication of the sender's identity.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="ParentCredential" type="ns:WebAuthenticationCredential" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>This was renamed from cspCredential.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="UserCredential" type="ns:WebAuthenticationCredential" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Credential used to authenticate a specific software application. This value is provided by FedEx after registration.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="WebAuthenticationCredential">
+        <xs:annotation>
+          <xs:documentation>Two part authentication string used for the sender's identity</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Key" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Identifying part of authentication credential. This value is provided by FedEx after registration</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Password" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Secret part of authentication key. This value is provided by FedEx after registration.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="VersionId">
+        <xs:annotation>
+          <xs:documentation>Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="ServiceId" type="xs:string" fixed="async" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Identifies a system or sub-system which performs an operation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Major" type="xs:int" fixed="4" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Identifies the service business level.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Intermediate" type="xs:int" fixed="0" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Identifies the service interface level.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Minor" type="xs:int" fixed="0" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Identifies the service code level.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </types>
+  <message name="RetrieveJobResultsReply">
+    <part name="RetrieveJobResultsReply" element="ns:RetrieveJobResultsReply"/>
+  </message>
+  <message name="RetrieveJobResultsRequest">
+    <part name="RetrieveJobResultsRequest" element="ns:RetrieveJobResultsRequest"/>
+  </message>
+  <portType name="ASYNCPortType">
+    <operation name="retrieveJobResults" parameterOrder="RetrieveJobResultsRequest">
+      <input message="ns:RetrieveJobResultsRequest"/>
+      <output message="ns:RetrieveJobResultsReply"/>
+    </operation>
+  </portType>
+  <binding name="ASYNCServiceSoapBinding" type="ns:ASYNCPortType">
+    <s1:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="retrieveJobResults">
+      <s1:operation soapAction="http://fedex.com/ws/async/v4/retrieveJobResults" style="document"/>
+      <input>
+        <s1:body use="literal"/>
+      </input>
+      <output>
+        <s1:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="ASYNCService">
+    <port name="ASYNCServicePort" binding="ns:ASYNCServiceSoapBinding">
+      <s1:address location="https://wsbeta.fedex.com:443/web-services/async"/>
+    </port>
+  </service>
+</definitions>

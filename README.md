@@ -23,6 +23,7 @@ Each web service has it's own class namespace. See the official FedEx web servic
 * [Upload Document Service](src/FedEx/UploadDocumentService)
 * [Open Ship Service](src/FedEx/OpenShipService)
 * [Validation Availability and Commitment Service](src/FedEx/ValidationAvailabilityAndCommitmentService)
+* [ASYNC Transaction Service](src/FedEx/AsyncService)
 
 ## Using the library
 

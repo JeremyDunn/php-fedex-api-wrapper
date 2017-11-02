@@ -332,5 +332,28 @@ class GenerateCode extends Console\Command\Command
         $exportPath = $fedexSrcDir . '/ValidationAvailabilityAndCommitmentService/ComplexType';
         $generateComplexTypes = new CodeGenerator\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
         $generateComplexTypes->run();
+
+        /*
+         * ASYNC Service (v4)
+         */
+        $wsdlPath = $fedexSrcDir . '/_wsdl/ASYNCService_v4.wsdl';
+
+        $baseNamespace = 'FedEx\AsyncService';
+        $subPackageName = 'ASync Service';
+
+        //generate Request class
+        $pathToRequestClassFile = $fedexSrcDir . '/AsyncService/Request.php';
+        $generateRequestClassFile = new CodeGenerator\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, $baseNamespace, $subPackageName);
+        $generateRequestClassFile->run();
+
+        //generate SimpleType classes
+        $exportPath = $fedexSrcDir . '/AsyncService/SimpleType';
+        $generateSimpleTypes = new CodeGenerator\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
+        $generateSimpleTypes->run();
+
+        //generate ComplexType classes
+        $exportPath = $fedexSrcDir . '/AsyncService/ComplexType';
+        $generateComplexTypes = new CodeGenerator\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
+        $generateComplexTypes->run();
     }
 }
