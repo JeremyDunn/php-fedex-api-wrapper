@@ -25,6 +25,12 @@ Each web service has it's own class namespace. See the official FedEx web servic
 * [Validation Availability and Commitment Service](src/FedEx/ValidationAvailabilityAndCommitmentService)
 * [ASYNC Transaction Service](src/FedEx/AsyncService)
 
+## Installation
+
+```
+composer require jeremy-dunn/php-fedex-api-wrapper
+```
+
 ## Using the library
 
 The easiest way to get started constructing a web service request is to create an new `Request` object for the particular service you wish to use and then work backward by injecting the objects necessary to complete the request. 
