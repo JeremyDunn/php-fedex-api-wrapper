@@ -401,5 +401,28 @@ class GenerateCode extends Console\Command\Command
         $exportPath = $fedexSrcDir . '/DGLDService/ComplexType';
         $generateComplexTypes = new CodeGenerator\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
         $generateComplexTypes->run();
+
+        /*
+         * Dangerous Goods Data Service (v1)
+         */
+        $wsdlPath = $fedexSrcDir . '/_wsdl/DGDS_v3.wsdl';
+
+        $baseNamespace = 'FedEx\DGDSService';
+        $subPackageName = 'Dangerous Goods Data Service';
+
+        //generate Request class
+        $pathToRequestClassFile = $fedexSrcDir . '/DGDSService/Request.php';
+        $generateRequestClassFile = new CodeGenerator\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, $baseNamespace, $subPackageName);
+        $generateRequestClassFile->run();
+
+        //generate SimpleType classes
+        $exportPath = $fedexSrcDir . '/DGDSService/SimpleType';
+        $generateSimpleTypes = new CodeGenerator\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
+        $generateSimpleTypes->run();
+
+        //generate ComplexType classes
+        $exportPath = $fedexSrcDir . '/DGDSService/ComplexType';
+        $generateComplexTypes = new CodeGenerator\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
+        $generateComplexTypes->run();
     }
 }

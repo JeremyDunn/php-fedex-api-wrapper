@@ -26,6 +26,7 @@ Each web service has it's own class namespace. See the official FedEx web servic
 * [ASYNC Transaction Service](src/FedEx/AsyncService)
 * [In Flight Shipment Service](src/FedEx/InFlightShipmentService)
 * [DGLD Service](src/FedEx/DGLDService)
+* [DGDS Service](src/FedEx/DGDSService)
 
 ## Installation
 
