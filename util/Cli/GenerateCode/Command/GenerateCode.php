@@ -36,6 +36,8 @@ class GenerateCode extends Console\Command\Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        ini_set("soap.wsdl_cache_enabled", 0);
+
         if (!isset($_SERVER['PWD'])) {
             throw new \Exception('Cannot determin current working directory.  Make sure you run this script from command line.');
         }

@@ -1179,7 +1179,7 @@
       <input message="ns:RetrieveDangerousGoodsRequest"/>
       <output message="ns:RetrieveDangerousGoodsReply"/>
     </operation>
-    <operation name="validateDangerousGoods " parameterOrder="ValidateDangerousGoodsRequest">
+    <operation name="validateDangerousGoods" parameterOrder="ValidateDangerousGoodsRequest">
       <input message="ns:ValidateDangerousGoodsRequest"/>
       <output message="ns:ValidateDangerousGoodsReply"/>
     </operation>
@@ -1249,8 +1249,8 @@
         <s1:body use="literal"/>
       </output>
     </operation>
-    <operation name="validateDangerousGoods ">
-      <s1:operation soapAction="http://fedex.com/ws/dgds/v3/validateDangerousGoods " style="document"/>
+    <operation name="validateDangerousGoods">
+      <s1:operation soapAction="http://fedex.com/ws/dgds/v3/validateDangerousGoods" style="document"/>
       <input>
         <s1:body use="literal"/>
       </input>
