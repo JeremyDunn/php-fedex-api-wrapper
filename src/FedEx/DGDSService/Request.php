@@ -1,6 +1,6 @@
 <?php
 namespace FedEx\DGDSService;
-    
+
 use FedEx\AbstractRequest;
 
 /**
@@ -16,7 +16,7 @@ class Request extends AbstractRequest
     const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/dgds';
 
     protected static $wsdlFileName = 'DGDS_v3.wsdl';
-            
+
     /**
      * Sends the AddDangerousGoodsHandlingUnitRequest and returns the response
      *
@@ -30,12 +30,12 @@ class Request extends AbstractRequest
         if ($returnStdClass) {
             return $response;
         }
-        
+
         $addDangerousGoodsHandlingUnitReply = new ComplexType\AddDangerousGoodsHandlingUnitReply;
         $addDangerousGoodsHandlingUnitReply->populateFromStdClass($response);
         return $addDangerousGoodsHandlingUnitReply;
     }
-            
+
     /**
      * Sends the ModifyDangerousGoodsShipmentRequest and returns the response
      *
@@ -49,12 +49,12 @@ class Request extends AbstractRequest
         if ($returnStdClass) {
             return $response;
         }
-        
+
         $modifyDangerousGoodsShipmentReply = new ComplexType\ModifyDangerousGoodsShipmentReply;
         $modifyDangerousGoodsShipmentReply->populateFromStdClass($response);
         return $modifyDangerousGoodsShipmentReply;
     }
-            
+
     /**
      * Sends the UploadDangerousGoodsRequest and returns the response
      *
@@ -68,12 +68,12 @@ class Request extends AbstractRequest
         if ($returnStdClass) {
             return $response;
         }
-        
+
         $uploadDangerousGoodsReply = new ComplexType\UploadDangerousGoodsReply;
         $uploadDangerousGoodsReply->populateFromStdClass($response);
         return $uploadDangerousGoodsReply;
     }
-            
+
     /**
      * Sends the ModifyDangerousGoodsHandlingUnitRequest and returns the response
      *
@@ -87,12 +87,12 @@ class Request extends AbstractRequest
         if ($returnStdClass) {
             return $response;
         }
-        
+
         $modifyDangerousGoodsHandlingUnitReply = new ComplexType\ModifyDangerousGoodsHandlingUnitReply;
         $modifyDangerousGoodsHandlingUnitReply->populateFromStdClass($response);
         return $modifyDangerousGoodsHandlingUnitReply;
     }
-            
+
     /**
      * Sends the DeleteDangerousGoodsHandlingUnitRequest and returns the response
      *
@@ -106,12 +106,12 @@ class Request extends AbstractRequest
         if ($returnStdClass) {
             return $response;
         }
-        
+
         $deleteDangerousGoodsHandlingUnitReply = new ComplexType\DeleteDangerousGoodsHandlingUnitReply;
         $deleteDangerousGoodsHandlingUnitReply->populateFromStdClass($response);
         return $deleteDangerousGoodsHandlingUnitReply;
     }
-            
+
     /**
      * Sends the DeleteDangerousGoodsRequest and returns the response
      *
@@ -125,12 +125,12 @@ class Request extends AbstractRequest
         if ($returnStdClass) {
             return $response;
         }
-        
+
         $deleteDangerousGoodsReply = new ComplexType\DeleteDangerousGoodsReply;
         $deleteDangerousGoodsReply->populateFromStdClass($response);
         return $deleteDangerousGoodsReply;
     }
-            
+
     /**
      * Sends the RetrieveDangerousGoodsRequest and returns the response
      *
@@ -144,12 +144,12 @@ class Request extends AbstractRequest
         if ($returnStdClass) {
             return $response;
         }
-        
+
         $retrieveDangerousGoodsReply = new ComplexType\RetrieveDangerousGoodsReply;
         $retrieveDangerousGoodsReply->populateFromStdClass($response);
         return $retrieveDangerousGoodsReply;
     }
-            
+
     /**
      * Sends the alidateDangerousGoods and returns the response
      *
@@ -159,11 +159,11 @@ class Request extends AbstractRequest
      */
     public function getReply(ComplexType\alidateDangerousGoods $alidateDangerousGoods, $returnStdClass = false)
     {
-        $response = $this->getSoapClient()->($alidateDangerousGoods->toArray());
+        $response = $this->getSoapClient()->$alidateDangerousGoods->toArray();
         if ($returnStdClass) {
             return $response;
         }
-        
+
         $validateDangerousGoodsReply = new ComplexType\ValidateDangerousGoodsReply;
         $validateDangerousGoodsReply->populateFromStdClass($response);
         return $validateDangerousGoodsReply;
