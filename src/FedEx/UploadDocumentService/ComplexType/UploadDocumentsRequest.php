@@ -14,8 +14,10 @@ use FedEx\AbstractComplexType;
  * @property ClientDetail $ClientDetail
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
+ * @property UploadDocumentsProcessingOptionsRequested $ProcessingOptions
  * @property string $OriginCountryCode
  * @property string $DestinationCountryCode
+ * @property \FedEx\UploadDocumentService\SimpleType\DocumentUsageType|string $Usage
  * @property UploadDocumentDetail[] $Documents
 
  */
@@ -29,7 +31,7 @@ class UploadDocumentsRequest extends AbstractComplexType
     protected $name = 'UploadDocumentsRequest';
 
     /**
-     * The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
+     * Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
      * @param WebAuthenticationDetail $webAuthenticationDetail
      * @return $this
@@ -41,7 +43,7 @@ class UploadDocumentsRequest extends AbstractComplexType
     }
 
     /**
-     * Descriptive data identifying the client submitting the transaction.
+     * Set ClientDetail
      *
      * @param ClientDetail $clientDetail
      * @return $this
@@ -53,7 +55,7 @@ class UploadDocumentsRequest extends AbstractComplexType
     }
 
     /**
-     * Descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
+     * Set TransactionDetail
      *
      * @param TransactionDetail $transactionDetail
      * @return $this
@@ -65,7 +67,7 @@ class UploadDocumentsRequest extends AbstractComplexType
     }
 
     /**
-     * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
+     * Set Version
      *
      * @param VersionId $version
      * @return $this
@@ -73,6 +75,18 @@ class UploadDocumentsRequest extends AbstractComplexType
     public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
+        return $this;
+    }
+
+    /**
+     * Set ProcessingOptions
+     *
+     * @param UploadDocumentsProcessingOptionsRequested $processingOptions
+     * @return $this
+     */
+    public function setProcessingOptions(UploadDocumentsProcessingOptionsRequested $processingOptions)
+    {
+        $this->values['ProcessingOptions'] = $processingOptions;
         return $this;
     }
 
@@ -97,6 +111,18 @@ class UploadDocumentsRequest extends AbstractComplexType
     public function setDestinationCountryCode($destinationCountryCode)
     {
         $this->values['DestinationCountryCode'] = $destinationCountryCode;
+        return $this;
+    }
+
+    /**
+     * Specifies the intent or the usage of the documents being uploaded. This provides details about how the documents are relevant to the current transaction.
+     *
+     * @param \FedEx\UploadDocumentService\SimpleType\DocumentUsageType|string $usage
+     * @return $this
+     */
+    public function setUsage($usage)
+    {
+        $this->values['Usage'] = $usage;
         return $this;
     }
 

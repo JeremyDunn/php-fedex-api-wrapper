@@ -38,7 +38,7 @@ class VersionId extends AbstractComplexType
     }
 
     /**
-     * Identifies the service business level. For this release this value should be set to 2.
+     * Identifies the service business level.
      *
      * @param int $major
      * @return $this
@@ -50,7 +50,7 @@ class VersionId extends AbstractComplexType
     }
 
     /**
-     * Identifies the service interface level. For this release this value should be set to 0.
+     * Identifies the service interface level.
      *
      * @param int $intermediate
      * @return $this
@@ -62,7 +62,7 @@ class VersionId extends AbstractComplexType
     }
 
     /**
-     * Identifies the service code level. For this release this value should be set to 0.
+     * Identifies the service code level.
      *
      * @param int $minor
      * @return $this

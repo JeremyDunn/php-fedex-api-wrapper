@@ -15,6 +15,7 @@ use FedEx\AbstractComplexType;
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
  * @property UploadDocumentStatusDetail[] $DocumentStatuses
+ * @property DocumentRequirementsDetail $DocumentRequirements
 
  */
 class UploadDocumentsReply extends AbstractComplexType
@@ -27,7 +28,7 @@ class UploadDocumentsReply extends AbstractComplexType
     protected $name = 'UploadDocumentsReply';
 
     /**
-     * This indicates the highest level of severity of all the notifications returned in this reply
+     * Set HighestSeverity
      *
      * @param \FedEx\UploadDocumentService\SimpleType\NotificationSeverityType|string $highestSeverity
      * @return $this
@@ -39,7 +40,7 @@ class UploadDocumentsReply extends AbstractComplexType
     }
 
     /**
-     * The descriptive data regarding the results of the submitted transaction.
+     * Set Notifications
      *
      * @param Notification[] $notifications
      * @return $this
@@ -51,7 +52,7 @@ class UploadDocumentsReply extends AbstractComplexType
     }
 
     /**
-     * Descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
+     * Set TransactionDetail
      *
      * @param TransactionDetail $transactionDetail
      * @return $this
@@ -63,7 +64,7 @@ class UploadDocumentsReply extends AbstractComplexType
     }
 
     /**
-     * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
+     * Set Version
      *
      * @param VersionId $version
      * @return $this
@@ -83,6 +84,18 @@ class UploadDocumentsReply extends AbstractComplexType
     public function setDocumentStatuses(array $documentStatuses)
     {
         $this->values['DocumentStatuses'] = $documentStatuses;
+        return $this;
+    }
+
+    /**
+     * For an upload making use of the POST_SHIPMENT_UPLOAD option, this will indicate information about the required documents necessary for package movement.
+     *
+     * @param DocumentRequirementsDetail $documentRequirements
+     * @return $this
+     */
+    public function setDocumentRequirements(DocumentRequirementsDetail $documentRequirements)
+    {
+        $this->values['DocumentRequirements'] = $documentRequirements;
         return $this;
     }
 }
