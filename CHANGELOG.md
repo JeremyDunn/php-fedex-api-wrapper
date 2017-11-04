@@ -5,6 +5,7 @@
 - Updated Pickup Service
 - Updated Ship Service
 - Updated Address Validation Service
+- Updated Rate Service
 
 |Service|Version|
 |---|---|
@@ -14,9 +15,9 @@
 |Locator|2|
 |Package Movement Information|5|
 |Pickup|15|
-|Rate|10|
+|Rate|22|
 |Return Tag|1|
-|Ship|21**|
+|Ship|21|
 |Track|5|
 |Upload Document|11|
 |Open Ship|11|

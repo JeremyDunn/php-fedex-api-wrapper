@@ -24,7 +24,7 @@ $rateRequest->TransactionDetail->CustomerTransactionId = 'testing rate service r
 
 //version
 $rateRequest->Version->ServiceId = 'crs';
-$rateRequest->Version->Major = 10;
+$rateRequest->Version->Major = 22;
 $rateRequest->Version->Minor = 0;
 $rateRequest->Version->Intermediate = 0;
 
@@ -46,11 +46,9 @@ $rateRequest->RequestedShipment->Recipient->Address->CountryCode = 'US';
 
 //shipping charges payment
 $rateRequest->RequestedShipment->ShippingChargesPayment->PaymentType = SimpleType\PaymentType::_SENDER;
-$rateRequest->RequestedShipment->ShippingChargesPayment->Payor->AccountNumber = FEDEX_ACCOUNT_NUMBER;
-$rateRequest->RequestedShipment->ShippingChargesPayment->Payor->CountryCode = 'US';
 
 //rate request types
-$rateRequest->RequestedShipment->RateRequestTypes = [SimpleType\RateRequestType::_ACCOUNT, SimpleType\RateRequestType::_LIST];
+$rateRequest->RequestedShipment->RateRequestTypes = [SimpleType\RateRequestType::_PREFERRED, SimpleType\RateRequestType::_LIST];
 
 $rateRequest->RequestedShipment->PackageCount = 2;
 

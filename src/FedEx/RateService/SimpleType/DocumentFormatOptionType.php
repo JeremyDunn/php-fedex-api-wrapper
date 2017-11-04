@@ -4,15 +4,13 @@ namespace FedEx\RateService\SimpleType;
 use FedEx\AbstractSimpleType;
 
 /**
- * The format of the email
+ * DocumentFormatOptionType
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class EMailNotificationFormatType extends AbstractSimpleType
+class DocumentFormatOptionType extends AbstractSimpleType
 {
-    const _HTML = 'HTML';
-    const _TEXT = 'TEXT';
-    const _WIRELESS = 'WIRELESS';
+    const _SUPPRESS_ADDITIONAL_LANGUAGES = 'SUPPRESS_ADDITIONAL_LANGUAGES';
 }

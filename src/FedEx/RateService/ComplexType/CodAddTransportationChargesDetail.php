@@ -25,7 +25,7 @@ class CodAddTransportationChargesDetail extends AbstractComplexType
     protected $name = 'CodAddTransportationChargesDetail';
 
     /**
-     * Set RateTypeBasis
+     * Select the type of rate from which the element is to be selected.
      *
      * @param \FedEx\RateService\SimpleType\RateTypeBasisType|string $rateTypeBasis
      * @return $this

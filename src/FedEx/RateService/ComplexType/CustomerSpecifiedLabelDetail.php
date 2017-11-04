@@ -11,11 +11,13 @@ use FedEx\AbstractComplexType;
  * @subpackage  Rate Service
  *
  * @property DocTabContent $DocTabContent
+ * @property \FedEx\RateService\SimpleType\RelativeVerticalPositionType|string $CustomContentPosition
  * @property CustomLabelDetail $CustomContent
  * @property ConfigurableLabelReferenceEntry[] $ConfigurableReferenceEntries
  * @property \FedEx\RateService\SimpleType\LabelMaskableDataType|string[] $MaskedData
  * @property \FedEx\RateService\SimpleType\SecondaryBarcodeType|string $SecondaryBarcode
  * @property Localization $TermsAndConditionsLocalization
+ * @property RegulatoryLabelContentDetail[] $RegulatoryLabels
  * @property AdditionalLabelsDetail[] $AdditionalLabels
  * @property int $AirWaybillSuppressionCount
 
@@ -30,7 +32,7 @@ class CustomerSpecifiedLabelDetail extends AbstractComplexType
     protected $name = 'CustomerSpecifiedLabelDetail';
 
     /**
-     * If omitted, no doc tab will be produced (i.e. default = former NONE type).
+     * If omitted, no doc tab will be produced (i.e. default is former NONE type).
      *
      * @param DocTabContent $docTabContent
      * @return $this
@@ -42,7 +44,19 @@ class CustomerSpecifiedLabelDetail extends AbstractComplexType
     }
 
     /**
-     * Defines any custom content to print on the label.
+     * Controls the position of the customer specified content relative to the FedEx portion.
+     *
+     * @param \FedEx\RateService\SimpleType\RelativeVerticalPositionType|string $customContentPosition
+     * @return $this
+     */
+    public function setCustomContentPosition($customContentPosition)
+    {
+        $this->values['CustomContentPosition'] = $customContentPosition;
+        return $this;
+    }
+
+    /**
+     * Set CustomContent
      *
      * @param CustomLabelDetail $customContent
      * @return $this
@@ -54,7 +68,7 @@ class CustomerSpecifiedLabelDetail extends AbstractComplexType
     }
 
     /**
-     * Defines additional data to print in the Configurable portion of the label, this allows you to print the same type information on the label that can also be printed on the doc tab.
+     * Set ConfigurableReferenceEntries
      *
      * @param ConfigurableLabelReferenceEntry[] $configurableReferenceEntries
      * @return $this
@@ -78,7 +92,7 @@ class CustomerSpecifiedLabelDetail extends AbstractComplexType
     }
 
     /**
-     * For customers producing their own Ground labels, this field specifies which secondary barcode will be printed on the label; so that the primary barcode produced by FedEx has the corect SCNC.
+     * For customers producing their own Ground labels, this field specifies which secondary barcode will be printed on the label; so that the primary barcode produced by FedEx has the correct SCNC.
      *
      * @param \FedEx\RateService\SimpleType\SecondaryBarcodeType|string $secondaryBarcode
      * @return $this
@@ -90,7 +104,7 @@ class CustomerSpecifiedLabelDetail extends AbstractComplexType
     }
 
     /**
-     * The language to use when printing the terms and conditions on the label.
+     * Set TermsAndConditionsLocalization
      *
      * @param Localization $termsAndConditionsLocalization
      * @return $this
@@ -98,6 +112,18 @@ class CustomerSpecifiedLabelDetail extends AbstractComplexType
     public function setTermsAndConditionsLocalization(Localization $termsAndConditionsLocalization)
     {
         $this->values['TermsAndConditionsLocalization'] = $termsAndConditionsLocalization;
+        return $this;
+    }
+
+    /**
+     * Set RegulatoryLabels
+     *
+     * @param RegulatoryLabelContentDetail[] $regulatoryLabels
+     * @return $this
+     */
+    public function setRegulatoryLabels(array $regulatoryLabels)
+    {
+        $this->values['RegulatoryLabels'] = $regulatoryLabels;
         return $this;
     }
 

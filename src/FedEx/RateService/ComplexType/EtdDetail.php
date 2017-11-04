@@ -10,8 +10,8 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  *
+ * @property \FedEx\RateService\SimpleType\EtdAttributeType|string[] $Attributes
  * @property \FedEx\RateService\SimpleType\RequestedShippingDocumentType|string[] $RequestedDocumentCopies
- * @property UploadDocumentDetail[] $Documents
  * @property UploadDocumentReferenceDetail[] $DocumentReferences
 
  */
@@ -25,6 +25,18 @@ class EtdDetail extends AbstractComplexType
     protected $name = 'EtdDetail';
 
     /**
+     * Set Attributes
+     *
+     * @param \FedEx\RateService\SimpleType\EtdAttributeType[]|string[] $attributes
+     * @return $this
+     */
+    public function setAttributes(array $attributes)
+    {
+        $this->values['Attributes'] = $attributes;
+        return $this;
+    }
+
+    /**
      * Indicates the types of shipping documents produced for the shipper by FedEx (see ShippingDocumentSpecification) which should be copied back to the shipper in the shipment result data.
      *
      * @param \FedEx\RateService\SimpleType\RequestedShippingDocumentType[]|string[] $requestedDocumentCopies
@@ -33,18 +45,6 @@ class EtdDetail extends AbstractComplexType
     public function setRequestedDocumentCopies(array $requestedDocumentCopies)
     {
         $this->values['RequestedDocumentCopies'] = $requestedDocumentCopies;
-        return $this;
-    }
-
-    /**
-     * Currently not supported.
-     *
-     * @param UploadDocumentDetail[] $documents
-     * @return $this
-     */
-    public function setDocuments(array $documents)
-    {
-        $this->values['Documents'] = $documents;
         return $this;
     }
 

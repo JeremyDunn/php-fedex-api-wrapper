@@ -11,6 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Rate Service
  *
  * @property string $QuoteNumber
+ * @property \FedEx\RateService\SimpleType\FreightRateQuoteType|string $QuoteType
  * @property \FedEx\RateService\SimpleType\FreightBaseChargeCalculationType|string $BaseChargeCalculation
  * @property FreightBaseCharge[] $BaseCharges
  * @property FreightRateNotation[] $Notations
@@ -34,6 +35,18 @@ class FreightRateDetail extends AbstractComplexType
     public function setQuoteNumber($quoteNumber)
     {
         $this->values['QuoteNumber'] = $quoteNumber;
+        return $this;
+    }
+
+    /**
+     * Specifies whether the rate quote was automated or manual.
+     *
+     * @param \FedEx\RateService\SimpleType\FreightRateQuoteType|string $quoteType
+     * @return $this
+     */
+    public function setQuoteType($quoteType)
+    {
+        $this->values['QuoteType'] = $quoteType;
         return $this;
     }
 

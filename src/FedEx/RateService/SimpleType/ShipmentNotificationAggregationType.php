@@ -4,14 +4,14 @@ namespace FedEx\RateService\SimpleType;
 use FedEx\AbstractSimpleType;
 
 /**
- * FreightAccountPaymentType
+ * ShipmentNotificationAggregationType
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class FreightAccountPaymentType extends AbstractSimpleType
+class ShipmentNotificationAggregationType extends AbstractSimpleType
 {
-    const _COLLECT = 'COLLECT';
-    const _PREPAID = 'PREPAID';
+    const _PER_PACKAGE = 'PER_PACKAGE';
+    const _PER_SHIPMENT = 'PER_SHIPMENT';
 }

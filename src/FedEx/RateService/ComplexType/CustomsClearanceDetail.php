@@ -10,8 +10,9 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  *
- * @property Party $Broker
+ * @property BrokerDetail[] $Brokers
  * @property \FedEx\RateService\SimpleType\ClearanceBrokerageType|string $ClearanceBrokerage
+ * @property CustomsOptionDetail $CustomsOptions
  * @property Party $ImporterOfRecord
  * @property RecipientCustomsId $RecipientCustomsId
  * @property Payment $DutiesPayment
@@ -36,15 +37,14 @@ class CustomsClearanceDetail extends AbstractComplexType
     protected $name = 'CustomsClearanceDetail';
 
     /**
-     * Descriptive data identifying the Broker responsible for the shipmet.
-                Required if BROKER_SELECT_OPTION is requested in Special Services.
+     * Set Brokers
      *
-     * @param Party $broker
+     * @param BrokerDetail[] $brokers
      * @return $this
      */
-    public function setBroker(Party $broker)
+    public function setBrokers(array $brokers)
     {
-        $this->values['Broker'] = $broker;
+        $this->values['Brokers'] = $brokers;
         return $this;
     }
 
@@ -61,15 +61,19 @@ class CustomsClearanceDetail extends AbstractComplexType
     }
 
     /**
-     * Applicable only for Commercial Invoice. If the consignee and importer are not the same, the Following importer fields are required.
-                Importer/Contact/PersonName
-                Importer/Contact/CompanyName
-                Importer/Contact/PhoneNumber
-                Importer/Address/StreetLine[0]
-                Importer/Address/City
-                Importer/Address/StateOrProvinceCode - if Importer Country Code is US or CA
-                Importer/Address/PostalCode - if Importer Country Code is US or CA
-                Importer/Address/CountryCode
+     * Set CustomsOptions
+     *
+     * @param CustomsOptionDetail $customsOptions
+     * @return $this
+     */
+    public function setCustomsOptions(CustomsOptionDetail $customsOptions)
+    {
+        $this->values['CustomsOptions'] = $customsOptions;
+        return $this;
+    }
+
+    /**
+     * Set ImporterOfRecord
      *
      * @param Party $importerOfRecord
      * @return $this
@@ -93,7 +97,7 @@ class CustomsClearanceDetail extends AbstractComplexType
     }
 
     /**
-     * Indicates how payment of duties for the shipment will be made.
+     * Set DutiesPayment
      *
      * @param Payment $dutiesPayment
      * @return $this
@@ -105,7 +109,7 @@ class CustomsClearanceDetail extends AbstractComplexType
     }
 
     /**
-     * Indicates whether this shipment contains documents only or non-documents.
+     * Set DocumentContent
      *
      * @param \FedEx\RateService\SimpleType\InternationalDocumentContentType|string $documentContent
      * @return $this
@@ -117,7 +121,7 @@ class CustomsClearanceDetail extends AbstractComplexType
     }
 
     /**
-     * The total customs value for the shipment. This total will rrepresent th esum of the values of all commodities, and may include freight, miscellaneous, and insurance charges. Must contain 2 explicit decimal positions with a max length of 17 including the decimal. For Express International MPS, the Total Customs Value is in the master transaction and all child transactions
+     * Set CustomsValue
      *
      * @param Money $customsValue
      * @return $this
@@ -165,7 +169,7 @@ class CustomsClearanceDetail extends AbstractComplexType
     }
 
     /**
-     * CommercialInvoice element is required for electronic upload of CI data. It will serve to create/transmit an Electronic Commercial Invoice through FedEx System. Customers are responsible for printing their own Commercial Invoice. Commercial Invoice support consists of a maximum of 20 commodity line items.
+     * Set CommercialInvoice
      *
      * @param CommercialInvoice $commercialInvoice
      * @return $this
@@ -177,8 +181,7 @@ class CustomsClearanceDetail extends AbstractComplexType
     }
 
     /**
-     * For international multiple piece shipments, commodity information must be passed in the Master and on each child transaction.
-                If this shipment cotains more than four commodities line items, the four highest valued should be included in the first 4 occurances for this request.
+     * Set Commodities
      *
      * @param Commodity[] $commodities
      * @return $this
@@ -190,7 +193,7 @@ class CustomsClearanceDetail extends AbstractComplexType
     }
 
     /**
-     * Country specific details of an International shipment.
+     * Set ExportDetail
      *
      * @param ExportDetail $exportDetail
      * @return $this
@@ -202,7 +205,7 @@ class CustomsClearanceDetail extends AbstractComplexType
     }
 
     /**
-     * FOOD_OR_PERISHABLE is required by FDA/BTA; must be true for food/perishable items coming to US or PR from non-US/non-PR origin.
+     * Set RegulatoryControls
      *
      * @param \FedEx\RateService\SimpleType\RegulatoryControlType[]|string[] $regulatoryControls
      * @return $this

@@ -12,6 +12,7 @@ use FedEx\AbstractComplexType;
  *
  * @property \FedEx\RateService\SimpleType\FreightClassType|string $FreightClass
  * @property \FedEx\RateService\SimpleType\PhysicalPackagingType|string $Packaging
+ * @property int $Pieces
  * @property string $Description
  * @property Weight $Weight
  * @property Dimensions $Dimensions
@@ -52,6 +53,18 @@ class FreightShipmentLineItem extends AbstractComplexType
     }
 
     /**
+     * Number of pieces for this commodity or class line.
+     *
+     * @param int $pieces
+     * @return $this
+     */
+    public function setPieces($pieces)
+    {
+        $this->values['Pieces'] = $pieces;
+        return $this;
+    }
+
+    /**
      * Customer-provided description for this commodity or class line.
      *
      * @param string $description
@@ -76,7 +89,7 @@ class FreightShipmentLineItem extends AbstractComplexType
     }
 
     /**
-     * FED EX INTERNAL USE ONLY - Individual line item dimensions.
+     * Set Dimensions
      *
      * @param Dimensions $dimensions
      * @return $this

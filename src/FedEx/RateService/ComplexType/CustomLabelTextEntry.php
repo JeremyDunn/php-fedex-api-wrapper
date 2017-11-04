@@ -16,6 +16,7 @@ use FedEx\AbstractComplexType;
  * @property string $ThermalFontId
  * @property string $FontName
  * @property int $FontSize
+ * @property \FedEx\RateService\SimpleType\RotationType|string $Rotation
 
  */
 class CustomLabelTextEntry extends AbstractComplexType
@@ -96,6 +97,18 @@ class CustomLabelTextEntry extends AbstractComplexType
     public function setFontSize($fontSize)
     {
         $this->values['FontSize'] = $fontSize;
+        return $this;
+    }
+
+    /**
+     * Set Rotation
+     *
+     * @param \FedEx\RateService\SimpleType\RotationType|string $rotation
+     * @return $this
+     */
+    public function setRotation($rotation)
+    {
+        $this->values['Rotation'] = $rotation;
         return $this;
     }
 }

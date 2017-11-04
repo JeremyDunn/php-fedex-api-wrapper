@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Data applicable to shipments using FEDEX_FREIGHT and FEDEX_NATIONAL_FREIGHT services.
+ * Data applicable to shipments using FEDEX_FREIGHT_ECONOMY and FEDEX_FREIGHT_PRIORITY services.
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -12,10 +12,9 @@ use FedEx\AbstractComplexType;
  *
  * @property string $FedExFreightAccountNumber
  * @property ContactAndAddress $FedExFreightBillingContactAndAddress
- * @property string $FedExNationalFreightAccountNumber
- * @property ContactAndAddress $FedExNationalFreightBillingContactAndAddress
+ * @property Party $AlternateBilling
  * @property \FedEx\RateService\SimpleType\FreightShipmentRoleType|string $Role
- * @property \FedEx\RateService\SimpleType\FreightAccountPaymentType|string $PaymentType
+ * @property \FedEx\RateService\SimpleType\FreightCollectTermsType|string $CollectTermsType
  * @property Money $DeclaredValuePerUnit
  * @property string $DeclaredValueUnits
  * @property LiabilityCoverageDetail $LiabilityCoverageDetail
@@ -26,6 +25,7 @@ use FedEx\AbstractComplexType;
  * @property Dimensions $ShipmentDimensions
  * @property string $Comment
  * @property FreightSpecialServicePayment[] $SpecialServicePayments
+ * @property string $HazardousMaterialsOfferor
  * @property FreightShipmentLineItem[] $LineItems
 
  */
@@ -63,26 +63,14 @@ class FreightShipmentDetail extends AbstractComplexType
     }
 
     /**
-     * Account number used with FEDEX_NATIONAL_FREIGHT service.
+     * Used in connection with "Send Bill To" (SBT) identification of customer's account used for billing.
      *
-     * @param string $fedExNationalFreightAccountNumber
+     * @param Party $alternateBilling
      * @return $this
      */
-    public function setFedExNationalFreightAccountNumber($fedExNationalFreightAccountNumber)
+    public function setAlternateBilling(Party $alternateBilling)
     {
-        $this->values['FedExNationalFreightAccountNumber'] = $fedExNationalFreightAccountNumber;
-        return $this;
-    }
-
-    /**
-     * Used for validating FedEx National Freight account number and (optionally) identifying third party payment on the bill of lading.
-     *
-     * @param ContactAndAddress $fedExNationalFreightBillingContactAndAddress
-     * @return $this
-     */
-    public function setFedExNationalFreightBillingContactAndAddress(ContactAndAddress $fedExNationalFreightBillingContactAndAddress)
-    {
-        $this->values['FedExNationalFreightBillingContactAndAddress'] = $fedExNationalFreightBillingContactAndAddress;
+        $this->values['AlternateBilling'] = $alternateBilling;
         return $this;
     }
 
@@ -99,14 +87,14 @@ class FreightShipmentDetail extends AbstractComplexType
     }
 
     /**
-     * Designates which of the requester's tariffs will be used for rating.
+     * Designates the terms of the "collect" payment for a Freight Shipment.
      *
-     * @param \FedEx\RateService\SimpleType\FreightAccountPaymentType|string $paymentType
+     * @param \FedEx\RateService\SimpleType\FreightCollectTermsType|string $collectTermsType
      * @return $this
      */
-    public function setPaymentType($paymentType)
+    public function setCollectTermsType($collectTermsType)
     {
-        $this->values['PaymentType'] = $paymentType;
+        $this->values['CollectTermsType'] = $collectTermsType;
         return $this;
     }
 
@@ -227,6 +215,18 @@ class FreightShipmentDetail extends AbstractComplexType
     public function setSpecialServicePayments(array $specialServicePayments)
     {
         $this->values['SpecialServicePayments'] = $specialServicePayments;
+        return $this;
+    }
+
+    /**
+     * Set HazardousMaterialsOfferor
+     *
+     * @param string $hazardousMaterialsOfferor
+     * @return $this
+     */
+    public function setHazardousMaterialsOfferor($hazardousMaterialsOfferor)
+    {
+        $this->values['HazardousMaterialsOfferor'] = $hazardousMaterialsOfferor;
         return $this;
     }
 

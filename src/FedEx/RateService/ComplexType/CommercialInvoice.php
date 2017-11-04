@@ -17,12 +17,11 @@ use FedEx\AbstractComplexType;
  * @property Money $PackingCosts
  * @property Money $HandlingCosts
  * @property string $SpecialInstructions
- * @property string $DeclarationStatment
+ * @property string $DeclarationStatement
  * @property string $PaymentTerms
  * @property \FedEx\RateService\SimpleType\PurposeOfShipmentType|string $Purpose
- * @property string $CustomerInvoiceNumber
  * @property string $OriginatorName
- * @property \FedEx\RateService\SimpleType\TermsOfSaleType|string $TermsOfSale
+ * @property string $TermsOfSale
 
  */
 class CommercialInvoice extends AbstractComplexType
@@ -121,12 +120,12 @@ class CommercialInvoice extends AbstractComplexType
     /**
      * Free-form text.
      *
-     * @param string $declarationStatment
+     * @param string $declarationStatement
      * @return $this
      */
-    public function setDeclarationStatment($declarationStatment)
+    public function setDeclarationStatement($declarationStatement)
     {
-        $this->values['DeclarationStatment'] = $declarationStatment;
+        $this->values['DeclarationStatement'] = $declarationStatement;
         return $this;
     }
 
@@ -155,18 +154,6 @@ class CommercialInvoice extends AbstractComplexType
     }
 
     /**
-     * Customer assigned Invoice number
-     *
-     * @param string $customerInvoiceNumber
-     * @return $this
-     */
-    public function setCustomerInvoiceNumber($customerInvoiceNumber)
-    {
-        $this->values['CustomerInvoiceNumber'] = $customerInvoiceNumber;
-        return $this;
-    }
-
-    /**
      * Name of the International Expert that completed the Commercial Invoice different from Sender.
      *
      * @param string $originatorName
@@ -179,9 +166,9 @@ class CommercialInvoice extends AbstractComplexType
     }
 
     /**
-     * Required for dutiable international Express or Ground shipment. This field is not applicable to an international PIB(document) or a non-document which does not require a Commercial Invoice
+     * Required for dutiable international Express or Ground shipments. This field is not applicable to an international PIB(document) or a non-document which does not require a Commercial Invoice.
      *
-     * @param \FedEx\RateService\SimpleType\TermsOfSaleType|string $termsOfSale
+     * @param string $termsOfSale
      * @return $this
      */
     public function setTermsOfSale($termsOfSale)

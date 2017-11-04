@@ -14,6 +14,10 @@ use FedEx\AbstractComplexType;
  * @property \FedEx\RateService\SimpleType\ServiceType|string $ServiceType
  * @property \FedEx\RateService\SimpleType\ServiceOptionType|string[] $AppliedOptions
  * @property ServiceSubOptionDetail $AppliedSubOptions
+ * @property SignatureOptionDetail $DerivedShipmentSignatureOption
+ * @property SignatureOptionDetail[] $DerivedPackageSignatureOptions
+ * @property CleansedAddressAndLocationDetail $DerivedOriginDetail
+ * @property CleansedAddressAndLocationDetail $DerivedDestinationDetail
  * @property string $CommitTimestamp
  * @property \FedEx\RateService\SimpleType\DayOfWeekType|string $DayOfWeek
  * @property \FedEx\RateService\SimpleType\TransitTimeType|string $TransitTime
@@ -88,6 +92,54 @@ class CommitDetail extends AbstractComplexType
     public function setAppliedSubOptions(ServiceSubOptionDetail $appliedSubOptions)
     {
         $this->values['AppliedSubOptions'] = $appliedSubOptions;
+        return $this;
+    }
+
+    /**
+     * Set DerivedShipmentSignatureOption
+     *
+     * @param SignatureOptionDetail $derivedShipmentSignatureOption
+     * @return $this
+     */
+    public function setDerivedShipmentSignatureOption(SignatureOptionDetail $derivedShipmentSignatureOption)
+    {
+        $this->values['DerivedShipmentSignatureOption'] = $derivedShipmentSignatureOption;
+        return $this;
+    }
+
+    /**
+     * Set DerivedPackageSignatureOptions
+     *
+     * @param SignatureOptionDetail[] $derivedPackageSignatureOptions
+     * @return $this
+     */
+    public function setDerivedPackageSignatureOptions(array $derivedPackageSignatureOptions)
+    {
+        $this->values['DerivedPackageSignatureOptions'] = $derivedPackageSignatureOptions;
+        return $this;
+    }
+
+    /**
+     * Set DerivedOriginDetail
+     *
+     * @param CleansedAddressAndLocationDetail $derivedOriginDetail
+     * @return $this
+     */
+    public function setDerivedOriginDetail(CleansedAddressAndLocationDetail $derivedOriginDetail)
+    {
+        $this->values['DerivedOriginDetail'] = $derivedOriginDetail;
+        return $this;
+    }
+
+    /**
+     * Set DerivedDestinationDetail
+     *
+     * @param CleansedAddressAndLocationDetail $derivedDestinationDetail
+     * @return $this
+     */
+    public function setDerivedDestinationDetail(CleansedAddressAndLocationDetail $derivedDestinationDetail)
+    {
+        $this->values['DerivedDestinationDetail'] = $derivedDestinationDetail;
         return $this;
     }
 
