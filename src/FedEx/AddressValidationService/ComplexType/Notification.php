@@ -4,7 +4,7 @@ namespace FedEx\AddressValidationService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * The descriptive data regarding the results of the submitted transaction.
+ * The descriptive data regarding the result of the submitted transaction.
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -28,7 +28,7 @@ class Notification extends AbstractComplexType
     protected $name = 'Notification';
 
     /**
-     * The severity of this notification. this can indicate success or failure or some other information about the request such as errors or notes.
+     * The severity of this notification. This can indicate success or failure or some other information about the request. The values that can be returned are SUCCESS - Your transaction succeeded with no other applicable information. NOTE - Additional information that may be of interest to you about your transaction. WARNING - Additional information that you need to know about your transaction that you may need to take action on. ERROR - Information about an error that occurred while processing your transaction. FAILURE - FedEx was unable to process your transaction at this time due to a system failure. Please try again later
      *
      * @param \FedEx\AddressValidationService\SimpleType\NotificationSeverityType|string $severity
      * @return $this
@@ -40,7 +40,7 @@ class Notification extends AbstractComplexType
     }
 
     /**
-     * Indicates the source of the notification. Combined with Code, it uniqely identifies this message.
+     * Indicates the source of this notification. Combined with the Code it uniquely identifies this notification
      *
      * @param string $source
      * @return $this
@@ -52,7 +52,7 @@ class Notification extends AbstractComplexType
     }
 
     /**
-     * A code that represents this notification. Combined with Source, it uniqely identifies this message.
+     * A code that represents this notification. Combined with the Source it uniquely identifies this notification.
      *
      * @param string $code
      * @return $this
@@ -64,7 +64,7 @@ class Notification extends AbstractComplexType
     }
 
     /**
-     * Text that explains this notification.
+     * Human-readable text that explains this notification.
      *
      * @param string $message
      * @return $this
@@ -76,7 +76,7 @@ class Notification extends AbstractComplexType
     }
 
     /**
-     * A translated message. The translation is based on the Localization element of the ClientDetail element of the request.
+     * The translated message. The language and locale specified in the ClientDetail. Localization are used to determine the representation. Currently only supported in a TrackReply.
      *
      * @param string $localizedMessage
      * @return $this
@@ -88,7 +88,7 @@ class Notification extends AbstractComplexType
     }
 
     /**
-     * If the message used parameter replacement to be specific as to the meaning of the message, this is the list of parameters that were used.
+     * A collection of name/value pairs that provide specific data to help the client determine the nature of an error (or warning, etc.) witout having to parse the message string.
      *
      * @param NotificationParameter[] $messageParameters
      * @return $this

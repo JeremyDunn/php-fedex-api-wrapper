@@ -4,7 +4,7 @@ namespace FedEx\AddressValidationService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * ParsedElement
+ * Specifies additional information about the address processed by the SHARE systems as a key-value pair.
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -12,20 +12,19 @@ use FedEx\AbstractComplexType;
  *
  * @property string $Name
  * @property string $Value
- * @property \FedEx\AddressValidationService\SimpleType\AddressValidationChangeType|string[] $Changes
 
  */
-class ParsedElement extends AbstractComplexType
+class AddressAttribute extends AbstractComplexType
 {
     /**
      * Name of this complex type
      *
      * @var string
      */
-    protected $name = 'ParsedElement';
+    protected $name = 'AddressAttribute';
 
     /**
-     * Set Name
+     * Specifies the key for the address attribute.
      *
      * @param string $name
      * @return $this
@@ -37,7 +36,7 @@ class ParsedElement extends AbstractComplexType
     }
 
     /**
-     * Set Value
+     * The value for the key for the address attribute.
      *
      * @param string $value
      * @return $this
@@ -45,18 +44,6 @@ class ParsedElement extends AbstractComplexType
     public function setValue($value)
     {
         $this->values['Value'] = $value;
-        return $this;
-    }
-
-    /**
-     * Set Changes
-     *
-     * @param \FedEx\AddressValidationService\SimpleType\AddressValidationChangeType[]|string[] $changes
-     * @return $this
-     */
-    public function setChanges(array $changes)
-    {
-        $this->values['Changes'] = $changes;
         return $this;
     }
 }

@@ -10,8 +10,8 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Address Validation Service
  *
- * @property string $AddressId
- * @property string $CompanyName
+ * @property string $ClientReferenceId
+ * @property Contact $Contact
  * @property Address $Address
 
  */
@@ -25,26 +25,26 @@ class AddressToValidate extends AbstractComplexType
     protected $name = 'AddressToValidate';
 
     /**
-     * Set AddressId
+     * A reference id provided by the client.
      *
-     * @param string $addressId
+     * @param string $clientReferenceId
      * @return $this
      */
-    public function setAddressId($addressId)
+    public function setClientReferenceId($clientReferenceId)
     {
-        $this->values['AddressId'] = $addressId;
+        $this->values['ClientReferenceId'] = $clientReferenceId;
         return $this;
     }
 
     /**
-     * Set CompanyName
+     * Set Contact
      *
-     * @param string $companyName
+     * @param Contact $contact
      * @return $this
      */
-    public function setCompanyName($companyName)
+    public function setContact(Contact $contact)
     {
-        $this->values['CompanyName'] = $companyName;
+        $this->values['Contact'] = $contact;
         return $this;
     }
 

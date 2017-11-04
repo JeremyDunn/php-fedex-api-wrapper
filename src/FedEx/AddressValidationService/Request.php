@@ -12,10 +12,10 @@ use FedEx\AbstractRequest;
  */
 class Request extends AbstractRequest
 {
-    const PRODUCTION_URL = 'https://gateway.fedex.com:443/web-services';
-    const TESTING_URL = 'https://gatewaybeta.fedex.com:443/web-services';
+    const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/addressvalidation';
+    const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/addressvalidation';
 
-    protected static $wsdlFileName = 'AddressValidationService_v2.wsdl';
+    protected static $wsdlFileName = 'AddressValidationService_v4.wsdl';
             
     /**
      * Sends the AddressValidationRequest and returns the response

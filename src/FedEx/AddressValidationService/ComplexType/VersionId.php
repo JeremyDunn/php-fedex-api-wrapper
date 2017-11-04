@@ -38,7 +38,7 @@ class VersionId extends AbstractComplexType
     }
 
     /**
-     * Identifies the service business level. For the initial FedEx Web Service release this value should be set to 1.
+     * Identifies the service business level.
      *
      * @param int $major
      * @return $this
@@ -50,7 +50,7 @@ class VersionId extends AbstractComplexType
     }
 
     /**
-     * Identifies the service interface level. For the initial FedEx Web Service release this value should be set to 0.
+     * Identifies the service interface level.
      *
      * @param int $intermediate
      * @return $this
@@ -62,7 +62,7 @@ class VersionId extends AbstractComplexType
     }
 
     /**
-     * Identifies the service code level. For the initial FedEx Web Service release this value should be set to 0.
+     * Identifies the service code level.
      *
      * @param int $minor
      * @return $this

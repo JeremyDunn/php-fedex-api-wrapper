@@ -4,10 +4,11 @@
 - Updated Upload Document Service
 - Updated Pickup Service
 - Updated Ship Service
+- Updated Address Validation Service
 
 |Service|Version|
 |---|---|
-|Address Validation|2|
+|Address Validation|4|
 |Close|5|
 |Courier Dispatch|3|
 |Locator|2|
