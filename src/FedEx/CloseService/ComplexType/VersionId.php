@@ -26,7 +26,7 @@ class VersionId extends AbstractComplexType
     protected $name = 'VersionId';
 
     /**
-     * Set ServiceId
+     * Identifies a system or sub-system which performs an operation.
      *
      * @param string $serviceId
      * @return $this
@@ -38,7 +38,7 @@ class VersionId extends AbstractComplexType
     }
 
     /**
-     * Service business level.
+     * Identifies the service business level.
      *
      * @param int $major
      * @return $this
@@ -50,7 +50,7 @@ class VersionId extends AbstractComplexType
     }
 
     /**
-     * Service interface level.
+     * Identifies the service interface level.
      *
      * @param int $intermediate
      * @return $this
@@ -62,7 +62,7 @@ class VersionId extends AbstractComplexType
     }
 
     /**
-     * Service code level.
+     * Identifies the service code level.
      *
      * @param int $minor
      * @return $this

@@ -24,7 +24,7 @@ class TransactionDetail extends AbstractComplexType
     protected $name = 'TransactionDetail';
 
     /**
-     * Set CustomerTransactionId
+     * Free form text to be echoed back in the reply. Used to match requests and replies.
      *
      * @param string $customerTransactionId
      * @return $this

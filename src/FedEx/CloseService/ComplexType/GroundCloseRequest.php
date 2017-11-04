@@ -14,7 +14,9 @@ use FedEx\AbstractComplexType;
  * @property ClientDetail $ClientDetail
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
+ * @property \FedEx\CloseService\SimpleType\CloseGroupingType|string $CloseGrouping
  * @property string $TimeUpToWhichShipmentsAreToBeClosed
+ * @property CloseManifestReferenceDetail $ManifestReferenceDetail
 
  */
 class GroundCloseRequest extends AbstractComplexType
@@ -27,7 +29,7 @@ class GroundCloseRequest extends AbstractComplexType
     protected $name = 'GroundCloseRequest';
 
     /**
-     * The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
+     * Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
      * @param WebAuthenticationDetail $webAuthenticationDetail
      * @return $this
@@ -75,7 +77,19 @@ class GroundCloseRequest extends AbstractComplexType
     }
 
     /**
-     * Identifies the date and time up to which unclosed shipments are to be closed. Both the date and time portions of the string are expected to be used. The time is the local time based on the shipper's time zone. The date component must be in the format: YYYY-MM-DD (e.g. 2009-04-26). The time component must be in the format: HH:MM:SS using a 24 hour clock (e.g. 11:00 a.m. is 11:00:00, whereas 5:00 p.m. is 17:00:00). The date and time parts are separated by a T (e.g. 2009-04-26T17:00:00).
+     * Set CloseGrouping
+     *
+     * @param \FedEx\CloseService\SimpleType\CloseGroupingType|string $closeGrouping
+     * @return $this
+     */
+    public function setCloseGrouping($closeGrouping)
+    {
+        $this->values['CloseGrouping'] = $closeGrouping;
+        return $this;
+    }
+
+    /**
+     * Set TimeUpToWhichShipmentsAreToBeClosed
      *
      * @param string $timeUpToWhichShipmentsAreToBeClosed
      * @return $this
@@ -83,6 +97,18 @@ class GroundCloseRequest extends AbstractComplexType
     public function setTimeUpToWhichShipmentsAreToBeClosed($timeUpToWhichShipmentsAreToBeClosed)
     {
         $this->values['TimeUpToWhichShipmentsAreToBeClosed'] = $timeUpToWhichShipmentsAreToBeClosed;
+        return $this;
+    }
+
+    /**
+     * Set ManifestReferenceDetail
+     *
+     * @param CloseManifestReferenceDetail $manifestReferenceDetail
+     * @return $this
+     */
+    public function setManifestReferenceDetail(CloseManifestReferenceDetail $manifestReferenceDetail)
+    {
+        $this->values['ManifestReferenceDetail'] = $manifestReferenceDetail;
         return $this;
     }
 }

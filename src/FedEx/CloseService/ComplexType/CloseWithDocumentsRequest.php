@@ -4,7 +4,7 @@ namespace FedEx\CloseService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * SmartPostCloseRequest
+ * CloseWithDocumentsRequest
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -14,21 +14,24 @@ use FedEx\AbstractComplexType;
  * @property ClientDetail $ClientDetail
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
- * @property string $HubId
- * @property string $CustomerManifestId
- * @property string $DestinationCountryCode
- * @property \FedEx\CloseService\SimpleType\CarrierCodeType|string $PickUpCarrier
+ * @property \FedEx\CloseService\SimpleType\CloseActionType|string $ActionType
+ * @property CloseWithDocumentsProcessingOptionsRequested $ProcessingOptions
+ * @property \FedEx\CloseService\SimpleType\CarrierCodeType|string $CarrierCode
+ * @property string $ShippingCycle
+ * @property string $ReprintCloseDate
  * @property CloseManifestReferenceDetail $ManifestReferenceDetail
+ * @property CloseSmartPostDetail $SmartPostDetail
+ * @property CloseDocumentSpecification $CloseDocumentSpecification
 
  */
-class SmartPostCloseRequest extends AbstractComplexType
+class CloseWithDocumentsRequest extends AbstractComplexType
 {
     /**
      * Name of this complex type
      *
      * @var string
      */
-    protected $name = 'SmartPostCloseRequest';
+    protected $name = 'CloseWithDocumentsRequest';
 
     /**
      * Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
@@ -79,50 +82,62 @@ class SmartPostCloseRequest extends AbstractComplexType
     }
 
     /**
-     * Set HubId
+     * Set ActionType
      *
-     * @param string $hubId
+     * @param \FedEx\CloseService\SimpleType\CloseActionType|string $actionType
      * @return $this
      */
-    public function setHubId($hubId)
+    public function setActionType($actionType)
     {
-        $this->values['HubId'] = $hubId;
+        $this->values['ActionType'] = $actionType;
         return $this;
     }
 
     /**
-     * Set CustomerManifestId
+     * Set ProcessingOptions
      *
-     * @param string $customerManifestId
+     * @param CloseWithDocumentsProcessingOptionsRequested $processingOptions
      * @return $this
      */
-    public function setCustomerManifestId($customerManifestId)
+    public function setProcessingOptions(CloseWithDocumentsProcessingOptionsRequested $processingOptions)
     {
-        $this->values['CustomerManifestId'] = $customerManifestId;
+        $this->values['ProcessingOptions'] = $processingOptions;
         return $this;
     }
 
     /**
-     * Set DestinationCountryCode
+     * Set CarrierCode
      *
-     * @param string $destinationCountryCode
+     * @param \FedEx\CloseService\SimpleType\CarrierCodeType|string $carrierCode
      * @return $this
      */
-    public function setDestinationCountryCode($destinationCountryCode)
+    public function setCarrierCode($carrierCode)
     {
-        $this->values['DestinationCountryCode'] = $destinationCountryCode;
+        $this->values['CarrierCode'] = $carrierCode;
         return $this;
     }
 
     /**
-     * Set PickUpCarrier
+     * Set ShippingCycle
      *
-     * @param \FedEx\CloseService\SimpleType\CarrierCodeType|string $pickUpCarrier
+     * @param string $shippingCycle
      * @return $this
      */
-    public function setPickUpCarrier($pickUpCarrier)
+    public function setShippingCycle($shippingCycle)
     {
-        $this->values['PickUpCarrier'] = $pickUpCarrier;
+        $this->values['ShippingCycle'] = $shippingCycle;
+        return $this;
+    }
+
+    /**
+     * Set ReprintCloseDate
+     *
+     * @param string $reprintCloseDate
+     * @return $this
+     */
+    public function setReprintCloseDate($reprintCloseDate)
+    {
+        $this->values['ReprintCloseDate'] = $reprintCloseDate;
         return $this;
     }
 
@@ -135,6 +150,30 @@ class SmartPostCloseRequest extends AbstractComplexType
     public function setManifestReferenceDetail(CloseManifestReferenceDetail $manifestReferenceDetail)
     {
         $this->values['ManifestReferenceDetail'] = $manifestReferenceDetail;
+        return $this;
+    }
+
+    /**
+     * Set SmartPostDetail
+     *
+     * @param CloseSmartPostDetail $smartPostDetail
+     * @return $this
+     */
+    public function setSmartPostDetail(CloseSmartPostDetail $smartPostDetail)
+    {
+        $this->values['SmartPostDetail'] = $smartPostDetail;
+        return $this;
+    }
+
+    /**
+     * Set CloseDocumentSpecification
+     *
+     * @param CloseDocumentSpecification $closeDocumentSpecification
+     * @return $this
+     */
+    public function setCloseDocumentSpecification(CloseDocumentSpecification $closeDocumentSpecification)
+    {
+        $this->values['CloseDocumentSpecification'] = $closeDocumentSpecification;
         return $this;
     }
 }

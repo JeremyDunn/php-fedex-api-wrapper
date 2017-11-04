@@ -4,39 +4,39 @@ namespace FedEx\CloseService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * NotificationParameter
+ * CloseManifestReferenceDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Close Service
  *
- * @property string $Id
+ * @property \FedEx\CloseService\SimpleType\CustomerReferenceType|string $Type
  * @property string $Value
 
  */
-class NotificationParameter extends AbstractComplexType
+class CloseManifestReferenceDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
      *
      * @var string
      */
-    protected $name = 'NotificationParameter';
+    protected $name = 'CloseManifestReferenceDetail';
 
     /**
-     * Identifies the type of data contained in Value (e.g. SERVICE_TYPE, PACKAGE_SEQUENCE, etc..).
+     * This identifies which customer reference field used as the manifest ID.
      *
-     * @param string $id
+     * @param \FedEx\CloseService\SimpleType\CustomerReferenceType|string $type
      * @return $this
      */
-    public function setId($id)
+    public function setType($type)
     {
-        $this->values['Id'] = $id;
+        $this->values['Type'] = $type;
         return $this;
     }
 
     /**
-     * The value of the parameter (e.g. PRIORITY_OVERNIGHT, 2, etc..).
+     * Set Value
      *
      * @param string $value
      * @return $this

@@ -12,10 +12,29 @@ use FedEx\AbstractRequest;
  */
 class Request extends AbstractRequest
 {
-    const PRODUCTION_URL = 'https://gateway.fedex.com:443/web-services/close';
-    const TESTING_URL = 'https://gatewaybeta.fedex.com:443/web-services/close';
+    const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/close';
+    const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/close';
 
-    protected static $wsdlFileName = 'CloseService_v2.wsdl';
+    protected static $wsdlFileName = 'CloseService_v5.wsdl';
+            
+    /**
+     * Sends the CloseWithDocumentsRequest and returns the response
+     *
+     * @param ComplexType\CloseWithDocumentsRequest $closeWithDocumentsRequest
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\CloseWithDocumentsReply|stdClass
+     */
+    public function getCloseWithDocumentsReply(ComplexType\CloseWithDocumentsRequest $closeWithDocumentsRequest, $returnStdClass = false)
+    {
+        $response = $this->getSoapClient()->closeWithDocuments($closeWithDocumentsRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $closeWithDocumentsReply = new ComplexType\CloseWithDocumentsReply;
+        $closeWithDocumentsReply->populateFromStdClass($response);
+        return $closeWithDocumentsReply;
+    }
             
     /**
      * Sends the SmartPostCloseRequest and returns the response
@@ -56,25 +75,6 @@ class Request extends AbstractRequest
     }
             
     /**
-     * Sends the GroundCloseReportsReprintRequest and returns the response
-     *
-     * @param ComplexType\GroundCloseReportsReprintRequest $groundCloseReportsReprintRequest
-     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
-     * @return ComplexType\GroundCloseReportsReprintReply|stdClass
-     */
-    public function getGroundCloseReportsReprintReply(ComplexType\GroundCloseReportsReprintRequest $groundCloseReportsReprintRequest, $returnStdClass = false)
-    {
-        $response = $this->getSoapClient()->groundCloseReportsReprint($groundCloseReportsReprintRequest->toArray());
-        if ($returnStdClass) {
-            return $response;
-        }
-        
-        $groundCloseReportsReprintReply = new ComplexType\GroundCloseReportsReprintReply;
-        $groundCloseReportsReprintReply->populateFromStdClass($response);
-        return $groundCloseReportsReprintReply;
-    }
-            
-    /**
      * Sends the GroundCloseWithDocumentsRequest and returns the response
      *
      * @param ComplexType\GroundCloseWithDocumentsRequest $groundCloseWithDocumentsRequest
@@ -110,5 +110,24 @@ class Request extends AbstractRequest
         $groundCloseDocumentsReply = new ComplexType\GroundCloseDocumentsReply;
         $groundCloseDocumentsReply->populateFromStdClass($response);
         return $groundCloseDocumentsReply;
+    }
+            
+    /**
+     * Sends the GroundCloseReportsReprintRequest and returns the response
+     *
+     * @param ComplexType\GroundCloseReportsReprintRequest $groundCloseReportsReprintRequest
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\GroundCloseReportsReprintReply|stdClass
+     */
+    public function getGroundCloseReportsReprintReply(ComplexType\GroundCloseReportsReprintRequest $groundCloseReportsReprintRequest, $returnStdClass = false)
+    {
+        $response = $this->getSoapClient()->groundCloseReportsReprint($groundCloseReportsReprintRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $groundCloseReportsReprintReply = new ComplexType\GroundCloseReportsReprintReply;
+        $groundCloseReportsReprintReply->populateFromStdClass($response);
+        return $groundCloseReportsReprintReply;
     }
 }

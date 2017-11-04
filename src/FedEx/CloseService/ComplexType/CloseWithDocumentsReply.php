@@ -4,7 +4,7 @@ namespace FedEx\CloseService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * GroundCloseDocumentsReply
+ * CloseWithDocumentsReply
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -14,17 +14,17 @@ use FedEx\AbstractComplexType;
  * @property Notification[] $Notifications
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
- * @property CloseDocument[] $CloseDocuments
+ * @property CloseDocument[] $Documents
 
  */
-class GroundCloseDocumentsReply extends AbstractComplexType
+class CloseWithDocumentsReply extends AbstractComplexType
 {
     /**
      * Name of this complex type
      *
      * @var string
      */
-    protected $name = 'GroundCloseDocumentsReply';
+    protected $name = 'CloseWithDocumentsReply';
 
     /**
      * Set HighestSeverity
@@ -75,14 +75,14 @@ class GroundCloseDocumentsReply extends AbstractComplexType
     }
 
     /**
-     * The actual document contents for all provided reports.
+     * Set Documents
      *
-     * @param CloseDocument[] $closeDocuments
+     * @param CloseDocument[] $documents
      * @return $this
      */
-    public function setCloseDocuments(array $closeDocuments)
+    public function setDocuments(array $documents)
     {
-        $this->values['CloseDocuments'] = $closeDocuments;
+        $this->values['Documents'] = $documents;
         return $this;
     }
 }

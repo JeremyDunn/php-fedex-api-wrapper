@@ -13,5 +13,6 @@ use FedEx\AbstractSimpleType;
 class ShippingDocumentGroupingType extends AbstractSimpleType
 {
     const _CONSOLIDATED_BY_DOCUMENT_TYPE = 'CONSOLIDATED_BY_DOCUMENT_TYPE';
+    const _CONSOLIDATED_BY_IMAGE_TYPE = 'CONSOLIDATED_BY_IMAGE_TYPE';
     const _INDIVIDUAL = 'INDIVIDUAL';
 }

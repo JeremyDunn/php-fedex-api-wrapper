@@ -202,7 +202,7 @@ class GenerateCode extends Console\Command\Command
 
 
         //CloseService
-        $wsdlPath = $fedexSrcDir . '/_wsdl/CloseService_v2.wsdl';
+        $wsdlPath = $fedexSrcDir . '/_wsdl/CloseService_v5.wsdl';
 
         $baseNamespace = 'FedEx\CloseService';
         $subPackageName = 'Close Service';
