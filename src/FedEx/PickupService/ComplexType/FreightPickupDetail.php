@@ -4,15 +4,16 @@ namespace FedEx\PickupService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Descriptive data regarding a FedEx freight service pickup request.
+ * FreightPickupDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *
  * @property Contact $ApprovedBy
- * @property \FedEx\PickupService\SimpleType\FreightAccountPaymentType|string $Payment
+ * @property \FedEx\PickupService\SimpleType\PaymentType|string $Payment
  * @property \FedEx\PickupService\SimpleType\FreightShipmentRoleType|string $Role
+ * @property Party $AlternateBilling
  * @property Contact $SubmittedBy
  * @property FreightPickupLineItem[] $LineItems
 
@@ -39,9 +40,9 @@ class FreightPickupDetail extends AbstractComplexType
     }
 
     /**
-     * Identifies the type of payment to be tendered for the pickup.
+     * Set Payment
      *
-     * @param \FedEx\PickupService\SimpleType\FreightAccountPaymentType|string $payment
+     * @param \FedEx\PickupService\SimpleType\PaymentType|string $payment
      * @return $this
      */
     public function setPayment($payment)
@@ -51,7 +52,7 @@ class FreightPickupDetail extends AbstractComplexType
     }
 
     /**
-     * Indicates the role of the party submitting the transaction.
+     * Set Role
      *
      * @param \FedEx\PickupService\SimpleType\FreightShipmentRoleType|string $role
      * @return $this
@@ -63,7 +64,19 @@ class FreightPickupDetail extends AbstractComplexType
     }
 
     /**
-     * Contact Information of the person submitting the pickup.
+     * Used in connection with "Send Bill To" (SBT) identification of customer's account used for billing.
+     *
+     * @param Party $alternateBilling
+     * @return $this
+     */
+    public function setAlternateBilling(Party $alternateBilling)
+    {
+        $this->values['AlternateBilling'] = $alternateBilling;
+        return $this;
+    }
+
+    /**
+     * Set SubmittedBy
      *
      * @param Contact $submittedBy
      * @return $this
@@ -75,7 +88,7 @@ class FreightPickupDetail extends AbstractComplexType
     }
 
     /**
-     * Identifies the details about the contents of the shipments to be picked up.
+     * Set LineItems
      *
      * @param FreightPickupLineItem[] $lineItems
      * @return $this

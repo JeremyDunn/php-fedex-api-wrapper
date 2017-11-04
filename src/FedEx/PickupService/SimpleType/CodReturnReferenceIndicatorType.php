@@ -4,7 +4,7 @@ namespace FedEx\PickupService\SimpleType;
 use FedEx\AbstractSimpleType;
 
 /**
- * Indicates which type of reference information to include on the COD return shipping label.
+ * CodReturnReferenceIndicatorType
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper

@@ -4,14 +4,13 @@ namespace FedEx\PickupService\SimpleType;
 use FedEx\AbstractSimpleType;
 
 /**
- * EMailNotificationAggregationType
+ * PendingShipmentProcessingOptionType
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class EMailNotificationAggregationType extends AbstractSimpleType
+class PendingShipmentProcessingOptionType extends AbstractSimpleType
 {
-    const _PER_PACKAGE = 'PER_PACKAGE';
-    const _PER_SHIPMENT = 'PER_SHIPMENT';
+    const _ALLOW_MODIFICATIONS = 'ALLOW_MODIFICATIONS';
 }

@@ -4,12 +4,13 @@ namespace FedEx\PickupService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Identifies details about the contents of the shipment to be picked up.
+ * FreightPickupLineItem
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *
+ * @property string $TrackingNumber
  * @property \FedEx\PickupService\SimpleType\ServiceType|string $Service
  * @property int $SequenceNumber
  * @property Address $Destination
@@ -20,7 +21,6 @@ use FedEx\AbstractComplexType;
  * @property string $PurchaseOrderNumber
  * @property boolean $JustOneMore
  * @property ShipmentSpecialServicesRequested $SpecialServicesRequested
- * @property FreightGuaranteeDetail $FreightGuaranteeDetail
  * @property string $Description
 
  */
@@ -32,6 +32,18 @@ class FreightPickupLineItem extends AbstractComplexType
      * @var string
      */
     protected $name = 'FreightPickupLineItem';
+
+    /**
+     * Set TrackingNumber
+     *
+     * @param string $trackingNumber
+     * @return $this
+     */
+    public function setTrackingNumber($trackingNumber)
+    {
+        $this->values['TrackingNumber'] = $trackingNumber;
+        return $this;
+    }
 
     /**
      * Set Service
@@ -58,7 +70,7 @@ class FreightPickupLineItem extends AbstractComplexType
     }
 
     /**
-     * Identifies the destination of the shipment.
+     * Set Destination
      *
      * @param Address $destination
      * @return $this
@@ -70,7 +82,7 @@ class FreightPickupLineItem extends AbstractComplexType
     }
 
     /**
-     * Identifies the physical packaging of the shipment.
+     * Set Packaging
      *
      * @param \FedEx\PickupService\SimpleType\PhysicalPackagingType|string $packaging
      * @return $this
@@ -82,7 +94,7 @@ class FreightPickupLineItem extends AbstractComplexType
     }
 
     /**
-     * Identifies number of items contained in the packaging.
+     * Set Pieces
      *
      * @param int $pieces
      * @return $this
@@ -94,7 +106,7 @@ class FreightPickupLineItem extends AbstractComplexType
     }
 
     /**
-     * Identifies the total weight of the item being tendered to FedEx for this pickup request.
+     * Set Weight
      *
      * @param Weight $weight
      * @return $this
@@ -106,7 +118,7 @@ class FreightPickupLineItem extends AbstractComplexType
     }
 
     /**
-     * Identifies number of items to be moved.
+     * Set TotalHandlingUnits
      *
      * @param int $totalHandlingUnits
      * @return $this
@@ -142,7 +154,7 @@ class FreightPickupLineItem extends AbstractComplexType
     }
 
     /**
-     * These special services are available at the shipment level for some or all service types. If the shipper is requesting a special service which requires additional data (such as the COD amount), the shipment special service type must be present in the specialServiceTypes collection, and the supporting detail must be provided in the appropriate sub-object below.
+     * Set SpecialServicesRequested
      *
      * @param ShipmentSpecialServicesRequested $specialServicesRequested
      * @return $this
@@ -154,19 +166,7 @@ class FreightPickupLineItem extends AbstractComplexType
     }
 
     /**
-     * Identifies the delivery guarantee information.
-     *
-     * @param FreightGuaranteeDetail $freightGuaranteeDetail
-     * @return $this
-     */
-    public function setFreightGuaranteeDetail(FreightGuaranteeDetail $freightGuaranteeDetail)
-    {
-        $this->values['FreightGuaranteeDetail'] = $freightGuaranteeDetail;
-        return $this;
-    }
-
-    /**
-     * Describes the contents of the package.
+     * Set Description
      *
      * @param string $description
      * @return $this

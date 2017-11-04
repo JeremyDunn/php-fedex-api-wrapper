@@ -4,7 +4,7 @@ namespace FedEx\PickupService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * The descriptive data returned to a client in response to a shipment pickup request.
+ * CreatePickupReply
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -33,7 +33,7 @@ class CreatePickupReply extends AbstractComplexType
     protected $name = 'CreatePickupReply';
 
     /**
-     * Identifies the highest severity encountered when executing the request; in order from high to low: FAILURE, ERROR, WARNING, NOTE, SUCCESS.
+     * Set HighestSeverity
      *
      * @param \FedEx\PickupService\SimpleType\NotificationSeverityType|string $highestSeverity
      * @return $this
@@ -45,7 +45,7 @@ class CreatePickupReply extends AbstractComplexType
     }
 
     /**
-     * The descriptive data detailing the status of a sumbitted transaction.
+     * Set Notifications
      *
      * @param Notification[] $notifications
      * @return $this
@@ -57,7 +57,7 @@ class CreatePickupReply extends AbstractComplexType
     }
 
     /**
-     * Descriptive data that governs data payload language/translations. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
+     * Set TransactionDetail
      *
      * @param TransactionDetail $transactionDetail
      * @return $this
@@ -69,7 +69,7 @@ class CreatePickupReply extends AbstractComplexType
     }
 
     /**
-     * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
+     * Set Version
      *
      * @param VersionId $version
      * @return $this
@@ -81,7 +81,7 @@ class CreatePickupReply extends AbstractComplexType
     }
 
     /**
-     * Identifies the confirmation number assigned by FedEx for the request.
+     * Set PickupConfirmationNumber
      *
      * @param string $pickupConfirmationNumber
      * @return $this
@@ -93,7 +93,7 @@ class CreatePickupReply extends AbstractComplexType
     }
 
     /**
-     * Identifies the FedEx Location identifier responsible for processing the pickup of the package.
+     * Set Location
      *
      * @param string $location
      * @return $this
@@ -153,7 +153,7 @@ class CreatePickupReply extends AbstractComplexType
     }
 
     /**
-     * Data resulting from the processing of an LTL Freight pickup request.
+     * Set CompletedFreightPickupDetail
      *
      * @param CompletedFreightPickupDetail $completedFreightPickupDetail
      * @return $this

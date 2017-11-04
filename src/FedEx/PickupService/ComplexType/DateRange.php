@@ -24,7 +24,7 @@ class DateRange extends AbstractComplexType
     protected $name = 'DateRange';
 
     /**
-     * The beginning date in a date range.
+     * Set Begins
      *
      * @param string $begins
      * @return $this
@@ -36,7 +36,7 @@ class DateRange extends AbstractComplexType
     }
 
     /**
-     * The end date in a date range.
+     * Set Ends
      *
      * @param string $ends
      * @return $this

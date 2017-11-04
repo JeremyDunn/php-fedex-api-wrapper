@@ -11,6 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Pickup Service
  *
  * @property \FedEx\PickupService\SimpleType\EtdConfirmationType|string $Confirmation
+ * @property \FedEx\PickupService\SimpleType\EtdAttributeType|string[] $Attributes
  * @property \FedEx\PickupService\SimpleType\RequestedShippingDocumentType|string[] $RequestedDocumentCopies
  * @property UploadDocumentDetail[] $Documents
  * @property UploadDocumentReferenceDetail[] $DocumentReferences
@@ -34,6 +35,18 @@ class EtdDetail extends AbstractComplexType
     public function setConfirmation($confirmation)
     {
         $this->values['Confirmation'] = $confirmation;
+        return $this;
+    }
+
+    /**
+     * Set Attributes
+     *
+     * @param \FedEx\PickupService\SimpleType\EtdAttributeType[]|string[] $attributes
+     * @return $this
+     */
+    public function setAttributes(array $attributes)
+    {
+        $this->values['Attributes'] = $attributes;
         return $this;
     }
 

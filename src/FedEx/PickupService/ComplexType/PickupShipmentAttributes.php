@@ -4,7 +4,7 @@ namespace FedEx\PickupService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Descriptive information about the shipment.
+ * PickupShipmentAttributes
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -50,7 +50,7 @@ class PickupShipmentAttributes extends AbstractComplexType
     }
 
     /**
-     * Descriptive information about the dimensions of the package.
+     * Set Dimensions
      *
      * @param Dimensions $dimensions
      * @return $this
@@ -62,7 +62,7 @@ class PickupShipmentAttributes extends AbstractComplexType
     }
 
     /**
-     * Descriptive information about the weight of the package.
+     * Set Weight
      *
      * @param Weight $weight
      * @return $this

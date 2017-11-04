@@ -23,7 +23,7 @@ class FlatbedTrailerDetail extends AbstractComplexType
     protected $name = 'FlatbedTrailerDetail';
 
     /**
-     * Specifies the optional features/characteristics requested for a Freight shipment utilizing a flatbed trailer.
+     * Set Options
      *
      * @param \FedEx\PickupService\SimpleType\FlatbedTrailerOption[]|string[] $options
      * @return $this

@@ -4,7 +4,7 @@ namespace FedEx\PickupService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * The descriptive data to request availability of pickup.
+ * PickupAvailabilityRequest
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -14,6 +14,7 @@ use FedEx\AbstractComplexType;
  * @property ClientDetail $ClientDetail
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
+ * @property \FedEx\PickupService\SimpleType\PickupType|string $PickupType
  * @property AssociatedAccount $AccountNumber
  * @property Address $PickupAddress
  * @property \FedEx\PickupService\SimpleType\PickupRequestType|string[] $PickupRequestType
@@ -23,6 +24,7 @@ use FedEx\AbstractComplexType;
  * @property string $CustomerCloseTime
  * @property \FedEx\PickupService\SimpleType\CarrierCodeType|string[] $Carriers
  * @property PickupShipmentAttributes $ShipmentAttributes
+ * @property RequestedPickupPackageDetail[] $PackageDetails
 
  */
 class PickupAvailabilityRequest extends AbstractComplexType
@@ -47,7 +49,7 @@ class PickupAvailabilityRequest extends AbstractComplexType
     }
 
     /**
-     * The descriptive data identifying the client submitting the transaction.
+     * Set ClientDetail
      *
      * @param ClientDetail $clientDetail
      * @return $this
@@ -59,7 +61,7 @@ class PickupAvailabilityRequest extends AbstractComplexType
     }
 
     /**
-     * The descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
+     * Set TransactionDetail
      *
      * @param TransactionDetail $transactionDetail
      * @return $this
@@ -71,7 +73,7 @@ class PickupAvailabilityRequest extends AbstractComplexType
     }
 
     /**
-     * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
+     * Set Version
      *
      * @param VersionId $version
      * @return $this
@@ -79,6 +81,18 @@ class PickupAvailabilityRequest extends AbstractComplexType
     public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
+        return $this;
+    }
+
+    /**
+     * Set PickupType
+     *
+     * @param \FedEx\PickupService\SimpleType\PickupType|string $pickupType
+     * @return $this
+     */
+    public function setPickupType($pickupType)
+    {
+        $this->values['PickupType'] = $pickupType;
         return $this;
     }
 
@@ -95,7 +109,7 @@ class PickupAvailabilityRequest extends AbstractComplexType
     }
 
     /**
-     * Descriptive data providing information about address to pickup from.
+     * Set PickupAddress
      *
      * @param Address $pickupAddress
      * @return $this
@@ -107,8 +121,7 @@ class PickupAvailabilityRequest extends AbstractComplexType
     }
 
     /**
-     * An array of PickupRequestType. If SAME_DAY is included, Options with ScheduleDay of SAME_DAY will be included in the reply.
-If FUTURE_DAY is included, Options with ScheduleDay of FUTURE_DAY will be included in the reply.
+     * Set PickupRequestType
      *
      * @param \FedEx\PickupService\SimpleType\PickupRequestType[]|string[] $pickupRequestType
      * @return $this
@@ -120,7 +133,7 @@ If FUTURE_DAY is included, Options with ScheduleDay of FUTURE_DAY will be includ
     }
 
     /**
-     * The dispatch date (in the local time zone) for the pickup whose availability is being requested.
+     * Set DispatchDate
      *
      * @param string $dispatchDate
      * @return $this
@@ -144,7 +157,7 @@ If FUTURE_DAY is included, Options with ScheduleDay of FUTURE_DAY will be includ
     }
 
     /**
-     * The time when the package will be ready to be picked up. The time is local to the pickup postal code, in 24-hour form (e.g. 13:00:00). It should not contain a TZD. If a TZD is included, it will be ignored
+     * Set PackageReadyTime
      *
      * @param string $packageReadyTime
      * @return $this
@@ -156,7 +169,7 @@ If FUTURE_DAY is included, Options with ScheduleDay of FUTURE_DAY will be includ
     }
 
     /**
-     * The lastest time at which the courier will be able to gain access to pick up the package(s). The time is local to the pickup postal code, in 24-hour form (e.g. 17:00:00). It should not contain a TZD. If a TZD is included, it will be ignored
+     * Set CustomerCloseTime
      *
      * @param string $customerCloseTime
      * @return $this
@@ -168,7 +181,7 @@ If FUTURE_DAY is included, Options with ScheduleDay of FUTURE_DAY will be includ
     }
 
     /**
-     * The FedEx carrier(s) for which availability is requested.
+     * Set Carriers
      *
      * @param \FedEx\PickupService\SimpleType\CarrierCodeType[]|string[] $carriers
      * @return $this
@@ -180,7 +193,7 @@ If FUTURE_DAY is included, Options with ScheduleDay of FUTURE_DAY will be includ
     }
 
     /**
-     * Descriptive information about the shipment.
+     * Set ShipmentAttributes
      *
      * @param PickupShipmentAttributes $shipmentAttributes
      * @return $this
@@ -188,6 +201,18 @@ If FUTURE_DAY is included, Options with ScheduleDay of FUTURE_DAY will be includ
     public function setShipmentAttributes(PickupShipmentAttributes $shipmentAttributes)
     {
         $this->values['ShipmentAttributes'] = $shipmentAttributes;
+        return $this;
+    }
+
+    /**
+     * Set PackageDetails
+     *
+     * @param RequestedPickupPackageDetail[] $packageDetails
+     * @return $this
+     */
+    public function setPackageDetails(array $packageDetails)
+    {
+        $this->values['PackageDetails'] = $packageDetails;
         return $this;
     }
 }

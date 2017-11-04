@@ -12,10 +12,10 @@ use FedEx\AbstractRequest;
  */
 class Request extends AbstractRequest
 {
-    const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services';
-    const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services';
+    const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/pickup';
+    const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/pickup';
 
-    protected static $wsdlFileName = 'PickupService_v3.wsdl';
+    protected static $wsdlFileName = 'PickupService_v15.wsdl';
             
     /**
      * Sends the PickupAvailabilityRequest and returns the response

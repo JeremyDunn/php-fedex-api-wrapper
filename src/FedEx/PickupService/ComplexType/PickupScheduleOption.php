@@ -4,10 +4,7 @@ namespace FedEx\PickupService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * The constraints on the scheduling of a dispatch, where that dispatch would be made by the Carrier, occur on the PickupDate,
-and would be scheduled (created by means of a CourierDispatchRequest) on a date related to the PickupDate as described
-by the "ScheduleDay" (SAME_DAY meaning that the creation would occur on the PickupDate, and FUTURE_DAY meaning that the creation
-would occur on a date prior to the PickupDate).
+ * PickupScheduleOption
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -34,7 +31,7 @@ class PickupScheduleOption extends AbstractComplexType
     protected $name = 'PickupScheduleOption';
 
     /**
-     * the carrier to which this PickupScheduleOption applies
+     * Set Carrier
      *
      * @param \FedEx\PickupService\SimpleType\CarrierCodeType|string $carrier
      * @return $this
@@ -46,7 +43,7 @@ class PickupScheduleOption extends AbstractComplexType
     }
 
     /**
-     * Descriptive information about the shipment.
+     * Set Description
      *
      * @param string $description
      * @return $this
@@ -58,7 +55,7 @@ class PickupScheduleOption extends AbstractComplexType
     }
 
     /**
-     * Tells whether this option describes a dispatch created on the dispatch date (SAME_DAY), or on a prior date (FUTURE_DAY)
+     * Set ScheduleDay
      *
      * @param \FedEx\PickupService\SimpleType\PickupRequestType|string $scheduleDay
      * @return $this
@@ -70,7 +67,7 @@ class PickupScheduleOption extends AbstractComplexType
     }
 
     /**
-     * True if this pickup option is available.
+     * Set Available
      *
      * @param boolean $available
      * @return $this
@@ -82,7 +79,7 @@ class PickupScheduleOption extends AbstractComplexType
     }
 
     /**
-     * Identifies the date (in the postal code's time zone) to which this PickupScheduleOption refers.
+     * Set PickupDate
      *
      * @param string $pickupDate
      * @return $this
@@ -94,7 +91,7 @@ class PickupScheduleOption extends AbstractComplexType
     }
 
     /**
-     * Identifies the latest allowed ready time (in the postal code's time zone) for a postal code. As a local time, it will not include a Time Zone Designator
+     * Set CutOffTime
      *
      * @param string $cutOffTime
      * @return $this
@@ -106,7 +103,7 @@ class PickupScheduleOption extends AbstractComplexType
     }
 
     /**
-     * Identifies the minimum required length of the window of time between the ReadyTime and the CustomerCloseTime.
+     * Set AccessTime
      *
      * @param string $accessTime
      * @return $this

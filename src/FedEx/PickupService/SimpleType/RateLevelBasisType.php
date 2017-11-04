@@ -4,15 +4,14 @@ namespace FedEx\PickupService\SimpleType;
 use FedEx\AbstractSimpleType;
 
 /**
- * The format of the email
+ * RateLevelBasisType
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class EMailNotificationFormatType extends AbstractSimpleType
+class RateLevelBasisType extends AbstractSimpleType
 {
-    const _HTML = 'HTML';
-    const _TEXT = 'TEXT';
-    const _WIRELESS = 'WIRELESS';
+    const _BUNDLED_RATE = 'BUNDLED_RATE';
+    const _INDIVIDUAL_PACKAGE_RATE = 'INDIVIDUAL_PACKAGE_RATE';
 }

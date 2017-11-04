@@ -4,7 +4,7 @@ namespace FedEx\PickupService\SimpleType;
 use FedEx\AbstractSimpleType;
 
 /**
- * Identifies the collection of linear units of measure for a package dimension.
+ * LinearUnits
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper

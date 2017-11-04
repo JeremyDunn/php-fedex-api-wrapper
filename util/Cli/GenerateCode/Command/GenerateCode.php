@@ -268,7 +268,7 @@ class GenerateCode extends Console\Command\Command
         $generateComplexTypes->run();
 
         //PickupService
-        $wsdlPath = $fedexSrcDir . '/_wsdl/PickupService_v3.wsdl';
+        $wsdlPath = $fedexSrcDir . '/_wsdl/PickupService_v15.wsdl';
 
         $baseNamespace = 'FedEx\PickupService';
         $subPackageName = 'Pickup Service';

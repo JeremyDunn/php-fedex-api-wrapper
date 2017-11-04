@@ -4,14 +4,14 @@ namespace FedEx\PickupService\SimpleType;
 use FedEx\AbstractSimpleType;
 
 /**
- * Identifies the type of payment to be tendered for the pickup.
+ * NotificationFormatType
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class FreightAccountPaymentType extends AbstractSimpleType
+class NotificationFormatType extends AbstractSimpleType
 {
-    const _COLLECT = 'COLLECT';
-    const _PREPAID = 'PREPAID';
+    const _HTML = 'HTML';
+    const _TEXT = 'TEXT';
 }

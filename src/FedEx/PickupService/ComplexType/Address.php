@@ -16,7 +16,9 @@ use FedEx\AbstractComplexType;
  * @property string $PostalCode
  * @property string $UrbanizationCode
  * @property string $CountryCode
+ * @property string $CountryName
  * @property boolean $Residential
+ * @property string $GeographicCoordinates
 
  */
 class Address extends AbstractComplexType
@@ -101,6 +103,18 @@ class Address extends AbstractComplexType
     }
 
     /**
+     * The fully spelt out name of a country.
+     *
+     * @param string $countryName
+     * @return $this
+     */
+    public function setCountryName($countryName)
+    {
+        $this->values['CountryName'] = $countryName;
+        return $this;
+    }
+
+    /**
      * Indicates whether this address residential (as opposed to commercial).
      *
      * @param boolean $residential
@@ -109,6 +123,18 @@ class Address extends AbstractComplexType
     public function setResidential($residential)
     {
         $this->values['Residential'] = $residential;
+        return $this;
+    }
+
+    /**
+     * The geographic coordinates cooresponding to this address.
+     *
+     * @param string $geographicCoordinates
+     * @return $this
+     */
+    public function setGeographicCoordinates($geographicCoordinates)
+    {
+        $this->values['GeographicCoordinates'] = $geographicCoordinates;
         return $this;
     }
 }

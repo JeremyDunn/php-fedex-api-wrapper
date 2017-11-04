@@ -13,6 +13,7 @@ use FedEx\AbstractComplexType;
  * @property \FedEx\PickupService\SimpleType\RateTypeBasisType|string $RateTypeBasis
  * @property \FedEx\PickupService\SimpleType\CodAddTransportationChargeBasisType|string $ChargeBasis
  * @property \FedEx\PickupService\SimpleType\ChargeBasisLevelType|string $ChargeBasisLevel
+ * @property \FedEx\PickupService\SimpleType\RateLevelBasisType|string $RateLevelBasis
 
  */
 class CodAddTransportationChargesDetail extends AbstractComplexType
@@ -25,7 +26,7 @@ class CodAddTransportationChargesDetail extends AbstractComplexType
     protected $name = 'CodAddTransportationChargesDetail';
 
     /**
-     * Set RateTypeBasis
+     * Select the type of rate from which the element is to be selected.
      *
      * @param \FedEx\PickupService\SimpleType\RateTypeBasisType|string $rateTypeBasis
      * @return $this
@@ -57,6 +58,18 @@ class CodAddTransportationChargesDetail extends AbstractComplexType
     public function setChargeBasisLevel($chargeBasisLevel)
     {
         $this->values['ChargeBasisLevel'] = $chargeBasisLevel;
+        return $this;
+    }
+
+    /**
+     * Select the type of rate used to calculate the percentage value of variable handling.
+     *
+     * @param \FedEx\PickupService\SimpleType\RateLevelBasisType|string $rateLevelBasis
+     * @return $this
+     */
+    public function setRateLevelBasis($rateLevelBasis)
+    {
+        $this->values['RateLevelBasis'] = $rateLevelBasis;
         return $this;
     }
 }

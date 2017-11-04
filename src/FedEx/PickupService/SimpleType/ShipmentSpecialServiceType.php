@@ -4,7 +4,7 @@ namespace FedEx\PickupService\SimpleType;
 use FedEx\AbstractSimpleType;
 
 /**
- * Identifies the collection of special service offered by FedEx. BROKER_SELECT_OPTION should be used for Express shipments only.
+ * ShipmentSpecialServiceType
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -27,8 +27,8 @@ class ShipmentSpecialServiceType extends AbstractSimpleType
     const _DRY_ICE = 'DRY_ICE';
     const _EAST_COAST_SPECIAL = 'EAST_COAST_SPECIAL';
     const _ELECTRONIC_TRADE_DOCUMENTS = 'ELECTRONIC_TRADE_DOCUMENTS';
-    const _EMAIL_NOTIFICATION = 'EMAIL_NOTIFICATION';
-    const _EMAIL_NOTIFICATION_AGGREGATED = 'EMAIL_NOTIFICATION_AGGREGATED';
+    const _EVENT_NOTIFICATION = 'EVENT_NOTIFICATION';
+    const _EXCLUDE_FROM_CONSOLIDATION = 'EXCLUDE_FROM_CONSOLIDATION';
     const _EXCLUSIVE_USE = 'EXCLUSIVE_USE';
     const _EXHIBITION_DELIVERY = 'EXHIBITION_DELIVERY';
     const _EXHIBITION_PICKUP = 'EXHIBITION_PICKUP';
@@ -38,6 +38,7 @@ class ShipmentSpecialServiceType extends AbstractSimpleType
     const _EXPEDITED_STANDARD_DAY_EARLY_DELIVERY = 'EXPEDITED_STANDARD_DAY_EARLY_DELIVERY';
     const _EXTRA_LABOR = 'EXTRA_LABOR';
     const _EXTREME_LENGTH = 'EXTREME_LENGTH';
+    const _FEDEX_ONE_RATE = 'FEDEX_ONE_RATE';
     const _FLATBED_TRAILER = 'FLATBED_TRAILER';
     const _FOOD = 'FOOD';
     const _FREIGHT_GUARANTEE = 'FREIGHT_GUARANTEE';
@@ -51,6 +52,7 @@ class ShipmentSpecialServiceType extends AbstractSimpleType
     const _INSIDE_PICKUP = 'INSIDE_PICKUP';
     const _INTERNATIONAL_CONTROLLED_EXPORT_SERVICE = 'INTERNATIONAL_CONTROLLED_EXPORT_SERVICE';
     const _INTERNATIONAL_MAIL_SERVICE = 'INTERNATIONAL_MAIL_SERVICE';
+    const _INTERNATIONAL_TRAFFIC_IN_ARMS_REGULATIONS = 'INTERNATIONAL_TRAFFIC_IN_ARMS_REGULATIONS';
     const _LIFTGATE_DELIVERY = 'LIFTGATE_DELIVERY';
     const _LIFTGATE_PICKUP = 'LIFTGATE_PICKUP';
     const _LIMITED_ACCESS_DELIVERY = 'LIMITED_ACCESS_DELIVERY';
@@ -63,6 +65,7 @@ class ShipmentSpecialServiceType extends AbstractSimpleType
     const _PENDING_COMPLETE = 'PENDING_COMPLETE';
     const _PENDING_SHIPMENT = 'PENDING_SHIPMENT';
     const _PERMIT = 'PERMIT';
+    const _PHARMACY_DELIVERY = 'PHARMACY_DELIVERY';
     const _POISON = 'POISON';
     const _PORT_DELIVERY = 'PORT_DELIVERY';
     const _PORT_PICKUP = 'PORT_PICKUP';
@@ -72,6 +75,8 @@ class ShipmentSpecialServiceType extends AbstractSimpleType
     const _PROTECTION_FROM_FREEZING = 'PROTECTION_FROM_FREEZING';
     const _REGIONAL_MALL_DELIVERY = 'REGIONAL_MALL_DELIVERY';
     const _REGIONAL_MALL_PICKUP = 'REGIONAL_MALL_PICKUP';
+    const _RETURNS_CLEARANCE = 'RETURNS_CLEARANCE';
+    const _RETURNS_CLEARANCE_SPECIAL_ROUTING_REQUIRED = 'RETURNS_CLEARANCE_SPECIAL_ROUTING_REQUIRED';
     const _RETURN_SHIPMENT = 'RETURN_SHIPMENT';
     const _SATURDAY_DELIVERY = 'SATURDAY_DELIVERY';
     const _SATURDAY_PICKUP = 'SATURDAY_PICKUP';
