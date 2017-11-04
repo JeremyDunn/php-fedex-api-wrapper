@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * The descriptive data for taxpayer identification information.
+ * TaxpayerIdentification
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,6 +13,8 @@ use FedEx\AbstractComplexType;
  * @property \FedEx\ShipService\SimpleType\TinType|string $TinType
  * @property string $Number
  * @property string $Usage
+ * @property string $EffectiveDate
+ * @property string $ExpirationDate
 
  */
 class TaxpayerIdentification extends AbstractComplexType
@@ -25,7 +27,7 @@ class TaxpayerIdentification extends AbstractComplexType
     protected $name = 'TaxpayerIdentification';
 
     /**
-     * Identifies the category of the taxpayer identification number. See TinType for the list of values.
+     * Set TinType
      *
      * @param \FedEx\ShipService\SimpleType\TinType|string $tinType
      * @return $this
@@ -37,7 +39,7 @@ class TaxpayerIdentification extends AbstractComplexType
     }
 
     /**
-     * Identifies the taxpayer identification number.
+     * Set Number
      *
      * @param string $number
      * @return $this
@@ -57,6 +59,30 @@ class TaxpayerIdentification extends AbstractComplexType
     public function setUsage($usage)
     {
         $this->values['Usage'] = $usage;
+        return $this;
+    }
+
+    /**
+     * Set EffectiveDate
+     *
+     * @param string $effectiveDate
+     * @return $this
+     */
+    public function setEffectiveDate($effectiveDate)
+    {
+        $this->values['EffectiveDate'] = $effectiveDate;
+        return $this;
+    }
+
+    /**
+     * Set ExpirationDate
+     *
+     * @param string $expirationDate
+     * @return $this
+     */
+    public function setExpirationDate($expirationDate)
+    {
+        $this->values['ExpirationDate'] = $expirationDate;
         return $this;
     }
 }

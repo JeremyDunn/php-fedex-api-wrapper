@@ -4,7 +4,7 @@ namespace FedEx\ShipService\SimpleType;
 use FedEx\AbstractSimpleType;
 
 /**
- * For thermal printer labels this indicates the size of the label and the location of the doc tab if present.
+ * LabelStockType
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper

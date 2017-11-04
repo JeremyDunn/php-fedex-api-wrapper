@@ -34,7 +34,7 @@ class CompletedPackageDetail extends AbstractComplexType
     protected $name = 'CompletedPackageDetail';
 
     /**
-     * The package sequence number of this package in a multiple piece shipment.
+     * Set SequenceNumber
      *
      * @param int $sequenceNumber
      * @return $this
@@ -46,7 +46,7 @@ class CompletedPackageDetail extends AbstractComplexType
     }
 
     /**
-     * The Tracking number and form id for this package.
+     * Set TrackingIds
      *
      * @param TrackingId[] $trackingIds
      * @return $this
@@ -70,7 +70,7 @@ class CompletedPackageDetail extends AbstractComplexType
     }
 
     /**
-     * Oversize class for this package.
+     * Set OversizeClass
      *
      * @param \FedEx\ShipService\SimpleType\OversizeClassType|string $oversizeClass
      * @return $this
@@ -106,7 +106,7 @@ class CompletedPackageDetail extends AbstractComplexType
     }
 
     /**
-     * The label image or printer commands to print the label.
+     * Set Label
      *
      * @param ShippingDocument $label
      * @return $this

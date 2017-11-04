@@ -27,8 +27,8 @@ $clientDetail
 
 $version = new ComplexType\VersionId();
 $version
-    ->setMajor(12)
-    ->setIntermediate(1)
+    ->setMajor(21)
+    ->setIntermediate(0)
     ->setMinor(0)
     ->setServiceId('ship');
 
@@ -108,7 +108,7 @@ $requestedShipment->setPackagingType(new SimpleType\PackagingType(SimpleType\Pac
 $requestedShipment->setShipper($shipper);
 $requestedShipment->setRecipient($recipient);
 $requestedShipment->setLabelSpecification($labelSpecification);
-$requestedShipment->setRateRequestTypes(array(new SimpleType\RateRequestType(SimpleType\RateRequestType::_ACCOUNT)));
+$requestedShipment->setRateRequestTypes(array(new SimpleType\RateRequestType(SimpleType\RateRequestType::_PREFERRED)));
 $requestedShipment->setPackageCount(1);
 $requestedShipment->setRequestedPackageLineItems([
     $packageLineItem1

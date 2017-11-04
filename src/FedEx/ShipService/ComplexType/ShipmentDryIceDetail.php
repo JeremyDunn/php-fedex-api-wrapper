@@ -12,6 +12,7 @@ use FedEx\AbstractComplexType;
  *
  * @property int $PackageCount
  * @property Weight $TotalWeight
+ * @property ShipmentDryIceProcessingOptionsRequested $ProcessingOptions
 
  */
 class ShipmentDryIceDetail extends AbstractComplexType
@@ -44,6 +45,18 @@ class ShipmentDryIceDetail extends AbstractComplexType
     public function setTotalWeight(Weight $totalWeight)
     {
         $this->values['TotalWeight'] = $totalWeight;
+        return $this;
+    }
+
+    /**
+     * Set ProcessingOptions
+     *
+     * @param ShipmentDryIceProcessingOptionsRequested $processingOptions
+     * @return $this
+     */
+    public function setProcessingOptions(ShipmentDryIceProcessingOptionsRequested $processingOptions)
+    {
+        $this->values['ProcessingOptions'] = $processingOptions;
         return $this;
     }
 }

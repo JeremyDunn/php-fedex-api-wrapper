@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Information relating to a return shipment.
+ * ReturnShipmentDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -26,7 +26,7 @@ class ReturnShipmentDetail extends AbstractComplexType
     protected $name = 'ReturnShipmentDetail';
 
     /**
-     * The type of return shipment that is being requested.
+     * Set ReturnType
      *
      * @param \FedEx\ShipService\SimpleType\ReturnType|string $returnType
      * @return $this
@@ -38,7 +38,7 @@ class ReturnShipmentDetail extends AbstractComplexType
     }
 
     /**
-     * Return Merchant Authorization
+     * Set Rma
      *
      * @param Rma $rma
      * @return $this
@@ -50,7 +50,7 @@ class ReturnShipmentDetail extends AbstractComplexType
     }
 
     /**
-     * Describes specific information about the email label for return shipment.
+     * Set ReturnEMailDetail
      *
      * @param ReturnEMailDetail $returnEMailDetail
      * @return $this

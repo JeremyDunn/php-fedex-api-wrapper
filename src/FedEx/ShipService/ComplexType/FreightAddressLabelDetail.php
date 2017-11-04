@@ -14,6 +14,8 @@ use FedEx\AbstractComplexType;
  * @property int $Copies
  * @property \FedEx\ShipService\SimpleType\PageQuadrantType|string $StartingPosition
  * @property DocTabContent $DocTabContent
+ * @property \FedEx\ShipService\SimpleType\RelativeVerticalPositionType|string $CustomContentPosition
+ * @property CustomLabelDetail $CustomContent
 
  */
 class FreightAddressLabelDetail extends AbstractComplexType
@@ -70,6 +72,30 @@ class FreightAddressLabelDetail extends AbstractComplexType
     public function setDocTabContent(DocTabContent $docTabContent)
     {
         $this->values['DocTabContent'] = $docTabContent;
+        return $this;
+    }
+
+    /**
+     * Controls the position of the customer specified content relative to the FedEx portion.
+     *
+     * @param \FedEx\ShipService\SimpleType\RelativeVerticalPositionType|string $customContentPosition
+     * @return $this
+     */
+    public function setCustomContentPosition($customContentPosition)
+    {
+        $this->values['CustomContentPosition'] = $customContentPosition;
+        return $this;
+    }
+
+    /**
+     * Set CustomContent
+     *
+     * @param CustomLabelDetail $customContent
+     * @return $this
+     */
+    public function setCustomContent(CustomLabelDetail $customContent)
+    {
+        $this->values['CustomContent'] = $customContent;
         return $this;
     }
 }

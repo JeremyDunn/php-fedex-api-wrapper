@@ -23,6 +23,7 @@ use FedEx\AbstractComplexType;
  * @property ShipmentRating $ShipmentRating
  * @property CompletedHoldAtLocationDetail $CompletedHoldAtLocationDetail
  * @property string $ExportComplianceStatement
+ * @property DocumentRequirementsDetail $DocumentRequirements
  * @property CompletedEtdDetail $CompletedEtdDetail
  * @property ShippingDocument[] $ShipmentDocuments
  * @property AssociatedShipmentDetail[] $AssociatedShipments
@@ -40,7 +41,7 @@ class CompletedShipmentDetail extends AbstractComplexType
     protected $name = 'CompletedShipmentDetail';
 
     /**
-     * Indicates whether or not this is a US Domestic shipment.
+     * Set UsDomestic
      *
      * @param boolean $usDomestic
      * @return $this
@@ -52,7 +53,7 @@ class CompletedShipmentDetail extends AbstractComplexType
     }
 
     /**
-     * Indicates the carrier that will be used to deliver this shipment.
+     * Set CarrierCode
      *
      * @param \FedEx\ShipService\SimpleType\CarrierCodeType|string $carrierCode
      * @return $this
@@ -64,7 +65,7 @@ class CompletedShipmentDetail extends AbstractComplexType
     }
 
     /**
-     * The master tracking number and form id of this multiple piece shipment. This information is to be provided for each subsequent of a multiple piece shipment.
+     * Set MasterTrackingId
      *
      * @param TrackingId $masterTrackingId
      * @return $this
@@ -76,7 +77,7 @@ class CompletedShipmentDetail extends AbstractComplexType
     }
 
     /**
-     * Description of the FedEx service used for this shipment. Currently not supported.
+     * Set ServiceTypeDescription
      *
      * @param string $serviceTypeDescription
      * @return $this
@@ -88,7 +89,7 @@ class CompletedShipmentDetail extends AbstractComplexType
     }
 
     /**
-     * Description of the packaging used for this shipment. Currently not supported.
+     * Set PackagingDescription
      *
      * @param string $packagingDescription
      * @return $this
@@ -136,7 +137,7 @@ class CompletedShipmentDetail extends AbstractComplexType
     }
 
     /**
-     * Provides reply information specific to SmartPost shipments.
+     * Set SmartPostDetail
      *
      * @param CompletedSmartPostDetail $smartPostDetail
      * @return $this
@@ -196,6 +197,18 @@ class CompletedShipmentDetail extends AbstractComplexType
     }
 
     /**
+     * This specifies what rules or requirements for documents are applicable for this shipment. This may identify required or prohibited documents.
+     *
+     * @param DocumentRequirementsDetail $documentRequirements
+     * @return $this
+     */
+    public function setDocumentRequirements(DocumentRequirementsDetail $documentRequirements)
+    {
+        $this->values['DocumentRequirements'] = $documentRequirements;
+        return $this;
+    }
+
+    /**
      * Set CompletedEtdDetail
      *
      * @param CompletedEtdDetail $completedEtdDetail
@@ -244,7 +257,7 @@ class CompletedShipmentDetail extends AbstractComplexType
     }
 
     /**
-     * Package level details about this package.
+     * Set CompletedPackageDetails
      *
      * @param CompletedPackageDetail[] $completedPackageDetails
      * @return $this

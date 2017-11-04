@@ -10,6 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  *
+ * @property \FedEx\ShipService\SimpleType\EtdAttributeType|string[] $Attributes
  * @property \FedEx\ShipService\SimpleType\RequestedShippingDocumentType|string[] $RequestedDocumentCopies
  * @property UploadDocumentReferenceDetail[] $DocumentReferences
 
@@ -22,6 +23,18 @@ class EtdDetail extends AbstractComplexType
      * @var string
      */
     protected $name = 'EtdDetail';
+
+    /**
+     * Set Attributes
+     *
+     * @param \FedEx\ShipService\SimpleType\EtdAttributeType[]|string[] $attributes
+     * @return $this
+     */
+    public function setAttributes(array $attributes)
+    {
+        $this->values['Attributes'] = $attributes;
+        return $this;
+    }
 
     /**
      * Indicates the types of shipping documents produced for the shipper by FedEx (see ShippingDocumentSpecification) which should be copied back to the shipper in the shipment result data.

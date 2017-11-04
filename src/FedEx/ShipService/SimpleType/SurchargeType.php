@@ -4,7 +4,7 @@ namespace FedEx\ShipService\SimpleType;
 use FedEx\AbstractSimpleType;
 
 /**
- * The type of the surcharge.
+ * SurchargeType
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -12,7 +12,9 @@ use FedEx\AbstractSimpleType;
  */
 class SurchargeType extends AbstractSimpleType
 {
+    const _ACCOUNT_NUMBER_PROCESSING_FEE = 'ACCOUNT_NUMBER_PROCESSING_FEE';
     const _ADDITIONAL_HANDLING = 'ADDITIONAL_HANDLING';
+    const _ADDRESS_CORRECTION = 'ADDRESS_CORRECTION';
     const _ANCILLARY_FEE = 'ANCILLARY_FEE';
     const _APPOINTMENT_DELIVERY = 'APPOINTMENT_DELIVERY';
     const _BROKER_SELECT_OPTION = 'BROKER_SELECT_OPTION';
@@ -39,6 +41,7 @@ class SurchargeType extends AbstractSimpleType
     const _FLATBED = 'FLATBED';
     const _FREIGHT_GUARANTEE = 'FREIGHT_GUARANTEE';
     const _FREIGHT_ON_VALUE = 'FREIGHT_ON_VALUE';
+    const _FREIGHT_TO_COLLECT = 'FREIGHT_TO_COLLECT';
     const _FUEL = 'FUEL';
     const _HOLD_AT_LOCATION = 'HOLD_AT_LOCATION';
     const _HOME_DELIVERY_APPOINTMENT = 'HOME_DELIVERY_APPOINTMENT';
@@ -57,6 +60,7 @@ class SurchargeType extends AbstractSimpleType
     const _NON_MACHINABLE = 'NON_MACHINABLE';
     const _OFFSHORE = 'OFFSHORE';
     const _ON_CALL_PICKUP = 'ON_CALL_PICKUP';
+    const _ON_DEMAND_CARE = 'ON_DEMAND_CARE';
     const _OTHER = 'OTHER';
     const _OUT_OF_DELIVERY_AREA = 'OUT_OF_DELIVERY_AREA';
     const _OUT_OF_PICKUP_AREA = 'OUT_OF_PICKUP_AREA';
@@ -68,6 +72,8 @@ class SurchargeType extends AbstractSimpleType
     const _PROTECTION_FROM_FREEZING = 'PROTECTION_FROM_FREEZING';
     const _REGIONAL_MALL_DELIVERY = 'REGIONAL_MALL_DELIVERY';
     const _REGIONAL_MALL_PICKUP = 'REGIONAL_MALL_PICKUP';
+    const _REROUTE = 'REROUTE';
+    const _RESCHEDULE = 'RESCHEDULE';
     const _RESIDENTIAL_DELIVERY = 'RESIDENTIAL_DELIVERY';
     const _RESIDENTIAL_PICKUP = 'RESIDENTIAL_PICKUP';
     const _RETURN_LABEL = 'RETURN_LABEL';

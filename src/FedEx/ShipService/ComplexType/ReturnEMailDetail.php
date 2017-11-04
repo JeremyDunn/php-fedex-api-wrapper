@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Return Email Details
+ * ReturnEMailDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -24,7 +24,7 @@ class ReturnEMailDetail extends AbstractComplexType
     protected $name = 'ReturnEMailDetail';
 
     /**
-     * Phone number of the merchant
+     * Set MerchantPhoneNumber
      *
      * @param string $merchantPhoneNumber
      * @return $this

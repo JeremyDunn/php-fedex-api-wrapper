@@ -3,6 +3,7 @@
 ## 3.0 (released 2017-11-04)
 - Updated Upload Document Service
 - Updated Pickup Service
+- Updated Ship Service
 
 |Service|Version|
 |---|---|
@@ -14,7 +15,7 @@
 |Pickup|15|
 |Rate|10|
 |Return Tag|1|
-|Ship|12|
+|Ship|21**|
 |Track|5|
 |Upload Document|11|
 |Open Ship|11|

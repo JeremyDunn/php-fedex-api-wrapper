@@ -13,6 +13,9 @@ use FedEx\AbstractComplexType;
  * @property \FedEx\ShipService\SimpleType\PendingShipmentType|string $Type
  * @property string $ExpirationDate
  * @property EMailLabelDetail $EmailLabelDetail
+ * @property PendingShipmentProcessingOptionsRequested $ProcessingOptions
+ * @property RecommendedDocumentSpecification $RecommendedDocumentSpecification
+ * @property UploadDocumentReferenceDetail[] $DocumentReferences
 
  */
 class PendingShipmentDetail extends AbstractComplexType
@@ -25,7 +28,7 @@ class PendingShipmentDetail extends AbstractComplexType
     protected $name = 'PendingShipmentDetail';
 
     /**
-     * Identifies the type of FedEx pending shipment
+     * Set Type
      *
      * @param \FedEx\ShipService\SimpleType\PendingShipmentType|string $type
      * @return $this
@@ -57,6 +60,42 @@ class PendingShipmentDetail extends AbstractComplexType
     public function setEmailLabelDetail(EMailLabelDetail $emailLabelDetail)
     {
         $this->values['EmailLabelDetail'] = $emailLabelDetail;
+        return $this;
+    }
+
+    /**
+     * Set ProcessingOptions
+     *
+     * @param PendingShipmentProcessingOptionsRequested $processingOptions
+     * @return $this
+     */
+    public function setProcessingOptions(PendingShipmentProcessingOptionsRequested $processingOptions)
+    {
+        $this->values['ProcessingOptions'] = $processingOptions;
+        return $this;
+    }
+
+    /**
+     * These are documents that are recommended to be included with the shipment.
+     *
+     * @param RecommendedDocumentSpecification $recommendedDocumentSpecification
+     * @return $this
+     */
+    public function setRecommendedDocumentSpecification(RecommendedDocumentSpecification $recommendedDocumentSpecification)
+    {
+        $this->values['RecommendedDocumentSpecification'] = $recommendedDocumentSpecification;
+        return $this;
+    }
+
+    /**
+     * Upload document details provided by the initator of the shipment.
+     *
+     * @param UploadDocumentReferenceDetail[] $documentReferences
+     * @return $this
+     */
+    public function setDocumentReferences(array $documentReferences)
+    {
+        $this->values['DocumentReferences'] = $documentReferences;
         return $this;
     }
 }

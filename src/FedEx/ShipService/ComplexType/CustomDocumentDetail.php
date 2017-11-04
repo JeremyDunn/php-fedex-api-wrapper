@@ -16,6 +16,7 @@ use FedEx\AbstractComplexType;
  * @property string $SpecificationId
  * @property string $CustomDocumentIdentifier
  * @property DocTabContent $DocTabContent
+ * @property CustomLabelDetail $CustomContent
 
  */
 class CustomDocumentDetail extends AbstractComplexType
@@ -96,6 +97,18 @@ class CustomDocumentDetail extends AbstractComplexType
     public function setDocTabContent(DocTabContent $docTabContent)
     {
         $this->values['DocTabContent'] = $docTabContent;
+        return $this;
+    }
+
+    /**
+     * Set CustomContent
+     *
+     * @param CustomLabelDetail $customContent
+     * @return $this
+     */
+    public function setCustomContent(CustomLabelDetail $customContent)
+    {
+        $this->values['CustomContent'] = $customContent;
         return $this;
     }
 }

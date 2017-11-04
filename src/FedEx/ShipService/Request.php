@@ -15,26 +15,7 @@ class Request extends AbstractRequest
     const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/ship';
     const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/ship';
 
-    protected static $wsdlFileName = 'ShipService_v12.wsdl';
-            
-    /**
-     * Sends the CreatePendingShipmentRequest and returns the response
-     *
-     * @param ComplexType\CreatePendingShipmentRequest $createPendingShipmentRequest
-     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
-     * @return ComplexType\CreatePendingShipmentReply|stdClass
-     */
-    public function getCreatePendingShipmentReply(ComplexType\CreatePendingShipmentRequest $createPendingShipmentRequest, $returnStdClass = false)
-    {
-        $response = $this->getSoapClient()->createPendingShipment($createPendingShipmentRequest->toArray());
-        if ($returnStdClass) {
-            return $response;
-        }
-        
-        $createPendingShipmentReply = new ComplexType\CreatePendingShipmentReply;
-        $createPendingShipmentReply->populateFromStdClass($response);
-        return $createPendingShipmentReply;
-    }
+    protected static $wsdlFileName = 'ShipService_v21.wsdl';
             
     /**
      * Sends the ProcessTagRequest and returns the response
@@ -72,25 +53,6 @@ class Request extends AbstractRequest
         $processShipmentReply = new ComplexType\ProcessShipmentReply;
         $processShipmentReply->populateFromStdClass($response);
         return $processShipmentReply;
-    }
-            
-    /**
-     * Sends the CancelPendingShipmentRequest and returns the response
-     *
-     * @param ComplexType\CancelPendingShipmentRequest $cancelPendingShipmentRequest
-     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
-     * @return ComplexType\CancelPendingShipmentReply|stdClass
-     */
-    public function getCancelPendingShipmentReply(ComplexType\CancelPendingShipmentRequest $cancelPendingShipmentRequest, $returnStdClass = false)
-    {
-        $response = $this->getSoapClient()->cancelPendingShipment($cancelPendingShipmentRequest->toArray());
-        if ($returnStdClass) {
-            return $response;
-        }
-        
-        $cancelPendingShipmentReply = new ComplexType\CancelPendingShipmentReply;
-        $cancelPendingShipmentReply->populateFromStdClass($response);
-        return $cancelPendingShipmentReply;
     }
             
     /**

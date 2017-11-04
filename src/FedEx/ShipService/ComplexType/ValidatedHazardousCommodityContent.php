@@ -12,7 +12,9 @@ use FedEx\AbstractComplexType;
  *
  * @property ValidatedHazardousCommodityDescription $Description
  * @property HazardousCommodityQuantityDetail $Quantity
+ * @property float $MassPoints
  * @property HazardousCommodityOptionDetail $Options
+ * @property NetExplosiveDetail $NetExplosiveDetail
 
  */
 class ValidatedHazardousCommodityContent extends AbstractComplexType
@@ -49,6 +51,18 @@ class ValidatedHazardousCommodityContent extends AbstractComplexType
     }
 
     /**
+     * The mass points are a calculation used by ADR regulations for measuring the risk of a particular hazardous commodity.
+     *
+     * @param float $massPoints
+     * @return $this
+     */
+    public function setMassPoints($massPoints)
+    {
+        $this->values['MassPoints'] = $massPoints;
+        return $this;
+    }
+
+    /**
      * Customer-provided specifications for handling individual commodities.
      *
      * @param HazardousCommodityOptionDetail $options
@@ -57,6 +71,18 @@ class ValidatedHazardousCommodityContent extends AbstractComplexType
     public function setOptions(HazardousCommodityOptionDetail $options)
     {
         $this->values['Options'] = $options;
+        return $this;
+    }
+
+    /**
+     * The total mass of the contained explosive substances, without the mass of any casings, bullets, shells, etc.
+     *
+     * @param NetExplosiveDetail $netExplosiveDetail
+     * @return $this
+     */
+    public function setNetExplosiveDetail(NetExplosiveDetail $netExplosiveDetail)
+    {
+        $this->values['NetExplosiveDetail'] = $netExplosiveDetail;
         return $this;
     }
 }

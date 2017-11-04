@@ -10,10 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  *
- * @property string $EmailLabelUrl
- * @property string $UserId
- * @property string $Password
- * @property string $ExpirationTimestamp
+ * @property PendingShipmentAccessorDetail[] $AccessorDetails
 
  */
 class PendingShipmentAccessDetail extends AbstractComplexType
@@ -26,50 +23,14 @@ class PendingShipmentAccessDetail extends AbstractComplexType
     protected $name = 'PendingShipmentAccessDetail';
 
     /**
-     * Only for pending shipment type of "EMAIL"
+     * Set AccessorDetails
      *
-     * @param string $emailLabelUrl
+     * @param PendingShipmentAccessorDetail[] $accessorDetails
      * @return $this
      */
-    public function setEmailLabelUrl($emailLabelUrl)
+    public function setAccessorDetails(array $accessorDetails)
     {
-        $this->values['EmailLabelUrl'] = $emailLabelUrl;
-        return $this;
-    }
-
-    /**
-     * Only for pending shipment type of "EMAIL"
-     *
-     * @param string $userId
-     * @return $this
-     */
-    public function setUserId($userId)
-    {
-        $this->values['UserId'] = $userId;
-        return $this;
-    }
-
-    /**
-     * Only for pending shipment type of "EMAIL"
-     *
-     * @param string $password
-     * @return $this
-     */
-    public function setPassword($password)
-    {
-        $this->values['Password'] = $password;
-        return $this;
-    }
-
-    /**
-     * This element is currently not supported and is for the future use.
-     *
-     * @param string $expirationTimestamp
-     * @return $this
-     */
-    public function setExpirationTimestamp($expirationTimestamp)
-    {
-        $this->values['ExpirationTimestamp'] = $expirationTimestamp;
+        $this->values['AccessorDetails'] = $accessorDetails;
         return $this;
     }
 }
