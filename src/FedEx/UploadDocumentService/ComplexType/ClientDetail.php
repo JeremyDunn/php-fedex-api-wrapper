@@ -26,7 +26,7 @@ class ClientDetail extends AbstractComplexType
     protected $name = 'ClientDetail';
 
     /**
-     * The FedEx account number assigned to the customer initiating the request.
+     * The FedEx account number associated with this transaction.
      *
      * @param string $accountNumber
      * @return $this
@@ -38,7 +38,7 @@ class ClientDetail extends AbstractComplexType
     }
 
     /**
-     * Identifies the unique client device submitting the request. This number is assigned by FedEx and identifies the unique device from which the request is originating.
+     * This number is assigned by FedEx and identifies the unique device from which the request is originating
      *
      * @param string $meterNumber
      * @return $this

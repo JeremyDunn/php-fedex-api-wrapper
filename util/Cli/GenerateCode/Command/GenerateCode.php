@@ -247,7 +247,7 @@ class GenerateCode extends Console\Command\Command
 
 
         //UploadDocumentService
-        $wsdlPath = $fedexSrcDir . '/_wsdl/UploadDocumentService_v1.wsdl';
+        $wsdlPath = $fedexSrcDir . '/_wsdl/UploadDocumentService_v11.wsdl';
 
         $baseNamespace = 'FedEx\UploadDocumentService';
         $subPackageName = 'Upload Document Service';

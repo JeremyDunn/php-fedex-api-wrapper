@@ -12,10 +12,10 @@ use FedEx\AbstractRequest;
  */
 class Request extends AbstractRequest
 {
-    const PRODUCTION_URL = 'https://gateway.fedex.com:443/web-services/uploaddocument';
-    const TESTING_URL = 'https://gatewaybeta.fedex.com:443/web-services/uploaddocument';
+    const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/uploaddocument';
+    const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/uploaddocument';
 
-    protected static $wsdlFileName = 'UploadDocumentService_v1.wsdl';
+    protected static $wsdlFileName = 'UploadDocumentService_v11.wsdl';
             
     /**
      * Sends the UploadDocumentsRequest and returns the response

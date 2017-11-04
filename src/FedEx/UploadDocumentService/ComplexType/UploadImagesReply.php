@@ -27,7 +27,7 @@ class UploadImagesReply extends AbstractComplexType
     protected $name = 'UploadImagesReply';
 
     /**
-     * Identifies the highest severity encountered when executing the request; in order from high to low: FAILURE, ERROR, WARNING, NOTE, SUCCESS.
+     * Set HighestSeverity
      *
      * @param \FedEx\UploadDocumentService\SimpleType\NotificationSeverityType|string $highestSeverity
      * @return $this
@@ -39,7 +39,7 @@ class UploadImagesReply extends AbstractComplexType
     }
 
     /**
-     * The descriptive data detailing the status of a sumbitted transaction.
+     * Set Notifications
      *
      * @param Notification[] $notifications
      * @return $this
@@ -51,7 +51,7 @@ class UploadImagesReply extends AbstractComplexType
     }
 
     /**
-     * Descriptive data that governs data payload language/translations. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
+     * Set TransactionDetail
      *
      * @param TransactionDetail $transactionDetail
      * @return $this
@@ -63,7 +63,7 @@ class UploadImagesReply extends AbstractComplexType
     }
 
     /**
-     * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
+     * Set Version
      *
      * @param VersionId $version
      * @return $this
