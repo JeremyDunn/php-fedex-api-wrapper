@@ -315,7 +315,7 @@ class GenerateCode extends Console\Command\Command
         /*
          * Validation and Commitment Service (v6)
          */
-        $wsdlPath = $fedexSrcDir . '/_wsdl/ValidationAvailabilityAndCommitmentService_v6.wsdl';
+        $wsdlPath = $fedexSrcDir . '/_wsdl/ValidationAvailabilityAndCommitmentService_v8.wsdl';
 
         $baseNamespace = 'FedEx\ValidationAvailabilityAndCommitmentService';
         $subPackageName = 'Validation Availability And Commitment Service Service';
