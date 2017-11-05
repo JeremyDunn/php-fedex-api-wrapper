@@ -92,7 +92,7 @@ class GenerateCode extends Console\Command\Command
 
 
         //TrackService
-        $wsdlPath = $fedexSrcDir . '/_wsdl/TrackService_v5.wsdl';
+        $wsdlPath = $fedexSrcDir . '/_wsdl/TrackService_v14.wsdl';
 
         $baseNamespace = 'FedEx\TrackService';
         $subPackageName = 'Track Service';

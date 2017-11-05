@@ -4,7 +4,7 @@ namespace FedEx\TrackService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * The descriptive data sent by a client to track a FedEx package.
+ * TrackRequest
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -14,16 +14,9 @@ use FedEx\AbstractComplexType;
  * @property ClientDetail $ClientDetail
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
- * @property \FedEx\TrackService\SimpleType\CarrierCodeType|string $CarrierCode
- * @property \FedEx\TrackService\SimpleType\OperatingCompanyType|string $OperatingCompany
- * @property TrackPackageIdentifier $PackageIdentifier
- * @property string $TrackingNumberUniqueIdentifier
- * @property string $ShipDateRangeBegin
- * @property string $ShipDateRangeEnd
- * @property string $ShipmentAccountNumber
- * @property Address $Destination
- * @property boolean $IncludeDetailedScans
- * @property string $PagingToken
+ * @property TrackSelectionDetail[] $SelectionDetails
+ * @property int $TransactionTimeOutValueInMilliseconds
+ * @property \FedEx\TrackService\SimpleType\TrackRequestProcessingOptionType|string[] $ProcessingOptions
 
  */
 class TrackRequest extends AbstractComplexType
@@ -84,122 +77,38 @@ class TrackRequest extends AbstractComplexType
     }
 
     /**
-     * The FedEx operating company (transportation) used for this package's delivery.
+     * Specifies the details needed to select the shipment being requested to be tracked.
      *
-     * @param \FedEx\TrackService\SimpleType\CarrierCodeType|string $carrierCode
+     * @param TrackSelectionDetail[] $selectionDetails
      * @return $this
      */
-    public function setCarrierCode($carrierCode)
+    public function setSelectionDetails(array $selectionDetails)
     {
-        $this->values['CarrierCode'] = $carrierCode;
+        $this->values['SelectionDetails'] = $selectionDetails;
         return $this;
     }
 
     /**
-     * Identifies operating transportation company that is the specific to the carrier code.
+     * The customer can specify a desired time out value for this particular transaction.
      *
-     * @param \FedEx\TrackService\SimpleType\OperatingCompanyType|string $operatingCompany
+     * @param int $transactionTimeOutValueInMilliseconds
      * @return $this
      */
-    public function setOperatingCompany($operatingCompany)
+    public function setTransactionTimeOutValueInMilliseconds($transactionTimeOutValueInMilliseconds)
     {
-        $this->values['OperatingCompany'] = $operatingCompany;
+        $this->values['TransactionTimeOutValueInMilliseconds'] = $transactionTimeOutValueInMilliseconds;
         return $this;
     }
 
     /**
-     * The type and value of the package identifier that is to be used to retrieve the tracking information for a package or group of packages.
+     * Set ProcessingOptions
      *
-     * @param TrackPackageIdentifier $packageIdentifier
+     * @param \FedEx\TrackService\SimpleType\TrackRequestProcessingOptionType[]|string[] $processingOptions
      * @return $this
      */
-    public function setPackageIdentifier(TrackPackageIdentifier $packageIdentifier)
+    public function setProcessingOptions(array $processingOptions)
     {
-        $this->values['PackageIdentifier'] = $packageIdentifier;
-        return $this;
-    }
-
-    /**
-     * Used to distinguish duplicate FedEx tracking numbers.
-     *
-     * @param string $trackingNumberUniqueIdentifier
-     * @return $this
-     */
-    public function setTrackingNumberUniqueIdentifier($trackingNumberUniqueIdentifier)
-    {
-        $this->values['TrackingNumberUniqueIdentifier'] = $trackingNumberUniqueIdentifier;
-        return $this;
-    }
-
-    /**
-     * To narrow the search to a period in time the ShipDateRangeBegin and ShipDateRangeEnd can be used to help eliminate duplicates.
-     *
-     * @param string $shipDateRangeBegin
-     * @return $this
-     */
-    public function setShipDateRangeBegin($shipDateRangeBegin)
-    {
-        $this->values['ShipDateRangeBegin'] = $shipDateRangeBegin;
-        return $this;
-    }
-
-    /**
-     * To narrow the search to a period in time the ShipDateRangeBegin and ShipDateRangeEnd can be used to help eliminate duplicates.
-     *
-     * @param string $shipDateRangeEnd
-     * @return $this
-     */
-    public function setShipDateRangeEnd($shipDateRangeEnd)
-    {
-        $this->values['ShipDateRangeEnd'] = $shipDateRangeEnd;
-        return $this;
-    }
-
-    /**
-     * For tracking by references information either the account number or destination postal code and country must be provided.
-     *
-     * @param string $shipmentAccountNumber
-     * @return $this
-     */
-    public function setShipmentAccountNumber($shipmentAccountNumber)
-    {
-        $this->values['ShipmentAccountNumber'] = $shipmentAccountNumber;
-        return $this;
-    }
-
-    /**
-     * For tracking by references information either the account number or destination postal code and country must be provided.
-     *
-     * @param Address $destination
-     * @return $this
-     */
-    public function setDestination(Address $destination)
-    {
-        $this->values['Destination'] = $destination;
-        return $this;
-    }
-
-    /**
-     * If false the reply will contain summary/profile data including current status. If true the reply contains profile + detailed scan activity for each package.
-     *
-     * @param boolean $includeDetailedScans
-     * @return $this
-     */
-    public function setIncludeDetailedScans($includeDetailedScans)
-    {
-        $this->values['IncludeDetailedScans'] = $includeDetailedScans;
-        return $this;
-    }
-
-    /**
-     * When the MoreData field = true in a TrackReply the PagingToken must be sent in the subsequent TrackRequest to retrieve the next page of data.
-     *
-     * @param string $pagingToken
-     * @return $this
-     */
-    public function setPagingToken($pagingToken)
-    {
-        $this->values['PagingToken'] = $pagingToken;
+        $this->values['ProcessingOptions'] = $processingOptions;
         return $this;
     }
 }

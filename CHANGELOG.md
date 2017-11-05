@@ -6,6 +6,7 @@
 - Updated Ship Service
 - Updated Address Validation Service
 - Updated Rate Service
+- Updated Track Service
 
 |Service|Version|
 |---|---|
@@ -18,7 +19,7 @@
 |Rate|22|
 |Return Tag|1|
 |Ship|21|
-|Track|5|
+|Track|14|
 |Upload Document|11|
 |Open Ship|11|
 |Validation Availability and Commitment Service|6|

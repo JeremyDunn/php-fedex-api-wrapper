@@ -3,40 +3,41 @@
 require_once 'credentials.php';
 require_once 'bootstrap.php';
 
-use FedEx\TrackService,
-    FedEx\TrackService\ComplexType,
-    FedEx\TrackService\SimpleType;
+use FedEx\TrackService\Request;
+use FedEx\TrackService\ComplexType;
+use FedEx\TrackService\SimpleType;
 
-$trackingId = 123456789012;
+$trackingId1 = 123456789012;
+$trackingId2 = 123456789012;
 
-$userCredential = new ComplexType\WebAuthenticationCredential();
-$userCredential->setKey(FEDEX_KEY)
-               ->setPassword(FEDEX_PASSWORD);
+$trackRequest = new ComplexType\TrackRequest();
 
-$webAuthenticationDetail = new ComplexType\WebAuthenticationDetail();
-$webAuthenticationDetail->setUserCredential($userCredential);
+// User Credential
+$trackRequest->WebAuthenticationDetail->UserCredential->Key = FEDEX_KEY;
+$trackRequest->WebAuthenticationDetail->UserCredential->Password = FEDEX_PASSWORD;
 
-$clientDetail = new ComplexType\ClientDetail();
-$clientDetail->setAccountNumber(FEDEX_ACCOUNT_NUMBER)
-    		 ->setMeterNumber(FEDEX_METER_NUMBER);
+// Client Detail
+$trackRequest->ClientDetail->AccountNumber = FEDEX_ACCOUNT_NUMBER;
+$trackRequest->ClientDetail->MeterNumber = FEDEX_METER_NUMBER;
 
-$version = new ComplexType\VersionId();
-$version->setMajor(5)
-        ->setIntermediate(0)
-        ->setMinor(0)
-        ->setServiceId('trck');
+// Version
+$trackRequest->Version->ServiceId = 'trck';
+$trackRequest->Version->Major = 14;
+$trackRequest->Version->Intermediate = 0;
+$trackRequest->Version->Minor = 0;
 
-$identifier = new ComplexType\TrackPackageIdentifier();
-$identifier->setType(SimpleType\TrackIdentifierType::_TRACKING_NUMBER_OR_DOORTAG)
-           ->setValue($trackingId);
+// Track 2 shipments
+$trackRequest->SelectionDetails = [new ComplexType\TrackSelectionDetail(), new ComplexType\TrackSelectionDetail()];
 
-$request = new ComplexType\TrackRequest();
-$request->setWebAuthenticationDetail($webAuthenticationDetail)
-        ->setClientDetail($clientDetail)
-        ->setVersion($version)
-        ->setPackageIdentifier($identifier);
+// Track shipment 1
+$trackRequest->SelectionDetails[0]->PackageIdentifier->Value = $trackingId1;
+$trackRequest->SelectionDetails[0]->PackageIdentifier->Type = SimpleType\TrackIdentifierType::_TRACKING_NUMBER_OR_DOORTAG;
 
-$response = (new TrackService\Request())->getTrackReply($request);
+// Track shipment 2
+$trackRequest->SelectionDetails[1]->PackageIdentifier->Value = $trackingId2;
+$trackRequest->SelectionDetails[1]->PackageIdentifier->Type = SimpleType\TrackIdentifierType::_TRACKING_NUMBER_OR_DOORTAG;
 
-var_dump($response);
-    
+$request = new Request();
+$trackReply = $request->getTrackReply($trackRequest);
+
+var_dump($trackReply);

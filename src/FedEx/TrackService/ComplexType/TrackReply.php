@@ -4,7 +4,7 @@ namespace FedEx\TrackService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * The descriptive data returned from a FedEx package tracking request.
+ * TrackReply
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -14,10 +14,7 @@ use FedEx\AbstractComplexType;
  * @property Notification[] $Notifications
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
- * @property boolean $DuplicateWaybill
- * @property boolean $MoreData
- * @property string $PagingToken
- * @property TrackDetail[] $TrackDetails
+ * @property CompletedTrackDetail[] $CompletedTrackDetails
 
  */
 class TrackReply extends AbstractComplexType
@@ -78,50 +75,14 @@ class TrackReply extends AbstractComplexType
     }
 
     /**
-     * True if duplicate packages (more than one package with the same tracking number) have been found, and only limited data will be provided for each one.
+     * Contains detailed tracking entity information.
      *
-     * @param boolean $duplicateWaybill
+     * @param CompletedTrackDetail[] $completedTrackDetails
      * @return $this
      */
-    public function setDuplicateWaybill($duplicateWaybill)
+    public function setCompletedTrackDetails(array $completedTrackDetails)
     {
-        $this->values['DuplicateWaybill'] = $duplicateWaybill;
-        return $this;
-    }
-
-    /**
-     * True if additional packages remain to be retrieved.
-     *
-     * @param boolean $moreData
-     * @return $this
-     */
-    public function setMoreData($moreData)
-    {
-        $this->values['MoreData'] = $moreData;
-        return $this;
-    }
-
-    /**
-     * Value that must be passed in a TrackNotification request to retrieve the next set of packages (when MoreDataAvailable = true).
-     *
-     * @param string $pagingToken
-     * @return $this
-     */
-    public function setPagingToken($pagingToken)
-    {
-        $this->values['PagingToken'] = $pagingToken;
-        return $this;
-    }
-
-    /**
-     * Contains detailed tracking information for the requested packages(s).
-     *
-     * @param TrackDetail[] $trackDetails
-     * @return $this
-     */
-    public function setTrackDetails(array $trackDetails)
-    {
-        $this->values['TrackDetails'] = $trackDetails;
+        $this->values['CompletedTrackDetails'] = $completedTrackDetails;
         return $this;
     }
 }

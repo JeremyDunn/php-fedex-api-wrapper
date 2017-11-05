@@ -16,6 +16,7 @@ use FedEx\AbstractComplexType;
  * @property string $StatusExceptionCode
  * @property string $StatusExceptionDescription
  * @property Address $Address
+ * @property string $StationId
  * @property \FedEx\TrackService\SimpleType\ArrivalLocationType|string $ArrivalLocation
 
  */
@@ -97,6 +98,18 @@ class TrackEvent extends AbstractComplexType
     public function setAddress(Address $address)
     {
         $this->values['Address'] = $address;
+        return $this;
+    }
+
+    /**
+     * FedEx location ID where the scan took place. (Returned for CSR SL only.)
+     *
+     * @param string $stationId
+     * @return $this
+     */
+    public function setStationId($stationId)
+    {
+        $this->values['StationId'] = $stationId;
         return $this;
     }
 

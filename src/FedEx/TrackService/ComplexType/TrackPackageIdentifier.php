@@ -10,8 +10,8 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  *
- * @property string $Value
  * @property \FedEx\TrackService\SimpleType\TrackIdentifierType|string $Type
+ * @property string $Value
 
  */
 class TrackPackageIdentifier extends AbstractComplexType
@@ -24,18 +24,6 @@ class TrackPackageIdentifier extends AbstractComplexType
     protected $name = 'TrackPackageIdentifier';
 
     /**
-     * The value to be used to retrieve tracking information for a package.
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setValue($value)
-    {
-        $this->values['Value'] = $value;
-        return $this;
-    }
-
-    /**
      * The type of the Value to be used to retrieve tracking information for a package (e.g. SHIPPER_REFERENCE, PURCHASE_ORDER, TRACKING_NUMBER_OR_DOORTAG, etc..) .
      *
      * @param \FedEx\TrackService\SimpleType\TrackIdentifierType|string $type
@@ -44,6 +32,18 @@ class TrackPackageIdentifier extends AbstractComplexType
     public function setType($type)
     {
         $this->values['Type'] = $type;
+        return $this;
+    }
+
+    /**
+     * The value to be used to retrieve tracking information for a package.
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setValue($value)
+    {
+        $this->values['Value'] = $value;
         return $this;
     }
 }

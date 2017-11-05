@@ -15,45 +15,7 @@ class Request extends AbstractRequest
     const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/track';
     const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/track';
 
-    protected static $wsdlFileName = 'TrackService_v5.wsdl';
-            
-    /**
-     * Sends the TrackNotificationRequest and returns the response
-     *
-     * @param ComplexType\TrackNotificationRequest $trackNotificationRequest
-     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
-     * @return ComplexType\TrackNotificationReply|stdClass
-     */
-    public function getGetTrackNotificationReply(ComplexType\TrackNotificationRequest $trackNotificationRequest, $returnStdClass = false)
-    {
-        $response = $this->getSoapClient()->getTrackNotification($trackNotificationRequest->toArray());
-        if ($returnStdClass) {
-            return $response;
-        }
-        
-        $trackNotificationReply = new ComplexType\TrackNotificationReply;
-        $trackNotificationReply->populateFromStdClass($response);
-        return $trackNotificationReply;
-    }
-            
-    /**
-     * Sends the SignatureProofOfDeliveryLetterRequest and returns the response
-     *
-     * @param ComplexType\SignatureProofOfDeliveryLetterRequest $signatureProofOfDeliveryLetterRequest
-     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
-     * @return ComplexType\SignatureProofOfDeliveryLetterReply|stdClass
-     */
-    public function getRetrieveSignatureProofOfDeliveryLetterReply(ComplexType\SignatureProofOfDeliveryLetterRequest $signatureProofOfDeliveryLetterRequest, $returnStdClass = false)
-    {
-        $response = $this->getSoapClient()->retrieveSignatureProofOfDeliveryLetter($signatureProofOfDeliveryLetterRequest->toArray());
-        if ($returnStdClass) {
-            return $response;
-        }
-        
-        $signatureProofOfDeliveryLetterReply = new ComplexType\SignatureProofOfDeliveryLetterReply;
-        $signatureProofOfDeliveryLetterReply->populateFromStdClass($response);
-        return $signatureProofOfDeliveryLetterReply;
-    }
+    protected static $wsdlFileName = 'TrackService_v14.wsdl';
             
     /**
      * Sends the TrackRequest and returns the response
@@ -75,21 +37,40 @@ class Request extends AbstractRequest
     }
             
     /**
-     * Sends the SignatureProofOfDeliveryFaxRequest and returns the response
+     * Sends the GetTrackingDocumentsRequest and returns the response
      *
-     * @param ComplexType\SignatureProofOfDeliveryFaxRequest $signatureProofOfDeliveryFaxRequest
+     * @param ComplexType\GetTrackingDocumentsRequest $getTrackingDocumentsRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
-     * @return ComplexType\SignatureProofOfDeliveryFaxReply|stdClass
+     * @return ComplexType\GetTrackingDocumentsReply|stdClass
      */
-    public function getSendSignatureProofOfDeliveryFaxReply(ComplexType\SignatureProofOfDeliveryFaxRequest $signatureProofOfDeliveryFaxRequest, $returnStdClass = false)
+    public function getGetTrackingDocumentsReply(ComplexType\GetTrackingDocumentsRequest $getTrackingDocumentsRequest, $returnStdClass = false)
     {
-        $response = $this->getSoapClient()->sendSignatureProofOfDeliveryFax($signatureProofOfDeliveryFaxRequest->toArray());
+        $response = $this->getSoapClient()->getTrackingDocuments($getTrackingDocumentsRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
         
-        $signatureProofOfDeliveryFaxReply = new ComplexType\SignatureProofOfDeliveryFaxReply;
-        $signatureProofOfDeliveryFaxReply->populateFromStdClass($response);
-        return $signatureProofOfDeliveryFaxReply;
+        $getTrackingDocumentsReply = new ComplexType\GetTrackingDocumentsReply;
+        $getTrackingDocumentsReply->populateFromStdClass($response);
+        return $getTrackingDocumentsReply;
+    }
+            
+    /**
+     * Sends the SendNotificationsRequest and returns the response
+     *
+     * @param ComplexType\SendNotificationsRequest $sendNotificationsRequest
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\SendNotificationsReply|stdClass
+     */
+    public function getSendNotificationsReply(ComplexType\SendNotificationsRequest $sendNotificationsRequest, $returnStdClass = false)
+    {
+        $response = $this->getSoapClient()->sendNotifications($sendNotificationsRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $sendNotificationsReply = new ComplexType\SendNotificationsReply;
+        $sendNotificationsReply->populateFromStdClass($response);
+        return $sendNotificationsReply;
     }
 }
