@@ -46,16 +46,22 @@ class TestCase extends \PHPUnit\Framework\TestCase
     {
         return [
             new \FedEx\AddressValidationService\Request(),
+            new \FedEx\AsyncService\Request(),
             new \FedEx\CloseService\Request(),
             new \FedEx\CourierDispatchService\Request(),
-            new \FedEx\LocatorService\Request(),
+            new \FedEx\DGDSService\Request(),
+            new \FedEx\DGLDService\Request(),
+            new \FedEx\InFlightShipmentService\Request(),
+            new \FedEx\LocationsService\Request(),
+            new \FedEx\OpenShipService\Request(),
             new \FedEx\PackageMovementInformationService\Request(),
             new \FedEx\PickupService\Request(),
             new \FedEx\RateService\Request(),
             new \FedEx\ReturnTagService\Request(),
             new \FedEx\ShipService\Request(),
             new \FedEx\TrackService\Request(),
-            new \FedEx\UploadDocumentService\Request()
+            new \FedEx\UploadDocumentService\Request(),
+            new \FedEx\ValidationAvailabilityAndCommitmentService\Request()
         ];
     }
 }

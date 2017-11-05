@@ -135,24 +135,24 @@ class GenerateCode extends Console\Command\Command
         $generateComplexTypes->run();
 
 
-        //LocatorService
-        $wsdlPath = $fedexSrcDir . '/_wsdl/LocatorService_v2.wsdl';
+        //LocationsService
+        $wsdlPath = $fedexSrcDir . '/_wsdl/LocationsService_v7.wsdl';
 
-        $baseNamespace = 'FedEx\LocatorService';
-        $subPackageName = 'Locator Service';
+        $baseNamespace = 'FedEx\LocationsService';
+        $subPackageName = 'Locations Service';
 
         //generate Request class
-        $pathToRequestClassFile = $fedexSrcDir . '/LocatorService/Request.php';
+        $pathToRequestClassFile = $fedexSrcDir . '/LocationsService/Request.php';
         $generateRequestClassFile = new CodeGenerator\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, $baseNamespace, $subPackageName);
         $generateRequestClassFile->run();
 
         //generate SimpleType classes
-        $exportPath = $fedexSrcDir . '/LocatorService/SimpleType';
+        $exportPath = $fedexSrcDir . '/LocationsService/SimpleType';
         $generateSimpleTypes = new CodeGenerator\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
         $generateSimpleTypes->run();
 
         //generate ComplexType classes
-        $exportPath = $fedexSrcDir . '/LocatorService/ComplexType';
+        $exportPath = $fedexSrcDir . '/LocationsService/ComplexType';
         $generateComplexTypes = new CodeGenerator\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
         $generateComplexTypes->run();
 

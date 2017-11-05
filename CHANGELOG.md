@@ -7,13 +7,14 @@
 - Updated Address Validation Service
 - Updated Rate Service
 - Updated Track Service
+- Updated Locations Service
 
 |Service|Version|
 |---|---|
 |Address Validation|4|
 |Close|5|
 |Courier Dispatch|3|
-|Locator|2|
+|Locations|7|
 |Package Movement Information|5|
 |Pickup|15|
 |Rate|22|
