@@ -1,5 +1,7 @@
 # PHP FedEx API Wrapper
 
+[![Latest Stable Version](https://poser.pugx.org/jeremy-dunn/php-fedex-api-wrapper/v/stable)](https://packagist.org/packages/jeremy-dunn/php-fedex-api-wrapper)
+[![Total Downloads](https://poser.pugx.org/jeremy-dunn/php-fedex-api-wrapper/downloads)](https://packagist.org/packages/jeremy-dunn/php-fedex-api-wrapper)
 [![Build Status](https://travis-ci.org/JeremyDunn/php-fedex-api-wrapper.svg?branch=master)](https://travis-ci.org/JeremyDunn/php-fedex-api-wrapper)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ee5bdc605dfd44d0a590ea1dfc031421)](https://www.codacy.com/app/JeremyDunn/php-fedex-api-wrapper?utm_source=github.com&utm_medium=referral&utm_content=JeremyDunn/php-fedex-api-wrapper&utm_campaign=badger)
 
