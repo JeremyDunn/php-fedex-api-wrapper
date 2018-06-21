@@ -2,7 +2,7 @@
 namespace FedEx\RateService\ComplexType;
 
 use FedEx\AbstractComplexType;
-
+use FedEx\RateService\SimpleType\ServiceType;
 /**
  * RateReplyDetail
  *
@@ -47,6 +47,8 @@ class RateReplyDetail extends AbstractComplexType
     public function setServiceType($serviceType)
     {
         $this->values['ServiceType'] = $serviceType;
+        $this->values['ServiceTypeDescription'] = ServiceType::getOfficialName($serviceType);
+
         return $this;
     }
 
