@@ -19,5 +19,6 @@ class TrackingDateOrTimestampType extends AbstractSimpleType
     const _APPOINTMENT_DELIVERY = 'APPOINTMENT_DELIVERY';
     const _ESTIMATED_DELIVERY = 'ESTIMATED_DELIVERY';
     const _ESTIMATED_PICKUP = 'ESTIMATED_PICKUP';
+    const _ESTIMATED_RETURN_TO_STATION = 'ESTIMATED_RETURN_TO_STATION';
     const _SHIP = 'SHIP';
 }

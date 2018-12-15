@@ -15,7 +15,7 @@ class Request extends AbstractRequest
     const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/track';
     const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/track';
 
-    protected static $wsdlFileName = 'TrackService_v14.wsdl';
+    protected static $wsdlFileName = 'TrackService_v16.wsdl';
             
     /**
      * Sends the TrackRequest and returns the response

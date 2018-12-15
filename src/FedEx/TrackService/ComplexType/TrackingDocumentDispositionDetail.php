@@ -12,6 +12,7 @@ use FedEx\AbstractComplexType;
  *
  * @property \FedEx\TrackService\SimpleType\TrackingDocumentDispositionType|string $DispositionType
  * @property TrackingDocumentEmailDetail $EMailDetail
+ * @property FaxDetail[] $FaxDetails
 
  */
 class TrackingDocumentDispositionDetail extends AbstractComplexType
@@ -44,6 +45,18 @@ class TrackingDocumentDispositionDetail extends AbstractComplexType
     public function setEMailDetail(TrackingDocumentEmailDetail $eMailDetail)
     {
         $this->values['EMailDetail'] = $eMailDetail;
+        return $this;
+    }
+
+    /**
+     * Specifies the information used to fax the document.
+     *
+     * @param FaxDetail[] $faxDetails
+     * @return $this
+     */
+    public function setFaxDetails(array $faxDetails)
+    {
+        $this->values['FaxDetails'] = $faxDetails;
         return $this;
     }
 }
