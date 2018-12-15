@@ -18,6 +18,7 @@ use FedEx\AbstractComplexType;
  * @property Weight $Weight
  * @property Dimensions $Dimensions
  * @property \FedEx\ShipService\SimpleType\PhysicalPackagingType|string $PhysicalPackaging
+ * @property AssociatedFreightLineItemDetail[] $AssociatedFreightLineItems
  * @property string $ItemDescription
  * @property string $ItemDescriptionForClearance
  * @property CustomerReference[] $CustomerReferences
@@ -127,6 +128,18 @@ class RequestedPackageLineItem extends AbstractComplexType
     public function setPhysicalPackaging($physicalPackaging)
     {
         $this->values['PhysicalPackaging'] = $physicalPackaging;
+        return $this;
+    }
+
+    /**
+     * Set AssociatedFreightLineItems
+     *
+     * @param AssociatedFreightLineItemDetail[] $associatedFreightLineItems
+     * @return $this
+     */
+    public function setAssociatedFreightLineItems(array $associatedFreightLineItems)
+    {
+        $this->values['AssociatedFreightLineItems'] = $associatedFreightLineItems;
         return $this;
     }
 

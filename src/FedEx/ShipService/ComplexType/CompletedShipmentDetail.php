@@ -14,6 +14,7 @@ use FedEx\AbstractComplexType;
  * @property \FedEx\ShipService\SimpleType\CarrierCodeType|string $CarrierCode
  * @property TrackingId $MasterTrackingId
  * @property string $ServiceTypeDescription
+ * @property ServiceDescription $ServiceDescription
  * @property string $PackagingDescription
  * @property ShipmentOperationalDetail $OperationalDetail
  * @property PendingShipmentAccessDetail $AccessDetail
@@ -77,7 +78,7 @@ class CompletedShipmentDetail extends AbstractComplexType
     }
 
     /**
-     * Set ServiceTypeDescription
+     * DEPRECATED as of 201801: Use serviceDescription instead.
      *
      * @param string $serviceTypeDescription
      * @return $this
@@ -85,6 +86,18 @@ class CompletedShipmentDetail extends AbstractComplexType
     public function setServiceTypeDescription($serviceTypeDescription)
     {
         $this->values['ServiceTypeDescription'] = $serviceTypeDescription;
+        return $this;
+    }
+
+    /**
+     * Set ServiceDescription
+     *
+     * @param ServiceDescription $serviceDescription
+     * @return $this
+     */
+    public function setServiceDescription(ServiceDescription $serviceDescription)
+    {
+        $this->values['ServiceDescription'] = $serviceDescription;
         return $this;
     }
 

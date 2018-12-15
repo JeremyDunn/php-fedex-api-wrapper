@@ -40,7 +40,7 @@ class Commodity extends AbstractComplexType
     protected $name = 'Commodity';
 
     /**
-     * Set Name
+     * FedEx internal commodity identifier
      *
      * @param string $name
      * @return $this
@@ -64,7 +64,7 @@ class Commodity extends AbstractComplexType
     }
 
     /**
-     * Set Description
+     * A free-form description of the commodity, which could be used for customs clearance documentation.
      *
      * @param string $description
      * @return $this

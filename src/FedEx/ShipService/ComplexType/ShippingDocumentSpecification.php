@@ -21,6 +21,7 @@ use FedEx\AbstractComplexType;
  * @property Op900Detail $Op900Detail
  * @property DangerousGoodsShippersDeclarationDetail $DangerousGoodsShippersDeclarationDetail
  * @property FreightAddressLabelDetail $FreightAddressLabelDetail
+ * @property FreightBillOfLadingDetail $FreightBillOfLadingDetail
  * @property ReturnInstructionsDetail $ReturnInstructionsDetail
 
  */
@@ -162,6 +163,18 @@ class ShippingDocumentSpecification extends AbstractComplexType
     public function setFreightAddressLabelDetail(FreightAddressLabelDetail $freightAddressLabelDetail)
     {
         $this->values['FreightAddressLabelDetail'] = $freightAddressLabelDetail;
+        return $this;
+    }
+
+    /**
+     * Set FreightBillOfLadingDetail
+     *
+     * @param FreightBillOfLadingDetail $freightBillOfLadingDetail
+     * @return $this
+     */
+    public function setFreightBillOfLadingDetail(FreightBillOfLadingDetail $freightBillOfLadingDetail)
+    {
+        $this->values['FreightBillOfLadingDetail'] = $freightBillOfLadingDetail;
         return $this;
     }
 

@@ -12,6 +12,7 @@ use FedEx\AbstractComplexType;
  *
  * @property ContactAndAddress $HoldingLocation
  * @property \FedEx\ShipService\SimpleType\FedExLocationType|string $HoldingLocationType
+ * @property string $HoldingLocationTypeForDisplay
 
  */
 class CompletedHoldAtLocationDetail extends AbstractComplexType
@@ -44,6 +45,18 @@ class CompletedHoldAtLocationDetail extends AbstractComplexType
     public function setHoldingLocationType($holdingLocationType)
     {
         $this->values['HoldingLocationType'] = $holdingLocationType;
+        return $this;
+    }
+
+    /**
+     * Set HoldingLocationTypeForDisplay
+     *
+     * @param string $holdingLocationTypeForDisplay
+     * @return $this
+     */
+    public function setHoldingLocationTypeForDisplay($holdingLocationTypeForDisplay)
+    {
+        $this->values['HoldingLocationTypeForDisplay'] = $holdingLocationTypeForDisplay;
         return $this;
     }
 }

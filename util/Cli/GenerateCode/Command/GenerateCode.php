@@ -158,7 +158,7 @@ class GenerateCode extends Console\Command\Command
 
 
         //ShipService
-        $wsdlPath = $fedexSrcDir . '/_wsdl/ShipService_v21.wsdl';
+        $wsdlPath = $fedexSrcDir . '/_wsdl/ShipService_v23.wsdl';
 
         $baseNamespace = 'FedEx\ShipService';
         $subPackageName = 'Ship Service';
