@@ -426,5 +426,28 @@ class GenerateCode extends Console\Command\Command
         $exportPath = $fedexSrcDir . '/DGDSService/ComplexType';
         $generateComplexTypes = new CodeGenerator\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
         $generateComplexTypes->run();
+
+        /*
+         * Country Service (v8)
+         */
+        $wsdlPath = $fedexSrcDir . '/_wsdl/CountryService_v8.wsdl';
+
+        $baseNamespace = 'FedEx\CountryService';
+        $subPackageName = 'Country Service';
+
+        //generate Request class
+        $pathToRequestClassFile = $fedexSrcDir . '/CountryService/Request.php';
+        $generateRequestClassFile = new CodeGenerator\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, $baseNamespace, $subPackageName);
+        $generateRequestClassFile->run();
+
+        //generate SimpleType classes
+        $exportPath = $fedexSrcDir . '/CountryService/SimpleType';
+        $generateSimpleTypes = new CodeGenerator\GenerateSimpleTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
+        $generateSimpleTypes->run();
+
+        //generate ComplexType classes
+        $exportPath = $fedexSrcDir . '/CountryService/ComplexType';
+        $generateComplexTypes = new CodeGenerator\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
+        $generateComplexTypes->run();
     }
 }
