@@ -4,7 +4,7 @@ namespace FedEx\LocationsService\SimpleType;
 use FedEx\AbstractSimpleType;
 
 /**
- * Specifies the types of services supported by a FedEx location for redirect to hold.
+ * DEPRECATED as of July 2017.
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper

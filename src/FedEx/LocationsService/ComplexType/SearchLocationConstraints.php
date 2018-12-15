@@ -11,10 +11,12 @@ use FedEx\AbstractComplexType;
  * @subpackage  Locations Service
  *
  * @property Distance $RadiusDistance
- * @property string $ExpressDropOffTimeNeeded
+ * @property string $DropOffTimeNeeded
  * @property \FedEx\LocationsService\SimpleType\LocationSearchFilterType|string[] $ResultsFilters
  * @property \FedEx\LocationsService\SimpleType\SupportedRedirectToHoldServiceType|string[] $SupportedRedirectToHoldServices
  * @property \FedEx\LocationsService\SimpleType\LocationAttributesType|string[] $RequiredLocationAttributes
+ * @property LocationCapabilityDetail[] $RequiredLocationCapabilities
+ * @property LocationSupportedShipmentDetail $ShipmentDetail
  * @property int $ResultsToSkip
  * @property int $ResultsRequested
  * @property \FedEx\LocationsService\SimpleType\LocationContentOptionType|string[] $LocationContentOptions
@@ -43,14 +45,14 @@ class SearchLocationConstraints extends AbstractComplexType
     }
 
     /**
-     * The latest time at which the customer can drop off a package for being shipped using an express service.
+     * Set DropOffTimeNeeded
      *
-     * @param string $expressDropOffTimeNeeded
+     * @param string $dropOffTimeNeeded
      * @return $this
      */
-    public function setExpressDropOffTimeNeeded($expressDropOffTimeNeeded)
+    public function setDropOffTimeNeeded($dropOffTimeNeeded)
     {
-        $this->values['ExpressDropOffTimeNeeded'] = $expressDropOffTimeNeeded;
+        $this->values['DropOffTimeNeeded'] = $dropOffTimeNeeded;
         return $this;
     }
 
@@ -67,7 +69,7 @@ class SearchLocationConstraints extends AbstractComplexType
     }
 
     /**
-     * Specifies the types of services supported by a FedEx location for redirect to hold.
+     * DEPRECATED as of July 2017; See requiredLocationCapabilities.
      *
      * @param \FedEx\LocationsService\SimpleType\SupportedRedirectToHoldServiceType[]|string[] $supportedRedirectToHoldServices
      * @return $this
@@ -87,6 +89,30 @@ class SearchLocationConstraints extends AbstractComplexType
     public function setRequiredLocationAttributes(array $requiredLocationAttributes)
     {
         $this->values['RequiredLocationAttributes'] = $requiredLocationAttributes;
+        return $this;
+    }
+
+    /**
+     * Set RequiredLocationCapabilities
+     *
+     * @param LocationCapabilityDetail[] $requiredLocationCapabilities
+     * @return $this
+     */
+    public function setRequiredLocationCapabilities(array $requiredLocationCapabilities)
+    {
+        $this->values['RequiredLocationCapabilities'] = $requiredLocationCapabilities;
+        return $this;
+    }
+
+    /**
+     * Set ShipmentDetail
+     *
+     * @param LocationSupportedShipmentDetail $shipmentDetail
+     * @return $this
+     */
+    public function setShipmentDetail(LocationSupportedShipmentDetail $shipmentDetail)
+    {
+        $this->values['ShipmentDetail'] = $shipmentDetail;
         return $this;
     }
 

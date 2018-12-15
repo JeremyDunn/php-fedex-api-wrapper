@@ -16,6 +16,7 @@ use FedEx\AbstractComplexType;
  * @property VersionId $Version
  * @property string $EffectiveDate
  * @property \FedEx\LocationsService\SimpleType\LocationsSearchCriteriaType|string $LocationsSearchCriterion
+ * @property string $ShipperAccountNumber
  * @property UniqueTrackingNumber $UniqueTrackingNumber
  * @property Address $Address
  * @property string $PhoneNumber
@@ -103,6 +104,18 @@ class SearchLocationsRequest extends AbstractComplexType
     public function setLocationsSearchCriterion($locationsSearchCriterion)
     {
         $this->values['LocationsSearchCriterion'] = $locationsSearchCriterion;
+        return $this;
+    }
+
+    /**
+     * The account number of the shipper. This is the account number for which restrictions and privileges will be applied.
+     *
+     * @param string $shipperAccountNumber
+     * @return $this
+     */
+    public function setShipperAccountNumber($shipperAccountNumber)
+    {
+        $this->values['ShipperAccountNumber'] = $shipperAccountNumber;
         return $this;
     }
 

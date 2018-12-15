@@ -50,7 +50,7 @@ class DistanceAndLocationDetail extends AbstractComplexType
     }
 
     /**
-     * Set SupportedRedirectToHoldServices
+     * DEPRECATED as of July 2017; See locationCapabilities.
      *
      * @param \FedEx\LocationsService\SimpleType\SupportedRedirectToHoldServiceType[]|string[] $supportedRedirectToHoldServices
      * @return $this

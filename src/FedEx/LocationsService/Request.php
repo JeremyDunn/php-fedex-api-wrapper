@@ -15,7 +15,7 @@ class Request extends AbstractRequest
     const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/locs';
     const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/locs';
 
-    protected static $wsdlFileName = 'LocationsService_v7.wsdl';
+    protected static $wsdlFileName = 'LocationsService_v9.wsdl';
             
     /**
      * Sends the SearchLocationsRequest and returns the response

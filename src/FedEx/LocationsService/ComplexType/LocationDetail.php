@@ -17,7 +17,10 @@ use FedEx\AbstractComplexType;
  * @property string $GeographicCoordinates
  * @property string $TimeZoneOffset
  * @property \FedEx\LocationsService\SimpleType\FedExLocationType|string $LocationType
+ * @property string $LocationTypeForDisplay
  * @property \FedEx\LocationsService\SimpleType\LocationAttributesType|string[] $Attributes
+ * @property LocationCapabilityDetail[] $LocationCapabilities
+ * @property LocationPackageLimitsDetail $PackageMaximumLimits
  * @property ClearanceLocationDetail $ClearanceLocationDetail
  * @property LocationIdentificationDetail[] $ServicingLocationDetails
  * @property string $AcceptedCurrency
@@ -124,6 +127,18 @@ class LocationDetail extends AbstractComplexType
     }
 
     /**
+     * Branded text associated with this location type.
+     *
+     * @param string $locationTypeForDisplay
+     * @return $this
+     */
+    public function setLocationTypeForDisplay($locationTypeForDisplay)
+    {
+        $this->values['LocationTypeForDisplay'] = $locationTypeForDisplay;
+        return $this;
+    }
+
+    /**
      * Set Attributes
      *
      * @param \FedEx\LocationsService\SimpleType\LocationAttributesType[]|string[] $attributes
@@ -132,6 +147,30 @@ class LocationDetail extends AbstractComplexType
     public function setAttributes(array $attributes)
     {
         $this->values['Attributes'] = $attributes;
+        return $this;
+    }
+
+    /**
+     * Set LocationCapabilities
+     *
+     * @param LocationCapabilityDetail[] $locationCapabilities
+     * @return $this
+     */
+    public function setLocationCapabilities(array $locationCapabilities)
+    {
+        $this->values['LocationCapabilities'] = $locationCapabilities;
+        return $this;
+    }
+
+    /**
+     * The maximum values for various package attributes that are supported at the location.
+     *
+     * @param LocationPackageLimitsDetail $packageMaximumLimits
+     * @return $this
+     */
+    public function setPackageMaximumLimits(LocationPackageLimitsDetail $packageMaximumLimits)
+    {
+        $this->values['PackageMaximumLimits'] = $packageMaximumLimits;
         return $this;
     }
 

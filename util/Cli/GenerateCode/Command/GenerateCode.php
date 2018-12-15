@@ -136,7 +136,7 @@ class GenerateCode extends Console\Command\Command
 
 
         //LocationsService
-        $wsdlPath = $fedexSrcDir . '/_wsdl/LocationsService_v7.wsdl';
+        $wsdlPath = $fedexSrcDir . '/_wsdl/LocationsService_v9.wsdl';
 
         $baseNamespace = 'FedEx\LocationsService';
         $subPackageName = 'Locations Service';

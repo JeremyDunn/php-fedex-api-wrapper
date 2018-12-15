@@ -11,6 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Locations Service
  *
  * @property string $ClearanceCountry
+ * @property \FedEx\LocationsService\SimpleType\ServiceType|string[] $ServicesSupported
  * @property \FedEx\LocationsService\SimpleType\PackageSpecialServiceType|string[] $SpecialServicesSupported
 
  */
@@ -32,6 +33,18 @@ class ClearanceCountryDetail extends AbstractComplexType
     public function setClearanceCountry($clearanceCountry)
     {
         $this->values['ClearanceCountry'] = $clearanceCountry;
+        return $this;
+    }
+
+    /**
+     * Set ServicesSupported
+     *
+     * @param \FedEx\LocationsService\SimpleType\ServiceType[]|string[] $servicesSupported
+     * @return $this
+     */
+    public function setServicesSupported(array $servicesSupported)
+    {
+        $this->values['ServicesSupported'] = $servicesSupported;
         return $this;
     }
 
