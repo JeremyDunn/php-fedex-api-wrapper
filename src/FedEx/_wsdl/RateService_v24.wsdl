@@ -1,6 +1,6 @@
-<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://fedex.com/ws/rate/v22" xmlns:s1="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://fedex.com/ws/rate/v22" name="RateServiceDefinitions">
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://fedex.com/ws/rate/v24" xmlns:s1="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://fedex.com/ws/rate/v24" name="RateServiceDefinitions">
   <types>
-    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://fedex.com/ws/rate/v22">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://fedex.com/ws/rate/v24">
       <xs:element name="RateReply" type="ns:RateReply"/>
       <xs:element name="RateRequest" type="ns:RateRequest"/>
       <xs:complexType name="AdditionalLabelsDetail">
@@ -120,6 +120,15 @@
           <xs:enumeration value="OTHER"/>
         </xs:restriction>
       </xs:simpleType>
+      <xs:complexType name="AssociatedFreightLineItemDetail">
+        <xs:sequence>
+          <xs:element name="Id" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>A freight line item identifier referring to a freight shipment line item that describes goods contained within this handling unit.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
       <xs:simpleType name="B13AFilingOptionType">
         <xs:restriction base="xs:string">
           <xs:enumeration value="FEDEX_TO_STAMP"/>
@@ -187,7 +196,6 @@
         <xs:restriction base="xs:string">
           <xs:enumeration value="CONTAINED_IN_EQUIPMENT"/>
           <xs:enumeration value="PACKED_WITH_EQUIPMENT"/>
-          
         </xs:restriction>
       </xs:simpleType>
       <xs:simpleType name="BatteryRegulatorySubType">
@@ -493,7 +501,12 @@
           </xs:element>
           <xs:element name="ServiceType" type="ns:ServiceType" minOccurs="0">
             <xs:annotation>
-              <xs:documentation>The FedEx service type applicable to this commitment.</xs:documentation>
+              <xs:documentation>Deprecated: This field will be removed in a future DOM release. New code should use serviceDescription.serviceType instead.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ServiceDescription" type="ns:ServiceDescription" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Descriptions and alternate identifiers for a service.</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element name="AppliedOptions" type="ns:ServiceOptionType" minOccurs="0" maxOccurs="unbounded">
@@ -618,9 +631,17 @@
       </xs:simpleType>
       <xs:complexType name="Commodity">
         <xs:sequence>
-          <xs:element name="Name" type="xs:string" minOccurs="0"/>
+          <xs:element name="Name" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>FedEx internal commodity identifier</xs:documentation>
+            </xs:annotation>
+          </xs:element>
           <xs:element name="NumberOfPieces" type="xs:nonNegativeInteger" minOccurs="0"/>
-          <xs:element name="Description" type="xs:string" minOccurs="0"/>
+          <xs:element name="Description" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>A free-form description of the commodity, which could be used for customs clearance documentation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
           <xs:element name="Purpose" type="ns:CommodityPurposeType" minOccurs="0"/>
           <xs:element name="CountryOfManufacture" type="xs:string" minOccurs="0"/>
           <xs:element name="HarmonizedCode" type="xs:string" minOccurs="0"/>
@@ -1215,7 +1236,7 @@
               <xs:documentation>Specifies the radioactivity detail for the current package, if the package contains radioactive materials.</xs:documentation>
             </xs:annotation>
           </xs:element>
-         </xs:sequence>
+        </xs:sequence>
       </xs:complexType>
       <xs:simpleType name="DangerousGoodsPackingOptionType">
         <xs:restriction base="xs:string">
@@ -2030,6 +2051,11 @@
           <xs:documentation>Description of an individual commodity or class of content in a shipment.</xs:documentation>
         </xs:annotation>
         <xs:sequence>
+          <xs:element name="Id" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>A unique identifier assigned to this line item.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
           <xs:element name="FreightClass" type="ns:FreightClassType" minOccurs="0">
             <xs:annotation>
               <xs:documentation>Freight class for this line item.</xs:documentation>
@@ -2484,15 +2510,18 @@
       <xs:simpleType name="LabelStockType">
         <xs:restriction base="xs:string">
           <xs:enumeration value="PAPER_4X6"/>
+          <xs:enumeration value="PAPER_4X6.75"/>
           <xs:enumeration value="PAPER_4X8"/>
           <xs:enumeration value="PAPER_4X9"/>
           <xs:enumeration value="PAPER_7X4.75"/>
           <xs:enumeration value="PAPER_8.5X11_BOTTOM_HALF_LABEL"/>
           <xs:enumeration value="PAPER_8.5X11_TOP_HALF_LABEL"/>
           <xs:enumeration value="STOCK_4X6"/>
+          <xs:enumeration value="STOCK_4X6.75"/>
           <xs:enumeration value="STOCK_4X6.75_LEADING_DOC_TAB"/>
           <xs:enumeration value="STOCK_4X6.75_TRAILING_DOC_TAB"/>
           <xs:enumeration value="STOCK_4X8"/>
+          <xs:enumeration value="STOCK_4X9"/>
           <xs:enumeration value="STOCK_4X9_LEADING_DOC_TAB"/>
           <xs:enumeration value="STOCK_4X9_TRAILING_DOC_TAB"/>
         </xs:restriction>
@@ -3123,6 +3152,21 @@
           <xs:enumeration value="PRIORITY_ALERT_PLUS"/>
         </xs:restriction>
       </xs:simpleType>
+      <xs:complexType name="ProductName">
+        <xs:sequence>
+          <xs:element name="Type" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The type of branded, translated, and/or localized name to which this value refers.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Encoding" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The character encoding used to represent this product name. For example, UTF-8.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Value" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
       <xs:simpleType name="PurposeOfShipmentType">
         <xs:restriction base="xs:string">
           <xs:enumeration value="GIFT"/>
@@ -3259,7 +3303,16 @@
       </xs:complexType>
       <xs:complexType name="RateReplyDetail">
         <xs:sequence>
-          <xs:element name="ServiceType" type="ns:ServiceType" minOccurs="0"/>
+          <xs:element name="ServiceType" type="ns:ServiceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Deprecated: This field will be removed in a future DOM release. New code should use serviceDescription.serviceType instead.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ServiceDescription" type="ns:ServiceDescription" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Descriptions and alternate identifiers for a service.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
           <xs:element name="PackagingType" type="ns:PackagingType" minOccurs="0"/>
           <xs:element name="AppliedOptions" type="ns:ServiceOptionType" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
@@ -3519,7 +3572,7 @@
       </xs:simpleType>
       <xs:simpleType name="RegulatoryControlType">
         <xs:restriction base="xs:string">
-          <xs:enumeration value="EU_CIRCULATION"/>
+         <xs:enumeration value="EU_CIRCULATION"/>
           <xs:enumeration value="FOOD_OR_PERISHABLE"/>
           <xs:enumeration value="NAFTA"/>
           <xs:enumeration value="NOT_APPLICABLE_FOR_LOW_CUSTOMS_VALUE_EXCEPTION"/>
@@ -3590,6 +3643,7 @@
               <xs:documentation>Provides additional detail on how the customer has physically packaged this item. As of June 2009, required for packages moving under international and SmartPost services.</xs:documentation>
             </xs:annotation>
           </xs:element>
+          <xs:element name="AssociatedFreightLineItems" type="ns:AssociatedFreightLineItemDetail" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element name="ItemDescription" type="xs:string" minOccurs="0">
             <xs:annotation>
               <xs:documentation>Human-readable text describing the package.</xs:documentation>
@@ -3644,7 +3698,11 @@
               <xs:documentation>Physical starting address for the shipment, if different from shipper's address.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="SoldTo" type="ns:Party" minOccurs="0"/>
+          <xs:element name="SoldTo" type="ns:Party" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The sold-to party is used for customs clearance; for example, in support of US import customs rules. The need for this field could vary based on whether a sold-to party was specified on a consolidation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
           <xs:element name="ShippingChargesPayment" type="ns:Payment" minOccurs="0"/>
           <xs:element name="SpecialServicesRequested" type="ns:ShipmentSpecialServicesRequested" minOccurs="0"/>
           <xs:element name="ExpressFreightDetail" type="ns:ExpressFreightDetail" minOccurs="0"/>
@@ -3724,11 +3782,13 @@
           <xs:enumeration value="CUSTOMER_SPECIFIED_LABELS"/>
           <xs:enumeration value="DANGEROUS_GOODS_SHIPPERS_DECLARATION"/>
           <xs:enumeration value="EXPORT_DECLARATION"/>
+          <xs:enumeration value="FEDEX_FREIGHT_STRAIGHT_BILL_OF_LADING"/>
           <xs:enumeration value="GENERAL_AGENCY_AGREEMENT"/>
           <xs:enumeration value="LABEL"/>
           <xs:enumeration value="NAFTA_CERTIFICATE_OF_ORIGIN"/>
           <xs:enumeration value="PRO_FORMA_INVOICE"/>
           <xs:enumeration value="RETURN_INSTRUCTIONS"/>
+          <xs:enumeration value="VICS_BILL_OF_LADING"/>
         </xs:restriction>
       </xs:simpleType>
       <xs:simpleType name="RequiredShippingDocumentType">
@@ -3842,6 +3902,19 @@
           <xs:enumeration value="USPS"/>
         </xs:restriction>
       </xs:simpleType>
+      <xs:complexType name="ServiceDescription">
+        <xs:sequence>
+          <xs:element name="ServiceType" type="ns:ServiceType" minOccurs="0"/>
+          <xs:element name="Code" type="xs:string" minOccurs="0"/>
+          <xs:element name="Names" type="ns:ProductName" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Branded, translated, and/or localized names for this service.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Description" type="xs:string" minOccurs="0"/>
+          <xs:element name="AstraDescription" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
       <xs:simpleType name="ServiceOptionType">
         <xs:annotation>
           <xs:documentation>These values control the optional features of service that may be combined in a commitment/rate comparision transaction.</xs:documentation>
@@ -4320,6 +4393,7 @@
           <xs:enumeration value="LIFTGATE_PICKUP"/>
           <xs:enumeration value="LIMITED_ACCESS_DELIVERY"/>
           <xs:enumeration value="LIMITED_ACCESS_PICKUP"/>
+          <xs:enumeration value="OVER_LENGTH"/>
           <xs:enumeration value="PENDING_SHIPMENT"/>
           <xs:enumeration value="PHARMACY_DELIVERY"/>
           <xs:enumeration value="POISON"/>
@@ -4735,6 +4809,7 @@
           <xs:enumeration value="OUT_OF_PICKUP_AREA"/>
           <xs:enumeration value="OVERSIZE"/>
           <xs:enumeration value="OVER_DIMENSION"/>
+          <xs:enumeration value="OVER_LENGTH"/>
           <xs:enumeration value="PIECE_COUNT_VERIFICATION"/>
           <xs:enumeration value="PRE_DELIVERY_NOTIFICATION"/>
           <xs:enumeration value="PRIORITY_ALERT"/>
@@ -5028,7 +5103,7 @@
               <xs:documentation>Identifies a system or sub-system which performs an operation.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="Major" type="xs:int" fixed="22" minOccurs="1">
+          <xs:element name="Major" type="xs:int" fixed="24" minOccurs="1">
             <xs:annotation>
               <xs:documentation>Identifies the service business level.</xs:documentation>
             </xs:annotation>
@@ -5062,7 +5137,7 @@
   <binding name="RateServiceSoapBinding" type="ns:RatePortType">
     <s1:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
     <operation name="getRates">
-      <s1:operation soapAction="http://fedex.com/ws/rate/v22/getRates" style="document"/>
+      <s1:operation soapAction="http://fedex.com/ws/rate/v24/getRates" style="document"/>
       <input>
         <s1:body use="literal"/>
       </input>

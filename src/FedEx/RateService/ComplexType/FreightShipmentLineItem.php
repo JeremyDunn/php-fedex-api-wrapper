@@ -10,6 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  *
+ * @property string $Id
  * @property \FedEx\RateService\SimpleType\FreightClassType|string $FreightClass
  * @property \FedEx\RateService\SimpleType\PhysicalPackagingType|string $Packaging
  * @property int $Pieces
@@ -27,6 +28,18 @@ class FreightShipmentLineItem extends AbstractComplexType
      * @var string
      */
     protected $name = 'FreightShipmentLineItem';
+
+    /**
+     * A unique identifier assigned to this line item.
+     *
+     * @param string $id
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->values['Id'] = $id;
+        return $this;
+    }
 
     /**
      * Freight class for this line item.
