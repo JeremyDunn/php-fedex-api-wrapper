@@ -1,6 +1,6 @@
-<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://fedex.com/ws/openship/v11" xmlns:s1="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://fedex.com/ws/openship/v11" name="OpenShipServiceDefinitions">
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://fedex.com/ws/openship/v15" xmlns:s1="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://fedex.com/ws/openship/v15" name="OpenShipServiceDefinitions">
   <types>
-    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://fedex.com/ws/openship/v11">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://fedex.com/ws/openship/v15">
       <xs:element name="AddPackagesToOpenShipmentReply" type="ns:AddPackagesToOpenShipmentReply"/>
       <xs:element name="AddPackagesToOpenShipmentRequest" type="ns:AddPackagesToOpenShipmentRequest"/>
       <xs:element name="ConfirmConsolidationReply" type="ns:ConfirmConsolidationReply"/>
@@ -192,6 +192,11 @@
               <xs:documentation>Indicates whether this address residential (as opposed to commercial).</xs:documentation>
             </xs:annotation>
           </xs:element>
+          <xs:element name="GeographicCoordinates" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The geographic coordinates cooresponding to this address.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:complexType>
       <xs:complexType name="AdrLicenseDetail">
@@ -255,6 +260,15 @@
           <xs:enumeration value="FEDEX_OFFICE"/>
         </xs:restriction>
       </xs:simpleType>
+      <xs:complexType name="AssociatedFreightLineItemDetail">
+        <xs:sequence>
+          <xs:element name="Id" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>A freight line item identifier referring to a freight shipment line item that describes goods contained within this handling unit.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
       <xs:complexType name="AssociatedShipmentDetail">
         <xs:sequence>
           <xs:element name="Type" type="ns:AssociatedShipmentType" minOccurs="0"/>
@@ -370,6 +384,54 @@
           <xs:enumeration value="POSTNET"/>
           <xs:enumeration value="QR_CODE"/>
           <xs:enumeration value="UCC128"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="BatteryClassificationDetail">
+        <xs:annotation>
+          <xs:documentation>Describes attributes of a battery or cell that are used for classification purposes. Typically this structure would be used to allow customers to declare batteries or cells for which full dangerous goods documentation and procedures are not required.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Material" type="ns:BatteryMaterialType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Describes the material composition of the battery or cell.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Packing" type="ns:BatteryPackingType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Describes the packing arrangement of the battery or cell with respect to other items within the same package.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="RegulatorySubType" type="ns:BatteryRegulatorySubType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>A regulation specific classification for the battery or cell.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="BatteryMaterialType">
+        <xs:annotation>
+          <xs:documentation>Describes the material composition of a battery or cell.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="LITHIUM_ION"/>
+          <xs:enumeration value="LITHIUM_METAL"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="BatteryPackingType">
+        <xs:annotation>
+          <xs:documentation>Describes the packing arrangement of a battery or cell with respect to other items within the same package.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CONTAINED_IN_EQUIPMENT"/>
+          <xs:enumeration value="PACKED_WITH_EQUIPMENT"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="BatteryRegulatorySubType">
+        <xs:annotation>
+          <xs:documentation>A regulation specific classification for a battery or cell.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="IATA_SECTION_II"/>
         </xs:restriction>
       </xs:simpleType>
       <xs:complexType name="BinaryBarcode">
@@ -678,9 +740,17 @@
       </xs:complexType>
       <xs:complexType name="Commodity">
         <xs:sequence>
-          <xs:element name="Name" type="xs:string" minOccurs="0"/>
+          <xs:element name="Name" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>FedEx internal commodity identifier</xs:documentation>
+            </xs:annotation>
+          </xs:element>
           <xs:element name="NumberOfPieces" type="xs:nonNegativeInteger" minOccurs="0"/>
-          <xs:element name="Description" type="xs:string" minOccurs="0"/>
+          <xs:element name="Description" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>A free-form description of the commodity, which could be used for customs clearance documentation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
           <xs:element name="Purpose" type="ns:CommodityPurposeType" minOccurs="0"/>
           <xs:element name="CountryOfManufacture" type="xs:string" minOccurs="0"/>
           <xs:element name="HarmonizedCode" type="xs:string" minOccurs="0"/>
@@ -746,9 +816,16 @@
               <xs:documentation>The identifier for all clearance documents associated with this shipment.</xs:documentation>
             </xs:annotation>
           </xs:element>
+          <xs:element name="Type" type="ns:CompletedEtdType" minOccurs="0"/>
           <xs:element name="UploadDocumentReferenceDetails" type="ns:UploadDocumentReferenceDetail" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:complexType>
+      <xs:simpleType name="CompletedEtdType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ELECTRONIC_DOCUMENTS_ONLY"/>
+          <xs:enumeration value="ELECTRONIC_DOCUMENTS_WITH_ORIGINALS"/>
+        </xs:restriction>
+      </xs:simpleType>
       <xs:complexType name="CompletedHazardousPackageDetail">
         <xs:annotation>
           <xs:documentation>Completed package-level hazardous commodity information for a single package.</xs:documentation>
@@ -818,6 +895,7 @@
               <xs:documentation>Identifies the type of FedEx location.</xs:documentation>
             </xs:annotation>
           </xs:element>
+          <xs:element name="HoldingLocationTypeForDisplay" type="xs:string" minOccurs="0"/>
         </xs:sequence>
       </xs:complexType>
       <xs:complexType name="CompletedPackageDetail">
@@ -888,7 +966,12 @@
           <xs:element name="UsDomestic" type="xs:boolean" minOccurs="0"/>
           <xs:element name="CarrierCode" type="ns:CarrierCodeType" minOccurs="0"/>
           <xs:element name="MasterTrackingId" type="ns:TrackingId" minOccurs="0"/>
-          <xs:element name="ServiceTypeDescription" type="xs:string" minOccurs="0"/>
+          <xs:element name="ServiceTypeDescription" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>DEPRECATED as of 201801: Use serviceDescription instead.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ServiceDescription" type="ns:ServiceDescription" minOccurs="0"/>
           <xs:element name="PackagingDescription" type="xs:string" minOccurs="0"/>
           <xs:element name="OperationalDetail" type="ns:ShipmentOperationalDetail" minOccurs="0"/>
           <xs:element name="AccessDetail" type="ns:PendingShipmentAccessDetail" minOccurs="0">
@@ -925,6 +1008,11 @@
           <xs:element name="ExportComplianceStatement" type="xs:string" minOccurs="0">
             <xs:annotation>
               <xs:documentation>Returns any defaults or updates applied to RequestedShipment.exportDetail.exportComplianceStatement.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="DocumentRequirements" type="ns:DocumentRequirementsDetail" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>This specifies what rules or requirements for documents are applicable for this shipment. This may identify required or prohibited documents.</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element name="CompletedEtdDetail" type="ns:CompletedEtdDetail" minOccurs="0"/>
@@ -1412,7 +1500,6 @@
         <xs:restriction base="xs:string">
           <xs:enumeration value="INTERNATIONAL_DISTRIBUTION_FREIGHT"/>
           <xs:enumeration value="INTERNATIONAL_ECONOMY_DISTRIBUTION"/>
-          <xs:enumeration value="INTERNATIONAL_GROUND_DIRECT_DISTRIBUTION"/>
           <xs:enumeration value="INTERNATIONAL_GROUND_DISTRIBUTION"/>
           <xs:enumeration value="INTERNATIONAL_PRIORITY_DISTRIBUTION"/>
           <xs:enumeration value="TRANSBORDER_DISTRIBUTION"/>
@@ -1887,16 +1974,13 @@
       </xs:complexType>
       <xs:simpleType name="CustomerReferenceType">
         <xs:restriction base="xs:string">
-          <xs:enumeration value="BILL_OF_LADING"/>
           <xs:enumeration value="CUSTOMER_REFERENCE"/>
           <xs:enumeration value="DEPARTMENT_NUMBER"/>
-          <xs:enumeration value="ELECTRONIC_PRODUCT_CODE"/>
           <xs:enumeration value="INTRACOUNTRY_REGULATORY_REFERENCE"/>
           <xs:enumeration value="INVOICE_NUMBER"/>
           <xs:enumeration value="P_O_NUMBER"/>
           <xs:enumeration value="RMA_ASSOCIATION"/>
           <xs:enumeration value="SHIPMENT_INTEGRITY"/>
-          <xs:enumeration value="STORE_NUMBER"/>
         </xs:restriction>
       </xs:simpleType>
       <xs:complexType name="CustomerSpecifiedLabelDetail">
@@ -2468,6 +2552,25 @@
           <xs:element name="Options" type="ns:DocumentFormatOptionType" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:complexType>
+      <xs:complexType name="DocumentGenerationDetail">
+        <xs:sequence>
+          <xs:element name="Type" type="ns:EnterpriseDocumentType" minOccurs="0"/>
+          <xs:element name="MinimumCopiesRequired" type="xs:nonNegativeInteger" minOccurs="0"/>
+          <xs:element name="Letterhead" type="ns:RequirementType" minOccurs="0"/>
+          <xs:element name="ElectronicSignature" type="ns:RequirementType" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DocumentRequirementsDetail">
+        <xs:sequence>
+          <xs:element name="RequiredDocuments" type="ns:RequiredDocumentType" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="GenerationDetails" type="ns:DocumentGenerationDetail" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="ProhibitedDocuments" type="ns:EnterpriseDocumentType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Lists the documents that are not accepted by FedEx for this shipment.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
       <xs:simpleType name="DropoffType">
         <xs:restriction base="xs:string">
           <xs:enumeration value="BUSINESS_SERVICE_CENTER"/>
@@ -2602,11 +2705,29 @@
           <xs:element name="Options" type="ns:EmailOptionType" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:complexType>
+      <xs:simpleType name="EnterpriseDocumentType">
+        <xs:annotation>
+          <xs:documentation>This identifies some of the document types recognized by Enterprise Document Management Service.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="AIR_WAYBILL"/>
+          <xs:enumeration value="CERTIFICATE_OF_ORIGIN"/>
+          <xs:enumeration value="COMMERCIAL_INVOICE"/>
+          <xs:enumeration value="NAFTA_CERTIFICATE_OF_ORIGIN"/>
+          <xs:enumeration value="PRO_FORMA_INVOICE"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="EtdAttributeType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="POST_SHIPMENT_UPLOAD_REQUESTED"/>
+        </xs:restriction>
+      </xs:simpleType>
       <xs:complexType name="EtdDetail">
         <xs:annotation>
           <xs:documentation>Electronic Trade document references used with the ETD special service.</xs:documentation>
         </xs:annotation>
         <xs:sequence>
+          <xs:element name="Attributes" type="ns:EtdAttributeType" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element name="RequestedDocumentCopies" type="ns:RequestedShippingDocumentType" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation>Indicates the types of shipping documents produced for the shipper by FedEx (see ShippingDocumentSpecification) which should be copied back to the shipper in the shipment result data.</xs:documentation>
@@ -2667,13 +2788,17 @@
           <xs:documentation>Identifies a kind of FedEx facility.</xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:string">
+          <xs:enumeration value="FEDEX_AUTHORIZED_SHIP_CENTER"/>
           <xs:enumeration value="FEDEX_EXPRESS_STATION"/>
           <xs:enumeration value="FEDEX_FACILITY"/>
           <xs:enumeration value="FEDEX_FREIGHT_SERVICE_CENTER"/>
           <xs:enumeration value="FEDEX_GROUND_TERMINAL"/>
           <xs:enumeration value="FEDEX_HOME_DELIVERY_STATION"/>
           <xs:enumeration value="FEDEX_OFFICE"/>
+          <xs:enumeration value="FEDEX_ONSITE"/>
+          <xs:enumeration value="FEDEX_SELF_SERVICE_LOCATION"/>
           <xs:enumeration value="FEDEX_SHIPSITE"/>
+          <xs:enumeration value="FEDEX_SHIP_AND_GET"/>
           <xs:enumeration value="FEDEX_SMART_POST_HUB"/>
         </xs:restriction>
       </xs:simpleType>
@@ -2763,6 +2888,11 @@
           <xs:enumeration value="UNIT_PRICING"/>
         </xs:restriction>
       </xs:simpleType>
+      <xs:complexType name="FreightBillOfLadingDetail">
+        <xs:sequence>
+          <xs:element name="Format" type="ns:ShippingDocumentFormat" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
       <xs:simpleType name="FreightChargeBasisType">
         <xs:restriction base="xs:string">
           <xs:enumeration value="CWT"/>
@@ -2983,6 +3113,11 @@
           <xs:documentation>Description of an individual commodity or class of content in a shipment.</xs:documentation>
         </xs:annotation>
         <xs:sequence>
+          <xs:element name="Id" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>A unique identifier assigned to this line item.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
           <xs:element name="FreightClass" type="ns:FreightClassType" minOccurs="0">
             <xs:annotation>
               <xs:documentation>Freight class for this line item.</xs:documentation>
@@ -3423,6 +3558,11 @@
               <xs:documentation>Type of facility at which package/shipment is to be held.</xs:documentation>
             </xs:annotation>
           </xs:element>
+          <xs:element name="LocationId" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Location identification (for facilities identified by an alphanumeric location code).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:complexType>
       <xs:complexType name="HomeDeliveryPremiumDetail">
@@ -3516,9 +3656,7 @@
       <xs:simpleType name="LabelFormatType">
         <xs:restriction base="xs:string">
           <xs:enumeration value="COMMON2D"/>
-          <xs:enumeration value="FEDEX_FREIGHT_STRAIGHT_BILL_OF_LADING"/>
           <xs:enumeration value="LABEL_DATA_ONLY"/>
-          <xs:enumeration value="VICS_BILL_OF_LADING"/>
         </xs:restriction>
       </xs:simpleType>
       <xs:simpleType name="LabelMaskableDataType">
@@ -3583,6 +3721,7 @@
       <xs:simpleType name="LabelStockType">
         <xs:restriction base="xs:string">
           <xs:enumeration value="PAPER_4X6"/>
+          <xs:enumeration value="PAPER_4X6.75"/>
           <xs:enumeration value="PAPER_4X8"/>
           <xs:enumeration value="PAPER_4X9"/>
           <xs:enumeration value="PAPER_7X4.75"/>
@@ -3590,9 +3729,11 @@
           <xs:enumeration value="PAPER_8.5X11_TOP_HALF_LABEL"/>
           <xs:enumeration value="PAPER_LETTER"/>
           <xs:enumeration value="STOCK_4X6"/>
+          <xs:enumeration value="STOCK_4X6.75"/>
           <xs:enumeration value="STOCK_4X6.75_LEADING_DOC_TAB"/>
           <xs:enumeration value="STOCK_4X6.75_TRAILING_DOC_TAB"/>
           <xs:enumeration value="STOCK_4X8"/>
+          <xs:enumeration value="STOCK_4X9"/>
           <xs:enumeration value="STOCK_4X9_LEADING_DOC_TAB"/>
           <xs:enumeration value="STOCK_4X9_TRAILING_DOC_TAB"/>
         </xs:restriction>
@@ -4271,6 +4412,7 @@
         <xs:restriction base="xs:string">
           <xs:enumeration value="ALCOHOL"/>
           <xs:enumeration value="APPOINTMENT_DELIVERY"/>
+          <xs:enumeration value="BATTERY"/>
           <xs:enumeration value="COD"/>
           <xs:enumeration value="DANGEROUS_GOODS"/>
           <xs:enumeration value="DRY_ICE"/>
@@ -4295,6 +4437,11 @@
             </xs:annotation>
           </xs:element>
           <xs:element name="DangerousGoodsDetail" type="ns:DangerousGoodsDetail" minOccurs="0"/>
+          <xs:element name="BatteryDetails" type="ns:BatteryClassificationDetail" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Provides details about the batteries or cells that are contained within this specific package.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
           <xs:element name="DryIceWeight" type="ns:Weight" minOccurs="0"/>
           <xs:element name="SignatureOptionDetail" type="ns:SignatureOptionDetail" minOccurs="0"/>
           <xs:element name="PieceCountVerificationBoxCount" type="xs:nonNegativeInteger" minOccurs="0"/>
@@ -4530,6 +4677,21 @@
           <xs:enumeration value="PRIORITY_ALERT_PLUS"/>
         </xs:restriction>
       </xs:simpleType>
+      <xs:complexType name="ProductName">
+        <xs:sequence>
+          <xs:element name="Type" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The type of branded, translated, and/or localized name to which this value refers.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Encoding" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The character encoding used to represent this product name. For example, UTF-8.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Value" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
       <xs:simpleType name="PurposeOfShipmentType">
         <xs:restriction base="xs:string">
           <xs:enumeration value="GIFT"/>
@@ -4755,10 +4917,10 @@
       </xs:simpleType>
       <xs:simpleType name="RegulatoryControlType">
         <xs:restriction base="xs:string">
-          <xs:enumeration value="EU_CIRCULATION"/>
           <xs:enumeration value="FOOD_OR_PERISHABLE"/>
           <xs:enumeration value="NAFTA"/>
           <xs:enumeration value="NOT_APPLICABLE_FOR_LOW_CUSTOMS_VALUE_EXCEPTION"/>
+          <xs:enumeration value="NOT_IN_FREE_CIRCULATION"/>
         </xs:restriction>
       </xs:simpleType>
       <xs:complexType name="RegulatoryLabelContentDetail">
@@ -4995,6 +5157,7 @@
               <xs:documentation>Provides additional detail on how the customer has physically packaged this item. As of June 2009, required for packages moving under international and SmartPost services.</xs:documentation>
             </xs:annotation>
           </xs:element>
+          <xs:element name="AssociatedFreightLineItems" type="ns:AssociatedFreightLineItemDetail" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element name="ItemDescription" type="xs:string" minOccurs="0">
             <xs:annotation>
               <xs:documentation>Human-readable text describing the package.</xs:documentation>
@@ -5051,7 +5214,11 @@
               <xs:documentation>Physical starting address for the shipment, if different from shipper's address.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="SoldTo" type="ns:Party" minOccurs="0"/>
+          <xs:element name="SoldTo" type="ns:Party" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The sold-to party is used for customs clearance; for example, in support of US import customs rules. The need for this field could vary based on whether a sold-to party was specified on a consolidation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
           <xs:element name="ShippingChargesPayment" type="ns:Payment" minOccurs="0"/>
           <xs:element name="SpecialServicesRequested" type="ns:ShipmentSpecialServicesRequested" minOccurs="0"/>
           <xs:element name="ProcessingOptionsRequested" type="ns:ShipmentProcessingOptionsRequested" minOccurs="0">
@@ -5143,13 +5310,34 @@
           <xs:enumeration value="CUSTOM_SHIPMENT_DOCUMENT"/>
           <xs:enumeration value="DANGEROUS_GOODS_SHIPPERS_DECLARATION"/>
           <xs:enumeration value="EXPORT_DECLARATION"/>
-          <xs:enumeration value="FREIGHT_ADDRESS_LABEL"/>
+          <xs:enumeration value="FEDEX_FREIGHT_STRAIGHT_BILL_OF_LADING"/>
           <xs:enumeration value="GENERAL_AGENCY_AGREEMENT"/>
           <xs:enumeration value="LABEL"/>
           <xs:enumeration value="NAFTA_CERTIFICATE_OF_ORIGIN"/>
           <xs:enumeration value="OP_900"/>
           <xs:enumeration value="PRO_FORMA_INVOICE"/>
           <xs:enumeration value="RETURN_INSTRUCTIONS"/>
+          <xs:enumeration value="VICS_BILL_OF_LADING"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="RequiredDocumentType">
+        <xs:annotation>
+          <xs:documentation>This identifies the document types that can be required. This can also indicate when either a COMMERCIAL_INVOICE or a PRO_FORMA_INVOICE is required through the COMMERCIAL_OR_PRO_FORMA_INVOICE option.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="AIR_WAYBILL"/>
+          <xs:enumeration value="CERTIFICATE_OF_ORIGIN"/>
+          <xs:enumeration value="COMMERCIAL_INVOICE"/>
+          <xs:enumeration value="COMMERCIAL_OR_PRO_FORMA_INVOICE"/>
+          <xs:enumeration value="NAFTA_CERTIFICATE_OF_ORIGIN"/>
+          <xs:enumeration value="PRO_FORMA_INVOICE"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="RequirementType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="OPTIONAL"/>
+          <xs:enumeration value="PROHIBITED"/>
+          <xs:enumeration value="REQUIRED"/>
         </xs:restriction>
       </xs:simpleType>
       <xs:complexType name="RetrieveConsolidatedCommoditiesReply">
@@ -5351,6 +5539,7 @@
         </xs:annotation>
         <xs:restriction base="xs:string">
           <xs:enumeration value="INCENTIVE"/>
+          <xs:enumeration value="NEGOTIATED"/>
           <xs:enumeration value="PAYOR_ACCOUNT_PACKAGE"/>
           <xs:enumeration value="PAYOR_ACCOUNT_SHIPMENT"/>
           <xs:enumeration value="PAYOR_LIST_PACKAGE"/>
@@ -5359,6 +5548,7 @@
           <xs:enumeration value="PREFERRED_ACCOUNT_SHIPMENT"/>
           <xs:enumeration value="PREFERRED_LIST_PACKAGE"/>
           <xs:enumeration value="PREFERRED_LIST_SHIPMENT"/>
+          <xs:enumeration value="PREFERRED_NEGOTIATED"/>
         </xs:restriction>
       </xs:simpleType>
       <xs:simpleType name="ReturnedShippingDocumentType">
@@ -5377,6 +5567,7 @@
           <xs:enumeration value="DELIVERY_ON_INVOICE_ACCEPTANCE_RETURN_LABEL"/>
           <xs:enumeration value="ETD_LABEL"/>
           <xs:enumeration value="EXPORT_DECLARATION"/>
+          <xs:enumeration value="FEDEX_FREIGHT_STRAIGHT_BILL_OF_LADING"/>
           <xs:enumeration value="FREIGHT_ADDRESS_LABEL"/>
           <xs:enumeration value="GENERAL_AGENCY_AGREEMENT"/>
           <xs:enumeration value="GROUND_BARCODE"/>
@@ -5390,6 +5581,7 @@
           <xs:enumeration value="RETURN_INSTRUCTIONS"/>
           <xs:enumeration value="TERMS_AND_CONDITIONS"/>
           <xs:enumeration value="USPS_BARCODE"/>
+          <xs:enumeration value="VICS_BILL_OF_LADING"/>
         </xs:restriction>
       </xs:simpleType>
       <xs:complexType name="Rma">
@@ -5423,8 +5615,22 @@
         <xs:restriction base="xs:string">
           <xs:enumeration value="EXPRESS_FREIGHT"/>
           <xs:enumeration value="EXPRESS_PARCEL"/>
+          <xs:enumeration value="GROUND_HOME_DELIVERY"/>
         </xs:restriction>
       </xs:simpleType>
+      <xs:complexType name="ServiceDescription">
+        <xs:sequence>
+          <xs:element name="ServiceType" type="ns:ServiceType" minOccurs="0"/>
+          <xs:element name="Code" type="xs:string" minOccurs="0"/>
+          <xs:element name="Names" type="ns:ProductName" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Branded, translated, and/or localized names for this service.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Description" type="xs:string" minOccurs="0"/>
+          <xs:element name="AstraDescription" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
       <xs:simpleType name="ServiceType">
         <xs:restriction base="xs:string">
           <xs:enumeration value="EUROPE_FIRST_INTERNATIONAL_PRIORITY"/>
@@ -5453,6 +5659,7 @@
           <xs:enumeration value="INTERNATIONAL_FIRST"/>
           <xs:enumeration value="INTERNATIONAL_PRIORITY"/>
           <xs:enumeration value="INTERNATIONAL_PRIORITY_DISTRIBUTION"/>
+          <xs:enumeration value="INTERNATIONAL_PRIORITY_EXPRESS"/>
           <xs:enumeration value="INTERNATIONAL_PRIORITY_FREIGHT"/>
           <xs:enumeration value="PRIORITY_OVERNIGHT"/>
           <xs:enumeration value="SAME_DAY"/>
@@ -5517,6 +5724,11 @@
           <xs:element name="TransborderDistributionDetail" type="ns:ShipmentTransborderDistributionDetail" minOccurs="0">
             <xs:annotation>
               <xs:documentation>Specifies attributes of a shipment within a transborder distribution.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="DistributionLocations" type="ns:RequestedDistributionLocation" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>FOR INTERNAL FEDEX USE ONLY: Identifies the distribution facility where this shipment will be de-consolidated and distributed.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -5863,6 +6075,7 @@
         </xs:annotation>
         <xs:restriction base="xs:string">
           <xs:enumeration value="PACKAGE_LEVEL_COMMODITIES"/>
+          <xs:enumeration value="PRE_ETD_ENHANCEMENTS"/>
         </xs:restriction>
       </xs:simpleType>
       <xs:complexType name="ShipmentProcessingOptionsRequested">
@@ -6062,6 +6275,7 @@
           <xs:enumeration value="EAST_COAST_SPECIAL"/>
           <xs:enumeration value="ELECTRONIC_TRADE_DOCUMENTS"/>
           <xs:enumeration value="EVENT_NOTIFICATION"/>
+          <xs:enumeration value="EXCLUDE_FROM_CONSOLIDATION"/>
           <xs:enumeration value="EXTREME_LENGTH"/>
           <xs:enumeration value="FEDEX_ONE_RATE"/>
           <xs:enumeration value="FOOD"/>
@@ -6078,6 +6292,7 @@
           <xs:enumeration value="LIFTGATE_PICKUP"/>
           <xs:enumeration value="LIMITED_ACCESS_DELIVERY"/>
           <xs:enumeration value="LIMITED_ACCESS_PICKUP"/>
+          <xs:enumeration value="OVER_LENGTH"/>
           <xs:enumeration value="PENDING_SHIPMENT"/>
           <xs:enumeration value="PHARMACY_DELIVERY"/>
           <xs:enumeration value="POISON"/>
@@ -6204,6 +6419,11 @@
               <xs:documentation>Specifies how to organize all documents of this type.</xs:documentation>
             </xs:annotation>
           </xs:element>
+          <xs:element name="StorageDetail" type="ns:ShippingDocumentStorageDetail" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Specifies how to store document images.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
           <xs:element name="EMailDetail" type="ns:ShippingDocumentEMailDetail" minOccurs="0">
             <xs:annotation>
               <xs:documentation>Specifies how to e-mail document images.</xs:documentation>
@@ -6221,8 +6441,6 @@
           <xs:documentation>Specifies how to return a shipping document to the caller.</xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:string">
-          <xs:enumeration value="CONFIRMED"/>
-          <xs:enumeration value="DEFERRED_RETURNED"/>
           <xs:enumeration value="DEFERRED_STORED"/>
           <xs:enumeration value="EMAILED"/>
           <xs:enumeration value="QUEUED"/>
@@ -6325,13 +6543,21 @@
         </xs:annotation>
         <xs:restriction base="xs:string">
           <xs:enumeration value="DOC"/>
-          <xs:enumeration value="DPL"/>
           <xs:enumeration value="EPL2"/>
           <xs:enumeration value="PDF"/>
           <xs:enumeration value="PNG"/>
           <xs:enumeration value="RTF"/>
           <xs:enumeration value="TEXT"/>
           <xs:enumeration value="ZPLII"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ShippingDocumentNamingType">
+        <xs:annotation>
+          <xs:documentation>Identifies the convention by which file names are constructed for STORED or DEFERRED documents.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="FAST"/>
+          <xs:enumeration value="LEGACY_FXRS"/>
         </xs:restriction>
       </xs:simpleType>
       <xs:complexType name="ShippingDocumentPart">
@@ -6403,6 +6629,7 @@
               <xs:documentation>Specifies the production of the OP-900 document for hazardous materials.</xs:documentation>
             </xs:annotation>
           </xs:element>
+          <xs:element name="FreightBillOfLadingDetail" type="ns:FreightBillOfLadingDetail" minOccurs="0"/>
           <xs:element name="ReturnInstructionsDetail" type="ns:ReturnInstructionsDetail" minOccurs="0">
             <xs:annotation>
               <xs:documentation>Specifies the production of the return instructions document.</xs:documentation>
@@ -6427,6 +6654,39 @@
           <xs:enumeration value="STOCK_4X8"/>
           <xs:enumeration value="STOCK_4X9_LEADING_DOC_TAB"/>
           <xs:enumeration value="STOCK_4X9_TRAILING_DOC_TAB"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="ShippingDocumentStorageDetail">
+        <xs:annotation>
+          <xs:documentation>Specifies how to store shipping documents.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Type" type="ns:ShippingDocumentStorageDetailType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the mechanism by which a shipping document will be stored for later retrieval.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="FilePath" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Provides the path to be used for STORED or DEFERRED documents.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="FileNaming" type="ns:ShippingDocumentNamingType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identifies the convention by which file names are constructed for STORED or DEFERRED documents.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="FileSuffix" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Suffix to be placed at the end of the file name; required on some platforms to determine file type.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="ShippingDocumentStorageDetailType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ASYNC_SERVICE"/>
+          <xs:enumeration value="LOCAL_FILE_SYSTEM"/>
         </xs:restriction>
       </xs:simpleType>
       <xs:complexType name="SignatureOptionDetail">
@@ -6575,7 +6835,9 @@
       </xs:simpleType>
       <xs:simpleType name="SurchargeType">
         <xs:restriction base="xs:string">
+          <xs:enumeration value="ACCOUNT_NUMBER_PROCESSING_FEE"/>
           <xs:enumeration value="ADDITIONAL_HANDLING"/>
+          <xs:enumeration value="ADDRESS_CORRECTION"/>
           <xs:enumeration value="ANCILLARY_FEE"/>
           <xs:enumeration value="APPOINTMENT_DELIVERY"/>
           <xs:enumeration value="BROKER_SELECT_OPTION"/>
@@ -6620,11 +6882,13 @@
           <xs:enumeration value="NON_MACHINABLE"/>
           <xs:enumeration value="OFFSHORE"/>
           <xs:enumeration value="ON_CALL_PICKUP"/>
+          <xs:enumeration value="ON_DEMAND_CARE"/>
           <xs:enumeration value="OTHER"/>
           <xs:enumeration value="OUT_OF_DELIVERY_AREA"/>
           <xs:enumeration value="OUT_OF_PICKUP_AREA"/>
           <xs:enumeration value="OVERSIZE"/>
           <xs:enumeration value="OVER_DIMENSION"/>
+          <xs:enumeration value="OVER_LENGTH"/>
           <xs:enumeration value="PIECE_COUNT_VERIFICATION"/>
           <xs:enumeration value="PRE_DELIVERY_NOTIFICATION"/>
           <xs:enumeration value="PRIORITY_ALERT"/>
@@ -6842,21 +7106,11 @@
         </xs:annotation>
         <xs:restriction base="xs:string">
           <xs:enumeration value="CUSTOMER"/>
-          <xs:enumeration value="FEDEX_CAFE"/>
-          <xs:enumeration value="FEDEX_CSHP"/>
-          <xs:enumeration value="FEDEX_FXRS"/>
-          <xs:enumeration value="FEDEX_GSMW"/>
-          <xs:enumeration value="FEDEX_GTM"/>
-          <xs:enumeration value="FEDEX_INET"/>
         </xs:restriction>
       </xs:simpleType>
       <xs:simpleType name="UploadDocumentProducerType">
         <xs:restriction base="xs:string">
           <xs:enumeration value="CUSTOMER"/>
-          <xs:enumeration value="FEDEX_CLS"/>
-          <xs:enumeration value="FEDEX_GSMW"/>
-          <xs:enumeration value="FEDEX_GTM"/>
-          <xs:enumeration value="OTHER"/>
         </xs:restriction>
       </xs:simpleType>
       <xs:complexType name="UploadDocumentReferenceDetail">
@@ -7112,7 +7366,7 @@
               <xs:documentation>Identifies a system or sub-system which performs an operation.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="Major" type="xs:int" fixed="11" minOccurs="1">
+          <xs:element name="Major" type="xs:int" fixed="15" minOccurs="1">
             <xs:annotation>
               <xs:documentation>Identifies the service business level.</xs:documentation>
             </xs:annotation>
@@ -7376,7 +7630,7 @@
   <binding name="OpenShipServiceSoapBinding" type="ns:OpenShipPortType">
     <s1:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
     <operation name="modifyConsolidation">
-      <s1:operation soapAction="http://fedex.com/ws/openship/v11/modifyConsolidation" style="document"/>
+      <s1:operation soapAction="http://fedex.com/ws/openship/v15/modifyConsolidation" style="document"/>
       <input>
         <s1:body use="literal"/>
       </input>
@@ -7385,7 +7639,7 @@
       </output>
     </operation>
     <operation name="validateOpenShipment">
-      <s1:operation soapAction="http://fedex.com/ws/openship/v11/validateOpenShipment" style="document"/>
+      <s1:operation soapAction="http://fedex.com/ws/openship/v15/validateOpenShipment" style="document"/>
       <input>
         <s1:body use="literal"/>
       </input>
@@ -7394,7 +7648,7 @@
       </output>
     </operation>
     <operation name="retrieveOpenShipment">
-      <s1:operation soapAction="http://fedex.com/ws/openship/v11/retrieveOpenShipment" style="document"/>
+      <s1:operation soapAction="http://fedex.com/ws/openship/v15/retrieveOpenShipment" style="document"/>
       <input>
         <s1:body use="literal"/>
       </input>
@@ -7403,7 +7657,7 @@
       </output>
     </operation>
     <operation name="deleteOpenConsolidation">
-      <s1:operation soapAction="http://fedex.com/ws/openship/v11/deleteOpenConsolidation" style="document"/>
+      <s1:operation soapAction="http://fedex.com/ws/openship/v15/deleteOpenConsolidation" style="document"/>
       <input>
         <s1:body use="literal"/>
       </input>
@@ -7412,7 +7666,7 @@
       </output>
     </operation>
     <operation name="createConsolidation">
-      <s1:operation soapAction="http://fedex.com/ws/openship/v11/createConsolidation" style="document"/>
+      <s1:operation soapAction="http://fedex.com/ws/openship/v15/createConsolidation" style="document"/>
       <input>
         <s1:body use="literal"/>
       </input>
@@ -7421,7 +7675,7 @@
       </output>
     </operation>
     <operation name="retrievePackageInOpenShipment">
-      <s1:operation soapAction="http://fedex.com/ws/openship/v11/retrievePackageInOpenShipment" style="document"/>
+      <s1:operation soapAction="http://fedex.com/ws/openship/v15/retrievePackageInOpenShipment" style="document"/>
       <input>
         <s1:body use="literal"/>
       </input>
@@ -7430,7 +7684,7 @@
       </output>
     </operation>
     <operation name="retrieveConsolidatedCommodities">
-      <s1:operation soapAction="http://fedex.com/ws/openship/v11/retrieveConsolidatedCommodities" style="document"/>
+      <s1:operation soapAction="http://fedex.com/ws/openship/v15/retrieveConsolidatedCommodities" style="document"/>
       <input>
         <s1:body use="literal"/>
       </input>
@@ -7439,7 +7693,7 @@
       </output>
     </operation>
     <operation name="modifyPackageInOpenShipment">
-      <s1:operation soapAction="http://fedex.com/ws/openship/v11/modifyPackageInOpenShipment" style="document"/>
+      <s1:operation soapAction="http://fedex.com/ws/openship/v15/modifyPackageInOpenShipment" style="document"/>
       <input>
         <s1:body use="literal"/>
       </input>
@@ -7448,7 +7702,7 @@
       </output>
     </operation>
     <operation name="deleteShipment">
-      <s1:operation soapAction="http://fedex.com/ws/openship/v11/deleteShipment" style="document"/>
+      <s1:operation soapAction="http://fedex.com/ws/openship/v15/deleteShipment" style="document"/>
       <input>
         <s1:body use="literal"/>
       </input>
@@ -7457,7 +7711,7 @@
       </output>
     </operation>
     <operation name="createOpenShipment">
-      <s1:operation soapAction="http://fedex.com/ws/openship/v11/createOpenShipment" style="document"/>
+      <s1:operation soapAction="http://fedex.com/ws/openship/v15/createOpenShipment" style="document"/>
       <input>
         <s1:body use="literal"/>
       </input>
@@ -7466,7 +7720,7 @@
       </output>
     </operation>
     <operation name="deletePendingShipment">
-      <s1:operation soapAction="http://fedex.com/ws/openship/v11/deletePendingShipment" style="document"/>
+      <s1:operation soapAction="http://fedex.com/ws/openship/v15/deletePendingShipment" style="document"/>
       <input>
         <s1:body use="literal"/>
       </input>
@@ -7475,7 +7729,7 @@
       </output>
     </operation>
     <operation name="confirmOpenShipment">
-      <s1:operation soapAction="http://fedex.com/ws/openship/v11/confirmOpenShipment" style="document"/>
+      <s1:operation soapAction="http://fedex.com/ws/openship/v15/confirmOpenShipment" style="document"/>
       <input>
         <s1:body use="literal"/>
       </input>
@@ -7484,7 +7738,7 @@
       </output>
     </operation>
     <operation name="getConfirmOpenShipmentResults">
-      <s1:operation soapAction="http://fedex.com/ws/openship/v11/getConfirmOpenShipmentResults" style="document"/>
+      <s1:operation soapAction="http://fedex.com/ws/openship/v15/getConfirmOpenShipmentResults" style="document"/>
       <input>
         <s1:body use="literal"/>
       </input>
@@ -7493,7 +7747,7 @@
       </output>
     </operation>
     <operation name="getConfirmConsolidationResults">
-      <s1:operation soapAction="http://fedex.com/ws/openship/v11/getConfirmConsolidationResults" style="document"/>
+      <s1:operation soapAction="http://fedex.com/ws/openship/v15/getConfirmConsolidationResults" style="document"/>
       <input>
         <s1:body use="literal"/>
       </input>
@@ -7502,7 +7756,7 @@
       </output>
     </operation>
     <operation name="modifyOpenShipment">
-      <s1:operation soapAction="http://fedex.com/ws/openship/v11/modifyOpenShipment" style="document"/>
+      <s1:operation soapAction="http://fedex.com/ws/openship/v15/modifyOpenShipment" style="document"/>
       <input>
         <s1:body use="literal"/>
       </input>
@@ -7511,7 +7765,7 @@
       </output>
     </operation>
     <operation name="confirmConsolidation">
-      <s1:operation soapAction="http://fedex.com/ws/openship/v11/confirmConsolidation" style="document"/>
+      <s1:operation soapAction="http://fedex.com/ws/openship/v15/confirmConsolidation" style="document"/>
       <input>
         <s1:body use="literal"/>
       </input>
@@ -7520,7 +7774,7 @@
       </output>
     </operation>
     <operation name="createPendingShipment">
-      <s1:operation soapAction="http://fedex.com/ws/openship/v11/createPendingShipment" style="document"/>
+      <s1:operation soapAction="http://fedex.com/ws/openship/v15/createPendingShipment" style="document"/>
       <input>
         <s1:body use="literal"/>
       </input>
@@ -7529,7 +7783,7 @@
       </output>
     </operation>
     <operation name="getModifyOpenShipmentResults">
-      <s1:operation soapAction="http://fedex.com/ws/openship/v11/getModifyOpenShipmentResults" style="document"/>
+      <s1:operation soapAction="http://fedex.com/ws/openship/v15/getModifyOpenShipmentResults" style="document"/>
       <input>
         <s1:body use="literal"/>
       </input>
@@ -7538,7 +7792,7 @@
       </output>
     </operation>
     <operation name="deletePackagesFromOpenShipment">
-      <s1:operation soapAction="http://fedex.com/ws/openship/v11/deletePackagesFromOpenShipment" style="document"/>
+      <s1:operation soapAction="http://fedex.com/ws/openship/v15/deletePackagesFromOpenShipment" style="document"/>
       <input>
         <s1:body use="literal"/>
       </input>
@@ -7547,7 +7801,7 @@
       </output>
     </operation>
     <operation name="reprintShippingDocuments">
-      <s1:operation soapAction="http://fedex.com/ws/openship/v11/reprintShippingDocuments" style="document"/>
+      <s1:operation soapAction="http://fedex.com/ws/openship/v15/reprintShippingDocuments" style="document"/>
       <input>
         <s1:body use="literal"/>
       </input>
@@ -7556,7 +7810,7 @@
       </output>
     </operation>
     <operation name="addPackagesToOpenShipment">
-      <s1:operation soapAction="http://fedex.com/ws/openship/v11/addPackagesToOpenShipment" style="document"/>
+      <s1:operation soapAction="http://fedex.com/ws/openship/v15/addPackagesToOpenShipment" style="document"/>
       <input>
         <s1:body use="literal"/>
       </input>
@@ -7565,7 +7819,7 @@
       </output>
     </operation>
     <operation name="getCreateOpenShipmentResults">
-      <s1:operation soapAction="http://fedex.com/ws/openship/v11/getCreateOpenShipmentResults" style="document"/>
+      <s1:operation soapAction="http://fedex.com/ws/openship/v15/getCreateOpenShipmentResults" style="document"/>
       <input>
         <s1:body use="literal"/>
       </input>
@@ -7574,7 +7828,7 @@
       </output>
     </operation>
     <operation name="retrieveConsolidation">
-      <s1:operation soapAction="http://fedex.com/ws/openship/v11/retrieveConsolidation" style="document"/>
+      <s1:operation soapAction="http://fedex.com/ws/openship/v15/retrieveConsolidation" style="document"/>
       <input>
         <s1:body use="literal"/>
       </input>
@@ -7583,7 +7837,7 @@
       </output>
     </operation>
     <operation name="deleteOpenShipment">
-      <s1:operation soapAction="http://fedex.com/ws/openship/v11/deleteOpenShipment" style="document"/>
+      <s1:operation soapAction="http://fedex.com/ws/openship/v15/deleteOpenShipment" style="document"/>
       <input>
         <s1:body use="literal"/>
       </input>

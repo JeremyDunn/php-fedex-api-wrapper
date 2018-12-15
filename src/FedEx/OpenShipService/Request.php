@@ -15,7 +15,7 @@ class Request extends AbstractRequest
     const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/openship';
     const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/openship';
 
-    protected static $wsdlFileName = 'OpenShipService_v11.wsdl';
+    protected static $wsdlFileName = 'OpenshipService_v15.wsdl';
             
     /**
      * Sends the ModifyConsolidationRequest and returns the response

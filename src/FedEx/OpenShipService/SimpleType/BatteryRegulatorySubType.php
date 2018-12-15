@@ -4,13 +4,13 @@ namespace FedEx\OpenShipService\SimpleType;
 use FedEx\AbstractSimpleType;
 
 /**
- * UploadDocumentProducerType
+ * A regulation specific classification for a battery or cell.
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class UploadDocumentProducerType extends AbstractSimpleType
+class BatteryRegulatorySubType extends AbstractSimpleType
 {
-    const _CUSTOMER = 'CUSTOMER';
+    const _IATA_SECTION_II = 'IATA_SECTION_II';
 }

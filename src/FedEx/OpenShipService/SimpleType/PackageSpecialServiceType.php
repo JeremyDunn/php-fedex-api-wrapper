@@ -14,6 +14,7 @@ class PackageSpecialServiceType extends AbstractSimpleType
 {
     const _ALCOHOL = 'ALCOHOL';
     const _APPOINTMENT_DELIVERY = 'APPOINTMENT_DELIVERY';
+    const _BATTERY = 'BATTERY';
     const _COD = 'COD';
     const _DANGEROUS_GOODS = 'DANGEROUS_GOODS';
     const _DRY_ICE = 'DRY_ICE';

@@ -10,6 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  *
+ * @property string $Id
  * @property \FedEx\OpenShipService\SimpleType\FreightClassType|string $FreightClass
  * @property boolean $ClassProvidedByCustomer
  * @property int $HandlingUnits
@@ -32,6 +33,18 @@ class FreightShipmentLineItem extends AbstractComplexType
      * @var string
      */
     protected $name = 'FreightShipmentLineItem';
+
+    /**
+     * A unique identifier assigned to this line item.
+     *
+     * @param string $id
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->values['Id'] = $id;
+        return $this;
+    }
 
     /**
      * Freight class for this line item.

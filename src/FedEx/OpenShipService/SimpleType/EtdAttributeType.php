@@ -4,13 +4,13 @@ namespace FedEx\OpenShipService\SimpleType;
 use FedEx\AbstractSimpleType;
 
 /**
- * UploadDocumentProducerType
+ * EtdAttributeType
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class UploadDocumentProducerType extends AbstractSimpleType
+class EtdAttributeType extends AbstractSimpleType
 {
-    const _CUSTOMER = 'CUSTOMER';
+    const _POST_SHIPMENT_UPLOAD_REQUESTED = 'POST_SHIPMENT_UPLOAD_REQUESTED';
 }

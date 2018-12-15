@@ -292,7 +292,7 @@ class GenerateCode extends Console\Command\Command
         /*
          * Open Ship Service (v11)
          */
-        $wsdlPath = $fedexSrcDir . '/_wsdl/OpenShipService_v11.wsdl';
+        $wsdlPath = $fedexSrcDir . '/_wsdl/OpenshipService_v15.wsdl';
 
         $baseNamespace = 'FedEx\OpenShipService';
         $subPackageName = 'OpenShip Service';
