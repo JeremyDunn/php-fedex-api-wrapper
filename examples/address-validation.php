@@ -32,7 +32,6 @@ $addressValidationRequest->AddressesToValidate[0]->Address->PostalCode = 47711;
 $addressValidationRequest->AddressesToValidate[0]->Address->CountryCode = 'US';
 
 $request = new Request();
-$addressValidationReply = $request->getAddressValidationReply($addressValidationRequest, true);
+$addressValidationReply = $request->getAddressValidationReply($addressValidationRequest);
 
 var_dump($addressValidationReply);
-
