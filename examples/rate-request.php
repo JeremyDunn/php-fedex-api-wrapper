@@ -24,13 +24,14 @@ $rateRequest->TransactionDetail->CustomerTransactionId = 'testing rate service r
 
 //version
 $rateRequest->Version->ServiceId = 'crs';
-$rateRequest->Version->Major = 22;
+$rateRequest->Version->Major = 24;
 $rateRequest->Version->Minor = 0;
 $rateRequest->Version->Intermediate = 0;
 
 $rateRequest->ReturnTransitAndCommit = true;
 
 //shipper
+$rateRequest->RequestedShipment->PreferredCurrency = 'USD';
 $rateRequest->RequestedShipment->Shipper->Address->StreetLines = ['10 Fed Ex Pkwy'];
 $rateRequest->RequestedShipment->Shipper->Address->City = 'Memphis';
 $rateRequest->RequestedShipment->Shipper->Address->StateOrProvinceCode = 'TN';
@@ -76,7 +77,7 @@ $rateRequest->RequestedShipment->RequestedPackageLineItems[1]->GroupPackageCount
 $rateServiceRequest = new Request();
 //$rateServiceRequest->getSoapClient()->__setLocation(Request::PRODUCTION_URL); //use production URL
 
-$rateReply = $rateServiceRequest->getGetRatesReply($rateRequest, true); // send true as the 2nd argument to return the SoapClient's stdClass response.
+$rateReply = $rateServiceRequest->getGetRatesReply($rateRequest); // send true as the 2nd argument to return the SoapClient's stdClass response.
 
 
 if (!empty($rateReply->RateReplyDetails)) {
@@ -92,4 +93,3 @@ if (!empty($rateReply->RateReplyDetails)) {
 }
 
 var_dump($rateReply);
-
