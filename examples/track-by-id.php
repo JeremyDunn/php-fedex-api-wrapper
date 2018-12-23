@@ -22,7 +22,7 @@ $trackRequest->ClientDetail->MeterNumber = FEDEX_METER_NUMBER;
 
 // Version
 $trackRequest->Version->ServiceId = 'trck';
-$trackRequest->Version->Major = 14;
+$trackRequest->Version->Major = 16;
 $trackRequest->Version->Intermediate = 0;
 $trackRequest->Version->Minor = 0;
 
