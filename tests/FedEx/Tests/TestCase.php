@@ -48,6 +48,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
             new \FedEx\AddressValidationService\Request(),
             new \FedEx\AsyncService\Request(),
             new \FedEx\CloseService\Request(),
+            new \FedEx\CountryService\Request(),
             new \FedEx\CourierDispatchService\Request(),
             new \FedEx\DGDSService\Request(),
             new \FedEx\DGLDService\Request(),
