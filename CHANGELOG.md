@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 3.0 (released 2017-11-04)
+## 3.0 (released 2018-12-27)
 - Updated Upload Document Service
 - Updated Pickup Service
 - Updated Ship Service
@@ -8,26 +8,28 @@
 - Updated Rate Service
 - Updated Track Service
 - Updated Locations Service
+- Added Country Service
+- Added/updated usage examples
 
 |Service|Version|
 |---|---|
 |Address Validation|4|
 |Close|5|
 |Courier Dispatch|3|
-|Locations|7|
+|Locations|9|
 |Package Movement Information|5|
-|Pickup|15|
-|Rate|22|
+|Pickup|17|
+|Rate|24|
 |Return Tag|1|
-|Ship|21|
-|Track|14|
+|Ship|23|
+|Track|16|
 |Upload Document|11|
-|Open Ship|11|
-|Validation Availability and Commitment Service|6|
+|Open Ship|15|
+|Validation Availability and Commitment Service|8|
 |ASYNC Transaction Service|4|
 |In Flight Shipment Service|1|
 |DGLD Service|1|
-|DGDS Service|4|
+|DGDS Service|3|
 
 ## 2.6 (released 2017-11-02)
 - Added Dangerous Goods Data Service
