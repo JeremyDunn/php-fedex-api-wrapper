@@ -4,19 +4,26 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * The descriptive data required for a FedEx shipment containing dangerous goods (hazardous materials).
+ * DangerousGoodsDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  *
+ * @property \FedEx\RateService\SimpleType\HazardousCommodityRegulationType|string $Regulation
  * @property \FedEx\RateService\SimpleType\DangerousGoodsAccessibilityType|string $Accessibility
  * @property boolean $CargoAircraftOnly
  * @property \FedEx\RateService\SimpleType\HazardousCommodityOptionType|string[] $Options
- * @property HazardousCommodityContent[] $HazardousCommodities
+ * @property \FedEx\RateService\SimpleType\DangerousGoodsPackingOptionType|string $PackingOption
+ * @property string $ReferenceId
+ * @property DangerousGoodsContainer[] $Containers
  * @property HazardousCommodityPackagingDetail $Packaging
+ * @property DangerousGoodsSignatory $Signatory
  * @property string $EmergencyContactNumber
  * @property string $Offeror
+ * @property Contact $InfectiousSubstanceResponsibleContact
+ * @property string $AdditionalHandling
+ * @property RadioactivityDetail $RadioactivityDetail
 
  */
 class DangerousGoodsDetail extends AbstractComplexType
@@ -29,7 +36,19 @@ class DangerousGoodsDetail extends AbstractComplexType
     protected $name = 'DangerousGoodsDetail';
 
     /**
-     * Identifies whether or not the products being shipped are required to be accessible during delivery.
+     * Set Regulation
+     *
+     * @param \FedEx\RateService\SimpleType\HazardousCommodityRegulationType|string $regulation
+     * @return $this
+     */
+    public function setRegulation($regulation)
+    {
+        $this->values['Regulation'] = $regulation;
+        return $this;
+    }
+
+    /**
+     * Set Accessibility
      *
      * @param \FedEx\RateService\SimpleType\DangerousGoodsAccessibilityType|string $accessibility
      * @return $this
@@ -65,14 +84,38 @@ class DangerousGoodsDetail extends AbstractComplexType
     }
 
     /**
-     * Documents the kinds and quantities of all hazardous commodities in the current package.
+     * Indicates whether there is additional customer provided packaging enclosing the approved dangerous goods containers.
      *
-     * @param HazardousCommodityContent[] $hazardousCommodities
+     * @param \FedEx\RateService\SimpleType\DangerousGoodsPackingOptionType|string $packingOption
      * @return $this
      */
-    public function setHazardousCommodities(array $hazardousCommodities)
+    public function setPackingOption($packingOption)
     {
-        $this->values['HazardousCommodities'] = $hazardousCommodities;
+        $this->values['PackingOption'] = $packingOption;
+        return $this;
+    }
+
+    /**
+     * Identifies the configuration of this dangerous goods package. The common configuration is represented at the shipment level.
+     *
+     * @param string $referenceId
+     * @return $this
+     */
+    public function setReferenceId($referenceId)
+    {
+        $this->values['ReferenceId'] = $referenceId;
+        return $this;
+    }
+
+    /**
+     * Indicates one or more containers used to pack dangerous goods commodities.
+     *
+     * @param DangerousGoodsContainer[] $containers
+     * @return $this
+     */
+    public function setContainers(array $containers)
+    {
+        $this->values['Containers'] = $containers;
         return $this;
     }
 
@@ -85,6 +128,18 @@ class DangerousGoodsDetail extends AbstractComplexType
     public function setPackaging(HazardousCommodityPackagingDetail $packaging)
     {
         $this->values['Packaging'] = $packaging;
+        return $this;
+    }
+
+    /**
+     * Name, title and place of the signatory for this shipment.
+     *
+     * @param DangerousGoodsSignatory $signatory
+     * @return $this
+     */
+    public function setSignatory(DangerousGoodsSignatory $signatory)
+    {
+        $this->values['Signatory'] = $signatory;
         return $this;
     }
 
@@ -109,6 +164,42 @@ class DangerousGoodsDetail extends AbstractComplexType
     public function setOfferor($offeror)
     {
         $this->values['Offeror'] = $offeror;
+        return $this;
+    }
+
+    /**
+     * Specifies the contact of the party responsible for handling the infectious substances, if any, in the dangerous goods shipment.
+     *
+     * @param Contact $infectiousSubstanceResponsibleContact
+     * @return $this
+     */
+    public function setInfectiousSubstanceResponsibleContact(Contact $infectiousSubstanceResponsibleContact)
+    {
+        $this->values['InfectiousSubstanceResponsibleContact'] = $infectiousSubstanceResponsibleContact;
+        return $this;
+    }
+
+    /**
+     * Specifies additional handling information for the current package.
+     *
+     * @param string $additionalHandling
+     * @return $this
+     */
+    public function setAdditionalHandling($additionalHandling)
+    {
+        $this->values['AdditionalHandling'] = $additionalHandling;
+        return $this;
+    }
+
+    /**
+     * Specifies the radioactivity detail for the current package, if the package contains radioactive materials.
+     *
+     * @param RadioactivityDetail $radioactivityDetail
+     * @return $this
+     */
+    public function setRadioactivityDetail(RadioactivityDetail $radioactivityDetail)
+    {
+        $this->values['RadioactivityDetail'] = $radioactivityDetail;
         return $this;
     }
 }

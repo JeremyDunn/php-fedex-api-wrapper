@@ -4,12 +4,13 @@ namespace FedEx\CloseService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
+ * Used in authentication of the sender's identity.
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Close Service
  *
+ * @property WebAuthenticationCredential $ParentCredential
  * @property WebAuthenticationCredential $UserCredential
 
  */
@@ -21,6 +22,18 @@ class WebAuthenticationDetail extends AbstractComplexType
      * @var string
      */
     protected $name = 'WebAuthenticationDetail';
+
+    /**
+     * This was renamed from cspCredential.
+     *
+     * @param WebAuthenticationCredential $parentCredential
+     * @return $this
+     */
+    public function setParentCredential(WebAuthenticationCredential $parentCredential)
+    {
+        $this->values['ParentCredential'] = $parentCredential;
+        return $this;
+    }
 
     /**
      * Credential used to authenticate a specific software application. This value is provided by FedEx after registration.

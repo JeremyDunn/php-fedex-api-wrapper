@@ -12,6 +12,7 @@ use FedEx\AbstractComplexType;
  *
  * @property ShippingDocumentEMailRecipient[] $EMailRecipients
  * @property \FedEx\RateService\SimpleType\ShippingDocumentEMailGroupingType|string $Grouping
+ * @property Localization $Localization
 
  */
 class ShippingDocumentEMailDetail extends AbstractComplexType
@@ -44,6 +45,18 @@ class ShippingDocumentEMailDetail extends AbstractComplexType
     public function setGrouping($grouping)
     {
         $this->values['Grouping'] = $grouping;
+        return $this;
+    }
+
+    /**
+     * Specifies the language in which the email containing the document is requested to be composed.
+     *
+     * @param Localization $localization
+     * @return $this
+     */
+    public function setLocalization(Localization $localization)
+    {
+        $this->values['Localization'] = $localization;
         return $this;
     }
 }

@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Information relating to a return shipment.
+ * ReturnShipmentDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,6 +13,7 @@ use FedEx\AbstractComplexType;
  * @property \FedEx\RateService\SimpleType\ReturnType|string $ReturnType
  * @property Rma $Rma
  * @property ReturnEMailDetail $ReturnEMailDetail
+ * @property ReturnAssociationDetail $ReturnAssociation
 
  */
 class ReturnShipmentDetail extends AbstractComplexType
@@ -25,7 +26,7 @@ class ReturnShipmentDetail extends AbstractComplexType
     protected $name = 'ReturnShipmentDetail';
 
     /**
-     * The type of return shipment that is being requested. At present the only type of retrun shipment that is supported is PRINT_RETURN_LABEL. With this option you can print a return label to insert into the box of an outbound shipment. This option can not be used to print an outbound label.
+     * Set ReturnType
      *
      * @param \FedEx\RateService\SimpleType\ReturnType|string $returnType
      * @return $this
@@ -37,7 +38,7 @@ class ReturnShipmentDetail extends AbstractComplexType
     }
 
     /**
-     * Return Merchant Authorization
+     * Set Rma
      *
      * @param Rma $rma
      * @return $this
@@ -49,7 +50,7 @@ class ReturnShipmentDetail extends AbstractComplexType
     }
 
     /**
-     * Specific information about the delivery of the email and options for the shipment.
+     * Set ReturnEMailDetail
      *
      * @param ReturnEMailDetail $returnEMailDetail
      * @return $this
@@ -57,6 +58,18 @@ class ReturnShipmentDetail extends AbstractComplexType
     public function setReturnEMailDetail(ReturnEMailDetail $returnEMailDetail)
     {
         $this->values['ReturnEMailDetail'] = $returnEMailDetail;
+        return $this;
+    }
+
+    /**
+     * Set ReturnAssociation
+     *
+     * @param ReturnAssociationDetail $returnAssociation
+     * @return $this
+     */
+    public function setReturnAssociation(ReturnAssociationDetail $returnAssociation)
+    {
+        $this->values['ReturnAssociation'] = $returnAssociation;
         return $this;
     }
 }

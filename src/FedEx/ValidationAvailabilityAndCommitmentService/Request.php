@@ -15,7 +15,7 @@ class Request extends AbstractRequest
     const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/ValidationAvailabilityAndCommitment';
     const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/ValidationAvailabilityAndCommitment';
 
-    protected static $wsdlFileName = 'ValidationAvailabilityAndCommitmentService_v6.wsdl';
+    protected static $wsdlFileName = 'ValidationAvailabilityAndCommitmentService_v8.wsdl';
             
     /**
      * Sends the ServiceAvailabilityRequest and returns the response

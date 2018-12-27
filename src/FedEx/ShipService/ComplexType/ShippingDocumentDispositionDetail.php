@@ -12,6 +12,7 @@ use FedEx\AbstractComplexType;
  *
  * @property \FedEx\ShipService\SimpleType\ShippingDocumentDispositionType|string $DispositionType
  * @property \FedEx\ShipService\SimpleType\ShippingDocumentGroupingType|string $Grouping
+ * @property ShippingDocumentStorageDetail $StorageDetail
  * @property ShippingDocumentEMailDetail $EMailDetail
  * @property ShippingDocumentPrintDetail $PrintDetail
 
@@ -46,6 +47,18 @@ class ShippingDocumentDispositionDetail extends AbstractComplexType
     public function setGrouping($grouping)
     {
         $this->values['Grouping'] = $grouping;
+        return $this;
+    }
+
+    /**
+     * Specifies how to store document images.
+     *
+     * @param ShippingDocumentStorageDetail $storageDetail
+     * @return $this
+     */
+    public function setStorageDetail(ShippingDocumentStorageDetail $storageDetail)
+    {
+        $this->values['StorageDetail'] = $storageDetail;
         return $this;
     }
 

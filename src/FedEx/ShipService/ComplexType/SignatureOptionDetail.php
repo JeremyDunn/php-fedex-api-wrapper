@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * The descriptive data required for FedEx delivery signature services.
+ * SignatureOptionDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -24,7 +24,7 @@ class SignatureOptionDetail extends AbstractComplexType
     protected $name = 'SignatureOptionDetail';
 
     /**
-     * Identifies the delivery signature services option selected by the customer for this shipment. See OptionType for the list of valid values.
+     * Set OptionType
      *
      * @param \FedEx\ShipService\SimpleType\SignatureOptionType|string $optionType
      * @return $this
@@ -36,7 +36,7 @@ class SignatureOptionDetail extends AbstractComplexType
     }
 
     /**
-     * Identifies the delivery signature release authorization number.
+     * Set SignatureReleaseNumber
      *
      * @param string $signatureReleaseNumber
      * @return $this

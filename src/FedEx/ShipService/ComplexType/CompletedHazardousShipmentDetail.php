@@ -12,6 +12,7 @@ use FedEx\AbstractComplexType;
  *
  * @property CompletedHazardousSummaryDetail $HazardousSummaryDetail
  * @property ShipmentDryIceDetail $DryIceDetail
+ * @property AdrLicenseDetail $AdrLicense
 
  */
 class CompletedHazardousShipmentDetail extends AbstractComplexType
@@ -44,6 +45,18 @@ class CompletedHazardousShipmentDetail extends AbstractComplexType
     public function setDryIceDetail(ShipmentDryIceDetail $dryIceDetail)
     {
         $this->values['DryIceDetail'] = $dryIceDetail;
+        return $this;
+    }
+
+    /**
+     * This contains the ADR License information, which identifies the license number and ADR category under which the customer is allowed to ship.
+     *
+     * @param AdrLicenseDetail $adrLicense
+     * @return $this
+     */
+    public function setAdrLicense(AdrLicenseDetail $adrLicense)
+    {
+        $this->values['AdrLicense'] = $adrLicense;
         return $this;
     }
 }

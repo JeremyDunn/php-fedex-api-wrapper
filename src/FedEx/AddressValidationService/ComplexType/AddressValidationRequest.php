@@ -14,8 +14,7 @@ use FedEx\AbstractComplexType;
  * @property ClientDetail $ClientDetail
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
- * @property string $RequestTimestamp
- * @property AddressValidationOptions $Options
+ * @property string $InEffectAsOfTimestamp
  * @property AddressToValidate[] $AddressesToValidate
 
  */
@@ -29,7 +28,7 @@ class AddressValidationRequest extends AbstractComplexType
     protected $name = 'AddressValidationRequest';
 
     /**
-     * The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
+     * Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
      * @param WebAuthenticationDetail $webAuthenticationDetail
      * @return $this
@@ -41,7 +40,7 @@ class AddressValidationRequest extends AbstractComplexType
     }
 
     /**
-     * Descriptive data identifying the client submitting the transaction.
+     * Set ClientDetail
      *
      * @param ClientDetail $clientDetail
      * @return $this
@@ -53,7 +52,7 @@ class AddressValidationRequest extends AbstractComplexType
     }
 
     /**
-     * Descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
+     * Set TransactionDetail
      *
      * @param TransactionDetail $transactionDetail
      * @return $this
@@ -65,7 +64,7 @@ class AddressValidationRequest extends AbstractComplexType
     }
 
     /**
-     * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
+     * Set Version
      *
      * @param VersionId $version
      * @return $this
@@ -77,26 +76,14 @@ class AddressValidationRequest extends AbstractComplexType
     }
 
     /**
-     * Set RequestTimestamp
+     * Set InEffectAsOfTimestamp
      *
-     * @param string $requestTimestamp
+     * @param string $inEffectAsOfTimestamp
      * @return $this
      */
-    public function setRequestTimestamp($requestTimestamp)
+    public function setInEffectAsOfTimestamp($inEffectAsOfTimestamp)
     {
-        $this->values['RequestTimestamp'] = $requestTimestamp;
-        return $this;
-    }
-
-    /**
-     * Set Options
-     *
-     * @param AddressValidationOptions $options
-     * @return $this
-     */
-    public function setOptions(AddressValidationOptions $options)
-    {
-        $this->values['Options'] = $options;
+        $this->values['InEffectAsOfTimestamp'] = $inEffectAsOfTimestamp;
         return $this;
     }
 

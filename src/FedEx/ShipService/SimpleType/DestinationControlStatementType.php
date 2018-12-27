@@ -4,7 +4,7 @@ namespace FedEx\ShipService\SimpleType;
 use FedEx\AbstractSimpleType;
 
 /**
- * Used to indicate whether the Destination Control Statement is of type Department of Commerce, Department of State or both.
+ * DestinationControlStatementType
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper

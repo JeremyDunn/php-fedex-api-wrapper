@@ -4,7 +4,7 @@ namespace FedEx\PickupService\SimpleType;
 use FedEx\AbstractSimpleType;
 
 /**
- * Identifies the valid set of valid building locations for package pickup.
+ * PickupBuildingLocationType
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper

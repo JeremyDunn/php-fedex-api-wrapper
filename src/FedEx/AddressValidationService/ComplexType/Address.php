@@ -4,7 +4,7 @@ namespace FedEx\AddressValidationService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * The descriptive data for a physical location.
+ * Descriptive data for a physical location. May be used as an actual physical address (place to which one could go), or as a container of "address parts" which should be handled as a unit (such as a city-state-ZIP combination within the US).
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -16,6 +16,7 @@ use FedEx\AbstractComplexType;
  * @property string $PostalCode
  * @property string $UrbanizationCode
  * @property string $CountryCode
+ * @property string $CountryName
  * @property boolean $Residential
 
  */
@@ -65,7 +66,7 @@ class Address extends AbstractComplexType
     }
 
     /**
-     * Identification of a region (usually small) for mail/package delivery. Format and presence of this field will vary, depending on country. This element is required if both the City and StateOrProvinceCode are not present.
+     * Identification of a region (usually small) for mail/package delivery. Format and presence of this field will vary, depending on country.
      *
      * @param string $postalCode
      * @return $this
@@ -77,7 +78,7 @@ class Address extends AbstractComplexType
     }
 
     /**
-     * Relevant only to addresses in Puerto Rico. In Puerto Rico, multiple addresses within the same ZIP code can have the same house number and street name. When this is the case, the urbanization code is needed to distinguish them.
+     * Relevant only to addresses in Puerto Rico.
      *
      * @param string $urbanizationCode
      * @return $this
@@ -89,7 +90,7 @@ class Address extends AbstractComplexType
     }
 
     /**
-     * Identification of a country.
+     * The two-letter code used to identify a country.
      *
      * @param string $countryCode
      * @return $this
@@ -101,7 +102,19 @@ class Address extends AbstractComplexType
     }
 
     /**
-     * Indicates whether this address is residential (as opposed to commercial).
+     * The fully spelt out name of a country.
+     *
+     * @param string $countryName
+     * @return $this
+     */
+    public function setCountryName($countryName)
+    {
+        $this->values['CountryName'] = $countryName;
+        return $this;
+    }
+
+    /**
+     * Indicates whether this address residential (as opposed to commercial).
      *
      * @param boolean $residential
      * @return $this

@@ -11,6 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Ship Service
  *
  * @property string $FolderId
+ * @property \FedEx\ShipService\SimpleType\CompletedEtdType|string $Type
  * @property UploadDocumentReferenceDetail[] $UploadDocumentReferenceDetails
 
  */
@@ -32,6 +33,18 @@ class CompletedEtdDetail extends AbstractComplexType
     public function setFolderId($folderId)
     {
         $this->values['FolderId'] = $folderId;
+        return $this;
+    }
+
+    /**
+     * Set Type
+     *
+     * @param \FedEx\ShipService\SimpleType\CompletedEtdType|string $type
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->values['Type'] = $type;
         return $this;
     }
 

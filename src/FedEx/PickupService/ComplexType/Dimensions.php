@@ -4,7 +4,7 @@ namespace FedEx\PickupService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Descriptive data detailing the length, width, and height of a package.
+ * Dimensions
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -26,7 +26,7 @@ class Dimensions extends AbstractComplexType
     protected $name = 'Dimensions';
 
     /**
-     * Identifies the length of the package.
+     * Set Length
      *
      * @param int $length
      * @return $this
@@ -38,7 +38,7 @@ class Dimensions extends AbstractComplexType
     }
 
     /**
-     * Identifies the width of the package.
+     * Set Width
      *
      * @param int $width
      * @return $this
@@ -50,7 +50,7 @@ class Dimensions extends AbstractComplexType
     }
 
     /**
-     * Identifies the height of the package.
+     * Set Height
      *
      * @param int $height
      * @return $this
@@ -62,7 +62,7 @@ class Dimensions extends AbstractComplexType
     }
 
     /**
-     * Identifies the unit of measure associated with a dimensional values. See LinearUnits for valid values.
+     * Set Units
      *
      * @param \FedEx\PickupService\SimpleType\LinearUnits|string $units
      * @return $this

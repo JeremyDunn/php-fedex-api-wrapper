@@ -4,7 +4,7 @@ namespace FedEx\CloseService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Specifies characteristics of a shipping document to be produced.
+ * Specifies characteristics of a close document to be produced.
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -52,7 +52,7 @@ class CloseDocumentFormat extends AbstractComplexType
     }
 
     /**
-     * The type of image or printer commands the image is to be formatted in.
+     * Set ImageType
      *
      * @param \FedEx\CloseService\SimpleType\ShippingDocumentImageType|string $imageType
      * @return $this

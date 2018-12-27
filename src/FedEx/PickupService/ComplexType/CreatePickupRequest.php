@@ -4,7 +4,7 @@ namespace FedEx\PickupService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * The descriptive data to schedule a FedEx package pickup request.
+ * CreatePickupRequest
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -15,7 +15,9 @@ use FedEx\AbstractComplexType;
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
  * @property AssociatedAccount $AssociatedAccountNumber
+ * @property string $TrackingNumber
  * @property PickupOriginDetail $OriginDetail
+ * @property \FedEx\PickupService\SimpleType\PickupServiceCategoryType|string $PickupServiceCategory
  * @property FreightPickupDetail $FreightPickupDetail
  * @property ExpressFreightPickupDetail $ExpressFreightDetail
  * @property int $PackageCount
@@ -49,7 +51,7 @@ class CreatePickupRequest extends AbstractComplexType
     }
 
     /**
-     * The descriptive data identifying the client submitting the transaction.
+     * Set ClientDetail
      *
      * @param ClientDetail $clientDetail
      * @return $this
@@ -61,7 +63,7 @@ class CreatePickupRequest extends AbstractComplexType
     }
 
     /**
-     * The descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
+     * Set TransactionDetail
      *
      * @param TransactionDetail $transactionDetail
      * @return $this
@@ -73,7 +75,7 @@ class CreatePickupRequest extends AbstractComplexType
     }
 
     /**
-     * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
+     * Set Version
      *
      * @param VersionId $version
      * @return $this
@@ -97,7 +99,19 @@ class CreatePickupRequest extends AbstractComplexType
     }
 
     /**
-     * Descriptive data about the origin of the shipment being picked up by FedEx.
+     * Specifies the tracking number to be used for processing a pickup for a return shipment.
+     *
+     * @param string $trackingNumber
+     * @return $this
+     */
+    public function setTrackingNumber($trackingNumber)
+    {
+        $this->values['TrackingNumber'] = $trackingNumber;
+        return $this;
+    }
+
+    /**
+     * Set OriginDetail
      *
      * @param PickupOriginDetail $originDetail
      * @return $this
@@ -109,7 +123,19 @@ class CreatePickupRequest extends AbstractComplexType
     }
 
     /**
-     * Descriptive data for a freight shipment being picked up by FedEx. This is element is only required when requesting a freight service pickup and should not be used for other types of pickups including express freight pickups.
+     * Set PickupServiceCategory
+     *
+     * @param \FedEx\PickupService\SimpleType\PickupServiceCategoryType|string $pickupServiceCategory
+     * @return $this
+     */
+    public function setPickupServiceCategory($pickupServiceCategory)
+    {
+        $this->values['PickupServiceCategory'] = $pickupServiceCategory;
+        return $this;
+    }
+
+    /**
+     * Set FreightPickupDetail
      *
      * @param FreightPickupDetail $freightPickupDetail
      * @return $this
@@ -121,7 +147,7 @@ class CreatePickupRequest extends AbstractComplexType
     }
 
     /**
-     * Descriptive data for an express freight shipment being picked up by FedEx. This is element is only required when requesting a express freight service pickup and should not be used for other types of pickups.
+     * Set ExpressFreightDetail
      *
      * @param ExpressFreightPickupDetail $expressFreightDetail
      * @return $this
@@ -133,7 +159,7 @@ class CreatePickupRequest extends AbstractComplexType
     }
 
     /**
-     * Identifies the number of packages that are being tendered to FedEx for this pickup request.
+     * Set PackageCount
      *
      * @param int $packageCount
      * @return $this
@@ -145,7 +171,7 @@ class CreatePickupRequest extends AbstractComplexType
     }
 
     /**
-     * Identifies the total weight of the package or packages being tendered to FedEx for this pickup request.
+     * Set TotalWeight
      *
      * @param Weight $totalWeight
      * @return $this
@@ -157,7 +183,7 @@ class CreatePickupRequest extends AbstractComplexType
     }
 
     /**
-     * Identifies the FedEx operating company (transportation) that is being sent the package pickup request.
+     * Set CarrierCode
      *
      * @param \FedEx\PickupService\SimpleType\CarrierCodeType|string $carrierCode
      * @return $this
@@ -169,7 +195,7 @@ class CreatePickupRequest extends AbstractComplexType
     }
 
     /**
-     * Identifies the number of oversize packages that are being tendered to FedEx for this pickup request. Please refer to the FedEx Service Guide for package size limits to determine if a package is oversized for the service being shipped.
+     * Set OversizePackageCount
      *
      * @param int $oversizePackageCount
      * @return $this
@@ -181,7 +207,7 @@ class CreatePickupRequest extends AbstractComplexType
     }
 
     /**
-     * Identifies any remarks or comments to be passed to the FedEx courier picking up the shipment.
+     * This field is being deprecated and will not be removed in the June 2014 load.
      *
      * @param string $remarks
      * @return $this
@@ -193,7 +219,7 @@ class CreatePickupRequest extends AbstractComplexType
     }
 
     /**
-     * Identifies the type of commodity being shipped. This element is required for an international shipment.
+     * Set CommodityDescription
      *
      * @param string $commodityDescription
      * @return $this

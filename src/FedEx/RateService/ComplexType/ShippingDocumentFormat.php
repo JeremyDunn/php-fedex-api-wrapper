@@ -15,6 +15,7 @@ use FedEx\AbstractComplexType;
  * @property \FedEx\RateService\SimpleType\ShippingDocumentImageType|string $ImageType
  * @property \FedEx\RateService\SimpleType\ShippingDocumentStockType|string $StockType
  * @property boolean $ProvideInstructions
+ * @property DocumentFormatOptionsRequested $OptionsRequested
  * @property Localization $Localization
 
  */
@@ -84,6 +85,18 @@ class ShippingDocumentFormat extends AbstractComplexType
     public function setProvideInstructions($provideInstructions)
     {
         $this->values['ProvideInstructions'] = $provideInstructions;
+        return $this;
+    }
+
+    /**
+     * Set OptionsRequested
+     *
+     * @param DocumentFormatOptionsRequested $optionsRequested
+     * @return $this
+     */
+    public function setOptionsRequested(DocumentFormatOptionsRequested $optionsRequested)
+    {
+        $this->values['OptionsRequested'] = $optionsRequested;
         return $this;
     }
 

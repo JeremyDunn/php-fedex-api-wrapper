@@ -23,7 +23,7 @@ class Rma extends AbstractComplexType
     protected $name = 'Rma';
 
     /**
-     * The reason for the return.
+     * Set Reason
      *
      * @param string $reason
      * @return $this

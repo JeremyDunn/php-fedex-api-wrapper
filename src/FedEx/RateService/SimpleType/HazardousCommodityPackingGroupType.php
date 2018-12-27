@@ -12,6 +12,7 @@ use FedEx\AbstractSimpleType;
  */
 class HazardousCommodityPackingGroupType extends AbstractSimpleType
 {
+    const _DEFAULT = 'DEFAULT';
     const _I = 'I';
     const _II = 'II';
     const _III = 'III';

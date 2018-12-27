@@ -4,7 +4,7 @@ namespace FedEx\ShipService\SimpleType;
 use FedEx\AbstractSimpleType;
 
 /**
- * Test for the Commercial Invoice. Note that Sold is not a valid Purpose for a Proforma Invoice.
+ * PurposeOfShipmentType
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper

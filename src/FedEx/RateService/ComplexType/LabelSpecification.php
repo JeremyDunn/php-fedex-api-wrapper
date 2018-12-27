@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Description of shipping label to be returned in the reply
+ * LabelSpecification
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -15,6 +15,7 @@ use FedEx\AbstractComplexType;
  * @property \FedEx\RateService\SimpleType\LabelStockType|string $LabelStockType
  * @property \FedEx\RateService\SimpleType\LabelPrintingOrientationType|string $LabelPrintingOrientation
  * @property \FedEx\RateService\SimpleType\LabelRotationType|string $LabelRotation
+ * @property \FedEx\RateService\SimpleType\LabelOrderType|string $LabelOrder
  * @property ContactAndAddress $PrintedLabelOrigin
  * @property CustomerSpecifiedLabelDetail $CustomerSpecifiedDetail
 
@@ -29,7 +30,7 @@ class LabelSpecification extends AbstractComplexType
     protected $name = 'LabelSpecification';
 
     /**
-     * Specify type of label to be returned
+     * Set LabelFormatType
      *
      * @param \FedEx\RateService\SimpleType\LabelFormatType|string $labelFormatType
      * @return $this
@@ -41,12 +42,7 @@ class LabelSpecification extends AbstractComplexType
     }
 
     /**
-     * The type of image or printer commands the label is to be formatted in.
-                DPL = Unimark thermal printer language
-                EPL2 = Eltron thermal printer language
-                PDF = a label returned as a pdf image
-                PNG = a label returned as a png image
-                ZPLII = Zebra thermal printer language
+     * Set ImageType
      *
      * @param \FedEx\RateService\SimpleType\ShippingDocumentImageType|string $imageType
      * @return $this
@@ -58,7 +54,7 @@ class LabelSpecification extends AbstractComplexType
     }
 
     /**
-     * For thermal printer lables this indicates the size of the label and the location of the doc tab if present.
+     * Set LabelStockType
      *
      * @param \FedEx\RateService\SimpleType\LabelStockType|string $labelStockType
      * @return $this
@@ -70,7 +66,7 @@ class LabelSpecification extends AbstractComplexType
     }
 
     /**
-     * This indicates if the top or bottom of the label comes out of the printer first.
+     * Set LabelPrintingOrientation
      *
      * @param \FedEx\RateService\SimpleType\LabelPrintingOrientationType|string $labelPrintingOrientation
      * @return $this
@@ -82,7 +78,7 @@ class LabelSpecification extends AbstractComplexType
     }
 
     /**
-     * Relative to normal orientation for the printer. RIGHT=90 degrees clockwise, UPSIDE_DOWN=180 degrees, LEFT=90 degrees counterclockwise.
+     * Set LabelRotation
      *
      * @param \FedEx\RateService\SimpleType\LabelRotationType|string $labelRotation
      * @return $this
@@ -94,7 +90,19 @@ class LabelSpecification extends AbstractComplexType
     }
 
     /**
-     * If present, this contact and address information will replace the return address information on the label.
+     * Specifies the order in which the labels are requested to be returned
+     *
+     * @param \FedEx\RateService\SimpleType\LabelOrderType|string $labelOrder
+     * @return $this
+     */
+    public function setLabelOrder($labelOrder)
+    {
+        $this->values['LabelOrder'] = $labelOrder;
+        return $this;
+    }
+
+    /**
+     * Set PrintedLabelOrigin
      *
      * @param ContactAndAddress $printedLabelOrigin
      * @return $this
@@ -106,7 +114,7 @@ class LabelSpecification extends AbstractComplexType
     }
 
     /**
-     * Allows customer-specified control of label content.
+     * Set CustomerSpecifiedDetail
      *
      * @param CustomerSpecifiedLabelDetail $customerSpecifiedDetail
      * @return $this

@@ -4,7 +4,7 @@ namespace FedEx\PickupService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Descriptive data regarding an express freight service pickup request.
+ * ExpressFreightPickupDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -27,7 +27,7 @@ class ExpressFreightPickupDetail extends AbstractComplexType
     protected $name = 'ExpressFreightPickupDetail';
 
     /**
-     * Identifies the collection of available FedEx transportation service options. Must be a valid FedEx freight service identifier.
+     * Set Service
      *
      * @param \FedEx\PickupService\SimpleType\ServiceType|string $service
      * @return $this
@@ -39,7 +39,7 @@ class ExpressFreightPickupDetail extends AbstractComplexType
     }
 
     /**
-     * Identifies the FedEx freight booking number. This element should contain numeric values only.
+     * Set BookingNumber
      *
      * @param string $bookingNumber
      * @return $this
@@ -51,7 +51,7 @@ class ExpressFreightPickupDetail extends AbstractComplexType
     }
 
     /**
-     * Descriptive data detailing the length, width, and height of the freight package or shipment being picked up by FedEx.
+     * Set Dimensions
      *
      * @param Dimensions $dimensions
      * @return $this
@@ -63,7 +63,7 @@ class ExpressFreightPickupDetail extends AbstractComplexType
     }
 
     /**
-     * Identifies the type of truck that is needed for FedEx to pick up the freight shipment. See TruckType for valid values.
+     * Set TruckType
      *
      * @param \FedEx\PickupService\SimpleType\TruckType|string $truckType
      * @return $this
@@ -75,7 +75,7 @@ class ExpressFreightPickupDetail extends AbstractComplexType
     }
 
     /**
-     * Identifies the tailer size needed for FedEx to pick up a freight shipment. See TrailerSizeType for valid values.
+     * Set TrailerSize
      *
      * @param \FedEx\PickupService\SimpleType\TrailerSizeType|string $trailerSize
      * @return $this

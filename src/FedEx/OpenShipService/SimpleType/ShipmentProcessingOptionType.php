@@ -13,4 +13,5 @@ use FedEx\AbstractSimpleType;
 class ShipmentProcessingOptionType extends AbstractSimpleType
 {
     const _PACKAGE_LEVEL_COMMODITIES = 'PACKAGE_LEVEL_COMMODITIES';
+    const _PRE_ETD_ENHANCEMENTS = 'PRE_ETD_ENHANCEMENTS';
 }

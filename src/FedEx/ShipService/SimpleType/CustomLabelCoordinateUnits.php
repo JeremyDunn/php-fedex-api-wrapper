@@ -4,7 +4,7 @@ namespace FedEx\ShipService\SimpleType;
 use FedEx\AbstractSimpleType;
 
 /**
- * Valid values for CustomLabelCoordinateUnits
+ * CustomLabelCoordinateUnits
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper

@@ -18,7 +18,7 @@ $serviceAvailabilityRequest->ClientDetail->AccountNumber = FEDEX_ACCOUNT_NUMBER;
 $serviceAvailabilityRequest->ClientDetail->MeterNumber = FEDEX_METER_NUMBER;
 //version
 $serviceAvailabilityRequest->Version->ServiceId = 'vacs';
-$serviceAvailabilityRequest->Version->Major = 6;
+$serviceAvailabilityRequest->Version->Major = 8;
 $serviceAvailabilityRequest->Version->Intermediate = 0;
 $serviceAvailabilityRequest->Version->Minor = 0;
 //origin

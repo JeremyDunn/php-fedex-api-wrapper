@@ -36,6 +36,7 @@ use FedEx\AbstractComplexType;
  * @property string $CountryCode
  * @property string $AirportId
  * @property string $ServiceCode
+ * @property string $PackagingCode
  * @property string $Scac
 
  */
@@ -357,6 +358,18 @@ class ShipmentOperationalDetail extends AbstractComplexType
     public function setServiceCode($serviceCode)
     {
         $this->values['ServiceCode'] = $serviceCode;
+        return $this;
+    }
+
+    /**
+     * Set PackagingCode
+     *
+     * @param string $packagingCode
+     * @return $this
+     */
+    public function setPackagingCode($packagingCode)
+    {
+        $this->values['PackagingCode'] = $packagingCode;
         return $this;
     }
 

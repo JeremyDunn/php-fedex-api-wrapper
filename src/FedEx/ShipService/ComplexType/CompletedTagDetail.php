@@ -28,7 +28,7 @@ class CompletedTagDetail extends AbstractComplexType
     protected $name = 'CompletedTagDetail';
 
     /**
-     * .
+     * Set ConfirmationNumber
      *
      * @param string $confirmationNumber
      * @return $this

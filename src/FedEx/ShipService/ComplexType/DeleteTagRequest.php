@@ -42,7 +42,7 @@ class DeleteTagRequest extends AbstractComplexType
     }
 
     /**
-     * Descriptive data identifying the client submitting the transaction.
+     * Set ClientDetail
      *
      * @param ClientDetail $clientDetail
      * @return $this
@@ -54,7 +54,7 @@ class DeleteTagRequest extends AbstractComplexType
     }
 
     /**
-     * Descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
+     * Set TransactionDetail
      *
      * @param TransactionDetail $transactionDetail
      * @return $this
@@ -66,7 +66,7 @@ class DeleteTagRequest extends AbstractComplexType
     }
 
     /**
-     * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
+     * Set Version
      *
      * @param VersionId $version
      * @return $this
@@ -114,7 +114,7 @@ class DeleteTagRequest extends AbstractComplexType
     }
 
     /**
-     * Also known as Pickup Confirmation Number or Dispatch Number
+     * Set ConfirmationNumber
      *
      * @param string $confirmationNumber
      * @return $this

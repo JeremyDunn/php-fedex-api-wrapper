@@ -225,7 +225,7 @@ class RequestedShipment extends AbstractComplexType
     }
 
     /**
-     * Set SoldTo
+     * The sold-to party is used for customs clearance; for example, in support of US import customs rules. The need for this field could vary based on whether a sold-to party was specified on a consolidation.
      *
      * @param Party $soldTo
      * @return $this

@@ -4,7 +4,7 @@ namespace FedEx\RateService\SimpleType;
 use FedEx\AbstractSimpleType;
 
 /**
- * Net cost method used.
+ * NaftaNetCostMethodCode
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper

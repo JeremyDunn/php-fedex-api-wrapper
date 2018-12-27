@@ -12,6 +12,7 @@ use FedEx\AbstractComplexType;
  *
  * @property float $Amount
  * @property string $Units
+ * @property \FedEx\RateService\SimpleType\HazardousCommodityQuantityType|string $QuantityType
 
  */
 class HazardousCommodityQuantityDetail extends AbstractComplexType
@@ -36,7 +37,7 @@ class HazardousCommodityQuantityDetail extends AbstractComplexType
     }
 
     /**
-     * Units by which the hazardous commodity is measured.
+     * Units by which the hazardous commodity is measured. For IATA commodity, the units values are restricted based on regulation type.
      *
      * @param string $units
      * @return $this
@@ -44,6 +45,18 @@ class HazardousCommodityQuantityDetail extends AbstractComplexType
     public function setUnits($units)
     {
         $this->values['Units'] = $units;
+        return $this;
+    }
+
+    /**
+     * Specifies which measure of quantity is to be validated.
+     *
+     * @param \FedEx\RateService\SimpleType\HazardousCommodityQuantityType|string $quantityType
+     * @return $this
+     */
+    public function setQuantityType($quantityType)
+    {
+        $this->values['QuantityType'] = $quantityType;
         return $this;
     }
 }

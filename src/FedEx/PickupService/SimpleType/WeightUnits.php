@@ -4,7 +4,7 @@ namespace FedEx\PickupService\SimpleType;
 use FedEx\AbstractSimpleType;
 
 /**
- * Identifies the collection of units of measure that can be associated with a weight value.
+ * WeightUnits
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper

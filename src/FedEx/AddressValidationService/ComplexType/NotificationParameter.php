@@ -24,7 +24,7 @@ class NotificationParameter extends AbstractComplexType
     protected $name = 'NotificationParameter';
 
     /**
-     * Name identifiying the type of the data in the element 'Value'
+     * Identifies the type of data contained in Value (e.g. SERVICE_TYPE, PACKAGE_SEQUENCE, etc..).
      *
      * @param string $id
      * @return $this
@@ -36,7 +36,7 @@ class NotificationParameter extends AbstractComplexType
     }
 
     /**
-     * The value that was used as the replacement parameter.
+     * The value of the parameter (e.g. PRIORITY_OVERNIGHT, 2, etc..).
      *
      * @param string $value
      * @return $this

@@ -16,6 +16,7 @@ use FedEx\AbstractComplexType;
  * @property \FedEx\PickupService\SimpleType\UploadDocumentType|string $DocumentType
  * @property string $FileName
  * @property string $DocumentContent
+ * @property string $ExpirationDate
 
  */
 class UploadDocumentDetail extends AbstractComplexType
@@ -96,6 +97,18 @@ class UploadDocumentDetail extends AbstractComplexType
     public function setDocumentContent($documentContent)
     {
         $this->values['DocumentContent'] = $documentContent;
+        return $this;
+    }
+
+    /**
+     * Specifies the date until which the document is available
+     *
+     * @param string $expirationDate
+     * @return $this
+     */
+    public function setExpirationDate($expirationDate)
+    {
+        $this->values['ExpirationDate'] = $expirationDate;
         return $this;
     }
 }

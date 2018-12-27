@@ -11,6 +11,9 @@ use FedEx\AbstractComplexType;
  * @subpackage  Close Service
  *
  * @property \FedEx\CloseService\SimpleType\CloseDocumentType|string[] $CloseDocumentTypes
+ * @property DetailedDeliveryManifestDetail $DetailedDeliveryManifestDetail
+ * @property HazardousMaterialsCertificationDetail $HazardousMaterialsCertificationDetail
+ * @property ManifestDetail $ManifestDetail
  * @property Op950Detail $Op950Detail
 
  */
@@ -32,6 +35,42 @@ class CloseDocumentSpecification extends AbstractComplexType
     public function setCloseDocumentTypes(array $closeDocumentTypes)
     {
         $this->values['CloseDocumentTypes'] = $closeDocumentTypes;
+        return $this;
+    }
+
+    /**
+     * Set DetailedDeliveryManifestDetail
+     *
+     * @param DetailedDeliveryManifestDetail $detailedDeliveryManifestDetail
+     * @return $this
+     */
+    public function setDetailedDeliveryManifestDetail(DetailedDeliveryManifestDetail $detailedDeliveryManifestDetail)
+    {
+        $this->values['DetailedDeliveryManifestDetail'] = $detailedDeliveryManifestDetail;
+        return $this;
+    }
+
+    /**
+     * Set HazardousMaterialsCertificationDetail
+     *
+     * @param HazardousMaterialsCertificationDetail $hazardousMaterialsCertificationDetail
+     * @return $this
+     */
+    public function setHazardousMaterialsCertificationDetail(HazardousMaterialsCertificationDetail $hazardousMaterialsCertificationDetail)
+    {
+        $this->values['HazardousMaterialsCertificationDetail'] = $hazardousMaterialsCertificationDetail;
+        return $this;
+    }
+
+    /**
+     * Set ManifestDetail
+     *
+     * @param ManifestDetail $manifestDetail
+     * @return $this
+     */
+    public function setManifestDetail(ManifestDetail $manifestDetail)
+    {
+        $this->values['ManifestDetail'] = $manifestDetail;
         return $this;
     }
 

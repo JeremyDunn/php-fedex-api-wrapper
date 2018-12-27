@@ -4,7 +4,7 @@ namespace FedEx\PickupService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Descriptive data regarding a FedEx freight service pickup request.
+ * FreightGuaranteeDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -12,6 +12,7 @@ use FedEx\AbstractComplexType;
  *
  * @property \FedEx\PickupService\SimpleType\FreightGuaranteeType|string $Type
  * @property string $Date
+ * @property string $Time
 
  */
 class FreightGuaranteeDetail extends AbstractComplexType
@@ -24,7 +25,7 @@ class FreightGuaranteeDetail extends AbstractComplexType
     protected $name = 'FreightGuaranteeDetail';
 
     /**
-     * Description of Guarantee
+     * Set Type
      *
      * @param \FedEx\PickupService\SimpleType\FreightGuaranteeType|string $type
      * @return $this
@@ -44,6 +45,18 @@ class FreightGuaranteeDetail extends AbstractComplexType
     public function setDate($date)
     {
         $this->values['Date'] = $date;
+        return $this;
+    }
+
+    /**
+     * Time for GUARANTEED_TIME only.
+     *
+     * @param string $time
+     * @return $this
+     */
+    public function setTime($time)
+    {
+        $this->values['Time'] = $time;
         return $this;
     }
 }

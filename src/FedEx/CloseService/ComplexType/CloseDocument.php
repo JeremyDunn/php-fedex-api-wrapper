@@ -41,7 +41,7 @@ class CloseDocument extends AbstractComplexType
     }
 
     /**
-     * The client's shipping cycle to which this shipment belongs.
+     * Identifies the shipping cycle covered by the content of this document.
      *
      * @param string $shippingCycle
      * @return $this
@@ -89,7 +89,7 @@ class CloseDocument extends AbstractComplexType
     }
 
     /**
-     * Number of copies to print.
+     * Can be zero for documents whose disposition implies that no content is included.
      *
      * @param int $copiesToPrint
      * @return $this

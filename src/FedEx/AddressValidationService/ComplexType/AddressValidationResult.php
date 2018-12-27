@@ -10,8 +10,13 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Address Validation Service
  *
- * @property string $AddressId
- * @property ProposedAddressDetail[] $ProposedAddressDetails
+ * @property string $ClientReferenceId
+ * @property \FedEx\AddressValidationService\SimpleType\OperationalAddressStateType|string $State
+ * @property \FedEx\AddressValidationService\SimpleType\FedExAddressClassificationType|string $Classification
+ * @property Contact $EffectiveContact
+ * @property Address $EffectiveAddress
+ * @property ParsedAddressPartsDetail $ParsedAddressPartsDetail
+ * @property AddressAttribute[] $Attributes
 
  */
 class AddressValidationResult extends AbstractComplexType
@@ -24,26 +29,86 @@ class AddressValidationResult extends AbstractComplexType
     protected $name = 'AddressValidationResult';
 
     /**
-     * Set AddressId
+     * The client reference id for the validated address.
      *
-     * @param string $addressId
+     * @param string $clientReferenceId
      * @return $this
      */
-    public function setAddressId($addressId)
+    public function setClientReferenceId($clientReferenceId)
     {
-        $this->values['AddressId'] = $addressId;
+        $this->values['ClientReferenceId'] = $clientReferenceId;
         return $this;
     }
 
     /**
-     * Set ProposedAddressDetails
+     * Specifies the degree to SHARE service was able to cannonicalise the address provided, as per USPS standards and match it to an address already in the internal FedEx address repository.
      *
-     * @param ProposedAddressDetail[] $proposedAddressDetails
+     * @param \FedEx\AddressValidationService\SimpleType\OperationalAddressStateType|string $state
      * @return $this
      */
-    public function setProposedAddressDetails(array $proposedAddressDetails)
+    public function setState($state)
     {
-        $this->values['ProposedAddressDetails'] = $proposedAddressDetails;
+        $this->values['State'] = $state;
+        return $this;
+    }
+
+    /**
+     * Set Classification
+     *
+     * @param \FedEx\AddressValidationService\SimpleType\FedExAddressClassificationType|string $classification
+     * @return $this
+     */
+    public function setClassification($classification)
+    {
+        $this->values['Classification'] = $classification;
+        return $this;
+    }
+
+    /**
+     * Set EffectiveContact
+     *
+     * @param Contact $effectiveContact
+     * @return $this
+     */
+    public function setEffectiveContact(Contact $effectiveContact)
+    {
+        $this->values['EffectiveContact'] = $effectiveContact;
+        return $this;
+    }
+
+    /**
+     * Set EffectiveAddress
+     *
+     * @param Address $effectiveAddress
+     * @return $this
+     */
+    public function setEffectiveAddress(Address $effectiveAddress)
+    {
+        $this->values['EffectiveAddress'] = $effectiveAddress;
+        return $this;
+    }
+
+    /**
+     * Set ParsedAddressPartsDetail
+     *
+     * @param ParsedAddressPartsDetail $parsedAddressPartsDetail
+     * @return $this
+     */
+    public function setParsedAddressPartsDetail(ParsedAddressPartsDetail $parsedAddressPartsDetail)
+    {
+        $this->values['ParsedAddressPartsDetail'] = $parsedAddressPartsDetail;
+        return $this;
+    }
+
+    /**
+     * Additional attributes about the validated address from FedEx address respository..
+     *
+     * @param AddressAttribute[] $attributes
+     * @return $this
+     */
+    public function setAttributes(array $attributes)
+    {
+        $this->values['Attributes'] = $attributes;
         return $this;
     }
 }

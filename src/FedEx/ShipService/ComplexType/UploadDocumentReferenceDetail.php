@@ -12,6 +12,7 @@ use FedEx\AbstractComplexType;
  *
  * @property int $LineNumber
  * @property string $CustomerReference
+ * @property string $Description
  * @property \FedEx\ShipService\SimpleType\UploadDocumentProducerType|string $DocumentProducer
  * @property \FedEx\ShipService\SimpleType\UploadDocumentType|string $DocumentType
  * @property string $DocumentId
@@ -48,6 +49,18 @@ class UploadDocumentReferenceDetail extends AbstractComplexType
     public function setCustomerReference($customerReference)
     {
         $this->values['CustomerReference'] = $customerReference;
+        return $this;
+    }
+
+    /**
+     * Description of the uploaded document.
+     *
+     * @param string $description
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->values['Description'] = $description;
         return $this;
     }
 

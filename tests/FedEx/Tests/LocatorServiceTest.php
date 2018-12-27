@@ -2,24 +2,24 @@
 
 namespace FedEx\Tests;
 
-use FedEx\LocatorService\Request;
-use FedEx\LocatorService\ComplexType;
+use FedEx\LocationsService\Request;
+use FedEx\LocationsService\ComplexType;
 use FedEx\Utility\ComplexTypePopulator;
 
 class LocatorServiceTest extends TestCase
 {
     public function testLocatorServiceRequest()
     {
-        $fedexLocatorRequest = new ComplexType\FedExLocatorRequest();
+        $searchLocationsRequest = new ComplexType\SearchLocationsRequest();
 
         $complextTypePopulator = new ComplexTypePopulator();
-        $complextTypePopulator->populate($fedexLocatorRequest);
+        $complextTypePopulator->populate($searchLocationsRequest);
 
         $mockSoapClient = $this->getMockFromWsdl(Request::getWsdlPath());
-        $mockSoapClient->method('fedExLocator')->will($this->returnValue(ComplexType\FedExLocatorRequest::class));
+        $mockSoapClient->method('searchLocations')->will($this->returnValue(ComplexType\SearchLocationsReply::class));
 
         $request = new Request($mockSoapClient);
 
-        $this->assertEquals(ComplexType\FedExLocatorRequest::class, $request->getFedExLocatorReply($fedexLocatorRequest, true));
+        $this->assertEquals(ComplexType\SearchLocationsReply::class, $request->getSearchLocationsReply($searchLocationsRequest, true));
     }
 }

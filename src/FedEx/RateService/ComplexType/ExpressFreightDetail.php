@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Details specific to an Express freight shipment.
+ * ExpressFreightDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -28,7 +28,7 @@ class ExpressFreightDetail extends AbstractComplexType
     protected $name = 'ExpressFreightDetail';
 
     /**
-     * Indicates whether or nor a packing list is enclosed.
+     * Set PackingListEnclosed
      *
      * @param boolean $packingListEnclosed
      * @return $this
@@ -40,10 +40,7 @@ class ExpressFreightDetail extends AbstractComplexType
     }
 
     /**
-     * Total shipment pieces.
-                ie. 3 boxes and 3 pallets of 100 pieces each = Shippers Load and Count of 303.
-                Applicable to International Priority Freight and International Economy Freight.
-                Values must be in the range of 1 - 99999
+     * Set ShippersLoadAndCount
      *
      * @param int $shippersLoadAndCount
      * @return $this
@@ -55,7 +52,7 @@ class ExpressFreightDetail extends AbstractComplexType
     }
 
     /**
-     * Required for International Freight shipping. Values must be 8- 12 characters in length.
+     * Set BookingConfirmationNumber
      *
      * @param string $bookingConfirmationNumber
      * @return $this
@@ -67,7 +64,7 @@ class ExpressFreightDetail extends AbstractComplexType
     }
 
     /**
-     * Currently not supported.
+     * Set ReferenceLabelRequested
      *
      * @param boolean $referenceLabelRequested
      * @return $this
@@ -79,7 +76,7 @@ class ExpressFreightDetail extends AbstractComplexType
     }
 
     /**
-     * Currently not supported.
+     * Set BeforeDeliveryContact
      *
      * @param ExpressFreightDetailContact $beforeDeliveryContact
      * @return $this
@@ -91,7 +88,7 @@ class ExpressFreightDetail extends AbstractComplexType
     }
 
     /**
-     * Currently not supported.
+     * Set UndeliverableContact
      *
      * @param ExpressFreightDetailContact $undeliverableContact
      * @return $this

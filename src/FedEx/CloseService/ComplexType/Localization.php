@@ -4,7 +4,7 @@ namespace FedEx\CloseService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Localization
+ * Identifies the representation of human-readable text.
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -24,7 +24,7 @@ class Localization extends AbstractComplexType
     protected $name = 'Localization';
 
     /**
-     * Set LanguageCode
+     * Two-letter code for language (e.g. EN, FR, etc.)
      *
      * @param string $languageCode
      * @return $this
@@ -36,7 +36,7 @@ class Localization extends AbstractComplexType
     }
 
     /**
-     * Set LocaleCode
+     * Two-letter code for the region (e.g. us, ca, etc..).
      *
      * @param string $localeCode
      * @return $this

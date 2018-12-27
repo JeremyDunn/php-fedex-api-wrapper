@@ -1,0 +1,34 @@
+<?php
+namespace FedEx\LocationsService\SimpleType;
+
+use FedEx\AbstractSimpleType;
+
+/**
+ * LocationAttributesType
+ *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
+ * @package     PHP FedEx API wrapper
+ * @subpackage  Locations Service
+ */
+class LocationAttributesType extends AbstractSimpleType
+{
+    const _ACCEPTS_CASH = 'ACCEPTS_CASH';
+    const _ALREADY_OPEN = 'ALREADY_OPEN';
+    const _CLEARANCE_SERVICES = 'CLEARANCE_SERVICES';
+    const _COPY_AND_PRINT_SERVICES = 'COPY_AND_PRINT_SERVICES';
+    const _DANGEROUS_GOODS_SERVICES = 'DANGEROUS_GOODS_SERVICES';
+    const _DIRECT_MAIL_SERVICES = 'DIRECT_MAIL_SERVICES';
+    const _DOMESTIC_SHIPPING_SERVICES = 'DOMESTIC_SHIPPING_SERVICES';
+    const _DROP_BOX = 'DROP_BOX';
+    const _INTERNATIONAL_SHIPPING_SERVICES = 'INTERNATIONAL_SHIPPING_SERVICES';
+    const _LOCATION_IS_IN_AIRPORT = 'LOCATION_IS_IN_AIRPORT';
+    const _NOTARY_SERVICES = 'NOTARY_SERVICES';
+    const _OBSERVES_DAY_LIGHT_SAVING_TIMES = 'OBSERVES_DAY_LIGHT_SAVING_TIMES';
+    const _OPEN_TWENTY_FOUR_HOURS = 'OPEN_TWENTY_FOUR_HOURS';
+    const _PACKAGING_SUPPLIES = 'PACKAGING_SUPPLIES';
+    const _PACK_AND_SHIP = 'PACK_AND_SHIP';
+    const _PASSPORT_PHOTO_SERVICES = 'PASSPORT_PHOTO_SERVICES';
+    const _RETURNS_SERVICES = 'RETURNS_SERVICES';
+    const _SIGNS_AND_BANNERS_SERVICE = 'SIGNS_AND_BANNERS_SERVICE';
+    const _SONY_PICTURE_STATION = 'SONY_PICTURE_STATION';
+}

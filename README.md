@@ -15,7 +15,7 @@ Each web service has it's own class namespace. See the official FedEx web servic
 * [Address Validation Service](src/FedEx/AddressValidationService)
 * [Close Service](src/FedEx/CloseService)
 * [Courier Dispatch Service](src/FedEx/CourierDispatchService)
-* [Locator Service](src/FedEx/LocatorService)
+* [Locations Service](src/FedEx/LocationsService)
 * [Package Movement Information Service](src/FedEx/PackageMovementInformationService)
 * [Pickup Service](src/FedEx/PickupService)
 * [Rate Service](src/FedEx/RateService)

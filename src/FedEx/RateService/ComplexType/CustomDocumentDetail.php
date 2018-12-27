@@ -14,6 +14,7 @@ use FedEx\AbstractComplexType;
  * @property \FedEx\RateService\SimpleType\LabelPrintingOrientationType|string $LabelPrintingOrientation
  * @property \FedEx\RateService\SimpleType\LabelRotationType|string $LabelRotation
  * @property string $SpecificationId
+ * @property CustomLabelDetail $CustomContent
 
  */
 class CustomDocumentDetail extends AbstractComplexType
@@ -70,6 +71,18 @@ class CustomDocumentDetail extends AbstractComplexType
     public function setSpecificationId($specificationId)
     {
         $this->values['SpecificationId'] = $specificationId;
+        return $this;
+    }
+
+    /**
+     * Set CustomContent
+     *
+     * @param CustomLabelDetail $customContent
+     * @return $this
+     */
+    public function setCustomContent(CustomLabelDetail $customContent)
+    {
+        $this->values['CustomContent'] = $customContent;
         return $this;
     }
 }

@@ -12,6 +12,7 @@ use FedEx\AbstractSimpleType;
  */
 class ServiceOptionType extends AbstractSimpleType
 {
+    const _FEDEX_ONE_RATE = 'FEDEX_ONE_RATE';
     const _FREIGHT_GUARANTEE = 'FREIGHT_GUARANTEE';
     const _SATURDAY_DELIVERY = 'SATURDAY_DELIVERY';
     const _SMART_POST_ALLOWED_INDICIA = 'SMART_POST_ALLOWED_INDICIA';

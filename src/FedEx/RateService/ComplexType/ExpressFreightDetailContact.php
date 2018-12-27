@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Currently not supported. Delivery contact information for an Express freight shipment.
+ * ExpressFreightDetailContact
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper

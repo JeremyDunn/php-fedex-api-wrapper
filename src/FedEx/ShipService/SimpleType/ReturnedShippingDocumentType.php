@@ -4,7 +4,7 @@ namespace FedEx\ShipService\SimpleType;
 use FedEx\AbstractSimpleType;
 
 /**
- * Shipping document type.
+ * ReturnedShippingDocumentType
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -25,6 +25,8 @@ class ReturnedShippingDocumentType extends AbstractSimpleType
     const _DELIVERY_ON_INVOICE_ACCEPTANCE_RETURN_2_D_BARCODE = 'DELIVERY_ON_INVOICE_ACCEPTANCE_RETURN_2_D_BARCODE';
     const _DELIVERY_ON_INVOICE_ACCEPTANCE_RETURN_LABEL = 'DELIVERY_ON_INVOICE_ACCEPTANCE_RETURN_LABEL';
     const _ETD_LABEL = 'ETD_LABEL';
+    const _EXPORT_DECLARATION = 'EXPORT_DECLARATION';
+    const _FEDEX_FREIGHT_STRAIGHT_BILL_OF_LADING = 'FEDEX_FREIGHT_STRAIGHT_BILL_OF_LADING';
     const _FREIGHT_ADDRESS_LABEL = 'FREIGHT_ADDRESS_LABEL';
     const _GENERAL_AGENCY_AGREEMENT = 'GENERAL_AGENCY_AGREEMENT';
     const _GROUND_BARCODE = 'GROUND_BARCODE';
@@ -38,4 +40,5 @@ class ReturnedShippingDocumentType extends AbstractSimpleType
     const _RETURN_INSTRUCTIONS = 'RETURN_INSTRUCTIONS';
     const _TERMS_AND_CONDITIONS = 'TERMS_AND_CONDITIONS';
     const _USPS_BARCODE = 'USPS_BARCODE';
+    const _VICS_BILL_OF_LADING = 'VICS_BILL_OF_LADING';
 }

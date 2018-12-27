@@ -4,7 +4,7 @@ namespace FedEx\PickupService\SimpleType;
 use FedEx\AbstractSimpleType;
 
 /**
- * Identifies the valid set of tractor tailer sizes supported by FedEx. This type is appropriate only for freight pickup requests.
+ * TrailerSizeType
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper

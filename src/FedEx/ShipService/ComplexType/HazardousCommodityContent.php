@@ -12,8 +12,10 @@ use FedEx\AbstractComplexType;
  *
  * @property HazardousCommodityDescription $Description
  * @property HazardousCommodityQuantityDetail $Quantity
+ * @property HazardousCommodityInnerReceptacleDetail[] $InnerReceptacles
  * @property HazardousCommodityOptionDetail $Options
  * @property RadionuclideDetail $RadionuclideDetail
+ * @property NetExplosiveDetail $NetExplosiveDetail
 
  */
 class HazardousCommodityContent extends AbstractComplexType
@@ -50,6 +52,18 @@ class HazardousCommodityContent extends AbstractComplexType
     }
 
     /**
+     * This describes the inner receptacle details for a hazardous commodity within the dangerous goods container.
+     *
+     * @param HazardousCommodityInnerReceptacleDetail[] $innerReceptacles
+     * @return $this
+     */
+    public function setInnerReceptacles(array $innerReceptacles)
+    {
+        $this->values['InnerReceptacles'] = $innerReceptacles;
+        return $this;
+    }
+
+    /**
      * Customer-provided specifications for handling individual commodities.
      *
      * @param HazardousCommodityOptionDetail $options
@@ -70,6 +84,18 @@ class HazardousCommodityContent extends AbstractComplexType
     public function setRadionuclideDetail(RadionuclideDetail $radionuclideDetail)
     {
         $this->values['RadionuclideDetail'] = $radionuclideDetail;
+        return $this;
+    }
+
+    /**
+     * The total mass of the contained explosive substances, without the mass of any casings, bullets, shells, etc.
+     *
+     * @param NetExplosiveDetail $netExplosiveDetail
+     * @return $this
+     */
+    public function setNetExplosiveDetail(NetExplosiveDetail $netExplosiveDetail)
+    {
+        $this->values['NetExplosiveDetail'] = $netExplosiveDetail;
         return $this;
     }
 }

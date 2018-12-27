@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Specifies the currency exchange performed on financial amounts for this rate.
+ * CurrencyExchangeRate
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper

@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Descriptive data sent to FedEx by a customer in order to rate a package/shipment.
+ * RateRequest
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -17,6 +17,7 @@ use FedEx\AbstractComplexType;
  * @property boolean $ReturnTransitAndCommit
  * @property \FedEx\RateService\SimpleType\CarrierCodeType|string[] $CarrierCodes
  * @property \FedEx\RateService\SimpleType\ServiceOptionType|string[] $VariableOptions
+ * @property ConsolidationKey $ConsolidationKey
  * @property RequestedShipment $RequestedShipment
 
  */
@@ -42,7 +43,7 @@ class RateRequest extends AbstractComplexType
     }
 
     /**
-     * Descriptive data identifying the client submitting the transaction.
+     * Set ClientDetail
      *
      * @param ClientDetail $clientDetail
      * @return $this
@@ -54,7 +55,7 @@ class RateRequest extends AbstractComplexType
     }
 
     /**
-     * Descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
+     * Set TransactionDetail
      *
      * @param TransactionDetail $transactionDetail
      * @return $this
@@ -66,7 +67,7 @@ class RateRequest extends AbstractComplexType
     }
 
     /**
-     * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
+     * Set Version
      *
      * @param VersionId $version
      * @return $this
@@ -110,6 +111,18 @@ class RateRequest extends AbstractComplexType
     public function setVariableOptions(array $variableOptions)
     {
         $this->values['VariableOptions'] = $variableOptions;
+        return $this;
+    }
+
+    /**
+     * If provided, identifies the consolidation to which this open shipment should be added after successful creation.
+     *
+     * @param ConsolidationKey $consolidationKey
+     * @return $this
+     */
+    public function setConsolidationKey(ConsolidationKey $consolidationKey)
+    {
+        $this->values['ConsolidationKey'] = $consolidationKey;
         return $this;
     }
 

@@ -25,6 +25,7 @@ use FedEx\AbstractComplexType;
  * @property Commodity[] $Commodities
  * @property ExportDetail $ExportDetail
  * @property \FedEx\ShipService\SimpleType\RegulatoryControlType|string[] $RegulatoryControls
+ * @property CustomsDeclarationStatementDetail $DeclarationStatementDetail
 
  */
 class CustomsClearanceDetail extends AbstractComplexType
@@ -213,6 +214,18 @@ class CustomsClearanceDetail extends AbstractComplexType
     public function setRegulatoryControls(array $regulatoryControls)
     {
         $this->values['RegulatoryControls'] = $regulatoryControls;
+        return $this;
+    }
+
+    /**
+     * Set DeclarationStatementDetail
+     *
+     * @param CustomsDeclarationStatementDetail $declarationStatementDetail
+     * @return $this
+     */
+    public function setDeclarationStatementDetail(CustomsDeclarationStatementDetail $declarationStatementDetail)
+    {
+        $this->values['DeclarationStatementDetail'] = $declarationStatementDetail;
         return $this;
     }
 }

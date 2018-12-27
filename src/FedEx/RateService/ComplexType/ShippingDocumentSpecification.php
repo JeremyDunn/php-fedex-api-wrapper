@@ -15,9 +15,13 @@ use FedEx\AbstractComplexType;
  * @property CommercialInvoiceDetail $CommercialInvoiceDetail
  * @property CustomDocumentDetail[] $CustomPackageDocumentDetail
  * @property CustomDocumentDetail[] $CustomShipmentDocumentDetail
+ * @property ExportDeclarationDetail $ExportDeclarationDetail
  * @property GeneralAgencyAgreementDetail $GeneralAgencyAgreementDetail
  * @property NaftaCertificateOfOriginDetail $NaftaCertificateOfOriginDetail
  * @property Op900Detail $Op900Detail
+ * @property DangerousGoodsShippersDeclarationDetail $DangerousGoodsShippersDeclarationDetail
+ * @property FreightAddressLabelDetail $FreightAddressLabelDetail
+ * @property ReturnInstructionsDetail $ReturnInstructionsDetail
 
  */
 class ShippingDocumentSpecification extends AbstractComplexType
@@ -90,7 +94,19 @@ class ShippingDocumentSpecification extends AbstractComplexType
     }
 
     /**
-     * Details pertaining to the GAA.
+     * Set ExportDeclarationDetail
+     *
+     * @param ExportDeclarationDetail $exportDeclarationDetail
+     * @return $this
+     */
+    public function setExportDeclarationDetail(ExportDeclarationDetail $exportDeclarationDetail)
+    {
+        $this->values['ExportDeclarationDetail'] = $exportDeclarationDetail;
+        return $this;
+    }
+
+    /**
+     * Set GeneralAgencyAgreementDetail
      *
      * @param GeneralAgencyAgreementDetail $generalAgencyAgreementDetail
      * @return $this
@@ -102,7 +118,7 @@ class ShippingDocumentSpecification extends AbstractComplexType
     }
 
     /**
-     * Details pertaining to NAFTA COO.
+     * Set NaftaCertificateOfOriginDetail
      *
      * @param NaftaCertificateOfOriginDetail $naftaCertificateOfOriginDetail
      * @return $this
@@ -122,6 +138,42 @@ class ShippingDocumentSpecification extends AbstractComplexType
     public function setOp900Detail(Op900Detail $op900Detail)
     {
         $this->values['Op900Detail'] = $op900Detail;
+        return $this;
+    }
+
+    /**
+     * Specifies the production of the 1421c document for dangerous goods shipment.
+     *
+     * @param DangerousGoodsShippersDeclarationDetail $dangerousGoodsShippersDeclarationDetail
+     * @return $this
+     */
+    public function setDangerousGoodsShippersDeclarationDetail(DangerousGoodsShippersDeclarationDetail $dangerousGoodsShippersDeclarationDetail)
+    {
+        $this->values['DangerousGoodsShippersDeclarationDetail'] = $dangerousGoodsShippersDeclarationDetail;
+        return $this;
+    }
+
+    /**
+     * Specifies the production of the OP-900 document for hazardous materials.
+     *
+     * @param FreightAddressLabelDetail $freightAddressLabelDetail
+     * @return $this
+     */
+    public function setFreightAddressLabelDetail(FreightAddressLabelDetail $freightAddressLabelDetail)
+    {
+        $this->values['FreightAddressLabelDetail'] = $freightAddressLabelDetail;
+        return $this;
+    }
+
+    /**
+     * Specifies the production of the return instructions document.
+     *
+     * @param ReturnInstructionsDetail $returnInstructionsDetail
+     * @return $this
+     */
+    public function setReturnInstructionsDetail(ReturnInstructionsDetail $returnInstructionsDetail)
+    {
+        $this->values['ReturnInstructionsDetail'] = $returnInstructionsDetail;
         return $this;
     }
 }

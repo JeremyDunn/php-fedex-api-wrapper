@@ -15,11 +15,13 @@ use FedEx\AbstractComplexType;
  * @property CommercialInvoiceDetail $CommercialInvoiceDetail
  * @property CustomDocumentDetail[] $CustomPackageDocumentDetail
  * @property CustomDocumentDetail[] $CustomShipmentDocumentDetail
+ * @property ExportDeclarationDetail $ExportDeclarationDetail
  * @property GeneralAgencyAgreementDetail $GeneralAgencyAgreementDetail
  * @property NaftaCertificateOfOriginDetail $NaftaCertificateOfOriginDetail
  * @property Op900Detail $Op900Detail
  * @property DangerousGoodsShippersDeclarationDetail $DangerousGoodsShippersDeclarationDetail
  * @property FreightAddressLabelDetail $FreightAddressLabelDetail
+ * @property FreightBillOfLadingDetail $FreightBillOfLadingDetail
  * @property ReturnInstructionsDetail $ReturnInstructionsDetail
 
  */
@@ -93,7 +95,19 @@ class ShippingDocumentSpecification extends AbstractComplexType
     }
 
     /**
-     * This element is currently not supported and is for the future use. (Details pertaining to the GAA.)
+     * Set ExportDeclarationDetail
+     *
+     * @param ExportDeclarationDetail $exportDeclarationDetail
+     * @return $this
+     */
+    public function setExportDeclarationDetail(ExportDeclarationDetail $exportDeclarationDetail)
+    {
+        $this->values['ExportDeclarationDetail'] = $exportDeclarationDetail;
+        return $this;
+    }
+
+    /**
+     * Set GeneralAgencyAgreementDetail
      *
      * @param GeneralAgencyAgreementDetail $generalAgencyAgreementDetail
      * @return $this
@@ -149,6 +163,18 @@ class ShippingDocumentSpecification extends AbstractComplexType
     public function setFreightAddressLabelDetail(FreightAddressLabelDetail $freightAddressLabelDetail)
     {
         $this->values['FreightAddressLabelDetail'] = $freightAddressLabelDetail;
+        return $this;
+    }
+
+    /**
+     * Set FreightBillOfLadingDetail
+     *
+     * @param FreightBillOfLadingDetail $freightBillOfLadingDetail
+     * @return $this
+     */
+    public function setFreightBillOfLadingDetail(FreightBillOfLadingDetail $freightBillOfLadingDetail)
+    {
+        $this->values['FreightBillOfLadingDetail'] = $freightBillOfLadingDetail;
         return $this;
     }
 

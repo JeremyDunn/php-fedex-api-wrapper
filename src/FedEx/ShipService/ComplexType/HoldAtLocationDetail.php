@@ -4,7 +4,7 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * Descriptive data required for a FedEx shipment that is to be held at the destination FedEx location for pickup by the recipient.
+ * HoldAtLocationDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -13,6 +13,7 @@ use FedEx\AbstractComplexType;
  * @property string $PhoneNumber
  * @property ContactAndAddress $LocationContactAndAddress
  * @property \FedEx\ShipService\SimpleType\FedExLocationType|string $LocationType
+ * @property string $LocationId
 
  */
 class HoldAtLocationDetail extends AbstractComplexType
@@ -57,6 +58,18 @@ class HoldAtLocationDetail extends AbstractComplexType
     public function setLocationType($locationType)
     {
         $this->values['LocationType'] = $locationType;
+        return $this;
+    }
+
+    /**
+     * Location identification (for facilities identified by an alphanumeric location code).
+     *
+     * @param string $locationId
+     * @return $this
+     */
+    public function setLocationId($locationId)
+    {
+        $this->values['LocationId'] = $locationId;
         return $this;
     }
 }

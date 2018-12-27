@@ -4,7 +4,7 @@ namespace FedEx\PickupService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * The descriptive data to cancel a shipment pickup request.
+ * CancelPickupRequest
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -49,7 +49,7 @@ class CancelPickupRequest extends AbstractComplexType
     }
 
     /**
-     * The descriptive data identifying the client submitting the transaction.
+     * Set ClientDetail
      *
      * @param ClientDetail $clientDetail
      * @return $this
@@ -61,7 +61,7 @@ class CancelPickupRequest extends AbstractComplexType
     }
 
     /**
-     * The descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
+     * Set TransactionDetail
      *
      * @param TransactionDetail $transactionDetail
      * @return $this
@@ -73,7 +73,7 @@ class CancelPickupRequest extends AbstractComplexType
     }
 
     /**
-     * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
+     * Set Version
      *
      * @param VersionId $version
      * @return $this
@@ -85,7 +85,7 @@ class CancelPickupRequest extends AbstractComplexType
     }
 
     /**
-     * Identifies the FedEx operating company (transportation) that was sent the pickup that is being canceled.
+     * Set CarrierCode
      *
      * @param \FedEx\PickupService\SimpleType\CarrierCodeType|string $carrierCode
      * @return $this
@@ -97,7 +97,7 @@ class CancelPickupRequest extends AbstractComplexType
     }
 
     /**
-     * Identifies the pickup confirmation number that is being canceled. The pickup confirmation number was returned to the client when the pickup was requested.
+     * Set PickupConfirmationNumber
      *
      * @param string $pickupConfirmationNumber
      * @return $this
@@ -109,7 +109,7 @@ class CancelPickupRequest extends AbstractComplexType
     }
 
     /**
-     * Identifies the scheduled date for the pickup that is being canceled. The scheduled date was provided by the client when the pickup was requested.
+     * The local date which the pickup was originally scheduled to be picked up on. The date provided is the local to the client of the request. The date specification does not include any time zone designators.
      *
      * @param string $scheduledDate
      * @return $this
@@ -133,7 +133,7 @@ class CancelPickupRequest extends AbstractComplexType
     }
 
     /**
-     * Identifies the FedEx location identifier responsible for processing the package pickup that is being canceled. The FedEx location identifier was returned to the client when the pickup was requested. Required for Express service type.
+     * Set Location
      *
      * @param string $location
      * @return $this
@@ -145,7 +145,7 @@ class CancelPickupRequest extends AbstractComplexType
     }
 
     /**
-     * Identifies comments the customer wants to convey to the FedEx courier regarding the package pickup.
+     * Set Remarks
      *
      * @param string $remarks
      * @return $this

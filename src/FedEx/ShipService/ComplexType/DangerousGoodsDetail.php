@@ -4,12 +4,14 @@ namespace FedEx\ShipService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * The descriptive data required for a FedEx shipment containing dangerous goods (hazardous materials).
+ * DangerousGoodsDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  *
+ * @property string $UploadedTrackingNumber
+ * @property \FedEx\ShipService\SimpleType\HazardousCommodityRegulationType|string $Regulation
  * @property \FedEx\ShipService\SimpleType\DangerousGoodsAccessibilityType|string $Accessibility
  * @property boolean $CargoAircraftOnly
  * @property \FedEx\ShipService\SimpleType\HazardousCommodityOptionType|string[] $Options
@@ -35,7 +37,31 @@ class DangerousGoodsDetail extends AbstractComplexType
     protected $name = 'DangerousGoodsDetail';
 
     /**
-     * Identifies whether or not the products being shipped are required to be accessible during delivery.
+     * This field is used to identify an instance of an uploaded dangerous goods handling unit.
+     *
+     * @param string $uploadedTrackingNumber
+     * @return $this
+     */
+    public function setUploadedTrackingNumber($uploadedTrackingNumber)
+    {
+        $this->values['UploadedTrackingNumber'] = $uploadedTrackingNumber;
+        return $this;
+    }
+
+    /**
+     * Set Regulation
+     *
+     * @param \FedEx\ShipService\SimpleType\HazardousCommodityRegulationType|string $regulation
+     * @return $this
+     */
+    public function setRegulation($regulation)
+    {
+        $this->values['Regulation'] = $regulation;
+        return $this;
+    }
+
+    /**
+     * Set Accessibility
      *
      * @param \FedEx\ShipService\SimpleType\DangerousGoodsAccessibilityType|string $accessibility
      * @return $this

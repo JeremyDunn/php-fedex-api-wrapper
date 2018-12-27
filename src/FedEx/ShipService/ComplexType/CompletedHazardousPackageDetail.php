@@ -13,6 +13,7 @@ use FedEx\AbstractComplexType;
  * @property string $ReferenceId
  * @property \FedEx\ShipService\SimpleType\DangerousGoodsAccessibilityType|string $Accessibility
  * @property boolean $CargoAircraftOnly
+ * @property \FedEx\ShipService\SimpleType\HazardousCommodityRegulationType|string $Regulation
  * @property float $RadioactiveTransportIndex
  * @property \FedEx\ShipService\SimpleType\RadioactiveLabelType|string $LabelType
  * @property ValidatedHazardousContainer[] $Containers
@@ -60,6 +61,18 @@ class CompletedHazardousPackageDetail extends AbstractComplexType
     public function setCargoAircraftOnly($cargoAircraftOnly)
     {
         $this->values['CargoAircraftOnly'] = $cargoAircraftOnly;
+        return $this;
+    }
+
+    /**
+     * Set Regulation
+     *
+     * @param \FedEx\ShipService\SimpleType\HazardousCommodityRegulationType|string $regulation
+     * @return $this
+     */
+    public function setRegulation($regulation)
+    {
+        $this->values['Regulation'] = $regulation;
         return $this;
     }
 

@@ -77,7 +77,7 @@ class PackageRateDetail extends AbstractComplexType
     }
 
     /**
-     * The weight that was used to calculate the rate.
+     * Set BillingWeight
      *
      * @param Weight $billingWeight
      * @return $this
@@ -197,7 +197,7 @@ class PackageRateDetail extends AbstractComplexType
     }
 
     /**
-     * The total sum of all rebates applied to this package.
+     * Set TotalRebates
      *
      * @param Money $totalRebates
      * @return $this
@@ -257,7 +257,7 @@ class PackageRateDetail extends AbstractComplexType
     }
 
     /**
-     * The variable handling charges calculated based on the type variable handling charges requested.
+     * Set VariableHandlingCharges
      *
      * @param VariableHandlingCharges $variableHandlingCharges
      * @return $this

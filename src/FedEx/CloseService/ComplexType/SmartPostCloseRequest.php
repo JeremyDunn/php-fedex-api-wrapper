@@ -18,6 +18,7 @@ use FedEx\AbstractComplexType;
  * @property string $CustomerManifestId
  * @property string $DestinationCountryCode
  * @property \FedEx\CloseService\SimpleType\CarrierCodeType|string $PickUpCarrier
+ * @property CloseManifestReferenceDetail $ManifestReferenceDetail
 
  */
 class SmartPostCloseRequest extends AbstractComplexType
@@ -30,7 +31,7 @@ class SmartPostCloseRequest extends AbstractComplexType
     protected $name = 'SmartPostCloseRequest';
 
     /**
-     * The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
+     * Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
      * @param WebAuthenticationDetail $webAuthenticationDetail
      * @return $this
@@ -122,6 +123,18 @@ class SmartPostCloseRequest extends AbstractComplexType
     public function setPickUpCarrier($pickUpCarrier)
     {
         $this->values['PickUpCarrier'] = $pickUpCarrier;
+        return $this;
+    }
+
+    /**
+     * Set ManifestReferenceDetail
+     *
+     * @param CloseManifestReferenceDetail $manifestReferenceDetail
+     * @return $this
+     */
+    public function setManifestReferenceDetail(CloseManifestReferenceDetail $manifestReferenceDetail)
+    {
+        $this->values['ManifestReferenceDetail'] = $manifestReferenceDetail;
         return $this;
     }
 }

@@ -13,6 +13,7 @@ use FedEx\AbstractComplexType;
  * @property \FedEx\OpenShipService\SimpleType\PackageSpecialServiceType|string[] $SpecialServiceTypes
  * @property CodDetail $CodDetail
  * @property DangerousGoodsDetail $DangerousGoodsDetail
+ * @property BatteryClassificationDetail[] $BatteryDetails
  * @property Weight $DryIceWeight
  * @property SignatureOptionDetail $SignatureOptionDetail
  * @property int $PieceCountVerificationBoxCount
@@ -62,6 +63,18 @@ class PackageSpecialServicesRequested extends AbstractComplexType
     public function setDangerousGoodsDetail(DangerousGoodsDetail $dangerousGoodsDetail)
     {
         $this->values['DangerousGoodsDetail'] = $dangerousGoodsDetail;
+        return $this;
+    }
+
+    /**
+     * Provides details about the batteries or cells that are contained within this specific package.
+     *
+     * @param BatteryClassificationDetail[] $batteryDetails
+     * @return $this
+     */
+    public function setBatteryDetails(array $batteryDetails)
+    {
+        $this->values['BatteryDetails'] = $batteryDetails;
         return $this;
     }
 

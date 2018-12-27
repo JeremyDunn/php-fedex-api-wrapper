@@ -4,7 +4,7 @@ namespace FedEx\PickupService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * The descriptive data returned to a client in response to a cancel dispatch request.
+ * PickupAvailabilityReply
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -18,6 +18,7 @@ use FedEx\AbstractComplexType;
  * @property PickupScheduleOption[] $Options
  * @property \FedEx\PickupService\SimpleType\CloseTimeType|string $CloseTimeType
  * @property string $CloseTime
+ * @property string $OpenTime
  * @property string $LocalTime
 
  */
@@ -31,7 +32,7 @@ class PickupAvailabilityReply extends AbstractComplexType
     protected $name = 'PickupAvailabilityReply';
 
     /**
-     * Identifies the highest severity encountered when executing the request; in order from high to low: FAILURE, ERROR, WARNING, NOTE, SUCCESS.
+     * Set HighestSeverity
      *
      * @param \FedEx\PickupService\SimpleType\NotificationSeverityType|string $highestSeverity
      * @return $this
@@ -43,7 +44,7 @@ class PickupAvailabilityReply extends AbstractComplexType
     }
 
     /**
-     * The descriptive data detailing the status of a sumbitted transaction.
+     * Set Notifications
      *
      * @param Notification[] $notifications
      * @return $this
@@ -55,7 +56,7 @@ class PickupAvailabilityReply extends AbstractComplexType
     }
 
     /**
-     * Descriptive data that governs data payload language/translations. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
+     * Set TransactionDetail
      *
      * @param TransactionDetail $transactionDetail
      * @return $this
@@ -67,7 +68,7 @@ class PickupAvailabilityReply extends AbstractComplexType
     }
 
     /**
-     * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
+     * Set Version
      *
      * @param VersionId $version
      * @return $this
@@ -79,7 +80,7 @@ class PickupAvailabilityReply extends AbstractComplexType
     }
 
     /**
-     * the point in time when the request was processed
+     * Set RequestTimestamp
      *
      * @param string $requestTimestamp
      * @return $this
@@ -91,7 +92,7 @@ class PickupAvailabilityReply extends AbstractComplexType
     }
 
     /**
-     * Identifies the options for picking up the shipment.
+     * Set Options
      *
      * @param PickupScheduleOption[] $options
      * @return $this
@@ -123,6 +124,18 @@ class PickupAvailabilityReply extends AbstractComplexType
     public function setCloseTime($closeTime)
     {
         $this->values['CloseTime'] = $closeTime;
+        return $this;
+    }
+
+    /**
+     * Set OpenTime
+     *
+     * @param string $openTime
+     * @return $this
+     */
+    public function setOpenTime($openTime)
+    {
+        $this->values['OpenTime'] = $openTime;
         return $this;
     }
 

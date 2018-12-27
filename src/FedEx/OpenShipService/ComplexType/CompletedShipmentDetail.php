@@ -14,6 +14,7 @@ use FedEx\AbstractComplexType;
  * @property \FedEx\OpenShipService\SimpleType\CarrierCodeType|string $CarrierCode
  * @property TrackingId $MasterTrackingId
  * @property string $ServiceTypeDescription
+ * @property ServiceDescription $ServiceDescription
  * @property string $PackagingDescription
  * @property ShipmentOperationalDetail $OperationalDetail
  * @property PendingShipmentAccessDetail $AccessDetail
@@ -24,6 +25,7 @@ use FedEx\AbstractComplexType;
  * @property CompletedShipmentConsolidationDetail $ConsolidationDetail
  * @property CompletedHoldAtLocationDetail $CompletedHoldAtLocationDetail
  * @property string $ExportComplianceStatement
+ * @property DocumentRequirementsDetail $DocumentRequirements
  * @property CompletedEtdDetail $CompletedEtdDetail
  * @property ShippingDocument[] $ShipmentDocuments
  * @property AssociatedShipmentDetail[] $AssociatedShipments
@@ -77,7 +79,7 @@ class CompletedShipmentDetail extends AbstractComplexType
     }
 
     /**
-     * Set ServiceTypeDescription
+     * DEPRECATED as of 201801: Use serviceDescription instead.
      *
      * @param string $serviceTypeDescription
      * @return $this
@@ -85,6 +87,18 @@ class CompletedShipmentDetail extends AbstractComplexType
     public function setServiceTypeDescription($serviceTypeDescription)
     {
         $this->values['ServiceTypeDescription'] = $serviceTypeDescription;
+        return $this;
+    }
+
+    /**
+     * Set ServiceDescription
+     *
+     * @param ServiceDescription $serviceDescription
+     * @return $this
+     */
+    public function setServiceDescription(ServiceDescription $serviceDescription)
+    {
+        $this->values['ServiceDescription'] = $serviceDescription;
         return $this;
     }
 
@@ -205,6 +219,18 @@ class CompletedShipmentDetail extends AbstractComplexType
     public function setExportComplianceStatement($exportComplianceStatement)
     {
         $this->values['ExportComplianceStatement'] = $exportComplianceStatement;
+        return $this;
+    }
+
+    /**
+     * This specifies what rules or requirements for documents are applicable for this shipment. This may identify required or prohibited documents.
+     *
+     * @param DocumentRequirementsDetail $documentRequirements
+     * @return $this
+     */
+    public function setDocumentRequirements(DocumentRequirementsDetail $documentRequirements)
+    {
+        $this->values['DocumentRequirements'] = $documentRequirements;
         return $this;
     }
 
