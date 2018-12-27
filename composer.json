@@ -18,9 +18,9 @@
     "require-dev": {
         "symfony/console": "2.*",
         "apigen/apigen": "^4.1",
-        "phpunit/phpunit": "^5.7",
         "fzaninotto/faker": "^1.6",
-        "squizlabs/php_codesniffer": "*"
+        "squizlabs/php_codesniffer": "*",
+        "phpunit/phpunit": "^6.5"
     },
     "autoload": {
         "psr-4": {
