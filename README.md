@@ -64,13 +64,14 @@ $rateRequest->TransactionDetail->CustomerTransactionId = 'testing rate service r
 
 //version
 $rateRequest->Version->ServiceId = 'crs';
-$rateRequest->Version->Major = 10;
+$rateRequest->Version->Major = 24;
 $rateRequest->Version->Minor = 0;
 $rateRequest->Version->Intermediate = 0;
 
 $rateRequest->ReturnTransitAndCommit = true;
 
 //shipper
+$rateRequest->RequestedShipment->PreferredCurrency = 'USD';
 $rateRequest->RequestedShipment->Shipper->Address->StreetLines = ['10 Fed Ex Pkwy'];
 $rateRequest->RequestedShipment->Shipper->Address->City = 'Memphis';
 $rateRequest->RequestedShipment->Shipper->Address->StateOrProvinceCode = 'TN';
@@ -86,11 +87,9 @@ $rateRequest->RequestedShipment->Recipient->Address->CountryCode = 'US';
 
 //shipping charges payment
 $rateRequest->RequestedShipment->ShippingChargesPayment->PaymentType = SimpleType\PaymentType::_SENDER;
-$rateRequest->RequestedShipment->ShippingChargesPayment->Payor->AccountNumber = FEDEX_ACCOUNT_NUMBER;
-$rateRequest->RequestedShipment->ShippingChargesPayment->Payor->CountryCode = 'US';
 
 //rate request types
-$rateRequest->RequestedShipment->RateRequestTypes = [SimpleType\RateRequestType::_ACCOUNT, SimpleType\RateRequestType::_LIST];
+$rateRequest->RequestedShipment->RateRequestTypes = [SimpleType\RateRequestType::_PREFERRED, SimpleType\RateRequestType::_LIST];
 
 $rateRequest->RequestedShipment->PackageCount = 2;
 
@@ -116,14 +115,14 @@ $rateRequest->RequestedShipment->RequestedPackageLineItems[1]->Dimensions->Units
 $rateRequest->RequestedShipment->RequestedPackageLineItems[1]->GroupPackageCount = 1;
 
 $rateServiceRequest = new Request();
-$rateServiceRequest->getSoapClient()->__setLocation(Request::PRODUCTION_URL); //use production URL
+//$rateServiceRequest->getSoapClient()->__setLocation(Request::PRODUCTION_URL); //use production URL
 
 $rateReply = $rateServiceRequest->getGetRatesReply($rateRequest); // send true as the 2nd argument to return the SoapClient's stdClass response.
+
 
 if (!empty($rateReply->RateReplyDetails)) {
     foreach ($rateReply->RateReplyDetails as $rateReplyDetail) {
         var_dump($rateReplyDetail->ServiceType);
-        var_dump($rateReplyDetail->DeliveryTimestamp);
         if (!empty($rateReplyDetail->RatedShipmentDetails)) {
             foreach ($rateReplyDetail->RatedShipmentDetails as $ratedShipmentDetail) {
                 var_dump($ratedShipmentDetail->ShipmentRateDetail->RateType . ": " . $ratedShipmentDetail->ShipmentRateDetail->TotalNetCharge->Amount);
