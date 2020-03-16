@@ -29,6 +29,9 @@ $trackRequest->Version->Minor = 0;
 // Track 2 shipments
 $trackRequest->SelectionDetails = [new ComplexType\TrackSelectionDetail(), new ComplexType\TrackSelectionDetail()];
 
+// For get all events
+$trackRequest->ProcessingOptions = [SimpleType\TrackRequestProcessingOptionType::_INCLUDE_DETAILED_SCANS];
+
 // Track shipment 1
 $trackRequest->SelectionDetails[0]->PackageIdentifier->Value = $trackingId1;
 $trackRequest->SelectionDetails[0]->PackageIdentifier->Type = SimpleType\TrackIdentifierType::_TRACKING_NUMBER_OR_DOORTAG;
