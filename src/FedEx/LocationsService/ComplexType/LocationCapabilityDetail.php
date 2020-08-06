@@ -11,7 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Locations Service
  *
  * @property \FedEx\LocationsService\SimpleType\CarrierCodeType|string $CarrierCode
- * @property \FedEx\LocationsService\SimpleType\ServiceType|string $ServiceType
+ * @property string $ServiceType
  * @property \FedEx\LocationsService\SimpleType\ServiceCategoryType|string $ServiceCategory
  * @property \FedEx\LocationsService\SimpleType\LocationTransferOfPossessionType|string $TransferOfPossessionType
  * @property \FedEx\LocationsService\SimpleType\DayOfWeekType|string[] $DaysOfWeek
@@ -41,7 +41,7 @@ class LocationCapabilityDetail extends AbstractComplexType
     /**
      * Set ServiceType
      *
-     * @param \FedEx\LocationsService\SimpleType\ServiceType|string $serviceType
+     * @param string $serviceType
      * @return $this
      */
     public function setServiceType($serviceType)

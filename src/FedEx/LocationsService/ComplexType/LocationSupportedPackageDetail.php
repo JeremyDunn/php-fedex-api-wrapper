@@ -12,6 +12,7 @@ use FedEx\AbstractComplexType;
  *
  * @property Weight $Weight
  * @property Dimensions $Dimensions
+ * @property string[] $ServiceOptions
 
  */
 class LocationSupportedPackageDetail extends AbstractComplexType
@@ -44,6 +45,18 @@ class LocationSupportedPackageDetail extends AbstractComplexType
     public function setDimensions(Dimensions $dimensions)
     {
         $this->values['Dimensions'] = $dimensions;
+        return $this;
+    }
+
+    /**
+     * Set ServiceOptions
+     *
+     * @param string $serviceOptions
+     * @return $this
+     */
+    public function setServiceOptions($serviceOptions)
+    {
+        $this->values['ServiceOptions'] = $serviceOptions;
         return $this;
     }
 }

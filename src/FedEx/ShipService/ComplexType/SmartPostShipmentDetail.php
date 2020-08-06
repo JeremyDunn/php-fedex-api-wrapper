@@ -13,6 +13,7 @@ use FedEx\AbstractComplexType;
  * @property SmartPostShipmentProcessingOptionsRequested $ProcessingOptionsRequested
  * @property \FedEx\ShipService\SimpleType\SmartPostIndiciaType|string $Indicia
  * @property \FedEx\ShipService\SimpleType\SmartPostAncillaryEndorsementType|string $AncillaryEndorsement
+ * @property \FedEx\ShipService\SimpleType\SmartPostShipmentSpecialServiceType|string[] $SpecialServices
  * @property string $HubId
  * @property string $CustomerManifestId
 
@@ -59,6 +60,18 @@ class SmartPostShipmentDetail extends AbstractComplexType
     public function setAncillaryEndorsement($ancillaryEndorsement)
     {
         $this->values['AncillaryEndorsement'] = $ancillaryEndorsement;
+        return $this;
+    }
+
+    /**
+     * Set SpecialServices
+     *
+     * @param \FedEx\ShipService\SimpleType\SmartPostShipmentSpecialServiceType[]|string[] $specialServices
+     * @return $this
+     */
+    public function setSpecialServices(array $specialServices)
+    {
+        $this->values['SpecialServices'] = $specialServices;
         return $this;
     }
 

@@ -12,6 +12,7 @@ use FedEx\AbstractComplexType;
  *
  * @property \FedEx\ShipService\SimpleType\FreightGuaranteeType|string $Type
  * @property string $Date
+ * @property string $Time
 
  */
 class FreightGuaranteeDetail extends AbstractComplexType
@@ -44,6 +45,18 @@ class FreightGuaranteeDetail extends AbstractComplexType
     public function setDate($date)
     {
         $this->values['Date'] = $date;
+        return $this;
+    }
+
+    /**
+     * Time for GUARANTEED_TIME only.
+     *
+     * @param string $time
+     * @return $this
+     */
+    public function setTime($time)
+    {
+        $this->values['Time'] = $time;
         return $this;
     }
 }

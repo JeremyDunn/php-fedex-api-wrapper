@@ -27,7 +27,7 @@ $clientDetail
 
 $version = new ComplexType\VersionId();
 $version
-    ->setMajor(21)
+    ->setMajor(26)
     ->setIntermediate(0)
     ->setMinor(0)
     ->setServiceId('ship');
@@ -125,7 +125,7 @@ $shipService = new ShipService\Request();
 //$shipService->getSoapClient()->__setLocation('https://ws.fedex.com:443/web-services/ship');
 $result = $shipService->getProcessShipmentReply($processShipmentRequest);
 
-var_dump($result);
+print_r($result);
 // Save .pdf label
 // file_put_contents('/path/to/label.pdf', $result->CompletedShipmentDetail->CompletedPackageDetails[0]->Label->Parts[0]->Image);
 var_dump($result->CompletedShipmentDetail->CompletedPackageDetails[0]->Label->Parts[0]->Image);

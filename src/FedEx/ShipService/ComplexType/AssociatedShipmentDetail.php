@@ -13,8 +13,8 @@ use FedEx\AbstractComplexType;
  * @property \FedEx\ShipService\SimpleType\AssociatedShipmentType|string $Type
  * @property Party $Sender
  * @property Party $Recipient
- * @property \FedEx\ShipService\SimpleType\ServiceType|string $ServiceType
- * @property \FedEx\ShipService\SimpleType\PackagingType|string $PackagingType
+ * @property string $ServiceType
+ * @property string $PackagingType
  * @property TrackingId $TrackingId
  * @property CustomerReference[] $CustomerReferences
  * @property ShipmentOperationalDetail $ShipmentOperationalDetail
@@ -70,7 +70,7 @@ class AssociatedShipmentDetail extends AbstractComplexType
     /**
      * Set ServiceType
      *
-     * @param \FedEx\ShipService\SimpleType\ServiceType|string $serviceType
+     * @param string $serviceType
      * @return $this
      */
     public function setServiceType($serviceType)
@@ -82,7 +82,7 @@ class AssociatedShipmentDetail extends AbstractComplexType
     /**
      * Set PackagingType
      *
-     * @param \FedEx\ShipService\SimpleType\PackagingType|string $packagingType
+     * @param string $packagingType
      * @return $this
      */
     public function setPackagingType($packagingType)

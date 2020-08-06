@@ -11,6 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Ship Service
  *
  * @property Party $ResponsibleParty
+ * @property AssociatedAccount[] $AssociatedAccounts
 
  */
 class Payor extends AbstractComplexType
@@ -31,6 +32,18 @@ class Payor extends AbstractComplexType
     public function setResponsibleParty(Party $responsibleParty)
     {
         $this->values['ResponsibleParty'] = $responsibleParty;
+        return $this;
+    }
+
+    /**
+     * Set AssociatedAccounts
+     *
+     * @param AssociatedAccount[] $associatedAccounts
+     * @return $this
+     */
+    public function setAssociatedAccounts(array $associatedAccounts)
+    {
+        $this->values['AssociatedAccounts'] = $associatedAccounts;
         return $this;
     }
 }

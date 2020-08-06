@@ -12,6 +12,7 @@ use FedEx\AbstractSimpleType;
  */
 class ShippingDocumentDispositionType extends AbstractSimpleType
 {
+    const _DEFERRED_QUEUED = 'DEFERRED_QUEUED';
     const _DEFERRED_STORED = 'DEFERRED_STORED';
     const _EMAILED = 'EMAILED';
     const _QUEUED = 'QUEUED';

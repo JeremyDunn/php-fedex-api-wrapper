@@ -16,5 +16,4 @@ class ShipmentNotificationRoleType extends AbstractSimpleType
     const _OTHER = 'OTHER';
     const _RECIPIENT = 'RECIPIENT';
     const _SHIPPER = 'SHIPPER';
-    const _THIRD_PARTY = 'THIRD_PARTY';
 }

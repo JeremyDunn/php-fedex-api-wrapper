@@ -136,7 +136,7 @@ class GenerateCode extends Console\Command\Command
 
 
         //LocationsService
-        $wsdlPath = $fedexSrcDir . '/_wsdl/LocationsService_v9.wsdl';
+        $wsdlPath = $fedexSrcDir . '/_wsdl/LocationsService_v12.wsdl';
 
         $baseNamespace = 'FedEx\LocationsService';
         $subPackageName = 'Locations Service';
@@ -158,7 +158,7 @@ class GenerateCode extends Console\Command\Command
 
 
         //ShipService
-        $wsdlPath = $fedexSrcDir . '/_wsdl/ShipService_v23.wsdl';
+        $wsdlPath = $fedexSrcDir . '/_wsdl/ShipService_v26.wsdl';
 
         $baseNamespace = 'FedEx\ShipService';
         $subPackageName = 'Ship Service';
@@ -268,7 +268,7 @@ class GenerateCode extends Console\Command\Command
         $generateComplexTypes->run();
 
         //PickupService
-        $wsdlPath = $fedexSrcDir . '/_wsdl/PickupService_v17.wsdl';
+        $wsdlPath = $fedexSrcDir . '/_wsdl/PickupService_v22.wsdl';
 
         $baseNamespace = 'FedEx\PickupService';
         $subPackageName = 'Pickup Service';
