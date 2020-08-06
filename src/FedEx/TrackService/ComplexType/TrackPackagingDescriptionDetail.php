@@ -4,7 +4,7 @@ namespace FedEx\TrackService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * TrackSpecialHandling
+ * TrackPackagingDescriptionDetail
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -12,20 +12,19 @@ use FedEx\AbstractComplexType;
  *
  * @property string $Type
  * @property string $Description
- * @property \FedEx\TrackService\SimpleType\TrackPaymentType|string $PaymentType
 
  */
-class TrackSpecialHandling extends AbstractComplexType
+class TrackPackagingDescriptionDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
      *
      * @var string
      */
-    protected $name = 'TrackSpecialHandling';
+    protected $name = 'TrackPackagingDescriptionDetail';
 
     /**
-     * Identifies the type of track special handling on the package.
+     * Strict representation of the Packaging Type (e.g. FEDEX_SMALL_BOX, YOUR_PACKAGING)
      *
      * @param string $type
      * @return $this
@@ -37,7 +36,7 @@ class TrackSpecialHandling extends AbstractComplexType
     }
 
     /**
-     * Set Description
+     * A description of the packaging.
      *
      * @param string $description
      * @return $this
@@ -45,18 +44,6 @@ class TrackSpecialHandling extends AbstractComplexType
     public function setDescription($description)
     {
         $this->values['Description'] = $description;
-        return $this;
-    }
-
-    /**
-     * Set PaymentType
-     *
-     * @param \FedEx\TrackService\SimpleType\TrackPaymentType|string $paymentType
-     * @return $this
-     */
-    public function setPaymentType($paymentType)
-    {
-        $this->values['PaymentType'] = $paymentType;
         return $this;
     }
 }
