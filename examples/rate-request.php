@@ -24,7 +24,7 @@ $rateRequest->TransactionDetail->CustomerTransactionId = 'testing rate service r
 
 //version
 $rateRequest->Version->ServiceId = 'crs';
-$rateRequest->Version->Major = 24;
+$rateRequest->Version->Major = 28;
 $rateRequest->Version->Minor = 0;
 $rateRequest->Version->Intermediate = 0;
 
