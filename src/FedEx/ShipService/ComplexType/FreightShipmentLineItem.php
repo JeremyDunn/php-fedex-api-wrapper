@@ -13,6 +13,8 @@ use FedEx\AbstractComplexType;
  * @property string $Id
  * @property \FedEx\ShipService\SimpleType\FreightClassType|string $FreightClass
  * @property boolean $ClassProvidedByCustomer
+ * @property string $BillingMaskName
+ * @property LiabilityCoverageDetail $LiabilityCoverageDetail
  * @property int $HandlingUnits
  * @property \FedEx\ShipService\SimpleType\PhysicalPackagingType|string $Packaging
  * @property int $Pieces
@@ -67,6 +69,30 @@ class FreightShipmentLineItem extends AbstractComplexType
     public function setClassProvidedByCustomer($classProvidedByCustomer)
     {
         $this->values['ClassProvidedByCustomer'] = $classProvidedByCustomer;
+        return $this;
+    }
+
+    /**
+     * Identifies billing mask, if used to populate this line item.
+     *
+     * @param string $billingMaskName
+     * @return $this
+     */
+    public function setBillingMaskName($billingMaskName)
+    {
+        $this->values['BillingMaskName'] = $billingMaskName;
+        return $this;
+    }
+
+    /**
+     * Specifies line item level liability coverage.
+     *
+     * @param LiabilityCoverageDetail $liabilityCoverageDetail
+     * @return $this
+     */
+    public function setLiabilityCoverageDetail(LiabilityCoverageDetail $liabilityCoverageDetail)
+    {
+        $this->values['LiabilityCoverageDetail'] = $liabilityCoverageDetail;
         return $this;
     }
 

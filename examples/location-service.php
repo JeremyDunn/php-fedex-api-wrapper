@@ -19,7 +19,7 @@ $searchLocationsRequest->TransactionDetail->CustomerTransactionId = 'test locati
 
 // Version.
 $searchLocationsRequest->Version->ServiceId = 'locs';
-$searchLocationsRequest->Version->Major = 9;
+$searchLocationsRequest->Version->Major = 12;
 $searchLocationsRequest->Version->Intermediate = 0;
 $searchLocationsRequest->Version->Minor = 0;
 

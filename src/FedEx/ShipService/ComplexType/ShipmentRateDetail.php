@@ -16,6 +16,7 @@ use FedEx\AbstractComplexType;
  * @property \FedEx\ShipService\SimpleType\PricingCodeType|string $PricingCode
  * @property \FedEx\ShipService\SimpleType\RatedWeightMethod|string $RatedWeightMethod
  * @property \FedEx\ShipService\SimpleType\MinimumChargeType|string $MinimumChargeType
+ * @property string $QuoteCreatorId
  * @property CurrencyExchangeRate $CurrencyExchangeRate
  * @property \FedEx\ShipService\SimpleType\SpecialRatingAppliedType|string[] $SpecialRatingApplied
  * @property int $DimDivisor
@@ -125,6 +126,18 @@ class ShipmentRateDetail extends AbstractComplexType
     public function setMinimumChargeType($minimumChargeType)
     {
         $this->values['MinimumChargeType'] = $minimumChargeType;
+        return $this;
+    }
+
+    /**
+     * FEDEX INTERNAL USE ONLY - the user ID provided when this rate was created
+     *
+     * @param string $quoteCreatorId
+     * @return $this
+     */
+    public function setQuoteCreatorId($quoteCreatorId)
+    {
+        $this->values['QuoteCreatorId'] = $quoteCreatorId;
         return $this;
     }
 

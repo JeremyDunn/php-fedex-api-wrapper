@@ -10,6 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  *
+ * @property string $CommodityId
  * @property string $Name
  * @property int $NumberOfPieces
  * @property string $Description
@@ -38,6 +39,18 @@ class Commodity extends AbstractComplexType
      * @var string
      */
     protected $name = 'Commodity';
+
+    /**
+     * Value used to identify a commodity description; must be unique within the containing shipment.
+     *
+     * @param string $commodityId
+     * @return $this
+     */
+    public function setCommodityId($commodityId)
+    {
+        $this->values['CommodityId'] = $commodityId;
+        return $this;
+    }
 
     /**
      * FedEx internal commodity identifier
@@ -172,7 +185,7 @@ class Commodity extends AbstractComplexType
     }
 
     /**
-     * Set CustomsValue
+     * The value of the commodity for customs purposes. The field should be the unit price multiplied by the quantity.
      *
      * @param Money $customsValue
      * @return $this

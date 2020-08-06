@@ -13,7 +13,7 @@ use FedEx\AbstractComplexType;
  * @property string $InterlineCarrierCode
  * @property string $InterlineCarrierName
  * @property int $AdditionalDays
- * @property \FedEx\PickupService\SimpleType\ServiceType|string $LocalService
+ * @property string $LocalService
  * @property Distance $LocalDistance
  * @property string $LocalDuration
  * @property \FedEx\PickupService\SimpleType\FreightServiceSchedulingType|string $LocalServiceScheduling
@@ -69,9 +69,9 @@ class FreightServiceCenterDetail extends AbstractComplexType
     }
 
     /**
-     * Service branding which may be used for local pickup or delivery, distinct from service used for line-haul of customer's shipment.
+     * Set LocalService
      *
-     * @param \FedEx\PickupService\SimpleType\ServiceType|string $localService
+     * @param string $localService
      * @return $this
      */
     public function setLocalService($localService)

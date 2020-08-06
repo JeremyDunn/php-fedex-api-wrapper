@@ -10,10 +10,10 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Locations Service
  *
- * @property \FedEx\LocationsService\SimpleType\ServiceType|string[] $ServicesSupported
+ * @property string[] $ServicesSupported
  * @property \FedEx\LocationsService\SimpleType\ConsolidationType|string $ConsolidationType
  * @property \FedEx\LocationsService\SimpleType\DistributionClearanceType|string $ClearanceLocationType
- * @property \FedEx\LocationsService\SimpleType\PackageSpecialServiceType|string[] $SpecialServicesSupported
+ * @property string[] $SpecialServicesSupported
  * @property ClearanceCountryDetail[] $ClearanceCountries
  * @property string $ClearanceRoutingCode
 
@@ -28,12 +28,12 @@ class ClearanceLocationDetail extends AbstractComplexType
     protected $name = 'ClearanceLocationDetail';
 
     /**
-     * Services supported for clearance
+     * Services supported for clearance.
      *
-     * @param \FedEx\LocationsService\SimpleType\ServiceType[]|string[] $servicesSupported
+     * @param string $servicesSupported
      * @return $this
      */
-    public function setServicesSupported(array $servicesSupported)
+    public function setServicesSupported($servicesSupported)
     {
         $this->values['ServicesSupported'] = $servicesSupported;
         return $this;
@@ -64,12 +64,12 @@ class ClearanceLocationDetail extends AbstractComplexType
     }
 
     /**
-     * Identifies the constrained special services supported at this location.
+     * Set SpecialServicesSupported
      *
-     * @param \FedEx\LocationsService\SimpleType\PackageSpecialServiceType[]|string[] $specialServicesSupported
+     * @param string $specialServicesSupported
      * @return $this
      */
-    public function setSpecialServicesSupported(array $specialServicesSupported)
+    public function setSpecialServicesSupported($specialServicesSupported)
     {
         $this->values['SpecialServicesSupported'] = $specialServicesSupported;
         return $this;

@@ -10,6 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  *
+ * @property \FedEx\ShipService\SimpleType\EtdConfirmationType|string $Confirmation
  * @property \FedEx\ShipService\SimpleType\EtdAttributeType|string[] $Attributes
  * @property \FedEx\ShipService\SimpleType\RequestedShippingDocumentType|string[] $RequestedDocumentCopies
  * @property UploadDocumentReferenceDetail[] $DocumentReferences
@@ -23,6 +24,18 @@ class EtdDetail extends AbstractComplexType
      * @var string
      */
     protected $name = 'EtdDetail';
+
+    /**
+     * Specifies client's intent for whether all documents must be confirmed before shipment processing.
+     *
+     * @param \FedEx\ShipService\SimpleType\EtdConfirmationType|string $confirmation
+     * @return $this
+     */
+    public function setConfirmation($confirmation)
+    {
+        $this->values['Confirmation'] = $confirmation;
+        return $this;
+    }
 
     /**
      * Set Attributes

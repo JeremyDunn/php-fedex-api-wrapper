@@ -11,7 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Pickup Service
  *
  * @property string $TrackingNumber
- * @property \FedEx\PickupService\SimpleType\ServiceType|string $Service
+ * @property string $Service
  * @property int $SequenceNumber
  * @property Address $Destination
  * @property \FedEx\PickupService\SimpleType\PhysicalPackagingType|string $Packaging
@@ -48,7 +48,7 @@ class FreightPickupLineItem extends AbstractComplexType
     /**
      * Set Service
      *
-     * @param \FedEx\PickupService\SimpleType\ServiceType|string $service
+     * @param string $service
      * @return $this
      */
     public function setService($service)

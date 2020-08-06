@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *
- * @property \FedEx\PickupService\SimpleType\PackageSpecialServiceType|string[] $SpecialServiceTypes
+ * @property string[] $SpecialServiceTypes
  * @property PickupDangerousGoodsDetail $DangerousGoodsDetail
  * @property PriorityAlertDetail $PriorityAlertDetail
 
@@ -27,10 +27,10 @@ class PickupPackageSpecialServicesRequested extends AbstractComplexType
     /**
      * Set SpecialServiceTypes
      *
-     * @param \FedEx\PickupService\SimpleType\PackageSpecialServiceType[]|string[] $specialServiceTypes
+     * @param string $specialServiceTypes
      * @return $this
      */
-    public function setSpecialServiceTypes(array $specialServiceTypes)
+    public function setSpecialServiceTypes($specialServiceTypes)
     {
         $this->values['SpecialServiceTypes'] = $specialServiceTypes;
         return $this;
