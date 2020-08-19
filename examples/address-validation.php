@@ -32,6 +32,8 @@ $addressValidationRequest->AddressesToValidate[0]->Address->PostalCode = 47711;
 $addressValidationRequest->AddressesToValidate[0]->Address->CountryCode = 'US';
 
 $request = new Request();
+//$request->getSoapClient()->__setLocation(Request::PRODUCTION_URL);
+$request->getSoapClient()->__setLocation(Request::TESTING_URL);
 $addressValidationReply = $request->getAddressValidationReply($addressValidationRequest);
 
 var_dump($addressValidationReply);
