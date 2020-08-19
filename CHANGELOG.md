@@ -1,5 +1,29 @@
 # CHANGELOG
 
+## 4.0 (released 2020-08-19)
+- Updated Track Service
+
+|Service|Version|
+|---|---|
+|Address Validation|4|
+|Close|5|
+|Courier Dispatch|3|
+|Locations|9|
+|Package Movement Information|5|
+|Pickup|17|
+|Rate|24|
+|Return Tag|1|
+|Ship|23|
+|Track|19|
+|Upload Document|11|
+|Open Ship|15|
+|Validation Availability and Commitment Service|8|
+|ASYNC Transaction Service|4|
+|In Flight Shipment Service|1|
+|DGLD Service|1|
+|DGDS Service|3|
+
+
 ## 3.0 (released 2018-12-27)
 - Updated Upload Document Service
 - Updated Pickup Service
