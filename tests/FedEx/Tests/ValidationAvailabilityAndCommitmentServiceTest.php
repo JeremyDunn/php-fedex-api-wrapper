@@ -7,7 +7,7 @@ use FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ServiceAvailabi
 use FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ServiceAvailabilityRequest;
 use FedEx\ValidationAvailabilityAndCommitmentService\Request;
 
-class ValidationAvailabilityAndCommitmentService extends TestCase
+class ValidationAvailabilityAndCommitmentServiceTest extends TestCase
 {
     public function testServiceAvailabilityRequest()
     {
