@@ -4,16 +4,14 @@ namespace FedEx\TrackService\SimpleType;
 use FedEx\AbstractSimpleType;
 
 /**
- * ShipmentNotificationRoleType
+ * BarcodeEntryType
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class ShipmentNotificationRoleType extends AbstractSimpleType
+class BarcodeEntryType extends AbstractSimpleType
 {
-    const _BROKER = 'BROKER';
-    const _OTHER = 'OTHER';
-    const _RECIPIENT = 'RECIPIENT';
-    const _SHIPPER = 'SHIPPER';
+    const _MANUAL_ENTRY = 'MANUAL_ENTRY';
+    const _SCAN = 'SCAN';
 }
