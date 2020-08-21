@@ -12,7 +12,6 @@ use FedEx\AbstractComplexType;
  *
  * @property string $PostalCode
  * @property string $CountryCode
- * @property string $GeographicCoordinates
 
  */
 class Address extends AbstractComplexType
@@ -45,18 +44,6 @@ class Address extends AbstractComplexType
     public function setCountryCode($countryCode)
     {
         $this->values['CountryCode'] = $countryCode;
-        return $this;
-    }
-
-    /**
-     * The geographic coordinates cooresponding to this address.
-     *
-     * @param string $geographicCoordinates
-     * @return $this
-     */
-    public function setGeographicCoordinates($geographicCoordinates)
-    {
-        $this->values['GeographicCoordinates'] = $geographicCoordinates;
         return $this;
     }
 }

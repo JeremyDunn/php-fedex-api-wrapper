@@ -185,7 +185,7 @@ class Commodity extends AbstractComplexType
     }
 
     /**
-     * Set CustomsValue
+     * The value of the commodity for customs purposes. The field should be the unit price multiplied by the quantity.
      *
      * @param Money $customsValue
      * @return $this
