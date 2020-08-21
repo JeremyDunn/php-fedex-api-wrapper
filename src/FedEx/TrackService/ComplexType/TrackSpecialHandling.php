@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  *
- * @property \FedEx\TrackService\SimpleType\TrackSpecialHandlingType|string $Type
+ * @property string $Type
  * @property string $Description
  * @property \FedEx\TrackService\SimpleType\TrackPaymentType|string $PaymentType
 
@@ -25,9 +25,9 @@ class TrackSpecialHandling extends AbstractComplexType
     protected $name = 'TrackSpecialHandling';
 
     /**
-     * Set Type
+     * Identifies the type of track special handling on the package.
      *
-     * @param \FedEx\TrackService\SimpleType\TrackSpecialHandlingType|string $type
+     * @param string $type
      * @return $this
      */
     public function setType($type)

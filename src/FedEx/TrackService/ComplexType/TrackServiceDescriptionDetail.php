@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  *
- * @property \FedEx\TrackService\SimpleType\ServiceType|string $Type
+ * @property string $Type
  * @property string $Description
  * @property string $ShortDescription
 
@@ -25,9 +25,9 @@ class TrackServiceDescriptionDetail extends AbstractComplexType
     protected $name = 'TrackServiceDescriptionDetail';
 
     /**
-     * Set Type
+     * This field contains the service type values, like PRIORITY_OVERNIGHT and FEDEX_GROUND.
      *
-     * @param \FedEx\TrackService\SimpleType\ServiceType|string $type
+     * @param string $type
      * @return $this
      */
     public function setType($type)

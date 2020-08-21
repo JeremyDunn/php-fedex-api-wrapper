@@ -18,8 +18,8 @@ use FedEx\AbstractComplexType;
  * @property Address $Destination
  * @property string $ShipDate
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\CarrierCodeType|string $CarrierCode
- * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\ServiceType|string $Service
- * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\PackagingType|string $Packaging
+ * @property string $Service
+ * @property string $Packaging
 
  */
 class ServiceAvailabilityRequest extends AbstractComplexType
@@ -128,9 +128,9 @@ class ServiceAvailabilityRequest extends AbstractComplexType
     }
 
     /**
-     * Restricts reply to single service, if supplied.
+     * Set Service
      *
-     * @param \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\ServiceType|string $service
+     * @param string $service
      * @return $this
      */
     public function setService($service)
@@ -142,7 +142,7 @@ class ServiceAvailabilityRequest extends AbstractComplexType
     /**
      * Set Packaging
      *
-     * @param \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\PackagingType|string $packaging
+     * @param string $packaging
      * @return $this
      */
     public function setPackaging($packaging)

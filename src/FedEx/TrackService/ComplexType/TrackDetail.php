@@ -33,11 +33,12 @@ use FedEx\AbstractComplexType;
  * @property Dimensions $PackageDimensions
  * @property Weight $PackageDimensionalWeight
  * @property Weight $ShipmentWeight
- * @property string $Packaging
- * @property \FedEx\TrackService\SimpleType\PackagingType|string $PackagingType
+ * @property TrackPackagingDescriptionDetail $Packaging
  * @property \FedEx\TrackService\SimpleType\PhysicalPackagingType|string $PhysicalPackagingType
  * @property int $PackageSequenceNumber
  * @property int $PackageCount
+ * @property int $ShipmentContentPieceCount
+ * @property int $PackageContentPieceCount
  * @property string $CreatorSoftwareId
  * @property TrackChargeDetail[] $Charges
  * @property string $NickName
@@ -46,6 +47,7 @@ use FedEx\AbstractComplexType;
  * @property ContentRecord[] $ShipmentContents
  * @property string[] $PackageContents
  * @property string $ClearanceLocationCode
+ * @property \FedEx\TrackService\SimpleType\ClearanceBrokerageType|string $ClearanceBrokerage
  * @property Commodity[] $Commodities
  * @property TrackReturnDetail $ReturnDetail
  * @property CustomsOptionDetail[] $CustomsOptionDetails
@@ -372,26 +374,14 @@ class TrackDetail extends AbstractComplexType
     }
 
     /**
-     * Retained for legacy compatibility only.
+     * Specifies details about packaging such as packaging description and type.
      *
-     * @param string $packaging
+     * @param TrackPackagingDescriptionDetail $packaging
      * @return $this
      */
-    public function setPackaging($packaging)
+    public function setPackaging(TrackPackagingDescriptionDetail $packaging)
     {
         $this->values['Packaging'] = $packaging;
-        return $this;
-    }
-
-    /**
-     * Strict representation of the Packaging type (e.g. FEDEX_BOX, YOUR_PACKAGING).
-     *
-     * @param \FedEx\TrackService\SimpleType\PackagingType|string $packagingType
-     * @return $this
-     */
-    public function setPackagingType($packagingType)
-    {
-        $this->values['PackagingType'] = $packagingType;
         return $this;
     }
 
@@ -428,6 +418,30 @@ class TrackDetail extends AbstractComplexType
     public function setPackageCount($packageCount)
     {
         $this->values['PackageCount'] = $packageCount;
+        return $this;
+    }
+
+    /**
+     * Set ShipmentContentPieceCount
+     *
+     * @param int $shipmentContentPieceCount
+     * @return $this
+     */
+    public function setShipmentContentPieceCount($shipmentContentPieceCount)
+    {
+        $this->values['ShipmentContentPieceCount'] = $shipmentContentPieceCount;
+        return $this;
+    }
+
+    /**
+     * Set PackageContentPieceCount
+     *
+     * @param int $packageContentPieceCount
+     * @return $this
+     */
+    public function setPackageContentPieceCount($packageContentPieceCount)
+    {
+        $this->values['PackageContentPieceCount'] = $packageContentPieceCount;
         return $this;
     }
 
@@ -524,6 +538,18 @@ class TrackDetail extends AbstractComplexType
     public function setClearanceLocationCode($clearanceLocationCode)
     {
         $this->values['ClearanceLocationCode'] = $clearanceLocationCode;
+        return $this;
+    }
+
+    /**
+     * Set ClearanceBrokerage
+     *
+     * @param \FedEx\TrackService\SimpleType\ClearanceBrokerageType|string $clearanceBrokerage
+     * @return $this
+     */
+    public function setClearanceBrokerage($clearanceBrokerage)
+    {
+        $this->values['ClearanceBrokerage'] = $clearanceBrokerage;
         return $this;
     }
 

@@ -125,7 +125,7 @@ $shipService = new ShipService\Request();
 //$shipService->getSoapClient()->__setLocation('https://ws.fedex.com:443/web-services/ship');
 $result = $shipService->getProcessShipmentReply($processShipmentRequest);
 
-print_r($result);
+var_dump($result);
 // Save .pdf label
 // file_put_contents('/path/to/label.pdf', $result->CompletedShipmentDetail->CompletedPackageDetails[0]->Label->Parts[0]->Image);
 var_dump($result->CompletedShipmentDetail->CompletedPackageDetails[0]->Label->Parts[0]->Image);
