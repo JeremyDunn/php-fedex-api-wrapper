@@ -1,5 +1,33 @@
 # CHANGELOG
 
+## 5.0 (released 2020-11-28)
+- Updated Rate service
+- Updated Location service
+- Updated Pickup service
+- Updated Ship service
+- Updated Validation Availability and Commitment Service
+- Removed apigen dev depdendency
+
+|Service|Version|
+|---|---|
+|Address Validation|4|
+|Close|5|
+|Courier Dispatch|3|
+|Locations|12|
+|Package Movement Information|5|
+|Pickup|22|
+|Rate|28|
+|Return Tag|1|
+|Ship|26|
+|Track|19|
+|Upload Document|11|
+|Open Ship|15|
+|Validation Availability and Commitment Service|14|
+|ASYNC Transaction Service|4|
+|In Flight Shipment Service|1|
+|DGLD Service|1|
+|DGDS Service|3|
+
 ## 4.0 (released 2020-08-19)
 - Updated Track Service
 
