@@ -18,7 +18,6 @@
     },
     "require-dev": {
         "symfony/console": "2.*",
-        "apigen/apigen": "^4.1",
         "fzaninotto/faker": "^1.6",
         "squizlabs/php_codesniffer": "*",
         "phpunit/phpunit": "^6.5"
@@ -31,7 +30,6 @@
         }
     },
     "scripts": {
-        "generate-src": "@php ./util/generate-classes-from-wsdls.php generate",
-        "generate-documentation": "apigen generate -d ./doc -s ./src"
+        "generate-src": "@php ./util/generate-classes-from-wsdls.php generate"
     }
 }
