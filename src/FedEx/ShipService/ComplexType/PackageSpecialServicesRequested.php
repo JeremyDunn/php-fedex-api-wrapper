@@ -10,12 +10,13 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  *
- * @property \FedEx\ShipService\SimpleType\PackageSpecialServiceType|string[] $SpecialServiceTypes
+ * @property string[] $SpecialServiceTypes
  * @property CodDetail $CodDetail
  * @property DangerousGoodsDetail $DangerousGoodsDetail
  * @property BatteryClassificationDetail[] $BatteryDetails
  * @property Weight $DryIceWeight
  * @property SignatureOptionDetail $SignatureOptionDetail
+ * @property int $PieceCountVerificationBoxCount
  * @property PriorityAlertDetail $PriorityAlertDetail
  * @property AlcoholDetail $AlcoholDetail
 
@@ -30,12 +31,12 @@ class PackageSpecialServicesRequested extends AbstractComplexType
     protected $name = 'PackageSpecialServicesRequested';
 
     /**
-     * The types of all special services requested for the enclosing shipment or package.
+     * Indicates the package special service types that are requested on this shipment. For a list of the valid package special service types, please consult your integration documentation or get the list of the available special services from the getAllSpecialServices method of the Validation Availability and Commitment service.
      *
-     * @param \FedEx\ShipService\SimpleType\PackageSpecialServiceType[]|string[] $specialServiceTypes
+     * @param string $specialServiceTypes
      * @return $this
      */
-    public function setSpecialServiceTypes(array $specialServiceTypes)
+    public function setSpecialServiceTypes($specialServiceTypes)
     {
         $this->values['SpecialServiceTypes'] = $specialServiceTypes;
         return $this;
@@ -98,6 +99,18 @@ class PackageSpecialServicesRequested extends AbstractComplexType
     public function setSignatureOptionDetail(SignatureOptionDetail $signatureOptionDetail)
     {
         $this->values['SignatureOptionDetail'] = $signatureOptionDetail;
+        return $this;
+    }
+
+    /**
+     * Set PieceCountVerificationBoxCount
+     *
+     * @param int $pieceCountVerificationBoxCount
+     * @return $this
+     */
+    public function setPieceCountVerificationBoxCount($pieceCountVerificationBoxCount)
+    {
+        $this->values['PieceCountVerificationBoxCount'] = $pieceCountVerificationBoxCount;
         return $this;
     }
 

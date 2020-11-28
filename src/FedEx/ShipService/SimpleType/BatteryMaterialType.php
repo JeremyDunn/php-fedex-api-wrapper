@@ -14,4 +14,5 @@ class BatteryMaterialType extends AbstractSimpleType
 {
     const _LITHIUM_ION = 'LITHIUM_ION';
     const _LITHIUM_METAL = 'LITHIUM_METAL';
+    const _UNKNOWN = 'UNKNOWN';
 }

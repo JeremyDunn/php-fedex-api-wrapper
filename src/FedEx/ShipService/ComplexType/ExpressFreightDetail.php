@@ -13,6 +13,9 @@ use FedEx\AbstractComplexType;
  * @property boolean $PackingListEnclosed
  * @property int $ShippersLoadAndCount
  * @property string $BookingConfirmationNumber
+ * @property boolean $ReferenceLabelRequested
+ * @property ExpressFreightDetailContact $BeforeDeliveryContact
+ * @property ExpressFreightDetailContact $UndeliverableContact
 
  */
 class ExpressFreightDetail extends AbstractComplexType
@@ -57,6 +60,42 @@ class ExpressFreightDetail extends AbstractComplexType
     public function setBookingConfirmationNumber($bookingConfirmationNumber)
     {
         $this->values['BookingConfirmationNumber'] = $bookingConfirmationNumber;
+        return $this;
+    }
+
+    /**
+     * Set ReferenceLabelRequested
+     *
+     * @param boolean $referenceLabelRequested
+     * @return $this
+     */
+    public function setReferenceLabelRequested($referenceLabelRequested)
+    {
+        $this->values['ReferenceLabelRequested'] = $referenceLabelRequested;
+        return $this;
+    }
+
+    /**
+     * Set BeforeDeliveryContact
+     *
+     * @param ExpressFreightDetailContact $beforeDeliveryContact
+     * @return $this
+     */
+    public function setBeforeDeliveryContact(ExpressFreightDetailContact $beforeDeliveryContact)
+    {
+        $this->values['BeforeDeliveryContact'] = $beforeDeliveryContact;
+        return $this;
+    }
+
+    /**
+     * Set UndeliverableContact
+     *
+     * @param ExpressFreightDetailContact $undeliverableContact
+     * @return $this
+     */
+    public function setUndeliverableContact(ExpressFreightDetailContact $undeliverableContact)
+    {
+        $this->values['UndeliverableContact'] = $undeliverableContact;
         return $this;
     }
 }

@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *
- * @property \FedEx\PickupService\SimpleType\ServiceType|string $Service
+ * @property string $Service
  * @property string $BookingNumber
  * @property Dimensions $Dimensions
  * @property \FedEx\PickupService\SimpleType\TruckType|string $TruckType
@@ -27,9 +27,9 @@ class ExpressFreightPickupDetail extends AbstractComplexType
     protected $name = 'ExpressFreightPickupDetail';
 
     /**
-     * Set Service
+     * This includes service type values like FEDEX_1_DAY_FREIGHT
      *
-     * @param \FedEx\PickupService\SimpleType\ServiceType|string $service
+     * @param string $service
      * @return $this
      */
     public function setService($service)

@@ -122,7 +122,7 @@ class CustomsClearanceDetail extends AbstractComplexType
     }
 
     /**
-     * Set CustomsValue
+     * This represents the total commodity value of the shipment plus the charges required by the destination country.
      *
      * @param Money $customsValue
      * @return $this

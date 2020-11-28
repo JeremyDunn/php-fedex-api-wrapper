@@ -11,7 +11,7 @@ use FedEx\AbstractComplexType;
  * @subpackage  Rate Service
  *
  * @property string $CommodityName
- * @property \FedEx\RateService\SimpleType\ServiceType|string $ServiceType
+ * @property string $ServiceType
  * @property ServiceDescription $ServiceDescription
  * @property \FedEx\RateService\SimpleType\ServiceOptionType|string[] $AppliedOptions
  * @property ServiceSubOptionDetail $AppliedSubOptions
@@ -61,9 +61,9 @@ class CommitDetail extends AbstractComplexType
     }
 
     /**
-     * Deprecated: This field will be removed in a future DOM release. New code should use serviceDescription.serviceType instead.
+     * Set ServiceType
      *
-     * @param \FedEx\RateService\SimpleType\ServiceType|string $serviceType
+     * @param string $serviceType
      * @return $this
      */
     public function setServiceType($serviceType)

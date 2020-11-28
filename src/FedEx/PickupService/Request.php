@@ -15,7 +15,7 @@ class Request extends AbstractRequest
     const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/pickup';
     const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/pickup';
 
-    protected static $wsdlFileName = 'PickupService_v17.wsdl';
+    protected static $wsdlFileName = 'PickupService_v22.wsdl';
             
     /**
      * Sends the PickupAvailabilityRequest and returns the response

@@ -4,7 +4,7 @@ namespace FedEx\RateService\ComplexType;
 use FedEx\AbstractComplexType;
 
 /**
- * This class rationalizes RequestedPackage and RequestedPackageSummary from previous interfaces.
+ * RequestedPackageLineItem
  *
  * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
@@ -24,6 +24,7 @@ use FedEx\AbstractComplexType;
  * @property CustomerReference[] $CustomerReferences
  * @property PackageSpecialServicesRequested $SpecialServicesRequested
  * @property ContentRecord[] $ContentRecords
+ * @property ShipperConveyanceDetail $ConveyanceDetail
 
  */
 class RequestedPackageLineItem extends AbstractComplexType
@@ -36,7 +37,7 @@ class RequestedPackageLineItem extends AbstractComplexType
     protected $name = 'RequestedPackageLineItem';
 
     /**
-     * Used only with INDIVIDUAL_PACKAGE, as a unique identifier of each requested package.
+     * A unique identifier of each requested package line item.
      *
      * @param int $sequenceNumber
      * @return $this
@@ -48,7 +49,7 @@ class RequestedPackageLineItem extends AbstractComplexType
     }
 
     /**
-     * Used only with PACKAGE_GROUPS, as a unique identifier of each group of identical packages.
+     * An identifier of each group of identical packages.
      *
      * @param int $groupNumber
      * @return $this
@@ -60,7 +61,7 @@ class RequestedPackageLineItem extends AbstractComplexType
     }
 
     /**
-     * Used only with PACKAGE_GROUPS, as a count of packages within a group of identical packages.
+     * Used as the number or count of identical packages in a group.
      *
      * @param int $groupPackageCount
      * @return $this
@@ -84,7 +85,7 @@ class RequestedPackageLineItem extends AbstractComplexType
     }
 
     /**
-     * Specifies the declared value for carriage of the package. The declared value for carriage represents the maximum liability of FedEx in connection with a shipment, including, but not limited to, any loss, damage, delay, mis-delivery, nondelivery, misinformation, any failure to provide information, or mis-delivery of information relating to the package. This field is only used for INDIVIDUAL_PACKAGES and PACKAGE_GROUPS. Ignored for PACKAGE_SUMMARY, in which case totalInsuredValue and packageCount on the shipment will be used to determine this value.
+     * Specifies the declared value for carriage of the package. The declared value for carriage represents the maximum liability of FedEx in connection with a shipment, including, but not limited to, any loss, damage, delay, mis-delivery, nondelivery, misinformation, any failure to provide information, or mis-delivery of information relating to the package.
      *
      * @param Money $insuredValue
      * @return $this
@@ -96,7 +97,7 @@ class RequestedPackageLineItem extends AbstractComplexType
     }
 
     /**
-     * Only used for INDIVIDUAL_PACKAGES and PACKAGE_GROUPS. Ignored for PACKAGE_SUMMARY, in which case total weight and packageCount on the shipment will be used to determine this value.
+     * Represents the gross weight of the package line item.
      *
      * @param Weight $weight
      * @return $this
@@ -192,7 +193,7 @@ class RequestedPackageLineItem extends AbstractComplexType
     }
 
     /**
-     * Only used for INDIVIDUAL_PACKAGES and PACKAGE_GROUPS.
+     * Details the contents of the package.
      *
      * @param ContentRecord[] $contentRecords
      * @return $this
@@ -200,6 +201,18 @@ class RequestedPackageLineItem extends AbstractComplexType
     public function setContentRecords(array $contentRecords)
     {
         $this->values['ContentRecords'] = $contentRecords;
+        return $this;
+    }
+
+    /**
+     * Set ConveyanceDetail
+     *
+     * @param ShipperConveyanceDetail $conveyanceDetail
+     * @return $this
+     */
+    public function setConveyanceDetail(ShipperConveyanceDetail $conveyanceDetail)
+    {
+        $this->values['ConveyanceDetail'] = $conveyanceDetail;
         return $this;
     }
 }

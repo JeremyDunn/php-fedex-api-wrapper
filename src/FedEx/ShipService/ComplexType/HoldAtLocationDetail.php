@@ -14,6 +14,7 @@ use FedEx\AbstractComplexType;
  * @property ContactAndAddress $LocationContactAndAddress
  * @property \FedEx\ShipService\SimpleType\FedExLocationType|string $LocationType
  * @property string $LocationId
+ * @property int $LocationNumber
 
  */
 class HoldAtLocationDetail extends AbstractComplexType
@@ -70,6 +71,18 @@ class HoldAtLocationDetail extends AbstractComplexType
     public function setLocationId($locationId)
     {
         $this->values['LocationId'] = $locationId;
+        return $this;
+    }
+
+    /**
+     * Location identification (for facilities identified by an numeric location code).
+     *
+     * @param int $locationNumber
+     * @return $this
+     */
+    public function setLocationNumber($locationNumber)
+    {
+        $this->values['LocationNumber'] = $locationNumber;
         return $this;
     }
 }

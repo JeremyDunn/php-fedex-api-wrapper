@@ -12,8 +12,8 @@ use FedEx\AbstractComplexType;
  *
  * @property string $ShipTimestamp
  * @property \FedEx\RateService\SimpleType\DropoffType|string $DropoffType
- * @property \FedEx\RateService\SimpleType\ServiceType|string $ServiceType
- * @property \FedEx\RateService\SimpleType\PackagingType|string $PackagingType
+ * @property string $ServiceType
+ * @property string $PackagingType
  * @property ShipmentVariationOptionDetail[] $VariationOptions
  * @property Weight $TotalWeight
  * @property Money $TotalInsuredValue
@@ -78,9 +78,9 @@ class RequestedShipment extends AbstractComplexType
     }
 
     /**
-     * Set ServiceType
+     * This field contains the service type values, like PRIORITY_OVERNIGHT and FEDEX_GROUND.
      *
-     * @param \FedEx\RateService\SimpleType\ServiceType|string $serviceType
+     * @param string $serviceType
      * @return $this
      */
     public function setServiceType($serviceType)
@@ -90,9 +90,9 @@ class RequestedShipment extends AbstractComplexType
     }
 
     /**
-     * Set PackagingType
+     * This field contains the packaging type values, like YOUR_PACKAGING and FEDEX_ENVELOPE.
      *
-     * @param \FedEx\RateService\SimpleType\PackagingType|string $packagingType
+     * @param string $packagingType
      * @return $this
      */
     public function setPackagingType($packagingType)

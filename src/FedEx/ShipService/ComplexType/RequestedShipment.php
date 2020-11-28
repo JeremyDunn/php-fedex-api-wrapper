@@ -12,9 +12,11 @@ use FedEx\AbstractComplexType;
  *
  * @property string $ShipTimestamp
  * @property \FedEx\ShipService\SimpleType\DropoffType|string $DropoffType
- * @property \FedEx\ShipService\SimpleType\ServiceType|string $ServiceType
- * @property \FedEx\ShipService\SimpleType\PackagingType|string $PackagingType
+ * @property string $ServiceType
+ * @property string $PackagingType
+ * @property string $ShippingCycle
  * @property ShipmentManifestDetail $ManifestDetail
+ * @property ShipmentVariationOptionDetail[] $VariationOptions
  * @property Weight $TotalWeight
  * @property Money $TotalInsuredValue
  * @property string $PreferredCurrency
@@ -26,6 +28,7 @@ use FedEx\AbstractComplexType;
  * @property Party $SoldTo
  * @property Payment $ShippingChargesPayment
  * @property ShipmentSpecialServicesRequested $SpecialServicesRequested
+ * @property ShipmentProcessingOptionsRequested $ProcessingOptionsRequested
  * @property ExpressFreightDetail $ExpressFreightDetail
  * @property FreightShipmentDetail $FreightShipmentDetail
  * @property string $DeliveryInstructions
@@ -34,10 +37,13 @@ use FedEx\AbstractComplexType;
  * @property PickupDetail $PickupDetail
  * @property SmartPostShipmentDetail $SmartPostDetail
  * @property boolean $BlockInsightVisibility
+ * @property \FedEx\ShipService\SimpleType\ErrorLabelBehaviorType|string $ErrorLabelBehavior
  * @property LabelSpecification $LabelSpecification
  * @property ShippingDocumentSpecification $ShippingDocumentSpecification
  * @property \FedEx\ShipService\SimpleType\RateRequestType|string[] $RateRequestTypes
+ * @property \FedEx\ShipService\SimpleType\ReturnedRateType|string $CustomerSelectedActualRateType
  * @property \FedEx\ShipService\SimpleType\EdtRequestType|string $EdtRequestType
+ * @property CustomRatingOptionDetail $CustomRatingOptionDetail
  * @property TrackingId $MasterTrackingId
  * @property int $PackageCount
  * @property ShipmentConfigurationData $ConfigurationData
@@ -78,9 +84,9 @@ class RequestedShipment extends AbstractComplexType
     }
 
     /**
-     * Set ServiceType
+     * This field contains the service type values, like PRIORITY_OVERNIGHT and FEDEX_GROUND.
      *
-     * @param \FedEx\ShipService\SimpleType\ServiceType|string $serviceType
+     * @param string $serviceType
      * @return $this
      */
     public function setServiceType($serviceType)
@@ -90,14 +96,26 @@ class RequestedShipment extends AbstractComplexType
     }
 
     /**
-     * Set PackagingType
+     * This field contains the packaging type values, like YOUR_PACKAGING and FEDEX_ENVELOPE.
      *
-     * @param \FedEx\ShipService\SimpleType\PackagingType|string $packagingType
+     * @param string $packagingType
      * @return $this
      */
     public function setPackagingType($packagingType)
     {
         $this->values['PackagingType'] = $packagingType;
+        return $this;
+    }
+
+    /**
+     * The client's shipping cycle to which this shipment belongs.
+     *
+     * @param string $shippingCycle
+     * @return $this
+     */
+    public function setShippingCycle($shippingCycle)
+    {
+        $this->values['ShippingCycle'] = $shippingCycle;
         return $this;
     }
 
@@ -110,6 +128,18 @@ class RequestedShipment extends AbstractComplexType
     public function setManifestDetail(ShipmentManifestDetail $manifestDetail)
     {
         $this->values['ManifestDetail'] = $manifestDetail;
+        return $this;
+    }
+
+    /**
+     * The shipment variations for the current shipment expressed in key-value pairs.
+     *
+     * @param ShipmentVariationOptionDetail[] $variationOptions
+     * @return $this
+     */
+    public function setVariationOptions(array $variationOptions)
+    {
+        $this->values['VariationOptions'] = $variationOptions;
         return $this;
     }
 
@@ -246,6 +276,18 @@ class RequestedShipment extends AbstractComplexType
     }
 
     /**
+     * Specifies any custom processing to be applied to this shipment.
+     *
+     * @param ShipmentProcessingOptionsRequested $processingOptionsRequested
+     * @return $this
+     */
+    public function setProcessingOptionsRequested(ShipmentProcessingOptionsRequested $processingOptionsRequested)
+    {
+        $this->values['ProcessingOptionsRequested'] = $processingOptionsRequested;
+        return $this;
+    }
+
+    /**
      * Set ExpressFreightDetail
      *
      * @param ExpressFreightDetail $expressFreightDetail
@@ -342,6 +384,18 @@ class RequestedShipment extends AbstractComplexType
     }
 
     /**
+     * Specifies the client-requested response in the event of errors within shipment.
+     *
+     * @param \FedEx\ShipService\SimpleType\ErrorLabelBehaviorType|string $errorLabelBehavior
+     * @return $this
+     */
+    public function setErrorLabelBehavior($errorLabelBehavior)
+    {
+        $this->values['ErrorLabelBehavior'] = $errorLabelBehavior;
+        return $this;
+    }
+
+    /**
      * Set LabelSpecification
      *
      * @param LabelSpecification $labelSpecification
@@ -378,6 +432,18 @@ class RequestedShipment extends AbstractComplexType
     }
 
     /**
+     * Specifies the type of rate the customer wishes to have used as the actual rate type.
+     *
+     * @param \FedEx\ShipService\SimpleType\ReturnedRateType|string $customerSelectedActualRateType
+     * @return $this
+     */
+    public function setCustomerSelectedActualRateType($customerSelectedActualRateType)
+    {
+        $this->values['CustomerSelectedActualRateType'] = $customerSelectedActualRateType;
+        return $this;
+    }
+
+    /**
      * Specifies whether the customer wishes to have Estimated Duties and Taxes provided with the rate quotation on this shipment. Only applies with shipments moving under international services.
      *
      * @param \FedEx\ShipService\SimpleType\EdtRequestType|string $edtRequestType
@@ -386,6 +452,18 @@ class RequestedShipment extends AbstractComplexType
     public function setEdtRequestType($edtRequestType)
     {
         $this->values['EdtRequestType'] = $edtRequestType;
+        return $this;
+    }
+
+    /**
+     * Specifies the details for the custom rates.
+     *
+     * @param CustomRatingOptionDetail $customRatingOptionDetail
+     * @return $this
+     */
+    public function setCustomRatingOptionDetail(CustomRatingOptionDetail $customRatingOptionDetail)
+    {
+        $this->values['CustomRatingOptionDetail'] = $customRatingOptionDetail;
         return $this;
     }
 

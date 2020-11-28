@@ -10,9 +10,9 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  *
- * @property \FedEx\RateService\SimpleType\ServiceType|string $ServiceType
+ * @property string $ServiceType
  * @property ServiceDescription $ServiceDescription
- * @property \FedEx\RateService\SimpleType\PackagingType|string $PackagingType
+ * @property string $PackagingType
  * @property \FedEx\RateService\SimpleType\ServiceOptionType|string[] $AppliedOptions
  * @property ServiceSubOptionDetail $AppliedSubOptions
  * @property string $DeliveryStation
@@ -40,9 +40,9 @@ class RateReplyDetail extends AbstractComplexType
     protected $name = 'RateReplyDetail';
 
     /**
-     * Deprecated: This field will be removed in a future DOM release. New code should use serviceDescription.serviceType instead.
+     * Set ServiceType
      *
-     * @param \FedEx\RateService\SimpleType\ServiceType|string $serviceType
+     * @param string $serviceType
      * @return $this
      */
     public function setServiceType($serviceType)
@@ -66,7 +66,7 @@ class RateReplyDetail extends AbstractComplexType
     /**
      * Set PackagingType
      *
-     * @param \FedEx\RateService\SimpleType\PackagingType|string $packagingType
+     * @param string $packagingType
      * @return $this
      */
     public function setPackagingType($packagingType)

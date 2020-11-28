@@ -13,5 +13,6 @@ use FedEx\AbstractSimpleType;
 class PickupType extends AbstractSimpleType
 {
     const _ON_CALL = 'ON_CALL';
+    const _REGULAR_STOP_WITH_AUTO_CANCEL = 'REGULAR_STOP_WITH_AUTO_CANCEL';
     const _TAG = 'TAG';
 }

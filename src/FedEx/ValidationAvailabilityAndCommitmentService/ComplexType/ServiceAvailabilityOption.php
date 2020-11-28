@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  *
- * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\ServiceType|string $Service
+ * @property string $Service
  * @property string $DeliveryDate
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\DayOfWeekType|string $DeliveryDay
  * @property string $DestinationStationId
@@ -30,7 +30,7 @@ class ServiceAvailabilityOption extends AbstractComplexType
     /**
      * Set Service
      *
-     * @param \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\ServiceType|string $service
+     * @param string $service
      * @return $this
      */
     public function setService($service)
