@@ -15,6 +15,7 @@ use FedEx\AbstractComplexType;
  * @property \FedEx\ShipService\SimpleType\ShippingDocumentImageType|string $ImageType
  * @property \FedEx\ShipService\SimpleType\LabelStockType|string $LabelStockType
  * @property \FedEx\ShipService\SimpleType\LabelPrintingOrientationType|string $LabelPrintingOrientation
+ * @property \FedEx\ShipService\SimpleType\LabelRotationType|string $LabelRotation
  * @property \FedEx\ShipService\SimpleType\LabelOrderType|string $LabelOrder
  * @property ContactAndAddress $PrintedLabelOrigin
  * @property CustomerSpecifiedLabelDetail $CustomerSpecifiedDetail
@@ -86,6 +87,18 @@ class LabelSpecification extends AbstractComplexType
     public function setLabelPrintingOrientation($labelPrintingOrientation)
     {
         $this->values['LabelPrintingOrientation'] = $labelPrintingOrientation;
+        return $this;
+    }
+
+    /**
+     * Set LabelRotation
+     *
+     * @param \FedEx\ShipService\SimpleType\LabelRotationType|string $labelRotation
+     * @return $this
+     */
+    public function setLabelRotation($labelRotation)
+    {
+        $this->values['LabelRotation'] = $labelRotation;
         return $this;
     }
 

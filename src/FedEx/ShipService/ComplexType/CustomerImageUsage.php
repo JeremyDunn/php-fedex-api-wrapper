@@ -12,6 +12,8 @@ use FedEx\AbstractComplexType;
  *
  * @property \FedEx\ShipService\SimpleType\CustomerImageUsageType|string $Type
  * @property \FedEx\ShipService\SimpleType\ImageId|string $Id
+ * @property string $InternalId
+ * @property \FedEx\ShipService\SimpleType\InternalImageType|string $InternalImageType
 
  */
 class CustomerImageUsage extends AbstractComplexType
@@ -44,6 +46,30 @@ class CustomerImageUsage extends AbstractComplexType
     public function setId($id)
     {
         $this->values['Id'] = $id;
+        return $this;
+    }
+
+    /**
+     * Internal Id used by INET to identify customer provided images during documents generation. Ex COO etc ...
+     *
+     * @param string $internalId
+     * @return $this
+     */
+    public function setInternalId($internalId)
+    {
+        $this->values['InternalId'] = $internalId;
+        return $this;
+    }
+
+    /**
+     * Internal image type used by INET to identify customer provided images during documents generation. Ex COO etc ..
+     *
+     * @param \FedEx\ShipService\SimpleType\InternalImageType|string $internalImageType
+     * @return $this
+     */
+    public function setInternalImageType($internalImageType)
+    {
+        $this->values['InternalImageType'] = $internalImageType;
         return $this;
     }
 }

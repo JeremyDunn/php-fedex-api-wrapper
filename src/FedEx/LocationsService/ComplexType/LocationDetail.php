@@ -14,10 +14,10 @@ use FedEx\AbstractComplexType;
  * @property string $StoreNumber
  * @property LocationContactAndAddress $LocationContactAndAddress
  * @property string $SpecialInstructions
- * @property string $GeographicCoordinates
  * @property string $TimeZoneOffset
  * @property \FedEx\LocationsService\SimpleType\FedExLocationType|string $LocationType
  * @property string $LocationTypeForDisplay
+ * @property LocationFieldsForInternalFedexUseDetail $InternalFieldsDetail
  * @property \FedEx\LocationsService\SimpleType\LocationAttributesType|string[] $Attributes
  * @property LocationCapabilityDetail[] $LocationCapabilities
  * @property LocationPackageLimitsDetail $PackageMaximumLimits
@@ -91,18 +91,6 @@ class LocationDetail extends AbstractComplexType
     }
 
     /**
-     * Set GeographicCoordinates
-     *
-     * @param string $geographicCoordinates
-     * @return $this
-     */
-    public function setGeographicCoordinates($geographicCoordinates)
-    {
-        $this->values['GeographicCoordinates'] = $geographicCoordinates;
-        return $this;
-    }
-
-    /**
      * Set TimeZoneOffset
      *
      * @param string $timeZoneOffset
@@ -135,6 +123,18 @@ class LocationDetail extends AbstractComplexType
     public function setLocationTypeForDisplay($locationTypeForDisplay)
     {
         $this->values['LocationTypeForDisplay'] = $locationTypeForDisplay;
+        return $this;
+    }
+
+    /**
+     * Set InternalFieldsDetail
+     *
+     * @param LocationFieldsForInternalFedexUseDetail $internalFieldsDetail
+     * @return $this
+     */
+    public function setInternalFieldsDetail(LocationFieldsForInternalFedexUseDetail $internalFieldsDetail)
+    {
+        $this->values['InternalFieldsDetail'] = $internalFieldsDetail;
         return $this;
     }
 

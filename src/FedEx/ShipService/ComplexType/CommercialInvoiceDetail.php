@@ -12,6 +12,7 @@ use FedEx\AbstractComplexType;
  *
  * @property ShippingDocumentFormat $Format
  * @property CustomerImageUsage[] $CustomerImageUsages
+ * @property string $FormVersion
 
  */
 class CommercialInvoiceDetail extends AbstractComplexType
@@ -44,6 +45,18 @@ class CommercialInvoiceDetail extends AbstractComplexType
     public function setCustomerImageUsages(array $customerImageUsages)
     {
         $this->values['CustomerImageUsages'] = $customerImageUsages;
+        return $this;
+    }
+
+    /**
+     * Set FormVersion
+     *
+     * @param string $formVersion
+     * @return $this
+     */
+    public function setFormVersion($formVersion)
+    {
+        $this->values['FormVersion'] = $formVersion;
         return $this;
     }
 }

@@ -20,6 +20,7 @@ use FedEx\AbstractComplexType;
  * @property string $DeclarationStatement
  * @property string $PaymentTerms
  * @property \FedEx\ShipService\SimpleType\PurposeOfShipmentType|string $Purpose
+ * @property string $PurposeOfShipmentDescription
  * @property CustomerReference[] $CustomerReferences
  * @property string $OriginatorName
  * @property string $TermsOfSale
@@ -151,6 +152,18 @@ class CommercialInvoice extends AbstractComplexType
     public function setPurpose($purpose)
     {
         $this->values['Purpose'] = $purpose;
+        return $this;
+    }
+
+    /**
+     * Not exposed to Web Services customers; only present for use in mapping from CTS transactions.
+     *
+     * @param string $purposeOfShipmentDescription
+     * @return $this
+     */
+    public function setPurposeOfShipmentDescription($purposeOfShipmentDescription)
+    {
+        $this->values['PurposeOfShipmentDescription'] = $purposeOfShipmentDescription;
         return $this;
     }
 

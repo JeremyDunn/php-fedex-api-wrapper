@@ -12,6 +12,7 @@ use FedEx\AbstractComplexType;
  *
  * @property string $HarmonizedCode
  * @property EdtTaxDetail[] $Taxes
+ * @property Money $Total
 
  */
 class EdtCommodityTax extends AbstractComplexType
@@ -44,6 +45,18 @@ class EdtCommodityTax extends AbstractComplexType
     public function setTaxes(array $taxes)
     {
         $this->values['Taxes'] = $taxes;
+        return $this;
+    }
+
+    /**
+     * Set Total
+     *
+     * @param Money $total
+     * @return $this
+     */
+    public function setTotal(Money $total)
+    {
+        $this->values['Total'] = $total;
         return $this;
     }
 }

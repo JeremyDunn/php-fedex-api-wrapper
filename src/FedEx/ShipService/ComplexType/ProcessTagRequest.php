@@ -12,6 +12,7 @@ use FedEx\AbstractComplexType;
  *
  * @property WebAuthenticationDetail $WebAuthenticationDetail
  * @property ClientDetail $ClientDetail
+ * @property UserDetail $UserDetail
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
  * @property RequestedShipment $RequestedShipment
@@ -47,6 +48,18 @@ class ProcessTagRequest extends AbstractComplexType
     public function setClientDetail(ClientDetail $clientDetail)
     {
         $this->values['ClientDetail'] = $clientDetail;
+        return $this;
+    }
+
+    /**
+     * Set UserDetail
+     *
+     * @param UserDetail $userDetail
+     * @return $this
+     */
+    public function setUserDetail(UserDetail $userDetail)
+    {
+        $this->values['UserDetail'] = $userDetail;
         return $this;
     }
 

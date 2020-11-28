@@ -12,7 +12,9 @@ use FedEx\AbstractSimpleType;
  */
 class ShippingDocumentStockType extends AbstractSimpleType
 {
+    const _OP_900_LG = 'OP_900_LG';
     const _OP_900_LG_B = 'OP_900_LG_B';
+    const _OP_900_LL = 'OP_900_LL';
     const _OP_900_LL_B = 'OP_900_LL_B';
     const _OP_950 = 'OP_950';
     const _PAPER_4X6 = 'PAPER_4X6';

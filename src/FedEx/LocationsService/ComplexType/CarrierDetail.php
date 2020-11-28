@@ -12,7 +12,7 @@ use FedEx\AbstractComplexType;
  *
  * @property \FedEx\LocationsService\SimpleType\CarrierCodeType|string $Carrier
  * @property \FedEx\LocationsService\SimpleType\ServiceCategoryType|string $ServiceCategory
- * @property \FedEx\LocationsService\SimpleType\ServiceType|string $ServiceType
+ * @property string $ServiceType
  * @property \FedEx\LocationsService\SimpleType\CountryRelationshipType|string $CountryRelationship
  * @property LatestDropOffDetail[] $NormalLatestDropOffDetails
  * @property LatestDropOffDetail[] $ExceptionalLatestDropOffDetails
@@ -56,7 +56,7 @@ class CarrierDetail extends AbstractComplexType
     /**
      * Set ServiceType
      *
-     * @param \FedEx\LocationsService\SimpleType\ServiceType|string $serviceType
+     * @param string $serviceType
      * @return $this
      */
     public function setServiceType($serviceType)

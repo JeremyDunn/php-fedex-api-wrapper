@@ -17,7 +17,7 @@ $createPickupRequest->ClientDetail->MeterNumber = FEDEX_METER_NUMBER;
 
 // Version.
 $createPickupRequest->Version->ServiceId = 'disp';
-$createPickupRequest->Version->Major = 17;
+$createPickupRequest->Version->Major = 22;
 $createPickupRequest->Version->Intermediate = 0;
 $createPickupRequest->Version->Minor = 0;
 

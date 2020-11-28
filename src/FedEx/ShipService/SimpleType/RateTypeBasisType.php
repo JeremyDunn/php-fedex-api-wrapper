@@ -13,5 +13,8 @@ use FedEx\AbstractSimpleType;
 class RateTypeBasisType extends AbstractSimpleType
 {
     const _ACCOUNT = 'ACCOUNT';
+    const _ACTUAL = 'ACTUAL';
+    const _CURRENT = 'CURRENT';
+    const _CUSTOM = 'CUSTOM';
     const _LIST = 'LIST';
 }

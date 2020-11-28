@@ -27,7 +27,7 @@ $clientDetail
 
 $version = new ComplexType\VersionId();
 $version
-    ->setMajor(21)
+    ->setMajor(26)
     ->setIntermediate(0)
     ->setMinor(0)
     ->setServiceId('ship');
