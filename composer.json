@@ -29,6 +29,7 @@
         }
     },
     "scripts": {
-        "generate-src": "@php ./util/generate-classes-from-wsdls.php generate"
+        "generate-src": "@php ./util/generate-classes-from-wsdls.php generate",
+        "run-tests": "XDEBUG_MODE=coverage phpunit"
     }
 }

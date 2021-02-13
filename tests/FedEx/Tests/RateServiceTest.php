@@ -50,7 +50,7 @@ class RateServiceTest extends TestCase
 
         $mockSoapClient = $this->getMockFromWsdl(Request::getWsdlPath());
         $mockSoapClient->method('getRates')->will($this->returnValue($expectedResponse));
-        
+
         $request = new Request($mockSoapClient);
 
         //get rates reply

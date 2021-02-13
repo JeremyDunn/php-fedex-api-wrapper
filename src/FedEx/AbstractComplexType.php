@@ -1,6 +1,10 @@
 <?php
 namespace FedEx;
 
+use ReflectionClass;
+use ReflectionMethod;
+use ReflectionNamedType;
+
 /**
  * Abstract class for SimpleTypes
  *
@@ -67,11 +71,14 @@ abstract class AbstractComplexType
         }
 
         $setterMethodName = "set{$name}";
-        $reflectionClass = new \ReflectionClass($this);
+        $reflectionClass = new ReflectionClass($this);
         if ($reflectionClass->hasMethod($setterMethodName)) {
-            $parameterClass = $reflectionClass->getMethod($setterMethodName)->getParameters()[0]->getClass();
-            if (!empty($parameterClass)) {
-                $this->$setterMethodName(new $parameterClass->name());
+            $reflectionNamedType = $reflectionClass->getMethod($setterMethodName)->getParameters()[0]->getType();
+            /* @var $reflectionNamedType ReflectionNamedType */
+            $parameterClassName = $reflectionNamedType->getName();
+
+            if (class_exists($parameterClassName)) {
+                $this->$setterMethodName(new $parameterClassName);
                 return $this->values[$name];
             }
         }
@@ -138,48 +145,50 @@ abstract class AbstractComplexType
      */
     public function populateFromStdClass(\stdClass $stdClass)
     {
-        $reflectionClass = new \ReflectionClass($this);
+        $reflectionClass = new ReflectionClass($this);
 
-        $setterMethods = array_filter($reflectionClass->getMethods(\ReflectionMethod::IS_PUBLIC), function ($reflectionMethod) {
+        $setterMethods = array_filter($reflectionClass->getMethods(ReflectionMethod::IS_PUBLIC), function ($reflectionMethod) {
             return (preg_match('/^set.*$/', $reflectionMethod->name));
         });
 
         foreach ($setterMethods as $reflectionMethod) {
-            /* @var $reflectionMethod \ReflectionMethod */
+            /* @var $reflectionMethod ReflectionMethod */
             $methodName = $reflectionMethod->name;
             $stdPropertyName = str_replace('set', '', $methodName);
             $parameterValue = null;
             $reflectionParameter = $reflectionMethod->getParameters()[0];
+            $reflectionParameterType = $reflectionParameter->getType();
 
-            if ($reflectionParameter->getClass() instanceof \ReflectionClass) {
-                //class
-                $classPropertyName = $reflectionParameter->getClass()->name;
-                $parameterValue = new $classPropertyName;
-                if (isset($stdClass->$stdPropertyName)) {
-                    $parameterValue->populateFromStdClass($stdClass->$stdPropertyName);
-                }
-            } elseif ($reflectionParameter->isArray()) {
-                //array
-                $arrayType = Reflection::getAbstractClassSetterMethodArrayType($reflectionParameter);
-                if (Reflection::isClassNameSimpleType($arrayType)) {
-                } else {
-                    if (isset($stdClass->$stdPropertyName)) {
-                        $parameterValue = [];
-                        if (is_array($stdClass->$stdPropertyName)) {
-                            foreach ($stdClass->$stdPropertyName as $property) {
+            if ($reflectionParameterType instanceof ReflectionNamedType) {
+                if ($reflectionParameterType->getName() === 'array') {
+                    // array
+                    $arrayType = Reflection::getAbstractClassSetterMethodArrayType($reflectionParameter);
+                    if (!Reflection::isClassNameSimpleType($arrayType)) {
+                        if (isset($stdClass->$stdPropertyName)) {
+                            $parameterValue = [];
+                            if (is_array($stdClass->$stdPropertyName)) {
+                                foreach ($stdClass->$stdPropertyName as $property) {
+                                    $class = new $arrayType;
+                                    $parameterValue[] = $class;
+                                    $class->populateFromStdClass($property);
+                                }
+                            } else {
                                 $class = new $arrayType;
                                 $parameterValue[] = $class;
-                                $class->populateFromStdClass($property);
+                                $class->populateFromStdClass($stdClass->$stdPropertyName);
                             }
-                        } else {
-                            $class = new $arrayType;
-                            $parameterValue[] = $class;
-                            $class->populateFromStdClass($stdClass->$stdPropertyName);
                         }
+                    }
+                } elseif (!$reflectionParameterType->isBuiltin()) {
+                    //class
+                    $classPropertyName = $reflectionParameterType->getName();
+                    $parameterValue = new $classPropertyName();
+                    if (isset($stdClass->$stdPropertyName)) {
+                        $parameterValue->populateFromStdClass($stdClass->$stdPropertyName);
                     }
                 }
             } else {
-                //is scalar type
+                // is scalar type
                 if (isset($stdClass->$stdPropertyName)) {
                     $parameterValue = $stdClass->$stdPropertyName;
                 }

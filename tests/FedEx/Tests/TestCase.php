@@ -17,7 +17,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
      */
     protected $mockResponseSerializer;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->mockResponseSerializer = new MockResponseSerializer();
     }
