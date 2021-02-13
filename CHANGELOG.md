@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 5.0.1 (released 2021-02-13)
+- PHP 8 compatibility: [#264](https://github.com/JeremyDunn/php-fedex-api-wrapper/issues/164)
+
 ## 5.0 (released 2020-11-28)
 - Updated Rate service
 - Updated Location service

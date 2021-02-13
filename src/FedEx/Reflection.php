@@ -12,7 +12,8 @@ class Reflection
      */
     public static function getAbstractClassSetterMethodArrayType(\ReflectionParameter $reflectionParameter)
     {
-        if (!$reflectionParameter->isArray()) {
+        $reflectionParamaterType = $reflectionParameter->getType();
+        if ($reflectionParamaterType instanceof \ReflectionNamedType && $reflectionParamaterType->getName() !== 'array') {
             return null;
         }
         preg_match('/@param\s+([^\s]+)/', $reflectionParameter->getDeclaringFunction()->getDocComment(), $matches);
@@ -35,9 +36,14 @@ class Reflection
      */
     public static function getAbstractClassSetterMethodScalarType(\ReflectionParameter $reflectionParameter)
     {
-        if ($reflectionParameter->isArray() || ($reflectionParameter->getClass() instanceof \ReflectionClass)) {
+        $reflectionParameterType = $reflectionParameter->getType();
+
+        if ($reflectionParameterType instanceof \ReflectionNamedType) {
             return null;
         }
+//        if ($reflectionParameter->isArray() || ($reflectionParameter->getClass() instanceof \ReflectionClass)) {
+//            return null;
+//        }
 
         preg_match('/@param\s+([^\s]+)/', $reflectionParameter->getDeclaringFunction()->getDocComment(), $matches);
         if (!isset($matches[1])) {

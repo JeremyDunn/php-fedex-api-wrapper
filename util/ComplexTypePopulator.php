@@ -5,6 +5,7 @@ namespace FedEx\Utility;
 use FedEx\AbstractComplexType;
 use Faker\Factory;
 use FedEx\Reflection;
+use ReflectionNamedType;
 
 class ComplexTypePopulator
 {
@@ -60,21 +61,26 @@ class ComplexTypePopulator
     protected function getFakeValue(\ReflectionMethod $reflectionMethod)
     {
         foreach ($reflectionMethod->getParameters() as $reflectionParameter) {
-            if ($reflectionParameter->getClass() instanceof \ReflectionClass) {
-                $className = $reflectionParameter->getClass()->name;
-                return new $className;
-            } elseif ($reflectionParameter->isArray()) {
-                $arrayType = Reflection::getAbstractClassSetterMethodArrayType($reflectionParameter);
-                if (class_exists($arrayType)) {
-                    if (Reflection::isClassNameSimpleType($arrayType)) {
-                        return [$this->getRandomConstValueFromSimpleType($arrayType)];
-                    } else {
-                        $complexType = new $arrayType();
-                        $this->populate($complexType);
-                        return [$complexType];
+            $reflectionParameterType = $reflectionParameter->getType();
+
+            if ($reflectionParameterType instanceof ReflectionNamedType) {
+                if ($reflectionParameterType->getName() === 'array') {
+                    $arrayType = Reflection::getAbstractClassSetterMethodArrayType($reflectionParameter);
+                    if (class_exists($arrayType)) {
+                        if (Reflection::isClassNameSimpleType($arrayType)) {
+                            return [$this->getRandomConstValueFromSimpleType($arrayType)];
+                        } else {
+                            $complexType = new $arrayType();
+                            $this->populate($complexType);
+                            return [$complexType];
+                        }
                     }
+                    return ['test'];
+                } elseif (!$reflectionParameterType->isBuiltin()) {
+                    $className = $reflectionParameterType->getName();
+                    return new $className;
                 }
-                return ['test'];
+
             } else {
                 $scalarType = Reflection::getAbstractClassSetterMethodScalarType($reflectionParameter);
 

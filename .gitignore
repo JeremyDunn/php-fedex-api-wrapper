@@ -56,4 +56,4 @@ nbproject
 examples/credentials.php
 doc/
 tests/logs
-
+.phpunit.result.cache
