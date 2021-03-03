@@ -33,7 +33,7 @@ $uploadDocumentsRequest->Documents[0]->DocumentType = SimpleType\UploadDocumentT
 $uploadDocumentsRequest->Documents[0]->FileName = 'CommercialInvoice.xls';
 
 // Document content.
-$uploadDocumentsRequest->Documents[0]->DocumentContent = base64_encode(file_get_contents(__DIR__ . '/CommercialInvoice.xls'));
+$uploadDocumentsRequest->Documents[0]->DocumentContent = file_get_contents(__DIR__ . '/CommercialInvoice.xls');
 
 $request = new Request();
 try {
