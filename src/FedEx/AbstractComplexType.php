@@ -31,7 +31,7 @@ abstract class AbstractComplexType
     /**
      * Constructor
      *
-     * @param array $options Data as key => value array
+     * @param array|null $options Data as key => value array
      */
     public function __construct(array $options = null)
     {
@@ -75,11 +75,13 @@ abstract class AbstractComplexType
         if ($reflectionClass->hasMethod($setterMethodName)) {
             $reflectionNamedType = $reflectionClass->getMethod($setterMethodName)->getParameters()[0]->getType();
             /* @var $reflectionNamedType ReflectionNamedType */
-            $parameterClassName = $reflectionNamedType->getName();
+            if ($reflectionNamedType !== NULL) {
+                $parameterClassName = $reflectionNamedType->getName();
 
-            if (class_exists($parameterClassName)) {
-                $this->$setterMethodName(new $parameterClassName);
-                return $this->values[$name];
+                if (class_exists($parameterClassName)) {
+                    $this->$setterMethodName(new $parameterClassName);
+                    return $this->values[$name];
+                }
             }
         }
 
