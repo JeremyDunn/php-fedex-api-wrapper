@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  *
- * @property \FedEx\OpenShipService\SimpleType\ServiceType|string $ServiceType
+ * @property string $ServiceType
  * @property string $Code
  * @property ProductName[] $Names
  * @property string $Description
@@ -29,7 +29,7 @@ class ServiceDescription extends AbstractComplexType
     /**
      * Set ServiceType
      *
-     * @param \FedEx\OpenShipService\SimpleType\ServiceType|string $serviceType
+     * @param string $serviceType
      * @return $this
      */
     public function setServiceType($serviceType)

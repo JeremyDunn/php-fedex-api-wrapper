@@ -14,6 +14,7 @@ use FedEx\AbstractComplexType;
  * @property Notification[] $Notifications
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
+ * @property ShipmentAdvisoryDetail $AdvisoryDetail
 
  */
 class ShipmentReply extends AbstractComplexType
@@ -70,6 +71,18 @@ class ShipmentReply extends AbstractComplexType
     public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
+        return $this;
+    }
+
+    /**
+     * Set AdvisoryDetail
+     *
+     * @param ShipmentAdvisoryDetail $advisoryDetail
+     * @return $this
+     */
+    public function setAdvisoryDetail(ShipmentAdvisoryDetail $advisoryDetail)
+    {
+        $this->values['AdvisoryDetail'] = $advisoryDetail;
         return $this;
     }
 }

@@ -28,17 +28,22 @@ $validatePostalRequest->Address->CountryCode = 'US';
 $validatePostalRequest->CarrierCode = SimpleType\CarrierCodeType::_FDXE;
 
 // Get Validate Postal reply.
-$countryServiceRequest = new Request();
-$validatePostalReply = $countryServiceRequest->getValidatePostalReply($validatePostalRequest);
+$request = new Request();
+try {
+    $validatePostalReply = $request->getValidatePostalReply($validatePostalRequest);
 
-echo '<h1>Postal Detail</h1>';
-echo "<h2>Country Code: {$validatePostalReply->PostalDetail->CountryCode}</h2>";
-echo "<h2>State or Province Code: {$validatePostalReply->PostalDetail->StateOrProvinceCode}</h2>";
-echo "<h2>City First Initials: {$validatePostalReply->PostalDetail->CityFirstInitials}</h2>";
-echo "<h2>Cleaned Postal Code: {$validatePostalReply->PostalDetail->CleanedPostalCode}</h2>";
-echo '<h2> Location Descriptions: </h2>';
-if (!empty($validatePostalReply->PostalDetail->LocationDescriptions)) {
-    foreach ($validatePostalReply->PostalDetail->LocationDescriptions as $locationDescription) {
-        var_dump($locationDescription->toArray());
+    echo '<h1>Postal Detail</h1>';
+    echo "<h2>Country Code: {$validatePostalReply->PostalDetail->CountryCode}</h2>";
+    echo "<h2>State or Province Code: {$validatePostalReply->PostalDetail->StateOrProvinceCode}</h2>";
+    echo "<h2>City First Initials: {$validatePostalReply->PostalDetail->CityFirstInitials}</h2>";
+    echo "<h2>Cleaned Postal Code: {$validatePostalReply->PostalDetail->CleanedPostalCode}</h2>";
+    echo '<h2> Location Descriptions: </h2>';
+    if (!empty($validatePostalReply->PostalDetail->LocationDescriptions)) {
+        foreach ($validatePostalReply->PostalDetail->LocationDescriptions as $locationDescription) {
+            var_dump($locationDescription->toArray());
+        }
     }
+} catch (\Exception $e) {
+    echo $e->getMessage();
+    echo $request->getSoapClient()->__getLastResponse();
 }

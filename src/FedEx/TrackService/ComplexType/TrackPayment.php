@@ -13,6 +13,7 @@ use FedEx\AbstractComplexType;
  * @property \FedEx\TrackService\SimpleType\TrackChargesPaymentClassificationType|string $Classification
  * @property \FedEx\TrackService\SimpleType\TrackPaymentType|string $Type
  * @property string $Description
+ * @property string $PayorAccountNumber
 
  */
 class TrackPayment extends AbstractComplexType
@@ -57,6 +58,18 @@ class TrackPayment extends AbstractComplexType
     public function setDescription($description)
     {
         $this->values['Description'] = $description;
+        return $this;
+    }
+
+    /**
+     * Set PayorAccountNumber
+     *
+     * @param string $payorAccountNumber
+     * @return $this
+     */
+    public function setPayorAccountNumber($payorAccountNumber)
+    {
+        $this->values['PayorAccountNumber'] = $payorAccountNumber;
         return $this;
     }
 }

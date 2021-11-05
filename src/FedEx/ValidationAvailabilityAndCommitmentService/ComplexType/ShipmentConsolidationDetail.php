@@ -18,6 +18,7 @@ use FedEx\AbstractComplexType;
  * @property Address $ConsolidationOriginAddress
  * @property ShipmentInternationalDistributionDetail $InternationalDistributionDetail
  * @property ShipmentTransborderDistributionDetail $TransborderDistributionDetail
+ * @property RequestedDistributionLocation[] $DistributionLocations
 
  */
 class ShipmentConsolidationDetail extends AbstractComplexType
@@ -122,6 +123,18 @@ class ShipmentConsolidationDetail extends AbstractComplexType
     public function setTransborderDistributionDetail(ShipmentTransborderDistributionDetail $transborderDistributionDetail)
     {
         $this->values['TransborderDistributionDetail'] = $transborderDistributionDetail;
+        return $this;
+    }
+
+    /**
+     * FOR INTERNAL FEDEX USE ONLY: Identifies the distribution facility where this shipment will be de-consolidated and distributed.
+     *
+     * @param RequestedDistributionLocation[] $distributionLocations
+     * @return $this
+     */
+    public function setDistributionLocations(array $distributionLocations)
+    {
+        $this->values['DistributionLocations'] = $distributionLocations;
         return $this;
     }
 }

@@ -13,6 +13,7 @@ use FedEx\AbstractComplexType;
  * @property string $AuthorizationId
  * @property \FedEx\ShipService\SimpleType\CreditCardAuthorizationType|string $AuthorizationType
  * @property CreditFraudDetectionDetail $FraudDetectionDetail
+ * @property string $PayorAuthenticationSessionId
  * @property CreditCardTransactionAttributesDetail $AttributesDetail
 
  */
@@ -58,6 +59,18 @@ class CreditCardTransactionDetail extends AbstractComplexType
     public function setFraudDetectionDetail(CreditFraudDetectionDetail $fraudDetectionDetail)
     {
         $this->values['FraudDetectionDetail'] = $fraudDetectionDetail;
+        return $this;
+    }
+
+    /**
+     * Set PayorAuthenticationSessionId
+     *
+     * @param string $payorAuthenticationSessionId
+     * @return $this
+     */
+    public function setPayorAuthenticationSessionId($payorAuthenticationSessionId)
+    {
+        $this->values['PayorAuthenticationSessionId'] = $payorAuthenticationSessionId;
         return $this;
     }
 

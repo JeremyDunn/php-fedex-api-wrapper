@@ -13,9 +13,9 @@ use FedEx\AbstractComplexType;
  * @property boolean $UsDomestic
  * @property \FedEx\OpenShipService\SimpleType\CarrierCodeType|string $CarrierCode
  * @property TrackingId $MasterTrackingId
- * @property string $ServiceTypeDescription
  * @property ServiceDescription $ServiceDescription
- * @property string $PackagingDescription
+ * @property PackagingDescription $PackagingDescription
+ * @property SpecialServiceDescription[] $SpecialServiceDescriptions
  * @property ShipmentOperationalDetail $OperationalDetail
  * @property PendingShipmentAccessDetail $AccessDetail
  * @property CompletedTagDetail $TagDetail
@@ -79,18 +79,6 @@ class CompletedShipmentDetail extends AbstractComplexType
     }
 
     /**
-     * DEPRECATED as of 201801: Use serviceDescription instead.
-     *
-     * @param string $serviceTypeDescription
-     * @return $this
-     */
-    public function setServiceTypeDescription($serviceTypeDescription)
-    {
-        $this->values['ServiceTypeDescription'] = $serviceTypeDescription;
-        return $this;
-    }
-
-    /**
      * Set ServiceDescription
      *
      * @param ServiceDescription $serviceDescription
@@ -105,12 +93,24 @@ class CompletedShipmentDetail extends AbstractComplexType
     /**
      * Set PackagingDescription
      *
-     * @param string $packagingDescription
+     * @param PackagingDescription $packagingDescription
      * @return $this
      */
-    public function setPackagingDescription($packagingDescription)
+    public function setPackagingDescription(PackagingDescription $packagingDescription)
     {
         $this->values['PackagingDescription'] = $packagingDescription;
+        return $this;
+    }
+
+    /**
+     * Set SpecialServiceDescriptions
+     *
+     * @param SpecialServiceDescription[] $specialServiceDescriptions
+     * @return $this
+     */
+    public function setSpecialServiceDescriptions(array $specialServiceDescriptions)
+    {
+        $this->values['SpecialServiceDescriptions'] = $specialServiceDescriptions;
         return $this;
     }
 

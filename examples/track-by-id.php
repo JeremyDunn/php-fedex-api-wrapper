@@ -1,5 +1,5 @@
 <?php
-
+//remember to copy example.credentials.php as credentials.php replace 'FEDEX_KEY', 'FEDEX_PASSWORD', 'FEDEX_ACCOUNT_NUMBER', and 'FEDEX_METER_NUMBER'
 require_once 'credentials.php';
 require_once 'bootstrap.php';
 
@@ -22,7 +22,7 @@ $trackRequest->ClientDetail->MeterNumber = FEDEX_METER_NUMBER;
 
 // Version
 $trackRequest->Version->ServiceId = 'trck';
-$trackRequest->Version->Major = 19;
+$trackRequest->Version->Major = 20;
 $trackRequest->Version->Intermediate = 0;
 $trackRequest->Version->Minor = 0;
 
@@ -41,6 +41,10 @@ $trackRequest->SelectionDetails[1]->PackageIdentifier->Value = $trackingId2;
 $trackRequest->SelectionDetails[1]->PackageIdentifier->Type = SimpleType\TrackIdentifierType::_TRACKING_NUMBER_OR_DOORTAG;
 
 $request = new Request();
-$trackReply = $request->getTrackReply($trackRequest);
-
-var_dump($trackReply);
+try {
+    $trackReply = $request->getTrackReply($trackRequest);
+    var_dump($trackReply);
+} catch (\Exception $e) {
+    echo $e->getMessage();
+    echo $request->getSoapClient()->__getLastResponse();
+}

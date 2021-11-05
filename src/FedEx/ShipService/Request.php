@@ -15,7 +15,7 @@ class Request extends AbstractRequest
     const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/ship';
     const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/ship';
 
-    protected static $wsdlFileName = 'ShipService_v26.wsdl';
+    protected static $wsdlFileName = 'ShipService_v28.wsdl';
             
     /**
      * Sends the ProcessTagRequest and returns the response

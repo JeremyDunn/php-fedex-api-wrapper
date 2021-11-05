@@ -32,7 +32,7 @@ class GenerateCode extends Console\Command\Command
      * @param InputInterface $input
      * @param OutputInterface $output
      * @throws \Exception
-     * @return void
+     * @return int
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
@@ -48,8 +48,10 @@ class GenerateCode extends Console\Command\Command
             throw new \Exception('Cannot write to directory: ' . $fedexSrcDir);
         }
 
-        //RateRequest
-        $wsdlPath = $fedexSrcDir . '/_wsdl/RateService_v28.wsdl';
+        /**
+         * RateService v31
+         */
+        $wsdlPath = $fedexSrcDir . '/_wsdl/RateService_v31.wsdl';
 
         $baseNamespace = 'FedEx\RateService';
         $subpackageName = 'Rate Service';
@@ -69,7 +71,9 @@ class GenerateCode extends Console\Command\Command
         $generateComplexTypes = new CodeGenerator\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subpackageName);
         $generateComplexTypes->run();
 
-        //PackageMovementInformationService
+        /**
+         * PackageMovementInformationService v5
+         */
         $wsdlPath = $fedexSrcDir . '/_wsdl/PackageMovementInformationService_v5.wsdl';
 
         $baseNamespace = 'FedEx\PackageMovementInformationService';
@@ -90,9 +94,10 @@ class GenerateCode extends Console\Command\Command
         $generateComplexTypes = new CodeGenerator\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subpackageName);
         $generateComplexTypes->run();
 
-
-        //TrackService
-        $wsdlPath = $fedexSrcDir . '/_wsdl/TrackService_v19.wsdl';
+        /**
+         * TrackService v20
+         */
+        $wsdlPath = $fedexSrcDir . '/_wsdl/TrackService_v20.wsdl';
 
         $baseNamespace = 'FedEx\TrackService';
         $subPackageName = 'Track Service';
@@ -112,8 +117,9 @@ class GenerateCode extends Console\Command\Command
         $generateComplexTypes = new CodeGenerator\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subpackageName);
         $generateComplexTypes->run();
 
-
-        //AddressValidationService
+        /**
+         * AddressValidationService v4
+         */
         $wsdlPath = $fedexSrcDir . '/_wsdl/AddressValidationService_v4.wsdl';
 
         $baseNamespace = 'FedEx\AddressValidationService';
@@ -134,8 +140,9 @@ class GenerateCode extends Console\Command\Command
         $generateComplexTypes = new CodeGenerator\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
         $generateComplexTypes->run();
 
-
-        //LocationsService
+        /**
+         * LocationsService v12
+         */
         $wsdlPath = $fedexSrcDir . '/_wsdl/LocationsService_v12.wsdl';
 
         $baseNamespace = 'FedEx\LocationsService';
@@ -156,9 +163,10 @@ class GenerateCode extends Console\Command\Command
         $generateComplexTypes = new CodeGenerator\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
         $generateComplexTypes->run();
 
-
-        //ShipService
-        $wsdlPath = $fedexSrcDir . '/_wsdl/ShipService_v26.wsdl';
+        /**
+         * ShipService v28
+         */
+        $wsdlPath = $fedexSrcDir . '/_wsdl/ShipService_v28.wsdl';
 
         $baseNamespace = 'FedEx\ShipService';
         $subPackageName = 'Ship Service';
@@ -178,8 +186,9 @@ class GenerateCode extends Console\Command\Command
         $generateComplexTypes = new CodeGenerator\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
         $generateComplexTypes->run();
 
-
-        //CourierDispatchService
+        /**
+         * CourierDispatchService v3
+         */
         $wsdlPath = $fedexSrcDir . '/_wsdl/CourierDispatchService_v3.wsdl';
 
         $baseNamespace = 'FedEx\CourierDispatchService';
@@ -200,8 +209,9 @@ class GenerateCode extends Console\Command\Command
         $generateComplexTypes = new CodeGenerator\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
         $generateComplexTypes->run();
 
-
-        //CloseService
+        /**
+         * CloseService v5
+         */
         $wsdlPath = $fedexSrcDir . '/_wsdl/CloseService_v5.wsdl';
 
         $baseNamespace = 'FedEx\CloseService';
@@ -221,7 +231,9 @@ class GenerateCode extends Console\Command\Command
         $generateComplexTypes = new CodeGenerator\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
         $generateComplexTypes->run();
 
-        //ReturnTagService
+        /**
+         * ReturnTagService v1
+         */
         $wsdlPath = $fedexSrcDir . '/_wsdl/ReturnTagService_v1.wsdl';
 
         $baseNamespace = 'FedEx\ReturnTagService';
@@ -245,9 +257,10 @@ class GenerateCode extends Console\Command\Command
         $generateComplexTypes = new CodeGenerator\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
         $generateComplexTypes->run();
 
-
-        //UploadDocumentService
-        $wsdlPath = $fedexSrcDir . '/_wsdl/UploadDocumentService_v11.wsdl';
+        /**
+         * UploadDocumentService v19
+         */
+        $wsdlPath = $fedexSrcDir . '/_wsdl/UploadDocumentService_v19.wsdl';
 
         $baseNamespace = 'FedEx\UploadDocumentService';
         $subPackageName = 'Upload Document Service';
@@ -267,8 +280,10 @@ class GenerateCode extends Console\Command\Command
         $generateComplexTypes = new CodeGenerator\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
         $generateComplexTypes->run();
 
-        //PickupService
-        $wsdlPath = $fedexSrcDir . '/_wsdl/PickupService_v22.wsdl';
+        /**
+         * PickupService v23
+         */
+        $wsdlPath = $fedexSrcDir . '/_wsdl/PickupService_v23.wsdl';
 
         $baseNamespace = 'FedEx\PickupService';
         $subPackageName = 'Pickup Service';
@@ -277,7 +292,6 @@ class GenerateCode extends Console\Command\Command
         $pathToRequestClassFile = $fedexSrcDir . '/PickupService/Request.php';
         $generateRequestClassFile = new CodeGenerator\GenerateRequestClass($pathToRequestClassFile, $wsdlPath, $baseNamespace, $subPackageName);
         $generateRequestClassFile->run();
-
 
         //generate SimpleType classes
         $exportPath = $fedexSrcDir . '/PickupService/SimpleType';
@@ -290,9 +304,9 @@ class GenerateCode extends Console\Command\Command
         $generateComplexTypes->run();
 
         /*
-         * Open Ship Service (v11)
+         * Open Ship Service v20
          */
-        $wsdlPath = $fedexSrcDir . '/_wsdl/OpenshipService_v15.wsdl';
+        $wsdlPath = $fedexSrcDir . '/_wsdl/OpenshipService_v20.wsdl';
 
         $baseNamespace = 'FedEx\OpenShipService';
         $subPackageName = 'OpenShip Service';
@@ -313,9 +327,9 @@ class GenerateCode extends Console\Command\Command
         $generateComplexTypes->run();
 
         /*
-         * Validation and Commitment Service (v6)
+         * Validation and Commitment Service v17
          */
-        $wsdlPath = $fedexSrcDir . '/_wsdl/ValidationAvailabilityAndCommitmentService_v14.wsdl';
+        $wsdlPath = $fedexSrcDir . '/_wsdl/ValidationAvailabilityAndCommitmentService_v17.wsdl';
 
         $baseNamespace = 'FedEx\ValidationAvailabilityAndCommitmentService';
         $subPackageName = 'Validation Availability And Commitment Service Service';
@@ -336,7 +350,7 @@ class GenerateCode extends Console\Command\Command
         $generateComplexTypes->run();
 
         /*
-         * ASYNC Service (v4)
+         * ASYNC Service v4
          */
         $wsdlPath = $fedexSrcDir . '/_wsdl/ASYNCService_v4.wsdl';
 
@@ -359,7 +373,7 @@ class GenerateCode extends Console\Command\Command
         $generateComplexTypes->run();
 
         /*
-         * In Flight Shipment Service (v1)
+         * In Flight Shipment Service v1
          */
         $wsdlPath = $fedexSrcDir . '/_wsdl/InFlightShipmentService_v1.wsdl';
 
@@ -382,7 +396,7 @@ class GenerateCode extends Console\Command\Command
         $generateComplexTypes->run();
 
         /*
-         * List Dangerous Goods Service (v1)
+         * List Dangerous Goods Service v1
          */
         $wsdlPath = $fedexSrcDir . '/_wsdl/DGLD_v1.wsdl';
 
@@ -405,7 +419,7 @@ class GenerateCode extends Console\Command\Command
         $generateComplexTypes->run();
 
         /*
-         * Dangerous Goods Data Service (v1)
+         * Dangerous Goods Data Service v3
          */
         $wsdlPath = $fedexSrcDir . '/_wsdl/DGDS_v3.wsdl';
 
@@ -428,7 +442,7 @@ class GenerateCode extends Console\Command\Command
         $generateComplexTypes->run();
 
         /*
-         * Country Service (v8)
+         * Country Service v8
          */
         $wsdlPath = $fedexSrcDir . '/_wsdl/CountryService_v8.wsdl';
 
@@ -449,5 +463,7 @@ class GenerateCode extends Console\Command\Command
         $exportPath = $fedexSrcDir . '/CountryService/ComplexType';
         $generateComplexTypes = new CodeGenerator\GenerateComplexTypeClasses($exportPath, $wsdlPath, $baseNamespace, $subPackageName);
         $generateComplexTypes->run();
+
+        return 0;
     }
 }

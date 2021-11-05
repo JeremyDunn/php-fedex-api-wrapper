@@ -15,6 +15,7 @@ use FedEx\AbstractComplexType;
  * @property int $GroupNumber
  * @property \FedEx\OpenShipService\SimpleType\OversizeClassType|string $OversizeClass
  * @property PackageRating $PackageRating
+ * @property SpecialServiceDescription[] $SpecialServiceDescriptions
  * @property PackageOperationalDetail $OperationalDetail
  * @property ShippingDocument $Label
  * @property ShippingDocument[] $PackageDocuments
@@ -58,7 +59,7 @@ class CompletedPackageDetail extends AbstractComplexType
     }
 
     /**
-     * Used with request containing PACKAGE_GROUPS, to identify which group of identical packages was used to produce a reply item.
+     * An identifier of each group of identical packages.
      *
      * @param int $groupNumber
      * @return $this
@@ -90,6 +91,18 @@ class CompletedPackageDetail extends AbstractComplexType
     public function setPackageRating(PackageRating $packageRating)
     {
         $this->values['PackageRating'] = $packageRating;
+        return $this;
+    }
+
+    /**
+     * Set SpecialServiceDescriptions
+     *
+     * @param SpecialServiceDescription[] $specialServiceDescriptions
+     * @return $this
+     */
+    public function setSpecialServiceDescriptions(array $specialServiceDescriptions)
+    {
+        $this->values['SpecialServiceDescriptions'] = $specialServiceDescriptions;
         return $this;
     }
 

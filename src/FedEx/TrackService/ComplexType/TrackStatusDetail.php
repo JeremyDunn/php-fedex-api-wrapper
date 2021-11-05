@@ -15,6 +15,7 @@ use FedEx\AbstractComplexType;
  * @property string $Description
  * @property Address $Location
  * @property TrackStatusAncillaryDetail[] $AncillaryDetails
+ * @property TrackDelayDetail $DelayDetail
 
  */
 class TrackStatusDetail extends AbstractComplexType
@@ -83,6 +84,18 @@ class TrackStatusDetail extends AbstractComplexType
     public function setAncillaryDetails(array $ancillaryDetails)
     {
         $this->values['AncillaryDetails'] = $ancillaryDetails;
+        return $this;
+    }
+
+    /**
+     * Set DelayDetail
+     *
+     * @param TrackDelayDetail $delayDetail
+     * @return $this
+     */
+    public function setDelayDetail(TrackDelayDetail $delayDetail)
+    {
+        $this->values['DelayDetail'] = $delayDetail;
         return $this;
     }
 }

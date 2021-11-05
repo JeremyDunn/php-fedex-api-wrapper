@@ -13,7 +13,6 @@ use FedEx\AbstractComplexType;
  * @property \FedEx\PickupService\SimpleType\PendingShipmentType|string $Type
  * @property string $ExpirationDate
  * @property EMailLabelDetail $EmailLabelDetail
- * @property PendingShipmentProcessingOptionsRequested $ProcessingOptions
  * @property RecommendedDocumentSpecification $RecommendedDocumentSpecification
  * @property UploadDocumentReferenceDetail[] $DocumentReferences
 
@@ -60,18 +59,6 @@ class PendingShipmentDetail extends AbstractComplexType
     public function setEmailLabelDetail(EMailLabelDetail $emailLabelDetail)
     {
         $this->values['EmailLabelDetail'] = $emailLabelDetail;
-        return $this;
-    }
-
-    /**
-     * Set ProcessingOptions
-     *
-     * @param PendingShipmentProcessingOptionsRequested $processingOptions
-     * @return $this
-     */
-    public function setProcessingOptions(PendingShipmentProcessingOptionsRequested $processingOptions)
-    {
-        $this->values['ProcessingOptions'] = $processingOptions;
         return $this;
     }
 

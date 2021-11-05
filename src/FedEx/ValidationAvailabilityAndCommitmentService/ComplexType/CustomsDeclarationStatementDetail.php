@@ -11,7 +11,6 @@ use FedEx\AbstractComplexType;
  * @subpackage  Validation Availability And Commitment Service Service
  *
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\CustomsDeclarationStatementType|string[] $Types
- * @property NaftaLowValueStatementDetail $NaftaLowValueStatementDetail
 
  */
 class CustomsDeclarationStatementDetail extends AbstractComplexType
@@ -32,18 +31,6 @@ class CustomsDeclarationStatementDetail extends AbstractComplexType
     public function setTypes(array $types)
     {
         $this->values['Types'] = $types;
-        return $this;
-    }
-
-    /**
-     * Specifies the NAFTA low value statement information.
-     *
-     * @param NaftaLowValueStatementDetail $naftaLowValueStatementDetail
-     * @return $this
-     */
-    public function setNaftaLowValueStatementDetail(NaftaLowValueStatementDetail $naftaLowValueStatementDetail)
-    {
-        $this->values['NaftaLowValueStatementDetail'] = $naftaLowValueStatementDetail;
         return $this;
     }
 }

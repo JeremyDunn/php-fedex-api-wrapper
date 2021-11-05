@@ -16,10 +16,11 @@ use FedEx\AbstractComplexType;
  * @property VersionId $Version
  * @property string $JobId
  * @property AsynchronousProcessingResultsDetail $AsynchronousProcessingResults
- * @property \FedEx\OpenShipService\SimpleType\ServiceType|string $ServiceType
+ * @property string $ServiceType
  * @property CompletedShipmentDetail $CompletedShipmentDetail
  * @property ShippingDocument[] $ErrorLabels
  * @property string $Index
+ * @property ShipmentAdvisoryDetail $AdvisoryDetail
 
  */
 class CreateOpenShipmentReply extends AbstractComplexType
@@ -106,7 +107,7 @@ class CreateOpenShipmentReply extends AbstractComplexType
     /**
      * Set ServiceType
      *
-     * @param \FedEx\OpenShipService\SimpleType\ServiceType|string $serviceType
+     * @param string $serviceType
      * @return $this
      */
     public function setServiceType($serviceType)
@@ -148,6 +149,18 @@ class CreateOpenShipmentReply extends AbstractComplexType
     public function setIndex($index)
     {
         $this->values['Index'] = $index;
+        return $this;
+    }
+
+    /**
+     * Set AdvisoryDetail
+     *
+     * @param ShipmentAdvisoryDetail $advisoryDetail
+     * @return $this
+     */
+    public function setAdvisoryDetail(ShipmentAdvisoryDetail $advisoryDetail)
+    {
+        $this->values['AdvisoryDetail'] = $advisoryDetail;
         return $this;
     }
 }

@@ -38,13 +38,11 @@ $closeWithDocumentsRequest->ReprintCloseDate = date('c');
 // Manifest reference detail.
 $closeWithDocumentsRequest->CloseDocumentSpecification->CloseDocumentTypes = [SimpleType\CloseDocumentType::_MANIFEST];
 
-
-$closeSerivceRequest = new Request();
-$closeWithDocumentsReply = $closeSerivceRequest->getCloseWithDocumentsReply($closeWithDocumentsRequest);
-
-var_dump($closeWithDocumentsReply);
-
-
-
-
-
+$request = new Request();
+try {
+    $closeWithDocumentsReply = $request->getCloseWithDocumentsReply($closeWithDocumentsRequest);
+    var_dump($closeWithDocumentsReply);
+} catch (\Exception $e) {
+    echo $e->getMessage();
+    echo $request->getSoapClient()->__getLastResponse();
+}

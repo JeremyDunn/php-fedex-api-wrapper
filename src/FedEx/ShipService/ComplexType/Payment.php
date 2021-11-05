@@ -12,6 +12,7 @@ use FedEx\AbstractComplexType;
  *
  * @property \FedEx\ShipService\SimpleType\PaymentType|string $PaymentType
  * @property Payor $Payor
+ * @property EPaymentDetail $EPaymentDetail
  * @property CreditCard $CreditCard
  * @property CreditCardTransactionDetail $CreditCardTransactionDetail
  * @property Money $Amount
@@ -47,6 +48,18 @@ class Payment extends AbstractComplexType
     public function setPayor(Payor $payor)
     {
         $this->values['Payor'] = $payor;
+        return $this;
+    }
+
+    /**
+     * FOR FEDEX INTERNAL USE ONLY
+     *
+     * @param EPaymentDetail $ePaymentDetail
+     * @return $this
+     */
+    public function setEPaymentDetail(EPaymentDetail $ePaymentDetail)
+    {
+        $this->values['EPaymentDetail'] = $ePaymentDetail;
         return $this;
     }
 

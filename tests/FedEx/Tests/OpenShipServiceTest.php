@@ -80,7 +80,6 @@ class OpenShipServiceTest extends TestCase
         $mockSoapClient->method('getConfirmConsolidationResults')->will($this->returnValue(ComplexType\GetConfirmConsolidationResultsReply::class));
         $mockSoapClient->method('modifyOpenShipment')->will($this->returnValue(ComplexType\ModifyOpenShipmentReply::class));
         $mockSoapClient->method('confirmConsolidation')->will($this->returnValue(ComplexType\ConfirmConsolidationReply::class));
-        $mockSoapClient->method('createPendingShipment')->will($this->returnValue(CreatePendingShipmentReply::class));
         $mockSoapClient->method('getModifyOpenShipmentResults')->will($this->returnValue(ComplexType\ModifyOpenShipmentReply::class));
         $mockSoapClient->method('deletePackagesFromOpenShipment')->will($this->returnValue(ComplexType\DeletePackagesFromOpenShipmentReply::class));
         $mockSoapClient->method('reprintShippingDocuments')->will($this->returnValue(ComplexType\ReprintShippingDocumentsReply::class));
@@ -107,7 +106,6 @@ class OpenShipServiceTest extends TestCase
         $this->assertEquals(ComplexType\ConfirmOpenShipmentReply::class, $request->getConfirmOpenShipmentReply($confirmOpenShipmentRequest, true));
         $this->assertEquals(ComplexType\ModifyOpenShipmentReply::class, $request->getModifyOpenShipmentReply($modifyOpenShipmentRequest, true));
         $this->assertEquals(ComplexType\ConfirmConsolidationReply::class, $request->getConfirmConsolidationReply($confirmConsolidationRequest, true));
-        $this->assertEquals(CreatePendingShipmentReply::class, $request->getCreatePendingShipmentReply($createOpenShipmentRequest, true));
         $this->assertEquals(ComplexType\ModifyOpenShipmentReply::class, $request->getModifyOpenShipmentReply($modifyOpenShipmentRequest, true));
         $this->assertEquals(ComplexType\DeletePackagesFromOpenShipmentReply::class, $request->getDeletePackagesFromOpenShipmentReply($deletePackagesFromOpenShipmentRequest, true));
         $this->assertEquals(ComplexType\ReprintShippingDocumentsReply::class, $request->getReprintShippingDocumentsReply($reprintShipmentDocumentsRequest, true));

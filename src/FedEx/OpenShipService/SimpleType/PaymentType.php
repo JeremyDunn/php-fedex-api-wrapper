@@ -14,6 +14,7 @@ class PaymentType extends AbstractSimpleType
 {
     const _ACCOUNT = 'ACCOUNT';
     const _COLLECT = 'COLLECT';
+    const _EPAYMENT = 'EPAYMENT';
     const _RECIPIENT = 'RECIPIENT';
     const _SENDER = 'SENDER';
     const _THIRD_PARTY = 'THIRD_PARTY';

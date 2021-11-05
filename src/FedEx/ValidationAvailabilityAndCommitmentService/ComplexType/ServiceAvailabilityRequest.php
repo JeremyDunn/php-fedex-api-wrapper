@@ -20,6 +20,7 @@ use FedEx\AbstractComplexType;
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\CarrierCodeType|string $CarrierCode
  * @property string $Service
  * @property string $Packaging
+ * @property int $PackageCount
 
  */
 class ServiceAvailabilityRequest extends AbstractComplexType
@@ -148,6 +149,18 @@ class ServiceAvailabilityRequest extends AbstractComplexType
     public function setPackaging($packaging)
     {
         $this->values['Packaging'] = $packaging;
+        return $this;
+    }
+
+    /**
+     * Set PackageCount
+     *
+     * @param int $packageCount
+     * @return $this
+     */
+    public function setPackageCount($packageCount)
+    {
+        $this->values['PackageCount'] = $packageCount;
         return $this;
     }
 }

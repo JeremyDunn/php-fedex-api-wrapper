@@ -14,11 +14,12 @@ use FedEx\AbstractComplexType;
  * @property NotificationContentSpecification $NotificationContentSpecification
  * @property CertificateOfOriginDetail $CertificateOfOrigin
  * @property CommercialInvoiceDetail $CommercialInvoiceDetail
+ * @property UsmcaCommercialInvoiceCertificationOfOriginDetail $UsmcaCommercialInvoiceCertificationOfOriginDetail
  * @property CustomDocumentDetail[] $CustomPackageDocumentDetail
  * @property CustomDocumentDetail[] $CustomShipmentDocumentDetail
  * @property ExportDeclarationDetail $ExportDeclarationDetail
  * @property GeneralAgencyAgreementDetail $GeneralAgencyAgreementDetail
- * @property NaftaCertificateOfOriginDetail $NaftaCertificateOfOriginDetail
+ * @property UsmcaCertificationOfOriginDetail $UsmcaCertificationOfOriginDetail
  * @property Op900Detail $Op900Detail
  * @property DangerousGoodsShippersDeclarationDetail $DangerousGoodsShippersDeclarationDetail
  * @property FreightAddressLabelDetail $FreightAddressLabelDetail
@@ -84,6 +85,18 @@ class ShippingDocumentSpecification extends AbstractComplexType
     }
 
     /**
+     * Set UsmcaCommercialInvoiceCertificationOfOriginDetail
+     *
+     * @param UsmcaCommercialInvoiceCertificationOfOriginDetail $usmcaCommercialInvoiceCertificationOfOriginDetail
+     * @return $this
+     */
+    public function setUsmcaCommercialInvoiceCertificationOfOriginDetail(UsmcaCommercialInvoiceCertificationOfOriginDetail $usmcaCommercialInvoiceCertificationOfOriginDetail)
+    {
+        $this->values['UsmcaCommercialInvoiceCertificationOfOriginDetail'] = $usmcaCommercialInvoiceCertificationOfOriginDetail;
+        return $this;
+    }
+
+    /**
      * Specifies the production of each package-level custom document (the same specification is used for all packages).
      *
      * @param CustomDocumentDetail[] $customPackageDocumentDetail
@@ -132,14 +145,14 @@ class ShippingDocumentSpecification extends AbstractComplexType
     }
 
     /**
-     * Set NaftaCertificateOfOriginDetail
+     * Set UsmcaCertificationOfOriginDetail
      *
-     * @param NaftaCertificateOfOriginDetail $naftaCertificateOfOriginDetail
+     * @param UsmcaCertificationOfOriginDetail $usmcaCertificationOfOriginDetail
      * @return $this
      */
-    public function setNaftaCertificateOfOriginDetail(NaftaCertificateOfOriginDetail $naftaCertificateOfOriginDetail)
+    public function setUsmcaCertificationOfOriginDetail(UsmcaCertificationOfOriginDetail $usmcaCertificationOfOriginDetail)
     {
-        $this->values['NaftaCertificateOfOriginDetail'] = $naftaCertificateOfOriginDetail;
+        $this->values['UsmcaCertificationOfOriginDetail'] = $usmcaCertificationOfOriginDetail;
         return $this;
     }
 

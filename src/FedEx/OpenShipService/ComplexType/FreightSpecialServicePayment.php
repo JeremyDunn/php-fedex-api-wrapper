@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  *
- * @property \FedEx\OpenShipService\SimpleType\ShipmentSpecialServiceType|string $SpecialService
+ * @property string $SpecialService
  * @property \FedEx\OpenShipService\SimpleType\FreightShipmentRoleType|string $PaymentType
 
  */
@@ -26,7 +26,7 @@ class FreightSpecialServicePayment extends AbstractComplexType
     /**
      * Identifies the special service.
      *
-     * @param \FedEx\OpenShipService\SimpleType\ShipmentSpecialServiceType|string $specialService
+     * @param string $specialService
      * @return $this
      */
     public function setSpecialService($specialService)

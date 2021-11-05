@@ -78,7 +78,7 @@ class ShippingDocumentFormat extends AbstractComplexType
     }
 
     /**
-     * For those shipping document types which have both a "form" and "instructions" component (e.g. NAFTA Certificate of Origin and General Agency Agreement), this field indicates whether to provide the instructions.
+     * For those shipping document types which have both a "form" and "instructions" component (e.g. General Agency Agreement), this field indicates whether to provide the instructions.
      *
      * @param boolean $provideInstructions
      * @return $this

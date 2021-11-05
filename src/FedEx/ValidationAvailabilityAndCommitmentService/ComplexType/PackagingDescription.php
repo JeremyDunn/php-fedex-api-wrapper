@@ -10,6 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  *
+ * @property string $PackagingId
  * @property string $PackagingType
  * @property string $Code
  * @property ProductName[] $Names
@@ -25,6 +26,18 @@ class PackagingDescription extends AbstractComplexType
      * @var string
      */
     protected $name = 'PackagingDescription';
+
+    /**
+     * FOR FEDEX INTERNAL USE ONLY: Designates the packaging ID.
+     *
+     * @param string $packagingId
+     * @return $this
+     */
+    public function setPackagingId($packagingId)
+    {
+        $this->values['PackagingId'] = $packagingId;
+        return $this;
+    }
 
     /**
      * Set PackagingType

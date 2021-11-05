@@ -18,6 +18,7 @@ use FedEx\AbstractComplexType;
  * @property AsynchronousProcessingResultsDetail $AsynchronousProcessingResults
  * @property CompletedShipmentDetail $CompletedShipmentDetail
  * @property ShippingDocument[] $ErrorLabels
+ * @property ShipmentAdvisoryDetail $AdvisoryDetail
 
  */
 class ModifyOpenShipmentReply extends AbstractComplexType
@@ -122,6 +123,18 @@ class ModifyOpenShipmentReply extends AbstractComplexType
     public function setErrorLabels(array $errorLabels)
     {
         $this->values['ErrorLabels'] = $errorLabels;
+        return $this;
+    }
+
+    /**
+     * Set AdvisoryDetail
+     *
+     * @param ShipmentAdvisoryDetail $advisoryDetail
+     * @return $this
+     */
+    public function setAdvisoryDetail(ShipmentAdvisoryDetail $advisoryDetail)
+    {
+        $this->values['AdvisoryDetail'] = $advisoryDetail;
         return $this;
     }
 }

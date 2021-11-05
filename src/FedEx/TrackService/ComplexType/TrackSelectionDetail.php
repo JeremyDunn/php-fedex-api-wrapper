@@ -14,6 +14,7 @@ use FedEx\AbstractComplexType;
  * @property \FedEx\TrackService\SimpleType\OperatingCompanyType|string $OperatingCompany
  * @property TrackPackageIdentifier $PackageIdentifier
  * @property string $TrackingNumberUniqueIdentifier
+ * @property string $FormId
  * @property string $ShipDateRangeBegin
  * @property string $ShipDateRangeEnd
  * @property string $ShipmentAccountNumber
@@ -77,6 +78,18 @@ class TrackSelectionDetail extends AbstractComplexType
     public function setTrackingNumberUniqueIdentifier($trackingNumberUniqueIdentifier)
     {
         $this->values['TrackingNumberUniqueIdentifier'] = $trackingNumberUniqueIdentifier;
+        return $this;
+    }
+
+    /**
+     * FOR FEDEX INTERNAL USE ONLY: This is only used to identify the appropriate backend source of rating data - particularly for specific acquisition systems.
+     *
+     * @param string $formId
+     * @return $this
+     */
+    public function setFormId($formId)
+    {
+        $this->values['FormId'] = $formId;
         return $this;
     }
 

@@ -29,7 +29,9 @@ $retrieveJobResultsRequest->JobId = 'your job id';
 $request = new Request();
 try {
     $retrieveJobResultsReply = $request->getRetrieveJobResultsReply($retrieveJobResultsRequest);
+    var_dump($retrieveJobResultsReply);
 } catch (\Exception $e) {
+    echo $e->getMessage();
     echo $request->getSoapClient()->__getLastResponse();
 }
 

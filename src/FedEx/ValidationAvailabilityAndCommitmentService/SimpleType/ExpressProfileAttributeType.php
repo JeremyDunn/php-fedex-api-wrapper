@@ -1,0 +1,34 @@
+<?php
+namespace FedEx\ValidationAvailabilityAndCommitmentService\SimpleType;
+
+use FedEx\AbstractSimpleType;
+
+/**
+ * ExpressProfileAttributeType
+ *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
+ * @package     PHP FedEx API wrapper
+ * @subpackage  Validation Availability And Commitment Service Service
+ */
+class ExpressProfileAttributeType extends AbstractSimpleType
+{
+    const _ACCEPT_CREDIT = 'ACCEPT_CREDIT';
+    const _EDI_CHILD = 'EDI_CHILD';
+    const _EDI_MASTER = 'EDI_MASTER';
+    const _ELECTRONIC_BILL_PAYMENT_PLAN = 'ELECTRONIC_BILL_PAYMENT_PLAN';
+    const _EXPORT_DECLARATION_FILED_BY_CUSTOMER = 'EXPORT_DECLARATION_FILED_BY_CUSTOMER';
+    const _FEDEX_CAN_CALL_FOR_MARKETING = 'FEDEX_CAN_CALL_FOR_MARKETING';
+    const _FEDEX_FRANCHISEE_ACCOUNT = 'FEDEX_FRANCHISEE_ACCOUNT';
+    const _FEDEX_MARKETING_CORRESPONDENCE_ALLOWED = 'FEDEX_MARKETING_CORRESPONDENCE_ALLOWED';
+    const _GROUND_ELIGIBLE = 'GROUND_ELIGIBLE';
+    const _IMPORT_DECLARATION_FILED_BY_CUSTOMER = 'IMPORT_DECLARATION_FILED_BY_CUSTOMER';
+    const _INSIGHT_VISIBLE = 'INSIGHT_VISIBLE';
+    const _ONLINE_BILLING = 'ONLINE_BILLING';
+    const _PREFERRED_CUSTOMER = 'PREFERRED_CUSTOMER';
+    const _PROOF_OF_DELIVERY_NEEDED = 'PROOF_OF_DELIVERY_NEEDED';
+    const _REGULAR_PICKUP_SCHEDULED = 'REGULAR_PICKUP_SCHEDULED';
+    const _RESTRICTED_COMMODITY_LIMIT_EXEMPT = 'RESTRICTED_COMMODITY_LIMIT_EXEMPT';
+    const _SIGNATURE_ON_FILE = 'SIGNATURE_ON_FILE';
+    const _SIGNATURE_REQUIRED = 'SIGNATURE_REQUIRED';
+    const _VAT_EXEMPT = 'VAT_EXEMPT';
+}

@@ -14,6 +14,9 @@ use FedEx\AbstractComplexType;
  * @property ClientDetail $ClientDetail
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
+ * @property GetAllSpecialServicesProcessingOptionsRequested $ProcessingOptions
+ * @property EnterpriseCustomer $Customer
+ * @property RestrictionsAndPrivilegesPolicyDetail $RestrictionsAndPrivileges
  * @property string $OriginRoutingCode
  * @property string $DestinationRoutingCode
  * @property string $FormId
@@ -75,6 +78,42 @@ class GetAllSpecialServicesRequest extends AbstractComplexType
     public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
+        return $this;
+    }
+
+    /**
+     * FOR FEDEX INTERNAL USE ONLY: These processing options are presently all internal.
+     *
+     * @param GetAllSpecialServicesProcessingOptionsRequested $processingOptions
+     * @return $this
+     */
+    public function setProcessingOptions(GetAllSpecialServicesProcessingOptionsRequested $processingOptions)
+    {
+        $this->values['ProcessingOptions'] = $processingOptions;
+        return $this;
+    }
+
+    /**
+     * FOR FEDEX INTERNAL USE ONLY: Only internal FedEx applications can include customer.
+     *
+     * @param EnterpriseCustomer $customer
+     * @return $this
+     */
+    public function setCustomer(EnterpriseCustomer $customer)
+    {
+        $this->values['Customer'] = $customer;
+        return $this;
+    }
+
+    /**
+     * FOR FEDEX INTERNAL USE ONLY: Restrictions and privileges associated with an entity based on one or more identifiers (for example, account number or unique user id). These restrictions and privileges can be used to determine whether an entity is enabled to perform various operations.
+     *
+     * @param RestrictionsAndPrivilegesPolicyDetail $restrictionsAndPrivileges
+     * @return $this
+     */
+    public function setRestrictionsAndPrivileges(RestrictionsAndPrivilegesPolicyDetail $restrictionsAndPrivileges)
+    {
+        $this->values['RestrictionsAndPrivileges'] = $restrictionsAndPrivileges;
         return $this;
     }
 

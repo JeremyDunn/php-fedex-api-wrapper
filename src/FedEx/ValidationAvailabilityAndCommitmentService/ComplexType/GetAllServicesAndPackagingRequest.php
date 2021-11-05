@@ -14,7 +14,10 @@ use FedEx\AbstractComplexType;
  * @property ClientDetail $ClientDetail
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
+ * @property GetAllServicesAndPackagingProcessingOptionsRequested $ProcessingOptions
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\ServiceOptionType|string[] $VariableOptions
+ * @property EnterpriseCustomer $Customer
+ * @property RestrictionsAndPrivilegesPolicyDetail $RestrictionsAndPrivileges
  * @property string $OriginRoutingCode
  * @property string $DestinationRoutingCode
  * @property string $FormId
@@ -80,6 +83,18 @@ class GetAllServicesAndPackagingRequest extends AbstractComplexType
     }
 
     /**
+     * FOR FEDEX INTERNAL USE ONLY: These processing options are presently all internal.
+     *
+     * @param GetAllServicesAndPackagingProcessingOptionsRequested $processingOptions
+     * @return $this
+     */
+    public function setProcessingOptions(GetAllServicesAndPackagingProcessingOptionsRequested $processingOptions)
+    {
+        $this->values['ProcessingOptions'] = $processingOptions;
+        return $this;
+    }
+
+    /**
      * Contains zero or more service options whose combinations are to be considered when replying with available services.
      *
      * @param \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\ServiceOptionType[]|string[] $variableOptions
@@ -88,6 +103,30 @@ class GetAllServicesAndPackagingRequest extends AbstractComplexType
     public function setVariableOptions(array $variableOptions)
     {
         $this->values['VariableOptions'] = $variableOptions;
+        return $this;
+    }
+
+    /**
+     * FOR FEDEX INTERNAL USE ONLY: Only internal FedEx applications can include customer.
+     *
+     * @param EnterpriseCustomer $customer
+     * @return $this
+     */
+    public function setCustomer(EnterpriseCustomer $customer)
+    {
+        $this->values['Customer'] = $customer;
+        return $this;
+    }
+
+    /**
+     * FOR FEDEX INTERNAL USE ONLY: Restrictions and privileges associated with an entity based on one or more identifiers (for example, account number or unique user id). These restrictions and privileges can be used to determine whether an entity is enabled to perform various operations.
+     *
+     * @param RestrictionsAndPrivilegesPolicyDetail $restrictionsAndPrivileges
+     * @return $this
+     */
+    public function setRestrictionsAndPrivileges(RestrictionsAndPrivilegesPolicyDetail $restrictionsAndPrivileges)
+    {
+        $this->values['RestrictionsAndPrivileges'] = $restrictionsAndPrivileges;
         return $this;
     }
 

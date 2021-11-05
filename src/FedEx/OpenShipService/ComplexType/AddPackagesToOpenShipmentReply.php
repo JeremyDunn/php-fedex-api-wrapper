@@ -15,7 +15,7 @@ use FedEx\AbstractComplexType;
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
  * @property string $JobId
- * @property \FedEx\OpenShipService\SimpleType\ServiceType|string $ServiceType
+ * @property string $ServiceType
  * @property CompletedShipmentDetail $CompletedShipmentDetail
  * @property ShippingDocument[] $ErrorLabels
 
@@ -90,9 +90,9 @@ class AddPackagesToOpenShipmentReply extends AbstractComplexType
     }
 
     /**
-     * Set ServiceType
+     * This field contains the service type values, like PRIORITY_OVERNIGHT and FEDEX_GROUND.
      *
-     * @param \FedEx\OpenShipService\SimpleType\ServiceType|string $serviceType
+     * @param string $serviceType
      * @return $this
      */
     public function setServiceType($serviceType)

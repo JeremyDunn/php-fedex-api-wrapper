@@ -12,6 +12,9 @@ use FedEx\AbstractComplexType;
  *
  * @property string $AccountNumber
  * @property string $MeterNumber
+ * @property string $MeterInstance
+ * @property string $IntegratorId
+ * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\ExpressRegionCode|string $Region
  * @property Localization $Localization
 
  */
@@ -45,6 +48,42 @@ class ClientDetail extends AbstractComplexType
     public function setMeterNumber($meterNumber)
     {
         $this->values['MeterNumber'] = $meterNumber;
+        return $this;
+    }
+
+    /**
+     * Set MeterInstance
+     *
+     * @param string $meterInstance
+     * @return $this
+     */
+    public function setMeterInstance($meterInstance)
+    {
+        $this->values['MeterInstance'] = $meterInstance;
+        return $this;
+    }
+
+    /**
+     * Only used in transactions which require identification of the FedEx Office integrator.
+     *
+     * @param string $integratorId
+     * @return $this
+     */
+    public function setIntegratorId($integratorId)
+    {
+        $this->values['IntegratorId'] = $integratorId;
+        return $this;
+    }
+
+    /**
+     * Indicates the region from which the transaction is submitted.
+     *
+     * @param \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\ExpressRegionCode|string $region
+     * @return $this
+     */
+    public function setRegion($region)
+    {
+        $this->values['Region'] = $region;
         return $this;
     }
 

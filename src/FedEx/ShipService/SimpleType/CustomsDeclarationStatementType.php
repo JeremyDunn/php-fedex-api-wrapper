@@ -12,5 +12,5 @@ use FedEx\AbstractSimpleType;
  */
 class CustomsDeclarationStatementType extends AbstractSimpleType
 {
-    const _NAFTA_LOW_VALUE = 'NAFTA_LOW_VALUE';
+    const _USMCA_LOW_VALUE = 'USMCA_LOW_VALUE';
 }
