@@ -17,7 +17,7 @@ $createPickupRequest->ClientDetail->MeterNumber = FEDEX_METER_NUMBER;
 
 // Version.
 $createPickupRequest->Version->ServiceId = 'disp';
-$createPickupRequest->Version->Major = 22;
+$createPickupRequest->Version->Major = 23;
 $createPickupRequest->Version->Intermediate = 0;
 $createPickupRequest->Version->Minor = 0;
 
@@ -71,5 +71,6 @@ try {
     $createPickupReply = $request->getCreatePickupReply($createPickupRequest);
     var_dump($createPickupReply);
 } catch (\Exception $e) {
+    echo $e->getMessage();
     echo $request->getSoapClient()->__getLastResponse();
 }

@@ -12,9 +12,12 @@ use FedEx\AbstractComplexType;
  *
  * @property WebAuthenticationDetail $WebAuthenticationDetail
  * @property ClientDetail $ClientDetail
+ * @property UserDetail $UserDetail
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
+ * @property \FedEx\PickupService\SimpleType\PickupServiceLevelType|string $ServiceLevel
  * @property \FedEx\PickupService\SimpleType\CarrierCodeType|string $CarrierCode
+ * @property \FedEx\PickupService\SimpleType\PickupType|string $PickupType
  * @property string $PickupConfirmationNumber
  * @property string $ScheduledDate
  * @property string $EndDate
@@ -25,6 +28,7 @@ use FedEx\AbstractComplexType;
  * @property string $ContactName
  * @property string $PhoneNumber
  * @property string $PhoneExtension
+ * @property RestrictionsAndPrivilegesPolicyDetail $RestrictionsAndPrivileges
 
  */
 class CancelPickupRequest extends AbstractComplexType
@@ -61,6 +65,18 @@ class CancelPickupRequest extends AbstractComplexType
     }
 
     /**
+     * Set UserDetail
+     *
+     * @param UserDetail $userDetail
+     * @return $this
+     */
+    public function setUserDetail(UserDetail $userDetail)
+    {
+        $this->values['UserDetail'] = $userDetail;
+        return $this;
+    }
+
+    /**
      * Set TransactionDetail
      *
      * @param TransactionDetail $transactionDetail
@@ -85,6 +101,18 @@ class CancelPickupRequest extends AbstractComplexType
     }
 
     /**
+     * Set ServiceLevel
+     *
+     * @param \FedEx\PickupService\SimpleType\PickupServiceLevelType|string $serviceLevel
+     * @return $this
+     */
+    public function setServiceLevel($serviceLevel)
+    {
+        $this->values['ServiceLevel'] = $serviceLevel;
+        return $this;
+    }
+
+    /**
      * Set CarrierCode
      *
      * @param \FedEx\PickupService\SimpleType\CarrierCodeType|string $carrierCode
@@ -93,6 +121,18 @@ class CancelPickupRequest extends AbstractComplexType
     public function setCarrierCode($carrierCode)
     {
         $this->values['CarrierCode'] = $carrierCode;
+        return $this;
+    }
+
+    /**
+     * Set PickupType
+     *
+     * @param \FedEx\PickupService\SimpleType\PickupType|string $pickupType
+     * @return $this
+     */
+    public function setPickupType($pickupType)
+    {
+        $this->values['PickupType'] = $pickupType;
         return $this;
     }
 
@@ -213,6 +253,18 @@ class CancelPickupRequest extends AbstractComplexType
     public function setPhoneExtension($phoneExtension)
     {
         $this->values['PhoneExtension'] = $phoneExtension;
+        return $this;
+    }
+
+    /**
+     * FOR FEDEX INTERNAL USE ONLY: Restrictions and privileges associated with an entity based on one or more identifiers (for example, account number or unique user id). These restrictions and privileges can be used to determine whether an entity is enabled to perform various operations.
+     *
+     * @param RestrictionsAndPrivilegesPolicyDetail $restrictionsAndPrivileges
+     * @return $this
+     */
+    public function setRestrictionsAndPrivileges(RestrictionsAndPrivilegesPolicyDetail $restrictionsAndPrivileges)
+    {
+        $this->values['RestrictionsAndPrivileges'] = $restrictionsAndPrivileges;
         return $this;
     }
 }

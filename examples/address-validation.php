@@ -1,5 +1,5 @@
 <?php
-
+//remember to copy example.credentials.php as credentials.php replace 'FEDEX_KEY', 'FEDEX_PASSWORD', 'FEDEX_ACCOUNT_NUMBER', and 'FEDEX_METER_NUMBER'
 require_once 'credentials.php';
 require_once 'bootstrap.php';
 
@@ -19,7 +19,7 @@ $addressValidationRequest->ClientDetail->MeterNumber = FEDEX_METER_NUMBER;
 
 // Version
 $addressValidationRequest->Version->ServiceId = 'aval';
-$addressValidationRequest->Version->Major = 4;
+$addressValidationRequest->Version->Major = 8;
 $addressValidationRequest->Version->Intermediate = 0;
 $addressValidationRequest->Version->Minor = 0;
 
@@ -32,8 +32,10 @@ $addressValidationRequest->AddressesToValidate[0]->Address->PostalCode = 47711;
 $addressValidationRequest->AddressesToValidate[0]->Address->CountryCode = 'US';
 
 $request = new Request();
-//$request->getSoapClient()->__setLocation(Request::PRODUCTION_URL);
-$request->getSoapClient()->__setLocation(Request::TESTING_URL);
-$addressValidationReply = $request->getAddressValidationReply($addressValidationRequest);
-
-var_dump($addressValidationReply);
+try {
+    $addressValidationReply = $request->getAddressValidationReply($addressValidationRequest);
+    var_dump($addressValidationReply);
+} catch (\Exception $e) {
+    echo $e->getMessage();
+    echo $request->getSoapClient()->__getLastResponse();
+}

@@ -12,10 +12,10 @@ use FedEx\AbstractRequest;
  */
 class Request extends AbstractRequest
 {
-    const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/ValidationAvailabilityAndCommitment';
-    const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/ValidationAvailabilityAndCommitment';
+    const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/vacs';
+    const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/vacs';
 
-    protected static $wsdlFileName = 'ValidationAvailabilityAndCommitmentService_v14.wsdl';
+    protected static $wsdlFileName = 'ValidationAvailabilityAndCommitmentService_v17.wsdl';
             
     /**
      * Sends the GetAllServicesAndPackagingRequest and returns the response

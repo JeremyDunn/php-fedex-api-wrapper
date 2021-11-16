@@ -1,5 +1,5 @@
 <?php
-
+//remember to copy example.credentials.php as credentials.php replace 'FEDEX_KEY', 'FEDEX_PASSWORD', 'FEDEX_ACCOUNT_NUMBER', and 'FEDEX_METER_NUMBER'
 require_once 'credentials.php';
 require_once 'bootstrap.php';
 
@@ -18,7 +18,7 @@ $serviceAvailabilityRequest->ClientDetail->AccountNumber = FEDEX_ACCOUNT_NUMBER;
 $serviceAvailabilityRequest->ClientDetail->MeterNumber = FEDEX_METER_NUMBER;
 //version
 $serviceAvailabilityRequest->Version->ServiceId = 'vacs';
-$serviceAvailabilityRequest->Version->Major = 14;
+$serviceAvailabilityRequest->Version->Major = 17;
 $serviceAvailabilityRequest->Version->Intermediate = 0;
 $serviceAvailabilityRequest->Version->Minor = 0;
 //origin
@@ -36,5 +36,6 @@ try {
     $serviceAvailabilityReply = $request->getServiceAvailabilityReply($serviceAvailabilityRequest);
     var_dump($serviceAvailabilityReply);
 } catch (\Exception $e) {
+    echo $e->getMessage();
     var_dump($request->getSoapClient()->__getLastResponse());
 }

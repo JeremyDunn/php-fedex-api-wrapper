@@ -12,6 +12,7 @@ use FedEx\AbstractComplexType;
  *
  * @property string $Id
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\FreightClassType|string $FreightClass
+ * @property boolean $ClassProvidedByCustomer
  * @property string $BillingMaskName
  * @property LiabilityCoverageDetail $LiabilityCoverageDetail
  * @property int $HandlingUnits
@@ -56,6 +57,18 @@ class FreightShipmentLineItem extends AbstractComplexType
     public function setFreightClass($freightClass)
     {
         $this->values['FreightClass'] = $freightClass;
+        return $this;
+    }
+
+    /**
+     * FEDEX INTERNAL USE ONLY: for FedEx system that estimate freight class from customer-provided dimensions and weight.
+     *
+     * @param boolean $classProvidedByCustomer
+     * @return $this
+     */
+    public function setClassProvidedByCustomer($classProvidedByCustomer)
+    {
+        $this->values['ClassProvidedByCustomer'] = $classProvidedByCustomer;
         return $this;
     }
 

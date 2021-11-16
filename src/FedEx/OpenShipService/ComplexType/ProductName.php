@@ -25,7 +25,7 @@ class ProductName extends AbstractComplexType
     protected $name = 'ProductName';
 
     /**
-     * The type of branded, translated, and/or localized name to which this value refers.
+     * The type of name (long, medium, short, etc.) to which this value refers.
      *
      * @param string $type
      * @return $this

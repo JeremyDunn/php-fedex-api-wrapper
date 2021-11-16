@@ -12,7 +12,10 @@ use FedEx\AbstractComplexType;
  *
  * @property string $AccountNumber
  * @property string $MeterNumber
+ * @property string $SoftwareId
+ * @property string $SoftwareRelease
  * @property string $IntegratorId
+ * @property \FedEx\TrackService\SimpleType\ExpressRegionCode|string $Region
  * @property Localization $Localization
 
  */
@@ -50,6 +53,30 @@ class ClientDetail extends AbstractComplexType
     }
 
     /**
+     * Client software component (e.g. "CAFE", "INET", "WBUS", etc.)
+     *
+     * @param string $softwareId
+     * @return $this
+     */
+    public function setSoftwareId($softwareId)
+    {
+        $this->values['SoftwareId'] = $softwareId;
+        return $this;
+    }
+
+    /**
+     * Client software component version/revision (e.g. "1800", "2630", etc.)
+     *
+     * @param string $softwareRelease
+     * @return $this
+     */
+    public function setSoftwareRelease($softwareRelease)
+    {
+        $this->values['SoftwareRelease'] = $softwareRelease;
+        return $this;
+    }
+
+    /**
      * Only used in transactions which require identification of the FedEx Office integrator.
      *
      * @param string $integratorId
@@ -58,6 +85,18 @@ class ClientDetail extends AbstractComplexType
     public function setIntegratorId($integratorId)
     {
         $this->values['IntegratorId'] = $integratorId;
+        return $this;
+    }
+
+    /**
+     * Indicates the region from which the transaction is submitted.
+     *
+     * @param \FedEx\TrackService\SimpleType\ExpressRegionCode|string $region
+     * @return $this
+     */
+    public function setRegion($region)
+    {
+        $this->values['Region'] = $region;
         return $this;
     }
 

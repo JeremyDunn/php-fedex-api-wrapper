@@ -54,6 +54,7 @@ use FedEx\AbstractComplexType;
  * @property TrackAdvanceNotificationDetail $AdvanceNotificationDetail
  * @property TrackSpecialHandling[] $SpecialHandlings
  * @property TrackPayment[] $Payments
+ * @property EPaymentDetail $EPayment
  * @property Contact $Shipper
  * @property \FedEx\TrackService\SimpleType\TrackPossessionStatusType|string $PossessionStatus
  * @property Address $ShipperAddress
@@ -622,6 +623,18 @@ class TrackDetail extends AbstractComplexType
     public function setPayments(array $payments)
     {
         $this->values['Payments'] = $payments;
+        return $this;
+    }
+
+    /**
+     * FOR FEDEX INTERNAL USE ONLY
+     *
+     * @param EPaymentDetail $ePayment
+     * @return $this
+     */
+    public function setEPayment(EPaymentDetail $ePayment)
+    {
+        $this->values['EPayment'] = $ePayment;
         return $this;
     }
 

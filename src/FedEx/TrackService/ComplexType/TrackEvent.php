@@ -15,6 +15,7 @@ use FedEx\AbstractComplexType;
  * @property string $EventDescription
  * @property string $StatusExceptionCode
  * @property string $StatusExceptionDescription
+ * @property TrackDelayDetail $DelayDetail
  * @property \FedEx\TrackService\SimpleType\BarcodeEntryType|string $BarcodeEntryType
  * @property Address $Address
  * @property string $StationId
@@ -87,6 +88,18 @@ class TrackEvent extends AbstractComplexType
     public function setStatusExceptionDescription($statusExceptionDescription)
     {
         $this->values['StatusExceptionDescription'] = $statusExceptionDescription;
+        return $this;
+    }
+
+    /**
+     * Set DelayDetail
+     *
+     * @param TrackDelayDetail $delayDetail
+     * @return $this
+     */
+    public function setDelayDetail(TrackDelayDetail $delayDetail)
+    {
+        $this->values['DelayDetail'] = $delayDetail;
         return $this;
     }
 

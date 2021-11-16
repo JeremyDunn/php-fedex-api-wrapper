@@ -13,4 +13,6 @@ use FedEx\AbstractSimpleType;
 class UploadDocumentsProcessingOptionType extends AbstractSimpleType
 {
     const _POST_SHIPMENT_UPLOAD = 'POST_SHIPMENT_UPLOAD';
+    const _PRE_ETD_ENHANCEMENTS = 'PRE_ETD_ENHANCEMENTS';
+    const _VALIDATE_ONLY = 'VALIDATE_ONLY';
 }

@@ -21,7 +21,7 @@ $createOpenShipmentRequest->ClientDetail->MeterNumber = FEDEX_METER_NUMBER;
 $createOpenShipmentRequest->ClientDetail->AccountNumber = FEDEX_ACCOUNT_NUMBER;
 // version
 $createOpenShipmentRequest->Version->ServiceId = 'ship';
-$createOpenShipmentRequest->Version->Major = 15;
+$createOpenShipmentRequest->Version->Major = 20;
 $createOpenShipmentRequest->Version->Intermediate = 0;
 $createOpenShipmentRequest->Version->Minor = 0;
 

@@ -12,14 +12,20 @@ use FedEx\AbstractComplexType;
  *
  * @property WebAuthenticationDetail $WebAuthenticationDetail
  * @property ClientDetail $ClientDetail
+ * @property UserDetail $UserDetail
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
+ * @property \FedEx\PickupService\SimpleType\PickupServiceLevelType|string $ServiceLevel
+ * @property \FedEx\PickupService\SimpleType\CreatePickupRequestProcessingOptionType|string[] $ProcessingOptions
+ * @property VariationOptionDetail[] $SupportedFeatures
  * @property AssociatedAccount $AssociatedAccountNumber
  * @property string $TrackingNumber
  * @property PickupOriginDetail $OriginDetail
  * @property \FedEx\PickupService\SimpleType\PickupServiceCategoryType|string $PickupServiceCategory
  * @property FreightPickupDetail $FreightPickupDetail
  * @property ExpressFreightPickupDetail $ExpressFreightDetail
+ * @property RequestedPickupShipmentDetail[] $RequestedExpressPickupDetails
+ * @property \FedEx\PickupService\SimpleType\PickupType|string $PickupType
  * @property int $PackageCount
  * @property Weight $TotalWeight
  * @property \FedEx\PickupService\SimpleType\CarrierCodeType|string $CarrierCode
@@ -27,6 +33,7 @@ use FedEx\AbstractComplexType;
  * @property string $Remarks
  * @property string $CommodityDescription
  * @property \FedEx\PickupService\SimpleType\CountryRelationshipType|string $CountryRelationship
+ * @property RestrictionsAndPrivilegesPolicyDetail $RestrictionsAndPrivileges
 
  */
 class CreatePickupRequest extends AbstractComplexType
@@ -63,6 +70,18 @@ class CreatePickupRequest extends AbstractComplexType
     }
 
     /**
+     * Set UserDetail
+     *
+     * @param UserDetail $userDetail
+     * @return $this
+     */
+    public function setUserDetail(UserDetail $userDetail)
+    {
+        $this->values['UserDetail'] = $userDetail;
+        return $this;
+    }
+
+    /**
      * Set TransactionDetail
      *
      * @param TransactionDetail $transactionDetail
@@ -83,6 +102,42 @@ class CreatePickupRequest extends AbstractComplexType
     public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
+        return $this;
+    }
+
+    /**
+     * Set ServiceLevel
+     *
+     * @param \FedEx\PickupService\SimpleType\PickupServiceLevelType|string $serviceLevel
+     * @return $this
+     */
+    public function setServiceLevel($serviceLevel)
+    {
+        $this->values['ServiceLevel'] = $serviceLevel;
+        return $this;
+    }
+
+    /**
+     * Specifies the options to be applied when creating the pickup.
+     *
+     * @param \FedEx\PickupService\SimpleType\CreatePickupRequestProcessingOptionType[]|string[] $processingOptions
+     * @return $this
+     */
+    public function setProcessingOptions(array $processingOptions)
+    {
+        $this->values['ProcessingOptions'] = $processingOptions;
+        return $this;
+    }
+
+    /**
+     * Set SupportedFeatures
+     *
+     * @param VariationOptionDetail[] $supportedFeatures
+     * @return $this
+     */
+    public function setSupportedFeatures(array $supportedFeatures)
+    {
+        $this->values['SupportedFeatures'] = $supportedFeatures;
         return $this;
     }
 
@@ -155,6 +210,30 @@ class CreatePickupRequest extends AbstractComplexType
     public function setExpressFreightDetail(ExpressFreightPickupDetail $expressFreightDetail)
     {
         $this->values['ExpressFreightDetail'] = $expressFreightDetail;
+        return $this;
+    }
+
+    /**
+     * Set RequestedExpressPickupDetails
+     *
+     * @param RequestedPickupShipmentDetail[] $requestedExpressPickupDetails
+     * @return $this
+     */
+    public function setRequestedExpressPickupDetails(array $requestedExpressPickupDetails)
+    {
+        $this->values['RequestedExpressPickupDetails'] = $requestedExpressPickupDetails;
+        return $this;
+    }
+
+    /**
+     * Set PickupType
+     *
+     * @param \FedEx\PickupService\SimpleType\PickupType|string $pickupType
+     * @return $this
+     */
+    public function setPickupType($pickupType)
+    {
+        $this->values['PickupType'] = $pickupType;
         return $this;
     }
 
@@ -239,6 +318,18 @@ class CreatePickupRequest extends AbstractComplexType
     public function setCountryRelationship($countryRelationship)
     {
         $this->values['CountryRelationship'] = $countryRelationship;
+        return $this;
+    }
+
+    /**
+     * FOR FEDEX INTERNAL USE ONLY: Restrictions and privileges associated with an entity based on one or more identifiers (for example, account number or unique user id). These restrictions and privileges can be used to determine whether an entity is enabled to perform various operations.
+     *
+     * @param RestrictionsAndPrivilegesPolicyDetail $restrictionsAndPrivileges
+     * @return $this
+     */
+    public function setRestrictionsAndPrivileges(RestrictionsAndPrivilegesPolicyDetail $restrictionsAndPrivileges)
+    {
+        $this->values['RestrictionsAndPrivileges'] = $restrictionsAndPrivileges;
         return $this;
     }
 }

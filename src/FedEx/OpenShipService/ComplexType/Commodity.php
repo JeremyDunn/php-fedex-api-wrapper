@@ -27,7 +27,7 @@ use FedEx\AbstractComplexType;
  * @property string $ExportLicenseExpirationDate
  * @property string $CIMarksAndNumbers
  * @property string $PartNumber
- * @property NaftaCommodityDetail $NaftaDetail
+ * @property UsmcaCommodityDetail $UsmcaDetail
 
  */
 class Commodity extends AbstractComplexType
@@ -172,7 +172,7 @@ class Commodity extends AbstractComplexType
     }
 
     /**
-     * Set CustomsValue
+     * The value of the commodity for customs purposes. The field should be the unit price multiplied by the quantity.
      *
      * @param Money $customsValue
      * @return $this
@@ -244,14 +244,14 @@ class Commodity extends AbstractComplexType
     }
 
     /**
-     * All data required for this commodity in NAFTA Certificate of Origin.
+     * Set UsmcaDetail
      *
-     * @param NaftaCommodityDetail $naftaDetail
+     * @param UsmcaCommodityDetail $usmcaDetail
      * @return $this
      */
-    public function setNaftaDetail(NaftaCommodityDetail $naftaDetail)
+    public function setUsmcaDetail(UsmcaCommodityDetail $usmcaDetail)
     {
-        $this->values['NaftaDetail'] = $naftaDetail;
+        $this->values['UsmcaDetail'] = $usmcaDetail;
         return $this;
     }
 }

@@ -85,14 +85,12 @@ $validateDangerousGoodsRequest->HandlingUnitGroups[0]->HandlingUnit->ContainerGr
 $validateDangerousGoodsRequest->HandlingUnitGroups[0]->HandlingUnit->ContainerGroups[0]->Container->Commodities[0]->Quantity->Amount = 5;
 $validateDangerousGoodsRequest->HandlingUnitGroups[0]->HandlingUnit->ContainerGroups[0]->Container->Commodities[0]->Quantity->Units = 'KG';
 
-
 $request = new Request();
-
 try {
     $validateDangerousGoodsReply = $request->getValidateDangerousGoodsReply($validateDangerousGoodsRequest);
-
     var_dump($validateDangerousGoodsReply);
 } catch (\Exception $e) {
+    echo $e->getMessage();
     echo $request->getSoapClient()->__getLastResponse();
 }
 

@@ -15,7 +15,7 @@ class Request extends AbstractRequest
     const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/openship';
     const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/openship';
 
-    protected static $wsdlFileName = 'OpenshipService_v15.wsdl';
+    protected static $wsdlFileName = 'OpenshipService_v20.wsdl';
             
     /**
      * Sends the ModifyConsolidationRequest and returns the response
@@ -319,25 +319,6 @@ class Request extends AbstractRequest
         $confirmConsolidationReply = new ComplexType\ConfirmConsolidationReply;
         $confirmConsolidationReply->populateFromStdClass($response);
         return $confirmConsolidationReply;
-    }
-            
-    /**
-     * Sends the CreateOpenShipmentRequest and returns the response
-     *
-     * @param ComplexType\CreateOpenShipmentRequest $createOpenShipmentRequest
-     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
-     * @return ComplexType\CreateOpenShipmentReply|stdClass
-     */
-    public function getCreatePendingShipmentReply(ComplexType\CreateOpenShipmentRequest $createOpenShipmentRequest, $returnStdClass = false)
-    {
-        $response = $this->getSoapClient()->createPendingShipment($createOpenShipmentRequest->toArray());
-        if ($returnStdClass) {
-            return $response;
-        }
-        
-        $createOpenShipmentReply = new ComplexType\CreateOpenShipmentReply;
-        $createOpenShipmentReply->populateFromStdClass($response);
-        return $createOpenShipmentReply;
     }
             
     /**

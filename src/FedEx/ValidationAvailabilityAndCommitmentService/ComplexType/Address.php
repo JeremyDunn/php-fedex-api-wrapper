@@ -10,8 +10,15 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  *
+ * @property string[] $StreetLines
+ * @property string $City
+ * @property string $StateOrProvinceCode
  * @property string $PostalCode
+ * @property string $UrbanizationCode
  * @property string $CountryCode
+ * @property string $CountryName
+ * @property boolean $Residential
+ * @property string $GeographicCoordinates
 
  */
 class Address extends AbstractComplexType
@@ -22,6 +29,42 @@ class Address extends AbstractComplexType
      * @var string
      */
     protected $name = 'Address';
+
+    /**
+     * Combination of number, street name, etc. At least one line is required for a valid physical address; empty lines should not be included.
+     *
+     * @param string $streetLines
+     * @return $this
+     */
+    public function setStreetLines($streetLines)
+    {
+        $this->values['StreetLines'] = $streetLines;
+        return $this;
+    }
+
+    /**
+     * Name of city, town, etc.
+     *
+     * @param string $city
+     * @return $this
+     */
+    public function setCity($city)
+    {
+        $this->values['City'] = $city;
+        return $this;
+    }
+
+    /**
+     * Identifying abbreviation for US state, Canada province, etc. Format and presence of this field will vary, depending on country.
+     *
+     * @param string $stateOrProvinceCode
+     * @return $this
+     */
+    public function setStateOrProvinceCode($stateOrProvinceCode)
+    {
+        $this->values['StateOrProvinceCode'] = $stateOrProvinceCode;
+        return $this;
+    }
 
     /**
      * Identification of a region (usually small) for mail/package delivery. Format and presence of this field will vary, depending on country.
@@ -36,6 +79,18 @@ class Address extends AbstractComplexType
     }
 
     /**
+     * Relevant only to addresses in Puerto Rico.
+     *
+     * @param string $urbanizationCode
+     * @return $this
+     */
+    public function setUrbanizationCode($urbanizationCode)
+    {
+        $this->values['UrbanizationCode'] = $urbanizationCode;
+        return $this;
+    }
+
+    /**
      * The two-letter code used to identify a country.
      *
      * @param string $countryCode
@@ -44,6 +99,42 @@ class Address extends AbstractComplexType
     public function setCountryCode($countryCode)
     {
         $this->values['CountryCode'] = $countryCode;
+        return $this;
+    }
+
+    /**
+     * The fully spelt out name of a country.
+     *
+     * @param string $countryName
+     * @return $this
+     */
+    public function setCountryName($countryName)
+    {
+        $this->values['CountryName'] = $countryName;
+        return $this;
+    }
+
+    /**
+     * Indicates whether this address residential (as opposed to commercial).
+     *
+     * @param boolean $residential
+     * @return $this
+     */
+    public function setResidential($residential)
+    {
+        $this->values['Residential'] = $residential;
+        return $this;
+    }
+
+    /**
+     * The geographic coordinates cooresponding to this address.
+     *
+     * @param string $geographicCoordinates
+     * @return $this
+     */
+    public function setGeographicCoordinates($geographicCoordinates)
+    {
+        $this->values['GeographicCoordinates'] = $geographicCoordinates;
         return $this;
     }
 }

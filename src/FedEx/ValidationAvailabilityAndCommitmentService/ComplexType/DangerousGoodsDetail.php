@@ -14,6 +14,7 @@ use FedEx\AbstractComplexType;
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\HazardousCommodityRegulationType|string $Regulation
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\DangerousGoodsAccessibilityType|string $Accessibility
  * @property boolean $CargoAircraftOnly
+ * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\DangerousGoodsDescriptorType|string[] $DangerousGoodsDescriptors
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\HazardousCommodityOptionType|string[] $Options
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\DangerousGoodsPackingOptionType|string $PackingOption
  * @property string $ReferenceId
@@ -25,6 +26,7 @@ use FedEx\AbstractComplexType;
  * @property Contact $InfectiousSubstanceResponsibleContact
  * @property string $AdditionalHandling
  * @property RadioactivityDetail $RadioactivityDetail
+ * @property DocumentLineItem[] $RegulatoryLineItems
 
  */
 class DangerousGoodsDetail extends AbstractComplexType
@@ -81,6 +83,18 @@ class DangerousGoodsDetail extends AbstractComplexType
     public function setCargoAircraftOnly($cargoAircraftOnly)
     {
         $this->values['CargoAircraftOnly'] = $cargoAircraftOnly;
+        return $this;
+    }
+
+    /**
+     * Indicates the characteristics of the package inferred from the dangerous goods commodity data.
+     *
+     * @param \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\DangerousGoodsDescriptorType[]|string[] $dangerousGoodsDescriptors
+     * @return $this
+     */
+    public function setDangerousGoodsDescriptors(array $dangerousGoodsDescriptors)
+    {
+        $this->values['DangerousGoodsDescriptors'] = $dangerousGoodsDescriptors;
         return $this;
     }
 
@@ -213,6 +227,18 @@ class DangerousGoodsDetail extends AbstractComplexType
     public function setRadioactivityDetail(RadioactivityDetail $radioactivityDetail)
     {
         $this->values['RadioactivityDetail'] = $radioactivityDetail;
+        return $this;
+    }
+
+    /**
+     * FOR FEDEX INTERNAL USE ONLY: Describes the regulatory data elements required to move the package.
+     *
+     * @param DocumentLineItem[] $regulatoryLineItems
+     * @return $this
+     */
+    public function setRegulatoryLineItems(array $regulatoryLineItems)
+    {
+        $this->values['RegulatoryLineItems'] = $regulatoryLineItems;
         return $this;
     }
 }

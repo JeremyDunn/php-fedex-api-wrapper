@@ -1,13 +1,12 @@
 language: php
 
 php:
-  - 7.0
-  - 7.1
-  - 7.2
   - 7.3
+  - 7.4
+  - 8.0
 
 install:
-  - composer update --no-interaction --no-ansi --no-progress --no-suggest --optimize-autoloader --prefer-stable
+  - composer update --no-interaction --no-ansi --no-progress --optimize-autoloader --prefer-stable
 
 script: vendor/bin/phpunit
 

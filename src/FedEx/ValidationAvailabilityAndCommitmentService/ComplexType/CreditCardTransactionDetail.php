@@ -15,6 +15,7 @@ use FedEx\AbstractComplexType;
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\CreditCardSettlementScheduleType|string $SettlementScheduleType
  * @property CreditFraudDetectionDetail $FraudDetectionDetail
  * @property string $PayorAuthenticationCode
+ * @property string $PayorAuthenticationSessionId
  * @property CreditCardTransactionAttributesDetail $AttributesDetail
 
  */
@@ -84,6 +85,18 @@ class CreditCardTransactionDetail extends AbstractComplexType
     public function setPayorAuthenticationCode($payorAuthenticationCode)
     {
         $this->values['PayorAuthenticationCode'] = $payorAuthenticationCode;
+        return $this;
+    }
+
+    /**
+     * Set PayorAuthenticationSessionId
+     *
+     * @param string $payorAuthenticationSessionId
+     * @return $this
+     */
+    public function setPayorAuthenticationSessionId($payorAuthenticationSessionId)
+    {
+        $this->values['PayorAuthenticationSessionId'] = $payorAuthenticationSessionId;
         return $this;
     }
 

@@ -17,7 +17,7 @@ $uploadDocumentsRequest->ClientDetail->MeterNumber = FEDEX_METER_NUMBER;
 
 // Version
 $uploadDocumentsRequest->Version->ServiceId = 'cdus';
-$uploadDocumentsRequest->Version->Major = 11;
+$uploadDocumentsRequest->Version->Major = 19;
 $uploadDocumentsRequest->Version->Intermediate = 0;
 $uploadDocumentsRequest->Version->Minor = 0;
 
@@ -40,5 +40,6 @@ try {
     $uploadDocumentsReply = $request->getUploadDocumentsReply($uploadDocumentsRequest);
     var_dump($uploadDocumentsReply);
 } catch (\Exception $e) {
+    echo $e->getMessage();
     echo $request->getSoapClient()->__getLastResponse();
 }

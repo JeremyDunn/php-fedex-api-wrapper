@@ -14,10 +14,11 @@ use FedEx\AbstractComplexType;
  * @property Notification[] $Notifications
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
- * @property \FedEx\OpenShipService\SimpleType\ServiceType|string $ServiceType
+ * @property string $ServiceType
  * @property CompletedShipmentDetail $CompletedShipmentDetail
  * @property ShippingDocument[] $ErrorLabels
  * @property string $Index
+ * @property ShipmentAdvisoryDetail $AdvisoryDetail
 
  */
 class GetCreateOpenShipmentResultsReply extends AbstractComplexType
@@ -80,7 +81,7 @@ class GetCreateOpenShipmentResultsReply extends AbstractComplexType
     /**
      * Set ServiceType
      *
-     * @param \FedEx\OpenShipService\SimpleType\ServiceType|string $serviceType
+     * @param string $serviceType
      * @return $this
      */
     public function setServiceType($serviceType)
@@ -122,6 +123,18 @@ class GetCreateOpenShipmentResultsReply extends AbstractComplexType
     public function setIndex($index)
     {
         $this->values['Index'] = $index;
+        return $this;
+    }
+
+    /**
+     * Set AdvisoryDetail
+     *
+     * @param ShipmentAdvisoryDetail $advisoryDetail
+     * @return $this
+     */
+    public function setAdvisoryDetail(ShipmentAdvisoryDetail $advisoryDetail)
+    {
+        $this->values['AdvisoryDetail'] = $advisoryDetail;
         return $this;
     }
 }

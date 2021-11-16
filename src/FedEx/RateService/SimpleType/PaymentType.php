@@ -12,5 +12,6 @@ use FedEx\AbstractSimpleType;
  */
 class PaymentType extends AbstractSimpleType
 {
+    const _EPAYMENT = 'EPAYMENT';
     const _SENDER = 'SENDER';
 }

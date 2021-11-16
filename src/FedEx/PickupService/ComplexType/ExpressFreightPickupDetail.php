@@ -10,6 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *
+ * @property string $ServiceCode
  * @property string $Service
  * @property string $BookingNumber
  * @property Dimensions $Dimensions
@@ -25,6 +26,18 @@ class ExpressFreightPickupDetail extends AbstractComplexType
      * @var string
      */
     protected $name = 'ExpressFreightPickupDetail';
+
+    /**
+     * FOR FEDEX INTERNAL USE ONLY: The service code will be provided for transportation network management.
+     *
+     * @param string $serviceCode
+     * @return $this
+     */
+    public function setServiceCode($serviceCode)
+    {
+        $this->values['ServiceCode'] = $serviceCode;
+        return $this;
+    }
 
     /**
      * This includes service type values like FEDEX_1_DAY_FREIGHT

@@ -73,10 +73,10 @@ $processDeliveryRequest->DeliveryRequestDetail->RedirectToHoldAtLocationDetail->
 
 
 $request = new Request();
-
 try {
     $processDeliveryReply = $request->getProcessDeliveryReply($processDeliveryRequest);
     var_dump($processDeliveryReply);
 } catch (\Exception $e) {
+    echo $e->getMessage();
     echo $request->getSoapClient()->__getLastResponse();
 }

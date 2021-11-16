@@ -11,7 +11,6 @@ use FedEx\AbstractComplexType;
  * @subpackage  Pickup Service
  *
  * @property \FedEx\PickupService\SimpleType\HazardousCommodityRegulationType|string $Regulation
- * @property \FedEx\PickupService\SimpleType\DangerousGoodsAccessibilityType|string $Accessibility
  * @property \FedEx\PickupService\SimpleType\HazardousCommodityOptionType|string[] $Options
 
  */
@@ -33,18 +32,6 @@ class PickupDangerousGoodsDetail extends AbstractComplexType
     public function setRegulation($regulation)
     {
         $this->values['Regulation'] = $regulation;
-        return $this;
-    }
-
-    /**
-     * Set Accessibility
-     *
-     * @param \FedEx\PickupService\SimpleType\DangerousGoodsAccessibilityType|string $accessibility
-     * @return $this
-     */
-    public function setAccessibility($accessibility)
-    {
-        $this->values['Accessibility'] = $accessibility;
         return $this;
     }
 

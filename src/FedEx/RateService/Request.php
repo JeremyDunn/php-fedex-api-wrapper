@@ -15,7 +15,7 @@ class Request extends AbstractRequest
     const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/rate';
     const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/rate';
 
-    protected static $wsdlFileName = 'RateService_v28.wsdl';
+    protected static $wsdlFileName = 'RateService_v31.wsdl';
             
     /**
      * Sends the RateRequest and returns the response

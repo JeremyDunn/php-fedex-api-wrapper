@@ -18,6 +18,7 @@ use FedEx\AbstractComplexType;
  * @property VariableHandlingChargeDetail $VariableHandlingChargeDetail
  * @property Money $InsuredValue
  * @property Weight $Weight
+ * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\WeightSource|string $WeightSource
  * @property Dimensions $Dimensions
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\PhysicalPackagingType|string $PhysicalPackaging
  * @property AssociatedFreightLineItemDetail[] $AssociatedFreightLineItems
@@ -133,6 +134,18 @@ class RequestedPackageLineItem extends AbstractComplexType
     public function setWeight(Weight $weight)
     {
         $this->values['Weight'] = $weight;
+        return $this;
+    }
+
+    /**
+     * FEDEX INTERNAL USE ONLY.
+     *
+     * @param \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\WeightSource|string $weightSource
+     * @return $this
+     */
+    public function setWeightSource($weightSource)
+    {
+        $this->values['WeightSource'] = $weightSource;
         return $this;
     }
 

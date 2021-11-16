@@ -10,7 +10,7 @@ use FedEx\AbstractComplexType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  *
- * @property \FedEx\OpenShipService\SimpleType\PackageSpecialServiceType|string[] $SpecialServiceTypes
+ * @property string[] $SpecialServiceTypes
  * @property CodDetail $CodDetail
  * @property DangerousGoodsDetail $DangerousGoodsDetail
  * @property BatteryClassificationDetail[] $BatteryDetails
@@ -31,12 +31,12 @@ class PackageSpecialServicesRequested extends AbstractComplexType
     protected $name = 'PackageSpecialServicesRequested';
 
     /**
-     * The types of all special services requested for the enclosing shipment or package.
+     * Indicates the package special service types that are requested on this shipment. For a list of the valid package special service types, please consult your integration documentation or get the list of the available special services from the getAllSpecialServices method of the Validation Availability and Commitment service.
      *
-     * @param \FedEx\OpenShipService\SimpleType\PackageSpecialServiceType[]|string[] $specialServiceTypes
+     * @param string $specialServiceTypes
      * @return $this
      */
-    public function setSpecialServiceTypes(array $specialServiceTypes)
+    public function setSpecialServiceTypes($specialServiceTypes)
     {
         $this->values['SpecialServiceTypes'] = $specialServiceTypes;
         return $this;

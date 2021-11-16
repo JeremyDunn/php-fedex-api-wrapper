@@ -15,7 +15,7 @@ class Request extends AbstractRequest
     const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/uploaddocument';
     const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/uploaddocument';
 
-    protected static $wsdlFileName = 'UploadDocumentService_v11.wsdl';
+    protected static $wsdlFileName = 'UploadDocumentService_v19.wsdl';
             
     /**
      * Sends the UploadDocumentsRequest and returns the response
@@ -34,6 +34,25 @@ class Request extends AbstractRequest
         $uploadDocumentsReply = new ComplexType\UploadDocumentsReply;
         $uploadDocumentsReply->populateFromStdClass($response);
         return $uploadDocumentsReply;
+    }
+            
+    /**
+     * Sends the UploadDocumentsWithShipmentDataRequest and returns the response
+     *
+     * @param ComplexType\UploadDocumentsWithShipmentDataRequest $uploadDocumentsWithShipmentDataRequest
+     * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
+     * @return ComplexType\UploadDocumentsWithShipmentDataReply|stdClass
+     */
+    public function getUploadDocumentsWithShipmentDataReply(ComplexType\UploadDocumentsWithShipmentDataRequest $uploadDocumentsWithShipmentDataRequest, $returnStdClass = false)
+    {
+        $response = $this->getSoapClient()->uploadDocumentsWithShipmentData($uploadDocumentsWithShipmentDataRequest->toArray());
+        if ($returnStdClass) {
+            return $response;
+        }
+        
+        $uploadDocumentsWithShipmentDataReply = new ComplexType\UploadDocumentsWithShipmentDataReply;
+        $uploadDocumentsWithShipmentDataReply->populateFromStdClass($response);
+        return $uploadDocumentsWithShipmentDataReply;
     }
             
     /**

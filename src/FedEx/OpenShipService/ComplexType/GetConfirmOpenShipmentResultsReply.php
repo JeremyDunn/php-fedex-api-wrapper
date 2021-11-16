@@ -16,6 +16,7 @@ use FedEx\AbstractComplexType;
  * @property VersionId $Version
  * @property CompletedShipmentDetail $CompletedShipmentDetail
  * @property ShippingDocument[] $ErrorLabels
+ * @property ShipmentAdvisoryDetail $AdvisoryDetail
 
  */
 class GetConfirmOpenShipmentResultsReply extends AbstractComplexType
@@ -96,6 +97,18 @@ class GetConfirmOpenShipmentResultsReply extends AbstractComplexType
     public function setErrorLabels(array $errorLabels)
     {
         $this->values['ErrorLabels'] = $errorLabels;
+        return $this;
+    }
+
+    /**
+     * Set AdvisoryDetail
+     *
+     * @param ShipmentAdvisoryDetail $advisoryDetail
+     * @return $this
+     */
+    public function setAdvisoryDetail(ShipmentAdvisoryDetail $advisoryDetail)
+    {
+        $this->values['AdvisoryDetail'] = $advisoryDetail;
         return $this;
     }
 }
