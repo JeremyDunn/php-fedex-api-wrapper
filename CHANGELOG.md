@@ -1,5 +1,31 @@
 # CHANGELOG
 
+## 6.0.0 (released 2021-11-16)
+- Update services, tests, examples and composer packages [#187](https://github.com/JeremyDunn/php-fedex-api-wrapper/pull/187)
+
+|Service|Version|
+|---|---|
+|Address Validation|4|
+|Close|5|
+|Courier Dispatch|3|
+|Locations|12|
+|Package Movement Information|5|
+|Pickup|23|
+|Rate|31|
+|Return Tag|1|
+|Ship|28|
+|Track|20|
+|Upload Document|19|
+|Open Ship|20|
+|Validation Availability and Commitment Service|17|
+|ASYNC Transaction Service|4|
+|In Flight Shipment Service|1|
+|DGLD Service|1|
+|DGDS Service|3|
+
+## 5.0.2 (released 2021-08-11)
+- handle null pointer exception [#169](https://github.com/JeremyDunn/php-fedex-api-wrapper/pull/169)
+
 ## 5.0.1 (released 2021-02-13)
 - PHP 8 compatibility: [#264](https://github.com/JeremyDunn/php-fedex-api-wrapper/issues/164)
 
