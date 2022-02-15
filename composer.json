@@ -8,13 +8,12 @@
     "authors": [
         {
             "name": "Jeremy Dunn",
-            "email": "jeremy@jsdunn.info",
-            "homepage": "http://www.jsdunn.info"
+            "email": "jeremy@jsdunn.info"
         }
     ],
     "require": {
         "php": ">=7.3|>=8.0|>=8.1",
-        "ext-soap": "*",
+        "ext-soap": "*"
     },
     "require-dev": {
         "ext-simplexml": "*",
