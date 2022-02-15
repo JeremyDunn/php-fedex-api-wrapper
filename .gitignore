@@ -45,6 +45,7 @@ Icon?
 # composer
 vendor/
 composer.phar
+composer.lock
 
 # Security tokens
 *.pem
