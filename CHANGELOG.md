@@ -1,7 +1,10 @@
 # CHANGELOG
 
-## 6.0.1 (released 2022-02-14)
+## 6.0.2 (relased 2022-02-14)
 - Increased composer.json PHP version for 8.1
+
+## 6.0.1 (released 2021-12-10)
+- Fix WSDL naming issue [#191](https://github.com/JeremyDunn/php-fedex-api-wrapper/pull/191)
 
 ## 6.0.0 (released 2021-11-16)
 - Update services, tests, examples and composer packages [#187](https://github.com/JeremyDunn/php-fedex-api-wrapper/pull/187)
