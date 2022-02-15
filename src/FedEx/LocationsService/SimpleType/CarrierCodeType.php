@@ -6,7 +6,6 @@ use FedEx\AbstractSimpleType;
 /**
  * Identification of a FedEx operating company (transportation).
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Locations Service
  */

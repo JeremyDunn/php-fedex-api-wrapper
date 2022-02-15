@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * This class groups the shipment and package rating data for a specific rate type for use in a rating reply, which groups result data by rate type.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  *

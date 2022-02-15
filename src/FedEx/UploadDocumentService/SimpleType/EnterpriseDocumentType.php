@@ -6,7 +6,6 @@ use FedEx\AbstractSimpleType;
 /**
  * This identifies some of the document types recognized by Enterprise Document Management Service.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */

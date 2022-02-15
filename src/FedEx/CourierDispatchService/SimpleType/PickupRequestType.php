@@ -8,7 +8,6 @@ use FedEx\AbstractSimpleType;
 by means of a CourierDispatchRequest. FUTURE_DAY means that the dispatch date is later than the date on which it is created.
 SAME_DAY means that the dispatch is to occur on the date on which it is created.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Courier Dispatch Service
  */

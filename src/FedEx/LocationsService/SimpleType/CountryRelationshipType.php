@@ -6,7 +6,6 @@ use FedEx\AbstractSimpleType;
 /**
  * Describes relationship between origin and destination countries.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Locations Service
  */

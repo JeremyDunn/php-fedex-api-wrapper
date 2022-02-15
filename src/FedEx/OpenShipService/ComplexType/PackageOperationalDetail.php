@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Package-level data required for labeling and/or movement.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  *

@@ -6,7 +6,6 @@ use FedEx\AbstractSimpleType;
 /**
  * Specifice the kind of tax or miscellaneous charge being reported on a Commercial Invoice.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */

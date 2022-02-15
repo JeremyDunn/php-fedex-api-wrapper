@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Customer-provided specifications for handling individual commodities.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  *

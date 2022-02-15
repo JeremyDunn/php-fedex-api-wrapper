@@ -6,7 +6,6 @@ use FedEx\AbstractSimpleType;
 /**
  * Identifies types of scales used in weighing Freight shipments
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */

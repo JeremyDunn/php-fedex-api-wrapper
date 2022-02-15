@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Data required to produce a custom-specified document, either at shipment or package level.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  *

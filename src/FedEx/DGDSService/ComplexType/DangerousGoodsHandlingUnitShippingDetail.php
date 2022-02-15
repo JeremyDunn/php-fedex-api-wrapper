@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * This provides the information needed for shipping, rating, validation, and label generation.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Dangerous Goods Data Service
  *

@@ -6,7 +6,6 @@ use FedEx\AbstractSimpleType;
 /**
  * Specifies the order in which the labels will be returned
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */

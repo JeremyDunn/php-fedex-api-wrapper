@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies the details to be used by the user of the pending shipment
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  *

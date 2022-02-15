@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies the latest time by which a package can be dropped off at a FedEx location.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Locations Service
  *

@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies the details needed to produce a door tag.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  In Flight Shipment Service
  *

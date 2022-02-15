@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * The descriptive data for the local language and locale (i.e. country).
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Return Tag Service
  *

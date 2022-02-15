@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Data for a package's rates, as calculated per a specific rate type.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  *

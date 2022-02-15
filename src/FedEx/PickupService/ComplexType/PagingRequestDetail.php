@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies the details needed organise results using paging mechanism.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *

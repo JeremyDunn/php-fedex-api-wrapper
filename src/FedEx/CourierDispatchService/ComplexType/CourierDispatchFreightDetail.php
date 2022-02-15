@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Descriptive data regarding a FedEx freight service pickup request.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Courier Dispatch Service
  *

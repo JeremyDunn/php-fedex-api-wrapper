@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Used when a cargo shipment is split across vehicles. This is used to give the status of each part of the shipment.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  *

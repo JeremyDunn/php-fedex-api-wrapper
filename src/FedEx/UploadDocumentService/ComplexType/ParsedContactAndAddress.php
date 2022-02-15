@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * This type contains equivalent data to ContactAndAddress, but uses a form of person name with separate first, middle and last names.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  *

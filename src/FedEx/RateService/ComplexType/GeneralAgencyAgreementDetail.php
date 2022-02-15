@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Data required to produce a General Agency Agreement document. Remaining content (business data) to be defined once requirements have been completed.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  *

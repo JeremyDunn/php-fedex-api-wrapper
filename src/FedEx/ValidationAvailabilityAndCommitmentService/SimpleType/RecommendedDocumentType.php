@@ -6,7 +6,6 @@ use FedEx\AbstractSimpleType;
 /**
  * Type of documents that are recommended to be included with the shipment.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */

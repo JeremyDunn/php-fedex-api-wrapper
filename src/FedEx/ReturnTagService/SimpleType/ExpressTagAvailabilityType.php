@@ -6,7 +6,6 @@ use FedEx\AbstractSimpleType;
 /**
  * Identifies the Express Tag Service availability.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Return Tag Service
  */

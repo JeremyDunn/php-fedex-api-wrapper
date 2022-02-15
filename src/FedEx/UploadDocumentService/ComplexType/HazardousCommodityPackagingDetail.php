@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Identifies number and type of packaging units for hazardous commodities.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  *

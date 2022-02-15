@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies the special services supported at the clearance location for an individual destination country.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Locations Service
  *

@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * This class represents data tied to the use of a credit card in a specific transaction.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  *

@@ -8,7 +8,6 @@ use ReflectionNamedType;
 /**
  * Abstract class for SimpleTypes
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  */
 abstract class AbstractComplexType

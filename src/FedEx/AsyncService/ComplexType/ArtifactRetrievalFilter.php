@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies the details about the criteria used for artifact selection during retrieval.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  ASync Service
  *

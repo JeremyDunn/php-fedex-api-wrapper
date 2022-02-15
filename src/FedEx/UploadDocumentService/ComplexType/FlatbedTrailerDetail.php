@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies the optional features/characteristics requested for a Freight shipment utilizing a flatbed trailer.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  *

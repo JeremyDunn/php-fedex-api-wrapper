@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * The instructions indicating how to print the Certificate of Origin ( e.g. whether or not to include the instructions, image type, etc ...)
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  *

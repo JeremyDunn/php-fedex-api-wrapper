@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Describes an individual location providing a set of customer service features.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Locations Service
  *

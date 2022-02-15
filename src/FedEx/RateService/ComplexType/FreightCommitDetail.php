@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Information about the Freight Service Centers associated with this shipment.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  *

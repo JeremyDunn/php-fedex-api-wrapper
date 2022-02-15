@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * ListDangerousGoodsRequest
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  List Dangerous Goods Service
  *

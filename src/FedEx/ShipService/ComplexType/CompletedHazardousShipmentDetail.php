@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Computed shipment level hazardous commodity information.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  *

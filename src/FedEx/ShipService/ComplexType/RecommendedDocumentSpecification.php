@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies the details about documents that are recommended to be included with the shipment for ease of shipment processing and transportation.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  *

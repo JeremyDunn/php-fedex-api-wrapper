@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * This class describes the pickup characteristics of a shipment (e.g. for use in a tag request).
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  *

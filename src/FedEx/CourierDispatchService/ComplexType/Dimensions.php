@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Descriptive data detailing the length, width, and height of a package.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Courier Dispatch Service
  *

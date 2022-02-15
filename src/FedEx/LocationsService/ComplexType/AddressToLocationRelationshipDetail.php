@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies the relationship between the address specificed and the address of the FedEx Location in terms of distance.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Locations Service
  *

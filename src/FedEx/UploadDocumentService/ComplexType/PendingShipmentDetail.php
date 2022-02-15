@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * This information describes the kind of pending shipment being requested.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  *

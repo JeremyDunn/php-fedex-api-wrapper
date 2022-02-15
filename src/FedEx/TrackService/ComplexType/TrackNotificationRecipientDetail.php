@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Options available for a tracking notification recipient.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  *

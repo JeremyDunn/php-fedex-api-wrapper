@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies the way in which aggregated data in a consolidation are to be determined.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  *

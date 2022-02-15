@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Additional information about a physical location, such as suite number, cross street, floor number in a building. These details are not typically a part of a standard address definition; however, these details might help locate the address.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  *

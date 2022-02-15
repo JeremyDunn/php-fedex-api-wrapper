@@ -6,7 +6,6 @@ use FedEx\AbstractSimpleType;
 /**
  * This enumeration represents a kind of "legacy" account number from a FedEx operating entity.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */

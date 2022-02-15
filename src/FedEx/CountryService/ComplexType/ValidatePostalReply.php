@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * ValidatePostalReply
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Country Service
  *

@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies the information associated with a package that has COD special service in a ground shipment.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  *

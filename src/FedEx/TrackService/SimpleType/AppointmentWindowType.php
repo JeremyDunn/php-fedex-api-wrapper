@@ -6,7 +6,6 @@ use FedEx\AbstractSimpleType;
 /**
  * The description that FedEx uses for a given appointment window.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */

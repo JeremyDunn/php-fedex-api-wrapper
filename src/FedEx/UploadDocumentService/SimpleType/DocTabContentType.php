@@ -6,7 +6,6 @@ use FedEx\AbstractSimpleType;
 /**
  * DocTabContentType
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */

@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Information about why a shipment delivery is delayed and at what level( country/service etc.).
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  *
