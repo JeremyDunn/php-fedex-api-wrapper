@@ -6,7 +6,6 @@ use FedEx\AbstractSimpleType;
 /**
  * Identifies the type of funds FedEx should collect upon shipment delivery.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */

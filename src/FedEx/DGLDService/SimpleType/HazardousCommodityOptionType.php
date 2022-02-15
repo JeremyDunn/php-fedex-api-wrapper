@@ -6,7 +6,6 @@ use FedEx\AbstractSimpleType;
 /**
  * Indicates which kind of hazardous content is being reported.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  List Dangerous Goods Service
  */

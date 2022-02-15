@@ -6,7 +6,6 @@ use FedEx\AbstractSimpleType;
 /**
  * These values control the optional features of service that may be combined in a commitment/rate comparision transaction.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */

@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Image to be included from printer's memory, or from a local file for offline clients.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  *

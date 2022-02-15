@@ -6,7 +6,6 @@ use FedEx\AbstractSimpleType;
 /**
  * Specifies the reason to override address verification.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */

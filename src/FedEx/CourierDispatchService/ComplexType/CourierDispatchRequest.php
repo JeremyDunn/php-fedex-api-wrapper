@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * The descriptive data to schedule a FedEx package pickup request.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Courier Dispatch Service
  *

@@ -6,7 +6,6 @@ use FedEx\AbstractSimpleType;
 /**
  * FEDEX INTERNAL USE ONLY: Describes the characteristics of the dangerous goods inferred from the commodity data.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */

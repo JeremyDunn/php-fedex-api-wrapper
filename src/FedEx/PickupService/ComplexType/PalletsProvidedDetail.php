@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Specifications for pallets to be provided on Freight shipment.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *

@@ -6,7 +6,6 @@ use FedEx\AbstractSimpleType;
 /**
  * The attribute of the shipment that caused the delay(e.g. Country, City, LocationId, Zip, service area, special handling )
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */

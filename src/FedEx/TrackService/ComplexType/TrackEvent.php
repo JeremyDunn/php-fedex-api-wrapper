@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * FedEx scanning information about a package.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  *

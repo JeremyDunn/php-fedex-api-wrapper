@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Completed package-level hazardous commodity information for a single package.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  *

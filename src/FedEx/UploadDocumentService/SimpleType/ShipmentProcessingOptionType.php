@@ -6,7 +6,6 @@ use FedEx\AbstractSimpleType;
 /**
  * Identifies special or custom features to be applied to a shipment.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */

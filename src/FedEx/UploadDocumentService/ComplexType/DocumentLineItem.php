@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * This is a structure for providing document line item content (in part or in whole) to a service.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  *

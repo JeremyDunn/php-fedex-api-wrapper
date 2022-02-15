@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Data required to complete the Destionation Control Statement for US exports.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  *

@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies characteristics of a shipping document to be produced.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  *

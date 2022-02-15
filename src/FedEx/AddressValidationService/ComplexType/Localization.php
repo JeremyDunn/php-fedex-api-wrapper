@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Identifies the representation of human-readable text.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Address Validation Service
  *

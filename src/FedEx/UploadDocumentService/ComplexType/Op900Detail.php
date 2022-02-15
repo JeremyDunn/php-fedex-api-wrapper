@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * The instructions indicating how to print the OP-900 form for hazardous materials packages.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  *

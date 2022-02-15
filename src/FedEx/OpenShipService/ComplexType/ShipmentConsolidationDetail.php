@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies the characteristics of the containing RequestedShipment that define its participation in a consolidation.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  *

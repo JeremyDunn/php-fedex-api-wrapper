@@ -6,7 +6,6 @@ use FedEx\AbstractSimpleType;
 /**
  * The point where the delay is occurring ( e.g. Origin, Destination, Broker location).
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */

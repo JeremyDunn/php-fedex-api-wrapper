@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Specification for marking or tagging of pieces in shipment.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  *

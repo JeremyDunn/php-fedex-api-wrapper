@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies the attributes of a shipment related to its role in a transborder distribution (consolidation).
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  *

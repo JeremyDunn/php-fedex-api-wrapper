@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Descriptive data about the origin of the package being picked up by FedEx.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Courier Dispatch Service
  *

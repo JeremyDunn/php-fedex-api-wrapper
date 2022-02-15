@@ -6,7 +6,6 @@ use FedEx\AbstractSimpleType;
 /**
  * Indicates the status of a package inspection performed by an agent.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */

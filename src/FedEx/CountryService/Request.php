@@ -6,7 +6,6 @@ use FedEx\AbstractRequest;
 /**
  * Request sends the SOAP call to the FedEx servers and returns the response
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Country Service
  */

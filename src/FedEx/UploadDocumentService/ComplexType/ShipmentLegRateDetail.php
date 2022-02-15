@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Data for a single leg of a shipment's total/summary rates, as calculated per a specific rate type.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  *

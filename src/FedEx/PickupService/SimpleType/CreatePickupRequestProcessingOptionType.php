@@ -6,7 +6,6 @@ use FedEx\AbstractSimpleType;
 /**
  * Specifies the options to be applied when creating the pickup.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */

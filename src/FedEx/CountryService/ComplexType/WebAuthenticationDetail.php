@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Used in authentication of the sender's identity.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Country Service
  *

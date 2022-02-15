@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies the concept of a container used to package dangerous goods commodities.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  *

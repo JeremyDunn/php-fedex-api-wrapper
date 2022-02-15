@@ -8,15 +8,15 @@
     "authors": [
         {
             "name": "Jeremy Dunn",
-            "email": "jeremy@jsdunn.info",
-            "homepage": "http://www.jsdunn.info"
+            "email": "jeremy@jsdunn.info"
         }
     ],
     "require": {
-        "php": "^7.3|^8.0",
+        "php": ">=7.3|>=8.0|>=8.1",
         "ext-soap": "*"
     },
     "require-dev": {
+        "ext-simplexml": "*",
         "symfony/console": "^5.2",
         "phpunit/phpunit": "^9.5",
         "squizlabs/php_codesniffer": "^3.5",

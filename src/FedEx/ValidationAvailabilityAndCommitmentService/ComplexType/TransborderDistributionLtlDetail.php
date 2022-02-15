@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies details for origin-country LTL services performed by FedEx.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  *

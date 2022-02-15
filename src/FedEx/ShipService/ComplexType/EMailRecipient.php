@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Information describing the address of of the email recipient, role of the email recipient and languages that are requested to be supported.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  *

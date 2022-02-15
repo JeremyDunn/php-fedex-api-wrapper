@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * DangerousGoodsInnerReceptacleDetail
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Dangerous Goods Data Service
  *

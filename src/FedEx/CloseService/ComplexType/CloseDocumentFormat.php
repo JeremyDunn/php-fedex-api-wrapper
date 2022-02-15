@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies characteristics of a close document to be produced.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Close Service
  *

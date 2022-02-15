@@ -9,7 +9,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 /**
  * Generate Command for Generate Code CLI Application
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Utilities
  */

@@ -6,7 +6,6 @@ use FedEx\AbstractSimpleType;
 /**
  * Each of these values identifies a specific reason why a document or reference could not be uploaded or associated with a shipment.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */

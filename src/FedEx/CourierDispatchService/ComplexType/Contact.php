@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Descriptive data identifying the point-of-contact person.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Courier Dispatch Service
  *

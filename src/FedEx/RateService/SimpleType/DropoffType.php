@@ -6,7 +6,6 @@ use FedEx\AbstractSimpleType;
 /**
  * DropoffType
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */

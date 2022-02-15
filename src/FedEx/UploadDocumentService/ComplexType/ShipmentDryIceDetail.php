@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Shipment-level totals of dry ice data across all packages.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  *

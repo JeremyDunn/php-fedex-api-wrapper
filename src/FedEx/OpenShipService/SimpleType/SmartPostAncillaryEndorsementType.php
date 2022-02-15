@@ -6,7 +6,6 @@ use FedEx\AbstractSimpleType;
 /**
  * These values are mutually exclusive; at most one of them can be attached to a SmartPost shipment.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */

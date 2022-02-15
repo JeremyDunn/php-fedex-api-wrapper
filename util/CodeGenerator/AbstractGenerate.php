@@ -4,7 +4,6 @@ namespace FedEx\Utility\CodeGenerator;
 /**
  * Abstract class for code generation utilities
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Utilities
  */

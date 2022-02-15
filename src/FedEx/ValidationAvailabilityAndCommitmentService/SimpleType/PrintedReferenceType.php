@@ -6,7 +6,6 @@ use FedEx\AbstractSimpleType;
 /**
  * Identifies a particular reference identifier printed on a Freight bill of lading.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */

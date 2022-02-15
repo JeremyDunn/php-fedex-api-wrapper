@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Totals accumulated during the processing of CRNs into the consolidation.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  *

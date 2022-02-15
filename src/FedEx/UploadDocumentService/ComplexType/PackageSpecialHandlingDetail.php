@@ -6,7 +6,6 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies the condition of a package when it was received at a FedEx location.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  *

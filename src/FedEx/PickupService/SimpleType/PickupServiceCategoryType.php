@@ -6,7 +6,6 @@ use FedEx\AbstractSimpleType;
 /**
  * Specifies the service category for the pick up being scheduled.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */

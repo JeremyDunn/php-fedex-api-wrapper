@@ -6,7 +6,6 @@ use FedEx\AbstractSimpleType;
 /**
  * Indicates the packaging type of the container used to package radioactive hazardous materials.
  *
- * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
