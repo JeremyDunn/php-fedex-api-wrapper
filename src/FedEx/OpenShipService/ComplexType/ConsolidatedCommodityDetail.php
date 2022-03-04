@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Represents all commodity data (summary and line items) within a consolidation.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  *

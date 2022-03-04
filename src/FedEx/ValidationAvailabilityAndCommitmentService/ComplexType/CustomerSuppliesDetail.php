@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies details about the supplies the customer is contracted to receive
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  *

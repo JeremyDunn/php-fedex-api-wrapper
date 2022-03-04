@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Contains all data required for (non-label) documents to be produced in conjunction with a specific international distribution consolidation.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  *

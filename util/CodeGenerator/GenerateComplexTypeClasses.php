@@ -4,6 +4,7 @@ namespace FedEx\Utility\CodeGenerator;
 /**
  * Converts complex types in .wsdl file to PHP class files
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Utilities
  */
@@ -116,6 +117,7 @@ use FedEx\AbstractComplexType;
 /**
  * $classDoc
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  {$this->subPackageName}
  *

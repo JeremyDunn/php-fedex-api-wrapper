@@ -6,6 +6,7 @@ use FedEx\AbstractSimpleType;
 /**
  * Specifies the type of brokerage to be applied to a shipment.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */

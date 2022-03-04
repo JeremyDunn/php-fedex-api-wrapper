@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies the criterion and order to be used to sort the location details.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Locations Service
  *

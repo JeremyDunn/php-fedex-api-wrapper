@@ -6,6 +6,7 @@ use FedEx\AbstractSimpleType;
 /**
  * Specifies the type of paper (stock) on which a document will be printed.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */

@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * CloseDocument
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Close Service
  *

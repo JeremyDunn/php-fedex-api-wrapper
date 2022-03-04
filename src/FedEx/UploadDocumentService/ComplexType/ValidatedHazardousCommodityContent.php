@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Documents the kind and quantity of an individual hazardous commodity in a package.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  *

@@ -6,6 +6,7 @@ use FedEx\AbstractSimpleType;
 /**
  * Specifies the criteria types that may be used to search for FedEx locations.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Locations Service
  */

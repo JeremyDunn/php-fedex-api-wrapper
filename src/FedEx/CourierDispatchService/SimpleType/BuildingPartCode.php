@@ -6,6 +6,7 @@ use FedEx\AbstractSimpleType;
 /**
  * Identifies the valid set of building part types when requesting a package pickup.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Courier Dispatch Service
  */

@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies features of service within a Transborder Distribution shipment.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  *

@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies consolidation data for a tranborder distribution shipment. This is data that can be provided by the customer at the consolidation creation time.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  *

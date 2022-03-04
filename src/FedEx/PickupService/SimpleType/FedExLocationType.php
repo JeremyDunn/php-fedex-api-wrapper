@@ -6,6 +6,7 @@ use FedEx\AbstractSimpleType;
 /**
  * Identifies a kind of FedEx facility.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */

@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Each instance of this data type represents a barcode whose content must be represented as binary data (i.e. not ASCII text).
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  *

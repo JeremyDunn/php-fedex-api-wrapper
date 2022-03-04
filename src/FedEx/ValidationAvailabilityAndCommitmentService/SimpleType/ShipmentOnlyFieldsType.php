@@ -6,6 +6,7 @@ use FedEx\AbstractSimpleType;
 /**
  * These values identify which package-level data values will be provided at the shipment-level.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */

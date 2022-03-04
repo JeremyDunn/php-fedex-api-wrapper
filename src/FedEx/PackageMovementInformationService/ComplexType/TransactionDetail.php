@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * The descriptive data that governs data payload language/translations.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  *

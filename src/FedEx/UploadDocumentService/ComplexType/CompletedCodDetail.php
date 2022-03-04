@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies the results of processing for the COD special service.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  *

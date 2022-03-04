@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies which party will be responsible for payment of any surcharges for Freight special services for which split billing is allowed.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  *

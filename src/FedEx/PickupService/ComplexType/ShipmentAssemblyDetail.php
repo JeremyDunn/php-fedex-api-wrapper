@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Specification for assembly performed on shipment.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *

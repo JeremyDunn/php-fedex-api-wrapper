@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * The response to a RateRequest. The Notifications indicate whether the request was successful or not.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  *

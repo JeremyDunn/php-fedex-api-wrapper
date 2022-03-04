@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Associates a shipment within a consolidation with data about the consolidation.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  *

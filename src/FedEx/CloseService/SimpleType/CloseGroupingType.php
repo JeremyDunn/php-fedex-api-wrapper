@@ -6,6 +6,7 @@ use FedEx\AbstractSimpleType;
 /**
  * Specifies how the shipment close requests are grouped.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Close Service
  */

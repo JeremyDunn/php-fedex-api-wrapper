@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Each occurrence of this class specifies a particular way in which a kind of shipping document is to be produced and provided.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  *

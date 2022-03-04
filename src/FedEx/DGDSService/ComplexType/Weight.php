@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * The descriptive data for the heaviness of an object.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Dangerous Goods Data Service
  *

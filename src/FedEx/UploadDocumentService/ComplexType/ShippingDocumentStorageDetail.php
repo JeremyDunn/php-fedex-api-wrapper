@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies how to store shipping documents.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  *

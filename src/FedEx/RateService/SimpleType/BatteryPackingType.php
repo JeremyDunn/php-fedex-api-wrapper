@@ -6,6 +6,7 @@ use FedEx\AbstractSimpleType;
 /**
  * Describes the packing arrangement of a battery or cell with respect to other items within the same package.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */

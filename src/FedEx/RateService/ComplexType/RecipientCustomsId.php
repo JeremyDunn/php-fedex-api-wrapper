@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies how the recipient is identified for customs purposes; the requirements on this information vary with destination country.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  *

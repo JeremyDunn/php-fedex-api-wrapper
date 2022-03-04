@@ -9,6 +9,7 @@ and would be scheduled (created by means of a CourierDispatchRequest) on a date 
 by the "ScheduleDay" (SAME_DAY meaning that the creation would occur on the PickupDate, and FUTURE_DAY meaning that the creation
 would occur on a date prior to the PickupDate).
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Courier Dispatch Service
  *

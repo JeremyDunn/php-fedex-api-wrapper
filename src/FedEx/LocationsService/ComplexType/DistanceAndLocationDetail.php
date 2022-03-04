@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies the location details and other information relevant to the location that is derived from the inputs provided in the request.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Locations Service
  *

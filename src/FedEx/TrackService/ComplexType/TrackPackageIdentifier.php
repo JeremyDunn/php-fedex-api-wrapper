@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * The type and value of the package identifier that is to be used to retrieve the tracking information for a package.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  *

@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Information about the transit time and delivery commitment date and time.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  *

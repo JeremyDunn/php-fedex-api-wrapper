@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies the summary of aggregates that are maintianed for a transborder consolidation.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  *

@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Identifies amount and units for quantity of hazardous commodities.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  *

@@ -6,6 +6,7 @@ use FedEx\AbstractSimpleType;
 /**
  * Represents features of FedEx Ground delivery for which the shipment is eligible.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */

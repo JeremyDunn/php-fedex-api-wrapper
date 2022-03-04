@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Descriptive data required for a FedEx COD (Collect-On-Delivery) shipment.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  *

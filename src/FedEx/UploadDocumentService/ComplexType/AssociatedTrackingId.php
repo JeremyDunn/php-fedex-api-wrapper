@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Identifies a relationship from one tracked entity to another.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  *

@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * The descriptive data regarding the version/level of a service operation performed by the callee (in each reply).
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Return Tag Service
  *

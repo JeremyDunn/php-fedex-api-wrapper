@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Constructed string, based on format and zero or more data fields, printed in specified barcode symbology.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  *

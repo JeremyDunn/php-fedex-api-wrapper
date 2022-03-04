@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies the type and location id of a distribution location used to process a consolidation.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  *

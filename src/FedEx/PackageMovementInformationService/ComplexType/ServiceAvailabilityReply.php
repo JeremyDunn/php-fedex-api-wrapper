@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * The descriptive data returned for a FedEx service availability request.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  *

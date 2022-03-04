@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * ValidateOpenShipmentRequest
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  *

@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * These special services are available at the consolidation level for some or all consolidation types. If the shipper is requesting a special service which requires additional data (such as the COD amount), the consolidation special service type must be present in the specialServiceTypes collection, and the supporting detail must be provided in the appropriate sub-object below.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  *

@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * The instructions indicating how to print the return instructions( e.g. image type) Specifies characteristics of a shipping document to be produced.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  *

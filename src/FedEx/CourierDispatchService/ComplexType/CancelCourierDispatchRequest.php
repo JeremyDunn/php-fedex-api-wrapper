@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * The descriptive data to cancel a package pickup request.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Courier Dispatch Service
  *

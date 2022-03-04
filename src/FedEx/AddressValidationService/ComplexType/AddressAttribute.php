@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies additional information about the address processed by the SHARE systems as a key-value pair.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Address Validation Service
  *

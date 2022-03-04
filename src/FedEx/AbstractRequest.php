@@ -4,6 +4,7 @@ namespace FedEx;
 /**
  * Abstract class for Request classes
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  */
 abstract class AbstractRequest
@@ -43,7 +44,6 @@ abstract class AbstractRequest
      * Constructor
      *
      * @param \SoapClient|null $soapClient
-     * @throws \SoapFault
      */
     public function __construct(\SoapClient $soapClient = null)
     {

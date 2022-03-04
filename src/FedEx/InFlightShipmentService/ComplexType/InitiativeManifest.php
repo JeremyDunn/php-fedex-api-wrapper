@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Represents a transaction-specific set of initiative control data for all services.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  In Flight Shipment Service
  *

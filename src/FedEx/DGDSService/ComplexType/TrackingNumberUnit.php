@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Each instance of this class groups together TrackingId instances that pertain to the same entity (e.g. package).
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Dangerous Goods Data Service
  *

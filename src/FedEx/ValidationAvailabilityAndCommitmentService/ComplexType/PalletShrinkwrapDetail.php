@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Specifications for pallets to be shrinkwrapped as part of a Freight shipment.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  *

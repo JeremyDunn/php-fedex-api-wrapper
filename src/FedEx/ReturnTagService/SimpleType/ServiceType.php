@@ -6,6 +6,7 @@ use FedEx\AbstractSimpleType;
 /**
  * Identifies the FedEx service to use in shipping the package. See ServiceType for list of valid enumerated values.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Return Tag Service
  */

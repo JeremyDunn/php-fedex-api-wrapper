@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies printing options for a shipping document.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  *

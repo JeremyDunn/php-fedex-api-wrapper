@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Data resulting from the processing of an LTL Freight pickup request.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *

@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Bank information for the customer profile
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  *

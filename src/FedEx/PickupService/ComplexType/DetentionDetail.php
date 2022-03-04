@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Specifications for pup/set or vehicle delayed for loading or unloading.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *

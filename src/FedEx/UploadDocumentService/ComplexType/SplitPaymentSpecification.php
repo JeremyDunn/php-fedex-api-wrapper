@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies how charges relating to different aspects of a shipment are to be paid.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  *

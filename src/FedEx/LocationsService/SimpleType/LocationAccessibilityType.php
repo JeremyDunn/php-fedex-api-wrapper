@@ -6,6 +6,7 @@ use FedEx\AbstractSimpleType;
 /**
  * Indicates how this can be accessed.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Locations Service
  */

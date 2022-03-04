@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies that name, title and place of the signatory responsible for the dangerous goods shipment.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  *

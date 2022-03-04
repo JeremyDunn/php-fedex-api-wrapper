@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies the address and a sequence number to identify the address.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  *

@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Supporting detail for applied options identified in a rate quote.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  *

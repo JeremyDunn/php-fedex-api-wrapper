@@ -6,6 +6,7 @@ use FedEx\AbstractSimpleType;
 /**
  * Identifies the type of artifact created.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  ASync Service
  */

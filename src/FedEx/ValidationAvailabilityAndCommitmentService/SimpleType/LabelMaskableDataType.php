@@ -6,6 +6,7 @@ use FedEx\AbstractSimpleType;
 /**
  * Names for data elements / areas which may be suppressed from printing on labels.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */

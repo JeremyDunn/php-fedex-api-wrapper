@@ -6,6 +6,7 @@ use FedEx\AbstractSimpleType;
 /**
  * Identifies the packaging used by the requestor for the package. See PackagingType for list of valid enumerated values.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Return Tag Service
  */

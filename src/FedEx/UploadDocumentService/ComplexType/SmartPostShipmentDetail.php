@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Data required for shipments handled under the SMART_POST and GROUND_SMART_POST service types.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  *

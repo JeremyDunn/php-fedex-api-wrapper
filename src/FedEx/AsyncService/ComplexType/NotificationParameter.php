@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * NotificationParameter
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  ASync Service
  *

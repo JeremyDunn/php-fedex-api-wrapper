@@ -6,6 +6,7 @@ use FedEx\AbstractSimpleType;
 /**
  * Identification of the type of barcode (symbology) used on FedEx documents and labels.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */

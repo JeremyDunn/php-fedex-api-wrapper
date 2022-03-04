@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies how to apply the localization detail to the current context.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  *

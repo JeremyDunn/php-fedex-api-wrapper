@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies details for a package containing alcohol
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  *

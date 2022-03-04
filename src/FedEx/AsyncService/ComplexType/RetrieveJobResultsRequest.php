@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * This request object is used by the client to retrieve artifacts stored by the ASYNC service.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  ASync Service
  *

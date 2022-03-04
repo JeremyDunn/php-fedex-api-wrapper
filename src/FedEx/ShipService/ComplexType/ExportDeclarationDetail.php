@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * The instructions indicating how to print the Export Declaration.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  *

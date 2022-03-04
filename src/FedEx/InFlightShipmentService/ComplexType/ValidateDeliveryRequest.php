@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Request parameter of IFSS method to validate a delivery option.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  In Flight Shipment Service
  *

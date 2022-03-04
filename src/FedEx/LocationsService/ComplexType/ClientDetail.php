@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Descriptive data for the client submitting a transaction.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Locations Service
  *

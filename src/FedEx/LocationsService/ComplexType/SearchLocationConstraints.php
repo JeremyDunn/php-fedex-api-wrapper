@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies additional constraints on the attributes of the locations being searched.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Locations Service
  *

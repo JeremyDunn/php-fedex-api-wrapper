@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Specification for services performed during non-business hours and/or days.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  *

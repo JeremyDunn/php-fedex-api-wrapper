@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Describes an approved container used to package dangerous goods commodities. This does not describe any individual inner receptacles that may be within this container.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  *

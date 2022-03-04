@@ -6,6 +6,7 @@ use FedEx\AbstractSimpleType;
 /**
  * FreightGuaranteeType
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */

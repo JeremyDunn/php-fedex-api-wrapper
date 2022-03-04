@@ -6,6 +6,7 @@ use FedEx\AbstractSimpleType;
 /**
  * Specifies the zone type that SmartPost classifies the customer account as. This controls how the SmartPost outbound shipments are rated, routed, tracked and reported.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */

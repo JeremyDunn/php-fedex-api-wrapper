@@ -6,6 +6,7 @@ use FedEx\AbstractSimpleType;
 /**
  * Identifies responsibilities with respect to loss, damage, etc.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */

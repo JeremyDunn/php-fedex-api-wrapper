@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * This describes information about the inner receptacles for the hazardous commodity in a particular dangerous goods container.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  *

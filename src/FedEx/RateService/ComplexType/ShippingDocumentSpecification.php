@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Contains all data required for additional (non-label) shipping documents to be produced in conjunction with a specific shipment.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  *

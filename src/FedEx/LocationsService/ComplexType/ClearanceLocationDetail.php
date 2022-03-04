@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies the details about the countries supported by this location.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Locations Service
  *

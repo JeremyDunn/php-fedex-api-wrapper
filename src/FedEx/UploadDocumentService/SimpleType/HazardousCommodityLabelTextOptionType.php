@@ -6,6 +6,7 @@ use FedEx\AbstractSimpleType;
 /**
  * Specifies how the commodity is to be labeled.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */

@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Driving or other transportation distances, distinct from dimension measurements.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  *

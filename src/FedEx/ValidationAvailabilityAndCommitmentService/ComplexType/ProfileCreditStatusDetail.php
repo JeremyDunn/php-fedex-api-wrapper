@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies the credit status for a particular profile.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  *

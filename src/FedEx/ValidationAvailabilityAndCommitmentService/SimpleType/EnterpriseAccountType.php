@@ -6,6 +6,7 @@ use FedEx\AbstractSimpleType;
 /**
  * Specifies a refinement of the customer entity type. This represents the customer account type for the EAN.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */

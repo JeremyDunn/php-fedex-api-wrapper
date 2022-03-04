@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Each instance of this data type represents the set of barcodes (of all types) which are associated with a specific package.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  *

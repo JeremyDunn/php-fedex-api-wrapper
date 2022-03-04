@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * A single part of a shipping document, such as one page of a multiple-page document whose format requires a separate image per page.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Close Service
  *

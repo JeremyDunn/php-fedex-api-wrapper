@@ -6,6 +6,7 @@ use FedEx\AbstractSimpleType;
 /**
  * Identifies the requested options to reprinting Ground Close Documents
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Close Service
  */

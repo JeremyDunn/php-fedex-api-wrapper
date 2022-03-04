@@ -6,6 +6,7 @@ use FedEx\AbstractComplexType;
 /**
  * Specifies documentation and limits for validation of an individual packing group/category.
  *
+ * @author      Jeremy Dunn <jeremy@jsdunn.info>
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  *
