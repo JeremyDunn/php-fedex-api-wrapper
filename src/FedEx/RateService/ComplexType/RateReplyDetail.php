@@ -81,7 +81,7 @@ class RateReplyDetail extends AbstractComplexType
      * @param \FedEx\RateService\SimpleType\ServiceOptionType[]|string[] $appliedOptions
      * @return $this
      */
-    public function setAppliedOptions(array $appliedOptions)
+    public function setAppliedOptions($appliedOptions)
     {
         $this->values['AppliedOptions'] = $appliedOptions;
         return $this;
